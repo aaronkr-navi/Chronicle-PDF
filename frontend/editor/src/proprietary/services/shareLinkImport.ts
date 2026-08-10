@@ -1,7 +1,7 @@
 import apiClient from "@app/services/apiClient";
 import { fileStorage } from "@app/services/fileStorage";
 import type { FileId } from "@app/types/file";
-import type { StirlingFile } from "@app/types/fileContext";
+import type { ChronicleFile } from "@app/types/fileContext";
 import type { FileContextActions } from "@app/types/fileContext";
 import {
   getShareBundleEntryRootId,
@@ -69,7 +69,7 @@ export async function importShareLinkToWorkbench(
     const bundle = await loadShareBundleEntries(blob);
     if (bundle) {
       const { manifest, rootOrder, sortedEntries, files } = bundle;
-      const stirlingFiles = await actions.addFilesWithOptions(files, {
+      const ChronicleFiles = await actions.addFilesWithOptions(files, {
         selectFiles: false,
         autoUnzip: false,
         skipAutoUnzip: false,
@@ -77,8 +77,8 @@ export async function importShareLinkToWorkbench(
       });
 
       const idMap = new Map<string, FileId>();
-      for (let i = 0; i < stirlingFiles.length; i += 1) {
-        idMap.set(sortedEntries[i].logicalId, stirlingFiles[i].fileId);
+      for (let i = 0; i < ChronicleFiles.length; i += 1) {
+        idMap.set(sortedEntries[i].logicalId, ChronicleFiles[i].fileId);
       }
 
       const rootIdMap = new Map<string, FileId>();
@@ -117,7 +117,7 @@ export async function importShareLinkToWorkbench(
           isLeaf: entry.isLeaf,
           ...sharedUpdates,
         };
-        actions.updateStirlingFileStub(newId, updates);
+        actions.updateChronicleFileStub(newId, updates);
         await fileStorage.updateFileMetadata(newId, updates);
       }
 
@@ -143,13 +143,13 @@ export async function importShareLinkToWorkbench(
   const file = new File([blob], filename, {
     type: contentTypeValue || blob.type,
   });
-  const stirlingFiles = await actions.addFilesWithOptions([file], {
+  const ChronicleFiles = await actions.addFilesWithOptions([file], {
     selectFiles: true,
     autoUnzip: false,
     skipAutoUnzip: false,
   });
-  const ids = stirlingFiles.map(
-    (stirlingFile: StirlingFile) => stirlingFile.fileId,
+  const ids = ChronicleFiles.map(
+    (ChronicleFile: ChronicleFile) => ChronicleFile.fileId,
   );
   if (ids.length > 0) {
     const sharedUpdates = {
@@ -162,7 +162,7 @@ export async function importShareLinkToWorkbench(
       remoteShareToken: shareMetadata?.shareToken || token,
     };
     for (const fileId of ids) {
-      actions.updateStirlingFileStub(fileId, sharedUpdates);
+      actions.updateChronicleFileStub(fileId, sharedUpdates);
       await fileStorage.updateFileMetadata(fileId, sharedUpdates);
     }
   }

@@ -1,42 +1,42 @@
 import {
-  StirlingFile,
+  ChronicleFile,
   FileId,
-  StirlingFileStub,
-  createStirlingFile,
+  ChronicleFileStub,
+  createChronicleFile,
   ProcessedFileMetadata,
-  createNewStirlingFileStub,
+  createNewChronicleFileStub,
 } from "@app/types/fileContext";
 
 /**
- * Builds parallel inputFileIds and inputStirlingFileStubs arrays from the valid input files.
+ * Builds parallel inputFileIds and inputChronicleFileStubs arrays from the valid input files.
  * Falls back to a fresh stub when the file is not found in the current context state
  * (e.g. it was removed between operation start and this point).
  */
 export function buildInputTracking(
-  validFiles: StirlingFile[],
+  validFiles: ChronicleFile[],
   selectors: {
-    getStirlingFileStub: (id: FileId) => StirlingFileStub | undefined;
+    getChronicleFileStub: (id: FileId) => ChronicleFileStub | undefined;
   },
-): { inputFileIds: FileId[]; inputStirlingFileStubs: StirlingFileStub[] } {
+): { inputFileIds: FileId[]; inputChronicleFileStubs: ChronicleFileStub[] } {
   const inputFileIds: FileId[] = [];
-  const inputStirlingFileStubs: StirlingFileStub[] = [];
+  const inputChronicleFileStubs: ChronicleFileStub[] = [];
   for (const file of validFiles) {
     const fileId = file.fileId;
-    const record = selectors.getStirlingFileStub(fileId);
+    const record = selectors.getChronicleFileStub(fileId);
     if (record) {
       inputFileIds.push(fileId);
-      inputStirlingFileStubs.push(record);
+      inputChronicleFileStubs.push(record);
     } else {
       console.debug(`No file stub found for file: ${file.name}`);
       inputFileIds.push(fileId);
-      inputStirlingFileStubs.push(createNewStirlingFileStub(file, fileId));
+      inputChronicleFileStubs.push(createNewChronicleFileStub(file, fileId));
     }
   }
-  return { inputFileIds, inputStirlingFileStubs };
+  return { inputFileIds, inputChronicleFileStubs };
 }
 
 /**
- * Creates parallel outputStirlingFileStubs and outputStirlingFiles arrays from processed files.
+ * Creates parallel outputChronicleFileStubs and outputChronicleFiles arrays from processed files.
  * The stubFactory determines how each stub is constructed (child version vs fresh root).
  */
 export function buildOutputPairs(
@@ -48,16 +48,16 @@ export function buildOutputPairs(
     thumbnail: string,
     metadata: ProcessedFileMetadata | undefined,
     index: number,
-  ) => StirlingFileStub,
+  ) => ChronicleFileStub,
 ): {
-  outputStirlingFileStubs: StirlingFileStub[];
-  outputStirlingFiles: StirlingFile[];
+  outputChronicleFileStubs: ChronicleFileStub[];
+  outputChronicleFiles: ChronicleFile[];
 } {
-  const outputStirlingFileStubs = processedFiles.map((file, index) =>
+  const outputChronicleFileStubs = processedFiles.map((file, index) =>
     stubFactory(file, thumbnails[index], metadataArray[index], index),
   );
-  const outputStirlingFiles = processedFiles.map((file, index) =>
-    createStirlingFile(file, outputStirlingFileStubs[index].id),
+  const outputChronicleFiles = processedFiles.map((file, index) =>
+    createChronicleFile(file, outputChronicleFileStubs[index].id),
   );
-  return { outputStirlingFileStubs, outputStirlingFiles };
+  return { outputChronicleFileStubs, outputChronicleFiles };
 }

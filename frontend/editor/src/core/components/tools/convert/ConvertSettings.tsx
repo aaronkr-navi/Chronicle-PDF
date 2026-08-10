@@ -37,7 +37,7 @@ import {
   OUTPUT_OPTIONS,
   FIT_OPTIONS,
 } from "@app/constants/convertConstants";
-import { StirlingFile } from "@app/types/fileContext";
+import { ChronicleFile } from "@app/types/fileContext";
 
 interface ConvertSettingsProps {
   parameters: ConvertParameters;
@@ -48,7 +48,7 @@ interface ConvertSettingsProps {
   getAvailableToExtensions?: (
     fromExtension: string,
   ) => Array<{ value: string; label: string; group: string }>;
-  selectedFiles?: StirlingFile[];
+  selectedFiles?: ChronicleFile[];
   disabled?: boolean;
 }
 
@@ -237,7 +237,7 @@ const ConvertSettings = ({
   const filterFilesByExtension = (extension: string) => {
     const files = activeFiles
       .map((fileId) => selectors.getFile(fileId))
-      .filter(Boolean) as StirlingFile[];
+      .filter(Boolean) as ChronicleFile[];
     return files.filter((file) => {
       const fileExtension = detectFileExtension(file.name);
 
@@ -251,7 +251,7 @@ const ConvertSettings = ({
     });
   };
 
-  const updateFileSelection = (files: StirlingFile[]) => {
+  const updateFileSelection = (files: ChronicleFile[]) => {
     const fileIds = files.map((file) => file.fileId);
     setSelectedFiles(fileIds);
   };

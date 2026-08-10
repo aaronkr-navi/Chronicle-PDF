@@ -20,11 +20,11 @@ import Chronicle.software.common.model.ApplicationProperties;
 import Chronicle.software.proprietary.mcp.catalog.McpToolCatalog;
 import Chronicle.software.proprietary.mcp.tools.DescribeOperationTool;
 import Chronicle.software.proprietary.mcp.tools.McpOperationExecutor;
-import Chronicle.software.proprietary.mcp.tools.StirlingAiTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingConvertTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingMiscTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingPagesTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingSecurityTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleAiTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleConvertTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleMiscTool;
+import Chronicle.software.proprietary.mcp.tools.ChroniclePagesTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleSecurityTool;
 import Chronicle.software.proprietary.service.AiEngineClient;
 
 import tools.jackson.databind.JsonNode;
@@ -45,11 +45,11 @@ class McpServerControllerTest {
         List<McpTool> tools =
                 List.of(
                         new DescribeOperationTool(mapper, emptyCatalog),
-                        new StirlingConvertTool(mapper, emptyCatalog, emptyExecutor),
-                        new StirlingPagesTool(mapper, emptyCatalog, emptyExecutor),
-                        new StirlingMiscTool(mapper, emptyCatalog, emptyExecutor),
-                        new StirlingSecurityTool(mapper, emptyCatalog, emptyExecutor),
-                        new StirlingAiTool(mapper, emptyCatalog, emptyEngine));
+                        new ChronicleConvertTool(mapper, emptyCatalog, emptyExecutor),
+                        new ChroniclePagesTool(mapper, emptyCatalog, emptyExecutor),
+                        new ChronicleMiscTool(mapper, emptyCatalog, emptyExecutor),
+                        new ChronicleSecurityTool(mapper, emptyCatalog, emptyExecutor),
+                        new ChronicleAiTool(mapper, emptyCatalog, emptyEngine));
         return new McpServerController(mapper, props, tools);
     }
 

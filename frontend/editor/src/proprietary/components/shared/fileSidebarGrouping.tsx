@@ -21,7 +21,7 @@ import {
 import { buildLabelGroups } from "@app/components/shared/fileSidebarGroupingLogic";
 import { scheduleIdle } from "@app/utils/scheduleIdle";
 import type { FileId } from "@app/types/file";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import type { FileSidebarGroup } from "@core/components/shared/fileSidebarGrouping";
 
 export type { FileSidebarGroup };
@@ -39,7 +39,7 @@ const BACKFILL_BATCH = 3;
 const BACKFILL_BUSY_RETRY_MS = 4000;
 
 export function useFileSidebarGroups(
-  stubs: StirlingFileStub[],
+  stubs: ChronicleFileStub[],
 ): FileSidebarGroup[] | null {
   const { t } = useTranslation();
   // Classification off (core): flat list, no category fetch or backfill.
@@ -47,7 +47,7 @@ export function useFileSidebarGroups(
   const { bumpRevision } = useIndexedDB();
   // Reads keyed by id+lastModified, so a new file version is re-read exactly once.
   const attempted = useRef<Set<string>>(new Set());
-  const attemptKey = (s: StirlingFileStub) =>
+  const attemptKey = (s: ChronicleFileStub) =>
     `${s.id as string}:${s.lastModified ?? 0}`;
   // Bumped to re-attempt a backfill pass that yielded to an active policy wave.
   const [retryTick, setRetryTick] = useState(0);

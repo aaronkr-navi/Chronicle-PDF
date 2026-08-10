@@ -8,7 +8,7 @@
 import apiClient from "@app/services/apiClient";
 import { fileStorage } from "@app/services/fileStorage";
 import { alert } from "@app/components/toast";
-import { StirlingFileStub, StirlingFile } from "@app/types/fileContext";
+import { ChronicleFileStub, ChronicleFile } from "@app/types/fileContext";
 import { FileId } from "@app/types/fileContext";
 import { FolderId, parseFolderId } from "@app/types/folder";
 import {
@@ -111,14 +111,14 @@ function normalizeServerFileName(fileName: string | undefined | null): string {
 
 /** Pull the server file list (and share-links) and reconcile with local stubs. */
 export async function reconcileServerFiles(
-  localStubs: StirlingFileStub[],
+  localStubs: ChronicleFileStub[],
   opts: ReconcileOptions,
-): Promise<StirlingFileStub[]> {
+): Promise<ChronicleFileStub[]> {
   if (!opts.storageEnabled || opts.isAnonymous) {
     return localStubs;
   }
 
-  let combinedStubs: StirlingFileStub[];
+  let combinedStubs: ChronicleFileStub[];
   const localRemoteIds = new Set(
     localStubs
       .map((s) => s.remoteStorageId)
@@ -208,7 +208,7 @@ export async function reconcileServerFiles(
 
     // Server files that this browser hasn't cached yet become ephemeral
     // stubs (id="server-{N}", no IDB row). Bytes get fetched on demand.
-    const serverStubs: StirlingFileStub[] = [];
+    const serverStubs: ChronicleFileStub[] = [];
     for (const file of serverFiles) {
       if (!file || typeof file.id !== "number") continue;
       if (localRemoteIds.has(file.id)) continue;
@@ -331,7 +331,7 @@ export async function reconcileServerFiles(
         .map((stub) => stub.remoteShareToken)
         .filter((token): token is string => Boolean(token)),
     );
-    const sharedStubs: StirlingFileStub[] = [];
+    const sharedStubs: ChronicleFileStub[] = [];
     for (const link of sharedLinks) {
       if (!link || !link.shareToken) continue;
       if (existingShareTokens.has(link.shareToken)) continue;
@@ -381,11 +381,11 @@ export async function reconcileServerFiles(
  * IDB rows. Local stubs are passed through untouched.
  *
  * Pass `addFiles` (from FileContext.addFilesWithOptions) and
- * `updateStub` (from FileContext.updateStirlingFileStub) so this util
+ * `updateStub` (from FileContext.updateChronicleFileStub) so this util
  * stays React-free; the caller provides the wiring.
  */
 export async function materializeServerStubs(
-  stubs: StirlingFileStub[],
+  stubs: ChronicleFileStub[],
   helpers: {
     addFiles: (
       files: File[],
@@ -396,11 +396,11 @@ export async function materializeServerStubs(
         allowDuplicates: boolean;
         skipUploadTracking?: boolean;
       },
-    ) => Promise<StirlingFile[]>;
-    updateStub: (id: FileId, updates: Partial<StirlingFileStub>) => void;
+    ) => Promise<ChronicleFile[]>;
+    updateStub: (id: FileId, updates: Partial<ChronicleFileStub>) => void;
   },
-): Promise<StirlingFileStub[]> {
-  const out: StirlingFileStub[] = [];
+): Promise<ChronicleFileStub[]> {
+  const out: ChronicleFileStub[] = [];
   // Collect per-stub failures so we can surface ONE summarized toast at the
   // end instead of N popups (or worse, silently dropping files from the grid
   // with zero user signal as the previous code did).

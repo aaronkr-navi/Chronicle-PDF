@@ -21,7 +21,7 @@ import CompareWorkbenchView from "@app/components/tools/compare/CompareWorkbench
 import { useToolWorkflow } from "@app/contexts/ToolWorkflowContext";
 import { useNavigationActions } from "@app/contexts/NavigationContext";
 import type { FileId } from "@app/types/file";
-import type { StirlingFile } from "@app/types/fileContext";
+import type { ChronicleFile } from "@app/types/fileContext";
 import DocumentThumbnail from "@app/components/shared/filePreview/DocumentThumbnail";
 import type { CompareWorkbenchData } from "@app/types/compare";
 import { getDefaultWorkbench } from "@app/types/workbench";
@@ -74,10 +74,10 @@ const Compare = (props: BaseToolProps) => {
   useEffect(() => {
     base.params.setParameters((prev) => ({
       ...prev,
-      baseFileId: baseSlot?.stirlingFile.fileId ?? null,
-      comparisonFileId: compSlot?.stirlingFile.fileId ?? null,
+      baseFileId: baseSlot?.ChronicleFile.fileId ?? null,
+      comparisonFileId: compSlot?.ChronicleFile.fileId ?? null,
     }));
-  }, [baseSlot?.stirlingFile.fileId, compSlot?.stirlingFile.fileId]);
+  }, [baseSlot?.ChronicleFile.fileId, compSlot?.ChronicleFile.fileId]);
 
   const performClearSelected = useCallback(() => {
     try {
@@ -155,8 +155,8 @@ const Compare = (props: BaseToolProps) => {
     (
       baseId: FileId | null,
       compId: FileId | null,
-      baseFile: StirlingFile | null,
-      comparisonFile: StirlingFile | null,
+      baseFile: ChronicleFile | null,
+      comparisonFile: ChronicleFile | null,
     ) => {
       if (!baseId || !compId) return;
 
@@ -201,9 +201,9 @@ const Compare = (props: BaseToolProps) => {
         baseFileId,
         comparisonFileId,
         baseLocalFile:
-          baseSlot?.stirlingFile ?? previous?.baseLocalFile ?? null,
+          baseSlot?.ChronicleFile ?? previous?.baseLocalFile ?? null,
         comparisonLocalFile:
-          compSlot?.stirlingFile ?? previous?.comparisonLocalFile ?? null,
+          compSlot?.ChronicleFile ?? previous?.comparisonLocalFile ?? null,
         isLoading: false,
       });
       lastProcessedAtRef.current = processedAt;
@@ -217,9 +217,9 @@ const Compare = (props: BaseToolProps) => {
         baseFileId,
         comparisonFileId,
         baseLocalFile:
-          baseSlot?.stirlingFile ?? previous?.baseLocalFile ?? null,
+          baseSlot?.ChronicleFile ?? previous?.baseLocalFile ?? null,
         comparisonLocalFile:
-          compSlot?.stirlingFile ?? previous?.comparisonLocalFile ?? null,
+          compSlot?.ChronicleFile ?? previous?.comparisonLocalFile ?? null,
         isLoading: true,
       });
       return;
@@ -234,9 +234,9 @@ const Compare = (props: BaseToolProps) => {
         ...previous,
         baseFileId,
         comparisonFileId,
-        baseLocalFile: baseSlot?.stirlingFile ?? previous.baseLocalFile ?? null,
+        baseLocalFile: baseSlot?.ChronicleFile ?? previous.baseLocalFile ?? null,
         comparisonLocalFile:
-          compSlot?.stirlingFile ?? previous.comparisonLocalFile ?? null,
+          compSlot?.ChronicleFile ?? previous.comparisonLocalFile ?? null,
         isLoading: false,
       });
     }
@@ -254,18 +254,18 @@ const Compare = (props: BaseToolProps) => {
 
   const handleExecuteCompare = useCallback(async () => {
     if (!baseSlot || !compSlot) return;
-    const baseId = baseSlot.stirlingFile.fileId;
-    const compId = compSlot.stirlingFile.fileId;
-    const selected: StirlingFile[] = [
-      baseSlot.stirlingFile,
-      compSlot.stirlingFile,
+    const baseId = baseSlot.ChronicleFile.fileId;
+    const compId = compSlot.ChronicleFile.fileId;
+    const selected: ChronicleFile[] = [
+      baseSlot.ChronicleFile,
+      compSlot.ChronicleFile,
     ];
 
     prepareWorkbenchForRun(
       baseId,
       compId,
-      baseSlot.stirlingFile,
-      compSlot.stirlingFile,
+      baseSlot.ChronicleFile,
+      compSlot.ChronicleFile,
     );
     requestAnimationFrame(() => {
       navigationActions.setWorkbench(CUSTOM_WORKBENCH_ID);
@@ -291,17 +291,17 @@ const Compare = (props: BaseToolProps) => {
     setBaseSlot(newBase);
     setCompSlot(newComp);
     if (operation.result) {
-      const baseId = newBase.stirlingFile.fileId;
-      const compId = newComp.stirlingFile.fileId;
-      const selected: StirlingFile[] = [
-        newBase.stirlingFile,
-        newComp.stirlingFile,
+      const baseId = newBase.ChronicleFile.fileId;
+      const compId = newComp.ChronicleFile.fileId;
+      const selected: ChronicleFile[] = [
+        newBase.ChronicleFile,
+        newComp.ChronicleFile,
       ];
       prepareWorkbenchForRun(
         baseId,
         compId,
-        newBase.stirlingFile,
-        newComp.stirlingFile,
+        newBase.ChronicleFile,
+        newComp.ChronicleFile,
       );
       requestAnimationFrame(() => {
         navigationActions.setWorkbench(CUSTOM_WORKBENCH_ID);
@@ -438,7 +438,7 @@ const Compare = (props: BaseToolProps) => {
                   )
             }
             excludeIds={
-              otherSlot ? [otherSlot.stirlingFile.fileId as string] : []
+              otherSlot ? [otherSlot.ChronicleFile.fileId as string] : []
             }
             disabled={isDisabled}
             onSelect={(result: FileSelectorResult) => {
@@ -454,7 +454,7 @@ const Compare = (props: BaseToolProps) => {
   const canExecute = Boolean(
     baseSlot &&
     compSlot &&
-    baseSlot.stirlingFile.fileId !== compSlot.stirlingFile.fileId &&
+    baseSlot.ChronicleFile.fileId !== compSlot.ChronicleFile.fileId &&
     !base.operation.isLoading &&
     base.endpointEnabled !== false,
   );

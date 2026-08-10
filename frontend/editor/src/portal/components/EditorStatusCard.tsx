@@ -16,7 +16,7 @@ import { DownloadEditorModal } from "@portal/components/DownloadEditorModal";
 import "@portal/components/EditorStatusCard.css";
 
 /** The Chronicle brand mark, drawn at the hero size. Decorative. */
-function StirlingMark() {
+function ChronicleMark() {
   return (
     <svg
       className="portal-editor-hero__mark"
@@ -118,7 +118,7 @@ export function EditorStatusCard({ footer, hideChips }: EditorStatusCardProps) {
     >
       <div className="portal-editor-hero__row">
         <div className="portal-editor-hero__logo">
-          <StirlingMark />
+          <ChronicleMark />
         </div>
 
         <div className="portal-editor-hero__info">

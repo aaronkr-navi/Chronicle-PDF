@@ -22,12 +22,12 @@ import tools.jackson.databind.node.ObjectNode;
 @Slf4j
 @Component
 @ConditionalOnProperty(name = "mcp.enabled", havingValue = "true")
-public class StirlingUploadTool implements McpTool {
+public class ChronicleUploadTool implements McpTool {
 
     private final ObjectMapper mapper;
     private final FileStorage fileStorage;
 
-    public StirlingUploadTool(ObjectMapper mapper, FileStorage fileStorage) {
+    public ChronicleUploadTool(ObjectMapper mapper, FileStorage fileStorage) {
         this.mapper = mapper;
         this.fileStorage = fileStorage;
     }

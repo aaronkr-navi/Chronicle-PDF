@@ -3,7 +3,7 @@ import { fileOpenService } from "@app/services/fileOpenService";
 import { fileStorage } from "@app/services/fileStorage";
 import { materializeServerStubs } from "@app/services/fileSyncService";
 import { useFileActions } from "@app/contexts/file/fileHooks";
-import { StirlingFileStub } from "@app/types/fileContext";
+import { ChronicleFileStub } from "@app/types/fileContext";
 import { FileId } from "@app/types/file";
 
 /**
@@ -30,9 +30,9 @@ export function useOpenWindowFiles() {
 
       const stubs = (
         await Promise.all(
-          fileIds.map((id) => fileStorage.getStirlingFileStub(id as FileId)),
+          fileIds.map((id) => fileStorage.getChronicleFileStub(id as FileId)),
         )
-      ).filter((s): s is StirlingFileStub => Boolean(s));
+      ).filter((s): s is ChronicleFileStub => Boolean(s));
 
       if (stubs.length === 0) {
         console.warn(
@@ -45,11 +45,11 @@ export function useOpenWindowFiles() {
       // Download + ingest any server-only stubs first; local stubs pass through.
       const materialized = await materializeServerStubs(stubs, {
         addFiles: actions.addFilesWithOptions,
-        updateStub: actions.updateStirlingFileStub,
+        updateStub: actions.updateChronicleFileStub,
       });
 
       if (materialized.length > 0) {
-        await actions.addStirlingFileStubs(materialized, { selectFiles: true });
+        await actions.addChronicleFileStubs(materialized, { selectFiles: true });
         console.log(
           `[Desktop] Opened ${materialized.length} stored file(s) in new window`,
         );

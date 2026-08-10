@@ -15,7 +15,7 @@ import { detectFileExtension } from "@app/utils/fileUtils";
 import FileEditorThumbnail from "@app/components/fileEditor/FileEditorThumbnail";
 import AddFileCard from "@app/components/fileEditor/AddFileCard";
 import FilePickerModal from "@app/components/shared/FilePickerModal";
-import { FileId, StirlingFile } from "@app/types/fileContext";
+import { FileId, ChronicleFile } from "@app/types/fileContext";
 import { alert } from "@app/components/toast";
 import { downloadFileWithPolicy as downloadFile } from "@app/services/exportWithPolicy";
 import { useToolWorkflow } from "@app/contexts/ToolWorkflowContext";
@@ -26,7 +26,7 @@ const EMPTY_POLICIES: FileItemPolicyRef[] = [];
 
 interface FileEditorProps {
   onOpenPageEditor?: () => void;
-  onMergeFiles?: (files: StirlingFile[]) => void;
+  onMergeFiles?: (files: ChronicleFile[]) => void;
   toolMode?: boolean;
   supportedExtensions?: string[];
 }
@@ -53,16 +53,16 @@ const FileEditor = ({
   const { selectedFileIds, setSelectedFiles } = useFileSelection();
 
   // Extract needed values from state (memoized to prevent infinite loops)
-  const activeStirlingFileStubs = useMemo(
-    () => selectors.getStirlingFileStubs(),
+  const activeChronicleFileStubs = useMemo(
+    () => selectors.getChronicleFileStubs(),
     [state.files.byId, state.files.ids],
   );
 
   // Always-current refs so callbacks can read the latest stubs/selection without
   // closing over them as deps — prevents every callback from regenerating whenever
   // any stub changes (e.g. thumbnail load), which would bust React.memo on every thumbnail.
-  const stubsRef = useRef(activeStirlingFileStubs);
-  stubsRef.current = activeStirlingFileStubs;
+  const stubsRef = useRef(activeChronicleFileStubs);
+  stubsRef.current = activeChronicleFileStubs;
   const selectedFileIdsRef = useRef(selectedFileIds);
   selectedFileIdsRef.current = selectedFileIds;
 
@@ -127,7 +127,7 @@ const FileEditor = ({
           // After auto-selection, enforce maxAllowed if needed
           if (Number.isFinite(maxAllowed)) {
             const nowSelectedIds = selectors
-              .getSelectedStirlingFileStubs()
+              .getSelectedChronicleFileStubs()
               .map((r) => r.id);
             if (nowSelectedIds.length > maxAllowed) {
               setSelectedFiles(nowSelectedIds.slice(-maxAllowed));
@@ -269,7 +269,7 @@ const FileEditor = ({
         // Mark file as clean after successful save to disk
         if (result.savedPath) {
           console.log("[FileEditor] Marking file as clean:", fileId);
-          fileActions.updateStirlingFileStub(fileId, {
+          fileActions.updateChronicleFileStub(fileId, {
             localFilePath: record.localFilePath ?? result.savedPath,
             isDirty: false,
           });
@@ -298,7 +298,7 @@ const FileEditor = ({
 
           if (result.success && result.extractedStubs.length > 0) {
             // Add extracted file stubs to FileContext
-            await fileActions.addStirlingFileStubs(result.extractedStubs);
+            await fileActions.addChronicleFileStubs(result.extractedStubs);
 
             // Remove the original ZIP file
             removeFiles([fileId], false);
@@ -374,7 +374,7 @@ const FileEditor = ({
         <LoadingOverlay visible={state.ui.isProcessing} />
 
         <Box p="md">
-          {activeStirlingFileStubs.length === 0 ? (
+          {activeChronicleFileStubs.length === 0 ? (
             <Center h="60vh">
               <AddFileCard onFileSelect={handleFileUpload} />
             </Center>
@@ -389,20 +389,20 @@ const FileEditor = ({
               }}
             >
               {/* Add File Card - only show when files exist */}
-              {activeStirlingFileStubs.length > 0 && (
+              {activeChronicleFileStubs.length > 0 && (
                 <AddFileCard
                   key="add-file-card"
                   onFileSelect={handleFileUpload}
                 />
               )}
 
-              {activeStirlingFileStubs.map((record, index) => {
+              {activeChronicleFileStubs.map((record, index) => {
                 return (
                   <FileEditorThumbnail
                     key={record.id}
                     file={record}
                     index={index}
-                    totalFiles={activeStirlingFileStubs.length}
+                    totalFiles={activeChronicleFileStubs.length}
                     onCloseFile={handleCloseFile}
                     onViewFile={handleViewFile}
                     onReorderFiles={handleReorderFiles}

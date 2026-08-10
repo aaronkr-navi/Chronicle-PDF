@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import {
   legacyDerivedFromTool,
-  type StoredStirlingFileRecord,
+  type StoredChronicleFileRecord,
 } from "@app/services/fileStorage";
 import type { FileId } from "@app/types/file";
 
@@ -11,8 +11,8 @@ import type { FileId } from "@app/types/file";
  * helper only governs pre-upgrade records.
  */
 function record(
-  overrides: Partial<StoredStirlingFileRecord>,
-): StoredStirlingFileRecord {
+  overrides: Partial<StoredChronicleFileRecord>,
+): StoredChronicleFileRecord {
   return {
     id: "f" as FileId,
     fileId: "f" as FileId,
@@ -26,7 +26,7 @@ function record(
     versionNumber: 1,
     data: new ArrayBuffer(0),
     ...overrides,
-  } as StoredStirlingFileRecord;
+  } as StoredChronicleFileRecord;
 }
 
 describe("legacyDerivedFromTool — IndexedDB backfill for pre-upgrade files", () => {

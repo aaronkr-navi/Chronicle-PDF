@@ -1,4 +1,4 @@
-import { StirlingFileStub } from "@app/types/fileContext";
+import { ChronicleFileStub } from "@app/types/fileContext";
 import { fileOpenService } from "@app/services/fileOpenService";
 import { useMultiWindowSupported } from "@app/hooks/useMultiWindowSupported";
 import type { OpenInNewWindowApi } from "@core/extensions/openInNewWindow";
@@ -13,9 +13,9 @@ export function useOpenInNewWindow(): OpenInNewWindowApi {
   const supported = useMultiWindowSupported();
 
   return {
-    canOpenInNewWindow: (file: StirlingFileStub) =>
+    canOpenInNewWindow: (file: ChronicleFileStub) =>
       supported && Boolean(file.id),
-    openInNewWindow: (file: StirlingFileStub) => {
+    openInNewWindow: (file: ChronicleFileStub) => {
       if (file.id) {
         fileOpenService.openFilesInNewWindow([file.id]);
       }

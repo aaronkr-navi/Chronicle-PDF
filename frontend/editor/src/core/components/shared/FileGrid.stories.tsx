@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import FileGrid from "@app/components/shared/FileGrid";
 import { FileContextProvider } from "@app/contexts/FileContext";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import type { FileId } from "@app/types/file";
 
 /**
@@ -29,8 +29,8 @@ const buildFile = (name: string, size: number, type: string): File => {
 
 const buildRecord = (
   id: string,
-  overrides: Partial<StirlingFileStub> = {},
-): StirlingFileStub => ({
+  overrides: Partial<ChronicleFileStub> = {},
+): ChronicleFileStub => ({
   id: id as FileId,
   name: overrides.name ?? "report.pdf",
   type: overrides.type ?? "application/pdf",

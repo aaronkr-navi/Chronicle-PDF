@@ -2,7 +2,7 @@ import JSZip from "jszip";
 
 import { fileStorage } from "@app/services/fileStorage";
 import type { FileId, ToolOperation } from "@app/types/file";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 
 interface ShareBundleEntry {
   logicalId: string;
@@ -60,7 +60,7 @@ export async function buildHistoryBundle(
 
   for (const chain of allStubs) {
     for (const stub of chain.stubs) {
-      const file = await fileStorage.getStirlingFile(stub.id);
+      const file = await fileStorage.getChronicleFile(stub.id);
       if (!file) {
         throw new Error(`Missing file data for ${stub.name || stub.id}`);
       }
@@ -112,7 +112,7 @@ export async function buildHistoryBundle(
   return { bundleFile, manifest };
 }
 
-export async function buildSharePackage(stubs: StirlingFileStub[]): Promise<{
+export async function buildSharePackage(stubs: ChronicleFileStub[]): Promise<{
   bundleFile: File;
   manifest: ShareBundleManifest;
 }> {
@@ -124,7 +124,7 @@ export async function buildSharePackage(stubs: StirlingFileStub[]): Promise<{
   const entries: ShareBundleEntry[] = [];
 
   for (const stub of stubs) {
-    const file = await fileStorage.getStirlingFile(stub.id as FileId);
+    const file = await fileStorage.getChronicleFile(stub.id as FileId);
     if (!file) {
       throw new Error(`Missing file data for ${stub.name || stub.id}`);
     }

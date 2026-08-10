@@ -12,7 +12,7 @@ import {
   useNavigationActions,
   useNavigationState,
 } from "@app/contexts/NavigationContext";
-import { StirlingFileStub } from "@app/types/fileContext";
+import { ChronicleFileStub } from "@app/types/fileContext";
 import type { FileId } from "@app/types/file";
 import { fileStorage } from "@app/services/fileStorage";
 import apiClient from "@app/services/apiClient";
@@ -36,7 +36,7 @@ interface FilesModalContextType {
   closeFilesModal: () => void;
   maxSelectable: number | null;
   onFileUpload: (files: File[]) => void;
-  onRecentFileSelect: (stirlingFileStubs: StirlingFileStub[]) => void;
+  onRecentFileSelect: (ChronicleFileStubs: ChronicleFileStub[]) => void;
   onModalClose?: () => void;
   setOnModalClose: (callback: () => void) => void;
 }
@@ -79,7 +79,7 @@ export const FilesModalProvider: React.FC<{ children: React.ReactNode }> = ({
       if (bundle) {
         const { manifest, rootOrder, sortedEntries, files } = bundle;
 
-        const stirlingFiles = await actions.addFilesWithOptions(files, {
+        const ChronicleFiles = await actions.addFilesWithOptions(files, {
           selectFiles: false,
           autoUnzip: false,
           skipAutoUnzip: false,
@@ -87,10 +87,10 @@ export const FilesModalProvider: React.FC<{ children: React.ReactNode }> = ({
         });
 
         const idMap = new Map<string, FileId>();
-        for (let i = 0; i < stirlingFiles.length; i += 1) {
+        for (let i = 0; i < ChronicleFiles.length; i += 1) {
           idMap.set(
             sortedEntries[i].logicalId,
-            stirlingFiles[i].fileId as FileId,
+            ChronicleFiles[i].fileId as FileId,
           );
         }
 
@@ -126,7 +126,7 @@ export const FilesModalProvider: React.FC<{ children: React.ReactNode }> = ({
             remoteSharedViaLink,
             remoteShareToken,
           };
-          actions.updateStirlingFileStub(newId, updates);
+          actions.updateChronicleFileStub(newId, updates);
           await fileStorage.updateFileMetadata(newId, updates);
         }
 
@@ -151,13 +151,13 @@ export const FilesModalProvider: React.FC<{ children: React.ReactNode }> = ({
       const file = new File([blob], filename, {
         type: contentType || blob.type,
       });
-      const stirlingFiles = await actions.addFilesWithOptions([file], {
+      const ChronicleFiles = await actions.addFilesWithOptions([file], {
         selectFiles: false,
         autoUnzip: false,
         skipAutoUnzip: false,
         allowDuplicates: true,
       });
-      const fileId = stirlingFiles[0]?.fileId as FileId | undefined;
+      const fileId = ChronicleFiles[0]?.fileId as FileId | undefined;
       if (fileId && remoteStorageId) {
         const remoteUpdatedAt = remoteStorageUpdatedAt ?? Date.now();
         const updates = {
@@ -168,7 +168,7 @@ export const FilesModalProvider: React.FC<{ children: React.ReactNode }> = ({
           remoteSharedViaLink,
           remoteShareToken,
         };
-        actions.updateStirlingFileStub(fileId, updates);
+        actions.updateChronicleFileStub(fileId, updates);
         await fileStorage.updateFileMetadata(fileId, updates);
       }
       return fileId ? [fileId] : [];
@@ -253,7 +253,7 @@ export const FilesModalProvider: React.FC<{ children: React.ReactNode }> = ({
           .filter((id): id is FileId => Boolean(id));
         if (ids.length > 0) {
           const currentSelected = fileCtx.selectors
-            .getSelectedStirlingFileStubs()
+            .getSelectedChronicleFileStubs()
             .map((s) => s.id);
           const nextSelection = Array.from(
             new Set([...currentSelected, ...ids]),
@@ -280,14 +280,14 @@ export const FilesModalProvider: React.FC<{ children: React.ReactNode }> = ({
   );
 
   const handleRecentFileSelect = useCallback(
-    async (stirlingFileStubs: StirlingFileStub[]) => {
-      const serverOnlyStubs = stirlingFileStubs.filter(
+    async (ChronicleFileStubs: ChronicleFileStub[]) => {
+      const serverOnlyStubs = ChronicleFileStubs.filter(
         (stub) => stub.remoteStorageId && stub.id.startsWith("server-"),
       );
-      const sharedLinkStubs = stirlingFileStubs.filter(
+      const sharedLinkStubs = ChronicleFileStubs.filter(
         (stub) => stub.remoteShareToken,
       );
-      const localStubs = stirlingFileStubs.filter(
+      const localStubs = ChronicleFileStubs.filter(
         (stub) =>
           !serverOnlyStubs.includes(stub) && !sharedLinkStubs.includes(stub),
       );
@@ -296,9 +296,9 @@ export const FilesModalProvider: React.FC<{ children: React.ReactNode }> = ({
         try {
           const loadedFiles: File[] = [];
           for (const stub of localStubs) {
-            const stirlingFile = await fileStorage.getStirlingFile(stub.id);
-            if (stirlingFile) {
-              loadedFiles.push(stirlingFile);
+            const ChronicleFile = await fileStorage.getChronicleFile(stub.id);
+            if (ChronicleFile) {
+              loadedFiles.push(ChronicleFile);
             }
           }
           for (const stub of serverOnlyStubs) {
@@ -390,33 +390,33 @@ export const FilesModalProvider: React.FC<{ children: React.ReactNode }> = ({
         });
       }
 
-      if (actions.addStirlingFileStubs) {
-        await actions.addStirlingFileStubs(localStubs, { selectFiles: false });
+      if (actions.addChronicleFileStubs) {
+        await actions.addChronicleFileStubs(localStubs, { selectFiles: false });
         // Union newly picked files with the current selection so tools like
         // Compare that depend on multi-file selection don't lose existing
         // selections when the user picks an additional file from the modal.
         const requestedIds = localStubs.map((s) => s.id);
         const currentSelected = fileCtx.selectors
-          .getSelectedStirlingFileStubs()
+          .getSelectedChronicleFileStubs()
           .map((s) => s.id);
         const nextSelection = Array.from(
           new Set([...currentSelected, ...requestedIds, ...selectedFromServer]),
         );
         actions.setSelectedFiles(nextSelection);
       } else {
-        console.error("addStirlingFileStubs action not available");
+        console.error("addChronicleFileStubs action not available");
       }
 
       // Stay in multi-tool; otherwise single file → viewer, multiple → active files
       if (!isMultiTool) {
-        const totalAdded = stirlingFileStubs.length;
+        const totalAdded = ChronicleFileStubs.length;
         navActions.setWorkbench(totalAdded === 1 ? "viewer" : "fileEditor");
       }
 
       closeFilesModal();
     },
     [
-      actions.addStirlingFileStubs,
+      actions.addChronicleFileStubs,
       actions,
       closeFilesModal,
       customHandler,

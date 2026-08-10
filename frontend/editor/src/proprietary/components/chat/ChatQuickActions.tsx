@@ -14,7 +14,7 @@ import UploadFileIcon from "@mui/icons-material/UploadFile";
 import { useAllFiles, useFileActions } from "@app/contexts/FileContext";
 import { useFilesModalContext } from "@app/contexts/FilesModalContext";
 import { detectFileExtension, isPdfFile } from "@app/utils/fileUtils";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 
 const MAX_FILE_PILLS = 3;
 
@@ -74,9 +74,9 @@ function WorkbenchFilePills({
   moreLabel,
   removeLabel,
 }: {
-  stubs: StirlingFileStub[];
+  stubs: ChronicleFileStub[];
   onOpenFilesModal: () => void;
-  onRemove: (id: StirlingFileStub["id"]) => void;
+  onRemove: (id: ChronicleFileStub["id"]) => void;
   moreLabel: (count: number) => string;
   removeLabel: (name: string) => string;
 }) {
@@ -128,7 +128,7 @@ interface WorkbenchSummary {
   typeBreakdown: { label: string; count: number }[];
 }
 
-function summariseWorkbench(stubs: StirlingFileStub[]): WorkbenchSummary {
+function summariseWorkbench(stubs: ChronicleFileStub[]): WorkbenchSummary {
   const counts = new Map<string, number>();
   let pdfCount = 0;
   let nonPdfCount = 0;

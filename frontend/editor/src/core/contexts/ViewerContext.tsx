@@ -10,7 +10,7 @@ import React, {
 } from "react";
 import { useNavigation } from "@app/contexts/NavigationContext";
 import { useFileState } from "@app/contexts/FileContext";
-import { isStirlingFile } from "@app/types/fileContext";
+import { isChronicleFile } from "@app/types/fileContext";
 import type { FileId } from "@app/types/file";
 import { enforceExportPolicies } from "@app/services/policyExport";
 import { useTranslation } from "react-i18next";
@@ -267,7 +267,7 @@ export const ViewerProvider: React.FC<ViewerProviderProps> = ({ children }) => {
     (index: number) => {
       const files = selectors.getFiles();
       const file = files[index];
-      if (file && isStirlingFile(file)) setActiveFileId(file.fileId);
+      if (file && isChronicleFile(file)) setActiveFileId(file.fileId);
     },
     [selectors],
   );

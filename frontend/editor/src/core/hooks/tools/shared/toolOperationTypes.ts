@@ -1,5 +1,5 @@
 import { lazy, type ComponentType } from "react";
-import { StirlingFile } from "@app/types/fileContext";
+import { ChronicleFile } from "@app/types/fileContext";
 import type { ResponseHandler } from "@app/utils/toolResponseProcessor";
 import { ToolId } from "@app/types/toolId";
 import type { ProcessingProgress } from "@app/hooks/tools/shared/useToolState";
@@ -328,7 +328,7 @@ export interface ToolOperationHook<TParams = void> {
   // Actions
   executeOperation: (
     params: TParams,
-    selectedFiles: StirlingFile[],
+    selectedFiles: ChronicleFile[],
   ) => Promise<void>;
   resetResults: () => void;
   clearError: () => void;

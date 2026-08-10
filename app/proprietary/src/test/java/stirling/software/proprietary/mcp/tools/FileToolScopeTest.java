@@ -29,7 +29,7 @@ class FileToolScopeTest {
 
     @Test
     void upload_withoutWriteScope_isRefused() {
-        StirlingUploadTool tool = new StirlingUploadTool(mapper, mock(FileStorage.class));
+        ChronicleUploadTool tool = new ChronicleUploadTool(mapper, mock(FileStorage.class));
         ObjectNode args = mapper.createObjectNode();
         args.put("file", "YWJj");
 
@@ -41,8 +41,8 @@ class FileToolScopeTest {
 
     @Test
     void download_withoutReadScope_isRefused() {
-        StirlingDownloadTool tool =
-                new StirlingDownloadTool(
+        ChronicleDownloadTool tool =
+                new ChronicleDownloadTool(
                         mapper, mock(FileStorage.class), new ApplicationProperties());
         ObjectNode args = mapper.createObjectNode();
         args.put("fileId", "abc");

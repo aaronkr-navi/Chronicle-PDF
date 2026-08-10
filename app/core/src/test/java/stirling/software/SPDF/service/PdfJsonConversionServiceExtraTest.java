@@ -740,7 +740,7 @@ class PdfJsonConversionServiceExtraTest {
             // Resources dictionary is created once the content stream sets a font above.
             page.getResources()
                     .getCOSObject()
-                    .setItem(org.apache.pdfbox.cos.COSName.getPDFName("StirlingExtra"), custom);
+                    .setItem(org.apache.pdfbox.cos.COSName.getPDFName("ChronicleExtra"), custom);
 
             return toBytes(document);
         }

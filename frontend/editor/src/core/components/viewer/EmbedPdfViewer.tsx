@@ -32,8 +32,8 @@ import type {
   SignaturePreview,
   SignatureOverlayAPI,
 } from "@app/components/viewer/viewerTypes";
-import { createStirlingFilesAndStubs } from "@app/services/fileStubHelpers";
-import { isStirlingFile, getFormFillFileId } from "@app/types/fileContext";
+import { createChronicleFilesAndStubs } from "@app/services/fileStubHelpers";
+import { isChronicleFile, getFormFillFileId } from "@app/types/fileContext";
 import { useViewerWorkbenchBarButtons } from "@app/components/viewer/useViewerWorkbenchBarButtons";
 import { StampPlacementOverlay } from "@app/components/viewer/StampPlacementOverlay";
 import {
@@ -365,7 +365,7 @@ const EmbedPdfViewerContent = ({
     } else if (activeFiles.length > 0) {
       const byId = activeFileId
         ? activeFiles.find(
-            (f) => isStirlingFile(f) && f.fileId === activeFileId,
+            (f) => isChronicleFile(f) && f.fileId === activeFileId,
           )
         : null;
       return byId || activeFiles[0];
@@ -375,7 +375,7 @@ const EmbedPdfViewerContent = ({
 
   // Stable id — avoids blob URL churn when FileContext recreates file objects each render.
   const currentFileStableId =
-    currentFile && isStirlingFile(currentFile) ? currentFile.fileId : null;
+    currentFile && isChronicleFile(currentFile) ? currentFile.fileId : null;
   const fileWithUrl = useFileWithUrl(currentFile, currentFileStableId);
 
   // Determine the effective file to display
@@ -393,13 +393,13 @@ const EmbedPdfViewerContent = ({
 
   // Check if the current file is encrypted (gate the viewer to prevent PDFium crash)
   const isCurrentFileEncrypted = React.useMemo(() => {
-    if (!currentFile || !isStirlingFile(currentFile)) return false;
-    const stub = selectors.getStirlingFileStub(currentFile.fileId);
+    if (!currentFile || !isChronicleFile(currentFile)) return false;
+    const stub = selectors.getChronicleFileStub(currentFile.fileId);
     return stub?.processedFile?.isEncrypted === true;
   }, [currentFile, selectors]);
 
   const bookmarkCacheKey = React.useMemo(() => {
-    if (currentFile && isStirlingFile(currentFile)) {
+    if (currentFile && isChronicleFile(currentFile)) {
       return currentFile.fileId;
     }
 
@@ -428,7 +428,7 @@ const EmbedPdfViewerContent = ({
 
     return activeFiles
       .map((file) => {
-        if (isStirlingFile(file)) {
+        if (isChronicleFile(file)) {
           return file.fileId;
         }
         return undefined;
@@ -721,15 +721,15 @@ const EmbedPdfViewerContent = ({
       const filename = currentFile.name || "document.pdf";
       const file = new File([blob], filename, { type: "application/pdf" });
 
-      // Step 3: Create StirlingFiles and stubs for version history
+      // Step 3: Create ChronicleFiles and stubs for version history
       // Only consume the current file, not all active files
       const currentFileId = currentFileStableId;
       if (!currentFileId) throw new Error("Current file ID not found");
 
-      const parentStub = selectors.getStirlingFileStub(currentFileId);
+      const parentStub = selectors.getChronicleFileStub(currentFileId);
       if (!parentStub) throw new Error("Parent stub not found");
 
-      const { stirlingFiles, stubs } = await createStirlingFilesAndStubs(
+      const { ChronicleFiles, stubs } = await createChronicleFilesAndStubs(
         [file],
         parentStub,
         selectedTool ?? "multiTool",
@@ -747,7 +747,7 @@ const EmbedPdfViewerContent = ({
       if (newFileId) setActiveFileId(newFileId);
 
       // Step 4: Consume only the current file (replace in context)
-      await actions.consumeFiles([currentFileId], stirlingFiles, stubs);
+      await actions.consumeFiles([currentFileId], ChronicleFiles, stubs);
 
       // Mark annotations as saved so navigation away from the viewer is allowed.
       savedAnnotationHistoryApiRef.current = historyApiRef.current;
@@ -819,11 +819,11 @@ const EmbedPdfViewerContent = ({
         const currentFileId = currentFileStableId;
         if (!currentFileId) throw new Error("Current file ID not found");
 
-        const parentStub = selectors.getStirlingFileStub(currentFileId);
+        const parentStub = selectors.getChronicleFileStub(currentFileId);
         if (!parentStub) throw new Error("Parent stub not found");
 
-        // Create StirlingFiles and stubs for version history
-        const { stirlingFiles, stubs } = await createStirlingFilesAndStubs(
+        // Create ChronicleFiles and stubs for version history
+        const { ChronicleFiles, stubs } = await createChronicleFilesAndStubs(
           [file],
           parentStub,
           selectedTool ?? "multiTool",
@@ -842,7 +842,7 @@ const EmbedPdfViewerContent = ({
         if (newFileId) setActiveFileId(newFileId);
 
         // Replace the current file in context
-        await actions.consumeFiles([currentFileId], stirlingFiles, stubs);
+        await actions.consumeFiles([currentFileId], ChronicleFiles, stubs);
 
         console.log("[Viewer] Form fill changes applied successfully");
       } catch (error) {
@@ -892,10 +892,10 @@ const EmbedPdfViewerContent = ({
         const currentFileId = currentFileStableId;
         if (!currentFileId) throw new Error("Current file ID not found");
 
-        const parentStub = selectors.getStirlingFileStub(currentFileId);
+        const parentStub = selectors.getChronicleFileStub(currentFileId);
         if (!parentStub) throw new Error("Parent stub not found");
 
-        const { stirlingFiles, stubs } = await createStirlingFilesAndStubs(
+        const { ChronicleFiles, stubs } = await createChronicleFilesAndStubs(
           [file],
           parentStub,
           selectedTool ?? "multiTool",
@@ -909,7 +909,7 @@ const EmbedPdfViewerContent = ({
         const newFileId = stubs[0]?.id;
         if (newFileId) setActiveFileId(newFileId);
 
-        await actions.consumeFiles([currentFileId], stirlingFiles, stubs);
+        await actions.consumeFiles([currentFileId], ChronicleFiles, stubs);
       } catch (error) {
         console.error("[Viewer] Apply layer changes failed:", error);
       } finally {
@@ -956,14 +956,14 @@ const EmbedPdfViewerContent = ({
       const filename = currentFile.name || "document.pdf";
       const file = new File([blob], filename, { type: "application/pdf" });
 
-      // Create StirlingFiles and stubs for version history
+      // Create ChronicleFiles and stubs for version history
       const currentFileId = currentFileStableId;
       if (!currentFileId) throw new Error("Current file ID not found");
 
-      const parentStub = selectors.getStirlingFileStub(currentFileId);
+      const parentStub = selectors.getChronicleFileStub(currentFileId);
       if (!parentStub) throw new Error("Parent stub not found");
 
-      const { stirlingFiles, stubs } = await createStirlingFilesAndStubs(
+      const { ChronicleFiles, stubs } = await createChronicleFilesAndStubs(
         [file],
         parentStub,
         selectedTool ?? "multiTool",
@@ -976,7 +976,7 @@ const EmbedPdfViewerContent = ({
       rotationRestoreAttemptsRef.current = 0;
 
       // Consume only the current file (replace in context)
-      await actions.consumeFiles([currentFileId], stirlingFiles, stubs);
+      await actions.consumeFiles([currentFileId], ChronicleFiles, stubs);
 
       // Clear flags
       hasAnnotationChangesRef.current = false;
@@ -1275,7 +1275,7 @@ const EmbedPdfViewerContent = ({
             </Text>
             <Button
               onClick={() => {
-                if (currentFile && isStirlingFile(currentFile)) {
+                if (currentFile && isChronicleFile(currentFile)) {
                   actions.openEncryptedUnlockPrompt(currentFile.fileId);
                 }
               }}
@@ -1307,7 +1307,7 @@ const EmbedPdfViewerContent = ({
               fileName={
                 previewFile
                   ? previewFile.name
-                  : currentFile && isStirlingFile(currentFile)
+                  : currentFile && isChronicleFile(currentFile)
                     ? currentFile.name
                     : effectiveFile?.file instanceof File
                       ? effectiveFile.file.name

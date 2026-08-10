@@ -7,11 +7,11 @@
  * - "shared-with-me" - opened from a share link / not owned by current user
  */
 
-import { StirlingFileStub } from "@app/types/fileContext";
+import { ChronicleFileStub } from "@app/types/fileContext";
 
 export type FileOrigin = "local" | "cloud" | "shared-with-me";
 
-export function getFileOrigin(file: StirlingFileStub): FileOrigin {
+export function getFileOrigin(file: ChronicleFileStub): FileOrigin {
   if (file.remoteSharedViaLink || file.remoteOwnedByCurrentUser === false) {
     return "shared-with-me";
   }

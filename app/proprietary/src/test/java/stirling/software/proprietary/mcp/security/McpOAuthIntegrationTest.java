@@ -37,11 +37,11 @@ import com.nimbusds.jwt.SignedJWT;
 import Chronicle.software.common.model.ApplicationProperties;
 import Chronicle.software.proprietary.mcp.McpServerController;
 import Chronicle.software.proprietary.mcp.tools.DescribeOperationTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingAiTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingConvertTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingMiscTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingPagesTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingSecurityTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleAiTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleConvertTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleMiscTool;
+import Chronicle.software.proprietary.mcp.tools.ChroniclePagesTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleSecurityTool;
 import Chronicle.software.proprietary.security.service.UserService;
 
 import okhttp3.mockwebserver.Dispatcher;
@@ -161,7 +161,7 @@ class McpOAuthIntegrationTest {
     }
 
     @Test
-    void validTokenButNoStirlingAccount_isRejectedWith403() throws Exception {
+    void validTokenButNoChronicleAccount_isRejectedWith403() throws Exception {
         // 'ghost-user' is not provisioned, so account-binding rejects an otherwise-valid token.
         String token =
                 mintToken(
@@ -316,11 +316,11 @@ class McpOAuthIntegrationTest {
         McpSecurityConfig.class,
         McpServerController.class,
         DescribeOperationTool.class,
-        StirlingConvertTool.class,
-        StirlingPagesTool.class,
-        StirlingMiscTool.class,
-        StirlingSecurityTool.class,
-        StirlingAiTool.class
+        ChronicleConvertTool.class,
+        ChroniclePagesTool.class,
+        ChronicleMiscTool.class,
+        ChronicleSecurityTool.class,
+        ChronicleAiTool.class
     })
     static class TestApp {
 

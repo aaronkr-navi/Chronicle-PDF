@@ -10,12 +10,12 @@ import {
   ToolWorkflowTitle,
   ToolWorkflowTitleProps,
 } from "@app/components/tools/shared/ToolWorkflowTitle";
-import { StirlingFile } from "@app/types/fileContext";
+import { ChronicleFile } from "@app/types/fileContext";
 import type { TooltipTip } from "@app/types/tips";
 import type { ExecuteDisabledReason } from "@app/hooks/tools/shared/toolOperationTypes";
 
 export interface FilesStepConfig {
-  selectedFiles: StirlingFile[];
+  selectedFiles: ChronicleFile[];
   isCollapsed?: boolean;
   minFiles?: number;
   onCollapsedClick?: () => void;

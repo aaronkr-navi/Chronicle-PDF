@@ -1,10 +1,10 @@
 import { Tooltip } from "@mantine/core";
 import { useTranslation } from "react-i18next";
-import { StirlingFileStub } from "@app/types/fileContext";
+import { ChronicleFileStub } from "@app/types/fileContext";
 import styles from "@app/components/fileEditor/FileEditorThumbnail.module.css";
 
 interface FileEditorStatusDotProps {
-  file: StirlingFileStub;
+  file: ChronicleFileStub;
 }
 
 export function FileEditorStatusDot({ file }: FileEditorStatusDotProps) {

@@ -47,7 +47,7 @@ class CategoryToolDispatchTest {
         return executor;
     }
 
-    private StirlingMiscTool toolWith(McpOperationExecutor executor) {
+    private ChronicleMiscTool toolWith(McpOperationExecutor executor) {
         OperationMeta meta = miscOp();
         McpToolCatalog catalog = mock(McpToolCatalog.class);
         when(catalog.findByOperationId("compress-pdf")).thenReturn(Optional.of(meta));
@@ -58,7 +58,7 @@ class CategoryToolDispatchTest {
         @SuppressWarnings("unchecked")
         ObjectProvider<McpOperationExecutor> executorProvider = mock(ObjectProvider.class);
         when(executorProvider.getIfAvailable()).thenReturn(executor);
-        return new StirlingMiscTool(mapper, catalogProvider, executorProvider);
+        return new ChronicleMiscTool(mapper, catalogProvider, executorProvider);
     }
 
     private ObjectNode args(String op) {
@@ -76,7 +76,7 @@ class CategoryToolDispatchTest {
     @Test
     void validOpWithScope_delegatesToExecutor() {
         ObjectNode sentinel = McpResponses.text(mapper, "EXECUTED");
-        StirlingMiscTool tool = toolWith(executorReturning(sentinel));
+        ChronicleMiscTool tool = toolWith(executorReturning(sentinel));
         McpCallContext ctx = new McpCallContext("user", Set.of("mcp.tools.write"), true);
 
         ObjectNode result = tool.call(args("compress-pdf"), ctx);
@@ -86,7 +86,7 @@ class CategoryToolDispatchTest {
 
     @Test
     void unknownOperation_returnsAvailableOperationList() {
-        StirlingMiscTool tool = toolWith(executorReturning(mapper.createObjectNode()));
+        ChronicleMiscTool tool = toolWith(executorReturning(mapper.createObjectNode()));
         McpCallContext ctx = new McpCallContext("user", Set.of("mcp.tools.write"), true);
 
         ObjectNode result = tool.call(args("does-not-exist"), ctx);
@@ -99,7 +99,7 @@ class CategoryToolDispatchTest {
 
     @Test
     void missingOperation_returnsAvailableOperationList() {
-        StirlingMiscTool tool = toolWith(executorReturning(mapper.createObjectNode()));
+        ChronicleMiscTool tool = toolWith(executorReturning(mapper.createObjectNode()));
         McpCallContext ctx = new McpCallContext("user", Set.of("mcp.tools.write"), true);
 
         ObjectNode result = tool.call(args(null), ctx);
@@ -110,7 +110,7 @@ class CategoryToolDispatchTest {
 
     @Test
     void missingScope_returnsScopeError() {
-        StirlingMiscTool tool = toolWith(executorReturning(mapper.createObjectNode()));
+        ChronicleMiscTool tool = toolWith(executorReturning(mapper.createObjectNode()));
         McpCallContext ctx = new McpCallContext("user", Set.of("mcp.tools.read"), true);
 
         ObjectNode result = tool.call(args("compress-pdf"), ctx);

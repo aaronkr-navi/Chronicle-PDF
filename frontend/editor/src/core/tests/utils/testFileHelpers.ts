@@ -1,29 +1,29 @@
 /**
- * Test utilities for creating StirlingFile objects in tests
+ * Test utilities for creating ChronicleFile objects in tests
  */
 
-import { StirlingFile, createStirlingFile } from "@app/types/fileContext";
+import { ChronicleFile, createChronicleFile } from "@app/types/fileContext";
 
 /**
- * Create a StirlingFile object for testing purposes
+ * Create a ChronicleFile object for testing purposes
  */
-export function createTestStirlingFile(
+export function createTestChronicleFile(
   name: string,
   content: string = "test content",
   type: string = "application/pdf",
-): StirlingFile {
+): ChronicleFile {
   const file = new File([content], name, { type });
-  return createStirlingFile(file);
+  return createChronicleFile(file);
 }
 
 /**
- * Create multiple StirlingFile objects for testing
+ * Create multiple ChronicleFile objects for testing
  */
 export function createTestFilesWithId(
   files: Array<{ name: string; content?: string; type?: string }>,
-): StirlingFile[] {
+): ChronicleFile[] {
   return files.map(
     ({ name, content = "test content", type = "application/pdf" }) =>
-      createTestStirlingFile(name, content, type),
+      createTestChronicleFile(name, content, type),
   );
 }

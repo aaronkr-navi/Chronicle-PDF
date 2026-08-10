@@ -13,19 +13,19 @@ const mocks = vi.hoisted(() => ({
   consumeFiles: vi.fn(),
   bumpRevision: vi.fn(),
   persistVersionedOutputs: vi.fn(),
-  getStirlingFile: vi.fn(),
-  getStirlingFileStub: vi.fn(),
+  getChronicleFile: vi.fn(),
+  getChronicleFileStub: vi.fn(),
   updateFileMetadata: vi.fn(),
   downloadPolicyOutput: vi.fn(),
   listPolicyRuns: vi.fn(),
-  createStirlingFilesAndStubs: vi.fn(),
+  createChronicleFilesAndStubs: vi.fn(),
 }));
 
 vi.mock("@app/contexts/FileContext", () => ({
   useAllFiles: () => ({ fileStubs: mocks.fileStubs }),
   useFileManagement: () => ({
     addFiles: mocks.addFiles,
-    updateStirlingFileStub: vi.fn(),
+    updateChronicleFileStub: vi.fn(),
   }),
   useFileContext: () => ({ consumeFiles: mocks.consumeFiles }),
 }));
@@ -55,14 +55,14 @@ vi.mock("@app/services/policyApi", () => ({
 }));
 vi.mock("@app/services/fileStorage", () => ({
   fileStorage: {
-    getStirlingFile: mocks.getStirlingFile,
-    getStirlingFileStub: mocks.getStirlingFileStub,
+    getChronicleFile: mocks.getChronicleFile,
+    getChronicleFileStub: mocks.getChronicleFileStub,
     updateFileMetadata: mocks.updateFileMetadata,
     persistVersionedOutputs: mocks.persistVersionedOutputs,
   },
 }));
 vi.mock("@app/services/fileStubHelpers", () => ({
-  createStirlingFilesAndStubs: mocks.createStirlingFilesAndStubs,
+  createChronicleFilesAndStubs: mocks.createChronicleFilesAndStubs,
 }));
 
 import { usePolicyAutoRun } from "@app/components/policies/usePolicyAutoRun";
@@ -102,7 +102,7 @@ beforeEach(() => {
   vi.clearAllMocks();
   mocks.fileStubs = [];
   mocks.listPolicyRuns.mockResolvedValue([]);
-  mocks.getStirlingFileStub.mockResolvedValue(null);
+  mocks.getChronicleFileStub.mockResolvedValue(null);
   mocks.persistVersionedOutputs.mockResolvedValue(undefined);
   mocks.updateFileMetadata.mockResolvedValue(true);
   mocks.consumeFiles.mockResolvedValue(undefined);
@@ -110,8 +110,8 @@ beforeEach(() => {
   mocks.downloadPolicyOutput.mockResolvedValue(
     new Blob(["x"], { type: "application/pdf" }),
   );
-  mocks.createStirlingFilesAndStubs.mockResolvedValue({
-    stirlingFiles: [{ name: "doc.pdf" }],
+  mocks.createChronicleFilesAndStubs.mockResolvedValue({
+    ChronicleFiles: [{ name: "doc.pdf" }],
     stubs: [{ id: "out-1" }],
   });
 });
@@ -120,7 +120,7 @@ describe("auto-run import: new-version output delivery", () => {
   it("versions the input in storage when it's recovered after a reload (no second file)", async () => {
     // Reload case: the workspace is empty, but the input still persists in IndexedDB.
     mocks.fileStubs = [];
-    mocks.getStirlingFileStub.mockResolvedValue({
+    mocks.getChronicleFileStub.mockResolvedValue({
       id: "file-1",
       versionNumber: 1,
     });
@@ -161,7 +161,7 @@ describe("auto-run import: new-version output delivery", () => {
 
   it("falls back to adding a new file when the input is gone from storage too", async () => {
     mocks.fileStubs = [];
-    mocks.getStirlingFileStub.mockResolvedValue(null);
+    mocks.getChronicleFileStub.mockResolvedValue(null);
 
     recordCompletedRun();
     await runImport();

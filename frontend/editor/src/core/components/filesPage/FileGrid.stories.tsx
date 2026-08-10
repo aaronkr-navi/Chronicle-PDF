@@ -5,12 +5,12 @@ import {
   type FilesPageEntry,
 } from "@app/components/filesPage/FileGrid";
 import { FileContextProvider } from "@app/contexts/FileContext";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import type { FileId } from "@app/types/file";
 
 const buildFileStub = (
-  overrides: Partial<StirlingFileStub> = {},
-): StirlingFileStub => ({
+  overrides: Partial<ChronicleFileStub> = {},
+): ChronicleFileStub => ({
   id: "file-1" as FileId,
   name: "report.pdf",
   type: "application/pdf",

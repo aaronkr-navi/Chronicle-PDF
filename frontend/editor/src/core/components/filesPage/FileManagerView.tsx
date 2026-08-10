@@ -47,7 +47,7 @@ import {
 import { getFileOrigin } from "@app/components/filesPage/fileOrigin";
 
 import { FileId } from "@app/types/file";
-import { StirlingFileStub } from "@app/types/fileContext";
+import { ChronicleFileStub } from "@app/types/fileContext";
 import { FolderId, ROOT_FOLDER_ID } from "@app/types/folder";
 
 import { FileGrid, FilesPageEntry } from "@app/components/filesPage/FileGrid";
@@ -85,11 +85,11 @@ export default function FileManagerView() {
   // Save-to-server modal target. Bulk button uses local-only selection;
   // per-file kebab uses [file]. Targets root; folder placement is via drop.
   const [saveToServerTarget, setSaveToServerTarget] = useState<
-    StirlingFileStub[] | null
+    ChronicleFileStub[] | null
   >(null);
   // Version-history modal target (opened from the card kebab).
   const [versionHistoryFile, setVersionHistoryFile] =
-    useState<StirlingFileStub | null>(null);
+    useState<ChronicleFileStub | null>(null);
   const folders = useFolders();
   const { actions: fileActions } = useFileActions();
   const { fileIds: activeWorkspaceFileIds } = useAllFiles();
@@ -176,7 +176,7 @@ export default function FileManagerView() {
     () =>
       deleteDialogFileIds
         .map((id) => fileMap.get(id))
-        .filter((s): s is StirlingFileStub => Boolean(s)),
+        .filter((s): s is ChronicleFileStub => Boolean(s)),
     [deleteDialogFileIds, fileMap],
   );
 
@@ -550,7 +550,7 @@ export default function FileManagerView() {
     async (fileIds: FileId[]) => {
       const stubs = fileIds
         .map((id) => fileMap.get(id))
-        .filter((s): s is StirlingFileStub => Boolean(s));
+        .filter((s): s is ChronicleFileStub => Boolean(s));
       if (stubs.length === 0) return;
 
       const proceed = async () => {
@@ -559,7 +559,7 @@ export default function FileManagerView() {
         // Server-only stubs have no bytes in IDB; download + ingest first.
         const materialized = await materializeServerStubs(stubs, {
           addFiles: fileActions.addFilesWithOptions,
-          updateStub: fileActions.updateStirlingFileStub,
+          updateStub: fileActions.updateChronicleFileStub,
         });
         if (materialized.length !== stubs.length) {
           // At least one server download failed; refresh so the grid
@@ -568,7 +568,7 @@ export default function FileManagerView() {
           return;
         }
 
-        await fileActions.addStirlingFileStubs(materialized, {
+        await fileActions.addChronicleFileStubs(materialized, {
           selectFiles: false,
         });
         // Branch on requested stubs so already-active files still activate.
@@ -602,7 +602,7 @@ export default function FileManagerView() {
   );
 
   const handleOpenFile = useCallback(
-    (file: StirlingFileStub) => {
+    (file: ChronicleFileStub) => {
       // Double-click commits to workspace.
       void handleAddToWorkspace([file.id]);
     },
@@ -793,7 +793,7 @@ export default function FileManagerView() {
       selectedFiles
         .map((id) => fileMap.get(id))
         .filter(
-          (s): s is StirlingFileStub =>
+          (s): s is ChronicleFileStub =>
             Boolean(s) && s!.remoteStorageId == null,
         ),
     [selectedFiles, fileMap],

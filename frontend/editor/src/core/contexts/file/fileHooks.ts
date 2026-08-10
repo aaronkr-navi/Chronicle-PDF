@@ -9,7 +9,7 @@ import {
   FileContextStateValue,
   FileContextActionsValue,
 } from "@app/contexts/file/contexts";
-import { StirlingFileStub, StirlingFile } from "@app/types/fileContext";
+import { ChronicleFileStub, ChronicleFile } from "@app/types/fileContext";
 import { FileId } from "@app/types/file";
 
 /**
@@ -38,7 +38,7 @@ export function useFileActions(): FileContextActionsValue {
 /**
  * Hook for current/primary file (first in list)
  */
-export function useCurrentFile(): { file?: File; record?: StirlingFileStub } {
+export function useCurrentFile(): { file?: File; record?: ChronicleFileStub } {
   const { state, selectors } = useFileState();
 
   const primaryFileId = state.files.ids[0];
@@ -50,7 +50,7 @@ export function useCurrentFile(): { file?: File; record?: StirlingFileStub } {
     () => ({
       file: primaryFileId ? selectors.getFile(primaryFileId) : undefined,
       record: primaryFileId
-        ? selectors.getStirlingFileStub(primaryFileId)
+        ? selectors.getChronicleFileStub(primaryFileId)
         : undefined,
     }),
     [primaryFileId, primaryFileRecord, selectors],
@@ -100,7 +100,7 @@ export function useFileManagement() {
       addFiles: actions.addFiles,
       removeFiles: actions.removeFiles,
       clearAllFiles: actions.clearAllFiles,
-      updateStirlingFileStub: actions.updateStirlingFileStub,
+      updateChronicleFileStub: actions.updateChronicleFileStub,
       reorderFiles: actions.reorderFiles,
     }),
     [actions],
@@ -129,9 +129,9 @@ export function useFileUI() {
 /**
  * Hook for specific file by ID (optimized for individual file access)
  */
-export function useStirlingFileStub(fileId: FileId): {
+export function useChronicleFileStub(fileId: FileId): {
   file?: File;
-  record?: StirlingFileStub;
+  record?: ChronicleFileStub;
 } {
   const { state, selectors } = useFileState();
   const fileRecord = state.files.byId[fileId];
@@ -139,7 +139,7 @@ export function useStirlingFileStub(fileId: FileId): {
   return useMemo(
     () => ({
       file: selectors.getFile(fileId),
-      record: selectors.getStirlingFileStub(fileId),
+      record: selectors.getChronicleFileStub(fileId),
     }),
     [fileId, fileRecord, selectors],
   );
@@ -149,8 +149,8 @@ export function useStirlingFileStub(fileId: FileId): {
  * Hook for all files (use sparingly - causes re-renders on file list changes)
  */
 export function useAllFiles(): {
-  files: StirlingFile[];
-  fileStubs: StirlingFileStub[];
+  files: ChronicleFile[];
+  fileStubs: ChronicleFileStub[];
   fileIds: FileId[];
 } {
   const { state, selectors } = useFileState();
@@ -158,7 +158,7 @@ export function useAllFiles(): {
   return useMemo(
     () => ({
       files: selectors.getFiles(),
-      fileStubs: selectors.getStirlingFileStubs(),
+      fileStubs: selectors.getChronicleFileStubs(),
       fileIds: state.files.ids,
     }),
     [state.files.ids, state.files.byId, selectors],
@@ -169,8 +169,8 @@ export function useAllFiles(): {
  * Hook for selected files (optimized for selection-based UI)
  */
 export function useSelectedFiles(): {
-  selectedFiles: StirlingFile[];
-  selectedFileStubs: StirlingFileStub[];
+  selectedFiles: ChronicleFile[];
+  selectedFileStubs: ChronicleFileStub[];
   selectedFileIds: FileId[];
 } {
   const { state, selectors } = useFileState();
@@ -178,7 +178,7 @@ export function useSelectedFiles(): {
   return useMemo(
     () => ({
       selectedFiles: selectors.getSelectedFiles(),
-      selectedFileStubs: selectors.getSelectedStirlingFileStubs(),
+      selectedFileStubs: selectors.getSelectedChronicleFileStubs(),
       selectedFileIds: state.ui.selectedFileIds,
     }),
     [state.ui.selectedFileIds, state.files.byId, selectors],

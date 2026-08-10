@@ -88,7 +88,7 @@ export function useWatchedFolders(): UseWatchedFoldersReturn {
       const toDelete = [...new Set([...ownedInputIds, ...outputIds])];
       await Promise.all(
         toDelete.map((fid) =>
-          fileStorage.deleteStirlingFile(fid as FileId).catch(() => {}),
+          fileStorage.deleteChronicleFile(fid as FileId).catch(() => {}),
         ),
       );
     }

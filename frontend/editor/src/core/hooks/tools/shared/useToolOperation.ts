@@ -15,10 +15,10 @@ import {
   handle422Error,
 } from "@app/utils/toolErrorHandler";
 import {
-  StirlingFile,
+  ChronicleFile,
   extractFiles,
   FileId,
-  StirlingFileStub,
+  ChronicleFileStub,
 } from "@app/types/fileContext";
 import { FILE_EVENTS } from "@app/services/errorUtils";
 import { zipFileService } from "@app/services/zipFileService";
@@ -27,7 +27,7 @@ import {
   createChildStub,
   generateProcessedFileMetadata,
 } from "@app/contexts/file/fileActions";
-import { createNewStirlingFileStub } from "@app/types/fileContext";
+import { createNewChronicleFileStub } from "@app/types/fileContext";
 import { ToolOperation } from "@app/types/file";
 import { ensureBackendReady } from "@app/services/backendReadinessGuard";
 import { trackEditorOperation } from "@app/services/analytics";
@@ -123,12 +123,12 @@ export const useToolOperation = <TParams>(
   // Track last operation for undo functionality
   const lastOperationRef = useRef<{
     inputFiles: File[];
-    inputStirlingFileStubs: StirlingFileStub[];
+    inputChronicleFileStubs: ChronicleFileStub[];
     outputFileIds: FileId[];
   } | null>(null);
 
   const executeOperation = useCallback(
-    async (params: TParams, selectedFiles: StirlingFile[]): Promise<void> => {
+    async (params: TParams, selectedFiles: ChronicleFile[]): Promise<void> => {
       // Validation
       if (selectedFiles.length === 0) {
         actions.setError(t("noFileSelected", "No file loaded"));
@@ -146,7 +146,7 @@ export const useToolOperation = <TParams>(
           console.log("markFileError", e);
         }
       }
-      const validFiles: StirlingFile[] = selectedFiles.filter(
+      const validFiles: ChronicleFile[] = selectedFiles.filter(
         (file) => file.size > 0,
       );
       if (validFiles.length === 0) {
@@ -156,7 +156,7 @@ export const useToolOperation = <TParams>(
 
       // Block encrypted files from being sent to backend tools
       const encryptedFiles = validFiles.filter((f) => {
-        const stub = selectors.getStirlingFileStub(f.fileId);
+        const stub = selectors.getChronicleFileStub(f.fileId);
         return stub?.processedFile?.isEncrypted === true;
       });
       if (encryptedFiles.length > 0) {
@@ -438,7 +438,7 @@ export const useToolOperation = <TParams>(
             processedFiles.map((file) => generateProcessedFileMetadata(file)),
           );
 
-          const { inputFileIds, inputStirlingFileStubs } = buildInputTracking(
+          const { inputFileIds, inputChronicleFileStubs } = buildInputTracking(
             validFiles,
             selectors,
           );
@@ -447,7 +447,7 @@ export const useToolOperation = <TParams>(
             // Output is a modified version of the input — link it to the input's version chain.
             // The input is removed from the workbench and replaced in-place by the output.
             const downloadLocalPath =
-              selectors.getStirlingFileStub(validFiles[0].fileId)
+              selectors.getChronicleFileStub(validFiles[0].fileId)
                 ?.localFilePath ?? null;
 
             const newToolOperation: ToolOperation = {
@@ -456,8 +456,8 @@ export const useToolOperation = <TParams>(
             };
 
             const successInputStubs = successSourceIds
-              .map((id) => selectors.getStirlingFileStub(id))
-              .filter(Boolean) as StirlingFileStub[];
+              .map((id) => selectors.getChronicleFileStub(id))
+              .filter(Boolean) as ChronicleFileStub[];
 
             if (successInputStubs.length !== processedFiles.length) {
               console.warn(
@@ -469,7 +469,7 @@ export const useToolOperation = <TParams>(
               );
             }
 
-            const { outputStirlingFileStubs, outputStirlingFiles } =
+            const { outputChronicleFileStubs, outputChronicleFiles } =
               buildOutputPairs(
                 processedFiles,
                 thumbnails,
@@ -477,8 +477,8 @@ export const useToolOperation = <TParams>(
                 (file, thumbnail, metadata, index) =>
                   createChildStub(
                     successInputStubs[index] ||
-                      inputStirlingFileStubs[index] ||
-                      inputStirlingFileStubs[0],
+                      inputChronicleFileStubs[index] ||
+                      inputChronicleFileStubs[0],
                     newToolOperation,
                     file,
                     metadata?.thumbnailUrl || thumbnail,
@@ -496,8 +496,8 @@ export const useToolOperation = <TParams>(
             });
             const outputFileIds = await consumeFiles(
               toConsumeInputIds,
-              outputStirlingFiles,
-              outputStirlingFileStubs,
+              outputChronicleFiles,
+              outputChronicleFileStubs,
             );
             // Tell the viewer to follow the replacement file — consumeFiles prepends the new file
             // to the list, so activeFileIndex would point to the wrong file without this.
@@ -508,11 +508,11 @@ export const useToolOperation = <TParams>(
 
             // Carry the desktop save path forward so the output can be saved back to the same file
             if (toConsumeInputIds.length === 1 && outputFileIds.length === 1) {
-              const inputStub = selectors.getStirlingFileStub(
+              const inputStub = selectors.getChronicleFileStub(
                 toConsumeInputIds[0],
               );
               if (inputStub?.localFilePath) {
-                fileActions.updateStirlingFileStub(outputFileIds[0], {
+                fileActions.updateChronicleFileStub(outputFileIds[0], {
                   localFilePath: inputStub.localFilePath,
                 });
               }
@@ -527,7 +527,7 @@ export const useToolOperation = <TParams>(
 
             lastOperationRef.current = {
               inputFiles: extractFiles(validFiles),
-              inputStirlingFileStubs: inputStirlingFileStubs.map((record) => ({
+              inputChronicleFileStubs: inputChronicleFileStubs.map((record) => ({
                 ...record,
               })),
               outputFileIds,
@@ -536,13 +536,13 @@ export const useToolOperation = <TParams>(
             // Outputs are independent artifacts (format conversion, merge, split).
             // Create fresh root stubs with no parent chain, then swap out only the inputs
             // that successfully produced outputs — other workbench files are untouched.
-            const { outputStirlingFileStubs, outputStirlingFiles } =
+            const { outputChronicleFileStubs, outputChronicleFiles } =
               buildOutputPairs(
                 processedFiles,
                 thumbnails,
                 processedFileMetadataArray,
                 (file, thumbnail, metadata) =>
-                  createNewStirlingFileStub(
+                  createNewChronicleFileStub(
                     file,
                     undefined,
                     metadata?.thumbnailUrl || thumbnail,
@@ -559,8 +559,8 @@ export const useToolOperation = <TParams>(
             });
             const outputFileIds = await consumeFiles(
               toConsumeInputIds,
-              outputStirlingFiles,
-              outputStirlingFileStubs,
+              outputChronicleFiles,
+              outputChronicleFileStubs,
             );
 
             // Notify on desktop when processing completes
@@ -581,7 +581,7 @@ export const useToolOperation = <TParams>(
 
             lastOperationRef.current = {
               inputFiles: extractFiles(validFiles),
-              inputStirlingFileStubs: inputStirlingFileStubs.map((record) => ({
+              inputChronicleFileStubs: inputChronicleFileStubs.map((record) => ({
                 ...record,
               })),
               outputFileIds,
@@ -660,11 +660,11 @@ export const useToolOperation = <TParams>(
       return;
     }
 
-    const { inputFiles, inputStirlingFileStubs, outputFileIds } =
+    const { inputFiles, inputChronicleFileStubs, outputFileIds } =
       lastOperationRef.current;
 
     // Validate that we have data to undo
-    if (inputFiles.length === 0 || inputStirlingFileStubs.length === 0) {
+    if (inputFiles.length === 0 || inputChronicleFileStubs.length === 0) {
       actions.setError(
         t("invalidUndoData", "Cannot undo: invalid operation data"),
       );
@@ -683,7 +683,7 @@ export const useToolOperation = <TParams>(
 
     try {
       // Undo the consume operation
-      await undoConsumeFiles(inputFiles, inputStirlingFileStubs, outputFileIds);
+      await undoConsumeFiles(inputFiles, inputChronicleFileStubs, outputFileIds);
 
       // Clear results and operation tracking
       resetResults();

@@ -17,7 +17,7 @@ import {
   markDispatched,
 } from "@app/components/policies/policyRunStore";
 import type { FileId } from "@app/types/file";
-import type { StirlingFile, StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFile, ChronicleFileStub } from "@app/types/fileContext";
 
 /** The category id of the Classification policy (see policyDefinitions). */
 const CLASSIFICATION_CATEGORY = "classification";
@@ -43,7 +43,7 @@ const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export function useClientSideClassification(): void {
   const { fileStubs } = useAllFiles();
-  const { updateStirlingFileStub } = useFileManagement();
+  const { updateChronicleFileStub } = useFileManagement();
   const { bumpRevision } = useIndexedDB();
   const { policies } = usePolicies();
   const classificationEnabled = useClassificationEnabled();
@@ -72,7 +72,7 @@ export function useClientSideClassification(): void {
     if (configLoading || !classificationEnabled || aiEnabled || !active) {
       return;
     }
-    const claimKey = (s: StirlingFileStub) =>
+    const claimKey = (s: ChronicleFileStub) =>
       `${s.id as string}:${s.lastModified ?? 0}`;
     // null labels = never delivered, retried here; [] = definitive no-label verdict.
     const pending = fileStubs
@@ -101,7 +101,7 @@ export function useClientSideClassification(): void {
           if (labels == null) continue;
           // Deliver unconditionally - a re-render must never discard a computed
           // (and already metered) result. Writes are idempotent.
-          updateStirlingFileStub(stub.id as FileId, {
+          updateChronicleFileStub(stub.id as FileId, {
             classificationLabels: labels,
           });
           const ok = await fileStorage.updateFileMetadata(stub.id as FileId, {
@@ -124,7 +124,7 @@ export function useClientSideClassification(): void {
     classificationEnabled,
     aiEnabled,
     configLoading,
-    updateStirlingFileStub,
+    updateChronicleFileStub,
     bumpRevision,
     tick,
   ]);
@@ -135,9 +135,9 @@ async function classifyStub(
   fileId: FileId,
   fileName: string,
 ): Promise<string[] | null> {
-  let file: StirlingFile | null = null;
+  let file: ChronicleFile | null = null;
   for (let i = 0; i < FILE_WAIT_TRIES; i++) {
-    file = await fileStorage.getStirlingFile(fileId).catch(() => null);
+    file = await fileStorage.getChronicleFile(fileId).catch(() => null);
     if (file) break;
     await delay(FILE_WAIT_MS);
   }

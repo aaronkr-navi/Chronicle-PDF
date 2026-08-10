@@ -6,7 +6,7 @@ import { Tooltip } from "@app/components/shared/Tooltip";
 import { ViewerContext } from "@app/contexts/ViewerContext";
 import { useSignature } from "@app/contexts/SignatureContext";
 import { useFileState, useFileContext } from "@app/contexts/FileContext";
-import { createStirlingFilesAndStubs } from "@app/services/fileStubHelpers";
+import { createChronicleFilesAndStubs } from "@app/services/fileStubHelpers";
 import {
   useNavigationState,
   useNavigationGuard,
@@ -92,17 +92,17 @@ export default function ViewerAnnotationControls({
       const file = new File([new Blob([arrayBuffer])], activeFiles[0].name, {
         type: "application/pdf",
       });
-      const parentStub = selectors.getStirlingFileStub(state.files.ids[0]);
+      const parentStub = selectors.getChronicleFileStub(state.files.ids[0]);
       if (!parentStub) return;
 
-      const { stirlingFiles, stubs } = await createStirlingFilesAndStubs(
+      const { ChronicleFiles, stubs } = await createChronicleFilesAndStubs(
         [file],
         parentStub,
         "redact",
       );
       await fileActions.consumeFiles(
         [state.files.ids[0]],
-        stirlingFiles,
+        ChronicleFiles,
         stubs,
       );
 

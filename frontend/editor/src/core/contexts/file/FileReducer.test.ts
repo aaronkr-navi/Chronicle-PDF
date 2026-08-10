@@ -5,14 +5,14 @@ import {
 } from "@app/contexts/file/FileReducer";
 import type {
   FileContextState,
-  StirlingFileStub,
+  ChronicleFileStub,
 } from "@app/types/fileContext";
 import type { FileId } from "@app/types/file";
 
 function stub(
   id: string,
-  overrides: Partial<StirlingFileStub> = {},
-): StirlingFileStub {
+  overrides: Partial<ChronicleFileStub> = {},
+): ChronicleFileStub {
   return {
     id: id as FileId,
     name: `${id}.pdf`,
@@ -26,7 +26,7 @@ function stub(
   };
 }
 
-function stateWith(stubs: StirlingFileStub[]): FileContextState {
+function stateWith(stubs: ChronicleFileStub[]): FileContextState {
   return {
     ...initialFileContextState,
     files: {
@@ -40,7 +40,7 @@ describe("fileContextReducer — derivedFromTool provenance", () => {
   it("ADD_FILES leaves uploads unmarked (a genuine upload is not tool-derived)", () => {
     const next = fileContextReducer(initialFileContextState, {
       type: "ADD_FILES",
-      payload: { stirlingFileStubs: [stub("a")] },
+      payload: { ChronicleFileStubs: [stub("a")] },
     });
     expect(next.files.byId["a" as FileId].derivedFromTool).toBeUndefined();
   });
@@ -52,7 +52,7 @@ describe("fileContextReducer — derivedFromTool provenance", () => {
       type: "CONSUME_FILES",
       payload: {
         inputFileIds: ["a" as FileId],
-        outputStirlingFileStubs: [stub("b")],
+        outputChronicleFileStubs: [stub("b")],
       },
     });
     expect(next.files.byId["b" as FileId].derivedFromTool).toBe(true);
@@ -69,7 +69,7 @@ describe("fileContextReducer — derivedFromTool provenance", () => {
       type: "CONSUME_FILES",
       payload: {
         inputFileIds: ["b" as FileId],
-        outputStirlingFileStubs: [stub("c")],
+        outputChronicleFileStubs: [stub("c")],
       },
     });
     expect(next.files.byId["c" as FileId].sourceFileIds).toEqual(["b", "a"]);
@@ -81,7 +81,7 @@ describe("fileContextReducer — derivedFromTool provenance", () => {
       type: "CONSUME_FILES",
       payload: {
         inputFileIds: ["a" as FileId, "b" as FileId],
-        outputStirlingFileStubs: [stub("merged")],
+        outputChronicleFileStubs: [stub("merged")],
       },
     });
     expect(next.files.byId["merged" as FileId].sourceFileIds).toEqual([
@@ -97,13 +97,13 @@ describe("fileContextReducer — derivedFromTool provenance", () => {
       type: "CONSUME_FILES",
       payload: {
         inputFileIds: ["a" as FileId],
-        outputStirlingFileStubs: [stub("b")],
+        outputChronicleFileStubs: [stub("b")],
       },
     });
     const undone = fileContextReducer(consumed, {
       type: "UNDO_CONSUME_FILES",
       payload: {
-        inputStirlingFileStubs: [stub("a")],
+        inputChronicleFileStubs: [stub("a")],
         outputFileIds: ["b" as FileId],
       },
     });
@@ -119,7 +119,7 @@ describe("fileContextReducer — silent CONSUME_FILES (background enforcement)",
       type: "CONSUME_FILES",
       payload: {
         inputFileIds: ["b" as FileId],
-        outputStirlingFileStubs: [stub("b2")],
+        outputChronicleFileStubs: [stub("b2")],
         silent: true,
       },
     });
@@ -133,7 +133,7 @@ describe("fileContextReducer — silent CONSUME_FILES (background enforcement)",
       type: "CONSUME_FILES",
       payload: {
         inputFileIds: ["a" as FileId],
-        outputStirlingFileStubs: [stub("a2")],
+        outputChronicleFileStubs: [stub("a2")],
         silent: true,
       },
     });
@@ -149,7 +149,7 @@ describe("fileContextReducer — silent CONSUME_FILES (background enforcement)",
       type: "CONSUME_FILES",
       payload: {
         inputFileIds: ["b" as FileId],
-        outputStirlingFileStubs: [stub("b2")],
+        outputChronicleFileStubs: [stub("b2")],
         silent: true,
       },
     });
@@ -164,7 +164,7 @@ describe("fileContextReducer — silent CONSUME_FILES (background enforcement)",
       type: "CONSUME_FILES",
       payload: {
         inputFileIds: ["gone" as FileId],
-        outputStirlingFileStubs: [stub("gone2")],
+        outputChronicleFileStubs: [stub("gone2")],
         silent: true,
       },
     });
@@ -183,7 +183,7 @@ describe("fileContextReducer — silent CONSUME_FILES (background enforcement)",
       type: "CONSUME_FILES",
       payload: {
         inputFileIds: ["a" as FileId],
-        outputStirlingFileStubs: [stub("b")],
+        outputChronicleFileStubs: [stub("b")],
       },
     });
     expect(next.files.byId["b" as FileId].classificationLabels).toEqual([
@@ -199,7 +199,7 @@ describe("fileContextReducer — silent CONSUME_FILES (background enforcement)",
       type: "CONSUME_FILES",
       payload: {
         inputFileIds: ["a" as FileId],
-        outputStirlingFileStubs: [
+        outputChronicleFileStubs: [
           stub("b", { classificationLabels: ["Contract"] }),
         ],
       },
@@ -215,7 +215,7 @@ describe("fileContextReducer — silent CONSUME_FILES (background enforcement)",
       type: "CONSUME_FILES",
       payload: {
         inputFileIds: ["b" as FileId],
-        outputStirlingFileStubs: [stub("b2")],
+        outputChronicleFileStubs: [stub("b2")],
       },
     });
     expect(next.files.ids).toEqual(["b2", "a"]);

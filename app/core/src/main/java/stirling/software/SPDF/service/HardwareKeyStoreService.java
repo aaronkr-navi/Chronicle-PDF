@@ -60,7 +60,7 @@ public class HardwareKeyStoreService {
     private static final String PKCS11_BASE_PROVIDER = "SunPKCS11";
 
     /** Extra PKCS#11 driver libraries, absolute paths, comma/`File.pathSeparator` separated. */
-    private static final String PKCS11_LIBRARIES_ENV = "STIRLING_PKCS11_LIBRARIES";
+    private static final String PKCS11_LIBRARIES_ENV = "Chronicle_PKCS11_LIBRARIES";
 
     /** Same as {@link #PKCS11_LIBRARIES_ENV} but as a JVM system property. */
     private static final String PKCS11_LIBRARIES_PROP = "Chronicle.pkcs11.libraries";
@@ -78,12 +78,12 @@ public class HardwareKeyStoreService {
 
     /**
      * True when running as the desktop bundle (local sidecar in the user's session). The Tauri
-     * bundle sets {@code STIRLING_PDF_TAURI_MODE=true} (with {@code BROWSER_OPEN=false}, so
+     * bundle sets {@code Chronicle_PDF_TAURI_MODE=true} (with {@code BROWSER_OPEN=false}, so
      * machineType is {@code Server-jar} there); the bare-jar desktop launcher instead yields a
      * {@code Client-*} machineType. Accept either.
      */
     public boolean isDesktop() {
-        if (Boolean.parseBoolean(System.getProperty("STIRLING_PDF_TAURI_MODE", "false"))) {
+        if (Boolean.parseBoolean(System.getProperty("Chronicle_PDF_TAURI_MODE", "false"))) {
             return true;
         }
         return machineType != null && machineType.startsWith("Client-");
@@ -156,7 +156,7 @@ public class HardwareKeyStoreService {
 
     /**
      * Known driver install locations plus any paths configured via {@code
-     * STIRLING_PKCS11_LIBRARIES}.
+     * Chronicle_PKCS11_LIBRARIES}.
      */
     public List<Pkcs11LibraryInfo> detectPkcs11Libraries() {
         Map<String, List<String>> candidates = new LinkedHashMap<>();
@@ -392,7 +392,7 @@ public class HardwareKeyStoreService {
             throw ExceptionUtils.createIllegalArgumentException(
                     "error.pkcs11LibraryNotAllowed",
                     "PKCS#11 driver is not in the allowed list. Add it via the"
-                            + " STIRLING_PKCS11_LIBRARIES setting: {0}",
+                            + " Chronicle_PKCS11_LIBRARIES setting: {0}",
                     libraryPath);
         }
     }
@@ -454,7 +454,7 @@ public class HardwareKeyStoreService {
         if (base.isEmpty()) {
             base = "token";
         }
-        return "StirlingHW" + base;
+        return "ChronicleHW" + base;
     }
 
     private static String fileName(String path) {

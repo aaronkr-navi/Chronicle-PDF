@@ -28,10 +28,10 @@ import { ToolRegistryProvider } from "@app/contexts/ToolRegistryProvider";
 import { PreferencesProvider } from "@app/contexts/PreferencesContext";
 import { I18nextProvider } from "react-i18next";
 import i18n from "@app/i18n/config";
-import { createTestStirlingFile } from "@app/tests/utils/testFileHelpers";
+import { createTestChronicleFile } from "@app/tests/utils/testFileHelpers";
 import { expectConsole } from "@app/tests/failOnConsole";
 import { fileStorage } from "@app/services/fileStorage";
-import { StirlingFile } from "@app/types/fileContext";
+import { ChronicleFile } from "@app/types/fileContext";
 import { MantineProvider } from "@mantine/core";
 
 // Mock axios (for static methods like CancelToken, isCancel)
@@ -80,7 +80,7 @@ vi.mock("../../services/fileStorage", () => ({
         thumbnail: thumbnail,
       });
     }),
-    storeStirlingFile: vi.fn().mockResolvedValue(undefined),
+    storeChronicleFile: vi.fn().mockResolvedValue(undefined),
     persistVersionedOutputs: vi.fn().mockResolvedValue(undefined),
     getAllFileMetadata: vi.fn().mockResolvedValue([]),
     cleanup: vi.fn().mockResolvedValue(undefined),
@@ -98,10 +98,10 @@ vi.mock("../../services/thumbnailGenerationService", () => ({
 }));
 
 // Create realistic test files
-const createPDFFile = (): StirlingFile => {
+const createPDFFile = (): ChronicleFile => {
   const pdfContent =
     "%PDF-1.4\n1 0 obj\n<<\n/Type /Catalog\n/Pages 2 0 R\n>>\nendobj\ntrailer\n<<\n/Size 2\n/Root 1 0 R\n>>\nstartxref\n0\n%%EOF";
-  return createTestStirlingFile("test.pdf", pdfContent, "application/pdf");
+  return createTestChronicleFile("test.pdf", pdfContent, "application/pdf");
 };
 
 // Test wrapper component
@@ -233,7 +233,7 @@ describe("Convert Tool Integration Tests", () => {
         wrapper: TestWrapper,
       });
 
-      const testFile = createTestStirlingFile(
+      const testFile = createTestChronicleFile(
         "invalid.txt",
         "not a pdf",
         "text/plain",
@@ -590,7 +590,7 @@ describe("Convert Tool Integration Tests", () => {
       });
       const files = [
         createPDFFile(),
-        createTestStirlingFile("test2.pdf", "%PDF-1.4...", "application/pdf"),
+        createTestChronicleFile("test2.pdf", "%PDF-1.4...", "application/pdf"),
       ];
       const parameters: ConvertParameters = {
         fromExtension: "pdf",
@@ -721,7 +721,7 @@ describe("Convert Tool Integration Tests", () => {
         wrapper: TestWrapper,
       });
 
-      const corruptedFile = createTestStirlingFile(
+      const corruptedFile = createTestChronicleFile(
         "corrupted.pdf",
         "not-a-pdf",
         "application/pdf",

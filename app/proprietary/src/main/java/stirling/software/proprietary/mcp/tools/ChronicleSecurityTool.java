@@ -12,9 +12,9 @@ import tools.jackson.databind.ObjectMapper;
 /** Exposes the {@code /api/v1/security/*} namespace as a single MCP tool. */
 @Component
 @ConditionalOnProperty(name = "mcp.enabled", havingValue = "true")
-public class StirlingSecurityTool extends AbstractCategoryTool {
+public class ChronicleSecurityTool extends AbstractCategoryTool {
 
-    public StirlingSecurityTool(
+    public ChronicleSecurityTool(
             ObjectMapper mapper,
             ObjectProvider<McpToolCatalog> catalog,
             ObjectProvider<McpOperationExecutor> executor) {

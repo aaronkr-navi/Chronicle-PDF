@@ -19,12 +19,12 @@ import {
   setCategoryHidden,
   subscribeSidebarCategories,
 } from "@app/services/fileSidebarCategories";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import "@app/components/shared/FileSidebarGroupControls.css";
 
 interface FileSidebarGroupControlsProps {
   /** The files currently listed, for live per-category counts. */
-  stubs: StirlingFileStub[];
+  stubs: ChronicleFileStub[];
 }
 
 export function FileSidebarGroupControls({

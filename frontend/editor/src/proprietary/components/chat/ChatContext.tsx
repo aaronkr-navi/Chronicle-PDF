@@ -16,9 +16,9 @@ import { getAuthHeaders } from "@app/services/apiClientSetup";
 import { dispatchPaygLimitReached } from "@app/services/usageLimitBridge";
 import { createChildStub } from "@app/contexts/file/fileActions";
 import {
-  createNewStirlingFileStub,
-  createStirlingFile,
-  type StirlingFileStub,
+  createNewChronicleFileStub,
+  createChronicleFile,
+  type ChronicleFileStub,
 } from "@app/types/fileContext";
 import type { ToolOperation } from "@app/types/file";
 
@@ -445,7 +445,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
   const importResultFile = useCallback(
     async (
       result: AiWorkflowResponse,
-      sourceStubs: StirlingFileStub[],
+      sourceStubs: ChronicleFileStub[],
     ): Promise<void> => {
       const descriptors = result.resultFiles?.length
         ? result.resultFiles
@@ -477,7 +477,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
         // Only replace a source in place when it maps to exactly one output (a clean 1:1 transform).
         // A split (one input → many outputs) or a source shared by several outputs stays a set of
         // fresh roots so we don't collapse them onto one version chain.
-        const outputsPerSource = new Map<StirlingFileStub["id"], number>();
+        const outputsPerSource = new Map<ChronicleFileStub["id"], number>();
         for (const source of sourceForOutput) {
           if (source) {
             outputsPerSource.set(
@@ -486,20 +486,20 @@ export function ChatProvider({ children }: { children: ReactNode }) {
             );
           }
         }
-        const consumedIds: StirlingFileStub["id"][] = [];
+        const consumedIds: ChronicleFileStub["id"][] = [];
         const stubs = files.map((file, i) => {
           const source = sourceForOutput[i];
           if (source && outputsPerSource.get(source.id) === 1) {
             consumedIds.push(source.id);
             return createChildStub(source, operation, file);
           }
-          return createNewStirlingFileStub(file);
+          return createNewChronicleFileStub(file);
         });
-        const stirlingFiles = files.map((file, i) =>
-          createStirlingFile(file, stubs[i].id),
+        const ChronicleFiles = files.map((file, i) =>
+          createChronicleFile(file, stubs[i].id),
         );
         // Consume only the inputs we actually versioned; unrelated files are left in place.
-        await fileActions.consumeFiles(consumedIds, stirlingFiles, stubs);
+        await fileActions.consumeFiles(consumedIds, ChronicleFiles, stubs);
       } else {
         // No inputs: pass raw files so addFiles assigns consistent IDs. Pre-assigning stub IDs
         // here would cause a fileId mismatch in filesRef, making getFiles() clone the file

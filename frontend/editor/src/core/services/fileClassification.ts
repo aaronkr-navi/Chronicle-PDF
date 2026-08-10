@@ -9,7 +9,7 @@
 import { fileStorage } from "@app/services/fileStorage";
 import { extractPDFMetadata } from "@app/services/pdfMetadataService";
 import type { FileId } from "@app/types/file";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 
 export const CLASSIFICATION_METADATA_KEY = "ChroniclePDFClassification";
 
@@ -57,12 +57,12 @@ export async function readClassificationLabelsFromFile(
  * non-PDF, or over the size cap.
  */
 export async function readStubClassificationLabels(
-  stub: StirlingFileStub,
+  stub: ChronicleFileStub,
 ): Promise<string[] | null> {
   if (stub.type && !stub.type.toLowerCase().includes("pdf")) return null;
   if (stub.size > MAX_READ_BYTES) return null;
   const file = await fileStorage
-    .getStirlingFile(stub.id as FileId)
+    .getChronicleFile(stub.id as FileId)
     .catch(() => null);
   if (!file) return null;
   return readClassificationLabelsFromFile(file);

@@ -21,11 +21,11 @@ import org.springframework.test.context.DynamicPropertySource;
 import Chronicle.software.common.model.ApplicationProperties;
 import Chronicle.software.proprietary.mcp.McpServerController;
 import Chronicle.software.proprietary.mcp.tools.DescribeOperationTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingAiTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingConvertTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingMiscTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingPagesTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingSecurityTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleAiTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleConvertTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleMiscTool;
+import Chronicle.software.proprietary.mcp.tools.ChroniclePagesTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleSecurityTool;
 import Chronicle.software.proprietary.security.model.User;
 import Chronicle.software.proprietary.security.service.UserService;
 
@@ -115,11 +115,11 @@ class McpApiKeyIntegrationTest {
         McpSecurityConfig.class,
         McpServerController.class,
         DescribeOperationTool.class,
-        StirlingConvertTool.class,
-        StirlingPagesTool.class,
-        StirlingMiscTool.class,
-        StirlingSecurityTool.class,
-        StirlingAiTool.class
+        ChronicleConvertTool.class,
+        ChroniclePagesTool.class,
+        ChronicleMiscTool.class,
+        ChronicleSecurityTool.class,
+        ChronicleAiTool.class
     })
     static class TestApp {
 

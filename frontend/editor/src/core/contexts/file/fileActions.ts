@@ -3,20 +3,20 @@
  */
 
 import {
-  StirlingFileStub,
+  ChronicleFileStub,
   FileContextAction,
   FileContextState,
-  createNewStirlingFileStub,
+  createNewChronicleFileStub,
   createFileId,
   createQuickKey,
-  createStirlingFile,
+  createChronicleFile,
   ProcessedFileMetadata,
 } from "@app/types/fileContext";
 import { FileId, ToolOperation } from "@app/types/file";
 import { generateThumbnailWithMetadata } from "@app/utils/thumbnailUtils";
 import { FileLifecycleManager } from "@app/contexts/file/lifecycle";
 import { buildQuickKeySet } from "@app/contexts/file/fileSelectors";
-import { StirlingFile } from "@app/types/fileContext";
+import { ChronicleFile } from "@app/types/fileContext";
 import { fileStorage } from "@app/services/fileStorage";
 import { zipFileService } from "@app/services/zipFileService";
 import { FileAnalyzer } from "@app/services/fileAnalyzer";
@@ -158,23 +158,23 @@ export async function generateProcessedFileMetadata(
 }
 
 /**
- * Create a child StirlingFileStub from a parent stub with proper history management.
+ * Create a child ChronicleFileStub from a parent stub with proper history management.
  * Used when a tool processes an existing file to create a new version with incremented history.
  *
- * @param parentStub - The parent StirlingFileStub to create a child from
+ * @param parentStub - The parent ChronicleFileStub to create a child from
  * @param operation - Tool operation information (toolName, timestamp)
  * @param resultingFile - The processed File object
  * @param thumbnail - Optional thumbnail for the child
  * @param processedFileMetadata - Optional fresh metadata for the processed file
- * @returns New child StirlingFileStub with proper version history
+ * @returns New child ChronicleFileStub with proper version history
  */
 export function createChildStub(
-  parentStub: StirlingFileStub,
+  parentStub: ChronicleFileStub,
   operation: ToolOperation,
   resultingFile: File,
   thumbnail?: string,
   processedFileMetadata?: ProcessedFileMetadata,
-): StirlingFileStub {
+): ChronicleFileStub {
   const newFileId = createFileId();
 
   // Build new tool history by appending to parent's history
@@ -273,13 +273,13 @@ export async function addFiles(
   dispatch: React.Dispatch<FileContextAction>,
   lifecycleManager: FileLifecycleManager,
   enablePersistence: boolean = false,
-): Promise<StirlingFile[]> {
+): Promise<ChronicleFile[]> {
   // Acquire mutex to prevent race conditions
   await addFilesMutex.lock();
 
   try {
-    const stirlingFileStubs: StirlingFileStub[] = [];
-    const stirlingFiles: StirlingFile[] = [];
+    const ChronicleFileStubs: ChronicleFileStub[] = [];
+    const ChronicleFiles: ChronicleFile[] = [];
     // Hydration tasks are scheduled per-file to update thumbnails/metadata without blocking add flow
 
     // Build quickKey lookup from existing files for deduplication
@@ -359,7 +359,7 @@ export async function addFiles(
         `📄 addFiles: After ZIP processing, ${filesToProcess.length} files to add`,
       );
 
-    // Collect hydrations to schedule after dispatch so updateStirlingFileStub finds files in state.
+    // Collect hydrations to schedule after dispatch so updateChronicleFileStub finds files in state.
     const pendingHydrations: Array<() => Promise<void>> = [];
 
     // Stream the batch into the workspace in chunks. The per-file pre-scan below
@@ -374,16 +374,16 @@ export async function addFiles(
     const flushChunk = () => {
       if (
         !options.skipWorkspaceDispatch &&
-        stirlingFileStubs.length > flushedStubs
+        ChronicleFileStubs.length > flushedStubs
       ) {
         dispatch({
           type: "ADD_FILES",
-          payload: { stirlingFileStubs: stirlingFileStubs.slice(flushedStubs) },
+          payload: { ChronicleFileStubs: ChronicleFileStubs.slice(flushedStubs) },
         });
-        flushedStubs = stirlingFileStubs.length;
+        flushedStubs = ChronicleFileStubs.length;
       }
       // Hydrations only after their chunk is dispatched, so
-      // updateStirlingFileStub finds the files in state.
+      // updateChronicleFileStub finds the files in state.
       while (flushedHydrations < pendingHydrations.length) {
         scheduleMetadataHydration(pendingHydrations[flushedHydrations++]);
       }
@@ -405,7 +405,7 @@ export async function addFiles(
       filesRef.current.set(fileId, file);
 
       // Create new filestub with minimal metadata; hydrate thumbnails/processedFile asynchronously
-      const fileStub = createNewStirlingFileStub(file, fileId);
+      const fileStub = createNewChronicleFileStub(file, fileId);
       if (options.derivedFromTool) fileStub.derivedFromTool = true;
 
       // Early encryption detection for PDFs — set the flag before dispatch so the
@@ -466,11 +466,11 @@ export async function addFiles(
       if (!allowDuplicates) {
         existingQuickKeys.add(quickKey);
       }
-      stirlingFileStubs.push(fileStub);
+      ChronicleFileStubs.push(fileStub);
 
-      // Create StirlingFile directly
-      const stirlingFile = createStirlingFile(file, fileId);
-      stirlingFiles.push(stirlingFile);
+      // Create ChronicleFile directly
+      const ChronicleFile = createChronicleFile(file, fileId);
+      ChronicleFiles.push(ChronicleFile);
 
       // Capture per-file hydration task — scheduled after batch dispatch below
       pendingHydrations.push(async () => {
@@ -506,7 +506,7 @@ export async function addFiles(
           }
         }
 
-        const updates: Partial<StirlingFileStub> = {};
+        const updates: Partial<ChronicleFileStub> = {};
         const primaryThumbnail =
           thumbnail ||
           processedFileMetadata?.thumbnailUrl ||
@@ -524,7 +524,7 @@ export async function addFiles(
         }
 
         if (Object.keys(updates).length > 0) {
-          lifecycleManager.updateStirlingFileStub(fileId, updates, stateRef);
+          lifecycleManager.updateChronicleFileStub(fileId, updates, stateRef);
         }
 
         // Persist the thumbnail to IndexedDB so it's available in future sessions.
@@ -544,7 +544,7 @@ export async function addFiles(
       });
 
       reportBulkAddProgress(++scannedCount, filesToProcess.length);
-      if (stirlingFileStubs.length - flushedStubs >= DISPATCH_CHUNK) {
+      if (ChronicleFileStubs.length - flushedStubs >= DISPATCH_CHUNK) {
         flushChunk();
       }
     }
@@ -553,25 +553,25 @@ export async function addFiles(
     flushChunk();
 
     // Persist to storage if enabled using fileStorage service
-    if (enablePersistence && stirlingFiles.length > 0) {
+    if (enablePersistence && ChronicleFiles.length > 0) {
       await Promise.all(
-        stirlingFiles.map(async (stirlingFile, index) => {
+        ChronicleFiles.map(async (ChronicleFile, index) => {
           try {
             // Get corresponding stub with all metadata
-            const fileStub = stirlingFileStubs[index];
+            const fileStub = ChronicleFileStubs[index];
 
-            // Store using the cleaner signature - pass StirlingFile + StirlingFileStub directly
-            await fileStorage.storeStirlingFile(stirlingFile, fileStub);
+            // Store using the cleaner signature - pass ChronicleFile + ChronicleFileStub directly
+            await fileStorage.storeChronicleFile(ChronicleFile, fileStub);
 
             if (DEBUG)
               console.log(
-                `📄 addFiles: Stored file ${stirlingFile.name} with metadata:`,
+                `📄 addFiles: Stored file ${ChronicleFile.name} with metadata:`,
                 fileStub,
               );
           } catch (error) {
             console.error(
               "Failed to persist file to storage:",
-              stirlingFile.name,
+              ChronicleFile.name,
               error,
             );
           }
@@ -579,11 +579,11 @@ export async function addFiles(
       );
     }
 
-    if (!options.skipUploadTracking && stirlingFiles.length > 0) {
-      trackPdfUploaded(stirlingFiles);
+    if (!options.skipUploadTracking && ChronicleFiles.length > 0) {
+      trackPdfUploaded(ChronicleFiles);
     }
 
-    return stirlingFiles;
+    return ChronicleFiles;
   } finally {
     clearBulkAddProgress();
     // Always release mutex even if error occurs
@@ -593,12 +593,12 @@ export async function addFiles(
 
 /**
  * Consume files helper - replace unpinned input files with output files
- * Now accepts pre-created StirlingFiles and StirlingFileStubs to preserve all metadata
+ * Now accepts pre-created ChronicleFiles and ChronicleFileStubs to preserve all metadata
  */
 export async function consumeFiles(
   inputFileIds: FileId[],
-  outputStirlingFiles: StirlingFile[],
-  outputStirlingFileStubs: StirlingFileStub[],
+  outputChronicleFiles: ChronicleFile[],
+  outputChronicleFileStubs: ChronicleFileStub[],
   filesRef: React.MutableRefObject<Map<FileId, File>>,
   dispatch: React.Dispatch<FileContextAction>,
   // Silent: replace the input in place (same grid slot) without auto-selecting
@@ -608,32 +608,32 @@ export async function consumeFiles(
 ): Promise<FileId[]> {
   if (DEBUG)
     console.log(
-      `📄 consumeFiles: Processing ${inputFileIds.length} input files, ${outputStirlingFiles.length} output files with pre-created stubs`,
+      `📄 consumeFiles: Processing ${inputFileIds.length} input files, ${outputChronicleFiles.length} output files with pre-created stubs`,
     );
 
   // Validate that we have matching files and stubs
-  if (outputStirlingFiles.length !== outputStirlingFileStubs.length) {
+  if (outputChronicleFiles.length !== outputChronicleFileStubs.length) {
     throw new Error(
-      `Mismatch between output files (${outputStirlingFiles.length}) and stubs (${outputStirlingFileStubs.length})`,
+      `Mismatch between output files (${outputChronicleFiles.length}) and stubs (${outputChronicleFileStubs.length})`,
     );
   }
 
-  // Store StirlingFiles in filesRef using their existing IDs (no ID generation needed)
-  for (let i = 0; i < outputStirlingFiles.length; i++) {
-    const stirlingFile = outputStirlingFiles[i];
-    const stub = outputStirlingFileStubs[i];
+  // Store ChronicleFiles in filesRef using their existing IDs (no ID generation needed)
+  for (let i = 0; i < outputChronicleFiles.length; i++) {
+    const ChronicleFile = outputChronicleFiles[i];
+    const stub = outputChronicleFileStubs[i];
 
-    if (stirlingFile.fileId !== stub.id) {
+    if (ChronicleFile.fileId !== stub.id) {
       console.warn(
-        `📄 consumeFiles: ID mismatch between StirlingFile (${stirlingFile.fileId}) and stub (${stub.id})`,
+        `📄 consumeFiles: ID mismatch between ChronicleFile (${ChronicleFile.fileId}) and stub (${stub.id})`,
       );
     }
 
-    filesRef.current.set(stirlingFile.fileId, stirlingFile);
+    filesRef.current.set(ChronicleFile.fileId, ChronicleFile);
 
     if (DEBUG)
       console.log(
-        `📄 consumeFiles: Stored StirlingFile ${stirlingFile.name} with ID ${stirlingFile.fileId}`,
+        `📄 consumeFiles: Stored ChronicleFile ${ChronicleFile.name} with ID ${ChronicleFile.fileId}`,
       );
   }
 
@@ -641,8 +641,8 @@ export async function consumeFiles(
   // storage helper, so a policy run recovered after a reload versions the file identically.
   await fileStorage.persistVersionedOutputs(
     inputFileIds,
-    outputStirlingFiles,
-    outputStirlingFileStubs,
+    outputChronicleFiles,
+    outputChronicleFileStubs,
   );
 
   // Dispatch the consume action with pre-created stubs (no processing needed)
@@ -650,17 +650,17 @@ export async function consumeFiles(
     type: "CONSUME_FILES",
     payload: {
       inputFileIds,
-      outputStirlingFileStubs: outputStirlingFileStubs,
+      outputChronicleFileStubs: outputChronicleFileStubs,
       silent: options?.silent ?? false,
     },
   });
 
   if (DEBUG)
     console.log(
-      `📄 consumeFiles: Successfully consumed files - removed ${inputFileIds.length} inputs, added ${outputStirlingFileStubs.length} outputs`,
+      `📄 consumeFiles: Successfully consumed files - removed ${inputFileIds.length} inputs, added ${outputChronicleFileStubs.length} outputs`,
     );
   // Return the output file IDs for undo tracking
-  return outputStirlingFileStubs.map((stub) => stub.id);
+  return outputChronicleFileStubs.map((stub) => stub.id);
 }
 
 /**
@@ -669,7 +669,7 @@ export async function consumeFiles(
  */
 export async function undoConsumeFiles(
   inputFiles: File[],
-  inputStirlingFileStubs: StirlingFileStub[],
+  inputChronicleFileStubs: ChronicleFileStub[],
   outputFileIds: FileId[],
   filesRef: React.MutableRefObject<Map<FileId, File>>,
   dispatch: React.Dispatch<FileContextAction>,
@@ -685,13 +685,13 @@ export async function undoConsumeFiles(
 ): Promise<void> {
   if (DEBUG)
     console.log(
-      `📄 undoConsumeFiles: Restoring ${inputStirlingFileStubs.length} input files, removing ${outputFileIds.length} output files`,
+      `📄 undoConsumeFiles: Restoring ${inputChronicleFileStubs.length} input files, removing ${outputFileIds.length} output files`,
     );
 
   // Validate inputs
-  if (inputFiles.length !== inputStirlingFileStubs.length) {
+  if (inputFiles.length !== inputChronicleFileStubs.length) {
     throw new Error(
-      `Mismatch between input files (${inputFiles.length}) and records (${inputStirlingFileStubs.length})`,
+      `Mismatch between input files (${inputFiles.length}) and records (${inputChronicleFileStubs.length})`,
     );
   }
 
@@ -702,14 +702,14 @@ export async function undoConsumeFiles(
     // Sync filesRef before dispatch — prevents bumpRevision re-renders from seeing stale output IDs with no File objects.
     outputFileIds.forEach((id) => filesRef.current.delete(id));
     inputFiles.forEach((file, index) => {
-      const record = inputStirlingFileStubs[index];
+      const record = inputChronicleFileStubs[index];
       if (file && record && file.size > 0) {
         filesRef.current.set(record.id, file);
       }
     });
 
     // Mark restored files dirty if they have a local path (they now differ from disk).
-    const stubsWithDirtyMarked = inputStirlingFileStubs.map((stub) =>
+    const stubsWithDirtyMarked = inputChronicleFileStubs.map((stub) =>
       stub.localFilePath ? { ...stub, isDirty: true } : stub,
     );
 
@@ -717,7 +717,7 @@ export async function undoConsumeFiles(
     dispatch({
       type: "UNDO_CONSUME_FILES",
       payload: {
-        inputStirlingFileStubs: stubsWithDirtyMarked,
+        inputChronicleFileStubs: stubsWithDirtyMarked,
         outputFileIds,
       },
     });
@@ -739,7 +739,7 @@ export async function undoConsumeFiles(
 
     // Restore isLeaf in IDB — modal reads IDB directly and misses files if isLeaf=false.
     await Promise.all(
-      inputStirlingFileStubs.map((stub) =>
+      inputChronicleFileStubs.map((stub) =>
         fileStorage.markFileAsLeaf(stub.id).catch((error) => {
           console.warn(
             `📄 undoConsumeFiles: Failed to restore isLeaf for ${stub.id}:`,
@@ -751,7 +751,7 @@ export async function undoConsumeFiles(
 
     if (DEBUG)
       console.log(
-        `📄 undoConsumeFiles: Successfully undone consume operation - restored ${inputStirlingFileStubs.length} inputs, removed ${outputFileIds.length} outputs`,
+        `📄 undoConsumeFiles: Successfully undone consume operation - restored ${inputChronicleFileStubs.length} inputs, removed ${outputFileIds.length} outputs`,
       );
   } catch (error) {
     // Rollback filesRef to previous state
@@ -773,41 +773,41 @@ export async function undoConsumeFiles(
  */
 
 /**
- * Add files using existing StirlingFileStubs from storage - preserves all metadata
+ * Add files using existing ChronicleFileStubs from storage - preserves all metadata
  * Use this when loading files that already exist in storage (FileManager, etc.)
- * StirlingFileStubs come with proper thumbnails, history, processing state
+ * ChronicleFileStubs come with proper thumbnails, history, processing state
  */
-export async function addStirlingFileStubs(
-  stirlingFileStubs: StirlingFileStub[],
+export async function addChronicleFileStubs(
+  ChronicleFileStubs: ChronicleFileStub[],
   options: { insertAfterPageId?: string; selectFiles?: boolean } = {},
   stateRef: React.MutableRefObject<FileContextState>,
   filesRef: React.MutableRefObject<Map<FileId, File>>,
   dispatch: React.Dispatch<FileContextAction>,
   lifecycleManager: FileLifecycleManager,
-): Promise<StirlingFile[]> {
+): Promise<ChronicleFile[]> {
   await addFilesMutex.lock();
 
   try {
     // Show loading indicator while preparing files from storage
-    if (stirlingFileStubs.length > 0) {
+    if (ChronicleFileStubs.length > 0) {
       dispatch({
         type: "SET_PROCESSING",
         payload: { isProcessing: true, progress: 0 },
       });
     }
 
-    const loadedFiles: StirlingFile[] = [];
+    const loadedFiles: ChronicleFile[] = [];
     let firstFileDispatched = false;
 
     // Process and dispatch files one by one for progressive UI updates
-    for (const stub of stirlingFileStubs) {
+    for (const stub of ChronicleFileStubs) {
       // Dedup by stable fileId. Two distinct files in history can share
       // name|size|lastModified (and therefore quickKey), so quickKey dedup
       // here would silently drop a legitimately different file.
       if (stateRef.current.files.byId[stub.id]) {
         if (DEBUG)
           console.log(
-            `📄 Skipping already-loaded StirlingFileStub: ${stub.name}`,
+            `📄 Skipping already-loaded ChronicleFileStub: ${stub.name}`,
           );
         continue;
       }
@@ -821,7 +821,7 @@ export async function addStirlingFileStubs(
       }
 
       // Dispatch each file immediately as we process it (progressive loading)
-      dispatch({ type: "ADD_FILES", payload: { stirlingFileStubs: [record] } });
+      dispatch({ type: "ADD_FILES", payload: { ChronicleFileStubs: [record] } });
 
       // Clear loading indicator after first file appears
       if (!firstFileDispatched) {
@@ -837,16 +837,16 @@ export async function addStirlingFileStubs(
 
       // Load File object from IndexedDB asynchronously
       scheduleMetadataHydration(async () => {
-        const stirlingFile = await fileStorage.getStirlingFile(fileId);
-        if (!stirlingFile) {
+        const ChronicleFile = await fileStorage.getChronicleFile(fileId);
+        if (!ChronicleFile) {
           return;
         }
 
         // Store the loaded file in filesRef
-        filesRef.current.set(fileId, stirlingFile);
+        filesRef.current.set(fileId, ChronicleFile);
 
         // Check if processedFile data needs regeneration
-        if (stirlingFile.type.startsWith("application/pdf")) {
+        if (ChronicleFile.type.startsWith("application/pdf")) {
           const needsProcessing =
             !stub.processedFile ||
             !stub.processedFile.pages ||
@@ -856,10 +856,10 @@ export async function addStirlingFileStubs(
           if (needsProcessing) {
             // Regenerate metadata
             const processedFileMetadata =
-              await generateProcessedFileMetadata(stirlingFile);
+              await generateProcessedFileMetadata(ChronicleFile);
 
             if (processedFileMetadata) {
-              const updates: Partial<StirlingFileStub> = {
+              const updates: Partial<ChronicleFileStub> = {
                 processedFile: processedFileMetadata,
               };
 
@@ -877,7 +877,7 @@ export async function addStirlingFileStubs(
                 }
               }
 
-              lifecycleManager.updateStirlingFileStub(
+              lifecycleManager.updateChronicleFileStub(
                 fileId,
                 updates,
                 stateRef,
@@ -888,7 +888,7 @@ export async function addStirlingFileStubs(
         }
 
         // Stub dispatch triggers re-render so the viewer appears (ADD_FILES alone doesn't update selectors).
-        lifecycleManager.updateStirlingFileStub(fileId, {}, stateRef);
+        lifecycleManager.updateChronicleFileStub(fileId, {}, stateRef);
       });
     }
 
@@ -920,9 +920,9 @@ export const createFileActions = (
   clearFileError: (fileId: FileId) =>
     dispatch({ type: "CLEAR_FILE_ERROR", payload: { fileId } }),
   clearAllFileErrors: () => dispatch({ type: "CLEAR_ALL_FILE_ERRORS" }),
-  updateStirlingFileStub: (
+  updateChronicleFileStub: (
     fileId: FileId,
-    updates: Partial<StirlingFileStub>,
+    updates: Partial<ChronicleFileStub>,
   ) =>
     dispatch({ type: "UPDATE_FILE_RECORD", payload: { id: fileId, updates } }),
 });

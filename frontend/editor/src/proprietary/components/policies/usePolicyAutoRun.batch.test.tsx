@@ -37,13 +37,13 @@ const mocks = vi.hoisted(() => ({
   getPolicyRun: vi.fn(),
   listPolicyRuns: vi.fn(),
   downloadPolicyOutput: vi.fn(),
-  getStirlingFile: vi.fn(),
-  getStirlingFileStub: vi.fn(),
+  getChronicleFile: vi.fn(),
+  getChronicleFileStub: vi.fn(),
   persistVersionedOutputs: vi.fn(),
   updateFileMetadata: vi.fn(),
-  createStirlingFilesAndStubs: vi.fn(),
+  createChronicleFilesAndStubs: vi.fn(),
   addFiles: vi.fn(),
-  updateStirlingFileStub: vi.fn(),
+  updateChronicleFileStub: vi.fn(),
   consumeFiles: vi.fn(),
 }));
 
@@ -56,7 +56,7 @@ vi.mock("@app/contexts/FileContext", () => ({
   useAllFiles: () => ({ fileStubs: mocks.workspace }),
   useFileManagement: () => ({
     addFiles: mocks.addFiles,
-    updateStirlingFileStub: mocks.updateStirlingFileStub,
+    updateChronicleFileStub: mocks.updateChronicleFileStub,
   }),
   useFileContext: () => ({ consumeFiles: mocks.consumeFiles }),
 }));
@@ -97,14 +97,14 @@ vi.mock("@app/services/policyApi", () => ({
 }));
 vi.mock("@app/services/fileStorage", () => ({
   fileStorage: {
-    getStirlingFile: mocks.getStirlingFile,
-    getStirlingFileStub: mocks.getStirlingFileStub,
+    getChronicleFile: mocks.getChronicleFile,
+    getChronicleFileStub: mocks.getChronicleFileStub,
     persistVersionedOutputs: mocks.persistVersionedOutputs,
     updateFileMetadata: mocks.updateFileMetadata,
   },
 }));
 vi.mock("@app/services/fileStubHelpers", () => ({
-  createStirlingFilesAndStubs: mocks.createStirlingFilesAndStubs,
+  createChronicleFilesAndStubs: mocks.createChronicleFilesAndStubs,
 }));
 vi.mock("@app/services/fileClassification", () => ({
   readClassificationLabelsFromFile: vi.fn().mockResolvedValue(null),
@@ -148,10 +148,10 @@ beforeEach(() => {
 
   mocks.listPolicyRuns.mockResolvedValue([]);
   // A run's bytes are always resolvable (input files + versioned children).
-  mocks.getStirlingFile.mockResolvedValue(
+  mocks.getChronicleFile.mockResolvedValue(
     new File(["x"], "doc.pdf", { type: "application/pdf" }),
   );
-  mocks.getStirlingFileStub.mockResolvedValue(null);
+  mocks.getChronicleFileStub.mockResolvedValue(null);
   mocks.persistVersionedOutputs.mockImplementation(async () => {
     mocks.persistCalls += 1;
   });
@@ -180,12 +180,12 @@ beforeEach(() => {
   }));
   // Deliver a unique workspace child stub per output, derived from the parent so
   // the chain's second policy can find + version it.
-  mocks.createStirlingFilesAndStubs.mockImplementation(
+  mocks.createChronicleFilesAndStubs.mockImplementation(
     async (files: File[], parentStub: { id: string }) => {
       const stubs = files.map(() => ({
         id: `${parentStub.id}~${mocks.stubCounter++}`,
       }));
-      return { stirlingFiles: files, stubs };
+      return { ChronicleFiles: files, stubs };
     },
   );
   mocks.addFiles.mockImplementation(async (files: File[]) => {
@@ -254,8 +254,8 @@ describe("policy auto-run — 61-file batch through a Classification → Securit
   it("does NOT re-open files that were closed while their runs were in flight", async () => {
     renderHook(() => Harness());
     // Close everything immediately — as if the user cleared the workbench mid-run.
-    // The inputs still persist in storage, so getStirlingFileStub resolves them.
-    mocks.getStirlingFileStub.mockResolvedValue({
+    // The inputs still persist in storage, so getChronicleFileStub resolves them.
+    mocks.getChronicleFileStub.mockResolvedValue({
       id: "storage",
       versionNumber: 1,
     });

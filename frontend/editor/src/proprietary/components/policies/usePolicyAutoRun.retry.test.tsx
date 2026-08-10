@@ -27,7 +27,7 @@ vi.mock("@app/services/policyApi", () => ({
   resolvePolicyRunTarget: () => "saas",
 }));
 vi.mock("@app/services/fileStorage", () => ({
-  fileStorage: { getStirlingFile: vi.fn(), getStirlingFileStub: vi.fn() },
+  fileStorage: { getChronicleFile: vi.fn(), getChronicleFileStub: vi.fn() },
 }));
 vi.mock("@app/contexts/IndexedDBContext", () => ({
   useIndexedDB: () => ({ bumpRevision: vi.fn() }),
@@ -45,7 +45,7 @@ import { fileStorage } from "@app/services/fileStorage";
 
 const getRunApi = vi.mocked(getPolicyRun);
 const runStored = vi.mocked(runStoredPolicy);
-const getFile = vi.mocked(fileStorage.getStirlingFile);
+const getFile = vi.mocked(fileStorage.getChronicleFile);
 
 const queueFullView = {
   runId: "run-1",

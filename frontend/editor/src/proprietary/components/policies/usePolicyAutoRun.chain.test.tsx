@@ -43,7 +43,7 @@ vi.mock("@app/services/policyApi", () => ({
   resolvePolicyRunTarget: () => "saas",
 }));
 vi.mock("@app/services/fileStorage", () => ({
-  fileStorage: { getStirlingFile: vi.fn(), getStirlingFileStub: vi.fn() },
+  fileStorage: { getChronicleFile: vi.fn(), getChronicleFileStub: vi.fn() },
 }));
 vi.mock("@app/contexts/IndexedDBContext", () => ({
   useIndexedDB: () => ({ bumpRevision: vi.fn() }),
@@ -59,7 +59,7 @@ import { runStoredPolicy } from "@app/services/policyApi";
 import { fileStorage } from "@app/services/fileStorage";
 
 const runStored = vi.mocked(runStoredPolicy);
-const getFile = vi.mocked(fileStorage.getStirlingFile);
+const getFile = vi.mocked(fileStorage.getChronicleFile);
 
 /** Reset the shared file list between tests without swapping the array identity. */
 function setFileStubs(next: typeof fileStubs) {

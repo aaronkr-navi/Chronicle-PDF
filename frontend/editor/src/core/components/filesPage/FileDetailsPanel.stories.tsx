@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { FileDetailsPanel } from "@app/components/filesPage/FileDetailsPanel";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import type { FileId } from "@app/types/file";
 import type { FolderRecord } from "@app/types/folder";
 
 const buildFileStub = (
-  overrides: Partial<StirlingFileStub> = {},
-): StirlingFileStub => ({
+  overrides: Partial<ChronicleFileStub> = {},
+): ChronicleFileStub => ({
   id: "file-1" as FileId,
   name: "report.pdf",
   type: "application/pdf",
@@ -34,7 +34,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const singleFile = buildFileStub();
-const fileMap = new Map<FileId, StirlingFileStub>([
+const fileMap = new Map<FileId, ChronicleFileStub>([
   [singleFile.id, singleFile],
 ]);
 
@@ -67,7 +67,7 @@ export const MultiSelect: Story = {
     });
     return {
       selectedFileIds: [fileA.id, fileB.id],
-      fileMap: new Map<FileId, StirlingFileStub>([
+      fileMap: new Map<FileId, ChronicleFileStub>([
         [fileA.id, fileA],
         [fileB.id, fileB],
       ]),

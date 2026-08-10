@@ -3,10 +3,10 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import FileDetails from "@app/components/fileManager/FileDetails";
 import { FileContextProvider } from "@app/contexts/FileContext";
 import { FileManagerProvider } from "@app/contexts/FileManagerContext";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import type { FileId } from "@app/types/file";
 
-const mockFile: StirlingFileStub = {
+const mockFile: ChronicleFileStub = {
   id: "story-file-1" as FileId,
   name: "quarterly-report.pdf",
   type: "application/pdf",

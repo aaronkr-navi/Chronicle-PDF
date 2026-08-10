@@ -27,9 +27,9 @@ import {
   FileContextActionsValue,
   FileContextActions,
   FileId,
-  StirlingFileStub,
-  StirlingFile,
-  createStirlingFile,
+  ChronicleFileStub,
+  ChronicleFile,
+  createChronicleFile,
 } from "@app/types/fileContext";
 
 // Import modular components
@@ -40,7 +40,7 @@ import {
 import { createFileSelectors } from "@app/contexts/file/fileSelectors";
 import {
   addFiles,
-  addStirlingFileStubs,
+  addChronicleFileStubs,
   consumeFiles,
   undoConsumeFiles,
   createFileActions,
@@ -224,9 +224,9 @@ function FileContextInner({
     dispatch({ type: "SET_UNSAVED_CHANGES", payload: { hasChanges } });
   }, []);
 
-  const selectFiles = (stirlingFiles: StirlingFile[]) => {
+  const selectFiles = (ChronicleFiles: ChronicleFile[]) => {
     const currentSelection = stateRef.current.ui.selectedFileIds;
-    const newFileIds = stirlingFiles.map((stirlingFile) => stirlingFile.fileId);
+    const newFileIds = ChronicleFiles.map((ChronicleFile) => ChronicleFile.fileId);
     dispatch({
       type: "SET_SELECTED_FILES",
       payload: { fileIds: [...currentSelection, ...newFileIds] },
@@ -246,8 +246,8 @@ function FileContextInner({
         skipUploadTracking?: boolean;
         derivedFromTool?: boolean;
       },
-    ): Promise<StirlingFile[]> => {
-      const stirlingFiles = await addFiles(
+    ): Promise<ChronicleFile[]> => {
+      const ChronicleFiles = await addFiles(
         {
           files,
           ...options,
@@ -265,14 +265,14 @@ function FileContextInner({
       );
 
       // Auto-select the newly added files if requested
-      if (options?.selectFiles && stirlingFiles.length > 0) {
-        selectFiles(stirlingFiles);
+      if (options?.selectFiles && ChronicleFiles.length > 0) {
+        selectFiles(ChronicleFiles);
       }
-      if (stirlingFiles.length > 0) {
+      if (ChronicleFiles.length > 0) {
         indexedDB?.bumpRevision?.();
       }
 
-      return stirlingFiles;
+      return ChronicleFiles;
     },
     [enablePersistence, requestConfirmation, indexedDB],
   );
@@ -293,8 +293,8 @@ function FileContextInner({
         allowDuplicates?: boolean;
         skipUploadTracking?: boolean;
       },
-    ): Promise<StirlingFile[]> => {
-      const stirlingFiles = await addFiles(
+    ): Promise<ChronicleFile[]> => {
+      const ChronicleFiles = await addFiles(
         {
           files,
           ...options,
@@ -306,27 +306,27 @@ function FileContextInner({
         enablePersistence,
       );
 
-      if (options?.selectFiles && stirlingFiles.length > 0) {
-        selectFiles(stirlingFiles);
+      if (options?.selectFiles && ChronicleFiles.length > 0) {
+        selectFiles(ChronicleFiles);
       }
 
-      if (stirlingFiles.length > 0) {
+      if (ChronicleFiles.length > 0) {
         indexedDB?.bumpRevision?.();
       }
 
-      return stirlingFiles;
+      return ChronicleFiles;
     },
     [enablePersistence, indexedDB],
   );
 
-  const addStirlingFileStubsAction = useCallback(
+  const addChronicleFileStubsAction = useCallback(
     async (
-      stirlingFileStubs: StirlingFileStub[],
+      ChronicleFileStubs: ChronicleFileStub[],
       options?: { insertAfterPageId?: string; selectFiles?: boolean },
-    ): Promise<StirlingFile[]> => {
-      // StirlingFileStubs preserve all metadata - perfect for FileManager use case!
-      const result = await addStirlingFileStubs(
-        stirlingFileStubs,
+    ): Promise<ChronicleFile[]> => {
+      // ChronicleFileStubs preserve all metadata - perfect for FileManager use case!
+      const result = await addChronicleFileStubs(
+        ChronicleFileStubs,
         options,
         stateRef,
         filesRef,
@@ -351,14 +351,14 @@ function FileContextInner({
   const consumeFilesWrapper = useCallback(
     async (
       inputFileIds: FileId[],
-      outputStirlingFiles: StirlingFile[],
-      outputStirlingFileStubs: StirlingFileStub[],
+      outputChronicleFiles: ChronicleFile[],
+      outputChronicleFileStubs: ChronicleFileStub[],
       options?: { silent?: boolean },
     ): Promise<FileId[]> => {
       return consumeFiles(
         inputFileIds,
-        outputStirlingFiles,
-        outputStirlingFileStubs,
+        outputChronicleFiles,
+        outputChronicleFileStubs,
         filesRef,
         dispatch,
         options,
@@ -420,12 +420,12 @@ function FileContextInner({
         thumbnail,
         processedMetadata,
       );
-      const stirlingUnlockedFile = createStirlingFile(
+      const ChronicleUnlockedFile = createChronicleFile(
         unlockedFile,
         childStub.id,
       );
 
-      await consumeFilesWrapper([fileId], [stirlingUnlockedFile], [childStub]);
+      await consumeFilesWrapper([fileId], [ChronicleUnlockedFile], [childStub]);
     },
     [consumeFilesWrapper, t],
   );
@@ -548,12 +548,12 @@ function FileContextInner({
   const undoConsumeFilesWrapper = useCallback(
     async (
       inputFiles: File[],
-      inputStirlingFileStubs: StirlingFileStub[],
+      inputChronicleFileStubs: ChronicleFileStub[],
       outputFileIds: FileId[],
     ): Promise<void> => {
       return undoConsumeFiles(
         inputFiles,
-        inputStirlingFileStubs,
+        inputChronicleFileStubs,
         outputFileIds,
         filesRef,
         dispatch,
@@ -563,16 +563,16 @@ function FileContextInner({
     [indexedDB],
   );
 
-  // File pinning functions - use StirlingFile directly
+  // File pinning functions - use ChronicleFile directly
   const pinFileWrapper = useCallback(
-    (file: StirlingFile) => {
+    (file: ChronicleFile) => {
       baseActions.pinFile(file.fileId);
     },
     [baseActions],
   );
 
   const unpinFileWrapper = useCallback(
-    (file: StirlingFile) => {
+    (file: ChronicleFile) => {
       baseActions.unpinFile(file.fileId);
     },
     [baseActions],
@@ -584,7 +584,7 @@ function FileContextInner({
       ...baseActions,
       addFiles: addRawFiles,
       addFilesWithOptions,
-      addStirlingFileStubs: addStirlingFileStubsAction,
+      addChronicleFileStubs: addChronicleFileStubsAction,
       removeFiles: async (fileIds: FileId[], deleteFromStorage?: boolean) => {
         // Remove from memory and cleanup resources
         lifecycleManager.removeFiles(fileIds, stateRef);
@@ -598,10 +598,10 @@ function FileContextInner({
           }
         }
       },
-      updateStirlingFileStub: (
+      updateChronicleFileStub: (
         fileId: FileId,
-        updates: Partial<StirlingFileStub>,
-      ) => lifecycleManager.updateStirlingFileStub(fileId, updates, stateRef),
+        updates: Partial<ChronicleFileStub>,
+      ) => lifecycleManager.updateChronicleFileStub(fileId, updates, stateRef),
       reorderFiles: (orderedFileIds: FileId[]) => {
         dispatch({ type: "REORDER_FILES", payload: { orderedFileIds } });
       },
@@ -644,7 +644,7 @@ function FileContextInner({
     [
       baseActions,
       addRawFiles,
-      addStirlingFileStubsAction,
+      addChronicleFileStubsAction,
       lifecycleManager,
       setHasUnsavedChanges,
       consumeFilesWrapper,
@@ -762,7 +762,7 @@ export {
   useFileSelection,
   useFileManagement,
   useFileUI,
-  useStirlingFileStub,
+  useChronicleFileStub,
   useAllFiles,
   useSelectedFiles,
   // Primary API hooks for tools

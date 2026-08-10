@@ -21,26 +21,26 @@ import { executeAutomationSequence } from "@app/utils/automationExecutor";
 import { folderDirectoryHandleStorage } from "@app/services/folderDirectoryHandleStorage";
 import {
   FileId,
-  StirlingFileStub,
+  ChronicleFileStub,
   createFileId,
-  createStirlingFile,
+  createChronicleFile,
   createQuickKey,
-  isStirlingFile,
+  isChronicleFile,
 } from "@app/types/fileContext";
 
 /**
  * Resolves the storage ID for an input file.
- * - StirlingFiles (already in fileStorage): returns the existing fileId, ownedByFolder=false.
+ * - ChronicleFiles (already in fileStorage): returns the existing fileId, ownedByFolder=false.
  * - Fresh disk drops: creates a new stub in fileStorage, returns new ID, ownedByFolder=true.
  */
 export async function resolveInputFile(
   file: File,
 ): Promise<{ inputFileId: string; ownedByFolder: boolean }> {
-  if (isStirlingFile(file)) {
+  if (isChronicleFile(file)) {
     return { inputFileId: file.fileId, ownedByFolder: false };
   }
   const newFileId = createFileId();
-  const stub: StirlingFileStub = {
+  const stub: ChronicleFileStub = {
     id: newFileId,
     name: file.name,
     type: file.type || "application/pdf",
@@ -53,8 +53,8 @@ export async function resolveInputFile(
     quickKey: createQuickKey(file),
     createdAt: Date.now(),
   };
-  await fileStorage.storeStirlingFile(
-    createStirlingFile(file, newFileId),
+  await fileStorage.storeChronicleFile(
+    createChronicleFile(file, newFileId),
     stub,
   );
   return { inputFileId: newFileId, ownedByFolder: true };
@@ -83,7 +83,7 @@ async function finalizeRun(
     currentMeta?.displayFileIds ??
     (currentMeta?.displayFileId ? [currentMeta.displayFileId] : []);
 
-  const inputStub = await fileStorage.getStirlingFileStub(
+  const inputStub = await fileStorage.getChronicleFileStub(
     inputFileId as FileId,
   );
   const isVersionMode = folder.outputMode === "new_version";
@@ -104,7 +104,7 @@ async function finalizeRun(
       const ids =
         meta.displayFileIds ?? (meta.displayFileId ? [meta.displayFileId] : []);
       for (const oid of ids) {
-        const stub = await fileStorage.getStirlingFileStub(oid as FileId);
+        const stub = await fileStorage.getChronicleFileStub(oid as FileId);
         if (stub?.name) takenNames.add(stub.name);
       }
     }
@@ -137,7 +137,7 @@ async function finalizeRun(
 
     const outputId = createFileId();
     allOutputIds.push(outputId);
-    const outputStub: StirlingFileStub = {
+    const outputStub: ChronicleFileStub = {
       id: outputId,
       name: outputFileName,
       type: resultFile.type || "application/pdf",
@@ -158,8 +158,8 @@ async function finalizeRun(
             lastModified: resultFile.lastModified,
           })
         : resultFile;
-    await fileStorage.storeStirlingFile(
-      createStirlingFile(renamedFile, outputId),
+    await fileStorage.storeChronicleFile(
+      createChronicleFile(renamedFile, outputId),
       outputStub,
     );
 
@@ -188,7 +188,7 @@ async function finalizeRun(
   if (!isAutoNumber) {
     for (const oldId of prevOutputIds) {
       try {
-        await fileStorage.deleteStirlingFile(oldId as FileId);
+        await fileStorage.deleteChronicleFile(oldId as FileId);
       } catch {
         /* ignore */
       }
@@ -345,7 +345,7 @@ export function useFolderAutomation(toolRegistry: Partial<ToolRegistry>) {
           entry.folderId,
         );
         if (!freshFolder || freshFolder.isPaused) continue;
-        const freshFile = await fileStorage.getStirlingFile(
+        const freshFile = await fileStorage.getChronicleFile(
           entry.fileId as FileId,
         );
         if (!freshFile) continue;

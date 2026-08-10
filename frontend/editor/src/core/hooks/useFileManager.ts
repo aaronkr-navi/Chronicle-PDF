@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { useIndexedDB } from "@app/contexts/IndexedDBContext";
 import { fileStorage } from "@app/services/fileStorage";
-import { StirlingFileStub, StirlingFile } from "@app/types/fileContext";
+import { ChronicleFileStub, ChronicleFile } from "@app/types/fileContext";
 import { FileId } from "@app/types/fileContext";
 import apiClient from "@app/services/apiClient";
 import { useAppConfig } from "@app/contexts/AppConfigContext";
@@ -78,7 +78,7 @@ export const useFileManager = () => {
   );
 
   const convertToFile = useCallback(
-    async (fileStub: StirlingFileStub): Promise<File> => {
+    async (fileStub: ChronicleFileStub): Promise<File> => {
       if (!indexedDB) {
         throw new Error("IndexedDB context not available");
       }
@@ -97,7 +97,7 @@ export const useFileManager = () => {
     [indexedDB],
   );
 
-  const loadRecentFiles = useCallback(async (): Promise<StirlingFileStub[]> => {
+  const loadRecentFiles = useCallback(async (): Promise<ChronicleFileStub[]> => {
     setLoading(true);
     try {
       if (!indexedDB) {
@@ -105,13 +105,13 @@ export const useFileManager = () => {
       }
 
       // Load only leaf files metadata (processed files that haven't been used as input for other tools)
-      const stirlingFileStubs = await fileStorage.getLeafStirlingFileStubs();
+      const ChronicleFileStubs = await fileStorage.getLeafChronicleFileStubs();
       const remoteIdSet = new Set(
-        stirlingFileStubs
+        ChronicleFileStubs
           .map((stub) => stub.remoteStorageId)
           .filter((id): id is number => typeof id === "number"),
       );
-      let combinedStubs = stirlingFileStubs;
+      let combinedStubs = ChronicleFileStubs;
 
       const shouldFetchServerFiles = config?.storageEnabled === true;
 
@@ -125,7 +125,7 @@ export const useFileManager = () => {
             } as any,
           );
           const serverFiles = Array.isArray(response.data) ? response.data : [];
-          const serverStubs: StirlingFileStub[] = [];
+          const serverStubs: ChronicleFileStub[] = [];
           const serverMap = new Map<number, StoredFileResponse>();
           serverFiles.forEach((file) => {
             if (file && typeof file.id === "number") {
@@ -133,7 +133,7 @@ export const useFileManager = () => {
             }
           });
 
-          const updatedLocalStubs = stirlingFileStubs.map((stub) => {
+          const updatedLocalStubs = ChronicleFileStubs.map((stub) => {
             if (!stub.remoteStorageId) {
               return stub;
             }
@@ -301,7 +301,7 @@ export const useFileManager = () => {
                 .map((stub) => stub.remoteShareToken)
                 .filter((token): token is string => Boolean(token)),
             );
-            const sharedStubs: StirlingFileStub[] = [];
+            const sharedStubs: ChronicleFileStub[] = [];
 
             for (const link of sharedLinks) {
               if (!link || !link.shareToken) {
@@ -374,8 +374,8 @@ export const useFileManager = () => {
   const handleRemoveFile = useCallback(
     async (
       index: number,
-      files: StirlingFileStub[],
-      setFiles: (files: StirlingFileStub[]) => void,
+      files: ChronicleFileStub[],
+      setFiles: (files: ChronicleFileStub[]) => void,
       onRemovedFromWorkbench?: (fileId: FileId) => void,
       onDeleteFailed?: () => void,
     ) => {
@@ -448,28 +448,28 @@ export const useFileManager = () => {
       };
 
       const selectMultipleFiles = async (
-        files: StirlingFileStub[],
-        onStirlingFilesSelect: (stirlingFiles: StirlingFile[]) => void,
+        files: ChronicleFileStub[],
+        onChronicleFilesSelect: (ChronicleFiles: ChronicleFile[]) => void,
       ) => {
         if (selectedFiles.length === 0) return;
 
         try {
-          // Filter by UUID and load full StirlingFile objects directly
+          // Filter by UUID and load full ChronicleFile objects directly
           const selectedFileObjects = files.filter((f) =>
             selectedFiles.includes(f.id),
           );
 
-          const stirlingFiles = await Promise.all(
+          const ChronicleFiles = await Promise.all(
             selectedFileObjects.map(async (stub) => {
-              const stirlingFile = await fileStorage.getStirlingFile(stub.id);
-              if (!stirlingFile) {
+              const ChronicleFile = await fileStorage.getChronicleFile(stub.id);
+              if (!ChronicleFile) {
                 throw new Error(`File not found in storage: ${stub.name}`);
               }
-              return stirlingFile;
+              return ChronicleFile;
             }),
           );
 
-          onStirlingFilesSelect(stirlingFiles);
+          onChronicleFilesSelect(ChronicleFiles);
           clearSelection();
         } catch (error) {
           console.error("Failed to load selected files:", error);

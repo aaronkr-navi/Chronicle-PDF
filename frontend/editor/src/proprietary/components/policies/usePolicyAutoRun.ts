@@ -37,9 +37,9 @@ import type {
 } from "@app/services/policyPipeline";
 import { dispatchPaygLimitReached } from "@app/services/usageLimitBridge";
 import type { FileId } from "@app/types/file";
-import { createStirlingFilesAndStubs } from "@app/services/fileStubHelpers";
+import { createChronicleFilesAndStubs } from "@app/services/fileStubHelpers";
 import { readClassificationLabelsFromFile } from "@app/services/fileClassification";
-import type { StirlingFile, StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFile, ChronicleFileStub } from "@app/types/fileContext";
 import type { PoliciesByCategory } from "@app/types/policies";
 import { usePolicies } from "@app/hooks/usePolicies";
 import { useAiEngineEnabled } from "@app/hooks/useAiEngineEnabled";
@@ -125,7 +125,7 @@ const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export function usePolicyAutoRun(): void {
   const { fileStubs } = useAllFiles();
-  const { addFiles, updateStirlingFileStub } = useFileManagement();
+  const { addFiles, updateChronicleFileStub } = useFileManagement();
   const { consumeFiles } = useFileContext();
   const { bumpRevision } = useIndexedDB();
   const { policies } = usePolicies();
@@ -350,7 +350,7 @@ export function usePolicyAutoRun(): void {
       void importOutputs(run, {
         addFiles,
         consumeFiles,
-        updateStirlingFileStub,
+        updateChronicleFileStub,
         bumpRevision,
         outputMode,
         outputName,
@@ -366,7 +366,7 @@ export function usePolicyAutoRun(): void {
     runs,
     addFiles,
     consumeFiles,
-    updateStirlingFileStub,
+    updateChronicleFileStub,
     policies,
     orderedUploadCategories,
   ]);
@@ -388,17 +388,17 @@ interface ImportContext {
   addFiles: (
     files: File[],
     options?: { skipUploadTracking?: boolean; derivedFromTool?: boolean },
-  ) => Promise<StirlingFile[]>;
+  ) => Promise<ChronicleFile[]>;
   consumeFiles: (
     inputFileIds: FileId[],
-    outputs: StirlingFile[],
-    stubs: StirlingFileStub[],
+    outputs: ChronicleFile[],
+    stubs: ChronicleFileStub[],
     options?: { silent?: boolean },
   ) => Promise<unknown>;
   /** Patch a workspace stub in place (used to stamp a new-file output's category). */
-  updateStirlingFileStub: (
+  updateChronicleFileStub: (
     fileId: FileId,
-    updates: Partial<StirlingFileStub>,
+    updates: Partial<ChronicleFileStub>,
   ) => void;
   /** Bump the IndexedDB revision so the file views re-read after a storage-only version write. */
   bumpRevision: () => void;
@@ -410,7 +410,7 @@ interface ImportContext {
    *  base filename. Defaults to "suffix" when absent. */
   outputNamePosition?: "prefix" | "suffix" | "auto-number";
   /** The input file's stub — required to version it; absent if it's been removed. */
-  parentStub: StirlingFileStub | undefined;
+  parentStub: ChronicleFileStub | undefined;
   /** The first upload policy in the chain — the only one the dispatch effect ever
    *  fires. Every policy output is marked dispatched for it so a downstream policy's
    *  output is never mistaken for a fresh upload and re-enforced (an endless loop). */
@@ -599,7 +599,7 @@ async function importOutputs(
   const parentStub =
     ctx.outputMode === "new_version"
       ? (ctx.parentStub ??
-        (await fileStorage.getStirlingFileStub(run.fileId as FileId)) ??
+        (await fileStorage.getChronicleFileStub(run.fileId as FileId)) ??
         undefined)
       : undefined;
 
@@ -621,7 +621,7 @@ async function importOutputs(
     // Replace the input file with a versioned child (preserves its history).
     // The version records "automate" as its origin tool — a policy is a
     // multi-tool automation, not any single tool (redact/watermark/sanitize/…).
-    const { stirlingFiles, stubs } = await createStirlingFilesAndStubs(
+    const { ChronicleFiles, stubs } = await createChronicleFilesAndStubs(
       files,
       parentStub,
       "automate",
@@ -663,7 +663,7 @@ async function importOutputs(
       // stub, so it lands in the right group instantly (no re-read, no flicker).
       await ctx.consumeFiles(
         [run.fileId as FileId],
-        stirlingFiles,
+        ChronicleFiles,
         categorized,
         { silent: true },
       );
@@ -672,7 +672,7 @@ async function importOutputs(
       // storage layer, then refresh the file views.
       await fileStorage.persistVersionedOutputs(
         [run.fileId as FileId],
-        stirlingFiles,
+        ChronicleFiles,
         categorized,
       );
       ctx.bumpRevision();
@@ -701,7 +701,7 @@ async function importOutputs(
           derivedFromTool: true,
           ...(labels ? { classificationLabels: labels } : {}),
         };
-        ctx.updateStirlingFileStub(f.fileId, updates);
+        ctx.updateChronicleFileStub(f.fileId, updates);
         const ok = await fileStorage.updateFileMetadata(f.fileId, updates);
         if (ok) mutated = true;
       }),
@@ -739,15 +739,15 @@ async function runPolicyOnFile(
   fileName: string,
 ): Promise<void> {
   // A freshly-uploaded file's bytes are written to IndexedDB asynchronously, so
-  // its stub can appear in the file list a beat before getStirlingFile resolves
+  // its stub can appear in the file list a beat before getChronicleFile resolves
   // it. Wait briefly rather than bail — and DON'T mark dispatched until we hold
   // the file, or a too-early miss would skip enforcement on that file forever.
   // (The caller's in-flight guard prevents double-dispatch during this wait.)
   // A transient IndexedDB error is treated as a miss (not a throw), so it retries
   // and then marks dispatched rather than rejecting into a hot re-dispatch loop.
-  const tryGetFile = async (): Promise<StirlingFile | null> => {
+  const tryGetFile = async (): Promise<ChronicleFile | null> => {
     try {
-      return await fileStorage.getStirlingFile(fileId);
+      return await fileStorage.getChronicleFile(fileId);
     } catch {
       return null;
     }

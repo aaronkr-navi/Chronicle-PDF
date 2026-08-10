@@ -32,7 +32,7 @@ import { accountService } from "@app/services/accountService";
 import { GoogleDriveIcon } from "@app/components/shared/CloudStorageIcons";
 import { AppSwitcher } from "@app/components/shared/AppSwitcher";
 import { SidebarToggleIcon } from "@app/components/shared/SidebarToggleIcon";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import SearchIcon from "@mui/icons-material/Search";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
@@ -286,18 +286,18 @@ const FileSidebar = forwardRef<HTMLDivElement, FileSidebarProps>(
     }, [config?.enableLogin, authDisplayName]);
 
     // Leaf files = user-visible files (excludes intermediate tool outputs)
-    const [allFileStubs, setAllFileStubs] = useState<StirlingFileStub[]>([]);
+    const [allFileStubs, setAllFileStubs] = useState<ChronicleFileStub[]>([]);
     const [stubsLoaded, setStubsLoaded] = useState(false);
     // Kebab "Save to cloud" target; drives BulkUploadToServerModal.
     const [saveToServerTarget, setSaveToServerTarget] = useState<
-      StirlingFileStub[] | null
+      ChronicleFileStub[] | null
     >(null);
     // Kebab "Version history" target; drives VersionHistoryModal.
     const [versionHistoryTarget, setVersionHistoryTarget] =
-      useState<StirlingFileStub | null>(null);
+      useState<ChronicleFileStub | null>(null);
     // Kebab "Delete" target when the file is on the cloud; drives the
     // local/cloud/both choice dialog. Local-only files delete immediately.
-    const [deleteTarget, setDeleteTarget] = useState<StirlingFileStub | null>(
+    const [deleteTarget, setDeleteTarget] = useState<ChronicleFileStub | null>(
       null,
     );
     // Storage gate: only offer Save-to-cloud when the server allows it and
@@ -398,7 +398,7 @@ const FileSidebar = forwardRef<HTMLDivElement, FileSidebarProps>(
             remoteSharedViaLink: false,
             remoteHasShareLinks: undefined,
           };
-          fileActions.updateStirlingFileStub(stub.id, cleared);
+          fileActions.updateChronicleFileStub(stub.id, cleared);
           await fileStorage.updateFileMetadata(stub.id, cleared);
         }
         setDeleteTarget(null);
@@ -559,7 +559,7 @@ const FileSidebar = forwardRef<HTMLDivElement, FileSidebarProps>(
             navActions.setWorkbench("fileEditor");
           }
 
-          await fileActions.addStirlingFileStubs([stub]);
+          await fileActions.addChronicleFileStubs([stub]);
 
           if (isMultiTool) {
             fileActions.setSelectedFiles([
@@ -622,7 +622,7 @@ const FileSidebar = forwardRef<HTMLDivElement, FileSidebarProps>(
             if (state.files.ids.length > 0 && currentWorkbench === "viewer") {
               navActions.setWorkbench("fileEditor");
             }
-            await fileActions.addStirlingFileStubs([stub]);
+            await fileActions.addChronicleFileStubs([stub]);
           }
 
           // Route through pendingViewFileId so both setActiveFileIndex + setWorkbench fire together.
@@ -728,7 +728,7 @@ const FileSidebar = forwardRef<HTMLDivElement, FileSidebarProps>(
     const width = collapsed ? COLLAPSED_WIDTH : EXPANDED_WIDTH;
 
     // Render one file row (shared by the flat list and the grouped SaaS layout).
-    const renderFileRow = (stub: StirlingFileStub) => {
+    const renderFileRow = (stub: ChronicleFileStub) => {
       // O(1) membership instead of a per-row linear scan of the workbench ids.
       const isInWorkbench = workbenchIds.has(stub.id as string);
       const workbenchFileId = isInWorkbench ? (stub.id as FileId) : undefined;

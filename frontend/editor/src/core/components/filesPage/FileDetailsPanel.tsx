@@ -16,7 +16,7 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 import { FileId } from "@app/types/file";
 import { FolderRecord } from "@app/types/folder";
-import { StirlingFileStub } from "@app/types/fileContext";
+import { ChronicleFileStub } from "@app/types/fileContext";
 import { formatFileSize, getFileDate } from "@app/utils/fileUtils";
 import {
   downloadFileFromStorage,
@@ -35,14 +35,14 @@ import {
 
 interface FileDetailsPanelProps {
   selectedFileIds: FileId[];
-  fileMap: Map<FileId, StirlingFileStub>;
+  fileMap: Map<FileId, ChronicleFileStub>;
   currentFolder: FolderRecord | null;
   onClose: () => void;
   onAddToWorkspace: (fileIds: FileId[]) => void;
   onMove: (fileIds: FileId[]) => void;
   onRemove: (fileIds: FileId[]) => void;
   /** Save to server; only shown when at least one selected file is local-only. */
-  onSaveToServer?: (files: StirlingFileStub[]) => void;
+  onSaveToServer?: (files: ChronicleFileStub[]) => void;
   /** When set, Save to server renders disabled with this tooltip (storage off). */
   saveToServerDisabledReason?: string | null;
   /** On small screens, show a compact "Version journey" button instead of the
@@ -70,7 +70,7 @@ export function FileDetailsPanel({
     () =>
       selectedFileIds
         .map((id) => fileMap.get(id))
-        .filter((f): f is StirlingFileStub => Boolean(f)),
+        .filter((f): f is ChronicleFileStub => Boolean(f)),
     [selectedFileIds, fileMap],
   );
 
@@ -89,7 +89,7 @@ export function FileDetailsPanel({
   const classificationEnabled = useClassificationEnabled();
   const labelName = useLabelName();
   // Version chain for the selected file; empty for v1 or multi-select.
-  const [versionChain, setVersionChain] = useState<StirlingFileStub[]>([]);
+  const [versionChain, setVersionChain] = useState<ChronicleFileStub[]>([]);
   const singleFileForChain = files.length === 1 ? files[0] : null;
   useEffect(() => {
     if (!singleFileForChain) {
@@ -325,7 +325,7 @@ export function FileDetailsPanel({
                 )}
               </>
             )}
-            {/* Version journey. Each tool run writes a new StirlingFile
+            {/* Version journey. Each tool run writes a new ChronicleFile
                 with the same `originalFileId` and an incremented
                 `versionNumber`, so the chain reconstructs the edit
                 timeline. The previous file manager exposed this and the

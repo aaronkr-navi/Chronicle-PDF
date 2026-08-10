@@ -139,7 +139,7 @@ class FolderAccessGuardTest {
     }
 
     @Test
-    void rejectsTheStirlingConfigDirectoryEvenWhenItWouldBeInsideAnAllowedRoot() {
+    void rejectsTheChronicleConfigDirectoryEvenWhenItWouldBeInsideAnAllowedRoot() {
         Path configDir =
                 Path.of(InstallationPathConfig.getConfigPath()).toAbsolutePath().normalize();
         // Allow the config dir's parent, so only the protected-path rule can reject it.

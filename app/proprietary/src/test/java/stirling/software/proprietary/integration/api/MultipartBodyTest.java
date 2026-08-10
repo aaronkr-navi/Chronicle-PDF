@@ -50,7 +50,7 @@ class MultipartBodyTest {
         // including the auto-populated context, so includeContext could never be sent.
         String json = "{\"document\":{\"title\":\"Q3 \\\"final\\\"\"},\"n\":2}";
         MultipartBody body = new MultipartBody();
-        body.addField("stirlingContext", json);
+        body.addField("ChronicleContext", json);
 
         assertThat(render(body)).contains(json);
     }
@@ -79,7 +79,7 @@ class MultipartBodyTest {
                 .contains("name=\"file\"; filename=\"claim.pdf\"")
                 .contains("Content-Type: application/pdf")
                 .contains("%PDF-1.7");
-        assertThat(body.contentType()).startsWith("multipart/form-data; boundary=StirlingBoundary");
+        assertThat(body.contentType()).startsWith("multipart/form-data; boundary=ChronicleBoundary");
     }
 
     @ParameterizedTest

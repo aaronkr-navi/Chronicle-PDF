@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import CompactFileDetails from "@app/components/fileManager/CompactFileDetails";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import type { FileId } from "@app/types/file";
 
 const buildFileStub = (
-  overrides: Partial<StirlingFileStub> = {},
-): StirlingFileStub => ({
+  overrides: Partial<ChronicleFileStub> = {},
+): ChronicleFileStub => ({
   id: "file-1" as FileId,
   name: "report.pdf",
   type: "application/pdf",

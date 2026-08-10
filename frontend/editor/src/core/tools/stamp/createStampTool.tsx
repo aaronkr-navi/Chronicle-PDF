@@ -171,7 +171,7 @@ export const createStampTool = (config: StampToolConfig) => {
         if (flattenResult) {
           await consumeFiles(
             flattenResult.inputFileIds,
-            [flattenResult.outputStirlingFile],
+            [flattenResult.outputChronicleFile],
             [flattenResult.outputStub],
           );
 

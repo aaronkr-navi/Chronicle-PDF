@@ -21,7 +21,7 @@ import {
   draggable,
   dropTargetForElements,
 } from "@atlaskit/pragmatic-drag-and-drop/element/adapter";
-import { StirlingFileStub } from "@app/types/fileContext";
+import { ChronicleFileStub } from "@app/types/fileContext";
 import {
   PolicyBadges,
   type FileItemPolicyRef,
@@ -49,7 +49,7 @@ import { truncateCenter } from "@app/utils/textUtils";
 import { FileEditorStatusDot } from "@app/components/fileEditor/FileEditorStatusDot";
 
 interface FileEditorThumbnailProps {
-  file: StirlingFileStub;
+  file: ChronicleFileStub;
   index: number;
   totalFiles: number;
   onCloseFile: (fileId: FileId) => void;
@@ -255,7 +255,7 @@ const FileEditorThumbnail = ({
           fileId: file.id,
         });
         if (!result.cancelled && result.savedPath) {
-          fileActions.updateStirlingFileStub(file.id, {
+          fileActions.updateChronicleFileStub(file.id, {
             localFilePath: file.localFilePath ?? result.savedPath,
             isDirty: false,
           });

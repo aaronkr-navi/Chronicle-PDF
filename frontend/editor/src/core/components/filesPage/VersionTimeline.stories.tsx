@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { VersionTimeline } from "@app/components/filesPage/VersionTimeline";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import type { FileId, ToolOperation } from "@app/types/file";
 
 const buildFileStub = (
-  overrides: Partial<StirlingFileStub> = {},
-): StirlingFileStub => ({
+  overrides: Partial<ChronicleFileStub> = {},
+): ChronicleFileStub => ({
   id: "file-1" as FileId,
   name: "report.pdf",
   type: "application/pdf",
@@ -22,7 +22,7 @@ const toolOp = (toolId: ToolOperation["toolId"]): ToolOperation => ({
   timestamp: 0,
 });
 
-const shortChain: StirlingFileStub[] = [
+const shortChain: ChronicleFileStub[] = [
   buildFileStub({
     id: "file-1" as FileId,
     name: "report.pdf",
@@ -47,7 +47,7 @@ const shortChain: StirlingFileStub[] = [
   }),
 ];
 
-const longChain: StirlingFileStub[] = Array.from({ length: 9 }, (_, index) => {
+const longChain: ChronicleFileStub[] = Array.from({ length: 9 }, (_, index) => {
   const versionNumber = index + 1;
   const toolHistory: ToolOperation[] =
     versionNumber === 1

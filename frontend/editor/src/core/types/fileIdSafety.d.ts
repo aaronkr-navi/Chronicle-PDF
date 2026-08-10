@@ -2,7 +2,7 @@
  * Type safety declarations to prevent file.name/UUID confusion
  */
 
-import { FileId, StirlingFile } from "@app/types/fileContext";
+import { FileId, ChronicleFile } from "@app/types/fileContext";
 
 declare global {
   namespace FileIdSafety {
@@ -15,16 +15,16 @@ declare global {
         : T
       : T;
 
-    // Mark functions that should only accept StirlingFile, not regular File
-    type StirlingFileOnlyFunction<T extends (...args: any[]) => any> =
+    // Mark functions that should only accept ChronicleFile, not regular File
+    type ChronicleFileOnlyFunction<T extends (...args: any[]) => any> =
       T extends (...args: infer P) => infer _R
         ? P extends readonly [File, ...any[]]
-          ? never // Reject File parameters in first position for StirlingFile functions
+          ? never // Reject File parameters in first position for ChronicleFile functions
           : T
         : T;
 
-    // Utility type to enforce StirlingFile usage
-    type RequireStirlingFile<T> = T extends File ? StirlingFile : T;
+    // Utility type to enforce ChronicleFile usage
+    type RequireChronicleFile<T> = T extends File ? ChronicleFile : T;
   }
 
   // Extend Window interface for debugging
@@ -33,25 +33,25 @@ declare global {
   }
 }
 
-// Augment FileContext types to prevent bypassing StirlingFile
+// Augment FileContext types to prevent bypassing ChronicleFile
 declare module "../contexts/FileContext" {
   export interface StrictFileContextActions {
-    pinFile: (file: StirlingFile) => void; // Must be StirlingFile
-    unpinFile: (file: StirlingFile) => void; // Must be StirlingFile
+    pinFile: (file: ChronicleFile) => void; // Must be ChronicleFile
+    unpinFile: (file: ChronicleFile) => void; // Must be ChronicleFile
     addFiles: (
       files: File[],
       options?: { insertAfterPageId?: string },
-    ) => Promise<StirlingFile[]>; // Returns StirlingFile
+    ) => Promise<ChronicleFile[]>; // Returns ChronicleFile
     consumeFiles: (
       inputFileIds: FileId[],
       outputFiles: File[],
-    ) => Promise<StirlingFile[]>; // Returns StirlingFile
+    ) => Promise<ChronicleFile[]>; // Returns ChronicleFile
   }
 
   export interface StrictFileContextSelectors {
-    getFile: (id: FileId) => StirlingFile | undefined; // Returns StirlingFile
-    getFiles: (ids?: FileId[]) => StirlingFile[]; // Returns StirlingFile[]
-    isFilePinned: (file: StirlingFile) => boolean; // Must be StirlingFile
+    getFile: (id: FileId) => ChronicleFile | undefined; // Returns ChronicleFile
+    getFiles: (ids?: FileId[]) => ChronicleFile[]; // Returns ChronicleFile[]
+    isFilePinned: (file: ChronicleFile) => boolean; // Must be ChronicleFile
   }
 }
 

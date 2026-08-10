@@ -1,22 +1,22 @@
-import { StirlingFile, StirlingFileStub } from "@app/types/fileContext";
+import { ChronicleFile, ChronicleFileStub } from "@app/types/fileContext";
 import {
   createChildStub,
   generateProcessedFileMetadata,
 } from "@app/contexts/file/fileActions";
-import { createStirlingFile } from "@app/types/fileContext";
+import { createChronicleFile } from "@app/types/fileContext";
 import { ToolId } from "@app/types/toolId";
 
 /**
- * Create StirlingFiles and StirlingFileStubs from exported files
+ * Create ChronicleFiles and ChronicleFileStubs from exported files
  * Used when saving page editor changes to create version history
  */
-export async function createStirlingFilesAndStubs(
+export async function createChronicleFilesAndStubs(
   files: File[],
-  parentStub: StirlingFileStub,
+  parentStub: ChronicleFileStub,
   toolId: ToolId,
-): Promise<{ stirlingFiles: StirlingFile[]; stubs: StirlingFileStub[] }> {
-  const stirlingFiles: StirlingFile[] = [];
-  const stubs: StirlingFileStub[] = [];
+): Promise<{ ChronicleFiles: ChronicleFile[]; stubs: ChronicleFileStub[] }> {
+  const ChronicleFiles: ChronicleFile[] = [];
+  const stubs: ChronicleFileStub[] = [];
 
   for (const file of files) {
     const processedFileMetadata = await generateProcessedFileMetadata(file);
@@ -28,10 +28,10 @@ export async function createStirlingFilesAndStubs(
       processedFileMetadata,
     );
 
-    const stirlingFile = createStirlingFile(file, childStub.id);
-    stirlingFiles.push(stirlingFile);
+    const ChronicleFile = createChronicleFile(file, childStub.id);
+    ChronicleFiles.push(ChronicleFile);
     stubs.push(childStub);
   }
 
-  return { stirlingFiles, stubs };
+  return { ChronicleFiles, stubs };
 }

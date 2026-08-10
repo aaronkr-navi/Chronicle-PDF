@@ -22,13 +22,13 @@ import tools.jackson.databind.node.ObjectNode;
  */
 @Component
 @ConditionalOnProperty(name = "mcp.enabled", havingValue = "true")
-public class StirlingDownloadTool implements McpTool {
+public class ChronicleDownloadTool implements McpTool {
 
     private final ObjectMapper mapper;
     private final FileStorage fileStorage;
     private final ApplicationProperties applicationProperties;
 
-    public StirlingDownloadTool(
+    public ChronicleDownloadTool(
             ObjectMapper mapper,
             FileStorage fileStorage,
             ApplicationProperties applicationProperties) {

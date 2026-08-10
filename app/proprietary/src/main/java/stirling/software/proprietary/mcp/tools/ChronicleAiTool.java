@@ -28,13 +28,13 @@ import tools.jackson.databind.node.ObjectNode;
 @Slf4j
 @Component
 @ConditionalOnProperty(name = "mcp.enabled", havingValue = "true")
-public class StirlingAiTool implements McpTool {
+public class ChronicleAiTool implements McpTool {
 
     private final ObjectMapper mapper;
     private final ObjectProvider<McpToolCatalog> catalogProvider;
     private final ObjectProvider<AiEngineClient> engineClientProvider;
 
-    public StirlingAiTool(
+    public ChronicleAiTool(
             ObjectMapper mapper,
             ObjectProvider<McpToolCatalog> catalog,
             ObjectProvider<AiEngineClient> engineClient) {
@@ -130,7 +130,7 @@ public class StirlingAiTool implements McpTool {
         JsonNode params = arguments.get("parameters");
         String body = (params == null ? mapper.createObjectNode() : params).toString();
         try {
-            String response = client.post(meta.endpointPath(), body, context.stirlingUserId());
+            String response = client.post(meta.endpointPath(), body, context.ChronicleUserId());
             return McpResponses.text(mapper, response);
         } catch (IOException e) {
             log.warn("MCP AI capability '{}' engine request failed", opId, e);

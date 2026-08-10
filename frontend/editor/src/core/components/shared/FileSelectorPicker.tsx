@@ -5,11 +5,11 @@ import { Button } from "@app/ui/Button";
 import AddIcon from "@mui/icons-material/Add";
 import { useTranslation } from "react-i18next";
 import {
-  createStirlingFile,
+  createChronicleFile,
   createFileId,
-  createNewStirlingFileStub,
+  createNewChronicleFileStub,
 } from "@app/types/fileContext";
-import type { StirlingFile, StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFile, ChronicleFileStub } from "@app/types/fileContext";
 import type { FileId } from "@app/types/file";
 import { useAllFiles } from "@app/contexts/FileContext";
 import { useIndexedDB } from "@app/contexts/IndexedDBContext";
@@ -70,7 +70,7 @@ function formatDate(ms: number | undefined): string {
   });
 }
 
-function buildMeta(stub: StirlingFileStub): string {
+function buildMeta(stub: ChronicleFileStub): string {
   const parts: string[] = [];
   const pages = stub.processedFile?.totalPages;
   if (pages) parts.push(`${pages} ${pages === 1 ? "page" : "pages"}`);
@@ -82,8 +82,8 @@ function buildMeta(stub: StirlingFileStub): string {
 }
 
 export interface FileSelectorResult {
-  stub: StirlingFileStub;
-  stirlingFile: StirlingFile;
+  stub: ChronicleFileStub;
+  ChronicleFile: ChronicleFile;
 }
 
 export interface FileSelectorPickerProps {
@@ -94,7 +94,7 @@ export interface FileSelectorPickerProps {
   /** Optional data-testid applied to the trigger box */
   testId?: string;
   /**
-   * Called with the stub (for display) and the ready-to-use StirlingFile (for processing).
+   * Called with the stub (for display) and the ready-to-use ChronicleFile (for processing).
    * Files are NOT added to the workbench — data is loaded inline.
    */
   onSelect: (result: FileSelectorResult) => void;
@@ -118,14 +118,14 @@ export function FileSelectorPicker({
   const [sortDir, setSortDir] = useState<"asc" | "desc">(() =>
     lsGet(LS_SORT_DIR, "desc", ["asc", "desc"]),
   );
-  const [savedStubs, setSavedStubs] = useState<StirlingFileStub[]>([]);
+  const [savedStubs, setSavedStubs] = useState<ChronicleFileStub[]>([]);
   const [savedLoading, setSavedLoading] = useState(false);
   const [loadingId, setLoadingId] = useState<string | null>(null);
   const [uploadBusy, setUploadBusy] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [hoveredStub, setHoveredStub] = useState<{
     rect: DOMRect;
-    stub: StirlingFileStub;
+    stub: ChronicleFileStub;
   } | null>(null);
   const [hoveredThumbnail, setHoveredThumbnail] = useState<string | null>(null);
   const thumbCancelRef = useRef<boolean>(false);
@@ -241,17 +241,17 @@ export function FileSelectorPicker({
   ]);
 
   const loadAndSelect = useCallback(
-    async (stub: StirlingFileStub) => {
+    async (stub: ChronicleFileStub) => {
       if (loadingId) return;
 
-      // Workbench file — get StirlingFile directly from FileContext (no loading needed)
+      // Workbench file — get ChronicleFile directly from FileContext (no loading needed)
       if (workbenchIdSet.has(stub.id)) {
         const sf = selectors.getFile(stub.id as FileId);
         if (sf) {
           // Prefer the workbench stub (has thumbnail) over the saved stub (may not)
           const workbenchStub =
-            selectors.getStirlingFileStub(stub.id as FileId) ?? stub;
-          onSelect({ stub: workbenchStub, stirlingFile: sf });
+            selectors.getChronicleFileStub(stub.id as FileId) ?? stub;
+          onSelect({ stub: workbenchStub, ChronicleFile: sf });
           setIsOpen(false);
         }
         return;
@@ -260,7 +260,7 @@ export function FileSelectorPicker({
       // Saved file — load bytes without touching the workbench
       setLoadingId(stub.id);
       try {
-        let stirlingFile: StirlingFile | null = null;
+        let ChronicleFile: ChronicleFile | null = null;
 
         if (stub.remoteShareToken) {
           const res = await apiClient.get(
@@ -279,7 +279,7 @@ export function FileSelectorPicker({
             ct,
           );
           if (files[0])
-            stirlingFile = createStirlingFile(files[0], createFileId());
+            ChronicleFile = createChronicleFile(files[0], createFileId());
         } else if (stub.remoteStorageId) {
           const res = await apiClient.get(
             `/api/v1/storage/files/${stub.remoteStorageId}/download`,
@@ -297,24 +297,24 @@ export function FileSelectorPicker({
             ct,
           );
           if (files[0])
-            stirlingFile = createStirlingFile(files[0], stub.id as FileId);
+            ChronicleFile = createChronicleFile(files[0], stub.id as FileId);
         } else {
           // Local IndexedDB file
-          const localFile = await fileStorage.getStirlingFile(stub.id);
-          if (localFile) stirlingFile = localFile;
+          const localFile = await fileStorage.getChronicleFile(stub.id);
+          if (localFile) ChronicleFile = localFile;
         }
 
-        if (stirlingFile) {
+        if (ChronicleFile) {
           // Generate thumbnail on-the-fly if the stub doesn't already have one
           let resolvedStub = stub;
           if (!resolvedStub.thumbnailUrl) {
             try {
-              const thumbnail = await generateThumbnailForFile(stirlingFile);
+              const thumbnail = await generateThumbnailForFile(ChronicleFile);
               if (thumbnail) {
                 resolvedStub = { ...stub, thumbnailUrl: thumbnail };
                 // Persist so subsequent opens don't regenerate
                 void fileStorage.updateThumbnail(
-                  stirlingFile.fileId as FileId,
+                  ChronicleFile.fileId as FileId,
                   thumbnail,
                 );
               }
@@ -322,7 +322,7 @@ export function FileSelectorPicker({
               // Non-fatal — thumbnail simply won't show
             }
           }
-          onSelect({ stub: resolvedStub, stirlingFile });
+          onSelect({ stub: resolvedStub, ChronicleFile });
           setIsOpen(false);
         }
       } catch (err) {
@@ -340,8 +340,8 @@ export function FileSelectorPicker({
       setUploadBusy(true);
       try {
         const id = createFileId();
-        let stub = createNewStirlingFileStub(file, id);
-        const stirlingFile = createStirlingFile(file, id);
+        let stub = createNewChronicleFileStub(file, id);
+        const ChronicleFile = createChronicleFile(file, id);
         // Generate a first-page thumbnail for the uploaded file
         try {
           const thumbnail = await generateThumbnailForFile(file);
@@ -349,12 +349,12 @@ export function FileSelectorPicker({
         } catch {
           // Non-fatal — thumbnail simply won't show
         }
-        await fileStorage.storeStirlingFile(stirlingFile, stub);
+        await fileStorage.storeChronicleFile(ChronicleFile, stub);
         lsSet(LS_TAB, "saved");
         setActiveTab("saved");
         const refreshed = await loadRecentFiles();
         setSavedStubs(refreshed);
-        onSelect({ stub, stirlingFile });
+        onSelect({ stub, ChronicleFile });
         setIsOpen(false);
       } catch (err) {
         console.error("FileSelectorPicker: upload failed", err);

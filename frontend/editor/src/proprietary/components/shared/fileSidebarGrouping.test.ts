@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { buildLabelGroups } from "@app/components/shared/fileSidebarGroupingLogic";
 import type { SidebarCategory } from "@app/services/fileSidebarCategories";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 
 // The grouping only reads id/lastModified/classificationLabels. classificationLabels
 // hold label IDS (a file's stored classification), and categories key on ids too.
@@ -9,8 +9,8 @@ function stub(
   id: string,
   labels?: string[],
   lastModified = 0,
-): StirlingFileStub {
-  return { id, lastModified, classificationLabels: labels } as StirlingFileStub;
+): ChronicleFileStub {
+  return { id, lastModified, classificationLabels: labels } as ChronicleFileStub;
 }
 
 const t = (_key: string, fallback: string) => fallback;

@@ -42,9 +42,9 @@ public class DesktopClientUtils {
         // Also check for common desktop app identifiers
         String userAgentLower = userAgent.toLowerCase();
         boolean hasTauri = userAgentLower.contains("tauri");
-        boolean hasStirling = userAgentLower.contains("ChroniclePDF-desktop");
+        boolean hasChronicle = userAgentLower.contains("ChroniclePDF-desktop");
         boolean hasElectron = userAgentLower.contains("electron");
-        boolean isDesktop = hasTauri || hasStirling || hasElectron;
+        boolean isDesktop = hasTauri || hasChronicle || hasElectron;
 
         log.debug("Desktop client detection: {} (User-Agent: {})", isDesktop, userAgent);
 

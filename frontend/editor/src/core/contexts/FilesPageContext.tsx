@@ -12,7 +12,7 @@ import React, {
 import { useTranslation } from "react-i18next";
 
 import { FileId } from "@app/types/file";
-import { StirlingFileStub } from "@app/types/fileContext";
+import { ChronicleFileStub } from "@app/types/fileContext";
 import { FolderId, FolderRecord, ROOT_FOLDER_ID } from "@app/types/folder";
 import { fileStorage } from "@app/services/fileStorage";
 import { folderSyncService } from "@app/services/folderSyncService";
@@ -71,8 +71,8 @@ export interface MoveDialogState {
 
 interface FilesPageContextValue {
   // Cached files (leaf-only)
-  allFiles: StirlingFileStub[];
-  fileMap: Map<FileId, StirlingFileStub>;
+  allFiles: ChronicleFileStub[];
+  fileMap: Map<FileId, ChronicleFileStub>;
   fileCountsByFolder: Map<FolderId | null, number>;
   loading: boolean;
   refresh: () => Promise<void>;
@@ -154,7 +154,7 @@ export function FilesPageProvider({ children }: { children: React.ReactNode }) {
   const { config: appConfig } = useAppConfig();
   const { isAnonymous } = useAuth();
 
-  const [allFiles, setAllFiles] = useState<StirlingFileStub[]>([]);
+  const [allFiles, setAllFiles] = useState<ChronicleFileStub[]>([]);
   const [loading, setLoading] = useState(true);
   // Generation counter to drop stale reconcile results when a second refresh
   // overlaps the first. Mirrors the pattern FolderContext.pullFromServer uses
@@ -170,7 +170,7 @@ export function FilesPageProvider({ children }: { children: React.ReactNode }) {
     const gen = ++refreshGenRef.current;
     setLoading(true);
     try {
-      const localStubs = await fileStorage.getAllStirlingFileStubs();
+      const localStubs = await fileStorage.getAllChronicleFileStubs();
       // Bail if a newer refresh started while IDB was reading.
       if (gen !== refreshGenRef.current) return;
       const localLeaf = localStubs.filter((s) => s.isLeaf !== false);
@@ -202,7 +202,7 @@ export function FilesPageProvider({ children }: { children: React.ReactNode }) {
   }, [refresh, indexedDBRevision]);
 
   const fileMap = useMemo(() => {
-    const map = new Map<FileId, StirlingFileStub>();
+    const map = new Map<FileId, ChronicleFileStub>();
     for (const f of allFiles) map.set(f.id, f);
     return map;
   }, [allFiles]);
@@ -299,7 +299,7 @@ export function FilesPageProvider({ children }: { children: React.ReactNode }) {
       if (fileIds.length === 0) return;
       const stubs = fileIds
         .map((id) => fileMap.get(id))
-        .filter((s): s is StirlingFileStub => Boolean(s));
+        .filter((s): s is ChronicleFileStub => Boolean(s));
       const localOnly = stubs.filter((s) => s.remoteStorageId == null);
       // Cloud list is mutated below with newly-promoted local files.
       const cloudFiles = stubs.filter((s) => s.remoteStorageId != null);
@@ -312,7 +312,7 @@ export function FilesPageProvider({ children }: { children: React.ReactNode }) {
             const { remoteId, updatedAt, chain } =
               await uploadHistoryChain(rootId);
             for (const chainStub of chain) {
-              fileActions.updateStirlingFileStub(chainStub.id, {
+              fileActions.updateChronicleFileStub(chainStub.id, {
                 remoteStorageId: remoteId,
                 remoteStorageUpdatedAt: updatedAt,
                 remoteOwnedByCurrentUser: true,
@@ -413,7 +413,7 @@ export function FilesPageProvider({ children }: { children: React.ReactNode }) {
     async (fileIds: FileId[], scope: DeleteScope) => {
       const stubs = fileIds
         .map((id) => fileMap.get(id))
-        .filter((s): s is StirlingFileStub => Boolean(s));
+        .filter((s): s is ChronicleFileStub => Boolean(s));
 
       // Cloud delete (owner-only). Dedup by remoteStorageId since a history
       // chain shares a single server file.

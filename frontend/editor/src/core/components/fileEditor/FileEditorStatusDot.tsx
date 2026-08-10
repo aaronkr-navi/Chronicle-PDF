@@ -1,7 +1,7 @@
-import { StirlingFileStub } from "@app/types/fileContext";
+import { ChronicleFileStub } from "@app/types/fileContext";
 
 interface FileEditorStatusDotProps {
-  file: StirlingFileStub;
+  file: ChronicleFileStub;
 }
 
 export function FileEditorStatusDot(_props: FileEditorStatusDotProps) {

@@ -5,7 +5,7 @@ import {
   ConvertParameters,
   defaultParameters,
 } from "@app/hooks/tools/convert/useConvertParameters";
-import { StirlingFile } from "@app/types/fileContext";
+import { ChronicleFile } from "@app/types/fileContext";
 
 const meta = {
   title: "Tools/Convert/ConvertToPdfxSettings",
@@ -25,7 +25,7 @@ type Story = StoryObj<typeof meta>;
 // throwing.
 const ConvertToPdfxSettingsDemo = (props: {
   initialParameters: ConvertParameters;
-  selectedFiles?: StirlingFile[];
+  selectedFiles?: ChronicleFile[];
   disabled?: boolean;
 }) => {
   const [parameters, setParameters] = useState<ConvertParameters>(

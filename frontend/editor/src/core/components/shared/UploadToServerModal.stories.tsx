@@ -2,10 +2,10 @@ import type { ReactElement } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import UploadToServerModal from "@app/components/shared/UploadToServerModal";
 import { FileContextProvider } from "@app/contexts/FileContext";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import type { FileId } from "@app/types/file";
 
-const mockFile: StirlingFileStub = {
+const mockFile: ChronicleFileStub = {
   id: "file-1" as FileId,
   name: "quarterly-report.pdf",
   type: "application/pdf",
@@ -16,7 +16,7 @@ const mockFile: StirlingFileStub = {
   versionNumber: 1,
 };
 
-const mockUploadedFile: StirlingFileStub = {
+const mockUploadedFile: ChronicleFileStub = {
   ...mockFile,
   id: "file-2" as FileId,
   originalFileId: "file-2" as FileId,
@@ -24,7 +24,7 @@ const mockUploadedFile: StirlingFileStub = {
 };
 
 /**
- * The modal dispatches updateStirlingFileStub on upload, so it needs
+ * The modal dispatches updateChronicleFileStub on upload, so it needs
  * FileContext (also supplies IndexedDBContext) mounted above it.
  */
 function withProviders(Story: () => ReactElement) {

@@ -5,26 +5,26 @@ import ErrorOutlineIcon from "@mui/icons-material/ErrorOutlined";
 
 import { Button } from "@app/ui/Button";
 
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import type { DeleteScope } from "@app/services/serverStorageDelete";
 
 interface DeleteFilesDialogProps {
   opened: boolean;
   /** Files targeted for deletion (resolved stubs). */
-  files: StirlingFileStub[];
+  files: ChronicleFileStub[];
   onClose: () => void;
   /** Perform the delete for the chosen scope; may throw to surface an error. */
   onConfirm: (scope: DeleteScope) => Promise<void>;
 }
 
 /** An ephemeral stub (server-/shared-) has no local IndexedDB row. */
-function hasLocalCopy(stub: StirlingFileStub): boolean {
+function hasLocalCopy(stub: ChronicleFileStub): boolean {
   const id = String(stub.id);
   return !id.startsWith("server-") && !id.startsWith("shared-");
 }
 
 /** Only the owner can delete a file from cloud storage (backend is owner-only). */
-function hasDeletableCloudCopy(stub: StirlingFileStub): boolean {
+function hasDeletableCloudCopy(stub: ChronicleFileStub): boolean {
   return (
     typeof stub.remoteStorageId === "number" &&
     stub.remoteOwnedByCurrentUser === true

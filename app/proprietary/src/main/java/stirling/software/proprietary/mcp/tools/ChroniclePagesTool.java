@@ -12,9 +12,9 @@ import tools.jackson.databind.ObjectMapper;
 /** Exposes the {@code /api/v1/general/*} (page operations) namespace as a single MCP tool. */
 @Component
 @ConditionalOnProperty(name = "mcp.enabled", havingValue = "true")
-public class StirlingPagesTool extends AbstractCategoryTool {
+public class ChroniclePagesTool extends AbstractCategoryTool {
 
-    public StirlingPagesTool(
+    public ChroniclePagesTool(
             ObjectMapper mapper,
             ObjectProvider<McpToolCatalog> catalog,
             ObjectProvider<McpOperationExecutor> executor) {

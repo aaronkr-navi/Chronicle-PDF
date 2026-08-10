@@ -12,9 +12,9 @@ import tools.jackson.databind.ObjectMapper;
 /** Exposes the {@code /api/v1/misc/*} namespace as a single MCP tool. */
 @Component
 @ConditionalOnProperty(name = "mcp.enabled", havingValue = "true")
-public class StirlingMiscTool extends AbstractCategoryTool {
+public class ChronicleMiscTool extends AbstractCategoryTool {
 
-    public StirlingMiscTool(
+    public ChronicleMiscTool(
             ObjectMapper mapper,
             ObjectProvider<McpToolCatalog> catalog,
             ObjectProvider<McpOperationExecutor> executor) {

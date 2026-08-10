@@ -16,13 +16,13 @@ import Chronicle.software.proprietary.mcp.engine.EngineCapabilityClient;
 import Chronicle.software.proprietary.mcp.security.McpSecurityConfig;
 import Chronicle.software.proprietary.mcp.tools.DescribeOperationTool;
 import Chronicle.software.proprietary.mcp.tools.McpOperationExecutor;
-import Chronicle.software.proprietary.mcp.tools.StirlingAiTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingConvertTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingDownloadTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingMiscTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingPagesTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingSecurityTool;
-import Chronicle.software.proprietary.mcp.tools.StirlingUploadTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleAiTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleConvertTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleDownloadTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleMiscTool;
+import Chronicle.software.proprietary.mcp.tools.ChroniclePagesTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleSecurityTool;
+import Chronicle.software.proprietary.mcp.tools.ChronicleUploadTool;
 
 /** Verifies MCP beans are gated behind {@code @ConditionalOnProperty(name="mcp.enabled")}. */
 class McpConditionalTest {
@@ -42,11 +42,11 @@ class McpConditionalTest {
         // The tool beans are only wired into the gated controller; sanity-check their signatures.
         Class<?>[] tools = {
             DescribeOperationTool.class,
-            StirlingConvertTool.class,
-            StirlingPagesTool.class,
-            StirlingMiscTool.class,
-            StirlingSecurityTool.class,
-            StirlingAiTool.class
+            ChronicleConvertTool.class,
+            ChroniclePagesTool.class,
+            ChronicleMiscTool.class,
+            ChronicleSecurityTool.class,
+            ChronicleAiTool.class
         };
         for (Class<?> t : tools) {
             assertTrue(
@@ -68,13 +68,13 @@ class McpConditionalTest {
             EngineCapabilityClient.class,
             McpOperationExecutor.class,
             DescribeOperationTool.class,
-            StirlingAiTool.class,
-            StirlingConvertTool.class,
-            StirlingMiscTool.class,
-            StirlingPagesTool.class,
-            StirlingSecurityTool.class,
-            StirlingUploadTool.class,
-            StirlingDownloadTool.class
+            ChronicleAiTool.class,
+            ChronicleConvertTool.class,
+            ChronicleMiscTool.class,
+            ChroniclePagesTool.class,
+            ChronicleSecurityTool.class,
+            ChronicleUploadTool.class,
+            ChronicleDownloadTool.class
         };
         for (Class<?> bean : beans) {
             assertNull(

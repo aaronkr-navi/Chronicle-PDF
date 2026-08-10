@@ -24,7 +24,7 @@ final class MultipartBody {
         byte[] random = new byte[16];
         new SecureRandom().nextBytes(random);
         this.boundary =
-                "StirlingBoundary" + Base64.getUrlEncoder().withoutPadding().encodeToString(random);
+                "ChronicleBoundary" + Base64.getUrlEncoder().withoutPadding().encodeToString(random);
     }
 
     String contentType() {

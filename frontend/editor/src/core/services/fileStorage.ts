@@ -7,9 +7,9 @@
 import { FileId, BaseFileMetadata } from "@app/types/file";
 import { FolderId } from "@app/types/folder";
 import {
-  StirlingFile,
-  StirlingFileStub,
-  createStirlingFile,
+  ChronicleFile,
+  ChronicleFileStub,
+  createChronicleFile,
 } from "@app/types/fileContext";
 import {
   indexedDBManager,
@@ -18,20 +18,20 @@ import {
 
 /**
  * Storage record - single source of truth
- * Contains all data needed for both StirlingFile and StirlingFileStub
+ * Contains all data needed for both ChronicleFile and ChronicleFileStub
  */
 const THUMBNAIL_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 
-export interface StoredStirlingFileRecord extends BaseFileMetadata {
+export interface StoredChronicleFileRecord extends BaseFileMetadata {
   data: ArrayBuffer;
-  fileId: FileId; // Matches runtime StirlingFile.fileId exactly
-  quickKey: string; // Matches runtime StirlingFile.quickKey exactly
+  fileId: FileId; // Matches runtime ChronicleFile.fileId exactly
+  quickKey: string; // Matches runtime ChronicleFile.quickKey exactly
   thumbnail?: string;
   thumbnailStoredAt?: number; // Epoch ms - sliding 30-day TTL
   url?: string; // For compatibility with existing components
   // Cached classification labels — mirrors the stub field so the sidebar can
   // group by label without re-reading PDF bytes, and it survives versioning.
-  // See StirlingFileStub.classificationLabels.
+  // See ChronicleFileStub.classificationLabels.
   classificationLabels?: string[];
 }
 
@@ -53,7 +53,7 @@ export interface StorageStats {
  * pre-existing files on first read after upgrade.
  */
 export function legacyDerivedFromTool(
-  record: StoredStirlingFileRecord,
+  record: StoredChronicleFileRecord,
 ): boolean | undefined {
   if ((record.toolHistory?.length ?? 0) > 0) return true;
   if ((record.versionNumber ?? 1) > 1) return true;
@@ -73,7 +73,7 @@ class FileStorageService {
   }
 
   /** Returns thumbnail if within TTL, otherwise undefined. */
-  private isThumbnailFresh(record: StoredStirlingFileRecord): boolean {
+  private isThumbnailFresh(record: StoredChronicleFileRecord): boolean {
     if (!record.thumbnail) return false;
     if (!record.thumbnailStoredAt) return false;
     return Date.now() - record.thumbnailStoredAt < THUMBNAIL_TTL_MS;
@@ -95,7 +95,7 @@ class FileStorageService {
       ids.forEach((id) => {
         const req = store.get(id);
         req.onsuccess = () => {
-          const record = req.result as StoredStirlingFileRecord | undefined;
+          const record = req.result as StoredChronicleFileRecord | undefined;
           if (!record) return;
           if (clear) {
             record.thumbnail = undefined;
@@ -111,23 +111,23 @@ class FileStorageService {
   }
 
   /**
-   * Store a StirlingFile with its metadata from StirlingFileStub
+   * Store a ChronicleFile with its metadata from ChronicleFileStub
    */
-  async storeStirlingFile(
-    stirlingFile: StirlingFile,
-    stub: StirlingFileStub,
+  async storeChronicleFile(
+    ChronicleFile: ChronicleFile,
+    stub: ChronicleFileStub,
   ): Promise<void> {
     const db = await this.getDatabase();
-    const arrayBuffer = await stirlingFile.arrayBuffer();
+    const arrayBuffer = await ChronicleFile.arrayBuffer();
 
-    const record: StoredStirlingFileRecord = {
-      id: stirlingFile.fileId,
-      fileId: stirlingFile.fileId, // Explicit field for clarity
-      quickKey: stirlingFile.quickKey,
-      name: stirlingFile.name,
-      type: stirlingFile.type,
-      size: stirlingFile.size,
-      lastModified: stirlingFile.lastModified,
+    const record: StoredChronicleFileRecord = {
+      id: ChronicleFile.fileId,
+      fileId: ChronicleFile.fileId, // Explicit field for clarity
+      quickKey: ChronicleFile.quickKey,
+      name: ChronicleFile.name,
+      type: ChronicleFile.type,
+      size: ChronicleFile.size,
+      lastModified: ChronicleFile.lastModified,
       createdAt: stub.createdAt,
       data: arrayBuffer,
       thumbnail: stub.thumbnailUrl,
@@ -144,7 +144,7 @@ class FileStorageService {
 
       // History data from stub
       versionNumber: stub.versionNumber ?? 1,
-      originalFileId: stub.originalFileId ?? stirlingFile.fileId,
+      originalFileId: stub.originalFileId ?? ChronicleFile.fileId,
       parentFileId: stub.parentFileId ?? undefined,
       toolHistory: stub.toolHistory ?? [],
       derivedFromTool: stub.derivedFromTool ?? false,
@@ -186,9 +186,9 @@ class FileStorageService {
   }
 
   /**
-   * Get StirlingFile with full data - for loading into workbench
+   * Get ChronicleFile with full data - for loading into workbench
    */
-  async getStirlingFile(id: FileId): Promise<StirlingFile | null> {
+  async getChronicleFile(id: FileId): Promise<ChronicleFile | null> {
     const db = await this.getDatabase();
 
     return new Promise((resolve, reject) => {
@@ -198,7 +198,7 @@ class FileStorageService {
 
       request.onerror = () => reject(request.error);
       request.onsuccess = () => {
-        const record = request.result as StoredStirlingFileRecord | undefined;
+        const record = request.result as StoredChronicleFileRecord | undefined;
         if (!record) {
           resolve(null);
           return;
@@ -211,27 +211,27 @@ class FileStorageService {
           lastModified: record.lastModified,
         });
 
-        // Convert to StirlingFile with preserved IDs
-        const stirlingFile = createStirlingFile(file, record.fileId);
-        resolve(stirlingFile);
+        // Convert to ChronicleFile with preserved IDs
+        const ChronicleFile = createChronicleFile(file, record.fileId);
+        resolve(ChronicleFile);
       };
     });
   }
 
   /**
-   * Get multiple StirlingFiles - for batch loading
+   * Get multiple ChronicleFiles - for batch loading
    */
-  async getStirlingFiles(ids: FileId[]): Promise<StirlingFile[]> {
+  async getChronicleFiles(ids: FileId[]): Promise<ChronicleFile[]> {
     const results = await Promise.all(
-      ids.map((id) => this.getStirlingFile(id)),
+      ids.map((id) => this.getChronicleFile(id)),
     );
-    return results.filter((file): file is StirlingFile => file !== null);
+    return results.filter((file): file is ChronicleFile => file !== null);
   }
 
   /**
-   * Get StirlingFileStub (metadata only) - for UI browsing
+   * Get ChronicleFileStub (metadata only) - for UI browsing
    */
-  async getStirlingFileStub(id: FileId): Promise<StirlingFileStub | null> {
+  async getChronicleFileStub(id: FileId): Promise<ChronicleFileStub | null> {
     const db = await this.getDatabase();
 
     return new Promise((resolve, reject) => {
@@ -241,7 +241,7 @@ class FileStorageService {
 
       request.onerror = () => reject(request.error);
       request.onsuccess = () => {
-        const record = request.result as StoredStirlingFileRecord | undefined;
+        const record = request.result as StoredChronicleFileRecord | undefined;
         if (!record) {
           resolve(null);
           return;
@@ -254,7 +254,7 @@ class FileStorageService {
         // don't leak through this read path.
         const fresh = this.isThumbnailFresh(record);
 
-        const stub: StirlingFileStub = {
+        const stub: ChronicleFileStub = {
           id: record.id,
           name: record.name,
           type: record.type,
@@ -289,16 +289,16 @@ class FileStorageService {
   }
 
   /**
-   * Get all StirlingFileStubs (metadata only) - for FileManager browsing
+   * Get all ChronicleFileStubs (metadata only) - for FileManager browsing
    */
-  async getAllStirlingFileStubs(): Promise<StirlingFileStub[]> {
+  async getAllChronicleFileStubs(): Promise<ChronicleFileStub[]> {
     const db = await this.getDatabase();
 
     return new Promise((resolve, reject) => {
       const transaction = db.transaction([this.storeName], "readonly");
       const store = transaction.objectStore(this.storeName);
       const request = store.openCursor();
-      const stubs: StirlingFileStub[] = [];
+      const stubs: ChronicleFileStub[] = [];
 
       const tobump: FileId[] = [];
       const toexpire: FileId[] = [];
@@ -307,7 +307,7 @@ class FileStorageService {
       request.onsuccess = (event) => {
         const cursor = (event.target as IDBRequest).result;
         if (cursor) {
-          const record = cursor.value as StoredStirlingFileRecord;
+          const record = cursor.value as StoredChronicleFileRecord;
           if (record && record.name && typeof record.size === "number") {
             const fresh = this.isThumbnailFresh(record);
             if (record.thumbnail) {
@@ -368,24 +368,24 @@ class FileStorageService {
    */
   async getHistoryChainStubs(
     originalFileId: FileId,
-  ): Promise<StirlingFileStub[]> {
-    const stubs = await this.getAllStirlingFileStubs();
+  ): Promise<ChronicleFileStub[]> {
+    const stubs = await this.getAllChronicleFileStubs();
     return stubs
       .filter((stub) => (stub.originalFileId || stub.id) === originalFileId)
       .sort((a, b) => (a.versionNumber || 1) - (b.versionNumber || 1));
   }
 
   /**
-   * Get leaf StirlingFileStubs only - for unprocessed files
+   * Get leaf ChronicleFileStubs only - for unprocessed files
    */
-  async getLeafStirlingFileStubs(): Promise<StirlingFileStub[]> {
+  async getLeafChronicleFileStubs(): Promise<ChronicleFileStub[]> {
     const db = await this.getDatabase();
 
     return new Promise((resolve, reject) => {
       const transaction = db.transaction([this.storeName], "readonly");
       const store = transaction.objectStore(this.storeName);
       const request = store.openCursor();
-      const leafStubs: StirlingFileStub[] = [];
+      const leafStubs: ChronicleFileStub[] = [];
       const tobump: FileId[] = [];
       const toexpire: FileId[] = [];
 
@@ -393,7 +393,7 @@ class FileStorageService {
       request.onsuccess = (event) => {
         const cursor = (event.target as IDBRequest).result;
         if (cursor) {
-          const record = cursor.value as StoredStirlingFileRecord;
+          const record = cursor.value as StoredChronicleFileRecord;
           // Only include leaf files (default to true if undefined)
           if (
             record &&
@@ -476,7 +476,7 @@ class FileStorageService {
       fileIds.forEach((id) => {
         const request = store.get(id);
         request.onsuccess = () => {
-          const record = request.result as StoredStirlingFileRecord | undefined;
+          const record = request.result as StoredChronicleFileRecord | undefined;
           if (!record) return;
           record.folderId = folderId;
           store.put(record);
@@ -525,7 +525,7 @@ class FileStorageService {
           const cursor = (event.target as IDBRequest)
             .result as IDBCursorWithValue | null;
           if (!cursor) return;
-          const record = cursor.value as StoredStirlingFileRecord;
+          const record = cursor.value as StoredChronicleFileRecord;
           record.folderId = null;
           cursor.update(record);
           cleared += 1;
@@ -538,9 +538,9 @@ class FileStorageService {
   }
 
   /**
-   * Delete StirlingFile - single operation, no sync issues
+   * Delete ChronicleFile - single operation, no sync issues
    */
-  async deleteStirlingFile(id: FileId): Promise<void> {
+  async deleteChronicleFile(id: FileId): Promise<void> {
     const db = await this.getDatabase();
 
     return new Promise((resolve, reject) => {
@@ -554,9 +554,9 @@ class FileStorageService {
   }
 
   /**
-   * Delete multiple StirlingFiles in a single transaction
+   * Delete multiple ChronicleFiles in a single transaction
    */
-  async deleteMultipleStirlingFiles(ids: FileId[]): Promise<void> {
+  async deleteMultipleChronicleFiles(ids: FileId[]): Promise<void> {
     if (ids.length === 0) return;
     const db = await this.getDatabase();
 
@@ -584,7 +584,7 @@ class FileStorageService {
         const getRequest = store.get(id);
 
         getRequest.onsuccess = () => {
-          const record = getRequest.result as StoredStirlingFileRecord;
+          const record = getRequest.result as StoredChronicleFileRecord;
           if (record) {
             record.thumbnail = thumbnail;
             record.thumbnailStoredAt = Date.now();
@@ -650,7 +650,7 @@ class FileStorageService {
       }
 
       // Calculate our actual IndexedDB usage from file metadata
-      const stubs = await this.getAllStirlingFileStubs();
+      const stubs = await this.getAllChronicleFileStubs();
       used = stubs.reduce((total, stub) => total + (stub?.size || 0), 0);
       fileCount = stubs.length;
 
@@ -686,7 +686,7 @@ class FileStorageService {
 
         request.onerror = () => reject(request.error);
         request.onsuccess = () => {
-          const record = request.result as StoredStirlingFileRecord | undefined;
+          const record = request.result as StoredChronicleFileRecord | undefined;
           if (record) {
             const blob = new Blob([record.data], { type: record.type });
             const url = URL.createObjectURL(blob);
@@ -712,7 +712,7 @@ class FileStorageService {
       const transaction = db.transaction([this.storeName], "readwrite");
       const store = transaction.objectStore(this.storeName);
 
-      const record = await new Promise<StoredStirlingFileRecord | undefined>(
+      const record = await new Promise<StoredChronicleFileRecord | undefined>(
         (resolve, reject) => {
           const request = store.get(fileId);
           request.onsuccess = () => resolve(request.result);
@@ -750,16 +750,16 @@ class FileStorageService {
    */
   async persistVersionedOutputs(
     inputFileIds: FileId[],
-    outputStirlingFiles: StirlingFile[],
-    outputStirlingFileStubs: StirlingFileStub[],
+    outputChronicleFiles: ChronicleFile[],
+    outputChronicleFileStubs: ChronicleFileStub[],
   ): Promise<void> {
-    if (outputStirlingFiles.length !== outputStirlingFileStubs.length) {
+    if (outputChronicleFiles.length !== outputChronicleFileStubs.length) {
       throw new Error(
-        `Mismatch between output files (${outputStirlingFiles.length}) and stubs (${outputStirlingFileStubs.length})`,
+        `Mismatch between output files (${outputChronicleFiles.length}) and stubs (${outputChronicleFileStubs.length})`,
       );
     }
 
-    const allV1 = outputStirlingFileStubs.every(
+    const allV1 = outputChronicleFileStubs.every(
       (stub) => stub.versionNumber === 1,
     );
     if (!allV1) {
@@ -774,8 +774,8 @@ class FileStorageService {
     }
 
     await Promise.all(
-      outputStirlingFiles.map((file, i) =>
-        this.storeStirlingFile(file, outputStirlingFileStubs[i]).catch(
+      outputChronicleFiles.map((file, i) =>
+        this.storeChronicleFile(file, outputChronicleFileStubs[i]).catch(
           (error) =>
             console.error(
               "Failed to persist output file to storage:",
@@ -797,7 +797,7 @@ class FileStorageService {
       const transaction = db.transaction([this.storeName], "readwrite");
       const store = transaction.objectStore(this.storeName);
 
-      const record = await new Promise<StoredStirlingFileRecord | undefined>(
+      const record = await new Promise<StoredChronicleFileRecord | undefined>(
         (resolve, reject) => {
           const request = store.get(fileId);
           request.onsuccess = () => resolve(request.result);
@@ -835,7 +835,7 @@ class FileStorageService {
    */
   async updateFileMetadata(
     fileId: FileId,
-    updates: Partial<StoredStirlingFileRecord>,
+    updates: Partial<StoredChronicleFileRecord>,
   ): Promise<boolean> {
     try {
       const db = await this.getDatabase();
@@ -847,7 +847,7 @@ class FileStorageService {
         const getRequest = store.get(fileId);
         getRequest.onsuccess = () => {
           const record = getRequest.result as
-            | StoredStirlingFileRecord
+            | StoredChronicleFileRecord
             | undefined;
           if (!record) {
             // Don't commit anything; caller wants false.

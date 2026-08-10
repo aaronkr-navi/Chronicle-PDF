@@ -3,7 +3,7 @@
 import { DEFAULT_LABEL_ICON } from "@app/data/labelIcons";
 import { accentColor, accentCycleColor } from "@app/utils/accentColors";
 import type { SidebarCategory } from "@app/services/fileSidebarCategories";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import type { FileSidebarGroup } from "@core/components/shared/fileSidebarGrouping";
 
 export type { FileSidebarGroup };
@@ -13,9 +13,9 @@ const RECENT_COUNT = 8;
 
 /** Per label id (a file's stored classification ids) → the stubs carrying it. */
 export function bucketStubsByLabel(
-  stubs: StirlingFileStub[],
-): Map<string, { stubs: StirlingFileStub[] }> {
-  const byLabel = new Map<string, { stubs: StirlingFileStub[] }>();
+  stubs: ChronicleFileStub[],
+): Map<string, { stubs: ChronicleFileStub[] }> {
+  const byLabel = new Map<string, { stubs: ChronicleFileStub[] }>();
   for (const stub of stubs) {
     for (const labelId of stub.classificationLabels ?? []) {
       const bucket = byLabel.get(labelId);
@@ -33,7 +33,7 @@ export function bucketStubsByLabel(
  * the user has hidden forms no group, so its files fall to Other.
  */
 export function buildLabelGroups(
-  stubs: StirlingFileStub[],
+  stubs: ChronicleFileStub[],
   t: (key: string, fallback: string) => string,
   categories: SidebarCategory[],
 ): FileSidebarGroup[] | null {

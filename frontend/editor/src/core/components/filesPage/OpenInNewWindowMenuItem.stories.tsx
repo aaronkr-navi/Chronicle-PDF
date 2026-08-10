@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { OpenInNewWindowMenuItem } from "@app/components/filesPage/OpenInNewWindowMenuItem";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import type { FileId } from "@app/types/file";
 
-const mockFile: StirlingFileStub = {
+const mockFile: ChronicleFileStub = {
   id: "file-1" as FileId,
   name: "document.pdf",
   type: "application/pdf",

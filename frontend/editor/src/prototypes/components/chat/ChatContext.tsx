@@ -13,9 +13,9 @@ import { getAiBaseUrl } from "@app/services/aiBaseUrl";
 import { getAuthHeaders } from "@app/services/apiClientSetup";
 import { createChildStub } from "@app/contexts/file/fileActions";
 import {
-  createNewStirlingFileStub,
-  createStirlingFile,
-  type StirlingFileStub,
+  createNewChronicleFileStub,
+  createChronicleFile,
+  type ChronicleFileStub,
 } from "@app/types/fileContext";
 import type { ToolOperation } from "@app/types/file";
 
@@ -349,7 +349,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
   const importResultFile = useCallback(
     async (
       result: AiWorkflowResponse,
-      sourceStubs: StirlingFileStub[],
+      sourceStubs: ChronicleFileStub[],
     ): Promise<void> => {
       const descriptors = result.resultFiles?.length
         ? result.resultFiles
@@ -378,14 +378,14 @@ export function ChatProvider({ children }: { children: ReactNode }) {
         const stubs = files.map((file, i) =>
           isVersionMapping
             ? createChildStub(sourceStubs[i], operation, file)
-            : createNewStirlingFileStub(file),
+            : createNewChronicleFileStub(file),
         );
-        const stirlingFiles = files.map((file, i) =>
-          createStirlingFile(file, stubs[i].id),
+        const ChronicleFiles = files.map((file, i) =>
+          createChronicleFile(file, stubs[i].id),
         );
         await fileActions.consumeFiles(
           sourceStubs.map((s) => s.id),
-          stirlingFiles,
+          ChronicleFiles,
           stubs,
         );
       } else {

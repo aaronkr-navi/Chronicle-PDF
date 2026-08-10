@@ -21,7 +21,7 @@ import { FileId } from "@app/types/file";
 import { FolderId, FolderRecord, ROOT_FOLDER_ID } from "@app/types/folder";
 import { useFolders } from "@app/contexts/FolderContext";
 import { usePolicyFileBadges } from "@app/hooks/usePolicyFileBadges";
-import { StirlingFileStub } from "@app/types/fileContext";
+import { ChronicleFileStub } from "@app/types/fileContext";
 import { formatFileSize, getFileDate } from "@app/utils/fileUtils";
 import {
   FILES_PAGE_DRAG_TYPE,
@@ -45,7 +45,7 @@ export interface FilesPageEntry {
   folder?: FolderRecord;
   /** Number of files inside this folder (folder entries only). */
   folderFileCount?: number;
-  file?: StirlingFileStub;
+  file?: ChronicleFileStub;
   /** Parent breadcrumb path for search results outside the current folder. */
   parentPath?: string;
 }
@@ -61,7 +61,7 @@ interface FileGridProps {
   onSetSelection?: (ids: Set<FileId>) => void;
   onOpenFolder: (id: FolderId) => void;
   /** "Add to workspace". */
-  onOpenFile: (file: StirlingFileStub) => void;
+  onOpenFile: (file: ChronicleFileStub) => void;
   onMoveFiles: (
     fileIds: FileId[],
     targetFolderId: FolderId | null,
@@ -79,9 +79,9 @@ interface FileGridProps {
   onRemoveFiles: (fileIds: FileId[]) => void;
   onPromptMoveFiles: (fileIds: FileId[]) => void;
   /** Per-file Save to server; hidden when file already has remoteStorageId. */
-  onSaveToServer?: (file: StirlingFileStub) => void;
+  onSaveToServer?: (file: ChronicleFileStub) => void;
   /** Open the version-history modal for a file (only when it has >1 version). */
-  onVersionHistory?: (file: StirlingFileStub) => void;
+  onVersionHistory?: (file: ChronicleFileStub) => void;
   /** When set, the Save to server item renders disabled with this tooltip. */
   saveToServerDisabledReason?: string | null;
   /** When supplied the list-view column headers become sortable. */
@@ -585,7 +585,7 @@ function PolicyBadges({ fileId }: { fileId: string }) {
 }
 
 interface FileCardProps {
-  file: StirlingFileStub;
+  file: ChronicleFileStub;
   isSelected: boolean;
   isInWorkspace: boolean;
   /** Subtitle for search results outside current folder. */
@@ -869,7 +869,7 @@ function ListView({
     () =>
       entries
         .filter(
-          (e): e is FilesPageEntry & { file: StirlingFileStub } =>
+          (e): e is FilesPageEntry & { file: ChronicleFileStub } =>
             e.kind === "file" && !!e.file,
         )
         .map((e) => e.file.id),
@@ -1179,7 +1179,7 @@ function FolderRow({
 }
 
 interface FileRowProps {
-  file: StirlingFileStub;
+  file: ChronicleFileStub;
   isSelected: boolean;
   isInWorkspace: boolean;
   parentPath?: string;

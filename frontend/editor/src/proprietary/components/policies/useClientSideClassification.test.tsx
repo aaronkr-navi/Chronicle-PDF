@@ -25,9 +25,9 @@ const mocks = vi.hoisted(() => ({
     classificationLabels?: string[];
   }>,
   configLoading: false,
-  updateStirlingFileStub: vi.fn(),
+  updateChronicleFileStub: vi.fn(),
   bumpRevision: vi.fn(),
-  getStirlingFile: vi.fn(),
+  getChronicleFile: vi.fn(),
   updateFileMetadata: vi.fn(async (_id: string, _updates: unknown) => true),
   classify: vi.fn(),
   meter: vi.fn(),
@@ -57,7 +57,7 @@ vi.mock("@app/hooks/usePolicies", () => ({
 vi.mock("@app/contexts/FileContext", () => ({
   useAllFiles: () => ({ fileStubs: mocks.workspace }),
   useFileManagement: () => ({
-    updateStirlingFileStub: mocks.updateStirlingFileStub,
+    updateChronicleFileStub: mocks.updateChronicleFileStub,
   }),
 }));
 vi.mock("@app/contexts/IndexedDBContext", () => ({
@@ -65,7 +65,7 @@ vi.mock("@app/contexts/IndexedDBContext", () => ({
 }));
 vi.mock("@app/services/fileStorage", () => ({
   fileStorage: {
-    getStirlingFile: (id: string) => mocks.getStirlingFile(id),
+    getChronicleFile: (id: string) => mocks.getChronicleFile(id),
     updateFileMetadata: (id: string, updates: unknown) =>
       mocks.updateFileMetadata(id, updates),
   },
@@ -101,12 +101,12 @@ describe("useClientSideClassification delivery", () => {
     resetPolicyRuns();
     mocks.workspace = [];
     mocks.configLoading = false;
-    mocks.updateStirlingFileStub.mockClear();
+    mocks.updateChronicleFileStub.mockClear();
     mocks.bumpRevision.mockClear();
     mocks.updateFileMetadata.mockClear();
     mocks.meter.mockClear();
-    mocks.getStirlingFile.mockReset();
-    mocks.getStirlingFile.mockImplementation(async (id: string) =>
+    mocks.getChronicleFile.mockReset();
+    mocks.getChronicleFile.mockImplementation(async (id: string) =>
       fakeFile(id),
     );
     mocks.classify.mockReset();
@@ -121,12 +121,12 @@ describe("useClientSideClassification delivery", () => {
     renderHook(() => useClientSideClassification());
 
     await waitFor(() =>
-      expect(mocks.updateStirlingFileStub).toHaveBeenCalledTimes(2),
+      expect(mocks.updateChronicleFileStub).toHaveBeenCalledTimes(2),
     );
-    expect(mocks.updateStirlingFileStub).toHaveBeenCalledWith("a", {
+    expect(mocks.updateChronicleFileStub).toHaveBeenCalledWith("a", {
       classificationLabels: ["invoice"],
     });
-    expect(mocks.updateStirlingFileStub).toHaveBeenCalledWith("b", {
+    expect(mocks.updateChronicleFileStub).toHaveBeenCalledWith("b", {
       classificationLabels: ["resume"],
     });
     expect(mocks.meter).toHaveBeenCalledTimes(2);
@@ -151,13 +151,13 @@ describe("useClientSideClassification delivery", () => {
 
     resolveA({ labels: ["purchase-order"] });
     await waitFor(() =>
-      expect(mocks.updateStirlingFileStub).toHaveBeenCalledWith("a", {
+      expect(mocks.updateChronicleFileStub).toHaveBeenCalledWith("a", {
         classificationLabels: ["purchase-order"],
       }),
     );
     // The newly-arrived file classifies too, and neither is double-classified.
     await waitFor(() =>
-      expect(mocks.updateStirlingFileStub).toHaveBeenCalledWith("b", {
+      expect(mocks.updateChronicleFileStub).toHaveBeenCalledWith("b", {
         classificationLabels: ["nda"],
       }),
     );
@@ -172,7 +172,7 @@ describe("useClientSideClassification delivery", () => {
     renderHook(() => useClientSideClassification());
 
     await waitFor(() =>
-      expect(mocks.updateStirlingFileStub).toHaveBeenCalledWith("plain", {
+      expect(mocks.updateChronicleFileStub).toHaveBeenCalledWith("plain", {
         classificationLabels: [],
       }),
     );
@@ -189,7 +189,7 @@ describe("useClientSideClassification delivery", () => {
     renderHook(() => useClientSideClassification());
 
     await waitFor(() =>
-      expect(mocks.updateStirlingFileStub).toHaveBeenCalledWith("lost", {
+      expect(mocks.updateChronicleFileStub).toHaveBeenCalledWith("lost", {
         classificationLabels: ["bank-statement"],
       }),
     );
@@ -212,7 +212,7 @@ describe("useClientSideClassification delivery", () => {
       ),
     );
     expect(mocks.classify).toHaveBeenCalledTimes(1); // claimed: once per session
-    expect(mocks.updateStirlingFileStub).not.toHaveBeenCalled();
+    expect(mocks.updateChronicleFileStub).not.toHaveBeenCalled();
     expect(mocks.updateFileMetadata).not.toHaveBeenCalled();
     expect(mocks.meter).not.toHaveBeenCalled();
     warn.mockRestore();
@@ -233,7 +233,7 @@ describe("useClientSideClassification delivery", () => {
     mocks.configLoading = false;
     rerender();
     await waitFor(() =>
-      expect(mocks.updateStirlingFileStub).toHaveBeenCalledWith("early", {
+      expect(mocks.updateChronicleFileStub).toHaveBeenCalledWith("early", {
         classificationLabels: ["invoice"],
       }),
     );

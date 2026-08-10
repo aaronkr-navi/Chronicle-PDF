@@ -1,6 +1,6 @@
 import type { TokenBoundingBox, WordHighlightEntry } from "@app/types/compare";
 import type { FileId } from "@app/types/file";
-import type { StirlingFile, StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFile, ChronicleFileStub } from "@app/types/fileContext";
 import type { PagePreview } from "@app/types/compare";
 
 /** Normalize rotation to [0, 360). */
@@ -180,23 +180,23 @@ export const mapChangesForDropdown = (
 
 /** File selection helpers */
 export const getFileFromSelection = (
-  explicit: StirlingFile | null | undefined,
+  explicit: ChronicleFile | null | undefined,
   fileId: FileId | null,
-  selectors: { getFile: (id: FileId) => StirlingFile | undefined | null },
-): StirlingFile | null => {
+  selectors: { getFile: (id: FileId) => ChronicleFile | undefined | null },
+): ChronicleFile | null => {
   if (explicit) return explicit;
   if (!fileId) return null;
-  return (selectors.getFile(fileId) as StirlingFile | undefined | null) ?? null;
+  return (selectors.getFile(fileId) as ChronicleFile | undefined | null) ?? null;
 };
 
 export const getStubFromSelection = (
   fileId: FileId | null,
   selectors: {
-    getStirlingFileStub: (id: FileId) => StirlingFileStub | undefined;
+    getChronicleFileStub: (id: FileId) => ChronicleFileStub | undefined;
   },
-): StirlingFileStub | null => {
+): ChronicleFileStub | null => {
   if (!fileId) return null;
-  const stub = selectors.getStirlingFileStub(fileId);
+  const stub = selectors.getChronicleFileStub(fileId);
   return stub ?? null;
 };
 

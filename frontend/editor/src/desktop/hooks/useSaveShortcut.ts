@@ -27,8 +27,8 @@ export function useSaveShortcut() {
             : selectors.getFiles();
         const stubsToSave =
           selectedFileIds.length > 0
-            ? selectors.getStirlingFileStubs(selectedFileIds)
-            : selectors.getStirlingFileStubs();
+            ? selectors.getChronicleFileStubs(selectedFileIds)
+            : selectors.getChronicleFileStubs();
 
         if (filesToSave.length === 0) {
           return;
@@ -49,7 +49,7 @@ export function useSaveShortcut() {
 
             // Mark file as clean after successful save
             if (result.savedPath) {
-              fileActions.updateStirlingFileStub(stub.id, {
+              fileActions.updateChronicleFileStub(stub.id, {
                 localFilePath: stub.localFilePath ?? result.savedPath,
                 isDirty: false,
               });

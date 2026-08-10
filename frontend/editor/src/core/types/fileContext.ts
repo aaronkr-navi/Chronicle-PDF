@@ -29,20 +29,20 @@ export interface ProcessedFileMetadata {
 }
 
 /**
- * StirlingFileStub - Metadata record for files in the active workbench session
+ * ChronicleFileStub - Metadata record for files in the active workbench session
  *
  * Contains UI display data and processing state. Actual File objects stored
  * separately in refs for memory efficiency. Supports multi-tool workflows
  * where files persist across tool operations.
  */
 /**
- * StirlingFileStub - Runtime UI metadata for files in the active workbench session
+ * ChronicleFileStub - Runtime UI metadata for files in the active workbench session
  *
  * Contains UI display data and processing state. Actual File objects stored
  * separately in refs for memory efficiency. Supports multi-tool workflows
  * where files persist across tool operations.
  */
-export interface StirlingFileStub extends BaseFileMetadata {
+export interface ChronicleFileStub extends BaseFileMetadata {
   quickKey?: string; // Fast deduplication key: name|size|lastModified
   thumbnailUrl?: string; // Generated thumbnail blob URL for visual display
   blobUrl?: string; // File access blob URL for downloads/processing
@@ -66,7 +66,7 @@ export interface StirlingFileStub extends BaseFileMetadata {
 
 export interface FileContextNormalizedFiles {
   ids: FileId[];
-  byId: Record<FileId, StirlingFileStub>;
+  byId: Record<FileId, ChronicleFileStub>;
 }
 
 export function createFileId(): FileId {
@@ -80,13 +80,13 @@ export function createQuickKey(file: File): string {
 }
 
 // Chronicle PDF file with embedded UUID - replaces loose File + FileId parameter passing
-export interface StirlingFile extends File {
+export interface ChronicleFile extends File {
   readonly fileId: FileId;
   readonly quickKey: string; // Fast deduplication key: name|size|lastModified
 }
 
 // Type guard to check if a File object has an embedded fileId
-export function isStirlingFile(file: File | Blob): file is StirlingFile {
+export function isChronicleFile(file: File | Blob): file is ChronicleFile {
   return (
     file instanceof File &&
     "fileId" in file &&
@@ -106,7 +106,7 @@ export function getFormFillFileId(
 ): string | null {
   if (!file) return null;
 
-  if (isStirlingFile(file)) {
+  if (isChronicleFile(file)) {
     return `Chronicle-${file.fileId}`;
   }
 
@@ -118,12 +118,12 @@ export function getFormFillFileId(
   return `blob-${(file as any).size || 0}`;
 }
 
-// Create a StirlingFile from a regular File object
-export function createStirlingFile(file: File, id?: FileId): StirlingFile {
+// Create a ChronicleFile from a regular File object
+export function createChronicleFile(file: File, id?: FileId): ChronicleFile {
   // If the file already has Chronicle metadata and we aren't trying to override it,
   // return as–is. When a new id is requested we clone the File so we can embed
   // the fresh identifier without mutating the original object.
-  if (isStirlingFile(file)) {
+  if (isChronicleFile(file)) {
     if (!id || file.fileId === id) {
       return file;
     }
@@ -153,21 +153,21 @@ export function createStirlingFile(file: File, id?: FileId): StirlingFile {
     configurable: false,
   });
 
-  return file as StirlingFile;
+  return file as ChronicleFile;
 }
 
-// Extract FileIds from StirlingFile array
-export function extractFileIds(files: StirlingFile[]): FileId[] {
+// Extract FileIds from ChronicleFile array
+export function extractFileIds(files: ChronicleFile[]): FileId[] {
   return files.map((file) => file.fileId);
 }
 
-// Extract regular File objects from StirlingFile array
-export function extractFiles(files: StirlingFile[]): File[] {
+// Extract regular File objects from ChronicleFile array
+export function extractFiles(files: ChronicleFile[]): File[] {
   return files as File[];
 }
 
-// Check if an object is a File or StirlingFile (replaces instanceof File checks)
-export function isFileObject(obj: any): obj is File | StirlingFile {
+// Check if an object is a File or ChronicleFile (replaces instanceof File checks)
+export function isFileObject(obj: any): obj is File | ChronicleFile {
   return (
     obj &&
     typeof obj.name === "string" &&
@@ -178,12 +178,12 @@ export function isFileObject(obj: any): obj is File | StirlingFile {
   );
 }
 
-export function createNewStirlingFileStub(
+export function createNewChronicleFileStub(
   file: File,
   id?: FileId,
   thumbnail?: string,
   processedFileMetadata?: ProcessedFileMetadata,
-): StirlingFileStub {
+): ChronicleFileStub {
   const fileId = id || createFileId();
   return {
     id: fileId,
@@ -201,7 +201,7 @@ export function createNewStirlingFileStub(
   };
 }
 
-export function revokeFileResources(record: StirlingFileStub): void {
+export function revokeFileResources(record: ChronicleFileStub): void {
   // Only revoke blob: URLs to prevent errors on other schemes
   if (record.thumbnailUrl && record.thumbnailUrl.startsWith("blob:")) {
     try {
@@ -248,7 +248,7 @@ export interface FileContextState {
   // Core file management - lightweight file IDs only
   files: {
     ids: FileId[];
-    byId: Record<FileId, StirlingFileStub>;
+    byId: Record<FileId, ChronicleFileStub>;
   };
 
   // Pinned files - files that won't be consumed by tools
@@ -268,11 +268,11 @@ export interface FileContextState {
 // Action types for reducer pattern
 export type FileContextAction =
   // File management actions
-  | { type: "ADD_FILES"; payload: { stirlingFileStubs: StirlingFileStub[] } }
+  | { type: "ADD_FILES"; payload: { ChronicleFileStubs: ChronicleFileStub[] } }
   | { type: "REMOVE_FILES"; payload: { fileIds: FileId[] } }
   | {
       type: "UPDATE_FILE_RECORD";
-      payload: { id: FileId; updates: Partial<StirlingFileStub> };
+      payload: { id: FileId; updates: Partial<ChronicleFileStub> };
     }
   | { type: "REORDER_FILES"; payload: { orderedFileIds: FileId[] } }
 
@@ -283,7 +283,7 @@ export type FileContextAction =
       type: "CONSUME_FILES";
       payload: {
         inputFileIds: FileId[];
-        outputStirlingFileStubs: StirlingFileStub[];
+        outputChronicleFileStubs: ChronicleFileStub[];
         /** Replace inputs in place without auto-selecting/reordering the outputs
          *  (background enforcement). Defaults to false — normal tool behaviour. */
         silent?: boolean;
@@ -292,7 +292,7 @@ export type FileContextAction =
   | {
       type: "UNDO_CONSUME_FILES";
       payload: {
-        inputStirlingFileStubs: StirlingFileStub[];
+        inputChronicleFileStubs: ChronicleFileStub[];
         outputFileIds: FileId[];
       };
     }
@@ -324,7 +324,7 @@ export interface FileContextActions {
       selectFiles?: boolean;
       skipUploadTracking?: boolean;
     },
-  ) => Promise<StirlingFile[]>;
+  ) => Promise<ChronicleFile[]>;
   addFilesWithOptions: (
     files: File[],
     options?: {
@@ -340,37 +340,37 @@ export interface FileContextActions {
       allowDuplicates?: boolean;
       skipUploadTracking?: boolean;
     },
-  ) => Promise<StirlingFile[]>;
-  addStirlingFileStubs: (
-    stirlingFileStubs: StirlingFileStub[],
+  ) => Promise<ChronicleFile[]>;
+  addChronicleFileStubs: (
+    ChronicleFileStubs: ChronicleFileStub[],
     options?: { insertAfterPageId?: string; selectFiles?: boolean },
-  ) => Promise<StirlingFile[]>;
+  ) => Promise<ChronicleFile[]>;
   removeFiles: (
     fileIds: FileId[],
     deleteFromStorage?: boolean,
   ) => Promise<void>;
-  updateStirlingFileStub: (
+  updateChronicleFileStub: (
     id: FileId,
-    updates: Partial<StirlingFileStub>,
+    updates: Partial<ChronicleFileStub>,
   ) => void;
   reorderFiles: (orderedFileIds: FileId[]) => void;
   clearAllFiles: () => Promise<void>;
   clearAllData: () => Promise<void>;
 
-  // File pinning - accepts StirlingFile for safer type checking
-  pinFile: (file: StirlingFile) => void;
-  unpinFile: (file: StirlingFile) => void;
+  // File pinning - accepts ChronicleFile for safer type checking
+  pinFile: (file: ChronicleFile) => void;
+  unpinFile: (file: ChronicleFile) => void;
 
   // File consumption (replace unpinned files with outputs)
   consumeFiles: (
     inputFileIds: FileId[],
-    outputStirlingFiles: StirlingFile[],
-    outputStirlingFileStubs: StirlingFileStub[],
+    outputChronicleFiles: ChronicleFile[],
+    outputChronicleFileStubs: ChronicleFileStub[],
     options?: { silent?: boolean },
   ) => Promise<FileId[]>;
   undoConsumeFiles: (
     inputFiles: File[],
-    inputStirlingFileStubs: StirlingFileStub[],
+    inputChronicleFileStubs: ChronicleFileStub[],
     outputFileIds: FileId[],
   ) => Promise<void>;
   // Selection management
@@ -399,17 +399,17 @@ export interface FileContextActions {
 
 // File selectors (separate from actions to avoid re-renders)
 export interface FileContextSelectors {
-  getFile: (id: FileId) => StirlingFile | undefined;
-  getFiles: (ids?: FileId[]) => StirlingFile[];
-  getStirlingFileStub: (id: FileId) => StirlingFileStub | undefined;
-  getStirlingFileStubs: (ids?: FileId[]) => StirlingFileStub[];
+  getFile: (id: FileId) => ChronicleFile | undefined;
+  getFiles: (ids?: FileId[]) => ChronicleFile[];
+  getChronicleFileStub: (id: FileId) => ChronicleFileStub | undefined;
+  getChronicleFileStubs: (ids?: FileId[]) => ChronicleFileStub[];
   getAllFileIds: () => FileId[];
-  getSelectedFiles: () => StirlingFile[];
-  getSelectedStirlingFileStubs: () => StirlingFileStub[];
+  getSelectedFiles: () => ChronicleFile[];
+  getSelectedChronicleFileStubs: () => ChronicleFileStub[];
   getPinnedFileIds: () => FileId[];
-  getPinnedFiles: () => StirlingFile[];
-  getPinnedStirlingFileStubs: () => StirlingFileStub[];
-  isFilePinned: (file: StirlingFile) => boolean;
+  getPinnedFiles: () => ChronicleFile[];
+  getPinnedChronicleFileStubs: () => ChronicleFileStub[];
+  isFilePinned: (file: ChronicleFile) => boolean;
   getFilesSignature: () => string;
 }
 

@@ -4,10 +4,10 @@ import { VersionHistoryModal } from "@app/components/filesPage/VersionHistoryMod
 import { FileContextProvider } from "@app/contexts/FileContext";
 import { NavigationProvider } from "@app/contexts/NavigationContext";
 import { ToolRegistryProvider } from "@app/contexts/ToolRegistryProvider";
-import type { StirlingFileStub } from "@app/types/fileContext";
+import type { ChronicleFileStub } from "@app/types/fileContext";
 import type { FileId } from "@app/types/file";
 
-const mockFile: StirlingFileStub = {
+const mockFile: ChronicleFileStub = {
   id: "file-3" as FileId,
   name: "report-watermarked.pdf",
   type: "application/pdf",
