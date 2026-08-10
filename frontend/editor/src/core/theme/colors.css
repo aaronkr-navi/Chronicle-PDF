@@ -38,7 +38,7 @@ html[data-app-theme="light"] {
   --c-warning: var(--p-amber-600);
   /* Highlight/flash (search hits, compare jump-to) — same in both themes. */
   --c-highlight: var(--p-flash-yellow);
-  /* Stirling brand red (auth CTAs) — a fixed brand colour, same in both themes. */
+  /* Chronicle brand red (auth CTAs) — a fixed brand colour, same in both themes. */
   --c-brand: var(--p-brand-red);
   --c-brand-hover: var(--p-brand-red-600);
 
@@ -61,7 +61,7 @@ html[data-app-theme="light"] {
      and the multi-hue gradients on feature/upgrade/onboarding surfaces.
      Named here so components reference a --c-* token, never a raw --p-*. */
   --c-brand-mark: var(--p-brand-red-650);
-  --c-brand-mark-soft: var(--p-brand-red-400); /* Stirling logo mark fill */
+  --c-brand-mark-soft: var(--p-brand-red-400); /* Chronicle logo mark fill */
   --c-accent-stripe: var(--p-periwinkle-500); /* Stripe "connect" CTA */
 
   /* Feature-accent hues (fixed) used as stops in multi-hue gradients. */

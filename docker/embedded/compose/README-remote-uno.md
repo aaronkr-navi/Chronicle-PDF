@@ -1,12 +1,12 @@
-# Stirling-PDF with Remote UNO Servers
+# Chronicle-PDF with Remote UNO Servers
 
-This docker-compose configuration demonstrates running Stirling-PDF with **separate UNO server containers** for LibreOffice document conversion, enabling horizontal scaling and better resource isolation.
+This docker-compose configuration demonstrates running Chronicle-PDF with **separate UNO server containers** for LibreOffice document conversion, enabling horizontal scaling and better resource isolation.
 
 ## Architecture
 
 ```
 ┌─────────────────────┐
-│   Stirling-PDF      │
+│   Chronicle-PDF      │
 │   (Main App)        │
 │                     │
 │ Uses BlockingQueue  │
@@ -69,7 +69,7 @@ docker compose -f docker-compose-latest-security-remote-uno.yml logs -f
 docker compose -f docker-compose-latest-security-remote-uno.yml logs -f unoserver1 unoserver2
 
 # Watch main app
-docker compose -f docker-compose-latest-security-remote-uno.yml logs -f stirling-pdf
+docker compose -f docker-compose-latest-security-remote-uno.yml logs -f Chronicle-PDF
 ```
 
 ### Health Check Status
@@ -80,7 +80,7 @@ docker compose -f docker-compose-latest-security-remote-uno.yml ps
 Should show all services healthy:
 ```
 NAME                           STATUS
-Stirling-PDF-Security-Remote-UNO   Up (healthy)
+Chronicle-PDF-Security-Remote-UNO   Up (healthy)
 UNO-Server-1                       Up (healthy)
 UNO-Server-2                       Up (healthy)
 ```
@@ -97,11 +97,11 @@ To add a 3rd UNO server:
 ```yaml
   unoserver3:
     container_name: UNO-Server-3
-    image: ghcr.io/stirling-tools/stirling-unoserver:latest
+    image: ghcr.io/aaronkr-navi/stirling-unoserver:latest
     # ... same config as unoserver1/2
 ```
 
-2. Add environment variables to stirling-pdf service:
+2. Add environment variables to Chronicle-PDF service:
 ```yaml
       PROCESS_EXECUTOR_UNO_SERVER_ENDPOINTS_2_HOST: "unoserver3"
       PROCESS_EXECUTOR_UNO_SERVER_ENDPOINTS_2_PORT: "2002"
@@ -148,7 +148,7 @@ Note: This requires removing `container_name` and hardcoded ports.
 ```yaml
 PROCESS_EXECUTOR_AUTO_UNO_SERVER: "true"
 PROCESS_EXECUTOR_SESSION_LIMIT_LIBRE_OFFICE_SESSION_LIMIT: "2"
-# Creates 2 servers on 127.0.0.1:2003, 127.0.0.1:2005 inside container (Stirling-PDF's own servers)
+# Creates 2 servers on 127.0.0.1:2003, 127.0.0.1:2005 inside container (Chronicle-PDF's own servers)
 ```
 - ✅ Simpler configuration
 - ✅ Lower latency

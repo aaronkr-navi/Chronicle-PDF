@@ -49,7 +49,7 @@ WHERE p.is_default = TRUE
   );
 
 -- ---------------------------------------------------------------------------
--- 1. Test team. The Stirling-PDF backend auto-creates `Default` and
+-- 1. Test team. The Chronicle-PDF backend auto-creates `Default` and
 --    `Internal` teams at boot; we add a third one specifically for the
 --    PAYG scenarios so we can isolate state and assert per-team.
 -- ---------------------------------------------------------------------------

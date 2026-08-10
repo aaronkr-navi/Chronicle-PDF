@@ -13,7 +13,7 @@ BLUE='\033[0;34m'
 NC='\033[0m'
 
 echo -e "${BLUE}╔════════════════════════════════════════════════════╗${NC}"
-echo -e "${BLUE}║  Stirling PDF + Keycloak SAML Test Environment   ║${NC}"
+echo -e "${BLUE}║  Chronicle PDF + Keycloak SAML Test Environment   ║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════════════╝${NC}"
 echo ""
 
@@ -205,15 +205,15 @@ fi
 echo -e "${GREEN}✓ Keycloak SAML certificate updated${NC}"
 
 echo ""
-echo -e "${YELLOW}▶ Starting Stirling PDF...${NC}"
+echo -e "${YELLOW}▶ Starting Chronicle PDF...${NC}"
 docker-compose -f docker-compose-keycloak-saml.yml up "${COMPOSE_UP_ARGS[@]}" stirling-pdf-saml
 
 echo ""
-echo -e "${YELLOW}▶ Waiting for Stirling PDF...${NC}"
+echo -e "${YELLOW}▶ Waiting for Chronicle PDF...${NC}"
 WAITED=0
 while [ $WAITED -lt $MAX_WAIT ]; do
     if curl -sf http://localhost:8080/api/v1/info/status 2>/dev/null | grep -q "UP"; then
-        echo -e "${GREEN}✓ Stirling PDF is ready${NC}"
+        echo -e "${GREEN}✓ Chronicle PDF is ready${NC}"
         break
     fi
     echo -n "."
@@ -222,7 +222,7 @@ while [ $WAITED -lt $MAX_WAIT ]; do
 done
 
 if [ $WAITED -ge $MAX_WAIT ]; then
-    echo -e "${RED}✗ Stirling PDF failed to start${NC}"
+    echo -e "${RED}✗ Chronicle PDF failed to start${NC}"
     exit 1
 fi
 
@@ -232,7 +232,7 @@ echo -e "${GREEN}║          SAML Test Environment Ready! ✓           ║${NC
 echo -e "${GREEN}╚════════════════════════════════════════════════════╝${NC}"
 echo ""
 echo -e "${BLUE}📍 Services:${NC}"
-echo -e "   Stirling PDF:   ${GREEN}http://localhost:8080${NC}"
+echo -e "   Chronicle PDF:   ${GREEN}http://localhost:8080${NC}"
 echo -e "   Keycloak Admin: ${GREEN}http://localhost:9080/admin${NC}"
 echo ""
 echo -e "${BLUE}🔑 Keycloak Admin:${NC}"

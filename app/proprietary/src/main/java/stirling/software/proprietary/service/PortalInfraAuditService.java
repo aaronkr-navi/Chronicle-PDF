@@ -89,7 +89,7 @@ public class PortalInfraAuditService {
         String policyName = asString(data.get("policyName"));
         boolean automation = isAutomation(data);
         // Classify a dispatch by its real run-path URI, not a policyName: the latter can be spoofed
-        // via the X-Stirling-Policy-Name header to make a direct call pose as a policy row.
+        // via the X-Chronicle-Policy-Name header to make a direct call pose as a policy row.
         boolean policyDispatch = isPolicyRunPath(path) && !automation;
         // A dispatch is its own "policy" category so the UI badges it as a policy run, not a
         // generic processing op; its internal steps keep their real tool category.
@@ -158,7 +158,7 @@ public class PortalInfraAuditService {
      * Label for a row. A genuine policy dispatch (a {@code /policies/.../run} request) shows the
      * policy it ran; an internal pipeline step (automation marker) is flagged so it isn't read as a
      * direct action. The name is only shown as the action on a real run URI, so a spoofed
-     * X-Stirling-Policy-Name header on a direct tool call can't overwrite its true action.
+     * X-Chronicle-Policy-Name header on a direct tool call can't overwrite its true action.
      */
     private static String actionFor(
             String type, String path, String policyName, boolean automation) {

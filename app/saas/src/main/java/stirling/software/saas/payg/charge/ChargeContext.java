@@ -15,7 +15,7 @@ import stirling.software.saas.payg.model.ProcessType;
  * (they short-circuit on {@link BillingCategory#BYPASSED}); any context constructed here therefore
  * carries one of {@code API}, {@code AI}, or {@code AUTOMATION}.
  *
- * <p>{@code runId} is the automation-run correlation id ({@code X-Stirling-Run-Id}) when this call
+ * <p>{@code runId} is the automation-run correlation id ({@code X-Chronicle-Run-Id}) when this call
  * is a sub-step of a pipeline / policy / AI-workflow run, else {@code null} (a standalone tool
  * call). Lineage joins are scoped to a single run id: a null run id never joins (each standalone
  * call is its own charge), and two separate runs never merge even on identical bytes.

@@ -358,7 +358,7 @@ class PaygChargeInterceptorTest {
 
         MockMultipartHttpServletRequest req = newMultipart();
         req.addFile(new MockMultipartFile("file", "x.pdf", "application/pdf", "abc".getBytes()));
-        req.addHeader("X-Stirling-Client", "desktop");
+        req.addHeader("X-Chronicle-Client", "desktop");
 
         interceptor.preHandle(req, new MockHttpServletResponse(), handlerMethodForFakeController());
 
@@ -436,7 +436,7 @@ class PaygChargeInterceptorTest {
 
     @Test
     void preHandle_runId_honouredOnlyWithAutomationHeader() throws Exception {
-        // An internal dispatch carries BOTH X-Stirling-Automation and X-Stirling-Run-Id, so the
+        // An internal dispatch carries BOTH X-Chronicle-Automation and X-Chronicle-Run-Id, so the
         // run id flows onto the ChargeContext (sub-steps of one run group into a single charge).
         authenticateWithApiKey(makeUser(7L, 42L));
         UUID jobId = UUID.randomUUID();
@@ -459,7 +459,7 @@ class PaygChargeInterceptorTest {
 
     @Test
     void preHandle_runIdWithoutAutomationHeader_isIgnored() throws Exception {
-        // A raw external API call that sets X-Stirling-Run-Id on its own must NOT be able to group
+        // A raw external API call that sets X-Chronicle-Run-Id on its own must NOT be able to group
         // charges — the run id is dropped so each call stays its own charge ("charge per API
         // call").
         authenticateWithApiKey(makeUser(7L, 42L));
@@ -637,7 +637,7 @@ class PaygChargeInterceptorTest {
 
     @Test
     void preHandle_aiEndpointWithAutomationHeader_automationWinsByPrecedence() throws Exception {
-        // X-Stirling-Automation: true on an @RequiresFeature(AI_SUPPORT) endpoint → AUTOMATION
+        // X-Chronicle-Automation: true on an @RequiresFeature(AI_SUPPORT) endpoint → AUTOMATION
         // (header beats annotation by design — pipeline-driven AI counts as automation usage).
         authenticateWithUser(makeUser(7L, 42L));
         UUID jobId = UUID.randomUUID();
@@ -685,7 +685,7 @@ class PaygChargeInterceptorTest {
 
     @Test
     void preHandle_aiToolRoute_withAutomationHeader_isAutomation() throws Exception {
-        // An AI tool dispatched inside a policy / AI workflow carries X-Stirling-Automation: true →
+        // An AI tool dispatched inside a policy / AI workflow carries X-Chronicle-Automation: true →
         // AUTOMATION wins over the AI path rule (the header is checked first).
         authenticateWithUser(makeUser(7L, 42L));
         UUID jobId = UUID.randomUUID();

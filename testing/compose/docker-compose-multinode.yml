@@ -83,7 +83,7 @@ x-stirling-node: &stirling-node
     SYSTEM_DEFAULTLOCALE: "en-US"
     SYSTEM_MAXFILESIZE: "100"
     UI_APPNAME: "Chronicle PDF Multi-Node"
-    UI_APPNAMENAVBAR: "Stirling Multi-Node"
+    UI_APPNAMENAVBAR: "Chronicle Multi-Node"
   networks:
     - stirling-multinode
 

@@ -68,7 +68,7 @@ public class PdfCommentAgentOrchestrator {
     /**
      * Small value record returned to the controller: the annotated PDF bytes, the suggested
      * download filename (used in the {@code Content-Disposition} header), and metadata the
-     * controller emits in the {@code X-Stirling-Tool-Report} header so callers (frontend,
+     * controller emits in the {@code X-Chronicle-Tool-Report} header so callers (frontend,
      * orchestrator) can surface a chat-style summary alongside the file.
      */
     public record AnnotatedPdf(

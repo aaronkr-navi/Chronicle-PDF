@@ -96,7 +96,7 @@ public class PaygChargeInterceptor implements AsyncHandlerInterceptor {
      * V12 step limits for DESKTOP_APP and WEB are identical, so the worst-case abuse value is zero
      * today. Tighten if/when their limits diverge.
      */
-    private static final String DESKTOP_CLIENT_HEADER = "X-Stirling-Client";
+    private static final String DESKTOP_CLIENT_HEADER = "X-Chronicle-Client";
 
     /** Matches {@code processing_job_step.tool_id} column width (VARCHAR(128)). */
     private static final int TOOL_ID_MAX_LENGTH = 128;
@@ -286,9 +286,9 @@ public class PaygChargeInterceptor implements AsyncHandlerInterceptor {
         request.setAttribute(ATTR_TOOL_ID, resolveToolId(request));
 
         // Automation-run correlation id, honoured ONLY from an internal automation dispatch.
-        // InternalApiClient stamps X-Stirling-Automation on every loopback sub-step alongside the
+        // InternalApiClient stamps X-Chronicle-Automation on every loopback sub-step alongside the
         // run id, so a genuine pipeline / policy / AI run always carries both. A raw external
-        // request that sets X-Stirling-Run-Id on its own is ignored (each such call stays its own
+        // request that sets X-Chronicle-Run-Id on its own is ignored (each such call stays its own
         // charge): otherwise an API caller could pin a constant run id to collapse separate
         // same-content calls into one charge, defeating "charge per API call". Null → standalone.
         String headerRunId = request.getHeader(AutomationRunContext.RUN_ID_HEADER);
@@ -513,8 +513,8 @@ public class PaygChargeInterceptor implements AsyncHandlerInterceptor {
 
     /**
      * True when the request carries the internal-dispatch marker InternalApiClient stamps on every
-     * loopback sub-step ({@code X-Stirling-Automation: true}). This is the trust boundary for both
-     * the AUTOMATION billing category and for honouring {@code X-Stirling-Run-Id}: an external
+     * loopback sub-step ({@code X-Chronicle-Automation: true}). This is the trust boundary for both
+     * the AUTOMATION billing category and for honouring {@code X-Chronicle-Run-Id}: an external
      * caller can't group charges via a run id without also declaring itself automation (which
      * changes its own billing category).
      */
@@ -539,7 +539,7 @@ public class PaygChargeInterceptor implements AsyncHandlerInterceptor {
 
     /**
      * Resolve the {@link BillingCategory} for this request. Precedence: {@code
-     * X-Stirling-Automation: true} or {@code @RequiresFeature(AUTOMATION)} → AUTOMATION;
+     * X-Chronicle-Automation: true} or {@code @RequiresFeature(AUTOMATION)} → AUTOMATION;
      * {@code @RequiresFeature(AI_SUPPORT)} → AI; an AI document-tool route ({@link AiToolRoutes}) →
      * AI; API-key auth → API; otherwise BYPASSED (manual UI tool — short-circuited in {@link
      * #preHandle}).

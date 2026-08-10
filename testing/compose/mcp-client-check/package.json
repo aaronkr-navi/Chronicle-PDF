@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "version": "1.0.0",
-  "description": "Real MCP client (official @modelcontextprotocol/sdk) used to validate the Stirling MCP server end-to-end over streamable HTTP.",
+  "description": "Real MCP client (official @modelcontextprotocol/sdk) used to validate the Chronicle MCP server end-to-end over streamable HTTP.",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0"
   }

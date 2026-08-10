@@ -9,7 +9,7 @@ The Chronicle-PDF team takes security vulnerabilities seriously. We appreciate y
 You can report security vulnerabilities through two channels:
 
 1. **GitHub Security Advisory**:
-   - Navigate to the [Security tab](https://github.com/Stirling-Tools/Chronicle-PDF/security) in our repository
+   - Navigate to the [Security tab](https://github.com/aaronkr-navi/Chronicle-PDF/security) in our repository
    - Click on "Report a vulnerability"
    - Provide a detailed description of the vulnerability
 

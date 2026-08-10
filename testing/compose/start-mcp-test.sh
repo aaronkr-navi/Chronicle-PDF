@@ -29,7 +29,7 @@ print_manual_panel() {
     echo ""
 }
 
-# Manual API-key panel: mint a Stirling per-user key and print header-based client settings.
+# Manual API-key panel: mint a Chronicle per-user key and print header-based client settings.
 print_manual_panel_apikey() {
     local jwt key
     jwt=$(curl -s -X POST http://localhost:8080/api/v1/auth/login \
@@ -70,7 +70,7 @@ print_manual_panel_apikey() {
 }
 
 echo -e "${BLUE}╔════════════════════════════════════════════════════╗${NC}"
-echo -e "${BLUE}║   Stirling PDF + Keycloak MCP Test Environment   ║${NC}"
+echo -e "${BLUE}║   Chronicle PDF + Keycloak MCP Test Environment   ║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════════════╝${NC}"
 echo ""
 
@@ -126,7 +126,7 @@ while [[ $# -gt 0 ]]; do
             echo "  --validate            Run validate-mcp-test.sh after the stack is up"
             echo "  --manual              Manual testing mode (OAuth): bring the stack up and print"
             echo "                        copy-paste client settings for the OAuth flow."
-            echo "  --apikey              Manual testing mode (API key): bring Stirling up in apikey"
+            echo "  --apikey              Manual testing mode (API key): bring Chronicle PDF up in apikey"
             echo "                        mode (no OAuth/IdP), mint a key, and print client settings."
             echo "                        Ideal for clients whose OAuth can't reach localhost."
             echo "  --license-key <KEY>   Premium license key (skips the interactive prompt)"
@@ -203,15 +203,15 @@ if [ $WAITED -ge $MAX_WAIT ]; then
 fi
 
 echo ""
-echo -e "${YELLOW}▶ Starting Stirling PDF (MCP resource server)...${NC}"
+echo -e "${YELLOW}▶ Starting Chronicle PDF (MCP resource server)...${NC}"
 docker-compose -f docker-compose-keycloak-mcp.yml up "${COMPOSE_UP_ARGS[@]}" stirling-pdf-mcp
 
 echo ""
-echo -e "${YELLOW}▶ Waiting for Stirling PDF...${NC}"
+echo -e "${YELLOW}▶ Waiting for Chronicle PDF...${NC}"
 WAITED=0
 while [ $WAITED -lt $MAX_WAIT ]; do
     if curl -sf http://localhost:8080/api/v1/info/status 2>/dev/null | grep -q "UP"; then
-        echo -e "${GREEN}✓ Stirling PDF is ready${NC}"
+        echo -e "${GREEN}✓ Chronicle PDF is ready${NC}"
         break
     fi
     echo -n "."
@@ -220,7 +220,7 @@ while [ $WAITED -lt $MAX_WAIT ]; do
 done
 
 if [ $WAITED -ge $MAX_WAIT ]; then
-    echo -e "${RED}✗ Stirling PDF failed to start${NC}"
+    echo -e "${RED}✗ Chronicle PDF failed to start${NC}"
     exit 1
 fi
 
@@ -232,14 +232,14 @@ echo ""
 echo -e "${BLUE}🔑 Auth mode:${NC} ${GREEN}${MCP_AUTH_MODE:-oauth}${NC}"
 echo ""
 echo -e "${BLUE}📍 Services:${NC}"
-echo -e "   Stirling PDF:   ${GREEN}http://localhost:8080${NC}"
+echo -e "   Chronicle PDF:   ${GREEN}http://localhost:8080${NC}"
 echo -e "   MCP endpoint:   ${GREEN}http://localhost:8080/mcp${NC}"
 if [ "$APIKEY_MODE" != true ]; then
     echo -e "   PRM metadata:   ${GREEN}http://localhost:8080/.well-known/oauth-protected-resource${NC}"
 fi
 echo -e "   Keycloak Admin: ${GREEN}http://${KEYCLOAK_HOST}:9080/admin${NC} (admin / admin)"
 echo ""
-echo -e "${BLUE}👤 Test user (exists in Keycloak AND as a Stirling account):${NC}"
+echo -e "${BLUE}👤 Test user (exists in Keycloak AND as a Chronicle account):${NC}"
 echo -e "     Email:    ${GREEN}mcpuser@stirling.local${NC}"
 echo -e "     Password: ${GREEN}mcppassword${NC}"
 echo ""

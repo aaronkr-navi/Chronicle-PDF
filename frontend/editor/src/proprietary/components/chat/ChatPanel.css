@@ -41,13 +41,13 @@
 }
 
 .chat-fab-window--open .chat-panel__agent-pill {
-  view-transition-name: stirling-agent;
+  view-transition-name: Chronicle-agent;
 }
 
 /* Match the active-tool morph timing for a consistent rail feel. */
-::view-transition-group(stirling-agent),
-::view-transition-old(stirling-agent),
-::view-transition-new(stirling-agent) {
+::view-transition-group(Chronicle-agent),
+::view-transition-old(Chronicle-agent),
+::view-transition-new(Chronicle-agent) {
   animation-duration: 220ms;
   animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
 }
@@ -696,17 +696,17 @@
   }
 }
 
-/* ─── Stirling logo thinking animation ─────────────────────────────────── */
+/* ─── Chronicle logo thinking animation ─────────────────────────────────── */
 
-.stirling-thinking__path-right {
-  animation: stirling-orbit-right 2s ease-in-out infinite;
+.Chronicle-thinking__path-right {
+  animation: Chronicle-orbit-right 2s ease-in-out infinite;
 }
 
-.stirling-thinking__path-left {
-  animation: stirling-orbit-left 2s ease-in-out infinite;
+.Chronicle-thinking__path-left {
+  animation: Chronicle-orbit-left 2s ease-in-out infinite;
 }
 
-@keyframes stirling-orbit-right {
+@keyframes Chronicle-orbit-right {
   0%,
   100% {
     transform: translate(0, 0);
@@ -726,7 +726,7 @@
   }
 }
 
-@keyframes stirling-orbit-left {
+@keyframes Chronicle-orbit-left {
   0%,
   100% {
     transform: translate(0, 0);
@@ -747,11 +747,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .stirling-thinking__path-right {
+  .Chronicle-thinking__path-right {
     animation: none;
     opacity: 0.5;
   }
-  .stirling-thinking__path-left {
+  .Chronicle-thinking__path-left {
     animation: none;
     opacity: 1;
   }

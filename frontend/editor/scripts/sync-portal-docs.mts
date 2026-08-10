@@ -1,5 +1,5 @@
 /**
- * Sync the portal Developer Docs from the Stirling docs repo.
+ * Sync the portal Developer Docs from the Chronicle docs repo.
  *
  * Fetches the docs repo tarball, extracts `docs/**` in-process (no external tar
  * binary, no per-file GitHub rate limits), shapes it with the pure transforms in
@@ -20,7 +20,7 @@ import {
   type RawDoc,
 } from "../src/portal/docs/manifest/transform.ts";
 
-const REPO = process.env.DOCS_REPO ?? "Stirling-Tools/Stirling-Tools.github.io";
+const REPO = process.env.DOCS_REPO ?? "aaronkr-navi/Chronicle-PDF";
 const REF = process.env.DOCS_REF ?? "main";
 const ROOT = process.env.DOCS_ROOT ?? "docs";
 const SITE = "https://docs.stirlingpdf.com";

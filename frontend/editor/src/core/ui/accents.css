@@ -75,7 +75,7 @@
   --_bd: var(--p-c-334155);
   --_tint: color-mix(in srgb, var(--p-c-94a3b8) 16%, transparent);
 }
-/* brand: Stirling red — a bespoke brand colour, not part of the token palette. */
+/* brand: Chronicle red — a bespoke brand colour, not part of the token palette. */
 .sui-acc-brand {
   --_solid: var(--p-brand-red-650);
   --_solid-hover: var(--p-brand-red-700);

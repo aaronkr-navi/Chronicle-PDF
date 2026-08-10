@@ -121,7 +121,7 @@ class PortalInfraAuditServiceTest {
     }
 
     /**
-     * A spoofed X-Stirling-Policy-Name header lands in audit data as policyName on a direct tool
+     * A spoofed X-Chronicle-Policy-Name header lands in audit data as policyName on a direct tool
      * call (no automation marker, non-run path). It must NOT flip the row into a "policy" dispatch
      * that overwrites the real action and hides the affected file - only a real /policies/.../run
      * URI does that.

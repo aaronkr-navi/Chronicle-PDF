@@ -68,7 +68,7 @@ These are not required to run the app but enable specific features. The app dete
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Stirling-Tools/Chronicle-PDF.git
+   git clone https://github.com/aaronkr-navi/Chronicle-PDF.git
    cd Chronicle-PDF
    ```
 
@@ -215,7 +215,7 @@ These files provide pre-configured setups for different scenarios. For example, 
 services:
   Chronicle-PDF:
     container_name: Chronicle-PDF-Security
-    image: docker.stirlingpdf.com/stirlingtools/Chronicle-PDF:latest
+    image: docker.chronicle-pdf.com/stirlingtools/Chronicle-PDF:latest
     deploy:
       resources:
         limits:
@@ -396,7 +396,7 @@ Important notes:
 
 6. Push your changes to your fork.
 7. Submit a pull request to the main repository.
-8. See additional [contributing guidelines](https://github.com/Stirling-Tools/Chronicle-PDF/blob/main/CONTRIBUTING.md).
+8. See additional [contributing guidelines](https://github.com/aaronkr-navi/Chronicle-PDF/blob/main/CONTRIBUTING.md).
 
 When you raise a PR:
 
@@ -409,7 +409,7 @@ Address any issues that arise from these checks before finalizing your pull requ
 
 ## 9. API Documentation
 
-API documentation is available at `/swagger-ui/index.html` when running the application. You can also view the latest API documentation [here](https://app.swaggerhub.com/apis-docs/Stirling-Tools/Chronicle-PDF/).
+API documentation is available at `/swagger-ui/index.html` when running the application. You can also view the latest API documentation [here](https://app.swaggerhub.com/apis-docs/aaronkr-navi/Chronicle-PDF/).
 
 ## 10. Customization
 

@@ -36,7 +36,7 @@ echo -e "${YELLOW}▶ Recreating Chronicle PDF in apikey mode...${NC}"
 MCP_AUTH_MODE=apikey PREMIUM_KEY="${PREMIUM_KEY:-}" \
     docker compose -f "$COMPOSE" up -d --no-build --force-recreate stirling-pdf-mcp >/dev/null 2>&1
 if ! wait_up; then
-    fail "Stirling did not become healthy in apikey mode"
+    fail "Chronicle PDF did not become healthy in apikey mode"
     echo -e "${RED}Aborting.${NC}"; exit 1
 fi
 # In apikey mode the OAuth metadata is not served (404, or 401 from the app chain).
@@ -47,7 +47,7 @@ else
     fail "expected OAuth metadata absent in apikey mode, got $META_CODE"
 fi
 
-echo -e "${YELLOW}▶ Minting a Stirling API key for mcpuser...${NC}"
+echo -e "${YELLOW}▶ Minting a Chronicle API key for mcpuser...${NC}"
 JWT=$(curl -s -X POST http://localhost:8080/api/v1/auth/login \
     -H "Content-Type: application/json" \
     -d '{"username":"mcpuser@stirling.local","password":"mcppassword"}' \
@@ -123,7 +123,7 @@ echo ""
 
 echo -e "${YELLOW}▶ Restoring oauth mode...${NC}"
 PREMIUM_KEY="${PREMIUM_KEY:-}" docker compose -f "$COMPOSE" up -d --no-build --force-recreate stirling-pdf-mcp >/dev/null 2>&1
-wait_up && pass "restored oauth mode" || fail "Stirling not healthy after restoring oauth"
+wait_up && pass "restored oauth mode" || fail "Chronicle PDF not healthy after restoring oauth"
 echo ""
 
 echo -e "${BLUE}────────────────────────────────────────────────────${NC}"

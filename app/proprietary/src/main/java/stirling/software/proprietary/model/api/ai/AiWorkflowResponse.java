@@ -102,7 +102,7 @@ public class AiWorkflowResponse {
             description =
                     "Optional structured report from the tool (e.g. math-auditor Verdict, PDF"
                             + " comment-agent summary). Tools surface this either via a JSON response"
-                            + " body or via the X-Stirling-Tool-Report header. May be null for tools"
+                            + " body or via the X-Chronicle-Tool-Report header. May be null for tools"
                             + " that produce only a file.")
     private JsonNode report;
 

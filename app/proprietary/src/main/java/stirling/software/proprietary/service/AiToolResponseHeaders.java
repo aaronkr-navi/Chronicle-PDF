@@ -15,7 +15,7 @@ public final class AiToolResponseHeaders {
      * JSON object whose shape depends on the tool (e.g. {@code annotationsApplied}, {@code
      * rationale} for pdf-comment-agent). Absent when the tool has no metadata to report.
      */
-    public static final String TOOL_REPORT = "X-Stirling-Tool-Report";
+    public static final String TOOL_REPORT = "X-Chronicle-Tool-Report";
 
     private AiToolResponseHeaders() {}
 }

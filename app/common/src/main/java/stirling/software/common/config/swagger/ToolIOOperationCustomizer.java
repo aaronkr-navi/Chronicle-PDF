@@ -20,7 +20,7 @@ import stirling.software.common.model.tool.ToolIOCase;
 import stirling.software.common.model.tool.ToolIOWhen;
 
 /**
- * Publishes each {@link ToolIO} into the spec as {@code x-stirling-io}, which is how the frontend
+ * Publishes each {@link ToolIO} into the spec as {@code X-Chronicle-io}, which is how the frontend
  * and the AI engine get it.
  *
  * <p>Also appends the {@code Input:/Output:/Type:} line the docs used to carry by hand, so the
@@ -30,8 +30,8 @@ import stirling.software.common.model.tool.ToolIOWhen;
 public class ToolIOOperationCustomizer
         implements GlobalOperationCustomizer, GlobalOpenApiCustomizer {
 
-    public static final String EXTENSION_NAME = "x-stirling-io";
-    public static final String VOCABULARY_EXTENSION_NAME = "x-stirling-io-vocabulary";
+    public static final String EXTENSION_NAME = "X-Chronicle-io";
+    public static final String VOCABULARY_EXTENSION_NAME = "X-Chronicle-io-vocabulary";
 
     // Published separately from the declarations: generators need the full vocabulary for their
     // enums, and deriving it from what is present would shrink it when an endpoint is disabled.

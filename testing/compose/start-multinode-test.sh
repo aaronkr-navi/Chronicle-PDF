@@ -21,7 +21,7 @@ if [ -z "${PREMIUM_KEY:-}" ]; then
   echo "         Run:  export PREMIUM_KEY=<your test licence key>   before starting."
 fi
 
-echo "==> Building the Stirling image (first run compiles the app; be patient)..."
+echo "==> Building the Chronicle image (first run compiles the app; be patient)..."
 $COMPOSE build
 
 echo "==> Starting Postgres + Valkey + MinIO + 2 app nodes + nginx..."
@@ -45,7 +45,7 @@ fi
 cat <<EOF
 
 ============================================================================
- Multi-node Stirling is UP.
+ Multi-node Chronicle PDF is UP.
 
    App (via load balancer): http://localhost:8080     (admin / stirling)
    MinIO console:           http://localhost:9001     (minioadmin / minioadmin)

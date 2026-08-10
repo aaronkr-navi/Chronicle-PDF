@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
  * <ul>
  *   <li>{@code PaygChargeInterceptor} brings these routes into scope and bills them as {@code
  *       BillingCategory.AI} on a direct call (an orchestrator-dispatched call still resolves to
- *       AUTOMATION first, via the {@code X-Stirling-Automation} header);
+ *       AUTOMATION first, via the {@code X-Chronicle-Automation} header);
  *   <li>{@code EntitlementGuard} gates them on {@link
  *       stirling.software.saas.payg.model.FeatureGate#AI_SUPPORT}.
  * </ul>

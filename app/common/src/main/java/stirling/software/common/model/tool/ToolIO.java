@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * What a tool endpoint consumes and produces, so a chain of steps can be checked before it runs.
  *
  * <p>The single source of truth: read off the handler method by {@code ToolIORegistry}, published
- * into the OpenAPI spec as {@code x-stirling-io}, and generated from there into the frontend and
+ * into the OpenAPI spec as {@code X-Chronicle-io}, and generated from there into the frontend and
  * the AI engine.
  */
 @Target(ElementType.METHOD)

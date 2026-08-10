@@ -20,7 +20,7 @@ import stirling.software.saas.payg.model.FeatureGate;
  * <p><b>Out of scope</b>: {@code PipelineController} (in core) and {@code PolicyController} (in
  * proprietary) — neither module can import {@code @RequiresFeature} from saas without a forbidden
  * upward dependency. Their automation classification is enforced via the {@code
- * X-Stirling-Automation} header set unconditionally by {@code InternalApiClient.post}; see the
+ * X-Chronicle-Automation} header set unconditionally by {@code InternalApiClient.post}; see the
  * dedicated test in that module.
  */
 class RequiresFeatureAnnotationRolloutTest {

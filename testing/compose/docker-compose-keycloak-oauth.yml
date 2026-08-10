@@ -88,7 +88,7 @@ services:
       SECURITY_OAUTH2_AUTOCREATEUSER: "true"
       # Must match Keycloak's advertised issuer
       SECURITY_OAUTH2_CLIENT_KEYCLOAK_ISSUER: "http://${KEYCLOAK_HOST:-kubernetes.docker.internal}:9080/realms/stirling-oauth"
-      SECURITY_OAUTH2_CLIENT_KEYCLOAK_CLIENTID: "stirling-pdf-client"
+      SECURITY_OAUTH2_CLIENT_KEYCLOAK_CLIENTID: "Chronicle-PDF-client"
       SECURITY_OAUTH2_CLIENT_KEYCLOAK_CLIENTSECRET: "test-client-secret-change-in-production"
       SECURITY_OAUTH2_CLIENT_KEYCLOAK_USEASUSERNAME: "email"
       SECURITY_OAUTH2_CLIENT_KEYCLOAK_SCOPES: "openid,profile,email"

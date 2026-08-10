@@ -36,8 +36,8 @@ import stirling.software.proprietary.policy.trigger.WebhookTrigger;
 @Tag(name = "Webhooks", description = "Inbound webhook source receiver")
 public class WebhookReceiverController {
 
-    static final String SIGNATURE_HEADER = "X-Stirling-Signature";
-    static final String FILENAME_HEADER = "X-Stirling-Filename";
+    static final String SIGNATURE_HEADER = "X-Chronicle-Signature";
+    static final String FILENAME_HEADER = "X-Chronicle-Filename";
     private static final String WEBHOOK_TYPE = "webhook";
 
     private final SourceStore sourceStore;
@@ -50,7 +50,7 @@ public class WebhookReceiverController {
             summary = "Deliver a document to a webhook source",
             description =
                     "The body is the raw document; sign it with the source's secret and present"
-                            + " 'sha256=<hex>' in the X-Stirling-Signature header. Returns 202 once"
+                            + " 'sha256=<hex>' in the X-Chronicle-Signature header. Returns 202 once"
                             + " the document is spooled for the referencing policies.")
     public ResponseEntity<WebhookDeliveryResponse> receive(
             @PathVariable String webhookId,

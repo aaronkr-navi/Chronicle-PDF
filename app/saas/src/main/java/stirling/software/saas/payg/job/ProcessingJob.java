@@ -75,7 +75,7 @@ public class ProcessingJob implements Serializable {
     private Integer docCount = 1;
 
     /**
-     * Correlation id of the automation run that opened this job ({@code X-Stirling-Run-Id}), or
+     * Correlation id of the automation run that opened this job ({@code X-Chronicle-Run-Id}), or
      * {@code null} for a standalone tool call. Lineage joins are scoped to a single run id, so two
      * separate runs never merge even on identical bytes; a null run id never joins (each standalone
      * call is its own charge).
