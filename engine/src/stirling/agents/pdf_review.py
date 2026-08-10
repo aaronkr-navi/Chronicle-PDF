@@ -65,8 +65,8 @@ _ICON_Y_TOP = 770.0
 _ICON_Y_STRIDE = 28.0
 _ICON_SIZE = 20.0
 
-_DEFAULT_AUTHOR = "Stirling Math Auditor"
-_CONTRADICTION_AUTHOR = "Stirling Contradiction Auditor"
+_DEFAULT_AUTHOR = "Chronicle Math Auditor"
+_CONTRADICTION_AUTHOR = "Chronicle Contradiction Auditor"
 
 _LOCALISER_SYSTEM_PROMPT = (
     "You are given a math-audit Verdict (structured JSON) and the user's "

@@ -201,7 +201,7 @@ async def lifespan(fast_api: FastAPI):
         tracer_provider.shutdown()
 
 
-app = FastAPI(title="Stirling AI Engine", lifespan=lifespan, version="0.1.0")
+app = FastAPI(title="Chronicle AI Engine", lifespan=lifespan, version="0.1.0")
 app.add_middleware(UserIdMiddleware)
 app.add_middleware(EngineSharedSecretMiddleware)
 # Every router gets the same configurable identity gate; /health stays open

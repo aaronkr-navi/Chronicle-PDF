@@ -1,4 +1,4 @@
-"""Configuration models and loaders for the Stirling AI service."""
+"""Configuration models and loaders for the Chronicle AI service."""
 
 from .settings import ENGINE_ROOT, AppSettings, DocumentsBackend, load_settings
 

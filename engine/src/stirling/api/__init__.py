@@ -1,4 +1,4 @@
-"""API surface for the Stirling AI service."""
+"""API surface for the Chronicle AI service."""
 
 from .app import app
 

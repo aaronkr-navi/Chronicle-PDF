@@ -1,4 +1,4 @@
-"""Shared logging utilities for the Stirling AI engine."""
+"""Shared logging utilities for the Chronicle AI engine."""
 
 from __future__ import annotations
 

@@ -186,7 +186,7 @@ class AddStampParams(ApiModel):
         description="Position for stamp placement based on a 1-9 grid (1: bottom-left, 2: bottom-center, 3: bottom-right, 4: middle-left, 5: middle-center, 6: middle-right, 7: top-left, 8: top-center, 9: top-right)",
     )
     rotation: float = Field(0, description="The rotation of the stamp in degrees")
-    stamp_text: str = Field("Stirling Software", description="The stamp text")
+    stamp_text: str = Field("Chronicle Software", description="The stamp text")
     stamp_type: StampType = Field(..., description="The stamp type (text or image)")
 
 
@@ -220,7 +220,7 @@ class AddWatermarkParams(ApiModel):
     height_spacer: int = Field(50, description="The height spacer between watermark elements", ge=0)
     opacity: float = Field(0.5, description="The opacity of the watermark (0.0 - 1.0)")
     rotation: float = Field(0, description="The rotation of the watermark in degrees")
-    watermark_text: str = Field("Stirling Software", description="The watermark text")
+    watermark_text: str = Field("Chronicle Software", description="The watermark text")
     watermark_type: WatermarkType = Field(..., description="The watermark type (text or image)")
     width_spacer: int = Field(50, description="The width spacer between watermark elements", ge=0)
 

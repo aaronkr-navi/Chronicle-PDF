@@ -1,4 +1,4 @@
-"""Agent modules for Stirling AI reasoning flows."""
+"""Agent modules for Chronicle AI reasoning flows."""
 
 from .document_classifier import DocumentClassifierAgent
 from .execution import ExecutionPlanningAgent

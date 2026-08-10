@@ -1,4 +1,4 @@
-"""Stirling AI engine package."""
+"""Chronicle AI engine package."""
 
 from .api.app import app
 
