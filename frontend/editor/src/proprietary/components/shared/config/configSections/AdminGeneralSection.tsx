@@ -540,7 +540,7 @@ export default function AdminGeneralSection() {
                         }}
                       >
                         <img
-                          src="modern-logo/StirlingPDFLogoNoTextLight.svg"
+                          src="modern-logo/ChroniclePDFLogoNoTextLight.svg"
                           alt={t(
                             "admin.settings.general.logoStyle.modernAlt",
                             "Modern logo",

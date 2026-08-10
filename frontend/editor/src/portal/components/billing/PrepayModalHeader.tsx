@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@app/ui";
 // The trademarked Stirling wordmark — the font is baked into the SVG (no brand webfont is loaded), so
 // we render the same asset the portal nav uses rather than styled text. Theme-switched in CSS.
-import wordmarkLight from "@app/assets/brand/modern-logo/StirlingProcessorLogoBlackText.svg";
-import wordmarkDark from "@app/assets/brand/modern-logo/StirlingProcessorLogoWhiteText.svg";
+import wordmarkLight from "@app/assets/brand/modern-logo/ChronicleProcessorLogoBlackText.svg";
+import wordmarkDark from "@app/assets/brand/modern-logo/ChronicleProcessorLogoWhiteText.svg";
 
 /**
  * Shared header for the prepay-flow modals — the prepaid wizard (activation → calculator → pay, of 3)
