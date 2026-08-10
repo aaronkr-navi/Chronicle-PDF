@@ -2,14 +2,14 @@
 #
 # DB migration smoke test: for each H2 fixture under
 # app/proprietary/src/test/resources/db-migration-fixtures/, copy it into a
-# fresh working directory, boot the current Stirling-PDF JAR against it, then
+# fresh working directory, boot the current Chronicle-PDF JAR against it, then
 # POST /api/v1/auth/login with the fixture's admin credentials. A 200 means
 # Hibernate's ddl-auto=update migrated the legacy schema without breaking
 # existing data.
 #
 # Inputs:
-#   STIRLING_JAR  - path to a pre-built Stirling-PDF .jar (defaults to the
-#                   :stirling-pdf:bootJar output)
+#   STIRLING_JAR  - path to a pre-built Chronicle-PDF .jar (defaults to the
+#                   :Chronicle-PDF:bootJar output)
 #   JAVA_BIN      - override the Java executable used to launch the JAR
 #                   (defaults to MIGRATION_TEST_JAVA, JAVA_HOME, then PATH)
 #   FIXTURE_DIR   - override the fixture directory (rarely needed)
@@ -81,9 +81,9 @@ find_jar() {
         [[ -f "$STIRLING_JAR" ]] || fail "STIRLING_JAR='$STIRLING_JAR' not found"
         candidate="$STIRLING_JAR"
     else
-        candidate=$(find "$REPO_ROOT/app/core/build/libs" -maxdepth 1 -name 'Stirling-PDF*.jar' -o -name 'stirling-pdf*.jar' 2>/dev/null \
+        candidate=$(find "$REPO_ROOT/app/core/build/libs" -maxdepth 1 -name 'Chronicle-PDF*.jar' -o -name 'Chronicle-PDF*.jar' 2>/dev/null \
             | grep -vE '(-plain|-sources)\.jar$' | head -n 1 || true)
-        [[ -n "$candidate" ]] || fail "No JAR under app/core/build/libs - run './gradlew :stirling-pdf:bootJar' first"
+        [[ -n "$candidate" ]] || fail "No JAR under app/core/build/libs - run './gradlew :Chronicle-PDF:bootJar' first"
     fi
     # Resolve to an absolute path: test_fixture pushd's into a temp workdir
     # before launching java, so a relative path here would dangle.
@@ -118,7 +118,7 @@ test_fixture() {
     local workdir; workdir=$(mktemp -d)
     local configsdir="$workdir/configs"
     mkdir -p "$configsdir"
-    cp "$fixture_path" "$configsdir/stirling-pdf-DB-2.3.232.mv.db"
+    cp "$fixture_path" "$configsdir/Chronicle-PDF-DB-2.3.232.mv.db"
 
     local port; port=$(free_port)
     local base_url="http://127.0.0.1:$port"
@@ -140,7 +140,7 @@ test_fixture() {
     pushd "$workdir" >/dev/null
     "$java_bin" -Xmx1g -jar "$jar" \
         "--server.port=$port" \
-        "--spring.datasource.url=jdbc:h2:file:./configs/stirling-pdf-DB-2.3.232;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE;MODE=PostgreSQL" \
+        "--spring.datasource.url=jdbc:h2:file:./configs/Chronicle-PDF-DB-2.3.232;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE;MODE=PostgreSQL" \
         "--spring.jpa.show-sql=false" \
         "--logging.level.root=WARN" \
         "--logging.level.stirling=INFO" \

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Translation Analyzer for Stirling PDF Frontend
+Translation Analyzer for Chronicle PDF Frontend
 Compares language files against en-US golden truth file.
 """
 

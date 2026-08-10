@@ -38,7 +38,7 @@ else
 fi
 
 # Check Stirling PDF
-echo -n "Checking Stirling PDF status... "
+echo -n "Checking Chronicle PDF status... "
 if curl -sf http://localhost:8080/api/v1/info/status 2>/dev/null | grep -q "UP"; then
     echo -e "${GREEN}✓${NC}"
 else

@@ -47,9 +47,9 @@ else
     fail "Keycloak OIDC discovery not reachable"
 fi
 if curl -sf http://localhost:8080/api/v1/info/status 2>/dev/null | grep -q "UP"; then
-    pass "Stirling PDF is UP"
+    pass "Chronicle PDF is UP"
 else
-    fail "Stirling PDF is not UP"
+    fail "Chronicle PDF is not UP"
 fi
 echo ""
 
@@ -80,7 +80,7 @@ fi
 
 # RFC 9728 path-inserted form: clients derive {origin}/.well-known/oauth-protected-resource/mcp
 # for a resource at /mcp. This must serve the SAME customized metadata; a default document here
-# (no authorization_servers) makes clients fall back to treating Stirling as its own AS.
+# (no authorization_servers) makes clients fall back to treating Chronicle PDF as its own AS.
 PRM_SUB=$(curl -s -o /tmp/mcp_prm_sub.json -w "%{http_code}" "${PRM_URL}/mcp")
 PRM_SUB_BODY=$(cat /tmp/mcp_prm_sub.json 2>/dev/null)
 if [ "$PRM_SUB" = "200" ]; then
@@ -192,8 +192,8 @@ else
 fi
 echo ""
 
-# account-binding: valid Keycloak user with no Stirling account -> 403
-echo -e "${YELLOW}[6] Account-binding rejects users without a Stirling account${NC}"
+# account-binding: valid Keycloak user with no Chronicle account -> 403
+echo -e "${YELLOW}[6] Account-binding rejects users without a Chronicle account${NC}"
 GHOST_TOKEN=$(get_token "ghost@stirling.local" "ghostpassword")
 if [ -n "$GHOST_TOKEN" ]; then
     pass "Obtained a valid Keycloak token for ghost@stirling.local"
@@ -201,7 +201,7 @@ if [ -n "$GHOST_TOKEN" ]; then
         -H "Content-Type: application/json" \
         -H "Authorization: Bearer $GHOST_TOKEN" -d "$RPC_LIST")
     if [ "$GHOST_CODE" = "403" ]; then
-        pass "Valid token, no Stirling account -> 403 (account-binding enforced)"
+        pass "Valid token, no Chronicle account -> 403 (account-binding enforced)"
     else
         fail "ghost user -> $GHOST_CODE (expected 403)"
     fi

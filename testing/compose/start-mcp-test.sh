@@ -244,7 +244,7 @@ echo -e "     Email:    ${GREEN}mcpuser@stirling.local${NC}"
 echo -e "     Password: ${GREEN}mcppassword${NC}"
 echo ""
 if [ "$APIKEY_MODE" != true ]; then
-    echo -e "${BLUE}👻 Negative-test user (valid Keycloak login, NO Stirling account):${NC}"
+    echo -e "${BLUE}👻 Negative-test user (valid Keycloak login, no Chronicle account):${NC}"
     echo -e "     Email:    ${GREEN}ghost@stirling.local${NC}"
     echo -e "     Password: ${GREEN}ghostpassword${NC}   (expect HTTP 403 at /mcp)"
     echo ""

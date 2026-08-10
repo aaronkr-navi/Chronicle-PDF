@@ -166,8 +166,8 @@ if ! [ -t 0 ]; then
   exit 1
 fi
 
-log "=== Stirling-PDF Diagnostics ==="
-log "This tool collects a diagnostic bundle for Stirling-PDF."
+log "=== Chronicle-PDF Diagnostics ==="
+log "This tool collects a diagnostic bundle for Chronicle-PDF."
 log "Auto mode includes: logs (last ${DEFAULT_DAYS} day(s)), configs, system info,"
 log "metrics/health endpoints, and directory trees for main folders."
 log "Custom mode lets you choose what to include and redaction options."
@@ -218,7 +218,7 @@ else
   if prompt_yes_no "Include /configs?" "y"; then INCLUDE_CONFIGS=true; fi
   if prompt_yes_no "Include /customFiles (excluding PDFs)?" "n"; then INCLUDE_CUSTOM=true; fi
   if prompt_yes_no "Include /pipeline (excluding PDFs)?" "n"; then INCLUDE_PIPELINE=true; fi
-  if prompt_yes_no "Include /tmp/stirling-pdf?" "n"; then INCLUDE_TEMP=true; fi
+  if prompt_yes_no "Include /tmp/Chronicle-PDF?" "n"; then INCLUDE_TEMP=true; fi
   if prompt_yes_no "Include system information?" "y"; then INCLUDE_SYSTEM=true; fi
   if prompt_yes_no "Include environment variables?" "n"; then INCLUDE_ENV=true; fi
   if prompt_yes_no "Fetch app status/health/metrics endpoints?" "y"; then INCLUDE_METRICS=true; fi
@@ -411,8 +411,8 @@ if [ "$INCLUDE_PIPELINE" = true ]; then
   copy_dir_filtered_no_pdfs "/pipeline" "$DATA_DIR"
 fi
 if [ "$INCLUDE_TEMP" = true ]; then
-  log "Collecting /tmp/stirling-pdf..."
-  copy_dir_filtered "/tmp/stirling-pdf" "$DATA_DIR" 0
+  log "Collecting /tmp/Chronicle-PDF..."
+  copy_dir_filtered "/tmp/Chronicle-PDF" "$DATA_DIR" 0
 fi
 
 log "Writing directory trees..."
@@ -422,7 +422,7 @@ write_tree "/logs" "${TREE_DIR}/logs.txt"
 write_tree "/configs" "${TREE_DIR}/configs.txt"
 write_tree "/customFiles" "${TREE_DIR}/customFiles.txt"
 write_tree "/pipeline" "${TREE_DIR}/pipeline.txt"
-write_tree "/tmp/stirling-pdf" "${TREE_DIR}/tmp-stirling-pdf.txt"
+write_tree "/tmp/Chronicle-PDF" "${TREE_DIR}/tmp-Chronicle-PDF.txt"
 write_tree "/usr/share/tesseract-ocr/5/tessdata" "${TREE_DIR}/tessdata.txt"
 write_tree "/usr/share/tessdata" "${TREE_DIR}/tessdata-mount.txt"
 

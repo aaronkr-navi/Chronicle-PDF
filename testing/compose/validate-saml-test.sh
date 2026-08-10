@@ -38,7 +38,7 @@ else
 fi
 
 # Check Stirling PDF
-echo -n "Checking Stirling PDF status... "
+echo -n "Checking Chronicle PDF status... "
 if curl -sf http://localhost:8080/api/v1/info/status 2>/dev/null | grep -q "UP"; then
     echo -e "${GREEN}✓${NC}"
 else
@@ -46,12 +46,12 @@ else
     exit 1
 fi
 
-# Check Stirling PDF SAML metadata
-echo -n "Checking Stirling PDF SAML metadata... "
+# Check Chronicle PDF SAML metadata
+echo -n "Checking Chronicle PDF SAML metadata... "
 if curl -sf http://localhost:8080/saml2/service-provider-metadata/keycloak > /dev/null 2>&1; then
     echo -e "${GREEN}✓${NC}"
 else
-    echo -e "${RED}✗ Stirling PDF SAML metadata not available${NC}"
+    echo -e "${RED}✗ Chronicle PDF SAML metadata not available${NC}"
     exit 1
 fi
 

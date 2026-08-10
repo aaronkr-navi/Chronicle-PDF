@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script initializes Stirling PDF without OCR features.
+# This script initializes Chronicle PDF without OCR features.
 set -euo pipefail
 
 log() {
@@ -727,7 +727,7 @@ if [ -z "${JAVA_BASE_OPTS:-}" ]; then
         log "JVM profile: balanced (G1GC)"
       else
         log "JAVA_BASE_OPTS and profiles unset; applying fallback defaults."
-        JAVA_BASE_OPTS="-XX:+ExitOnOutOfMemoryError -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/stirling-pdf/heap_dumps -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:G1HeapRegionSize=4m -XX:G1PeriodicGCInterval=60000 -XX:+UseStringDeduplication -XX:+UseCompactObjectHeaders -XX:+ExplicitGCInvokesConcurrent -Dspring.threads.virtual.enabled=true"
+        JAVA_BASE_OPTS="-XX:+ExitOnOutOfMemoryError -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/Chronicle-PDF/heap_dumps -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:G1HeapRegionSize=4m -XX:G1PeriodicGCInterval=60000 -XX:+UseStringDeduplication -XX:+UseCompactObjectHeaders -XX:+ExplicitGCInvokesConcurrent -Dspring.threads.virtual.enabled=true"
       fi
       ;;
   esac
@@ -828,7 +828,7 @@ case "${JAVA_TOOL_OPTIONS}" in
   *) export JAVA_TOOL_OPTIONS="-Djava.awt.headless=true ${JAVA_TOOL_OPTIONS}" ;;
 esac
 log "running with JAVA_TOOL_OPTIONS=${JAVA_TOOL_OPTIONS}"
-log "Running Stirling PDF with DISABLE_ADDITIONAL_FEATURES=${DISABLE_ADDITIONAL_FEATURES:-} and VERSION_TAG=${VERSION_TAG:-<unset>}"
+log "Running Chronicle PDF with DISABLE_ADDITIONAL_FEATURES=${DISABLE_ADDITIONAL_FEATURES:-} and VERSION_TAG=${VERSION_TAG:-<unset>}"
 
 # ---------- UMASK ----------
 # Set default permissions mask.
@@ -860,7 +860,7 @@ log "XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}"
 # ---------- Optional ----------
 # Disable advanced HTML operations if required.
 if [[ "${INSTALL_BOOK_AND_ADVANCED_HTML_OPS:-false}" == "true" && "${FAT_DOCKER:-true}" != "true" ]]; then
-  log "issue with calibre in current version, feature currently disabled on Stirling-PDF"
+  log "issue with calibre in current version, feature currently disabled on Chronicle-PDF"
 fi
 
 # Download security JAR in non-fat builds.
@@ -887,8 +887,8 @@ fi
 # ---------- Permissions ----------
 # Ensure required directories exist and set correct permissions.
 log "Setting permissions..."
-mkdir -p /tmp/stirling-pdf /tmp/stirling-pdf/heap_dumps /logs /configs /configs/heap_dumps /configs/cache /customFiles /pipeline /storage || true
-CHOWN_PATHS=("$HOME" "/logs" "/scripts" "/configs" "/customFiles" "/pipeline" "/storage" "/tmp/stirling-pdf" "/app.jar")
+mkdir -p /tmp/Chronicle-PDF /tmp/Chronicle-PDF/heap_dumps /logs /configs /configs/heap_dumps /configs/cache /customFiles /pipeline /storage || true
+CHOWN_PATHS=("$HOME" "/logs" "/scripts" "/configs" "/customFiles" "/pipeline" "/storage" "/tmp/Chronicle-PDF" "/app.jar")
 [ -d /usr/share/fonts/truetype ] && CHOWN_PATHS+=("/usr/share/fonts/truetype")
 CHOWN_OK=true
 for p in "${CHOWN_PATHS[@]}"; do
@@ -942,12 +942,12 @@ else
 fi
 
 # ---------- Java ----------
-# Start Stirling PDF Java application immediately (parallel with unoserver startup).
-log "Starting Stirling PDF"
+# Start Chronicle PDF Java application immediately (parallel with unoserver startup).
+log "Starting Chronicle PDF"
 JAVA_CMD=(
   java
   -Dfile.encoding=UTF-8
-  -Djava.io.tmpdir=/tmp/stirling-pdf
+  -Djava.io.tmpdir=/tmp/Chronicle-PDF
 )
 
 if [ -f "/app.jar" ]; then
@@ -1075,10 +1075,10 @@ fi
 wait "$JAVA_PID" || true
 exit_code=$?
 case "$exit_code" in
-  0)   log "Stirling PDF exited normally." ;;
-  137) log "Stirling PDF was OOM-killed (exit 137). Check container memory limits." ;;
-  143) log "Stirling PDF terminated by SIGTERM (normal orchestrator shutdown)." ;;
-  *)   log "Stirling PDF exited with code ${exit_code}." ;;
+  0)   log "Chronicle PDF exited normally." ;;
+  137) log "Chronicle PDF was OOM-killed (exit 137). Check container memory limits." ;;
+  143) log "Chronicle PDF terminated by SIGTERM (normal orchestrator shutdown)." ;;
+  *)   log "Chronicle PDF exited with code ${exit_code}." ;;
 esac
 # Propagate exit code so orchestrators can detect crashes vs clean shutdowns
 exit "${exit_code}"

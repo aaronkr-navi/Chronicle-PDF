@@ -1,14 +1,14 @@
-# Stirling-PDF Developer Guide
+# Chronicle-PDF Developer Guide
 
 ## 1. Introduction
 
-Stirling-PDF is a robust, locally hosted, web-based PDF manipulation tool. **Stirling 2.0** represents a complete frontend rewrite with a modern React SPA (Single Page Application).
+Chronicle-PDF is a robust, locally hosted, web-based PDF manipulation tool. **Chronicle 2.0** represents a complete frontend rewrite with a modern React SPA (Single Page Application).
 
-This guide focuses on developing for Stirling 2.0, including both the React frontend and Spring Boot backend development workflows.
+This guide focuses on developing for Chronicle 2.0, including both the React frontend and Spring Boot backend development workflows.
 
 ## 2. Project Overview
 
-**Stirling 2.0** is built using:
+**Chronicle 2.0** is built using:
 
 **Backend:**
 - Spring Boot (requires JDK 25)
@@ -68,8 +68,8 @@ These are not required to run the app but enable specific features. The app dete
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Stirling-Tools/Stirling-PDF.git
-   cd Stirling-PDF
+   git clone https://github.com/Stirling-Tools/Chronicle-PDF.git
+   cd Chronicle-PDF
    ```
 
 2. Install Docker and JDK 25 if not already installed.
@@ -87,19 +87,19 @@ These are not required to run the app but enable specific features. The app dete
       4. Install the required extensions from the list.
 
 4. Lombok Setup
-Stirling-PDF uses Lombok to reduce boilerplate code. Some IDEs, like Eclipse, don't support Lombok out of the box. To set up Lombok in your development environment:
+Chronicle-PDF uses Lombok to reduce boilerplate code. Some IDEs, like Eclipse, don't support Lombok out of the box. To set up Lombok in your development environment:
 Visit the [Lombok website](https://projectlombok.org/setup/) for installation instructions specific to your IDE.
 
 5. Add environment variable
-For local testing, you should generally be testing the full 'Security' version of Stirling PDF. To do this, you must add the environment flag DISABLE_ADDITIONAL_FEATURES=false to your system and/or IDE build/run step.
-6. **Frontend Setup (Required for Stirling 2.0)**
+For local testing, you should generally be testing the full 'Security' version of Chronicle PDF. To do this, you must add the environment flag DISABLE_ADDITIONAL_FEATURES=false to your system and/or IDE build/run step.
+6. **Frontend Setup (Required for Chronicle 2.0)**
    Navigate to the frontend directory and install dependencies using npm.
 
 ### Verify Setup
 
 Run `task install` to install all project dependencies (frontend npm packages, engine Python packages). Gradle manages its own dependencies automatically. Then run `task check` to verify everything builds and passes.
 
-## 4. Stirling 2.0 Development Workflow
+## 4. Chronicle 2.0 Development Workflow
 
 ### Using Taskfile (Recommended)
 
@@ -121,13 +121,13 @@ The frontend is a React SPA that runs independently during development:
 3. **Development flow**: The Vite dev server automatically proxies API calls to the backend
 
 ### File Storage Architecture
-Stirling 2.0 uses client-side file storage:
+Chronicle 2.0 uses client-side file storage:
 - **IndexedDB**: Stores files locally in the browser with automatic thumbnail generation
 - **PDF.js**: Handles client-side PDF rendering and processing
 - **URL Parameters**: Support for deep linking and tool state persistence
 
 ### Tauri Desktop App Development
-Stirling-PDF can be packaged as a cross-platform desktop application using Tauri with PDF file association support and bundled JRE.
+Chronicle-PDF can be packaged as a cross-platform desktop application using Tauri with PDF file association support and bundled JRE.
 
 Using Taskfile: `task desktop:dev` (development) or `task desktop:build` (production build).
 
@@ -136,10 +136,10 @@ See [the frontend README](frontend/README.md#tauri) for detailed build instructi
 ## 5. Project Structure
 
 ```bash
-Stirling-PDF/
+Chronicle-PDF/
 ├── .github/               # GitHub-specific files (workflows, issue templates)
 ├── configs/               # Configuration files used by stirling at runtime (generated at runtime)
-├── frontend/              # Frontend workspace (Stirling 2.0)
+├── frontend/              # Frontend workspace (Chronicle 2.0)
 │   ├── editor/            # PDF editor app (the original React SPA)
 │   │   ├── src/
 │   │   │   ├── components/    # React components
@@ -195,7 +195,7 @@ Stirling-PDF/
 
 ## 6. Docker-based Development
 
-Stirling-PDF offers several Docker versions:
+Chronicle-PDF offers several Docker versions:
 
 - Full: All features included
 - Ultra-Lite: Basic PDF operations only
@@ -203,7 +203,7 @@ Stirling-PDF offers several Docker versions:
 
 ### Example Docker Compose Files
 
-Stirling-PDF provides several example Docker Compose files in the `exampleYmlFiles` directory, such as:
+Chronicle-PDF provides several example Docker Compose files in the `exampleYmlFiles` directory, such as:
 
 - `docker-compose-latest.yml`: Latest version without login and security features
 - `docker-compose-latest-security.yml`: Latest version with login and security features enabled
@@ -213,9 +213,9 @@ These files provide pre-configured setups for different scenarios. For example, 
 
 ```yaml
 services:
-  stirling-pdf:
-    container_name: Stirling-PDF-Security
-    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
+  Chronicle-PDF:
+    container_name: Chronicle-PDF-Security
+    image: docker.stirlingpdf.com/stirlingtools/Chronicle-PDF:latest
     deploy:
       resources:
         limits:
@@ -238,9 +238,9 @@ services:
       PGID: 1002
       UMASK: "022"
       SYSTEM_DEFAULTLOCALE: en-US
-      UI_APPNAME: Stirling-PDF
-      UI_HOMEDESCRIPTION: Demo site for Stirling-PDF Latest with Security
-      UI_APPNAMENAVBAR: Stirling-PDF Latest
+      UI_APPNAME: Chronicle-PDF
+      UI_HOMEDESCRIPTION: Demo site for Chronicle-PDF Latest with Security
+      UI_APPNAMENAVBAR: Chronicle-PDF Latest
       SYSTEM_MAXFILESIZE: "100"
       METRICS_ENABLED: "true"
       SYSTEM_GOOGLEVISIBILITY: "true"
@@ -270,7 +270,7 @@ task docker:logs             # tail logs
 
 #### Manual Docker Builds
 
-Stirling-PDF uses different Docker images for various configurations. The build process is controlled by environment variables and uses specific Dockerfile variants. Here's how to build the Docker images:
+Chronicle-PDF uses different Docker images for various configurations. The build process is controlled by environment variables and uses specific Dockerfile variants. Here's how to build the Docker images:
 
 1. Set the security environment variable:
 
@@ -289,20 +289,20 @@ Stirling-PDF uses different Docker images for various configurations. The build 
    For the latest version:
 
    ```bash
-   docker build --no-cache --pull --build-arg VERSION_TAG=alpha -t stirlingtools/stirling-pdf:latest -f ./Dockerfile .
+   docker build --no-cache --pull --build-arg VERSION_TAG=alpha -t stirlingtools/Chronicle-PDF:latest -f ./Dockerfile .
    ```
 
    For the ultra-lite version:
 
    ```bash
-   docker build --no-cache --pull --build-arg VERSION_TAG=alpha -t stirlingtools/stirling-pdf:latest-ultra-lite -f ./Dockerfile.ultra-lite .
+   docker build --no-cache --pull --build-arg VERSION_TAG=alpha -t stirlingtools/Chronicle-PDF:latest-ultra-lite -f ./Dockerfile.ultra-lite .
    ```
 
    For the fat version (with login and security features enabled):
 
    ```bash
    export DISABLE_ADDITIONAL_FEATURES=false
-   docker build --no-cache --pull --build-arg VERSION_TAG=alpha -t stirlingtools/stirling-pdf:latest-fat -f ./Dockerfile.fat .
+   docker build --no-cache --pull --build-arg VERSION_TAG=alpha -t stirlingtools/Chronicle-PDF:latest-fat -f ./Dockerfile.fat .
    ```
 
 Note: The `--no-cache` and `--pull` flags ensure that the build process uses the latest base images and doesn't use cached layers, which is useful for testing and ensuring reproducible builds. However, to improve build times these can often be removed depending on your use case
@@ -320,7 +320,7 @@ task check   # full quality gate: lint + typecheck + test
 
 ### Comprehensive Testing Script
 
-Stirling-PDF also provides a `test.sh` script in the root directory for Docker integration tests. This script builds all versions of Stirling-PDF, checks that each version works, and runs Cucumber tests. It's recommended to run this script before submitting a final pull request.
+Chronicle-PDF also provides a `test.sh` script in the root directory for Docker integration tests. This script builds all versions of Chronicle-PDF, checks that each version works, and runs Cucumber tests. It's recommended to run this script before submitting a final pull request.
 
 To run the test script:
 
@@ -342,7 +342,7 @@ Note: The `test.sh` script will run automatically when you raise a PR. However, 
 
 2. Access the application at `http://localhost:8080` and manually test all features developed.
 
-### Frontend Development Testing (Stirling 2.0)
+### Frontend Development Testing (Chronicle 2.0)
 
 For React frontend development:
 
@@ -354,14 +354,14 @@ For React frontend development:
 
 ### Local Testing (Java and UI Components)
 
-For quick iterations and development of Java backend, JavaScript, and UI components, you can run and test Stirling-PDF locally without Docker. This approach allows you to work on and verify changes to:
+For quick iterations and development of Java backend, JavaScript, and UI components, you can run and test Chronicle-PDF locally without Docker. This approach allows you to work on and verify changes to:
 
 - Java backend logic
 - RESTful API endpoints
 - JavaScript functionality
 - User interface components and styling
 
-To run Stirling-PDF locally:
+To run Chronicle-PDF locally:
 
 1. Compile and run the project using built-in IDE methods or by running:
 
@@ -396,7 +396,7 @@ Important notes:
 
 6. Push your changes to your fork.
 7. Submit a pull request to the main repository.
-8. See additional [contributing guidelines](https://github.com/Stirling-Tools/Stirling-PDF/blob/main/CONTRIBUTING.md).
+8. See additional [contributing guidelines](https://github.com/Stirling-Tools/Chronicle-PDF/blob/main/CONTRIBUTING.md).
 
 When you raise a PR:
 
@@ -409,11 +409,11 @@ Address any issues that arise from these checks before finalizing your pull requ
 
 ## 9. API Documentation
 
-API documentation is available at `/swagger-ui/index.html` when running the application. You can also view the latest API documentation [here](https://app.swaggerhub.com/apis-docs/Stirling-Tools/Stirling-PDF/).
+API documentation is available at `/swagger-ui/index.html` when running the application. You can also view the latest API documentation [here](https://app.swaggerhub.com/apis-docs/Stirling-Tools/Chronicle-PDF/).
 
 ## 10. Customization
 
-Stirling-PDF can be customized through environment variables or a `settings.yml` file. Key customization options include:
+Chronicle-PDF can be customized through environment variables or a `settings.yml` file. Key customization options include:
 
 - Application name and branding
 - Security settings
@@ -425,14 +425,14 @@ When using Docker, pass environment variables using the `-e` flag or in your `do
 Example:
 
 ```bash
-docker run -p 8080:8080 -e APP_NAME="My PDF Tool" stirling-pdf:full
+docker run -p 8080:8080 -e APP_NAME="My PDF Tool" Chronicle-PDF:full
 ```
 
 Refer to the main README for a full list of customization options.
 
 ## 11. Language Translations
 
-For managing language translations that affect multiple files, Stirling-PDF provides a helper script:
+For managing language translations that affect multiple files, Chronicle-PDF provides a helper script:
 
 ```bash
 /scripts/replace_translation_line.sh
@@ -450,9 +450,9 @@ Remember to test your changes thoroughly to ensure they don't break any existing
 
 ## Code examples
 
-### React Component Development (Stirling 2.0)
+### React Component Development (Chronicle 2.0)
 
-For Stirling 2.0, new features are built as React components:
+For Chronicle 2.0, new features are built as React components:
 
 #### Creating a New Tool Component
 
@@ -502,7 +502,7 @@ For Stirling 2.0, new features are built as React components:
 ### Adding a New Feature to the Backend (API)
 
 1. **Create a New Controller:**
-   - Create a new Java class in the `stirling-pdf/src/main/java/stirling/software/SPDF/controller/api` directory.
+   - Create a new Java class in the `Chronicle-PDF/src/main/java/stirling/software/SPDF/controller/api` directory.
    - Annotate the class with `@RestController` and `@RequestMapping` to define the API endpoint.
    - Ensure to add API documentation annotations like `@Tag(name = "General", description = "General APIs")` and `@Operation(summary = "Crops a PDF document", description = "This operation takes an input PDF file and crops it according to the given coordinates.")`.
    - If the endpoint transforms a document, declare what it accepts and produces with `@ToolIO`, for example `@ToolIO(produces = ToolFormat.PDF)`. This is what lets a pipeline containing the step be checked before it runs, so a chain that cannot work is caught in the builder rather than part-way through a job. Endpoints under the tool namespaces are required to carry it - `ToolIODeclarationCoverageTest` fails the build otherwise. See [Declaring tool inputs and outputs](#declaring-tool-inputs-and-outputs).
@@ -530,7 +530,7 @@ For Stirling 2.0, new features are built as React components:
    ```
 
 2. **Define the Service Layer:** (Not required but often useful)
-   - Create a new service class in the `stirling-pdf/src/main/java/stirling/software/SPDF/service` directory.
+   - Create a new service class in the `Chronicle-PDF/src/main/java/stirling/software/SPDF/service` directory.
    - Implement the business logic for the new feature.
 
    ```java
@@ -611,13 +611,13 @@ Every condition in a `when` must hold for the case to apply, and `matches` is co
 
 Endpoints under the tool namespaces must carry a declaration; `ToolIODeclarationCoverageTest` fails the build for any that does not, with a short allowlist for endpoints that manage a session, a device or a stored resource rather than transforming a document. The matching rules are implemented three times (Java `ToolChainValidator`, `toolIOCompat.ts`, `tool_io_compat.py`) and pinned to the same answers by the shared fixtures in `testing/tool-io-cases.json`, so a behaviour change belongs in that file first.
 
-## Adding New Translations to Existing Language Files in Stirling-PDF
+## Adding New Translations to Existing Language Files in Chronicle-PDF
 
-When adding a new feature or modifying existing ones in Stirling-PDF, you'll need to add new translation entries to the existing language files. Here's a step-by-step guide:
+When adding a new feature or modifying existing ones in Chronicle-PDF, you'll need to add new translation entries to the existing language files. Here's a step-by-step guide:
 
 ### 1. Locate Existing Language Files
 
-Find the existing `messages.properties` files in the `stirling-pdf/src/main/resources` directory. You'll see files like:
+Find the existing `messages.properties` files in the `Chronicle-PDF/src/main/resources` directory. You'll see files like:
 
 - `messages.properties` (default, usually English)
 - `messages_en_US.properties`

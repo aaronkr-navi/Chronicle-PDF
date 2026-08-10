@@ -32,7 +32,7 @@ echo -e "${BLUE}║      Validating MCP - API-KEY mode (+ real client) ║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════════════╝${NC}"
 echo ""
 
-echo -e "${YELLOW}▶ Recreating Stirling in apikey mode...${NC}"
+echo -e "${YELLOW}▶ Recreating Chronicle PDF in apikey mode...${NC}"
 MCP_AUTH_MODE=apikey PREMIUM_KEY="${PREMIUM_KEY:-}" \
     docker compose -f "$COMPOSE" up -d --no-build --force-recreate stirling-pdf-mcp >/dev/null 2>&1
 if ! wait_up; then
