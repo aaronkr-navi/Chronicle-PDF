@@ -265,10 +265,10 @@ jobs:
               ports:
                 - "${V2_PORT}:8080"
               volumes:
-                - /stirling/V2-PR-${{ needs.check-pr.outputs.pr_number }}/data:/usr/share/tessdata:rw
-                - /stirling/V2-PR-${{ needs.check-pr.outputs.pr_number }}/config:/configs:rw
-                - /stirling/V2-PR-${{ needs.check-pr.outputs.pr_number }}/logs:/logs:rw
-                - /stirling/V2-PR-${{ needs.check-pr.outputs.pr_number }}/storage:/storage:rw
+                - /chronicle/V2-PR-${{ needs.check-pr.outputs.pr_number }}/data:/usr/share/tessdata:rw
+                - /chronicle/V2-PR-${{ needs.check-pr.outputs.pr_number }}/config:/configs:rw
+                - /chronicle/V2-PR-${{ needs.check-pr.outputs.pr_number }}/logs:/logs:rw
+                - /chronicle/V2-PR-${{ needs.check-pr.outputs.pr_number }}/storage:/storage:rw
               environment:
                 DISABLE_ADDITIONAL_FEATURES: "false"
                 STIRLING_BILLING_ACCOUNT_LINK_ENABLED: "true"
@@ -292,13 +292,13 @@ jobs:
 
           ssh -i ../private.key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -T ${{ secrets.NEW_VPS_USERNAME }}@${{ secrets.NEW_VPS_HOST }} << ENDSSH
             # Create V2 PR-specific directories
-            mkdir -p /stirling/V2-PR-${{ needs.check-pr.outputs.pr_number }}/{data,config,logs,storage}
+            mkdir -p /chronicle/V2-PR-${{ needs.check-pr.outputs.pr_number }}/{data,config,logs,storage}
 
             # Move docker-compose file to correct location
-            mv /tmp/docker-compose-v2.yml /stirling/V2-PR-${{ needs.check-pr.outputs.pr_number }}/docker-compose.yml
+            mv /tmp/docker-compose-v2.yml /chronicle/V2-PR-${{ needs.check-pr.outputs.pr_number }}/docker-compose.yml
 
             # Stop any existing container and clean up
-            cd /stirling/V2-PR-${{ needs.check-pr.outputs.pr_number }}
+            cd /chronicle/V2-PR-${{ needs.check-pr.outputs.pr_number }}
             docker-compose down --remove-orphans 2>/dev/null || true
 
             # Start the new container
@@ -357,7 +357,7 @@ jobs:
           # (/mockServiceWorker.js) resolves. Port = PR + 20000 (bijective, offset
           # from the app preview's bare-PR-number port).
           SB_PORT=$((PR + 20000))
-          DIR=/stirling/SB-PR-$PR
+          DIR=/chronicle/SB-PR-$PR
           tar czf storybook.tgz -C frontend/storybook-static .
           scp -i ../private.key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
             storybook.tgz "$VPS_USER@$VPS_HOST:/tmp/storybook-$PR.tgz"
@@ -510,18 +510,18 @@ jobs:
       - name: Cleanup V2 deployment
         run: |
           ssh -i ../private.key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -T ${{ secrets.NEW_VPS_USERNAME }}@${{ secrets.NEW_VPS_HOST }} << 'ENDSSH'
-            if [ -d "/stirling/V2-PR-${{ github.event.pull_request.number }}" ]; then
+            if [ -d "/chronicle/V2-PR-${{ github.event.pull_request.number }}" ]; then
               echo "Found V2 PR directory, proceeding with cleanup..."
 
               # Stop and remove V2 containers
-              cd /stirling/V2-PR-${{ github.event.pull_request.number }}
+              cd /chronicle/V2-PR-${{ github.event.pull_request.number }}
               docker-compose down || true
 
               # Go back to root before removal
               cd /
 
               # Remove V2 PR-specific directories
-              rm -rf /stirling/V2-PR-${{ github.event.pull_request.number }}
+              rm -rf /chronicle/V2-PR-${{ github.event.pull_request.number }}
 
               # Clean up V2 container by name (in case compose cleanup missed it)
               docker rm -f Chronicle-PDF-v2-pr-${{ github.event.pull_request.number }} || true
@@ -533,7 +533,7 @@ jobs:
 
             # Remove this PR's Storybook preview (container + files), if any.
             docker rm -f storybook-pr-${{ github.event.pull_request.number }} 2>/dev/null || true
-            rm -rf /stirling/SB-PR-${{ github.event.pull_request.number }}
+            rm -rf /chronicle/SB-PR-${{ github.event.pull_request.number }}
 
             # Clean up old unused images (older than 2 weeks) but keep recent ones for reuse
             docker image prune -af --filter "until=336h" --filter "label!=keep=true" || true

@@ -30,8 +30,8 @@ function withProviders(enableLogin: boolean) {
 
 function impliedRootsHandler(
   roots: { path: string; reason: string }[] = [
-    { path: "/srv/stirling/storage", reason: "serverStorage" },
-    { path: "/srv/stirling/watched/invoices", reason: "watchedFolder" },
+    { path: "/srv/chronicle/storage", reason: "serverStorage" },
+    { path: "/srv/chronicle/watched/invoices", reason: "watchedFolder" },
   ],
 ) {
   return http.get("/api/v1/admin/settings/policies/implied-folder-roots", () =>

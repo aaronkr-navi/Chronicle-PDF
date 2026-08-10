@@ -95,9 +95,9 @@ jobs:
               ports:
                 - "1337:8080"
               volumes:
-                - /stirling/test-${{ github.sha }}/data:/usr/share/tessdata:rw
-                - /stirling/test-${{ github.sha }}/config:/configs:rw
-                - /stirling/test-${{ github.sha }}/logs:/logs:rw
+                - /chronicle/test-${{ github.sha }}/data:/usr/share/tessdata:rw
+                - /chronicle/test-${{ github.sha }}/config:/configs:rw
+                - /chronicle/test-${{ github.sha }}/logs:/logs:rw
               environment:
                 DISABLE_ADDITIONAL_FEATURES: "true"
                 SECURITY_ENABLELOGIN: "false"
@@ -115,9 +115,9 @@ jobs:
           scp -i ../private.key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null docker-compose.yml ${{ secrets.NEW_VPS_USERNAME }}@${{ secrets.NEW_VPS_HOST }}:/tmp/docker-compose.yml
 
           ssh -i ../private.key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.NEW_VPS_USERNAME }}@${{ secrets.NEW_VPS_HOST }} << EOF
-            mkdir -p /stirling/test-${{ github.sha }}/{data,config,logs}
-            mv /tmp/docker-compose.yml /stirling/test-${{ github.sha }}/docker-compose.yml
-            cd /stirling/test-${{ github.sha }}
+            mkdir -p /chronicle/test-${{ github.sha }}/{data,config,logs}
+            mv /tmp/docker-compose.yml /chronicle/test-${{ github.sha }}/docker-compose.yml
+            cd /chronicle/test-${{ github.sha }}
             docker-compose pull
             docker-compose up -d
           EOF
@@ -199,7 +199,7 @@ jobs:
         if: always()
         run: |
           ssh -i ../private.key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.NEW_VPS_USERNAME }}@${{ secrets.NEW_VPS_HOST }} << EOF
-            cd /stirling/test-${{ github.sha }}
+            cd /chronicle/test-${{ github.sha }}
             docker-compose down
             cd /stirling
             rm -rf test-${{ github.sha }}

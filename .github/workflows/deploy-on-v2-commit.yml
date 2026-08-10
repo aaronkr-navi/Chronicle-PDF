@@ -139,9 +139,9 @@ jobs:
               ports:
                 - "13000:8080"
               volumes:
-                - /stirling/V2/data:/usr/share/tessdata:rw
-                - /stirling/V2/config:/configs:rw
-                - /stirling/V2/logs:/logs:rw
+                - /chronicle/V2/data:/usr/share/tessdata:rw
+                - /chronicle/V2/config:/configs:rw
+                - /chronicle/V2/logs:/logs:rw
               environment:
                 DISABLE_ADDITIONAL_FEATURES: "true"
                 SECURITY_ENABLELOGIN: "false"
@@ -173,9 +173,9 @@ jobs:
 
           # SSH and rename/move atomically to avoid interference
           ssh -i ../private.key -o StrictHostKeyChecking=no ${{ secrets.NEW_VPS_USERNAME }}@${{ secrets.NEW_VPS_HOST }} << ENDSSH
-            mkdir -p /stirling/V2/{data,config,logs}
-            mv /tmp/$UNIQUE_NAME /stirling/V2/docker-compose.yml
-            cd /stirling/V2
+            mkdir -p /chronicle/V2/{data,config,logs}
+            mv /tmp/$UNIQUE_NAME /chronicle/V2/docker-compose.yml
+            cd /chronicle/V2
             docker-compose down || true
             docker-compose pull
             docker-compose up -d

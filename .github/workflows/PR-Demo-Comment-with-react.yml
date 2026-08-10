@@ -343,9 +343,9 @@ jobs:
               ports:
                 - "${PR_NUMBER}:8080"
               volumes:
-                - /stirling/PR-${PR_NUMBER}/data:/usr/share/tessdata:rw
-                - /stirling/PR-${PR_NUMBER}/config:/configs:rw
-                - /stirling/PR-${PR_NUMBER}/logs:/logs:rw
+                - /chronicle/PR-${PR_NUMBER}/data:/usr/share/tessdata:rw
+                - /chronicle/PR-${PR_NUMBER}/config:/configs:rw
+                - /chronicle/PR-${PR_NUMBER}/logs:/logs:rw
               environment:
                 DISABLE_ADDITIONAL_FEATURES: "${DISABLE_ADDITIONAL_FEATURES}"
                 SECURITY_ENABLELOGIN: "${LOGIN_SECURITY}"
@@ -367,13 +367,13 @@ jobs:
 
           ssh -i ../private.key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -T ${{ secrets.NEW_VPS_USERNAME }}@${{ secrets.NEW_VPS_HOST }} << ENDSSH
             # Create PR-specific directories
-            mkdir -p /stirling/PR-${PR_NUMBER}/{data,config,logs}
+            mkdir -p /chronicle/PR-${PR_NUMBER}/{data,config,logs}
 
             # Move docker-compose file to correct location
-            mv /tmp/docker-compose.yml /stirling/PR-${PR_NUMBER}/docker-compose.yml
+            mv /tmp/docker-compose.yml /chronicle/PR-${PR_NUMBER}/docker-compose.yml
 
             # Start or restart the container
-            cd /stirling/PR-${PR_NUMBER}
+            cd /chronicle/PR-${PR_NUMBER}
             docker-compose pull
             docker-compose up -d
           ENDSSH
