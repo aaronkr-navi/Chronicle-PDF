@@ -241,7 +241,7 @@ jobs:
 
       # ───────── License-gated feature tests (no IdP needed) ─────────
       - name: Wipe DB so InitialSecuritySetup re-runs with admin/adminadmin
-        # Earlier phases (OAuth, SAML) create the default admin/stirling user.
+        # Earlier phases (OAuth, SAML) create the default admin/chronicle user.
         # InitialSecuritySetup only honours SECURITY_INITIALLOGIN_* when the
         # admin user doesn't already exist, so the persisted DB has to be
         # cleared between phases for the feature env vars to take effect.

@@ -29,7 +29,7 @@ const DOCKER_SNIPPET = `docker run -d --name chronicle-editor \\
   -p 8080:8080 \\
   -e STIRLING_ORG_PAIRING_TOKEN="$PAIRING_TOKEN" \\
   -e STIRLING_REGION="us-east-1" \\
-  -v chronicle-data:/var/lib/stirling \\
+  -v chronicle-data:/var/lib/chronicle \\
   chroniclepdf/editor:3.2.1`;
 
 const HELM_SNIPPET = `helm repo add chronicle https://charts.chronicle-pdf.com

@@ -33,7 +33,7 @@ interface OAuthButtonsProps {
    * vertically. `vertical` (default) uses the Spring/Mantine button shape.
    */
   layout?: "vertical" | "grid" | "icons" | "fullwidth";
-  enabledProviders?: OAuthProvider[]; // List of full auth paths from backend (e.g., '/oauth2/authorization/google', '/saml2/authenticate/stirling')
+  enabledProviders?: OAuthProvider[]; // List of full auth paths from backend (e.g., '/oauth2/authorization/google', '/saml2/authenticate/chronicle')
   ctaPrefix?: string;
   styleVariant?: "neutral" | "tinted" | "outline" | "light";
   demoMode?: boolean;
@@ -59,7 +59,7 @@ export default function OAuthButtons({
 
   // Build provider list - extract provider ID from full path for display
   const providers = providersToShow.map((pathOrId) => {
-    // Extract provider ID from full path (e.g., '/saml2/authenticate/stirling' -> 'chronicle')
+    // Extract provider ID from full path (e.g., '/saml2/authenticate/chronicle' -> 'chronicle')
     const providerId = pathOrId.split("/").pop() || pathOrId;
 
     if (providerId in oauthProviderConfig) {

@@ -42,7 +42,7 @@ async function adminAdminadminAlreadyExists(
 }
 
 test.describe("Live-suite bootstrap", () => {
-  test("first-login: change default admin/stirling to admin/adminadmin", async ({
+  test("first-login: change default admin/chronicle to admin/adminadmin", async ({
     page,
     request,
   }) => {

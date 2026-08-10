@@ -513,7 +513,7 @@ class SpringAuthClient {
    * Sign in with OAuth/SAML provider (GitHub, Google, Authentik, etc.)
    * This redirects to the Spring OAuth2/SAML2 authorization endpoint
    *
-   * @param params.provider - Full auth path from backend (e.g., '/oauth2/authorization/google', '/saml2/authenticate/stirling')
+   * @param params.provider - Full auth path from backend (e.g., '/oauth2/authorization/google', '/saml2/authenticate/chronicle')
    *                          The backend provides the complete path including the auth type and provider ID
    */
   async signInWithOAuth(params: {

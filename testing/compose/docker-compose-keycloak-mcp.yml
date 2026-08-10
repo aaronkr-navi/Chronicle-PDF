@@ -65,9 +65,9 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ../../../stirling/keycloak-mcp-test/data:/usr/share/tessdata:rw
-      - ../../../stirling/keycloak-mcp-test/config:/configs:rw
-      - ../../../stirling/keycloak-mcp-test/logs:/logs:rw
+      - ../../../chronicle/keycloak-mcp-test/data:/usr/share/tessdata:rw
+      - ../../../chronicle/keycloak-mcp-test/config:/configs:rw
+      - ../../../chronicle/keycloak-mcp-test/logs:/logs:rw
     environment:
       # Security/login on so we have real Chronicle accounts to bind to.
       DOCKER_ENABLE_SECURITY: "true"

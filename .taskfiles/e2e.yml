@@ -46,7 +46,7 @@ tasks:
       SYSTEM_ENABLEANALYTICS: "false"
       # NOTE: SECURITY_INITIALLOGIN_USERNAME/PASSWORD are intentionally NOT set.
       # The live-setup project's bootstrap spec performs the real first-login
-      # flow against the backend's default admin/stirling user, exercising the
+      # flow against the backend's default admin/chronicle user, exercising the
       # forced-password-change UI and leaving the DB at admin/adminadmin for
       # the rest of the live suite. This is both real coverage of the first-
       # login flow and a stronger seed than env-var-driven user creation.
