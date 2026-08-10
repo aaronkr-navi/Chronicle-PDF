@@ -515,3 +515,37 @@ actual imports, not what worked three years ago.
 - **Never Declare File or Shortcut Creation Without Verification**: Before asserting that a Desktop shortcut, file, or OS artifact exists and is functional, you MUST run an explicit verification check (e.g. `Get-ChildItem`, inspecting target paths, and verifying icon resolution).
 - **No Unverified Success Claims**: Never state "it's there" or describe how an asset behaves until empirical output proves the exact path, target, and file attributes are correct.
 
+## Rebranding Guidelines (Stirling → Chronicle PDF)
+
+This codebase was forked from Stirling PDF. The following rules govern what was rebranded and what was intentionally kept:
+
+### Rebranded (user-visible)
+- Product name: "Chronicle PDF" (not "Stirling PDF") in all UI, docs, logs, comments, API descriptions
+- Docker image tags: `chronicle-pdf` (not `stirling-pdf`)
+- Gradle module: `:chronicle-pdf` (not `:stirling-pdf`)
+- Logo filenames: `Chronicle*` (not `Stirling*`)
+- HTTP headers: `X-Chronicle-*` (not `X-Stirling-*`)
+- GitHub org: `aaronkr-navi` (not `Stirling-Tools`)
+- AI branding: "Chronicle AI" (not "Stirling AI")
+- Translation files: All 42 languages rebranded
+
+### Kept unchanged (internal infrastructure)
+- Java packages: `stirling.software.*` — too risky to refactor, no user visibility
+- Python packages: `stirling.*` — same rationale
+- Environment variables: `STIRLING_FLAVOR`, `STIRLING_AOT_ENABLE`, etc. — breaking change for deployments
+- Spring config keys: `stirling.supabase.*`, `stirling.keygen.*`, etc.
+- Docker user/group: `stirlingpdfuser` / `stirlingpdfgroup`
+- Temp paths: `/tmp/stirling-pdf`
+- DB schema: `stirling_pdf`
+- Internal type names: `StirlingFile`, `StirlingAnnotation`, `StirlingFileStub`, etc.
+- localStorage keys: `stirlingpdf_preferences`
+- Custom events: `stirling:open-free-limit-modal`, `stirling:show-guest-banner`
+- Keycloak realm names: `stirling-saml`, `stirling-oauth`, `stirling-mcp`
+- MCP tool names: `stirling_describe_operation`, `stirling_convert`, etc.
+- Test user emails: `mcpuser@stirling.local`
+
+### When adding new code
+- Use "Chronicle PDF" for any new user-visible strings
+- Use existing `stirling.software.*` package structure for new Java classes
+- Use existing `stirling.*` package structure for new Python modules
+- Do NOT rename existing internal identifiers without explicit approval
