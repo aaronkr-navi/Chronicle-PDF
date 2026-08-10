@@ -1,6 +1,6 @@
 name: DB migration smoke test
 
-# Boots the current Stirling-PDF JAR against H2 fixtures captured from past
+# Boots the current Chronicle-PDF JAR against H2 fixtures captured from past
 # releases (v2.0.0 / v2.5.0 / v2.10.0) and verifies admin login still works.
 # Catches schema changes that would break existing user databases under
 # Hibernate's `ddl-auto=update` upgrade path.
@@ -47,17 +47,17 @@ jobs:
 
       # No `-PnoSpotless` here yet because the upstream cache layer matches the
       # backend build's; reuse keeps cold-cache cost identical.
-      - name: Build Stirling-PDF JAR
+      - name: Build Chronicle-PDF JAR
         env:
           MAVEN_USER: ${{ secrets.MAVEN_USER }}
           MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
           MAVEN_PUBLIC_URL: ${{ secrets.MAVEN_PUBLIC_URL }}
-        run: ./gradlew :stirling-pdf:bootJar -PnoSpotless --no-daemon
+        run: ./gradlew :Chronicle-PDF:bootJar -PnoSpotless --no-daemon
 
       - name: Locate built JAR
         id: jar
         run: |
-          jar=$(find app/core/build/libs -maxdepth 1 -name 'Stirling-PDF*.jar' -o -name 'stirling-pdf*.jar' 2>/dev/null \
+          jar=$(find app/core/build/libs -maxdepth 1 -name 'Chronicle-PDF*.jar' -o -name 'Chronicle-PDF*.jar' 2>/dev/null \
               | grep -vE '(-plain|-sources)\.jar$' | head -n 1)
           if [[ -z "$jar" ]]; then
             echo "::error::No JAR under app/core/build/libs"

@@ -54,7 +54,7 @@ jobs:
           cache-disabled: true
 
       # When the PR changes the base image, test.sh builds it locally
-      # (stirling-pdf-base:local) into the daemon image store. A buildx
+      # (Chronicle-PDF-base:local) into the daemon image store. A buildx
       # container builder can't see that store, so skip it here and let
       # `docker buildx build` fall back to the default docker driver, which
       # resolves the local base. The gha cache backend is also skipped (its

@@ -50,7 +50,7 @@ jobs:
           MAVEN_PUBLIC_URL: ${{ secrets.MAVEN_PUBLIC_URL }}
         run: |
           for attempt in 1 2 3; do
-            if ./gradlew --quiet -PnoSpotless :stirling-pdf:classes; then
+            if ./gradlew --quiet -PnoSpotless :Chronicle-PDF:classes; then
               exit 0
             fi
             echo "::warning::Gradle dependency resolution failed (attempt $attempt of 3)"

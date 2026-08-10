@@ -247,8 +247,8 @@ jobs:
           context: .
           file: ./docker/embedded/Dockerfile
           push: true
-          cache-from: type=gha,scope=stirling-pdf-latest
-          cache-to: type=gha,mode=max,scope=stirling-pdf-latest
+          cache-from: type=gha,scope=Chronicle-PDF-latest
+          cache-to: type=gha,mode=max,scope=Chronicle-PDF-latest
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/test:pr-${{ needs.check-comment.outputs.pr_number }}
           build-args: |
             VERSION_TAG=alpha
@@ -262,8 +262,8 @@ jobs:
           context: ./engine
           file: ./engine/Dockerfile
           push: true
-          cache-from: type=gha,scope=stirling-pdf-engine
-          cache-to: type=gha,mode=max,scope=stirling-pdf-engine
+          cache-from: type=gha,scope=Chronicle-PDF-engine
+          cache-to: type=gha,mode=max,scope=Chronicle-PDF-engine
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/test:engine-pr-${{ needs.check-comment.outputs.pr_number }}
           platforms: linux/amd64
 
@@ -310,10 +310,10 @@ jobs:
           if [ "$ENABLE_PROTOTYPES" == "true" ]; then
             AI_ENGINE_VARS="
                 SYSTEM_AIENGINE_ENABLED: \"true\"
-                SYSTEM_AIENGINE_URL: \"http://stirling-pdf-engine-pr-${PR_NUMBER}:5001\""
+                SYSTEM_AIENGINE_URL: \"http://Chronicle-PDF-engine-pr-${PR_NUMBER}:5001\""
             ENGINE_SERVICE="
-            stirling-pdf-engine:
-              container_name: stirling-pdf-engine-pr-${PR_NUMBER}
+            Chronicle-PDF-engine:
+              container_name: Chronicle-PDF-engine-pr-${PR_NUMBER}
               image: ${DOCKER_USER}/test:engine-pr-${PR_NUMBER}
               environment:
                 ANTHROPIC_API_KEY: \"${{ secrets.ANTHROPIC_API_KEY }}\"
@@ -337,8 +337,8 @@ jobs:
           cat > docker-compose.yml << EOF
           version: '3.3'
           services:
-            stirling-pdf:
-              container_name: stirling-pdf-pr-${PR_NUMBER}
+            Chronicle-PDF:
+              container_name: Chronicle-PDF-pr-${PR_NUMBER}
               image: ${DOCKER_USER}/test:pr-${PR_NUMBER}
               ports:
                 - "${PR_NUMBER}:8080"
@@ -350,8 +350,8 @@ jobs:
                 DISABLE_ADDITIONAL_FEATURES: "${DISABLE_ADDITIONAL_FEATURES}"
                 SECURITY_ENABLELOGIN: "${LOGIN_SECURITY}"
                 SYSTEM_DEFAULTLOCALE: en-US
-                UI_APPNAME: "Stirling-PDF PR#${PR_NUMBER}"
-                UI_HOMEDESCRIPTION: "PR#${PR_NUMBER} for Stirling-PDF Latest"
+                UI_APPNAME: "Chronicle-PDF PR#${PR_NUMBER}"
+                UI_HOMEDESCRIPTION: "PR#${PR_NUMBER} for Chronicle-PDF Latest"
                 UI_APPNAMENAVBAR: "PR#${PR_NUMBER}"
                 SYSTEM_MAXFILESIZE: "100"
                 METRICS_ENABLED: "true"

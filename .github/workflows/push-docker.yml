@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       build_main_app:
-        description: "Build & push the main Stirling-PDF image (latest, fat, ultra-lite)."
+        description: "Build & push the main Chronicle-PDF image (latest, fat, ultra-lite)."
         required: false
         type: boolean
         default: true
@@ -134,8 +134,8 @@ jobs:
           images: |
             ${{ secrets.DOCKER_HUB_USERNAME }}/s-pdf
             ghcr.io/${{ steps.repoowner.outputs.lowercase }}/s-pdf
-            ghcr.io/${{ steps.repoowner.outputs.lowercase }}/stirling-pdf
-            ${{ secrets.DOCKER_HUB_ORG_USERNAME }}/stirling-pdf
+            ghcr.io/${{ steps.repoowner.outputs.lowercase }}/Chronicle-PDF
+            ${{ secrets.DOCKER_HUB_ORG_USERNAME }}/Chronicle-PDF
           tags: |
             type=raw,value=${{ steps.versionNumber.outputs.versionNumber }},enable=${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/V2-master' }}
             type=raw,value=latest,enable=${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/V2-master' }}
@@ -150,8 +150,8 @@ jobs:
           context: .
           file: ./docker/embedded/Dockerfile
           push: true
-          cache-from: type=gha,scope=stirling-pdf-latest
-          cache-to: type=gha,mode=max,scope=stirling-pdf-latest
+          cache-from: type=gha,scope=Chronicle-PDF-latest
+          cache-to: type=gha,mode=max,scope=Chronicle-PDF-latest
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           # No BASE_VERSION pin: inherit the Dockerfile ARG default (single source of truth).
@@ -183,8 +183,8 @@ jobs:
           images: |
             ${{ secrets.DOCKER_HUB_USERNAME }}/s-pdf
             ghcr.io/${{ steps.repoowner.outputs.lowercase }}/s-pdf
-            ghcr.io/${{ steps.repoowner.outputs.lowercase }}/stirling-pdf
-            ${{ secrets.DOCKER_HUB_ORG_USERNAME }}/stirling-pdf
+            ghcr.io/${{ steps.repoowner.outputs.lowercase }}/Chronicle-PDF
+            ${{ secrets.DOCKER_HUB_ORG_USERNAME }}/Chronicle-PDF
           tags: |
             type=raw,value=${{ steps.versionNumber.outputs.versionNumber }}-fat,enable=${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/V2-master' }}
             type=raw,value=latest-fat,enable=${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/V2-master' }}
@@ -198,8 +198,8 @@ jobs:
           context: .
           file: ./docker/embedded/Dockerfile.fat
           push: true
-          cache-from: type=gha,scope=stirling-pdf-fat
-          cache-to: type=gha,mode=max,scope=stirling-pdf-fat
+          cache-from: type=gha,scope=Chronicle-PDF-fat
+          cache-to: type=gha,mode=max,scope=Chronicle-PDF-fat
           tags: ${{ steps.meta-fat.outputs.tags }}
           labels: ${{ steps.meta-fat.outputs.labels }}
           build-args: VERSION_TAG=${{ steps.versionNumber.outputs.versionNumber }}
@@ -227,8 +227,8 @@ jobs:
           images: |
             ${{ secrets.DOCKER_HUB_USERNAME }}/s-pdf
             ghcr.io/${{ steps.repoowner.outputs.lowercase }}/s-pdf
-            ghcr.io/${{ steps.repoowner.outputs.lowercase }}/stirling-pdf
-            ${{ secrets.DOCKER_HUB_ORG_USERNAME }}/stirling-pdf
+            ghcr.io/${{ steps.repoowner.outputs.lowercase }}/Chronicle-PDF
+            ${{ secrets.DOCKER_HUB_ORG_USERNAME }}/Chronicle-PDF
           tags: |
             type=raw,value=${{ steps.versionNumber.outputs.versionNumber }}-ultra-lite,enable=${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/V2-master' }}
             type=raw,value=latest-ultra-lite,enable=${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/V2-master' }}
@@ -242,8 +242,8 @@ jobs:
           context: .
           file: ./docker/embedded/Dockerfile.ultra-lite
           push: true
-          cache-from: type=gha,scope=stirling-pdf-ultra-lite
-          cache-to: type=gha,mode=max,scope=stirling-pdf-ultra-lite
+          cache-from: type=gha,scope=Chronicle-PDF-ultra-lite
+          cache-to: type=gha,mode=max,scope=Chronicle-PDF-ultra-lite
           tags: ${{ steps.meta-lite.outputs.tags }}
           labels: ${{ steps.meta-lite.outputs.labels }}
           build-args: VERSION_TAG=${{ steps.versionNumber.outputs.versionNumber }}
