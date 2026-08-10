@@ -1158,8 +1158,8 @@ description = "Ainm úsáideora le haghaidh fíordheimhnithe SMTP"
 label = "Ainm Úsáideora SMTP"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -1623,9 +1623,9 @@ stirling_name = "Chronicle"
 
 [analytics]
 learnMore = "Tuilleadh eolais"
-paragraph1 = "Tá rogha an diúltaithe ag PDF Stirling chun cabhrú linn an táirge a fheabhsú. Ní rianaimid aon fhaisnéis phearsanta nó ábhar comhaid."
+paragraph1 = "Tá rogha an diúltaithe ag PDF Chronicle chun cabhrú linn an táirge a fheabhsú. Ní rianaimid aon fhaisnéis phearsanta nó ábhar comhaid."
 paragraph2 = "Smaoinigh le do thoil ar anailísíocht a chumasú chun cabhrú le Chronicle-PDF fás agus chun ligean dúinn ár n-úsáideoirí a thuiscint níos fearr."
-title = "An bhfuil fonn ort PDF Stirling a fheabhsú?"
+title = "An bhfuil fonn ort PDF Chronicle a fheabhsú?"
 
 [annotate]
 tags = "annotate,highlight,draw,markup,comment,notes,review,redline,feedback,markup tools,sticky notes,shapes,arrows,text box,freehand"
@@ -3072,7 +3072,7 @@ upgradeButton = "Uasghrádaigh an Cuntas"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Cóipeáil eochair API"
-description = "Do eochair API chun rochtain a fháil ar shraith uirlisí PDF Stirling. Cóipeáil chuig do thionscadal í nó déan athnuachan chun ceann nua a ghiniúint."
+description = "Do eochair API chun rochtain a fháil ar shraith uirlisí PDF Chronicle. Cóipeáil chuig do thionscadal í nó déan athnuachan chun ceann nua a ghiniúint."
 docsDescription = "Tuilleadh eolais faoi chomhtháthú le Chronicle PDF:"
 docsLink = "Doiciméadú API"
 docsTitle = "Doiciméadú API"
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -4669,7 +4669,7 @@ terms = "Téarmaí agus Coinníollacha"
 title = "Ceadúnais 3ú Páirtí"
 
 [localMode]
-toolUnavailable = "Teastaíonn cuntas ón uirlis seo. Sínigh isteach le Stirling Cloud nó ceangail le freastalaí féinóstáilte chun é a úsáid."
+toolUnavailable = "Teastaíonn cuntas ón uirlis seo. Sínigh isteach le Chronicle Cloud nó ceangail le freastalaí féinóstáilte chun é a úsáid."
 
 [localMode.toolPicker]
 message = "Sínigh isteach chun na huirlisí go léir a dhíghlasáil."
@@ -4989,7 +4989,7 @@ skipForNow = "Scipeáil faoi láthair"
 skipTheTour = "Scipeáil an turas"
 
 [onboarding.desktopInstall]
-body = "Oibríonn Stirling is fearr mar aip deisce. Is féidir leat é a úsáid as líne, rochtain níos tapúla a fháil ar dhoiciméid, agus eagarthóireacht a dhéanamh go háitiúil ar do ríomhaire."
+body = "Oibríonn Chronicle is fearr mar aip deisce. Is féidir leat é a úsáid as líne, rochtain níos tapúla a fháil ar dhoiciméid, agus eagarthóireacht a dhéanamh go háitiúil ar do ríomhaire."
 selectOs = "Roghnaigh córas oibriúcháin"
 title = "Íoslódáil"
 titleWithOs = "Íoslódáil do {{osLabel}}"
@@ -4999,8 +4999,8 @@ authenticationCode = "Cód fíordheimhnithe"
 qrCodeLoading = "Cód QR á ghiniúint…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "Nuair a chumasaíonn tú mód logála isteach, is féidir leat úsáideoirí a bhainistiú, socruithe a chumrú, agus sláinte an fhreastalaí a mheas. Faigheann an chéad <strong>{{freeTierLimit}}</strong> duine ar do fhreastalaí Stirling saor in aisce."
-adminBodyLoginEnabled = "Mar riarthóir, is féidir leat úsáideoirí a bhainistiú, socruithe a chumrú, agus sláinte an fhreastalaí a mheas. Faigheann an chéad <strong>{{freeTierLimit}}</strong> duine ar do fhreastalaí Stirling saor in aisce."
+adminBodyLoginDisabled = "Nuair a chumasaíonn tú mód logála isteach, is féidir leat úsáideoirí a bhainistiú, socruithe a chumrú, agus sláinte an fhreastalaí a mheas. Faigheann an chéad <strong>{{freeTierLimit}}</strong> duine ar do fhreastalaí Chronicle saor in aisce."
+adminBodyLoginEnabled = "Mar riarthóir, is féidir leat úsáideoirí a bhainistiú, socruithe a chumrú, agus sláinte an fhreastalaí a mheas. Faigheann an chéad <strong>{{freeTierLimit}}</strong> duine ar do fhreastalaí Chronicle saor in aisce."
 adminTitle = "Forbhreathnú Riarthóra"
 userBody = "Tabhair cuireadh do chomhoibrithe, sann róil, agus coinnigh do dhoiciméid eagraithe in aon spás oibre slán amháin. Cumasaigh mód logála isteach aon uair is mian leat dul thar úsáid aonair."
 userTitle = "Forbhreathnú Plean"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "Deimhnigh do ról"
 roleUser = "Úsáideoir"
 
 [onboarding.serverLicense]
-freeBody = "Ceadaíonn ár gceadúnú <strong>Open-Core</strong> suas le <strong>{{freeTierLimit}}</strong> úsáideoirí saor in aisce in aghaidh an fhreastalaí. Chun scálú gan bhriseadh, molaimid an plean Stirling Server - <strong>suíocháin neamhtheoranta</strong> agus <strong>tacaíocht SSO</strong> ar $99/server/mo."
+freeBody = "Ceadaíonn ár gceadúnú <strong>Open-Core</strong> suas le <strong>{{freeTierLimit}}</strong> úsáideoirí saor in aisce in aghaidh an fhreastalaí. Chun scálú gan bhriseadh, molaimid an plean Chronicle server - <strong>suíocháin neamhtheoranta</strong> agus <strong>tacaíocht SSO</strong> ar $99/server/mo."
 freeTitle = "Ceadúnas Freastalaí"
-overLimitBody = "Ceadaíonn ár gceadúnú suas le <strong>{{freeTierLimit}}</strong> úsáideoir in aisce in aghaidh freastalaí. Tá <strong>{{overLimitUserCopy}}</strong> úsáideoir Stirling agat. Chun leanúint gan bhriseadh, uasghrádaigh go plean Freastalaí Stirling - <strong>suíocháin neamhtheoranta</strong>, eagarthóireacht téacs PDF, agus lánrialú riaracháin ar $99/freastalaí/mí."
+overLimitBody = "Ceadaíonn ár gceadúnú suas le <strong>{{freeTierLimit}}</strong> úsáideoir in aisce in aghaidh freastalaí. Tá <strong>{{overLimitUserCopy}}</strong> úsáideoir Chronicle agat. Chun leanúint gan bhriseadh, uasghrádaigh go plean Freastalaí Chronicle - <strong>suíocháin neamhtheoranta</strong>, eagarthóireacht téacs PDF, agus lánrialú riaracháin ar $99/freastalaí/mí."
 overLimitTitle = "Ceadúnas Freastalaí de dhíth"
 seePlans = "Féach ar Phleananna →"
 upgrade = "Uasghrádaigh anois →"
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6204,13 +6204,13 @@ unlink = "Dínasc"
 title = "Níorbh fhéidir nascadh"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "chun nascadh cuntais leis an gcuntas Stirling óstáilte a chumasú. In dev is féidir leat síniú isteach a insamhladh ón dialóg naisc."
+after = "chun nascadh cuntais leis an gcuntas Chronicle óstáilte a chumasú. In dev is féidir leat síniú isteach a insamhladh ón dialóg naisc."
 before = "Socraigh"
 title = "Níl logáil isteach SaaS cumraithe"
 
 [portal.accountLink.gate]
 action = "Nasc cuntas"
-description = "Nasc cuntas Stirling na heagraíochta seo chun gnéithe inbhilleáilte a úsáid."
+description = "Nasc cuntas Chronicle na heagraíochta seo chun gnéithe inbhilleáilte a úsáid."
 title = "Nasc chun díghlasáil"
 titleFeature = "Nasc chun {{feature}} a dhíghlasáil"
 
@@ -6243,12 +6243,12 @@ never = "riamh"
 [portal.accountLink.modal]
 linkSubtitle = "Sínigh isteach sa chuntas ar cheart don fhreastalaí seo billeáil ina aghaidh."
 linkTitle = "Nasc do chuntas Chronicle"
-reauthSubtitle = "Chuaigh do sheisiún in éag — sínigh isteach arís i do chuntas Stirling. Fanann d’áis nasctha."
+reauthSubtitle = "Chuaigh do sheisiún in éag — sínigh isteach arís i do chuntas Chronicle. Fanann d’áis nasctha."
 reauthTitle = "Sínigh isteach arís"
 simulateSignIn = "Insamhail síniú isteach (dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "chun nascadh in-app leis an gcuntas Stirling óstáilte a chumasú."
+after = "chun nascadh in-app leis an gcuntas Chronicle óstáilte a chumasú."
 and = "agus"
 before = "Socraigh"
 title = "Níl logáil isteach SaaS cumraithe"
@@ -6257,7 +6257,7 @@ title = "Níl logáil isteach SaaS cumraithe"
 instancesSub = "Gach áis féin-óstáilte atá cláraithe leis an eagraíocht seo. Cúlghair dintiúr chun a rochtain gan freastal a ghearradh láithreach."
 instancesTitle = "Áiseanna nasctha"
 revokeError = "Níorbh fhéidir an áis a chúlghairm"
-sub = "Nasc an eagraíocht féin-óstáilte seo lena cuntas Stirling ionas go mbilleálfaidh próiseáil gan freastal ar sparán d’eagraíochta."
+sub = "Nasc an eagraíocht féin-óstáilte seo lena cuntas Chronicle ionas go mbilleálfaidh próiseáil gan freastal ar sparán d’eagraíochta."
 
 [portal.accountLink.panel.loadError]
 forbidden = "Ní féidir ach le húinéir na foirne áiseanna nasctha na heagraíochta a fheiceáil."
@@ -6354,7 +6354,7 @@ close = "Dún cúntóir"
 error = "Níorbh fhéidir an cúntóir a bhaint amach."
 errorWithDetail = "Níorbh fhéidir an cúntóir a bhaint amach: {{detail}}"
 inputAriaLabel = "Cuir ceist ar an gcúntóir"
-inputPlaceholder = "Fiafraigh faoi Stirling…"
+inputPlaceholder = "Fiafraigh faoi Chronicle…"
 open = "Oscail cúntóir"
 send = "Seol"
 title = "Cúntóir"
@@ -6392,7 +6392,7 @@ title = "Níl Stripe cumraithe"
 cta = "Tóg do luachan Enterprise"
 description = "Lascainí toirte tiomanta, imscaradh air-gapped, MSA saincheaptha agus athbhreithnithe slándála, agus comhpháirtíochtaí dáileoirí 3rd-party."
 eyebrow = "Lascaine toirte · 1M+ PDFs"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "Gníomhach an mhí seo"
@@ -6869,7 +6869,7 @@ title = "Eisigh eochair API"
 [portal.infrastructure]
 manageEditorDeployment = "Bainistigh imscaradh an Eagarthóra"
 sectionsAriaLabel = "Rannáin bhonneagair"
-subtitle = "Imscarthaí, dintiúir, seasamh slándála, stóráil, agus an rian iniúchta do do spás oibre Stirling."
+subtitle = "Imscarthaí, dintiúir, seasamh slándála, stóráil, agus an rian iniúchta do do spás oibre Chronicle."
 title = "Bonneagar"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "Ainm eochrach"
 keyNamePlaceholder = "m.sh. Táirgeadh · ionghabháil"
 permissionsLabel = "Ceadanna"
 secretKeyCaption = "Eochair rúnda"
-secretWarning = "Stóráil é seo i mbainisteoir rúin. Ní stórálann Stirling ach hash riamh — níl aon bhealach ann é a aisghabháil níos déanaí."
+secretWarning = "Stóráil é seo i mbainisteoir rúin. Ní stórálann Chronicle ach hash riamh — níl aon bhealach ann é a aisghabháil níos déanaí."
 subtitle = "Scóipigh an eochair chuig an íosmhéid a theastaíonn uaithi. Is féidir leat í a rothlú nó a chúlghairm am ar bith."
 subtitleCreated = "Cóipeáil an rún seo anois — ní thaispeánfar arís é."
 title = "Cruthaigh eochair API"
@@ -6993,7 +6993,7 @@ version = "Leagan"
 
 [portal.infrastructure.deployments.regions]
 heading = "Réigiúin"
-subheading = "Sláinte bheo do gach réigiún Stirling imscartha — foighne, ualach, agus leagan rollout."
+subheading = "Sláinte bheo do gach réigiún Chronicle imscartha — foighne, ualach, agus leagan rollout."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "Taispeánfar réigiúin imscartha anseo nuair a bheidh do spás oibre soláthraithe."
@@ -7050,15 +7050,15 @@ operation = "Oibríocht"
 routedTo = "Ródaithe chuig"
 
 [portal.infrastructure.security.access.byok]
-description = "Soláthair eochair ó do KMS féin. Criptíonn Stirling léi ach is féidir leis léamh fós."
+description = "Soláthair eochair ó do KMS féin. Criptíonn Chronicle léi ach is féidir leis léamh fós."
 label = "Tabhair leat d’eochair féin (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "Ní fhágann eochracha do KMS riamh. Ní choinníonn Stirling ach ciphertext."
+description = "Ní fhágann eochracha do KMS riamh. Ní choinníonn Chronicle ach ciphertext."
 label = "Coinnigh d’eochair féin (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Bainistíonn Stirling eochracha criptithe. Is simplí é — gan aon ops eochrach ar do thaobh."
+[portal.infrastructure.security.access.Chronicle]
+description = "Bainistíonn Chronicle eochracha criptithe. Is simplí é — gan aon ops eochrach ar do thaobh."
 label = "Eochracha á gcoinneáil ag Chronicle"
 
 [portal.infrastructure.security.accessPolicy]
@@ -7073,15 +7073,15 @@ viewReport = "Féach ar thuairisc →"
 
 [portal.infrastructure.security.compliance]
 heading = "Comhlíonadh"
-subheading = "Fianuithe agus deimhnithe a chlúdaíonn ardán Stirling."
+subheading = "Fianuithe agus deimhnithe a chlúdaíonn ardán Chronicle."
 
 [portal.infrastructure.security.empty]
 description = "Taispeánfar cumraíocht slándála do spáis oibre anseo."
 title = "Níl seasamh slándála ar fáil"
 
 [portal.infrastructure.security.hyokBanner]
-description = "Le HYOK, ní fhágann eochracha criptithe do KMS riamh. Ní stórálann ná ní phróiseálann Stirling ach ciphertext ar féidir leat a chúlghairm am ar bith."
-title = "Ní féidir le Stirling do dhoiciméid a dhíchriptiú"
+description = "Le HYOK, ní fhágann eochracha criptithe do KMS riamh. Ní stórálann ná ní phróiseálann Chronicle ach ciphertext ar féidir leat a chúlghairm am ar bith."
+title = "Ní féidir le Chronicle do dhoiciméid a dhíchriptiú"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "Níl aon raonta IP cumraithe — ceadaítear gach IP."
@@ -7110,7 +7110,7 @@ subheading = "Coimeád na n-eochracha a chriptíonn doiciméid atá ar fos — c
 
 [portal.infrastructure.security.managedBanner]
 description = "Tá coimeád tabhair-leat-d’eochair-féin (BYOK) agus coimeád coinnigh-d’eochair-féin (HYOK) ar fáil ar Enterprise. Uasghrádaigh chun eochracha a sholáthar ó do KMS féin."
-title = "Tá eochracha á mbainistiú ag Stirling ar do phlean"
+title = "Tá eochracha á mbainistiú ag Chronicle ar do phlean"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "Uaslódáil"
 
 [portal.procurement.agreement]
 agreeCta = "Aontaigh & liostáil"
-confirm = "Tá Comhaontú Stirling Enterprise léite agam agus aontaím leis."
+confirm = "Tá Comhaontú Chronicle Enterprise léite agam agus aontaím leis."
 eyebrow = "Comhaontú"
 intro = "Clúdaíonn comhaontú comhcheangailte amháin do mhargadh: Máistir-Chomhaontú Seirbhíse, Foirm Ordaithe, EULA, agus Comhaontú Próiseála Sonraí. Déan athbhreithniú air, ansin aontaigh chun glacadh leis an luachan mar shíntiús tiomanta."
 title = "Athbhreithnigh do chomhaontú enterprise"
@@ -7606,7 +7606,7 @@ country = "Tír"
 countryEuro = "Limistéar an euro (EUR €)"
 countryUK = "An Ríocht Aontaithe (GBP £)"
 countryUS = "Stáit Aontaithe Mheiriceá (USD $)"
-eula = "Tá Stirling Enterprise EULA léite agam agus aontaím leis. Rialaíonn sé an comhaontú a ghintear ón luachan seo."
+eula = "Tá Chronicle Enterprise EULA léite agam agus aontaím leis. Rialaíonn sé an comhaontú a ghintear ón luachan seo."
 generate = "Gin luachan"
 included = "San áireamh"
 indemnification = "Slánaíocht IP"
@@ -7689,7 +7689,7 @@ daysLeft_one = "{{count}} lá fágtha"
 daysLeft_other = "{{count}} lá fágtha"
 engineerLabel = "D’innealtóir réiteach"
 eyebrow = "Do chur i bhfeidhm"
-live = "Tá tú beo ar Stirling Enterprise"
+live = "Tá tú beo ar Chronicle Enterprise"
 nextStep = "An chéad chéim eile: {{action}}"
 subtitle = "Tá d’innealtóir réiteach ar gach céim. Gníomh amháin eile ag an am; tá an seicliosta iomlán thíos."
 title = "Ó thriail go beo, cosán treoraithe amháin"
@@ -7716,7 +7716,7 @@ gatingAction = "Glac le do luachan"
 label = "Luachan"
 
 [portal.procurement.journeySteps.trial]
-blurb = "Déan Stirling a mheas i gcoinne do cháipéisí agus sreafaí oibre."
+blurb = "Déan Chronicle a mheas i gcoinne do cháipéisí agus sreafaí oibre."
 gatingAction = "Tóg do luachan"
 label = "Triail"
 
@@ -7730,14 +7730,14 @@ label = "D’eochair cheadúnais"
 
 [portal.procurement.link]
 cta = "Nasc cuntas"
-description = "Ritheann soláthar ar do chuntas Stirling nasctha: sin mar a sholáthraímid an triail, a phraghsálaimid do luachan, agus a thosaímid billeáil. Nasc cuntas chun tosú."
+description = "Ritheann soláthar ar do chuntas Chronicle nasctha: sin mar a sholáthraímid an triail, a phraghsálaimid do luachan, agus a thosaímid billeáil. Nasc cuntas chun tosú."
 eyebrow = "Enterprise"
 title = "Nasc do chuntas chun tosú"
 
 [portal.procurement.live]
 description = "Tá do shíntiús gníomhach agus tá do cheadúnas eisithe. Tá d’fhoireann soláthraithe agus tá billeáil tosaithe."
 eyebrow = "Beo"
-title = "Tá tú beo ar Stirling Enterprise"
+title = "Tá tú beo ar Chronicle Enterprise"
 
 [portal.procurement.locked]
 description = "Beidh eochracha trialach, luachana toirte tiomanta, an comhaontú aon-sínithe, íocaíocht, agus do mhórleabhar cáipéisí ar fad anseo nuair a thosóidh tú measúnú enterprise."
@@ -7772,7 +7772,7 @@ requestBodyFree = "Ginimid é seo ar éileamh. Deimhnigh agus seolfaidh d’inne
 requestBodyPaid = "Is breiseán íoctha é seo. Deimhnigh agus déanfaidh d’innealtóir réiteach a raon a shainiú agus an páipéarachas a sheoladh."
 requestCta = "Iarr"
 requestTitle = "Iarr an cháipéis seo"
-signBody = "Osclaíonn sé Comhaontú Stirling Enterprise le haghaidh r-shínithe: clúdaíonn síniú amháin an MSA, foirm ordaithe, EULA agus DPA. Frithshínímid go huathoibríoch agus bogann tú ar aghaidh go híocaíocht."
+signBody = "Osclaíonn sé Comhaontú Chronicle Enterprise le haghaidh r-shínithe: clúdaíonn síniú amháin an MSA, foirm ordaithe, EULA agus DPA. Frithshínímid go huathoibríoch agus bogann tú ar aghaidh go híocaíocht."
 signCta = "Oscail le síniú"
 signTitle = "Athbhreithnigh agus sínigh do chomhaontú"
 uploadBody = "Seol do PO chugainn agus eiseoimid sonrasc ina choinne ar do théarmaí. Tarraing isteach an PDF nó roghnaigh comhad thíos."
@@ -7824,7 +7824,7 @@ title = "Níl aon rud anseo fós"
 
 [portal.search]
 ariaLabel = "Cuardaigh"
-placeholder = "Cuardaigh Stirling — endpoints, píblínte, cáipéisí…"
+placeholder = "Cuardaigh Chronicle — endpoints, píblínte, cáipéisí…"
 
 [portal.search.empty]
 noActionsDescription = "Beidh gníomhartha tapa le feiceáil anseo nuair a bheidh siad ar fáil."
@@ -7852,7 +7852,7 @@ switchToLight = "Athraigh go téama geal"
 [portal.shell.sidebar]
 appEditor = "Eagarthóir"
 appProcessor = "Próiseálaí"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} cháipéis"
 linkAccount = "Nasc cuntas Chronicle"
 planEditor = "Plean Eagarthóra"
@@ -7862,7 +7862,7 @@ primaryNav = "Príomh-nascleanúint"
 switchApp = "Athraigh aip"
 
 [portal.sources]
-subtitle = "Naisc ionchuir in-athúsáidte a chuireann cáipéisí isteach i Stirling. Cumraigh ceangal uair amháin, ansin tagair dó ó aon líon beartas. Cliceáil ró dá chumraíocht agus na beartais a úsáideann é."
+subtitle = "Naisc ionchuir in-athúsáidte a chuireann cáipéisí isteach i Chronicle. Cumraigh ceangal uair amháin, ansin tagair dó ó aon líon beartas. Cliceáil ró dá chumraíocht agus na beartais a úsáideann é."
 title = "Foinsí"
 
 [portal.sources.actions]
@@ -7965,7 +7965,7 @@ review = "Athbhreithnigh & ceangail"
 
 [portal.usage]
 managePayment = "Bainistigh Íocaíocht"
-subtitle = "Tomhaltas, sonraisc, agus bainistíocht pleananna do gach PDF a bhilligh Stirling, in aon chonsól amháin."
+subtitle = "Tomhaltas, sonraisc, agus bainistíocht pleananna do gach PDF a bhilligh Chronicle, in aon chonsól amháin."
 title = "Úsáid & billeáil"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "Níl sparán ar fáil: {{status}} {{statusText}}"
 
 [portal.usage.sessionExpired]
 action = "Sínigh isteach arís"
-body = "Tá seisiún do chuntais Stirling imithe in éag. Sínigh isteach arís chun billeáil a fheiceáil — fanann d’instance nasctha."
+body = "Tá seisiún do chuntais Chronicle imithe in éag. Sínigh isteach arís chun billeáil a fheiceáil — fanann d’instance nasctha."
 title = "Seisiún imithe in éag"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "Logáilte isteach mar"
 
 [settings.connection.mode]
 local = "Áitiúil Amháin"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "Féin-óstáilte"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "Anailísíocht Úsáide"
 [settings.planBilling]
 currentPlan = "Plean Reatha"
 loading = "Eolas billeála á lódáil..."
-notAvailable = "Tá Plean & Billeáil ar fáil ach amháin nuair a bhíonn ceangal le Stirling Cloud (mód SaaS)."
+notAvailable = "Tá Plean & Billeáil ar fáil ach amháin nuair a bhíonn ceangal le Chronicle Cloud (mód SaaS)."
 title = "Plean & Billeáil"
 
 [settings.planBilling.billing]
@@ -10015,7 +10015,7 @@ processorDeferred = "Seoladh cuireadh, ach níorbh fhéidir rochtain Processor a
 processorDesc = "An dromchla rialachais, píblínte a rith, gníomhairí, agus an API."
 role = "Ról"
 send2 = "Seol cuireadh"
-subtitle2 = "Gheobhaidh siad ríomhphost chun dul isteach i do spás oibre Stirling."
+subtitle2 = "Gheobhaidh siad ríomhphost chun dul isteach i do spás oibre Chronicle."
 team = "Foireann"
 title = "Tabhair cuireadh do dhaoine"
 username = "Ainm úsáideora"

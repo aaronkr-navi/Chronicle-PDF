@@ -1158,8 +1158,8 @@ description = "Felhasználónév az SMTP hitelesítéshez"
 label = "SMTP felhasználónév"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -2742,7 +2742,7 @@ close = "Close chat"
 open = "Open Chronicle AI assistant"
 
 [chat.header]
-agentMenu = "Stirling ügynök beállításai"
+agentMenu = "Chronicle ügynök beállításai"
 clearChat = "Csevegés törlése"
 
 [chat.input]
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -3939,7 +3939,7 @@ title = "Áthelyezés mappába"
 [filesPage.origin]
 all = "Összes forrás"
 cloud = "Felhő"
-cloudHint = "A Stirling szerveren tárolva"
+cloudHint = "a Chronicle szerveren tárolva"
 local = "Helyi"
 localHint = "Csak ebben a böngészőben tárolva"
 shared = "Megosztott"
@@ -4669,7 +4669,7 @@ terms = "Felhasználási feltételek"
 title = "Külső licencek"
 
 [localMode]
-toolUnavailable = "Ehhez az eszközhöz fiók szükséges. Jelentkezzen be a Stirling Cloudba, vagy csatlakozzon egy önhosztolt szerverhez a használatához."
+toolUnavailable = "Ehhez az eszközhöz fiók szükséges. Jelentkezzen be a Chronicle Cloudba, vagy csatlakozzon egy önhosztolt szerverhez a használatához."
 
 [localMode.toolPicker]
 message = "Jelentkezzen be az összes eszköz feloldásához."
@@ -4989,7 +4989,7 @@ skipForNow = "Kihagyás most"
 skipTheTour = "Körbevezetés kihagyása"
 
 [onboarding.desktopInstall]
-body = "A Stirling asztali alkalmazásként működik a legjobban. Használhatja offline, gyorsabban érheti el a dokumentumokat, és helyben szerkeszthet a gépén."
+body = "a Chronicle asztali alkalmazásként működik a legjobban. Használhatja offline, gyorsabban érheti el a dokumentumokat, és helyben szerkeszthet a gépén."
 selectOs = "Operációs rendszer kiválasztása"
 title = "Letöltés"
 titleWithOs = "Letöltés: {{osLabel}}"
@@ -4999,8 +4999,8 @@ authenticationCode = "Hitelesítési kód"
 qrCodeLoading = "QR-kód előállítása…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "A bejelentkezési mód engedélyezése után kezelheti a felhasználókat, beállításokat és figyelheti a szerver állapotát. A szerver első <strong>{{freeTierLimit}}</strong> felhasználója ingyen használhatja a Stirlinget."
-adminBodyLoginEnabled = "Adminisztrátorként kezelheti a felhasználókat, beállításokat és figyelheti a szerver állapotát. A szerver első <strong>{{freeTierLimit}}</strong> felhasználója ingyen használhatja a Stirlinget."
+adminBodyLoginDisabled = "A bejelentkezési mód engedélyezése után kezelheti a felhasználókat, beállításokat és figyelheti a szerver állapotát. A szerver első <strong>{{freeTierLimit}}</strong> felhasználója ingyen használhatja a Chronicleet."
+adminBodyLoginEnabled = "Adminisztrátorként kezelheti a felhasználókat, beállításokat és figyelheti a szerver állapotát. A szerver első <strong>{{freeTierLimit}}</strong> felhasználója ingyen használhatja a Chronicleet."
 adminTitle = "Admin áttekintés"
 userBody = "Hívja meg a csapattagokat, rendeljen szerepköröket, és tartsa rendezve dokumentumait egy biztonságos munkaterületen. Engedélyezze a bejelentkezési módot, amikor továbblépne az egyéni használatról."
 userTitle = "Csomag áttekintése"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "Erősítse meg a szerepkörét"
 roleUser = "Felhasználó"
 
 [onboarding.serverLicense]
-freeBody = "Az <strong>Open-Core</strong> licencelésünk szerverenként legfeljebb <strong>{{freeTierLimit}}</strong> felhasználót enged ingyen. A zavartalan bővüléshez és az új <strong>PDF szövegszerkesztő eszköz</strong> korai eléréséhez a Stirling Server csomagot ajánljuk – teljes szerkesztés és <strong>korlátlan hely</strong> $99/szerver/hó áron."
+freeBody = "Az <strong>Open-Core</strong> licencelésünk szerverenként legfeljebb <strong>{{freeTierLimit}}</strong> felhasználót enged ingyen. A zavartalan bővüléshez és az új <strong>PDF szövegszerkesztő eszköz</strong> korai eléréséhez a Chronicle server csomagot ajánljuk – teljes szerkesztés és <strong>korlátlan hely</strong> $99/szerver/hó áron."
 freeTitle = "Szerverlicenc"
-overLimitBody = "Licencelésünk szerverenként legfeljebb <strong>{{freeTierLimit}}</strong> felhasználót enged ingyen. Önnek <strong>{{overLimitUserCopy}}</strong> Stirling felhasználója van. A zavartalan használathoz váltson a Stirling Server csomagra – <strong>korlátlan hely</strong>, PDF szövegszerkesztés és teljes adminisztrátori vezérlés $99/szerver/hó áron."
+overLimitBody = "Licencelésünk szerverenként legfeljebb <strong>{{freeTierLimit}}</strong> felhasználót enged ingyen. Önnek <strong>{{overLimitUserCopy}}</strong> Chronicle felhasználója van. A zavartalan használathoz váltson a Chronicle server csomagra – <strong>korlátlan hely</strong>, PDF szövegszerkesztés és teljes adminisztrátori vezérlés $99/szerver/hó áron."
 overLimitTitle = "Szerverlicenc szükséges"
 seePlans = "Csomagok megtekintése →"
 upgrade = "Frissítés most →"
@@ -5041,7 +5041,7 @@ title = "Bemutató áttekintése"
 
 [onboarding.welcomeSlide]
 body = "A Chronicle PDF mostantól minden méretű csapat számára készen áll. Ez a frissítés új elrendezést, erőteljes új adminisztrátori képességeket és a leggyakrabban kért funkciónkat – a <strong>Szöveg szerkesztése</strong>-t tartalmazza."
-title = "Üdvözöljük a Stirlingben"
+title = "Üdvözöljük a Chronicleben"
 
 [onboarding.whatsNew]
 activeFilesView = "Az Aktív fájlokban láthat mindent, ami meg van nyitva, és kiválaszthatja, min dolgozik."
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6192,25 +6192,25 @@ comingSoon = "Hamarosan"
 [portal.accountLink.card]
 billingNote = "A felügyelet nélküli feldolgozás költsége a szervezeti tárcát terheli."
 eyebrow = "Fiók összekapcsolása"
-linkButton = "Stirling-fiók összekapcsolása"
+linkButton = "Chronicle-fiók összekapcsolása"
 linked = "Összekapcsolva"
 linkedAs = "Összekapcsolva mint {{name}}."
 linkedGeneric = "Ez a példány össze van kapcsolva."
 notLinked = "Nincs összekapcsolva"
-title = "A szervezet összekapcsolása a Stirling-fiókjával"
+title = "A szervezet összekapcsolása a Chronicle-fiókjával"
 unlink = "Összekapcsolás megszüntetése"
 
 [portal.accountLink.card.error]
 title = "Nem sikerült összekapcsolni"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "a hosztolt Stirling-fiókkal való fiókösszekapcsolás engedélyezéséhez. Fejlesztés közben a bejelentkezést a hivatkozási párbeszédpanelen szimulálhatja."
+after = "a hosztolt Chronicle-fiókkal való fiókösszekapcsolás engedélyezéséhez. Fejlesztés közben a bejelentkezést a hivatkozási párbeszédpanelen szimulálhatja."
 before = "Állítsa be:"
 title = "SaaS bejelentkezés nincs konfigurálva"
 
 [portal.accountLink.gate]
 action = "Fiók összekapcsolása"
-description = "Kapcsolja össze a szervezet Stirling-fiókját a számlázható funkciók használatához."
+description = "Kapcsolja össze a szervezet Chronicle-fiókját a számlázható funkciók használatához."
 title = "Összekapcsolás a feloldáshoz"
 titleFeature = "Összekapcsolás a(z) {{feature}} feloldásához"
 
@@ -6242,13 +6242,13 @@ never = "soha"
 
 [portal.accountLink.modal]
 linkSubtitle = "Jelentkezzen be abba a fiókba, amelyre ennek a szervernek számláznia kell."
-linkTitle = "Stirling-fiók összekapcsolása"
-reauthSubtitle = "A munkamenete lejárt — jelentkezzen be újra a Stirling-fiókjába. A példánya összekapcsolva marad."
+linkTitle = "Chronicle-fiók összekapcsolása"
+reauthSubtitle = "A munkamenete lejárt — jelentkezzen be újra a Chronicle-fiókjába. A példánya összekapcsolva marad."
 reauthTitle = "Bejelentkezés újra"
 simulateSignIn = "Bejelentkezés szimulálása (dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "az alkalmazáson belüli összekapcsolás engedélyezéséhez a hosztolt Stirling-fiókkal."
+after = "az alkalmazáson belüli összekapcsolás engedélyezéséhez a hosztolt Chronicle-fiókkal."
 and = "és"
 before = "Állítsa be:"
 title = "SaaS bejelentkezés nincs konfigurálva"
@@ -6257,7 +6257,7 @@ title = "SaaS bejelentkezés nincs konfigurálva"
 instancesSub = "Minden saját üzemeltetésű példány, amely ehhez a szervezethez van regisztrálva. Vonjon vissza egy hitelesítő adatot a felügyelet nélküli hozzáférés azonnali megszüntetéséhez."
 instancesTitle = "Összekapcsolt példányok"
 revokeError = "Nem sikerült visszavonni a példányt"
-sub = "Kapcsolja össze ezt a saját üzemeltetésű szervezetet a Stirling-fiókjával, hogy a felügyelet nélküli feldolgozás költsége a szervezeti tárcát terhelje."
+sub = "Kapcsolja össze ezt a saját üzemeltetésű szervezetet a Chronicle-fiókjával, hogy a felügyelet nélküli feldolgozás költsége a szervezeti tárcát terhelje."
 
 [portal.accountLink.panel.loadError]
 forbidden = "Csak a csapat tulajdonosa tekintheti meg a szervezet összekapcsolt példányait."
@@ -6354,7 +6354,7 @@ close = "Asszisztens bezárása"
 error = "Nem sikerült elérni az asszisztenst."
 errorWithDetail = "Nem sikerült elérni az asszisztenst: {{detail}}"
 inputAriaLabel = "Kérdezze az asszisztenst"
-inputPlaceholder = "Kérdezzen a Stirlingről…"
+inputPlaceholder = "Kérdezzen a Chronicleről…"
 open = "Asszisztens megnyitása"
 send = "Küldés"
 title = "Asszisztens"
@@ -6392,7 +6392,7 @@ title = "Stripe nincs konfigurálva"
 cta = "Enterprise ajánlat összeállítása"
 description = "Lekötött mennyiségi kedvezmények, air-gapped telepítés, egyedi MSA és biztonsági felülvizsgálatok, valamint 3rd-party disztribútor partnerségek."
 eyebrow = "Mennyiségi kedvezmény · 1M+ PDF"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "Aktív ebben a hónapban"
@@ -6439,9 +6439,9 @@ viewAriaLabel = "{{number}} számla megtekintése a Stripe-ban"
 viewLink = "Megtekintés ↗"
 
 [portal.billing.linkPrompt]
-cta = "Stirling-fiók összekapcsolása"
+cta = "Chronicle-fiók összekapcsolása"
 description = "A kézi PDF-szerkesztés — megtekintés, aláírás, egyesítés, felosztás, vízjelezés, tömörítés, konvertálás, kézi OCR — mindig ingyenes, akár össze van kapcsolva a fiók, akár nem. Kapcsolja össze, hogy igénybe vegyen 500 ingyenes PDF-et mért feldolgozásra (automatizálás, AI és az API); ha többre van szüksége, kapcsolja be a Processor csomagot, és csak azért fizessen, amit használ."
-title = "Stirling-fiók összekapcsolása"
+title = "Chronicle-fiók összekapcsolása"
 
 [portal.billing.paymentMethod]
 billedMonthly = "Havonta számlázva"
@@ -6869,7 +6869,7 @@ title = "API kulcs kiadása"
 [portal.infrastructure]
 manageEditorDeployment = "Editor telepítés kezelése"
 sectionsAriaLabel = "Infrastruktúra szakaszai"
-subtitle = "Telepítések, hitelesítő adatok, biztonsági állapot, tárhely és auditnapló a Stirling munkaterületéhez."
+subtitle = "Telepítések, hitelesítő adatok, biztonsági állapot, tárhely és auditnapló a Chronicle munkaterületéhez."
 title = "Infrastruktúra"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "Kulcs neve"
 keyNamePlaceholder = "pl. Production · ingest"
 permissionsLabel = "Engedélyek"
 secretKeyCaption = "Titkos kulcs"
-secretWarning = "Tárolja ezt secrets managerben. A Stirling csak hash-t tárol — később nincs mód a visszaállítására."
+secretWarning = "Tárolja ezt secrets managerben. a Chronicle csak hash-t tárol — később nincs mód a visszaállítására."
 subtitle = "A kulcs hatókörét a szükséges minimumra korlátozza. Bármikor rotálhatja vagy visszavonhatja."
 subtitleCreated = "Másolja ki most ezt a titkot — többé nem jelenik meg."
 title = "API kulcs létrehozása"
@@ -6993,7 +6993,7 @@ version = "Verzió"
 
 [portal.infrastructure.deployments.regions]
 heading = "Régiók"
-subheading = "Élő állapot minden telepített Stirling régióhoz — késleltetés, terhelés és bevezetési verzió."
+subheading = "Élő állapot minden telepített Chronicle régióhoz — késleltetés, terhelés és bevezetési verzió."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "A telepített régiók itt jelennek meg, amint a munkaterülete ki van építve."
@@ -7050,16 +7050,16 @@ operation = "Művelet"
 routedTo = "Ide irányítva"
 
 [portal.infrastructure.security.access.byok]
-description = "Adjon meg egy kulcsot a saját KMS-éből. A Stirling ezzel titkosít, de továbbra is olvasni tud."
+description = "Adjon meg egy kulcsot a saját KMS-éből. a Chronicle ezzel titkosít, de továbbra is olvasni tud."
 label = "Bring your own key (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "A kulcsok soha nem hagyják el a KMS-ét. A Stirling csak titkosított szöveget tárol."
+description = "A kulcsok soha nem hagyják el a KMS-ét. a Chronicle csak titkosított szöveget tárol."
 label = "Hold your own key (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "A Stirling kezeli a titkosítási kulcsokat. A legegyszerűbb — nincs kulcsművelet az Ön oldalán."
-label = "Stirling által tárolt kulcsok"
+[portal.infrastructure.security.access.Chronicle]
+description = "a Chronicle kezeli a titkosítási kulcsokat. A legegyszerűbb — nincs kulcsművelet az Ön oldalán."
+label = "Chronicle által tárolt kulcsok"
 
 [portal.infrastructure.security.accessPolicy]
 heading = "Dokumentum-hozzáférési szabályzat"
@@ -7073,15 +7073,15 @@ viewReport = "Jelentés megtekintése →"
 
 [portal.infrastructure.security.compliance]
 heading = "Megfelelőség"
-subheading = "A Stirling platformot lefedő tanúsítások és minősítések."
+subheading = "a Chronicle platformot lefedő tanúsítások és minősítések."
 
 [portal.infrastructure.security.empty]
 description = "A munkaterület biztonsági konfigurációja itt fog megjelenni."
 title = "A biztonsági állapot nem érhető el"
 
 [portal.infrastructure.security.hyokBanner]
-description = "HYOK esetén a titkosítási kulcsok soha nem hagyják el a KMS-ét. A Stirling csak olyan titkosított szöveget tárol és dolgoz fel, amelyet bármikor visszavonhat."
-title = "A Stirling nem tudja visszafejteni a dokumentumait"
+description = "HYOK esetén a titkosítási kulcsok soha nem hagyják el a KMS-ét. a Chronicle csak olyan titkosított szöveget tárol és dolgoz fel, amelyet bármikor visszavonhat."
+title = "a Chronicle nem tudja visszafejteni a dokumentumait"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "Nincsenek konfigurált IP tartományok — minden IP engedélyezett."
@@ -7110,7 +7110,7 @@ subheading = "A dokumentumokat nyugalmi állapotban titkosító kulcsok felügye
 
 [portal.infrastructure.security.managedBanner]
 description = "A bring-your-own-key (BYOK) és hold-your-own-key (HYOK) kulcsfelügyelet Enterprise csomagban érhető el. Frissítsen, hogy kulcsokat adjon meg a saját KMS-éből."
-title = "A kulcsokat a Stirling kezeli az Ön csomagjában"
+title = "A kulcsokat a Chronicle kezeli az Ön csomagjában"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "Feltöltés"
 
 [portal.procurement.agreement]
 agreeCta = "Elfogadás és előfizetés"
-confirm = "Elolvastam és elfogadom a Stirling Enterprise Agreement feltételeit."
+confirm = "Elolvastam és elfogadom a Chronicle Enterprise Agreement feltételeit."
 eyebrow = "Megállapodás"
 intro = "Egy összevont megállapodás fedi le az ügyletet: Master Service Agreement, Order Form, EULA és Data Processing Agreement. Tekintse át, majd fogadja el az ajánlat elkötelezett előfizetéssé alakításához."
 title = "Enterprise megállapodás áttekintése"
@@ -7606,7 +7606,7 @@ country = "Ország"
 countryEuro = "Eurózóna (EUR €)"
 countryUK = "Egyesült Királyság (GBP £)"
 countryUS = "Egyesült Államok (USD $)"
-eula = "Elolvastam és elfogadom a Stirling Enterprise EULA feltételeit. Ez szabályozza az ajánlatból létrehozott megállapodást."
+eula = "Elolvastam és elfogadom a Chronicle Enterprise EULA feltételeit. Ez szabályozza az ajánlatból létrehozott megállapodást."
 generate = "Ajánlat generálása"
 included = "Tartalmazza"
 indemnification = "IP kártalanítás"
@@ -7689,7 +7689,7 @@ daysLeft_one = "{{count}} nap maradt"
 daysLeft_other = "{{count}} nap maradt"
 engineerLabel = "Az Ön solutions engineer-je"
 eyebrow = "Az Ön bevezetése"
-live = "Élőben van a Stirling Enterprise-on"
+live = "Élőben van a Chronicle Enterprise-on"
 nextStep = "Következő lépés: {{action}}"
 subtitle = "Az Ön solutions engineer-je minden lépésnél jelen van. Egyszerre egy következő művelet; a teljes ellenőrzőlista lent található."
 title = "A próbaidőszaktól az éles működésig, egy vezetett úton"
@@ -7716,7 +7716,7 @@ gatingAction = "Ajánlat elfogadása"
 label = "Ajánlat"
 
 [portal.procurement.journeySteps.trial]
-blurb = "Értékelje a Stirlinget saját dokumentumaival és munkafolyamataival."
+blurb = "Értékelje a Chronicleet saját dokumentumaival és munkafolyamataival."
 gatingAction = "Ajánlat összeállítása"
 label = "Próbaidőszak"
 
@@ -7730,14 +7730,14 @@ label = "Az Ön licenckulcsa"
 
 [portal.procurement.link]
 cta = "Fiók összekapcsolása"
-description = "A beszerzés az összekapcsolt Stirling-fiókján fut: így hozzuk létre a próbaidőszakot, árazzuk be az ajánlatát és indítjuk el a számlázást. A kezdéshez kapcsoljon össze egy fiókot."
+description = "A beszerzés az összekapcsolt Chronicle-fiókján fut: így hozzuk létre a próbaidőszakot, árazzuk be az ajánlatát és indítjuk el a számlázást. A kezdéshez kapcsoljon össze egy fiókot."
 eyebrow = "Enterprise"
 title = "Kapcsolja össze fiókját a kezdéshez"
 
 [portal.procurement.live]
 description = "Az előfizetése aktív, és a licence ki lett állítva. A csapata létrehozva, és a számlázás elindult."
 eyebrow = "Élő"
-title = "Élőben van a Stirling Enterprise-on"
+title = "Élőben van a Chronicle Enterprise-on"
 
 [portal.procurement.locked]
 description = "A próbakulcsok, elkötelezett mennyiségi ajánlatok, az egyaláírásos megállapodás, a fizetés és a dokumentumnapló mind itt lesznek, miután elindít egy enterprise értékelést."
@@ -7772,7 +7772,7 @@ requestBodyFree = "Ezt kérésre generáljuk. Erősítse meg, és a solutions en
 requestBodyPaid = "Ez fizetős kiegészítő. Erősítse meg, és a solutions engineer-je felméri, majd elküldi a dokumentációt."
 requestCta = "Kérés"
 requestTitle = "Dokumentum kérése"
-signBody = "Megnyitja a Stirling Enterprise Agreementet elektronikus aláírásra: egy aláírás lefedi az MSA-t, order formot, EULA-t és DPA-t. Automatikusan ellenjegyezzük, és továbblép a fizetéshez."
+signBody = "Megnyitja a Chronicle Enterprise Agreementet elektronikus aláírásra: egy aláírás lefedi az MSA-t, order formot, EULA-t és DPA-t. Automatikusan ellenjegyezzük, és továbblép a fizetéshez."
 signCta = "Megnyitás aláírásra"
 signTitle = "Megállapodás áttekintése és aláírása"
 uploadBody = "Küldje el nekünk a PO-t, és a feltételei szerint számlázunk. Húzza be a PDF-et, vagy válasszon fájlt lent."
@@ -7824,7 +7824,7 @@ title = "Még nincs itt semmi"
 
 [portal.search]
 ariaLabel = "Keresés"
-placeholder = "Keresés a Stirlingben — endpoints, pipelines, docs…"
+placeholder = "Keresés a Chronicleben — endpoints, pipelines, docs…"
 
 [portal.search.empty]
 noActionsDescription = "A gyorsműveletek itt jelennek meg, amint elérhetők."
@@ -7852,9 +7852,9 @@ switchToLight = "Váltás világos témára"
 [portal.shell.sidebar]
 appEditor = "Editor"
 appProcessor = "Processor"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} dokumentum"
-linkAccount = "Stirling-fiók összekapcsolása"
+linkAccount = "Chronicle-fiók összekapcsolása"
 planEditor = "Editor csomag"
 planEnterprise = "Enterprise csomag"
 planProcessor = "Processor csomag"
@@ -7862,7 +7862,7 @@ primaryNav = "Elsődleges navigáció"
 switchApp = "Alkalmazás váltása"
 
 [portal.sources]
-subtitle = "Újrahasználható bemeneti kapcsolatok, amelyek dokumentumokat juttatnak a Stirlingbe. Konfiguráljon egy kapcsolatot egyszer, majd hivatkozzon rá tetszőleges számú házirendből. Kattintson egy sorra a konfigurációjához és annak megtekintéséhez, mely házirendek használják."
+subtitle = "Újrahasználható bemeneti kapcsolatok, amelyek dokumentumokat juttatnak a Chroniclebe. Konfiguráljon egy kapcsolatot egyszer, majd hivatkozzon rá tetszőleges számú házirendből. Kattintson egy sorra a konfigurációjához és annak megtekintéséhez, mely házirendek használják."
 title = "Források"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "Figyeljen egy könyvtárat a szerveren az új dokumentumokért."
 label = "Mappa"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Abszolút elérési út, amelyet a Stirling figyel a feldolgozandó fájlokhoz."
+helperText = "Abszolút elérési út, amelyet a Chronicle figyel a feldolgozandó fájlokhoz."
 label = "Könyvtár elérési útja"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "Áttekintés és csatlakoztatás"
 
 [portal.usage]
 managePayment = "Fizetés kezelése"
-subtitle = "Fogyasztás, számlák és csomagkezelés minden PDF-hez, amelyet a Stirling kiszámlázott, egy konzolon."
+subtitle = "Fogyasztás, számlák és csomagkezelés minden PDF-hez, amelyet a Chronicle kiszámlázott, egy konzolon."
 title = "Használat és számlázás"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "Tárca nem érhető el: {{status}} {{statusText}}"
 
 [portal.usage.sessionExpired]
 action = "Bejelentkezés újra"
-body = "A Stirling-fiók munkamenete lejárt. Jelentkezzen be újra a számlázás megtekintéséhez — a példánya összekapcsolva marad."
+body = "a Chronicle-fiók munkamenete lejárt. Jelentkezzen be újra a számlázás megtekintéséhez — a példánya összekapcsolva marad."
 title = "Munkamenet lejárt"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "Bejelentkezve mint"
 
 [settings.connection.mode]
 local = "Csak helyi"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "Önhostolt"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "Használati analitika"
 [settings.planBilling]
 currentPlan = "Jelenlegi csomag"
 loading = "Számlázási információk betöltése..."
-notAvailable = "A Csomag és számlázás csak Stirling Cloud kapcsolattal érhető el (SaaS mód)."
+notAvailable = "A Csomag és számlázás csak Chronicle Cloud kapcsolattal érhető el (SaaS mód)."
 title = "Csomag és számlázás"
 
 [settings.planBilling.billing]
@@ -9068,7 +9068,7 @@ emptyUsername = "Adja meg a felhasználónevét"
 oauthFailed = "OAuth bejelentkezés sikertelen. Kérjük, próbálja újra."
 
 [setup.saas]
-title = "Bejelentkezés a Stirlingbe"
+title = "Bejelentkezés a Chroniclebe"
 
 [setup.selfhosted]
 changeServerLocked = "A szervezete egy konkrét szerverre korlátozta az alkalmazást"

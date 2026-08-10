@@ -1158,8 +1158,8 @@ description = "Όνομα χρήστη για πιστοποίηση SMTP"
 label = "Όνομα χρήστη SMTP"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -3072,7 +3072,7 @@ upgradeButton = "Αναβάθμιση λογαριασμού"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Αντιγραφή κλειδιού API"
-description = "Το κλειδί API σας για πρόσβαση στη σουίτα εργαλείων PDF του Stirling. Αντιγράψτε το στο έργο σας ή ανανεώστε για δημιουργία νέου."
+description = "Το κλειδί API σας για πρόσβαση στη σουίτα εργαλείων PDF του Chronicle. Αντιγράψτε το στο έργο σας ή ανανεώστε για δημιουργία νέου."
 docsDescription = "Μάθετε περισσότερα για την ενσωμάτωση με το Chronicle PDF:"
 docsLink = "Τεκμηρίωση API"
 docsTitle = "Τεκμηρίωση API"
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -4669,7 +4669,7 @@ terms = "Όροι και προϋποθέσεις"
 title = "Άδειες τρίτων"
 
 [localMode]
-toolUnavailable = "Αυτό το εργαλείο απαιτεί λογαριασμό. Συνδεθείτε στο Stirling Cloud ή συνδεθείτε σε αυτο-φιλοξενούμενο διακομιστή για να το χρησιμοποιήσετε."
+toolUnavailable = "Αυτό το εργαλείο απαιτεί λογαριασμό. Συνδεθείτε στο Chronicle Cloud ή συνδεθείτε σε αυτο-φιλοξενούμενο διακομιστή για να το χρησιμοποιήσετε."
 
 [localMode.toolPicker]
 message = "Συνδεθείτε για να ξεκλειδώσετε όλα τα εργαλεία."
@@ -4989,7 +4989,7 @@ skipForNow = "Παράλειψη προς το παρόν"
 skipTheTour = "Παράλειψη ξενάγησης"
 
 [onboarding.desktopInstall]
-body = "Το Stirling λειτουργεί καλύτερα ως εφαρμογή για υπολογιστή. Μπορείτε να το χρησιμοποιείτε offline, να έχετε ταχύτερη πρόσβαση στα έγγραφα και να κάνετε επεξεργασίες τοπικά στον υπολογιστή σας."
+body = "Το Chronicle λειτουργεί καλύτερα ως εφαρμογή για υπολογιστή. Μπορείτε να το χρησιμοποιείτε offline, να έχετε ταχύτερη πρόσβαση στα έγγραφα και να κάνετε επεξεργασίες τοπικά στον υπολογιστή σας."
 selectOs = "Επιλέξτε λειτουργικό σύστημα"
 title = "Λήψη"
 titleWithOs = "Λήψη για {{osLabel}}"
@@ -4999,8 +4999,8 @@ authenticationCode = "Κωδικός ελέγχου ταυτότητας"
 qrCodeLoading = "Δημιουργία του QR κωδικού σας…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "Μόλις ενεργοποιήσετε τη λειτουργία σύνδεσης, μπορείτε να διαχειρίζεστε χρήστες, να ρυθμίζετε επιλογές και να παρακολουθείτε την υγεία του διακομιστή. Τα πρώτα <strong>{{freeTierLimit}}</strong> άτομα στον διακομιστή σας χρησιμοποιούν το Stirling δωρεάν."
-adminBodyLoginEnabled = "Ως διαχειριστής, μπορείτε να διαχειρίζεστε χρήστες, να ρυθμίζετε επιλογές και να παρακολουθείτε την υγεία του διακομιστή. Τα πρώτα <strong>{{freeTierLimit}}</strong> άτομα στον διακομιστή σας χρησιμοποιούν το Stirling δωρεάν."
+adminBodyLoginDisabled = "Μόλις ενεργοποιήσετε τη λειτουργία σύνδεσης, μπορείτε να διαχειρίζεστε χρήστες, να ρυθμίζετε επιλογές και να παρακολουθείτε την υγεία του διακομιστή. Τα πρώτα <strong>{{freeTierLimit}}</strong> άτομα στον διακομιστή σας χρησιμοποιούν το Chronicle δωρεάν."
+adminBodyLoginEnabled = "Ως διαχειριστής, μπορείτε να διαχειρίζεστε χρήστες, να ρυθμίζετε επιλογές και να παρακολουθείτε την υγεία του διακομιστή. Τα πρώτα <strong>{{freeTierLimit}}</strong> άτομα στον διακομιστή σας χρησιμοποιούν το Chronicle δωρεάν."
 adminTitle = "Επισκόπηση διαχειριστή"
 userBody = "Προσκαλέστε συνεργάτες, αναθέστε ρόλους και κρατήστε τα έγγραφα οργανωμένα σε έναν ασφαλή χώρο εργασίας. Ενεργοποιήστε τη λειτουργία σύνδεσης όταν είστε έτοιμοι να ξεπεράσετε τη μονοπρόσωπη χρήση."
 userTitle = "Επισκόπηση πλάνου"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "Επιβεβαιώστε τον ρόλο σας"
 roleUser = "Χρήστης"
 
 [onboarding.serverLicense]
-freeBody = "Η αδειοδότηση <strong>Open-Core</strong> μας επιτρέπει έως <strong>{{freeTierLimit}}</strong> χρήστες δωρεάν ανά διακομιστή. Για απρόσκοπτη κλιμάκωση και έγκαιρη πρόσβαση στο νέο <strong>εργαλείο επεξεργασίας κειμένου PDF</strong>, προτείνουμε το πλάνο Stirling Server - πλήρης επεξεργασία και <strong>απεριόριστες θέσεις</strong> για $99/server/μήνα."
+freeBody = "Η αδειοδότηση <strong>Open-Core</strong> μας επιτρέπει έως <strong>{{freeTierLimit}}</strong> χρήστες δωρεάν ανά διακομιστή. Για απρόσκοπτη κλιμάκωση και έγκαιρη πρόσβαση στο νέο <strong>εργαλείο επεξεργασίας κειμένου PDF</strong>, προτείνουμε το πλάνο Chronicle server - πλήρης επεξεργασία και <strong>απεριόριστες θέσεις</strong> για $99/server/μήνα."
 freeTitle = "Άδεια διακομιστή"
-overLimitBody = "Η αδειοδότηση μας επιτρέπει έως <strong>{{freeTierLimit}}</strong> χρήστες δωρεάν ανά διακομιστή. Έχετε <strong>{{overLimitUserCopy}}</strong> χρήστες Stirling. Για να συνεχίσετε χωρίς διακοπές, αναβαθμίστε στο πλάνο Stirling Server - <strong>απεριόριστες θέσεις</strong>, επεξεργασία κειμένου PDF και πλήρης έλεγχος διαχειριστή για $99/server/μήνα."
+overLimitBody = "Η αδειοδότηση μας επιτρέπει έως <strong>{{freeTierLimit}}</strong> χρήστες δωρεάν ανά διακομιστή. Έχετε <strong>{{overLimitUserCopy}}</strong> χρήστες Chronicle. Για να συνεχίσετε χωρίς διακοπές, αναβαθμίστε στο πλάνο Chronicle server - <strong>απεριόριστες θέσεις</strong>, επεξεργασία κειμένου PDF και πλήρης έλεγχος διαχειριστή για $99/server/μήνα."
 overLimitTitle = "Απαιτείται άδεια διακομιστή"
 seePlans = "Δείτε τα πλάνα →"
 upgrade = "Αναβάθμιση τώρα →"
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6197,20 +6197,20 @@ linked = "Συνδεδεμένο"
 linkedAs = "Συνδεδεμένο ως {{name}}."
 linkedGeneric = "Αυτό το instance είναι συνδεδεμένο."
 notLinked = "Μη συνδεδεμένο"
-title = "Συνδέστε αυτόν τον οργανισμό με τον λογαριασμό Stirling του"
+title = "Συνδέστε αυτόν τον οργανισμό με τον λογαριασμό Chronicle του"
 unlink = "Αποσύνδεση"
 
 [portal.accountLink.card.error]
 title = "Δεν ήταν δυνατή η σύνδεση"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "για να ενεργοποιήσετε τη σύνδεση λογαριασμού με τον φιλοξενούμενο λογαριασμό Stirling. Στο dev μπορείτε να προσομοιώσετε τη σύνδεση από το παράθυρο σύνδεσης."
+after = "για να ενεργοποιήσετε τη σύνδεση λογαριασμού με τον φιλοξενούμενο λογαριασμό Chronicle. Στο dev μπορείτε να προσομοιώσετε τη σύνδεση από το παράθυρο σύνδεσης."
 before = "Ορίστε"
 title = "Η σύνδεση SaaS δεν έχει διαμορφωθεί"
 
 [portal.accountLink.gate]
 action = "Σύνδεση λογαριασμού"
-description = "Συνδέστε τον λογαριασμό Stirling αυτού του οργανισμού για να χρησιμοποιήσετε χρεώσιμες λειτουργίες."
+description = "Συνδέστε τον λογαριασμό Chronicle αυτού του οργανισμού για να χρησιμοποιήσετε χρεώσιμες λειτουργίες."
 title = "Σύνδεση για ξεκλείδωμα"
 titleFeature = "Σύνδεση για ξεκλείδωμα του {{feature}}"
 
@@ -6243,12 +6243,12 @@ never = "ποτέ"
 [portal.accountLink.modal]
 linkSubtitle = "Συνδεθείτε στον λογαριασμό στον οποίο θα πρέπει να χρεώνεται αυτός ο server."
 linkTitle = "Σύνδεση του λογαριασμού σας Chronicle"
-reauthSubtitle = "Η συνεδρία σας έληξε — συνδεθείτε ξανά στον λογαριασμό σας Stirling. Το instance σας παραμένει συνδεδεμένο."
+reauthSubtitle = "Η συνεδρία σας έληξε — συνδεθείτε ξανά στον λογαριασμό σας Chronicle. Το instance σας παραμένει συνδεδεμένο."
 reauthTitle = "Συνδεθείτε ξανά"
 simulateSignIn = "Προσομοίωση σύνδεσης (dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "για να ενεργοποιήσετε τη σύνδεση εντός εφαρμογής με τον φιλοξενούμενο λογαριασμό Stirling."
+after = "για να ενεργοποιήσετε τη σύνδεση εντός εφαρμογής με τον φιλοξενούμενο λογαριασμό Chronicle."
 and = "και"
 before = "Ορίστε"
 title = "Η σύνδεση SaaS δεν έχει διαμορφωθεί"
@@ -6257,7 +6257,7 @@ title = "Η σύνδεση SaaS δεν έχει διαμορφωθεί"
 instancesSub = "Κάθε self-hosted instance που έχει καταχωριστεί σε αυτόν τον οργανισμό. Ανακαλέστε ένα διαπιστευτήριο για να διακόψετε αμέσως τη μη επιτηρούμενη πρόσβασή του."
 instancesTitle = "Συνδεδεμένα instances"
 revokeError = "Δεν ήταν δυνατή η ανάκληση του instance"
-sub = "Συνδέστε αυτόν τον self-hosted οργανισμό με τον λογαριασμό Stirling του, ώστε η μη επιτηρούμενη επεξεργασία να χρεώνεται στο πορτοφόλι του οργανισμού σας."
+sub = "Συνδέστε αυτόν τον self-hosted οργανισμό με τον λογαριασμό Chronicle του, ώστε η μη επιτηρούμενη επεξεργασία να χρεώνεται στο πορτοφόλι του οργανισμού σας."
 
 [portal.accountLink.panel.loadError]
 forbidden = "Μόνο ο κάτοχος της ομάδας μπορεί να δει τα συνδεδεμένα instances του οργανισμού."
@@ -6354,7 +6354,7 @@ close = "Κλείσιμο βοηθού"
 error = "Δεν ήταν δυνατή η επικοινωνία με τον βοηθό."
 errorWithDetail = "Δεν ήταν δυνατή η επικοινωνία με τον βοηθό: {{detail}}"
 inputAriaLabel = "Ρωτήστε τον βοηθό"
-inputPlaceholder = "Ρωτήστε για το Stirling…"
+inputPlaceholder = "Ρωτήστε για το Chronicle…"
 open = "Άνοιγμα βοηθού"
 send = "Αποστολή"
 title = "Βοηθός"
@@ -6392,7 +6392,7 @@ title = "Το Stripe δεν έχει διαμορφωθεί"
 cta = "Δημιουργήστε την προσφορά σας για Enterprise"
 description = "Εκπτώσεις δεσμευμένου όγκου, air-gapped deployment, προσαρμοσμένο MSA και έλεγχοι ασφαλείας, καθώς και συνεργασίες με διανομείς τρίτων."
 eyebrow = "Έκπτωση όγκου · 1M+ PDFs"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "Ενεργοί αυτόν τον μήνα"
@@ -6869,7 +6869,7 @@ title = "Έκδοση API key"
 [portal.infrastructure]
 manageEditorDeployment = "Διαχείριση ανάπτυξης Editor"
 sectionsAriaLabel = "Ενότητες υποδομής"
-subtitle = "Αναπτύξεις, διαπιστευτήρια, στάση ασφαλείας, αποθήκευση και ίχνος ελέγχου για τον Stirling χώρο εργασίας σας."
+subtitle = "Αναπτύξεις, διαπιστευτήρια, στάση ασφαλείας, αποθήκευση και ίχνος ελέγχου για τον Chronicle χώρο εργασίας σας."
 title = "Υποδομή"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "Όνομα key"
 keyNamePlaceholder = "π.χ. Production · ingest"
 permissionsLabel = "Δικαιώματα"
 secretKeyCaption = "Secret key"
-secretWarning = "Αποθηκεύστε το σε secrets manager. Το Stirling αποθηκεύει πάντα μόνο hash — δεν υπάρχει τρόπος ανάκτησής του αργότερα."
+secretWarning = "Αποθηκεύστε το σε secrets manager. Το Chronicle αποθηκεύει πάντα μόνο hash — δεν υπάρχει τρόπος ανάκτησής του αργότερα."
 subtitle = "Περιορίστε το key στο ελάχιστο που χρειάζεται. Μπορείτε να το περιστρέψετε ή να το ανακαλέσετε ανά πάσα στιγμή."
 subtitleCreated = "Αντιγράψτε αυτό το secret τώρα — δεν θα εμφανιστεί ξανά."
 title = "Δημιουργία API key"
@@ -6993,7 +6993,7 @@ version = "Έκδοση"
 
 [portal.infrastructure.deployments.regions]
 heading = "Περιοχές"
-subheading = "Ζωντανή υγεία για κάθε αναπτυγμένη περιοχή Stirling — καθυστέρηση, φόρτος και έκδοση rollout."
+subheading = "Ζωντανή υγεία για κάθε αναπτυγμένη περιοχή Chronicle — καθυστέρηση, φόρτος και έκδοση rollout."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "Οι αναπτυγμένες περιοχές εμφανίζονται εδώ μόλις γίνει provision ο χώρος εργασίας σας."
@@ -7050,15 +7050,15 @@ operation = "Λειτουργία"
 routedTo = "Δρομολογείται σε"
 
 [portal.infrastructure.security.access.byok]
-description = "Παρέχετε ένα key από το δικό σας KMS. Το Stirling κρυπτογραφεί με αυτό αλλά μπορεί ακόμα να διαβάζει."
+description = "Παρέχετε ένα key από το δικό σας KMS. Το Chronicle κρυπτογραφεί με αυτό αλλά μπορεί ακόμα να διαβάζει."
 label = "Bring your own key (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "Τα keys δεν φεύγουν ποτέ από το KMS σας. Το Stirling κρατά μόνο ciphertext."
+description = "Τα keys δεν φεύγουν ποτέ από το KMS σας. Το Chronicle κρατά μόνο ciphertext."
 label = "Hold your own key (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Το Stirling διαχειρίζεται τα encryption keys. Το απλούστερο — μηδενικές εργασίες key από την πλευρά σας."
+[portal.infrastructure.security.access.Chronicle]
+description = "Το Chronicle διαχειρίζεται τα encryption keys. Το απλούστερο — μηδενικές εργασίες key από την πλευρά σας."
 label = "Keys που κρατούνται από το Chronicle"
 
 [portal.infrastructure.security.accessPolicy]
@@ -7073,15 +7073,15 @@ viewReport = "Προβολή αναφοράς →"
 
 [portal.infrastructure.security.compliance]
 heading = "Συμμόρφωση"
-subheading = "Βεβαιώσεις και πιστοποιήσεις που καλύπτουν την πλατφόρμα Stirling."
+subheading = "Βεβαιώσεις και πιστοποιήσεις που καλύπτουν την πλατφόρμα Chronicle."
 
 [portal.infrastructure.security.empty]
 description = "Η διαμόρφωση ασφαλείας του χώρου εργασίας σας θα εμφανίζεται εδώ."
 title = "Η στάση ασφαλείας δεν είναι διαθέσιμη"
 
 [portal.infrastructure.security.hyokBanner]
-description = "Με HYOK, τα encryption keys δεν φεύγουν ποτέ από το KMS σας. Το Stirling αποθηκεύει και επεξεργάζεται μόνο ciphertext που μπορείτε να ανακαλέσετε ανά πάσα στιγμή."
-title = "Το Stirling δεν μπορεί να αποκρυπτογραφήσει τα έγγραφά σας"
+description = "Με HYOK, τα encryption keys δεν φεύγουν ποτέ από το KMS σας. Το Chronicle αποθηκεύει και επεξεργάζεται μόνο ciphertext που μπορείτε να ανακαλέσετε ανά πάσα στιγμή."
+title = "Το Chronicle δεν μπορεί να αποκρυπτογραφήσει τα έγγραφά σας"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "Δεν έχουν διαμορφωθεί IP ranges — επιτρέπονται όλες οι IPs."
@@ -7110,7 +7110,7 @@ subheading = "Φύλαξη των keys που κρυπτογραφούν έγγ�
 
 [portal.infrastructure.security.managedBanner]
 description = "Η φύλαξη bring-your-own-key (BYOK) και hold-your-own-key (HYOK) είναι διαθέσιμη στο Enterprise. Αναβαθμίστε για να παρέχετε keys από το δικό σας KMS."
-title = "Τα keys διαχειρίζονται από το Stirling στο πλάνο σας"
+title = "Τα keys διαχειρίζονται από το Chronicle στο πλάνο σας"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "Μεταφόρτωση"
 
 [portal.procurement.agreement]
 agreeCta = "Συμφωνία & συνδρομή"
-confirm = "Έχω διαβάσει και συμφωνώ με τη Stirling Enterprise Agreement."
+confirm = "Έχω διαβάσει και συμφωνώ με τη Chronicle Enterprise Agreement."
 eyebrow = "Σύμβαση"
 intro = "Μία συνδυασμένη σύμβαση καλύπτει τη συμφωνία σας: Master Service Agreement, Order Form, EULA και Data Processing Agreement. Ελέγξτε τη και μετά συμφωνήστε για να αποδεχτείτε την προσφορά σε δεσμευτική συνδρομή."
 title = "Ελέγξτε την εταιρική σας σύμβαση"
@@ -7606,7 +7606,7 @@ country = "Χώρα"
 countryEuro = "Ευρωζώνη (EUR €)"
 countryUK = "Ηνωμένο Βασίλειο (GBP £)"
 countryUS = "Ηνωμένες Πολιτείες (USD $)"
-eula = "Έχω διαβάσει και συμφωνώ με το Stirling Enterprise EULA. Διέπει τη σύμβαση που δημιουργείται από αυτήν την προσφορά."
+eula = "Έχω διαβάσει και συμφωνώ με το Chronicle Enterprise EULA. Διέπει τη σύμβαση που δημιουργείται από αυτήν την προσφορά."
 generate = "Δημιουργία προσφοράς"
 included = "Περιλαμβάνεται"
 indemnification = "Αποζημίωση IP"
@@ -7689,7 +7689,7 @@ daysLeft_one = "Απομένει {{count}} ημέρα"
 daysLeft_other = "Απομένουν {{count}} ημέρες"
 engineerLabel = "Ο μηχανικός λύσεών σας"
 eyebrow = "Η διάθεσή σας"
-live = "Είστε live στο Stirling Enterprise"
+live = "Είστε live στο Chronicle Enterprise"
 nextStep = "Επόμενο βήμα: {{action}}"
 subtitle = "Ο μηχανικός λύσεών σας είναι σε κάθε βήμα. Μία επόμενη ενέργεια τη φορά· η πλήρης λίστα ελέγχου είναι παρακάτω."
 title = "Από τη δοκιμή στο live, μία καθοδηγούμενη διαδρομή"
@@ -7716,7 +7716,7 @@ gatingAction = "Αποδεχτείτε την προσφορά σας"
 label = "Προσφορά"
 
 [portal.procurement.journeySteps.trial]
-blurb = "Αξιολογήστε το Stirling σε σχέση με τα έγγραφα και τις ροές εργασίας σας."
+blurb = "Αξιολογήστε το Chronicle σε σχέση με τα έγγραφα και τις ροές εργασίας σας."
 gatingAction = "Δημιουργήστε την προσφορά σας"
 label = "Δοκιμή"
 
@@ -7730,14 +7730,14 @@ label = "Το κλειδί άδειάς σας"
 
 [portal.procurement.link]
 cta = "Σύνδεση λογαριασμού"
-description = "Οι προμήθειες εκτελούνται στον συνδεδεμένο λογαριασμό Stirling σας: έτσι παρέχουμε τη δοκιμή, τιμολογούμε την προσφορά σας και ξεκινάμε τη χρέωση. Συνδέστε έναν λογαριασμό για να ξεκινήσετε."
+description = "Οι προμήθειες εκτελούνται στον συνδεδεμένο λογαριασμό Chronicle σας: έτσι παρέχουμε τη δοκιμή, τιμολογούμε την προσφορά σας και ξεκινάμε τη χρέωση. Συνδέστε έναν λογαριασμό για να ξεκινήσετε."
 eyebrow = "Enterprise"
 title = "Συνδέστε τον λογαριασμό σας για να ξεκινήσετε"
 
 [portal.procurement.live]
 description = "Η συνδρομή σας είναι ενεργή και η άδειά σας έχει εκδοθεί. Η ομάδα σας έχει διατεθεί και η χρέωση έχει ξεκινήσει."
 eyebrow = "Live"
-title = "Είστε live στο Stirling Enterprise"
+title = "Είστε live στο Chronicle Enterprise"
 
 [portal.procurement.locked]
 description = "Τα δοκιμαστικά κλειδιά, οι προσφορές δεσμευμένου όγκου, η σύμβαση μίας υπογραφής, η πληρωμή και το καθολικό εγγράφων σας βρίσκονται όλα εδώ μόλις ξεκινήσετε μια Enterprise αξιολόγηση."
@@ -7772,7 +7772,7 @@ requestBodyFree = "Το δημιουργούμε κατόπιν αιτήματο
 requestBodyPaid = "Αυτό είναι πληρωμένο πρόσθετο. Επιβεβαιώστε και ο μηχανικός λύσεών σας θα το οριοθετήσει και θα στείλει τα έγγραφα."
 requestCta = "Αίτημα"
 requestTitle = "Αίτημα για αυτό το έγγραφο"
-signBody = "Ανοίγει τη Stirling Enterprise Agreement για ηλεκτρονική υπογραφή: μία υπογραφή καλύπτει το MSA, τη φόρμα παραγγελίας, το EULA και το DPA. Συνυπογράφουμε αυτόματα και προχωράτε στην πληρωμή."
+signBody = "Ανοίγει τη Chronicle Enterprise Agreement για ηλεκτρονική υπογραφή: μία υπογραφή καλύπτει το MSA, τη φόρμα παραγγελίας, το EULA και το DPA. Συνυπογράφουμε αυτόματα και προχωράτε στην πληρωμή."
 signCta = "Άνοιγμα για υπογραφή"
 signTitle = "Ελέγξτε και υπογράψτε τη σύμβασή σας"
 uploadBody = "Στείλτε μας το PO σας και θα εκδώσουμε τιμολόγιο βάσει αυτού με τους όρους σας. Σύρετε το PDF ή επιλέξτε ένα αρχείο παρακάτω."
@@ -7824,7 +7824,7 @@ title = "Δεν υπάρχει ακόμη τίποτα εδώ"
 
 [portal.search]
 ariaLabel = "Αναζήτηση"
-placeholder = "Αναζήτηση στο Stirling — endpoints, pipelines, έγγραφα…"
+placeholder = "Αναζήτηση στο Chronicle — endpoints, pipelines, έγγραφα…"
 
 [portal.search.empty]
 noActionsDescription = "Οι γρήγορες ενέργειες θα εμφανιστούν εδώ μόλις γίνουν διαθέσιμες."
@@ -7852,7 +7852,7 @@ switchToLight = "Μετάβαση σε φωτεινό θέμα"
 [portal.shell.sidebar]
 appEditor = "Editor"
 appProcessor = "Processor"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} έγγραφα"
 linkAccount = "Σύνδεση λογαριασμού Chronicle"
 planEditor = "Πλάνο Editor"
@@ -7862,7 +7862,7 @@ primaryNav = "Κύρια πλοήγηση"
 switchApp = "Αλλαγή εφαρμογής"
 
 [portal.sources]
-subtitle = "Επαναχρησιμοποιήσιμες συνδέσεις εισόδου που τροφοδοτούν έγγραφα στο Stirling. Διαμορφώστε μια σύνδεση μία φορά και μετά αναφέρετέ τη από οποιονδήποτε αριθμό πολιτικών. Κάντε κλικ σε μια γραμμή για τη διαμόρφωσή της και για το ποιες πολιτικές τη χρησιμοποιούν."
+subtitle = "Επαναχρησιμοποιήσιμες συνδέσεις εισόδου που τροφοδοτούν έγγραφα στο Chronicle. Διαμορφώστε μια σύνδεση μία φορά και μετά αναφέρετέ τη από οποιονδήποτε αριθμό πολιτικών. Κάντε κλικ σε μια γραμμή για τη διαμόρφωσή της και για το ποιες πολιτικές τη χρησιμοποιούν."
 title = "Πηγές"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "Παρακολουθήστε έναν κατάλογο στον s
 label = "Φάκελος"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Απόλυτη διαδρομή που παρακολουθεί το Stirling για αρχεία προς επεξεργασία."
+helperText = "Απόλυτη διαδρομή που παρακολουθεί το Chronicle για αρχεία προς επεξεργασία."
 label = "Διαδρομή καταλόγου"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "Έλεγχος & σύνδεση"
 
 [portal.usage]
 managePayment = "Διαχείριση πληρωμής"
-subtitle = "Κατανάλωση, τιμολόγια και διαχείριση πλάνου για κάθε PDF που έχει χρεώσει το Stirling, σε μία κονσόλα."
+subtitle = "Κατανάλωση, τιμολόγια και διαχείριση πλάνου για κάθε PDF που έχει χρεώσει το Chronicle, σε μία κονσόλα."
 title = "Χρήση & χρέωση"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "Το πορτοφόλι δεν είναι διαθέσιμ�
 
 [portal.usage.sessionExpired]
 action = "Συνδεθείτε ξανά"
-body = "Η συνεδρία του λογαριασμού Stirling σας έχει λήξει. Συνδεθείτε ξανά για να δείτε τη χρέωση — η παρουσία σας παραμένει συνδεδεμένη."
+body = "Η συνεδρία του λογαριασμού Chronicle σας έχει λήξει. Συνδεθείτε ξανά για να δείτε τη χρέωση — η παρουσία σας παραμένει συνδεδεμένη."
 title = "Η συνεδρία έληξε"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "Συνδεθήκατε ως"
 
 [settings.connection.mode]
 local = "Μόνο τοπικά"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "Self-Hosted"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "Αναλύσεις χρήσης"
 [settings.planBilling]
 currentPlan = "Τρέχον πλάνο"
 loading = "Φόρτωση πληροφοριών χρέωσης..."
-notAvailable = "Το Plan & Billing είναι διαθέσιμο μόνο όταν υπάρχει σύνδεση με το Stirling Cloud (λειτουργία SaaS)."
+notAvailable = "Το Plan & Billing είναι διαθέσιμο μόνο όταν υπάρχει σύνδεση με το Chronicle Cloud (λειτουργία SaaS)."
 title = "Πλάνο & Χρέωση"
 
 [settings.planBilling.billing]
@@ -10015,7 +10015,7 @@ processorDeferred = "Η πρόσκληση στάλθηκε, αλλά δεν ή�
 processorDesc = "Η επιφάνεια διακυβέρνησης, εκτέλεση pipelines, agents και το API."
 role = "Ρόλος"
 send2 = "Αποστολή πρόσκλησης"
-subtitle2 = "Θα λάβουν ένα email για να συμμετάσχουν στον χώρο εργασίας σας στο Stirling."
+subtitle2 = "Θα λάβουν ένα email για να συμμετάσχουν στον χώρο εργασίας σας στο Chronicle."
 team = "Ομάδα"
 title = "Πρόσκληση ατόμων"
 username = "Όνομα χρήστη"

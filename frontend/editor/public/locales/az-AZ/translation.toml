@@ -1158,8 +1158,8 @@ description = "SMTP autentifikasiyası üçün istifadəçi adı"
 label = "SMTP İstifadəçi adı"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -2742,7 +2742,7 @@ close = "Close chat"
 open = "Open Chronicle AI assistant"
 
 [chat.header]
-agentMenu = "Stirling agent seçimləri"
+agentMenu = "Chronicle agent seçimləri"
 clearChat = "Söhbəti təmizlə"
 
 [chat.input]
@@ -3072,7 +3072,7 @@ upgradeButton = "Hesabı yüksəlt"
 
 [config.apiKeys]
 copyKeyAriaLabel = "API açarını kopyala"
-description = "Stirling-in PDF alətləri paketinə çıxış üçün API açarınız. Layihənizə kopyalayın və ya yenisini yaratmaq üçün yeniləyin."
+description = "Chronicle-in PDF alətləri paketinə çıxış üçün API açarınız. Layihənizə kopyalayın və ya yenisini yaratmaq üçün yeniləyin."
 docsDescription = "Chronicle PDF ilə inteqrasiya haqqında daha çox öyrənin:"
 docsLink = "API Sənədləri"
 docsTitle = "API Sənədləri"
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -3939,7 +3939,7 @@ title = "Qovluğa köçür"
 [filesPage.origin]
 all = "Bütün mənbələr"
 cloud = "Bulud"
-cloudHint = "Stirling serverində saxlanılır"
+cloudHint = "Chronicle serverində saxlanılır"
 local = "Lokal"
 localHint = "Yalnız bu brauzerdə saxlanılır"
 shared = "Paylaşılan"
@@ -4669,7 +4669,7 @@ terms = "Qaydalar və Şərtlər"
 title = "3-cü Tərəf Lisenziyalar"
 
 [localMode]
-toolUnavailable = "Bu alət hesab tələb edir. İstifadə etmək üçün Stirling Cloud-a daxil olun və ya öz serverinizə qoşulun."
+toolUnavailable = "Bu alət hesab tələb edir. İstifadə etmək üçün Chronicle Cloud-a daxil olun və ya öz serverinizə qoşulun."
 
 [localMode.toolPicker]
 message = "Bütün alətləri açmaq üçün daxil olun."
@@ -4989,7 +4989,7 @@ skipForNow = "Hələlik ötür"
 skipTheTour = "Turu keç"
 
 [onboarding.desktopInstall]
-body = "Stirling masaüstü tətbiq kimi ən yaxşı işləyir. Onu oflayn istifadə edə, sənədlərə daha sürətli baxa və düzəlişləri yerli olaraq kompüterinizdə edə bilərsiniz."
+body = "Chronicle masaüstü tətbiq kimi ən yaxşı işləyir. Onu oflayn istifadə edə, sənədlərə daha sürətli baxa və düzəlişləri yerli olaraq kompüterinizdə edə bilərsiniz."
 selectOs = "Əməliyyat sistemini seçin"
 title = "Yüklə"
 titleWithOs = "{{osLabel}} üçün yüklə"
@@ -4999,8 +4999,8 @@ authenticationCode = "Təsdiqləmə kodu"
 qrCodeLoading = "QR kodunuz yaradılır…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "Giriş rejimini aktivləşdirdikdən sonra istifadəçiləri idarə edə, ayarları konfiqurasiya edə və serverin vəziyyətini izləyə bilərsiniz. Serverinizdə ilk <strong>{{freeTierLimit}}</strong> nəfər Stirling-dən pulsuz istifadə edir."
-adminBodyLoginEnabled = "Admin kimi istifadəçiləri idarə edə, ayarları konfiqurasiya edə və serverin vəziyyətini izləyə bilərsiniz. Serverinizdə ilk <strong>{{freeTierLimit}}</strong> nəfər Stirling-dən pulsuz istifadə edir."
+adminBodyLoginDisabled = "Giriş rejimini aktivləşdirdikdən sonra istifadəçiləri idarə edə, ayarları konfiqurasiya edə və serverin vəziyyətini izləyə bilərsiniz. Serverinizdə ilk <strong>{{freeTierLimit}}</strong> nəfər Chronicle-dən pulsuz istifadə edir."
+adminBodyLoginEnabled = "Admin kimi istifadəçiləri idarə edə, ayarları konfiqurasiya edə və serverin vəziyyətini izləyə bilərsiniz. Serverinizdə ilk <strong>{{freeTierLimit}}</strong> nəfər Chronicle-dən pulsuz istifadə edir."
 adminTitle = "Admin icmalı"
 userBody = "Komanda yoldaşlarını dəvət edin, rollar təyin edin və sənədlərinizi bir təhlükəsiz iş mühitində səliqəli saxlayın. Tək istifadədən böyüməyə hazır olduqda giriş rejimini aktivləşdirin."
 userTitle = "Plan icmalı"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "Rolunuzu təsdiqləyin"
 roleUser = "İstifadəçi"
 
 [onboarding.serverLicense]
-freeBody = "Bizim <strong>Open-Core</strong> lisenziyası hər server üçün pulsuz olaraq maksimum <strong>{{freeTierLimit}}</strong> istifadəçiyə icazə verir. Fasiləsiz miqyaslanmaq və yeni <strong>PDF mətn redaktəsi alətimizə</strong> erkən çıxış əldə etmək üçün Stirling Server planını tövsiyə edirik — tam redaktə və <strong>limitsiz yerlər</strong> $99/server/ay."
+freeBody = "Bizim <strong>Open-Core</strong> lisenziyası hər server üçün pulsuz olaraq maksimum <strong>{{freeTierLimit}}</strong> istifadəçiyə icazə verir. Fasiləsiz miqyaslanmaq və yeni <strong>PDF mətn redaktəsi alətimizə</strong> erkən çıxış əldə etmək üçün Chronicle server planını tövsiyə edirik — tam redaktə və <strong>limitsiz yerlər</strong> $99/server/ay."
 freeTitle = "Server lisenziyası"
-overLimitBody = "Lisenziyalaşmamız hər server üçün pulsuz olaraq maksimum <strong>{{freeTierLimit}}</strong> istifadəçiyə icazə verir. Sizdə <strong>{{overLimitUserCopy}}</strong> Stirling istifadəçisi var. Fasiləsiz davam etmək üçün Stirling Server planına yüksəldin - <strong>limitsiz yerlər</strong>, PDF mətn redaktəsi və tam admin nəzarəti cəmi $99/server/ay."
+overLimitBody = "Lisenziyalaşmamız hər server üçün pulsuz olaraq maksimum <strong>{{freeTierLimit}}</strong> istifadəçiyə icazə verir. Sizdə <strong>{{overLimitUserCopy}}</strong> Chronicle istifadəçisi var. Fasiləsiz davam etmək üçün Chronicle server planına yüksəldin - <strong>limitsiz yerlər</strong>, PDF mətn redaktəsi və tam admin nəzarəti cəmi $99/server/ay."
 overLimitTitle = "Server lisenziyası tələb olunur"
 seePlans = "Planlara baxın →"
 upgrade = "İndi yüksəlt →"
@@ -5041,7 +5041,7 @@ title = "Tur icmalı"
 
 [onboarding.welcomeSlide]
 body = "Chronicle PDF artıq hər ölçüdə komanda üçün hazırdır. Bu yeniləmə yeni düzən, güclü admin imkanları və ən çox tələb olunan xüsusiyyətimizi ehtiva edir - <strong>Mətni redaktə et</strong>."
-title = "Stirling-ə xoş gəlmisiniz"
+title = "Chronicle-ə xoş gəlmisiniz"
 
 [onboarding.whatsNew]
 activeFilesView = "Açıq olan hər şeyə baxmaq və işləyəcəyinizi seçmək üçün Aktiv Fayllardan istifadə edin."
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6192,25 +6192,25 @@ comingSoon = "Tezliklə"
 [portal.accountLink.card]
 billingNote = "Nəzarətsiz emal təşkilatınızın pul kisəsindən hesablanır."
 eyebrow = "Hesab bağlantısı"
-linkButton = "Stirling hesabınızı bağlayın"
+linkButton = "Chronicle hesabınızı bağlayın"
 linked = "Bağlanıb"
 linkedAs = "{{name}} kimi bağlanıb."
 linkedGeneric = "Bu instansiya bağlanıb."
 notLinked = "Bağlanmayıb"
-title = "Bu təşkilatı öz Stirling hesabına bağlayın"
+title = "Bu təşkilatı öz Chronicle hesabına bağlayın"
 unlink = "Bağlantını kəs"
 
 [portal.accountLink.card.error]
 title = "Bağlamaq mümkün olmadı"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "host edilmiş Stirling hesabına qarşı hesab bağlanmasını aktivləşdirmək üçün. Dev-də bağlantı dialoqundan daxil olmanı simulyasiya edə bilərsiniz."
+after = "host edilmiş Chronicle hesabına qarşı hesab bağlanmasını aktivləşdirmək üçün. Dev-də bağlantı dialoqundan daxil olmanı simulyasiya edə bilərsiniz."
 before = "Ayarla"
 title = "SaaS girişi konfiqurasiya edilməyib"
 
 [portal.accountLink.gate]
 action = "Hesabı bağla"
-description = "Ödənişli funksiyalardan istifadə etmək üçün bu təşkilatın Stirling hesabını bağlayın."
+description = "Ödənişli funksiyalardan istifadə etmək üçün bu təşkilatın Chronicle hesabını bağlayın."
 title = "Kilidi açmaq üçün bağlayın"
 titleFeature = "{{feature}} kilidini açmaq üçün bağlayın"
 
@@ -6242,13 +6242,13 @@ never = "heç vaxt"
 
 [portal.accountLink.modal]
 linkSubtitle = "Bu serverin hesablanacağı hesaba daxil olun."
-linkTitle = "Stirling hesabınızı bağlayın"
-reauthSubtitle = "Sessiyanızın müddəti bitdi — Stirling hesabınıza yenidən daxil olun. Instansiyanız bağlı qalır."
+linkTitle = "Chronicle hesabınızı bağlayın"
+reauthSubtitle = "Sessiyanızın müddəti bitdi — Chronicle hesabınıza yenidən daxil olun. Instansiyanız bağlı qalır."
 reauthTitle = "Yenidən daxil olun"
 simulateSignIn = "Daxil olmanı simulyasiya et (dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "host edilmiş Stirling hesabına qarşı tətbiqdaxili bağlanmanı aktivləşdirmək üçün."
+after = "host edilmiş Chronicle hesabına qarşı tətbiqdaxili bağlanmanı aktivləşdirmək üçün."
 and = "və"
 before = "Ayarla"
 title = "SaaS girişi konfiqurasiya edilməyib"
@@ -6257,7 +6257,7 @@ title = "SaaS girişi konfiqurasiya edilməyib"
 instancesSub = "Bu təşkilata qeydiyyatdan keçirilmiş hər öz hostinqli instansiya. Nəzarətsiz girişi dərhal dayandırmaq üçün etimadnaməni ləğv edin."
 instancesTitle = "Bağlanmış instansiyalar"
 revokeError = "Instansiyanı ləğv etmək mümkün olmadı"
-sub = "Bu öz hostinqli təşkilatı Stirling hesabına bağlayın ki, nəzarətsiz emal təşkilatınızın pul kisəsindən hesablansın."
+sub = "Bu öz hostinqli təşkilatı Chronicle hesabına bağlayın ki, nəzarətsiz emal təşkilatınızın pul kisəsindən hesablansın."
 
 [portal.accountLink.panel.loadError]
 forbidden = "Yalnız komanda sahibi təşkilatın bağlanmış instansiyalarını görə bilər."
@@ -6354,7 +6354,7 @@ close = "Köməkçini bağla"
 error = "Köməkçiyə çatmaq mümkün olmadı."
 errorWithDetail = "Köməkçiyə çatmaq mümkün olmadı: {{detail}}"
 inputAriaLabel = "Köməkçidən soruş"
-inputPlaceholder = "Stirling haqqında soruşun…"
+inputPlaceholder = "Chronicle haqqında soruşun…"
 open = "Köməkçini aç"
 send = "Göndər"
 title = "Köməkçi"
@@ -6392,7 +6392,7 @@ title = "Stripe konfiqurasiya edilməyib"
 cta = "Enterprise təklifinizi qurun"
 description = "Öhdəlikli həcm endirimləri, air-gapped yerləşdirmə, xüsusi MSA və təhlükəsizlik yoxlamaları, həmçinin 3-cü tərəf distribyutor tərəfdaşlıqları."
 eyebrow = "Həcm endirimi · 1M+ PDF"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "Bu ay aktiv"
@@ -6439,9 +6439,9 @@ viewAriaLabel = "{{number}} fakturasını Stripe-də göstər"
 viewLink = "Göstər ↗"
 
 [portal.billing.linkPrompt]
-cta = "Stirling hesabını bağla"
+cta = "Chronicle hesabını bağla"
 description = "Manual PDF redaktəsi — göstərmə, imzalama, birləşdirmə, bölmə, su nişanı, sıxma, çevirmə, manual OCR — bağlı olub-olmamasından asılı olmayaraq həmişə pulsuzdur. Ölçülü emalın (avtomatlaşdırma, AI və API) 500 pulsuz PDF haqqını əldə etmək üçün bağlayın; daha çox lazım olduqda Processor planını aktiv edin və yalnız istifadə etdiyiniz qədər ödəyin."
-title = "Stirling hesabınızı bağlayın"
+title = "Chronicle hesabınızı bağlayın"
 
 [portal.billing.paymentMethod]
 billedMonthly = "Aylıq hesablanır"
@@ -6869,7 +6869,7 @@ title = "API açarı ver"
 [portal.infrastructure]
 manageEditorDeployment = "Editor yerləşdirilməsini idarə et"
 sectionsAriaLabel = "İnfrastruktur bölmələri"
-subtitle = "Stirling iş sahəniz üçün yerləşdirmələr, giriş məlumatları, təhlükəsizlik vəziyyəti, saxlama və audit izi."
+subtitle = "Chronicle iş sahəniz üçün yerləşdirmələr, giriş məlumatları, təhlükəsizlik vəziyyəti, saxlama və audit izi."
 title = "İnfrastruktur"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "Açar adı"
 keyNamePlaceholder = "məs. Production · ingest"
 permissionsLabel = "İcazələr"
 secretKeyCaption = "Gizli açar"
-secretWarning = "Bunu secrets manager-də saxlayın. Stirling yalnız hash saxlayır — onu sonradan bərpa etmək mümkün deyil."
+secretWarning = "Bunu secrets manager-də saxlayın. Chronicle yalnız hash saxlayır — onu sonradan bərpa etmək mümkün deyil."
 subtitle = "Açarı lazım olan minimum əhatə ilə məhdudlaşdırın. İstənilən vaxt dövr edə və ya ləğv edə bilərsiniz."
 subtitleCreated = "Bu sirri indi kopyalayın — bir daha göstərilməyəcək."
 title = "API açarı yarat"
@@ -6993,7 +6993,7 @@ version = "Versiya"
 
 [portal.infrastructure.deployments.regions]
 heading = "Regionlar"
-subheading = "Hər yerləşdirilmiş Stirling regionu üçün canlı sağlamlıq — gecikmə, yük və rollout versiyası."
+subheading = "Hər yerləşdirilmiş Chronicle regionu üçün canlı sağlamlıq — gecikmə, yük və rollout versiyası."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "İş sahəniz təmin edildikdən sonra yerləşdirilmiş regionlar burada görünəcək."
@@ -7050,16 +7050,16 @@ operation = "Əməliyyat"
 routedTo = "Yönləndirilib"
 
 [portal.infrastructure.security.access.byok]
-description = "Öz KMS-inizdən açar təqdim edin. Stirling onunla şifrələyir, lakin yenə də oxuya bilir."
+description = "Öz KMS-inizdən açar təqdim edin. Chronicle onunla şifrələyir, lakin yenə də oxuya bilir."
 label = "Öz açarınızı gətirin (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "Açarlar KMS-inizi heç vaxt tərk etmir. Stirling yalnız ciphertext saxlayır."
+description = "Açarlar KMS-inizi heç vaxt tərk etmir. Chronicle yalnız ciphertext saxlayır."
 label = "Öz açarınızı saxlayın (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Stirling şifrələmə açarlarını idarə edir. Ən sadə variant — sizin tərəfdə sıfır açar əməliyyatı."
-label = "Stirling-də saxlanılan açarlar"
+[portal.infrastructure.security.access.Chronicle]
+description = "Chronicle şifrələmə açarlarını idarə edir. Ən sadə variant — sizin tərəfdə sıfır açar əməliyyatı."
+label = "Chronicle-də saxlanılan açarlar"
 
 [portal.infrastructure.security.accessPolicy]
 heading = "Sənəd giriş siyasəti"
@@ -7073,15 +7073,15 @@ viewReport = "Hesabata bax →"
 
 [portal.infrastructure.security.compliance]
 heading = "Uyğunluq"
-subheading = "Stirling platformasını əhatə edən attestatlar və sertifikatlar."
+subheading = "Chronicle platformasını əhatə edən attestatlar və sertifikatlar."
 
 [portal.infrastructure.security.empty]
 description = "İş sahənizin təhlükəsizlik konfiqurasiyası burada görünəcək."
 title = "Təhlükəsizlik vəziyyəti əlçatan deyil"
 
 [portal.infrastructure.security.hyokBanner]
-description = "HYOK ilə şifrələmə açarları KMS-inizi heç vaxt tərk etmir. Stirling yalnız istənilən vaxt ləğv edə biləcəyiniz ciphertext-i saxlayır və emal edir."
-title = "Stirling sənədlərinizi deşifr edə bilmir"
+description = "HYOK ilə şifrələmə açarları KMS-inizi heç vaxt tərk etmir. Chronicle yalnız istənilən vaxt ləğv edə biləcəyiniz ciphertext-i saxlayır və emal edir."
+title = "Chronicle sənədlərinizi deşifr edə bilmir"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "IP aralığı konfiqurasiya edilməyib — bütün IP-lərə icazə verilir."
@@ -7110,7 +7110,7 @@ subheading = "Sənədləri saxlanma vəziyyətində şifrələyən açarların s
 
 [portal.infrastructure.security.managedBanner]
 description = "Bring-your-own-key (BYOK) və hold-your-own-key (HYOK) saxlanması Enterprise-də əlçatandır. Öz KMS-inizdən açarlar təqdim etmək üçün yüksəldin."
-title = "Planınızda açarlar Stirling tərəfindən idarə olunur"
+title = "Planınızda açarlar Chronicle tərəfindən idarə olunur"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "Yüklə"
 
 [portal.procurement.agreement]
 agreeCta = "Razılaş və abunə ol"
-confirm = "Stirling Enterprise Agreement-i oxudum və razıyam."
+confirm = "Chronicle Enterprise Agreement-i oxudum və razıyam."
 eyebrow = "Razılaşma"
 intro = "Bir birləşdirilmiş razılaşma sövdələşmənizi əhatə edir: Master Service Agreement, Order Form, EULA və Data Processing Agreement. Onu nəzərdən keçirin, sonra təklifi öhdəlikli abunəliyə qəbul etmək üçün razılaşın."
 title = "Enterprise razılaşmanızı nəzərdən keçirin"
@@ -7606,7 +7606,7 @@ country = "Ölkə"
 countryEuro = "Avrozona (EUR €)"
 countryUK = "Birləşmiş Krallıq (GBP £)"
 countryUS = "Amerika Birləşmiş Ştatları (USD $)"
-eula = "Stirling Enterprise EULA-nı oxudum və razıyam. O, bu təklifdən yaradılan razılaşmanı tənzimləyir."
+eula = "Chronicle Enterprise EULA-nı oxudum və razıyam. O, bu təklifdən yaradılan razılaşmanı tənzimləyir."
 generate = "Təklif yarat"
 included = "Daxildir"
 indemnification = "IP kompensasiyası"
@@ -7689,7 +7689,7 @@ daysLeft_one = "{{count}} gün qalıb"
 daysLeft_other = "{{count}} gün qalıb"
 engineerLabel = "Həllər mühəndisiniz"
 eyebrow = "Yayımınız"
-live = "Stirling Enterprise-də canlıdasınız"
+live = "Chronicle Enterprise-də canlıdasınız"
 nextStep = "Növbəti addım: {{action}}"
 subtitle = "Həllər mühəndisiniz hər addımdadır. Hər dəfə bir növbəti əməliyyat; tam yoxlama siyahısı aşağıdadır."
 title = "Sınaqdan canlıya, bir yönləndirilmiş yol"
@@ -7716,7 +7716,7 @@ gatingAction = "Təklifinizi qəbul edin"
 label = "Təklif"
 
 [portal.procurement.journeySteps.trial]
-blurb = "Stirling-i sənədləriniz və iş axınlarınızla qiymətləndirin."
+blurb = "Chronicle-i sənədləriniz və iş axınlarınızla qiymətləndirin."
 gatingAction = "Təklifinizi qurun"
 label = "Sınaq"
 
@@ -7730,14 +7730,14 @@ label = "Lisenziya açarınız"
 
 [portal.procurement.link]
 cta = "Hesabı əlaqələndir"
-description = "Satınalma əlaqələndirilmiş Stirling hesabınızda işləyir: sınağı təmin etməyimiz, təklifinizi qiymətləndirməyimiz və hesablaşmanı başlatmağımız belə olur. Başlamaq üçün hesabı əlaqələndirin."
+description = "Satınalma əlaqələndirilmiş Chronicle hesabınızda işləyir: sınağı təmin etməyimiz, təklifinizi qiymətləndirməyimiz və hesablaşmanı başlatmağımız belə olur. Başlamaq üçün hesabı əlaqələndirin."
 eyebrow = "Enterprise"
 title = "Başlamaq üçün hesabınızı əlaqələndirin"
 
 [portal.procurement.live]
 description = "Abunəliyiniz aktivdir və lisenziyanız verilib. Komandanız təmin edilib və hesablaşma başlayıb."
 eyebrow = "Canlı"
-title = "Stirling Enterprise-də canlıdasınız"
+title = "Chronicle Enterprise-də canlıdasınız"
 
 [portal.procurement.locked]
 description = "Sınaq açarları, öhdəlikli həcm təklifləri, bir imzalı razılaşma, ödəniş və sənəd reyestriniz Enterprise qiymətləndirməsinə başladıqdan sonra hamısı burada olur."
@@ -7772,7 +7772,7 @@ requestBodyFree = "Bunu tələb əsasında yaradırıq. Təsdiqləyin və həll�
 requestBodyPaid = "Bu ödənişli əlavədir. Təsdiqləyin və həllər mühəndisiniz onun əhatəsini müəyyən edib sənədləri göndərəcək."
 requestCta = "Sorğu göndər"
 requestTitle = "Bu sənədi tələb et"
-signBody = "Stirling Enterprise Agreement-i e-imza üçün açır: bir imza MSA, order form, EULA və DPA-nı əhatə edir. Biz avtomatik qarşı imzalayırıq və siz ödənişə keçirsiniz."
+signBody = "Chronicle Enterprise Agreement-i e-imza üçün açır: bir imza MSA, order form, EULA və DPA-nı əhatə edir. Biz avtomatik qarşı imzalayırıq və siz ödənişə keçirsiniz."
 signCta = "İmza üçün aç"
 signTitle = "Razılaşmanızı nəzərdən keçirin və imzalayın"
 uploadBody = "PO-nuzu bizə göndərin və şərtlərinizə uyğun olaraq ona əsasən faktura yazırıq. PDF-i sürükləyin və ya aşağıdan fayl seçin."
@@ -7824,7 +7824,7 @@ title = "Hələ burada heç nə yoxdur"
 
 [portal.search]
 ariaLabel = "Axtar"
-placeholder = "Stirling-də axtar — son nöqtələr, pipeline-lar, sənədlər…"
+placeholder = "Chronicle-də axtar — son nöqtələr, pipeline-lar, sənədlər…"
 
 [portal.search.empty]
 noActionsDescription = "Sürətli əməliyyatlar əlçatan olduqda burada görünəcək."
@@ -7852,9 +7852,9 @@ switchToLight = "İşıqlı mövzuya keç"
 [portal.shell.sidebar]
 appEditor = "Editor"
 appProcessor = "Processor"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} sənəd"
-linkAccount = "Stirling hesabını əlaqələndir"
+linkAccount = "Chronicle hesabını əlaqələndir"
 planEditor = "Editor planı"
 planEnterprise = "Enterprise planı"
 planProcessor = "Processor planı"
@@ -7862,7 +7862,7 @@ primaryNav = "Əsas naviqasiya"
 switchApp = "Tətbiqi dəyiş"
 
 [portal.sources]
-subtitle = "Sənədləri Stirling-ə ötürən təkrar istifadə edilə bilən giriş bağlantıları. Bağlantını bir dəfə konfiqurasiya edin, sonra istənilən sayda siyasətdə ona istinad edin. Konfiqurasiyası və hansı siyasətlərin istifadə etməsi üçün sətrə klikləyin."
+subtitle = "Sənədləri Chronicle-ə ötürən təkrar istifadə edilə bilən giriş bağlantıları. Bağlantını bir dəfə konfiqurasiya edin, sonra istənilən sayda siyasətdə ona istinad edin. Konfiqurasiyası və hansı siyasətlərin istifadə etməsi üçün sətrə klikləyin."
 title = "Mənbələr"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "Yeni sənədlər üçün serverdəki kataloqu izləyin."
 label = "Qovluq"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Stirling-in emal ediləcək faylları izlədiyi mütləq yol."
+helperText = "Chronicle-in emal ediləcək faylları izlədiyi mütləq yol."
 label = "Kataloq yolu"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "Nəzərdən keçir və qoş"
 
 [portal.usage]
 managePayment = "Ödənişi idarə et"
-subtitle = "Stirling-in hesabladığı hər PDF üçün istehlak, fakturalar və plan idarəetməsi, bir konsolda."
+subtitle = "Chronicle-in hesabladığı hər PDF üçün istehlak, fakturalar və plan idarəetməsi, bir konsolda."
 title = "İstifadə və hesablaşma"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "Cüzdan əlçatan deyil: {{status}} {{statusText}}"
 
 [portal.usage.sessionExpired]
 action = "Yenidən daxil ol"
-body = "Stirling hesab sessiyanızın müddəti bitib. Hesablaşmaya baxmaq üçün yenidən daxil olun — instansiyanız əlaqəli qalır."
+body = "Chronicle hesab sessiyanızın müddəti bitib. Hesablaşmaya baxmaq üçün yenidən daxil olun — instansiyanız əlaqəli qalır."
 title = "Sessiyanın müddəti bitib"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "Daxil olub:"
 
 [settings.connection.mode]
 local = "Yalnız yerli"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "Öz serverində"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "İstifadə analitikası"
 [settings.planBilling]
 currentPlan = "Cari plan"
 loading = "Hesab-faktura məlumatları yüklənir..."
-notAvailable = "Plan və Hesab-faktura yalnız Stirling Cloud-a (SaaS rejimi) qoşulduqda mövcuddur."
+notAvailable = "Plan və Hesab-faktura yalnız Chronicle Cloud-a (SaaS rejimi) qoşulduqda mövcuddur."
 title = "Plan və Hesab-faktura"
 
 [settings.planBilling.billing]
@@ -9068,7 +9068,7 @@ emptyUsername = "Zəhmət olmasa istifadəçi adınızı daxil edin"
 oauthFailed = "OAuth girişi uğursuz oldu. Yenidən cəhd edin."
 
 [setup.saas]
-title = "Stirling-ə daxil olun"
+title = "Chronicle-ə daxil olun"
 
 [setup.selfhosted]
 changeServerLocked = "Təşkilatınız bu tətbiqi konkret serverlə məhdudlaşdırıb"
@@ -10015,7 +10015,7 @@ processorDeferred = "Dəvət göndərildi, lakin Processor girişi hələ veril�
 processorDesc = "İdarəetmə səthi, pipeline-ları, agentləri və API-ni işə salır."
 role = "Rol"
 send2 = "Dəvət göndər"
-subtitle2 = "Stirling iş məkanınıza qoşulmaq üçün e-poçt alacaqlar."
+subtitle2 = "Chronicle iş məkanınıza qoşulmaq üçün e-poçt alacaqlar."
 team = "Komanda"
 title = "İnsanları dəvət edin"
 username = "İstifadəçi adı"

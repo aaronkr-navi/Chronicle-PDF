@@ -1158,8 +1158,8 @@ description = "Korisničko ime za SMTP autentikaciju"
 label = "SMTP korisničko ime"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -2742,7 +2742,7 @@ close = "Close chat"
 open = "Open Chronicle AI assistant"
 
 [chat.header]
-agentMenu = "Opcije Stirling agenta"
+agentMenu = "Opcije Chronicle agenta"
 clearChat = "Obriši čet"
 
 [chat.input]
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -3939,7 +3939,7 @@ title = "Premesti u fasciklu"
 [filesPage.origin]
 all = "Svi izvori"
 cloud = "Oblak"
-cloudHint = "Skladišteno na Stirling serveru"
+cloudHint = "Skladišteno na Chronicle serveru"
 local = "Lokalno"
 localHint = "Samo skladišteno u ovom pregledaču"
 shared = "Podeljeno"
@@ -4669,7 +4669,7 @@ terms = "Uslovi i odredbe"
 title = "3rd Party Licenses"
 
 [localMode]
-toolUnavailable = "Ovaj alat zahteva nalog. Prijavite se na Stirling Cloud ili se povežite na samohostovani server da biste ga koristili."
+toolUnavailable = "Ovaj alat zahteva nalog. Prijavite se na Chronicle Cloud ili se povežite na samohostovani server da biste ga koristili."
 
 [localMode.toolPicker]
 message = "Prijavite se da otključate sve alate."
@@ -4989,7 +4989,7 @@ skipForNow = "Preskoči za sada"
 skipTheTour = "Preskoči obilazak"
 
 [onboarding.desktopInstall]
-body = "Stirling najbolje radi kao desktop aplikacija. Možete je koristiti offline, brže pristupati dokumentima i praviti izmene lokalno na računaru."
+body = "Chronicle najbolje radi kao desktop aplikacija. Možete je koristiti offline, brže pristupati dokumentima i praviti izmene lokalno na računaru."
 selectOs = "Izaberite operativni sistem"
 title = "Preuzmi"
 titleWithOs = "Preuzmi za {{osLabel}}"
@@ -4999,8 +4999,8 @@ authenticationCode = "Autentifikacioni kod"
 qrCodeLoading = "Generisanje vašeg QR koda…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "Kada omogućite režim prijave, možete upravljati korisnicima, podešavati opcije i pratiti stanje servera. Prvih <strong>{{freeTierLimit}}</strong> ljudi na vašem serveru koristi Stirling besplatno."
-adminBodyLoginEnabled = "Kao admin, možete upravljati korisnicima, podešavati opcije i pratiti stanje servera. Prvih <strong>{{freeTierLimit}}</strong> ljudi na vašem serveru koristi Stirling besplatno."
+adminBodyLoginDisabled = "Kada omogućite režim prijave, možete upravljati korisnicima, podešavati opcije i pratiti stanje servera. Prvih <strong>{{freeTierLimit}}</strong> ljudi na vašem serveru koristi Chronicle besplatno."
+adminBodyLoginEnabled = "Kao admin, možete upravljati korisnicima, podešavati opcije i pratiti stanje servera. Prvih <strong>{{freeTierLimit}}</strong> ljudi na vašem serveru koristi Chronicle besplatno."
 adminTitle = "Admin pregled"
 userBody = "Pozovite kolege, dodeljujte uloge i držite dokumente organizovanim u jednom bezbednom prostoru. Omogućite režim prijave kad god ste spremni da pređete preko solo upotrebe."
 userTitle = "Pregled plana"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "Potvrdite svoju ulogu"
 roleUser = "Korisnik"
 
 [onboarding.serverLicense]
-freeBody = "Naše <strong>Open-Core</strong> licenciranje dozvoljava do <strong>{{freeTierLimit}}</strong> korisnika besplatno po serveru. Da se bez prekida skalirate i dobijete rani pristup našem novom <strong>alatu za uređivanje PDF teksta</strong>, preporučujemo Stirling Server plan - puno uređivanje i <strong>neograničena mesta</strong> za $99/server/mes."
+freeBody = "Naše <strong>Open-Core</strong> licenciranje dozvoljava do <strong>{{freeTierLimit}}</strong> korisnika besplatno po serveru. Da se bez prekida skalirate i dobijete rani pristup našem novom <strong>alatu za uređivanje PDF teksta</strong>, preporučujemo Chronicle server plan - puno uređivanje i <strong>neograničena mesta</strong> za $99/server/mes."
 freeTitle = "Serverska licenca"
-overLimitBody = "Naše licenciranje dozvoljava do <strong>{{freeTierLimit}}</strong> korisnika besplatno po serveru. Imate <strong>{{overLimitUserCopy}}</strong> Stirling korisnika. Da nastavite bez prekida, pređite na Stirling Server plan - <strong>neograničena mesta</strong>, uređivanje PDF teksta i puna admin kontrola za $99/server/mes."
+overLimitBody = "Naše licenciranje dozvoljava do <strong>{{freeTierLimit}}</strong> korisnika besplatno po serveru. Imate <strong>{{overLimitUserCopy}}</strong> Chronicle korisnika. Da nastavite bez prekida, pređite na Chronicle server plan - <strong>neograničena mesta</strong>, uređivanje PDF teksta i puna admin kontrola za $99/server/mes."
 overLimitTitle = "Potrebna serverska licenca"
 seePlans = "Pogledajte planove →"
 upgrade = "Nadogradite sada →"
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6192,25 +6192,25 @@ comingSoon = "Uskoro"
 [portal.accountLink.card]
 billingNote = "Nenadzirana obrada se naplaćuje iz novčanika vaše organizacije."
 eyebrow = "Povezivanje naloga"
-linkButton = "Poveži svoj Stirling nalog"
+linkButton = "Poveži svoj Chronicle nalog"
 linked = "Povezano"
 linkedAs = "Povezano kao {{name}}."
 linkedGeneric = "Ova instanca je povezana."
 notLinked = "Nije povezano"
-title = "Poveži ovu organizaciju sa njenim Stirling nalogom"
+title = "Poveži ovu organizaciju sa njenim Chronicle nalogom"
 unlink = "Prekini vezu"
 
 [portal.accountLink.card.error]
 title = "Nije moguće povezati"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "da biste omogućili povezivanje naloga sa hostovanim Stirling nalogom. U razvojnom okruženju možete simulirati prijavu iz dijaloga za povezivanje."
+after = "da biste omogućili povezivanje naloga sa hostovanim Chronicle nalogom. U razvojnom okruženju možete simulirati prijavu iz dijaloga za povezivanje."
 before = "Podesite"
 title = "SaaS prijava nije konfigurisana"
 
 [portal.accountLink.gate]
 action = "Poveži nalog"
-description = "Povežite Stirling nalog ove organizacije da biste koristili funkcije koje se naplaćuju."
+description = "Povežite Chronicle nalog ove organizacije da biste koristili funkcije koje se naplaćuju."
 title = "Povežite za otključavanje"
 titleFeature = "Povežite za otključavanje {{feature}}"
 
@@ -6242,13 +6242,13 @@ never = "nikad"
 
 [portal.accountLink.modal]
 linkSubtitle = "Prijavite se na nalog na koji ovaj server treba da naplaćuje."
-linkTitle = "Povežite svoj Stirling nalog"
-reauthSubtitle = "Vaša sesija je istekla — ponovo se prijavite na svoj Stirling nalog. Vaša instanca ostaje povezana."
+linkTitle = "Povežite svoj Chronicle nalog"
+reauthSubtitle = "Vaša sesija je istekla — ponovo se prijavite na svoj Chronicle nalog. Vaša instanca ostaje povezana."
 reauthTitle = "Prijavite se ponovo"
 simulateSignIn = "Simuliraj prijavu (dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "da biste omogućili povezivanje u aplikaciji sa hostovanim Stirling nalogom."
+after = "da biste omogućili povezivanje u aplikaciji sa hostovanim Chronicle nalogom."
 and = "i"
 before = "Podesite"
 title = "SaaS prijava nije konfigurisana"
@@ -6257,7 +6257,7 @@ title = "SaaS prijava nije konfigurisana"
 instancesSub = "Svaka self-hosted instanca registrovana za ovu organizaciju. Opozovite akreditiv da biste odmah prekinuli njen nenadzirani pristup."
 instancesTitle = "Povezane instance"
 revokeError = "Nije moguće opozvati instancu"
-sub = "Povežite ovu self-hosted organizaciju sa njenim Stirling nalogom kako bi se nenadzirana obrada naplaćivala iz novčanika vaše organizacije."
+sub = "Povežite ovu self-hosted organizaciju sa njenim Chronicle nalogom kako bi se nenadzirana obrada naplaćivala iz novčanika vaše organizacije."
 
 [portal.accountLink.panel.loadError]
 forbidden = "Samo vlasnik tima može da vidi povezane instance organizacije."
@@ -6354,7 +6354,7 @@ close = "Zatvori asistenta"
 error = "Nije moguće doći do asistenta."
 errorWithDetail = "Nije moguće doći do asistenta: {{detail}}"
 inputAriaLabel = "Pitajte asistenta"
-inputPlaceholder = "Pitajte o Stirling…"
+inputPlaceholder = "Pitajte o Chronicle…"
 open = "Otvori asistenta"
 send = "Pošalji"
 title = "Asistent"
@@ -6392,7 +6392,7 @@ title = "Stripe nije konfigurisan"
 cta = "Sastavite svoju Enterprise ponudu"
 description = "Popusti za ugovoreni obim, air-gapped implementacija, prilagođeni MSA i bezbednosne provere, kao i partnerstva sa distributerima trećih strana."
 eyebrow = "Popust na obim · 1M+ PDF dokumenata"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "Aktivno ovog meseca"
@@ -6439,9 +6439,9 @@ viewAriaLabel = "Prikaži fakturu {{number}} u Stripe"
 viewLink = "Prikaži ↗"
 
 [portal.billing.linkPrompt]
-cta = "Poveži Stirling nalog"
+cta = "Poveži Chronicle nalog"
 description = "Ručno uređivanje PDF-a — prikaz, potpisivanje, spajanje, deljenje, vodeni žig, kompresovanje, konvertovanje, ručni OCR — uvek je besplatno, povezano ili ne. Povežite da biste preuzeli 500 besplatnih PDF dokumenata merene obrade (automatizacija, AI i API); kada vam zatreba više, uključite Processor plan i plaćajte samo ono što koristite."
-title = "Povežite svoj Stirling nalog"
+title = "Povežite svoj Chronicle nalog"
 
 [portal.billing.paymentMethod]
 billedMonthly = "Naplaćuje se mesečno"
@@ -6869,7 +6869,7 @@ title = "Izdajte API ključ"
 [portal.infrastructure]
 manageEditorDeployment = "Upravljajte postavljanjem Editora"
 sectionsAriaLabel = "Odeljci infrastrukture"
-subtitle = "Postavljanja, akreditivi, bezbednosni položaj, skladište i audit trag za vaš Stirling radni prostor."
+subtitle = "Postavljanja, akreditivi, bezbednosni položaj, skladište i audit trag za vaš Chronicle radni prostor."
 title = "Infrastruktura"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "Naziv ključa"
 keyNamePlaceholder = "npr. Produkcija · unos"
 permissionsLabel = "Dozvole"
 secretKeyCaption = "Tajni ključ"
-secretWarning = "Sačuvajte ovo u menadžeru tajni. Stirling uvek čuva samo hash — nema načina da se kasnije oporavi."
+secretWarning = "Sačuvajte ovo u menadžeru tajni. Chronicle uvek čuva samo hash — nema načina da se kasnije oporavi."
 subtitle = "Ograničite opseg ključa na minimum koji mu je potreban. Možete ga rotirati ili opozvati u bilo kom trenutku."
 subtitleCreated = "Kopirajte ovu tajnu sada — neće biti ponovo prikazana."
 title = "Kreiraj API ključ"
@@ -6993,7 +6993,7 @@ version = "Verzija"
 
 [portal.infrastructure.deployments.regions]
 heading = "Regioni"
-subheading = "Uživo stanje svakog postavljenog Stirling regiona — latencija, opterećenje i verzija uvođenja."
+subheading = "Uživo stanje svakog postavljenog Chronicle regiona — latencija, opterećenje i verzija uvođenja."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "Postavljeni regioni će se ovde pojaviti kada vaš radni prostor bude obezbeđen."
@@ -7050,15 +7050,15 @@ operation = "Operacija"
 routedTo = "Rutirano ka"
 
 [portal.infrastructure.security.access.byok]
-description = "Obezbedite ključ iz sopstvenog KMS. Stirling šifruje njime, ali i dalje može da čita."
+description = "Obezbedite ključ iz sopstvenog KMS. Chronicle šifruje njime, ali i dalje može da čita."
 label = "Donesite sopstveni ključ (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "Ključevi nikada ne napuštaju vaš KMS. Stirling čuva samo šifrovani tekst."
+description = "Ključevi nikada ne napuštaju vaš KMS. Chronicle čuva samo šifrovani tekst."
 label = "Zadržite sopstveni ključ (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Stirling upravlja ključevima za šifrovanje. Najjednostavnije — bez upravljanja ključevima sa vaše strane."
+[portal.infrastructure.security.access.Chronicle]
+description = "Chronicle upravlja ključevima za šifrovanje. Najjednostavnije — bez upravljanja ključevima sa vaše strane."
 label = "Ključevi koje drži Chronicle"
 
 [portal.infrastructure.security.accessPolicy]
@@ -7073,15 +7073,15 @@ viewReport = "Prikaži izveštaj →"
 
 [portal.infrastructure.security.compliance]
 heading = "Usklađenost"
-subheading = "Potvrde i sertifikati koji pokrivaju Stirling platformu."
+subheading = "Potvrde i sertifikati koji pokrivaju Chronicle platformu."
 
 [portal.infrastructure.security.empty]
 description = "Bezbednosna konfiguracija vašeg radnog prostora će se ovde pojaviti."
 title = "Bezbednosni položaj nije dostupan"
 
 [portal.infrastructure.security.hyokBanner]
-description = "Uz HYOK, ključevi za šifrovanje nikada ne napuštaju vaš KMS. Stirling čuva i obrađuje samo šifrovani tekst koji možete opozvati u bilo kom trenutku."
-title = "Stirling ne može da dešifruje vaše dokumente"
+description = "Uz HYOK, ključevi za šifrovanje nikada ne napuštaju vaš KMS. Chronicle čuva i obrađuje samo šifrovani tekst koji možete opozvati u bilo kom trenutku."
+title = "Chronicle ne može da dešifruje vaše dokumente"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "Nema konfigurisanih IP opsega — sve IP adrese su dozvoljene."
@@ -7591,7 +7591,7 @@ upload = "Otpremi"
 
 [portal.procurement.agreement]
 agreeCta = "Prihvati i pretplati se"
-confirm = "Pročitao/la sam i prihvatam Stirling Enterprise Agreement."
+confirm = "Pročitao/la sam i prihvatam Chronicle Enterprise Agreement."
 eyebrow = "Ugovor"
 intro = "Jedan objedinjeni ugovor pokriva vaš dogovor: Master Service Agreement, Order Form, EULA i Data Processing Agreement. Pregledajte ga, a zatim prihvatite ponudu kao obaveznu pretplatu."
 title = "Pregledajte svoj enterprise ugovor"
@@ -7606,7 +7606,7 @@ country = "Zemlja"
 countryEuro = "Evrozona (EUR €)"
 countryUK = "Ujedinjeno Kraljevstvo (GBP £)"
 countryUS = "Sjedinjene Države (USD $)"
-eula = "Pročitao/la sam i prihvatam Stirling Enterprise EULA. Ona uređuje ugovor generisan iz ove ponude."
+eula = "Pročitao/la sam i prihvatam Chronicle Enterprise EULA. Ona uređuje ugovor generisan iz ove ponude."
 generate = "Generiši ponudu"
 included = "Uključeno"
 indemnification = "IP obeštećenje"
@@ -7689,7 +7689,7 @@ daysLeft_one = "Preostao je {{count}} dan"
 daysLeft_other = "Preostalo je {{count}} dana"
 engineerLabel = "Vaš solutions engineer"
 eyebrow = "Vaše uvođenje"
-live = "Uživo ste na Stirling Enterprise"
+live = "Uživo ste na Chronicle Enterprise"
 nextStep = "Sledeći korak: {{action}}"
 subtitle = "Vaš solutions engineer je uz vas u svakom koraku. Jedna sledeća radnja u datom trenutku; potpuna kontrolna lista je ispod."
 title = "Od probnog perioda do rada uživo, jedan vođeni put"
@@ -7716,7 +7716,7 @@ gatingAction = "Prihvatite svoju ponudu"
 label = "Ponuda"
 
 [portal.procurement.journeySteps.trial]
-blurb = "Procenite Stirling prema svojim dokumentima i tokovima rada."
+blurb = "Procenite Chronicle prema svojim dokumentima i tokovima rada."
 gatingAction = "Napravite svoju ponudu"
 label = "Probni period"
 
@@ -7730,14 +7730,14 @@ label = "Vaš licencni ključ"
 
 [portal.procurement.link]
 cta = "Poveži nalog"
-description = "Nabavka radi na vašem povezanom Stirling nalogu: tako obezbeđujemo probni period, određujemo cenu ponude i pokrećemo naplatu. Povežite nalog za početak."
+description = "Nabavka radi na vašem povezanom Chronicle nalogu: tako obezbeđujemo probni period, određujemo cenu ponude i pokrećemo naplatu. Povežite nalog za početak."
 eyebrow = "Enterprise"
 title = "Povežite svoj nalog da biste počeli"
 
 [portal.procurement.live]
 description = "Vaša pretplata je aktivna i licenca je izdata. Vaš tim je obezbeđen i naplata je počela."
 eyebrow = "Uživo"
-title = "Uživo ste na Stirling Enterprise"
+title = "Uživo ste na Chronicle Enterprise"
 
 [portal.procurement.locked]
 description = "Probni ključevi, ponude za obavezni obim, ugovor sa jednim potpisom, plaćanje i vaša evidencija dokumenata nalaze se ovde kada započnete enterprise procenu."
@@ -7772,7 +7772,7 @@ requestBodyFree = "Ovo generišemo na zahtev. Potvrdite i vaš solutions enginee
 requestBodyPaid = "Ovo je plaćeni dodatak. Potvrdite i vaš solutions engineer će definisati obim i poslati dokumentaciju."
 requestCta = "Zatraži"
 requestTitle = "Zatraži ovaj dokument"
-signBody = "Otvara Stirling Enterprise Agreement za e-potpis: jedan potpis pokriva MSA, order form, EULA i DPA. Automatski supotpisujemo i prelazite na plaćanje."
+signBody = "Otvara Chronicle Enterprise Agreement za e-potpis: jedan potpis pokriva MSA, order form, EULA i DPA. Automatski supotpisujemo i prelazite na plaćanje."
 signCta = "Otvori za potpis"
 signTitle = "Pregledajte i potpišite svoj ugovor"
 uploadBody = "Pošaljite nam svoju PO i fakturišemo prema njoj pod vašim uslovima. Prevucite PDF ili izaberite datoteku ispod."
@@ -7824,7 +7824,7 @@ title = "Ovde još nema ničega"
 
 [portal.search]
 ariaLabel = "Pretraga"
-placeholder = "Pretražite Stirling — endpoint-i, tokovi obrade, dokumenti…"
+placeholder = "Pretražite Chronicle — endpoint-i, tokovi obrade, dokumenti…"
 
 [portal.search.empty]
 noActionsDescription = "Brze radnje će se pojaviti ovde kada budu dostupne."
@@ -7852,9 +7852,9 @@ switchToLight = "Prebaci na svetlu temu"
 [portal.shell.sidebar]
 appEditor = "Editor"
 appProcessor = "Processor"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} dok."
-linkAccount = "Poveži Stirling nalog"
+linkAccount = "Poveži Chronicle nalog"
 planEditor = "Editor plan"
 planEnterprise = "Enterprise plan"
 planProcessor = "Processor plan"
@@ -7862,7 +7862,7 @@ primaryNav = "Primarna navigacija"
 switchApp = "Promeni aplikaciju"
 
 [portal.sources]
-subtitle = "Ponovo upotrebljive ulazne veze koje dostavljaju dokumente u Stirling. Konfigurišite vezu jednom, a zatim je referencirajte iz bilo kog broja politika. Kliknite na red za njenu konfiguraciju i politike koje je koriste."
+subtitle = "Ponovo upotrebljive ulazne veze koje dostavljaju dokumente u Chronicle. Konfigurišite vezu jednom, a zatim je referencirajte iz bilo kog broja politika. Kliknite na red za njenu konfiguraciju i politike koje je koriste."
 title = "Izvori"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "Prati direktorijum na serveru za nove dokumente."
 label = "Fascikla"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Apsolutna putanja koju Stirling prati za datoteke za obradu."
+helperText = "Apsolutna putanja koju Chronicle prati za datoteke za obradu."
 label = "Putanja direktorijuma"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "Pregledaj i poveži"
 
 [portal.usage]
 managePayment = "Upravljaj plaćanjem"
-subtitle = "Potrošnja, fakture i upravljanje planom za svaki PDF koji je Stirling naplatio, u jednoj konzoli."
+subtitle = "Potrošnja, fakture i upravljanje planom za svaki PDF koji je Chronicle naplatio, u jednoj konzoli."
 title = "Korišćenje i naplata"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "Novčanik nije dostupan: {{status}} {{statusText}}"
 
 [portal.usage.sessionExpired]
 action = "Prijavite se ponovo"
-body = "Sesija vašeg Stirling naloga je istekla. Prijavite se ponovo da biste videli naplatu — vaša instanca ostaje povezana."
+body = "Sesija vašeg Chronicle naloga je istekla. Prijavite se ponovo da biste videli naplatu — vaša instanca ostaje povezana."
 title = "Sesija je istekla"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "Prijavljeni kao"
 
 [settings.connection.mode]
 local = "Samo lokalno"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "Samohostovano"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "Analitika korišćenja"
 [settings.planBilling]
 currentPlan = "Trenutni plan"
 loading = "Učitavanje informacija o naplati..."
-notAvailable = "Plan i naplata su dostupni samo kada ste povezani na Stirling Cloud (SaaS režim)."
+notAvailable = "Plan i naplata su dostupni samo kada ste povezani na Chronicle Cloud (SaaS režim)."
 title = "Plan i naplata"
 
 [settings.planBilling.billing]
@@ -10015,7 +10015,7 @@ processorDeferred = "Pozivnica je poslata, ali Processor pristup još nije mogao
 processorDesc = "Površina za upravljanje, pokretanje tokova obrade, agenti i API."
 role = "Uloga"
 send2 = "Pošalji poziv"
-subtitle2 = "Dobiće email da se pridruže vašem Stirling radnom prostoru."
+subtitle2 = "Dobiće email da se pridruže vašem Chronicle radnom prostoru."
 team = "Tim"
 title = "Pozovi ljude"
 username = "Korisničko ime"

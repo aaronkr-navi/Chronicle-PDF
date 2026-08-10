@@ -1158,8 +1158,8 @@ description = "Numele de utilizator pentru autentificarea SMTP"
 label = "Utilizator SMTP"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -3072,7 +3072,7 @@ upgradeButton = "Actualizați contul"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Copiați cheia API"
-description = "Cheia dvs. API pentru accesarea suitei de instrumente PDF Stirling. Copiați-o în proiectul dvs. sau reîmprospătați pentru a genera una nouă."
+description = "Cheia dvs. API pentru accesarea suitei de instrumente PDF Chronicle. Copiați-o în proiectul dvs. sau reîmprospătați pentru a genera una nouă."
 docsDescription = "Aflați mai multe despre integrarea cu Chronicle PDF:"
 docsLink = "Documentație API"
 docsTitle = "Documentație API"
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -4669,7 +4669,7 @@ terms = "Termeni și condiții"
 title = "Licențe Terțe Părți"
 
 [localMode]
-toolUnavailable = "Acest instrument necesită un cont. Autentificați-vă în Stirling Cloud sau conectați-vă la un server self-hosted pentru a-l utiliza."
+toolUnavailable = "Acest instrument necesită un cont. Autentificați-vă în Chronicle Cloud sau conectați-vă la un server self-hosted pentru a-l utiliza."
 
 [localMode.toolPicker]
 message = "Autentificați-vă pentru a debloca toate instrumentele."
@@ -4989,7 +4989,7 @@ skipForNow = "Sari peste deocamdată"
 skipTheTour = "Sari peste tur"
 
 [onboarding.desktopInstall]
-body = "Stirling funcționează cel mai bine ca aplicație desktop. O poți folosi offline, accesezi documentele mai rapid și faci editări local pe computer."
+body = "Chronicle funcționează cel mai bine ca aplicație desktop. O poți folosi offline, accesezi documentele mai rapid și faci editări local pe computer."
 selectOs = "Selectează sistemul de operare"
 title = "Descărcare"
 titleWithOs = "Descărcare pentru {{osLabel}}"
@@ -4999,8 +4999,8 @@ authenticationCode = "Cod de autentificare"
 qrCodeLoading = "Se generează codul QR…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "După ce activezi modul de autentificare, poți gestiona utilizatori, configura setări și monitoriza starea serverului. Primele <strong>{{freeTierLimit}}</strong> persoane de pe serverul tău folosesc Stirling gratuit."
-adminBodyLoginEnabled = "Ca admin, poți gestiona utilizatori, configura setări și monitoriza starea serverului. Primele <strong>{{freeTierLimit}}</strong> persoane de pe serverul tău folosesc Stirling gratuit."
+adminBodyLoginDisabled = "După ce activezi modul de autentificare, poți gestiona utilizatori, configura setări și monitoriza starea serverului. Primele <strong>{{freeTierLimit}}</strong> persoane de pe serverul tău folosesc Chronicle gratuit."
+adminBodyLoginEnabled = "Ca admin, poți gestiona utilizatori, configura setări și monitoriza starea serverului. Primele <strong>{{freeTierLimit}}</strong> persoane de pe serverul tău folosesc Chronicle gratuit."
 adminTitle = "Prezentare admin"
 userBody = "Invite colegi, atribuie roluri și ține documentele organizate într-un spațiu de lucru sigur. Activează modul de autentificare când ești pregătit să treci dincolo de utilizarea solo."
 userTitle = "Prezentare plan"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "Confirmați-vă rolul"
 roleUser = "Utilizator"
 
 [onboarding.serverLicense]
-freeBody = "Licențierea noastră <strong>Open-Core</strong> permite până la <strong>{{freeTierLimit}}</strong> utilizatori gratuit per server. Pentru a scala fără întreruperi și a primi acces timpuriu la noul nostru <strong>instrument de editare text PDF</strong>, recomandăm planul Stirling Server - editare completă și <strong>locuri nelimitate</strong> pentru $99/server/lună."
+freeBody = "Licențierea noastră <strong>Open-Core</strong> permite până la <strong>{{freeTierLimit}}</strong> utilizatori gratuit per server. Pentru a scala fără întreruperi și a primi acces timpuriu la noul nostru <strong>instrument de editare text PDF</strong>, recomandăm planul Chronicle server - editare completă și <strong>locuri nelimitate</strong> pentru $99/server/lună."
 freeTitle = "Licență server"
-overLimitBody = "Politica noastră de licențiere permite până la <strong>{{freeTierLimit}}</strong> utilizatori gratuit per server. Ai <strong>{{overLimitUserCopy}}</strong> utilizatori Stirling. Pentru a continua fără întreruperi, fă upgrade la planul Stirling Server - <strong>locuri nelimitate</strong>, editare text PDF și control complet de admin pentru $99/server/lună."
+overLimitBody = "Politica noastră de licențiere permite până la <strong>{{freeTierLimit}}</strong> utilizatori gratuit per server. Ai <strong>{{overLimitUserCopy}}</strong> utilizatori Chronicle. Pentru a continua fără întreruperi, fă upgrade la planul Chronicle server - <strong>locuri nelimitate</strong>, editare text PDF și control complet de admin pentru $99/server/lună."
 overLimitTitle = "Necesită licență de server"
 seePlans = "Vezi planuri →"
 upgrade = "Fă upgrade acum →"
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6204,13 +6204,13 @@ unlink = "Deconectează"
 title = "Nu s-a putut conecta"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "pentru a activa conectarea contului la contul Stirling găzduit. În dev poți simula autentificarea din dialogul de conectare."
+after = "pentru a activa conectarea contului la contul Chronicle găzduit. În dev poți simula autentificarea din dialogul de conectare."
 before = "Setează"
 title = "Autentificarea SaaS nu este configurată"
 
 [portal.accountLink.gate]
 action = "Conectează contul"
-description = "Conectează contul Stirling al acestei organizații pentru a folosi funcții facturabile."
+description = "Conectează contul Chronicle al acestei organizații pentru a folosi funcții facturabile."
 title = "Conectează pentru a debloca"
 titleFeature = "Conectează pentru a debloca {{feature}}"
 
@@ -6243,12 +6243,12 @@ never = "niciodată"
 [portal.accountLink.modal]
 linkSubtitle = "Autentifică-te în contul către care ar trebui să factureze acest server."
 linkTitle = "Conectează contul tău Chronicle"
-reauthSubtitle = "Sesiunea ta a expirat — autentifică-te din nou în contul tău Stirling. Instanța ta rămâne conectată."
+reauthSubtitle = "Sesiunea ta a expirat — autentifică-te din nou în contul tău Chronicle. Instanța ta rămâne conectată."
 reauthTitle = "Autentifică-te din nou"
 simulateSignIn = "Simulează autentificarea (dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "pentru a activa conectarea în aplicație la contul Stirling găzduit."
+after = "pentru a activa conectarea în aplicație la contul Chronicle găzduit."
 and = "și"
 before = "Setează"
 title = "Autentificarea SaaS nu este configurată"
@@ -6257,7 +6257,7 @@ title = "Autentificarea SaaS nu este configurată"
 instancesSub = "Fiecare instanță self-hosted înregistrată în această organizație. Revocă o acreditare pentru a-i opri imediat accesul nesupravegheat."
 instancesTitle = "Instanțe conectate"
 revokeError = "Nu s-a putut revoca instanța"
-sub = "Conectează această organizație self-hosted la contul său Stirling, astfel încât procesarea nesupravegheată să fie facturată din portofelul organizației tale."
+sub = "Conectează această organizație self-hosted la contul său Chronicle, astfel încât procesarea nesupravegheată să fie facturată din portofelul organizației tale."
 
 [portal.accountLink.panel.loadError]
 forbidden = "Doar proprietarul echipei poate vedea instanțele conectate ale organizației."
@@ -6354,7 +6354,7 @@ close = "Închide asistentul"
 error = "Nu s-a putut contacta asistentul."
 errorWithDetail = "Nu s-a putut contacta asistentul: {{detail}}"
 inputAriaLabel = "Întreabă asistentul"
-inputPlaceholder = "Întreabă despre Stirling…"
+inputPlaceholder = "Întreabă despre Chronicle…"
 open = "Deschide asistentul"
 send = "Trimite"
 title = "Asistent"
@@ -6392,7 +6392,7 @@ title = "Stripe nu este configurat"
 cta = "Creează oferta ta Enterprise"
 description = "Discounturi pentru volum angajat, implementare air-gapped, MSA personalizat și evaluări de securitate, plus parteneriate cu distribuitori terți."
 eyebrow = "Discount de volum · 1M+ PDF-uri"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "Active luna aceasta"
@@ -6869,7 +6869,7 @@ title = "Emiteți o cheie API"
 [portal.infrastructure]
 manageEditorDeployment = "Gestionați implementarea Editorului"
 sectionsAriaLabel = "Secțiuni de infrastructură"
-subtitle = "Implementări, credențiale, postură de securitate, stocare și jurnalul de audit pentru spațiul dvs. de lucru Stirling."
+subtitle = "Implementări, credențiale, postură de securitate, stocare și jurnalul de audit pentru spațiul dvs. de lucru Chronicle."
 title = "Infrastructură"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "Nume cheie"
 keyNamePlaceholder = "de ex. Producție · ingestie"
 permissionsLabel = "Permisiuni"
 secretKeyCaption = "Cheie secretă"
-secretWarning = "Stocați aceasta într-un manager de secrete. Stirling stochează doar un hash — nu există nicio modalitate de a o recupera ulterior."
+secretWarning = "Stocați aceasta într-un manager de secrete. Chronicle stochează doar un hash — nu există nicio modalitate de a o recupera ulterior."
 subtitle = "Limitați cheia la minimul necesar. O puteți roti sau revoca oricând."
 subtitleCreated = "Copiați acest secret acum — nu va mai fi afișat."
 title = "Creați cheie API"
@@ -6993,7 +6993,7 @@ version = "Versiune"
 
 [portal.infrastructure.deployments.regions]
 heading = "Regiuni"
-subheading = "Sănătate în timp real pentru fiecare regiune Stirling implementată — latență, încărcare și versiune de lansare."
+subheading = "Sănătate în timp real pentru fiecare regiune Chronicle implementată — latență, încărcare și versiune de lansare."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "Regiunile implementate apar aici după ce spațiul dvs. de lucru este provisionat."
@@ -7050,15 +7050,15 @@ operation = "Operațiune"
 routedTo = "Rutat către"
 
 [portal.infrastructure.security.access.byok]
-description = "Furnizați o cheie din propriul KMS. Stirling criptează cu ea, dar poate încă citi."
+description = "Furnizați o cheie din propriul KMS. Chronicle criptează cu ea, dar poate încă citi."
 label = "Aduceți propria cheie (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "Cheile nu părăsesc niciodată KMS-ul dvs. Stirling deține doar ciphertext."
+description = "Cheile nu părăsesc niciodată KMS-ul dvs. Chronicle deține doar ciphertext."
 label = "Păstrați propria cheie (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Stirling gestionează cheile de criptare. Cel mai simplu — zero operațiuni cu chei din partea dvs."
+[portal.infrastructure.security.access.Chronicle]
+description = "Chronicle gestionează cheile de criptare. Cel mai simplu — zero operațiuni cu chei din partea dvs."
 label = "Chei deținute de Chronicle"
 
 [portal.infrastructure.security.accessPolicy]
@@ -7073,15 +7073,15 @@ viewReport = "Vizualizați raportul →"
 
 [portal.infrastructure.security.compliance]
 heading = "Conformitate"
-subheading = "Atestări și certificări care acoperă platforma Stirling."
+subheading = "Atestări și certificări care acoperă platforma Chronicle."
 
 [portal.infrastructure.security.empty]
 description = "Configurația de securitate a spațiului dvs. de lucru va apărea aici."
 title = "Postura de securitate indisponibilă"
 
 [portal.infrastructure.security.hyokBanner]
-description = "Cu HYOK, cheile de criptare nu părăsesc niciodată KMS-ul dvs. Stirling stochează și procesează doar ciphertext pe care îl puteți revoca oricând."
-title = "Stirling nu poate decripta documentele dvs."
+description = "Cu HYOK, cheile de criptare nu părăsesc niciodată KMS-ul dvs. Chronicle stochează și procesează doar ciphertext pe care îl puteți revoca oricând."
+title = "Chronicle nu poate decripta documentele dvs."
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "Nu sunt configurate intervale IP — toate IP-urile sunt permise."
@@ -7110,7 +7110,7 @@ subheading = "Custodia cheilor care criptează documentele în repaus — cine p
 
 [portal.infrastructure.security.managedBanner]
 description = "Custodia bring-your-own-key (BYOK) și hold-your-own-key (HYOK) este disponibilă în Enterprise. Actualizați pentru a furniza chei din propriul KMS."
-title = "Cheile sunt gestionate de Stirling în planul dvs."
+title = "Cheile sunt gestionate de Chronicle în planul dvs."
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "Încarcă"
 
 [portal.procurement.agreement]
 agreeCta = "Acceptă și abonează-te"
-confirm = "Am citit și sunt de acord cu Stirling Enterprise Agreement."
+confirm = "Am citit și sunt de acord cu Chronicle Enterprise Agreement."
 eyebrow = "Acord"
 intro = "Un acord combinat acoperă tranzacția ta: Master Service Agreement, Order Form, EULA și Data Processing Agreement. Revizuiește-l, apoi acceptă pentru a transforma oferta într-un abonament angajat."
 title = "Revizuiește acordul enterprise"
@@ -7606,7 +7606,7 @@ country = "Țară"
 countryEuro = "Zona euro (EUR €)"
 countryUK = "Regatul Unit (GBP £)"
 countryUS = "Statele Unite (USD $)"
-eula = "Am citit și sunt de acord cu Stirling Enterprise EULA. Aceasta guvernează acordul generat din această ofertă."
+eula = "Am citit și sunt de acord cu Chronicle Enterprise EULA. Aceasta guvernează acordul generat din această ofertă."
 generate = "Generează oferta"
 included = "Inclus"
 indemnification = "Despăgubire IP"
@@ -7689,7 +7689,7 @@ daysLeft_one = "{{count}} zi rămasă"
 daysLeft_other = "{{count}} zile rămase"
 engineerLabel = "Inginerul tău de soluții"
 eyebrow = "Lansarea ta"
-live = "Ești activ pe Stirling Enterprise"
+live = "Ești activ pe Chronicle Enterprise"
 nextStep = "Pasul următor: {{action}}"
 subtitle = "Inginerul tău de soluții este prezent la fiecare pas. O singură acțiune următoare pe rând; lista completă este mai jos."
 title = "De la trial la activ, un parcurs ghidat"
@@ -7716,7 +7716,7 @@ gatingAction = "Acceptă oferta"
 label = "Ofertă"
 
 [portal.procurement.journeySteps.trial]
-blurb = "Evaluează Stirling cu documentele și fluxurile tale de lucru."
+blurb = "Evaluează Chronicle cu documentele și fluxurile tale de lucru."
 gatingAction = "Construiește oferta"
 label = "Trial"
 
@@ -7730,14 +7730,14 @@ label = "Cheia ta de licență"
 
 [portal.procurement.link]
 cta = "Conectează contul"
-description = "Achizițiile rulează pe contul tău Stirling conectat: așa provisionăm trialul, stabilim prețul ofertei și pornim facturarea. Conectează un cont pentru a începe."
+description = "Achizițiile rulează pe contul tău Chronicle conectat: așa provisionăm trialul, stabilim prețul ofertei și pornim facturarea. Conectează un cont pentru a începe."
 eyebrow = "Enterprise"
 title = "Conectează-ți contul pentru a începe"
 
 [portal.procurement.live]
 description = "Abonamentul tău este activ și licența ta a fost emisă. Echipa ta este provisionată și facturarea a început."
 eyebrow = "Activ"
-title = "Ești activ pe Stirling Enterprise"
+title = "Ești activ pe Chronicle Enterprise"
 
 [portal.procurement.locked]
 description = "Cheile de trial, ofertele pentru volum angajat, acordul cu o singură semnătură, plata și registrul documentelor tale se află toate aici după ce începi o evaluare enterprise."
@@ -7772,7 +7772,7 @@ requestBodyFree = "Generăm acest document la cerere. Confirmă, iar inginerul t
 requestBodyPaid = "Acesta este un supliment plătit. Confirmă, iar inginerul tău de soluții îl va dimensiona și va trimite documentele."
 requestCta = "Solicită"
 requestTitle = "Solicită acest document"
-signBody = "Deschide Stirling Enterprise Agreement pentru semnătură electronică: o singură semnătură acoperă MSA, formularul de comandă, EULA și DPA. Contrasemnăm automat și treci la plată."
+signBody = "Deschide Chronicle Enterprise Agreement pentru semnătură electronică: o singură semnătură acoperă MSA, formularul de comandă, EULA și DPA. Contrasemnăm automat și treci la plată."
 signCta = "Deschide pentru semnare"
 signTitle = "Revizuiește și semnează acordul"
 uploadBody = "Trimite-ne PO-ul tău și facturăm în baza lui, în termenii tăi. Trage PDF-ul aici sau alege un fișier mai jos."
@@ -7824,7 +7824,7 @@ title = "Încă nu este nimic aici"
 
 [portal.search]
 ariaLabel = "Caută"
-placeholder = "Caută în Stirling — endpoint-uri, pipeline-uri, documente…"
+placeholder = "Caută în Chronicle — endpoint-uri, pipeline-uri, documente…"
 
 [portal.search.empty]
 noActionsDescription = "Acțiunile rapide vor apărea aici după ce devin disponibile."
@@ -7852,7 +7852,7 @@ switchToLight = "Comută la tema luminoasă"
 [portal.shell.sidebar]
 appEditor = "Editor"
 appProcessor = "Processor"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} doc."
 linkAccount = "Conectează contul Chronicle"
 planEditor = "Plan Editor"
@@ -7862,7 +7862,7 @@ primaryNav = "Navigare principală"
 switchApp = "Comută aplicația"
 
 [portal.sources]
-subtitle = "Conexiuni de intrare reutilizabile care alimentează documente în Stirling. Configurează o conexiune o singură dată, apoi referențiaz-o din orice număr de politici. Fă clic pe un rând pentru configurarea sa și politicile care o folosesc."
+subtitle = "Conexiuni de intrare reutilizabile care alimentează documente în Chronicle. Configurează o conexiune o singură dată, apoi referențiaz-o din orice număr de politici. Fă clic pe un rând pentru configurarea sa și politicile care o folosesc."
 title = "Surse"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "Monitorizează un director de pe server pentru documente noi."
 label = "Folder"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Calea absolută pe care Stirling o monitorizează pentru fișiere de procesat."
+helperText = "Calea absolută pe care Chronicle o monitorizează pentru fișiere de procesat."
 label = "Calea directorului"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "Revizuiește și conectează"
 
 [portal.usage]
 managePayment = "Gestionează plata"
-subtitle = "Consum, facturi și gestionarea planului pentru fiecare PDF facturat de Stirling, într-o singură consolă."
+subtitle = "Consum, facturi și gestionarea planului pentru fiecare PDF facturat de Chronicle, într-o singură consolă."
 title = "Utilizare și facturare"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "Portofel indisponibil: {{status}} {{statusText}}"
 
 [portal.usage.sessionExpired]
 action = "Autentifică-te din nou"
-body = "Sesiunea contului tău Stirling a expirat. Autentifică-te din nou pentru a vedea facturarea — instanța ta rămâne conectată."
+body = "Sesiunea contului tău Chronicle a expirat. Autentifică-te din nou pentru a vedea facturarea — instanța ta rămâne conectată."
 title = "Sesiune expirată"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "Conectat ca"
 
 [settings.connection.mode]
 local = "Doar local"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "Găzduit local"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "Analytics de utilizare"
 [settings.planBilling]
 currentPlan = "Plan curent"
 loading = "Se încarcă informațiile de facturare..."
-notAvailable = "Planul și facturarea sunt disponibile doar când sunteți conectat la Stirling Cloud (mod SaaS)."
+notAvailable = "Planul și facturarea sunt disponibile doar când sunteți conectat la Chronicle Cloud (mod SaaS)."
 title = "Plan și facturare"
 
 [settings.planBilling.billing]
@@ -10015,7 +10015,7 @@ processorDeferred = "Invitația a fost trimisă, dar accesul Processor nu a putu
 processorDesc = "Suprafața de guvernanță, rularea pipeline-urilor, agenții și API."
 role = "Rol"
 send2 = "Trimite invitația"
-subtitle2 = "Vor primi un email pentru a se alătura spațiului dvs. de lucru Stirling."
+subtitle2 = "Vor primi un email pentru a se alătura spațiului dvs. de lucru Chronicle."
 team = "Echipă"
 title = "Invită persoane"
 username = "Nume de utilizator"

@@ -1158,8 +1158,8 @@ description = "Ім’я користувача для автентифікац�
 label = "Ім’я користувача SMTP"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -3072,7 +3072,7 @@ upgradeButton = "Оновити обліковий запис"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Скопіювати ключ API"
-description = "Ваш ключ API для доступу до пакета інструментів PDF Stirling. Скопіюйте його у свій проєкт або оновіть, щоб згенерувати новий."
+description = "Ваш ключ API для доступу до пакета інструментів PDF Chronicle. Скопіюйте його у свій проєкт або оновіть, щоб згенерувати новий."
 docsDescription = "Дізнайтеся більше про інтеграцію зі Chronicle PDF:"
 docsLink = "Документація API"
 docsTitle = "Документація API"
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -4669,7 +4669,7 @@ terms = "Правила та умови"
 title = "Ліцензії від третіх сторін"
 
 [localMode]
-toolUnavailable = "Цей інструмент потребує облікового запису. Увійдіть до Stirling Cloud або підключіться до самохостингового сервера, щоб користуватися ним."
+toolUnavailable = "Цей інструмент потребує облікового запису. Увійдіть до Chronicle Cloud або підключіться до самохостингового сервера, щоб користуватися ним."
 
 [localMode.toolPicker]
 message = "Увійдіть, щоб розблокувати всі інструменти."
@@ -4989,7 +4989,7 @@ skipForNow = "Пропустити зараз"
 skipTheTour = "Пропустити тур"
 
 [onboarding.desktopInstall]
-body = "Stirling найкраще працює як настільний додаток. Ви можете працювати офлайн, швидше отримувати доступ до документів і редагувати їх локально на своєму комп’ютері."
+body = "Chronicle найкраще працює як настільний додаток. Ви можете працювати офлайн, швидше отримувати доступ до документів і редагувати їх локально на своєму комп’ютері."
 selectOs = "Виберіть операційну систему"
 title = "Завантажити"
 titleWithOs = "Завантажити для {{osLabel}}"
@@ -4999,8 +4999,8 @@ authenticationCode = "Код автентифікації"
 qrCodeLoading = "Створення вашого QR-коду…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "Щойно ввімкнете режим входу, ви зможете керувати користувачами, налаштовувати параметри та відстежувати стан сервера. Перші <strong>{{freeTierLimit}}</strong> людей на вашому сервері користуються Stirling безкоштовно."
-adminBodyLoginEnabled = "Як адміністратор ви можете керувати користувачами, налаштовувати параметри та відстежувати стан сервера. Перші <strong>{{freeTierLimit}}</strong> людей на вашому сервері користуються Stirling безкоштовно."
+adminBodyLoginDisabled = "Щойно ввімкнете режим входу, ви зможете керувати користувачами, налаштовувати параметри та відстежувати стан сервера. Перші <strong>{{freeTierLimit}}</strong> людей на вашому сервері користуються Chronicle безкоштовно."
+adminBodyLoginEnabled = "Як адміністратор ви можете керувати користувачами, налаштовувати параметри та відстежувати стан сервера. Перші <strong>{{freeTierLimit}}</strong> людей на вашому сервері користуються Chronicle безкоштовно."
 adminTitle = "Огляд для адміністратора"
 userBody = "Запрошуйте колег, призначайте ролі та тримайте документи впорядкованими в одному безпечному робочому просторі. Увімкніть режим входу, коли будете готові вирости за межі сольного використання."
 userTitle = "Огляд плану"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "Підтвердьте вашу роль"
 roleUser = "Користувач"
 
 [onboarding.serverLicense]
-freeBody = "Наша <strong>Open-Core</strong> ліцензія дозволяє до <strong>{{freeTierLimit}}</strong> користувачів безкоштовно на сервер. Щоб масштабуватися безперервно та отримати ранній доступ до нового <strong>інструмента редагування тексту PDF</strong>, рекомендуємо план Stirling Server — повне редагування та <strong>необмежена кількість місць</strong> за $99/server/mo."
+freeBody = "Наша <strong>Open-Core</strong> ліцензія дозволяє до <strong>{{freeTierLimit}}</strong> користувачів безкоштовно на сервер. Щоб масштабуватися безперервно та отримати ранній доступ до нового <strong>інструмента редагування тексту PDF</strong>, рекомендуємо план Chronicle server — повне редагування та <strong>необмежена кількість місць</strong> за $99/server/mo."
 freeTitle = "Ліцензія сервера"
-overLimitBody = "Наша ліцензія дозволяє до <strong>{{freeTierLimit}}</strong> користувачів безкоштовно на сервер. У вас <strong>{{overLimitUserCopy}}</strong> користувачів Stirling. Щоб працювати без перерв, перейдіть на план Stirling Server — <strong>необмежена кількість місць</strong>, редагування тексту PDF та повний адмін-контроль за $99/server/mo."
+overLimitBody = "Наша ліцензія дозволяє до <strong>{{freeTierLimit}}</strong> користувачів безкоштовно на сервер. У вас <strong>{{overLimitUserCopy}}</strong> користувачів Chronicle. Щоб працювати без перерв, перейдіть на план Chronicle server — <strong>необмежена кількість місць</strong>, редагування тексту PDF та повний адмін-контроль за $99/server/mo."
 overLimitTitle = "Потрібна ліцензія сервера"
 seePlans = "Переглянути плани →"
 upgrade = "Оновити зараз →"
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6204,13 +6204,13 @@ unlink = "Відв’язати"
 title = "Не вдалося прив’язати"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "щоб увімкнути прив’язку облікового запису до розміщеного облікового запису Stirling. У режимі розробки можна імітувати вхід із діалогового вікна прив’язки."
+after = "щоб увімкнути прив’язку облікового запису до розміщеного облікового запису Chronicle. У режимі розробки можна імітувати вхід із діалогового вікна прив’язки."
 before = "Налаштуйте"
 title = "Вхід SaaS не налаштовано"
 
 [portal.accountLink.gate]
 action = "Прив’язати обліковий запис"
-description = "Прив’яжіть обліковий запис Stirling цієї організації, щоб використовувати платні функції."
+description = "Прив’яжіть обліковий запис Chronicle цієї організації, щоб використовувати платні функції."
 title = "Прив’яжіть, щоб розблокувати"
 titleFeature = "Прив’яжіть, щоб розблокувати {{feature}}"
 
@@ -6243,12 +6243,12 @@ never = "ніколи"
 [portal.accountLink.modal]
 linkSubtitle = "Увійдіть в обліковий запис, з якого має виставлятися рахунок за цей сервер."
 linkTitle = "Прив’язати ваш обліковий запис Chronicle"
-reauthSubtitle = "Ваш сеанс завершився — знову увійдіть у свій обліковий запис Stirling. Ваш екземпляр залишиться прив’язаним."
+reauthSubtitle = "Ваш сеанс завершився — знову увійдіть у свій обліковий запис Chronicle. Ваш екземпляр залишиться прив’язаним."
 reauthTitle = "Увійдіть знову"
 simulateSignIn = "Імітувати вхід (dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "щоб увімкнути прив’язку в застосунку до розміщеного облікового запису Stirling."
+after = "щоб увімкнути прив’язку в застосунку до розміщеного облікового запису Chronicle."
 and = "і"
 before = "Налаштуйте"
 title = "Вхід SaaS не налаштовано"
@@ -6257,7 +6257,7 @@ title = "Вхід SaaS не налаштовано"
 instancesSub = "Кожен self-hosted екземпляр, зареєстрований у цій організації. Відкличте облікові дані, щоб негайно вимкнути його автоматичний доступ."
 instancesTitle = "Прив’язані екземпляри"
 revokeError = "Не вдалося відкликати екземпляр"
-sub = "Прив’яжіть цю self-hosted організацію до її облікового запису Stirling, щоб автоматична обробка списувалася з гаманця вашої організації."
+sub = "Прив’яжіть цю self-hosted організацію до її облікового запису Chronicle, щоб автоматична обробка списувалася з гаманця вашої організації."
 
 [portal.accountLink.panel.loadError]
 forbidden = "Лише власник команди може переглядати прив’язані екземпляри організації."
@@ -6354,7 +6354,7 @@ close = "Закрити помічника"
 error = "Не вдалося зв’язатися з помічником."
 errorWithDetail = "Не вдалося зв’язатися з помічником: {{detail}}"
 inputAriaLabel = "Запитайте помічника"
-inputPlaceholder = "Запитайте про Stirling…"
+inputPlaceholder = "Запитайте про Chronicle…"
 open = "Відкрити помічника"
 send = "Надіслати"
 title = "Помічник"
@@ -6392,7 +6392,7 @@ title = "Stripe не налаштовано"
 cta = "Сформувати вашу пропозицію Enterprise"
 description = "Знижки за гарантовані обсяги, ізольоване розгортання, індивідуальні MSA та перевірки безпеки, а також партнерства зі сторонніми дистриб’юторами."
 eyebrow = "Знижка за обсяг · 1M+ PDF"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "Активні цього місяця"
@@ -6869,7 +6869,7 @@ title = "Видати ключ API"
 [portal.infrastructure]
 manageEditorDeployment = "Керувати розгортанням Редактора"
 sectionsAriaLabel = "Розділи інфраструктури"
-subtitle = "Розгортання, облікові дані, стан безпеки, сховище та журнал аудиту для вашого робочого простору Stirling."
+subtitle = "Розгортання, облікові дані, стан безпеки, сховище та журнал аудиту для вашого робочого простору Chronicle."
 title = "Інфраструктура"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "Назва ключа"
 keyNamePlaceholder = "напр. Production · ingest"
 permissionsLabel = "Дозволи"
 secretKeyCaption = "Секретний ключ"
-secretWarning = "Збережіть це в менеджері секретів. Stirling зберігає лише хеш — відновити його пізніше неможливо."
+secretWarning = "Збережіть це в менеджері секретів. Chronicle зберігає лише хеш — відновити його пізніше неможливо."
 subtitle = "Обмежте ключ мінімально необхідною областю. Ви можете ротувати або відкликати його будь-коли."
 subtitleCreated = "Скопіюйте цей секрет зараз — його більше не буде показано."
 title = "Створити ключ API"
@@ -6993,7 +6993,7 @@ version = "Версія"
 
 [portal.infrastructure.deployments.regions]
 heading = "Регіони"
-subheading = "Поточний стан кожного розгорнутого регіону Stirling — затримка, навантаження та версія випуску."
+subheading = "Поточний стан кожного розгорнутого регіону Chronicle — затримка, навантаження та версія випуску."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "Розгорнуті регіони з’являться тут після підготовки вашого робочого простору."
@@ -7050,15 +7050,15 @@ operation = "Операція"
 routedTo = "Спрямовано до"
 
 [portal.infrastructure.security.access.byok]
-description = "Надайте ключ із власного KMS. Stirling шифрує ним, але все ще може читати."
+description = "Надайте ключ із власного KMS. Chronicle шифрує ним, але все ще може читати."
 label = "Власний ключ (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "Ключі ніколи не залишають ваш KMS. Stirling зберігає лише шифротекст."
+description = "Ключі ніколи не залишають ваш KMS. Chronicle зберігає лише шифротекст."
 label = "Зберігайте власний ключ (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Stirling керує ключами шифрування. Найпростіше — нуль операцій із ключами з вашого боку."
+[portal.infrastructure.security.access.Chronicle]
+description = "Chronicle керує ключами шифрування. Найпростіше — нуль операцій із ключами з вашого боку."
 label = "Ключі, що зберігаються Chronicle"
 
 [portal.infrastructure.security.accessPolicy]
@@ -7073,15 +7073,15 @@ viewReport = "Переглянути звіт →"
 
 [portal.infrastructure.security.compliance]
 heading = "Відповідність вимогам"
-subheading = "Підтвердження та сертифікації, що охоплюють платформу Stirling."
+subheading = "Підтвердження та сертифікації, що охоплюють платформу Chronicle."
 
 [portal.infrastructure.security.empty]
 description = "Конфігурація безпеки вашого робочого простору з’явиться тут."
 title = "Стан безпеки недоступний"
 
 [portal.infrastructure.security.hyokBanner]
-description = "З HYOK ключі шифрування ніколи не залишають ваш KMS. Stirling зберігає й обробляє лише шифротекст, який ви можете відкликати будь-коли."
-title = "Stirling не може розшифрувати ваші документи"
+description = "З HYOK ключі шифрування ніколи не залишають ваш KMS. Chronicle зберігає й обробляє лише шифротекст, який ви можете відкликати будь-коли."
+title = "Chronicle не може розшифрувати ваші документи"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "Діапазони IP не налаштовано — дозволено всі IP."
@@ -7591,7 +7591,7 @@ upload = "Завантажити"
 
 [portal.procurement.agreement]
 agreeCta = "Погодитися й підписатися"
-confirm = "Я прочитав(-ла) і погоджуюся з Stirling Enterprise Agreement."
+confirm = "Я прочитав(-ла) і погоджуюся з Chronicle Enterprise Agreement."
 eyebrow = "Угода"
 intro = "Одна об’єднана угода охоплює вашу угоду: Master Service Agreement, Order Form, EULA та Data Processing Agreement. Перегляньте її, а потім погодьтеся прийняти пропозицію в зобов’язану підписку."
 title = "Перегляньте вашу корпоративну угоду"
@@ -7606,7 +7606,7 @@ country = "Країна"
 countryEuro = "Єврозона (EUR €)"
 countryUK = "Велика Британія (GBP £)"
 countryUS = "Сполучені Штати (USD $)"
-eula = "Я прочитав(-ла) і погоджуюся зі Stirling Enterprise EULA. Вона регулює угоду, створену з цієї пропозиції."
+eula = "Я прочитав(-ла) і погоджуюся зі Chronicle Enterprise EULA. Вона регулює угоду, створену з цієї пропозиції."
 generate = "Створити пропозицію"
 included = "Включено"
 indemnification = "Відшкодування за IP"
@@ -7689,7 +7689,7 @@ daysLeft_one = "Залишився {{count}} день"
 daysLeft_other = "Залишилося {{count}} днів"
 engineerLabel = "Ваш solutions engineer"
 eyebrow = "Ваше впровадження"
-live = "Ви вже працюєте в Stirling Enterprise"
+live = "Ви вже працюєте в Chronicle Enterprise"
 nextStep = "Наступний крок: {{action}}"
 subtitle = "Ваш solutions engineer супроводжує кожен крок. Одна наступна дія за раз; повний список нижче."
 title = "Від trial до запуску — один керований шлях"
@@ -7716,7 +7716,7 @@ gatingAction = "Прийміть вашу пропозицію"
 label = "Пропозиція"
 
 [portal.procurement.journeySteps.trial]
-blurb = "Оцініть Stirling на ваших документах і робочих процесах."
+blurb = "Оцініть Chronicle на ваших документах і робочих процесах."
 gatingAction = "Створіть вашу пропозицію"
 label = "Trial"
 
@@ -7730,14 +7730,14 @@ label = "Ваш ліцензійний ключ"
 
 [portal.procurement.link]
 cta = "Прив’язати обліковий запис"
-description = "Закупівля працює через ваш прив’язаний обліковий запис Stirling: так ми надаємо trial, оцінюємо вашу пропозицію та запускаємо білінг. Прив’яжіть обліковий запис, щоб почати."
+description = "Закупівля працює через ваш прив’язаний обліковий запис Chronicle: так ми надаємо trial, оцінюємо вашу пропозицію та запускаємо білінг. Прив’яжіть обліковий запис, щоб почати."
 eyebrow = "Enterprise"
 title = "Прив’яжіть ваш обліковий запис, щоб почати"
 
 [portal.procurement.live]
 description = "Ваша підписка активна, і ліцензію видано. Вашу команду підготовлено, і білінг розпочато."
 eyebrow = "Live"
-title = "Ви вже працюєте в Stirling Enterprise"
+title = "Ви вже працюєте в Chronicle Enterprise"
 
 [portal.procurement.locked]
 description = "Trial-ключі, пропозиції за зобов’язаним обсягом, угода з одним підписом, оплата та ваш реєстр документів — усе буде тут після початку корпоративної оцінки."
@@ -7772,7 +7772,7 @@ requestBodyFree = "Ми створюємо це на вимогу. Підтве�
 requestBodyPaid = "Це платний додаток. Підтвердьте, і ваш solutions engineer оцінить обсяг і надішле документи."
 requestCta = "Запитати"
 requestTitle = "Запитати цей документ"
-signBody = "Відкриває Stirling Enterprise Agreement для електронного підпису: один підпис охоплює MSA, order form, EULA та DPA. Ми автоматично ставимо зустрічний підпис, і ви переходите до оплати."
+signBody = "Відкриває Chronicle Enterprise Agreement для електронного підпису: один підпис охоплює MSA, order form, EULA та DPA. Ми автоматично ставимо зустрічний підпис, і ви переходите до оплати."
 signCta = "Відкрити для підпису"
 signTitle = "Перегляньте та підпишіть вашу угоду"
 uploadBody = "Надішліть нам ваш PO, і ми виставимо рахунок за вашими умовами. Перетягніть PDF або виберіть файл нижче."
@@ -7824,7 +7824,7 @@ title = "Тут поки нічого немає"
 
 [portal.search]
 ariaLabel = "Пошук"
-placeholder = "Пошук у Stirling — endpoints, конвеєри, документи…"
+placeholder = "Пошук у Chronicle — endpoints, конвеєри, документи…"
 
 [portal.search.empty]
 noActionsDescription = "Швидкі дії з’являться тут, коли стануть доступними."
@@ -7852,7 +7852,7 @@ switchToLight = "Перемкнути на світлу тему"
 [portal.shell.sidebar]
 appEditor = "Редактор"
 appProcessor = "Обробник"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} документів"
 linkAccount = "Прив’язати обліковий запис Chronicle"
 planEditor = "План Editor"
@@ -7862,7 +7862,7 @@ primaryNav = "Основна навігація"
 switchApp = "Перемкнути застосунок"
 
 [portal.sources]
-subtitle = "Багаторазові вхідні підключення, які передають документи в Stirling. Налаштуйте підключення один раз, а потім посилайтеся на нього з будь-якої кількості політик. Натисніть рядок, щоб переглянути його конфігурацію та політики, які його використовують."
+subtitle = "Багаторазові вхідні підключення, які передають документи в Chronicle. Налаштуйте підключення один раз, а потім посилайтеся на нього з будь-якої кількості політик. Натисніть рядок, щоб переглянути його конфігурацію та політики, які його використовують."
 title = "Джерела"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "Відстежувати каталог на сервері дл�
 label = "Папка"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Абсолютний шлях, який Stirling відстежує для файлів на обробку."
+helperText = "Абсолютний шлях, який Chronicle відстежує для файлів на обробку."
 label = "Шлях до каталогу"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "Переглянути й підключити"
 
 [portal.usage]
 managePayment = "Керувати платежем"
-subtitle = "Споживання, рахунки та керування планом для кожного PDF, за який Stirling виставив рахунок, в одній консолі."
+subtitle = "Споживання, рахунки та керування планом для кожного PDF, за який Chronicle виставив рахунок, в одній консолі."
 title = "Використання та білінг"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "Гаманець недоступний: {{status}} {{statu
 
 [portal.usage.sessionExpired]
 action = "Увійти знову"
-body = "Сеанс вашого облікового запису Stirling закінчився. Увійдіть знову, щоб переглянути білінг — ваш екземпляр залишається прив’язаним."
+body = "Сеанс вашого облікового запису Chronicle закінчився. Увійдіть знову, щоб переглянути білінг — ваш екземпляр залишається прив’язаним."
 title = "Сеанс закінчився"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "Увійшли як"
 
 [settings.connection.mode]
 local = "Лише локально"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "Самохостинг"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "Аналітика використання"
 [settings.planBilling]
 currentPlan = "Поточний план"
 loading = "Завантаження інформації про білінг..."
-notAvailable = "План і білінг доступні лише при підключенні до Stirling Cloud (режим SaaS)."
+notAvailable = "План і білінг доступні лише при підключенні до Chronicle Cloud (режим SaaS)."
 title = "План і білінг"
 
 [settings.planBilling.billing]
@@ -10015,7 +10015,7 @@ processorDeferred = "Запрошення надіслано, але досту�
 processorDesc = "Поверхня керування, запуск конвеєрів, агенти та API."
 role = "Роль"
 send2 = "Надіслати запрошення"
-subtitle2 = "Вони отримають електронний лист, щоб приєднатися до вашого робочого простору Stirling."
+subtitle2 = "Вони отримають електронний лист, щоб приєднатися до вашого робочого простору Chronicle."
 team = "Команда"
 title = "Запросити людей"
 username = "Ім’я користувача"

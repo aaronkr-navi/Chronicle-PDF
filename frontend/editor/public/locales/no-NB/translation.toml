@@ -1158,8 +1158,8 @@ description = "Brukernavn for SMTP-autentisering"
 label = "SMTP-brukernavn"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -2742,7 +2742,7 @@ close = "Close chat"
 open = "Open Chronicle AI assistant"
 
 [chat.header]
-agentMenu = "Stirling-agentalternativer"
+agentMenu = "Chronicle-agentalternativer"
 clearChat = "Tøm chat"
 
 [chat.input]
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -3939,7 +3939,7 @@ title = "Flytt til mappe"
 [filesPage.origin]
 all = "Alle kilder"
 cloud = "Sky"
-cloudHint = "Lagret på Stirling-serveren"
+cloudHint = "Lagret på Chronicle-serveren"
 local = "Lokal"
 localHint = "Kun lagret i denne nettleseren"
 shared = "Delt"
@@ -4669,7 +4669,7 @@ terms = "Vilkår og betingelser"
 title = "Tredjeparts lisenser"
 
 [localMode]
-toolUnavailable = "Dette verktøyet krever en konto. Logg inn på Stirling Cloud eller koble til en selvhostet server for å bruke det."
+toolUnavailable = "Dette verktøyet krever en konto. Logg inn på Chronicle Cloud eller koble til en selvhostet server for å bruke det."
 
 [localMode.toolPicker]
 message = "Logg inn for å låse opp alle verktøy."
@@ -4989,7 +4989,7 @@ skipForNow = "Hopp over nå"
 skipTheTour = "Hopp over omvisningen"
 
 [onboarding.desktopInstall]
-body = "Stirling fungerer best som en skrivebordsapp. Du kan bruke den offline, få raskere tilgang til dokumenter og gjøre redigeringer lokalt på datamaskinen."
+body = "Chronicle fungerer best som en skrivebordsapp. Du kan bruke den offline, få raskere tilgang til dokumenter og gjøre redigeringer lokalt på datamaskinen."
 selectOs = "Velg operativsystem"
 title = "Last ned"
 titleWithOs = "Last ned for {{osLabel}}"
@@ -4999,8 +4999,8 @@ authenticationCode = "Autentiseringskode"
 qrCodeLoading = "Genererer QR-koden din…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "Når du aktiverer innloggingsmodus, kan du administrere brukere, konfigurere innstillinger og overvåke serverstatus. De første <strong>{{freeTierLimit}}</strong> på serveren din kan bruke Stirling gratis."
-adminBodyLoginEnabled = "Som admin kan du administrere brukere, konfigurere innstillinger og overvåke serverstatus. De første <strong>{{freeTierLimit}}</strong> på serveren din kan bruke Stirling gratis."
+adminBodyLoginDisabled = "Når du aktiverer innloggingsmodus, kan du administrere brukere, konfigurere innstillinger og overvåke serverstatus. De første <strong>{{freeTierLimit}}</strong> på serveren din kan bruke Chronicle gratis."
+adminBodyLoginEnabled = "Som admin kan du administrere brukere, konfigurere innstillinger og overvåke serverstatus. De første <strong>{{freeTierLimit}}</strong> på serveren din kan bruke Chronicle gratis."
 adminTitle = "Admin-oversikt"
 userBody = "Inviter teammedlemmer, tildel roller og hold dokumentene organiserte i et sikkert arbeidsområde. Aktiver innloggingsmodus når du er klar til å vokse utover solobruk."
 userTitle = "Planoversikt"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "Bekreft rollen din"
 roleUser = "Bruker"
 
 [onboarding.serverLicense]
-freeBody = "Vår <strong>Open-Core</strong>-lisensiering tillater opptil <strong>{{freeTierLimit}}</strong> brukere gratis per server. For å skalere uten avbrudd og få tidlig tilgang til vårt nye <strong>PDF-tekstredigeringsverktøy</strong>, anbefaler vi Stirling Server-planen – full redigering og <strong>ubegrensede plasser</strong> for $99/server/mnd."
+freeBody = "Vår <strong>Open-Core</strong>-lisensiering tillater opptil <strong>{{freeTierLimit}}</strong> brukere gratis per server. For å skalere uten avbrudd og få tidlig tilgang til vårt nye <strong>PDF-tekstredigeringsverktøy</strong>, anbefaler vi Chronicle server-planen – full redigering og <strong>ubegrensede plasser</strong> for $99/server/mnd."
 freeTitle = "Serverlisens"
-overLimitBody = "Lisensieringen vår tillater opptil <strong>{{freeTierLimit}}</strong> brukere gratis per server. Du har <strong>{{overLimitUserCopy}}</strong> Stirling-brukere. For å fortsette uten avbrudd, oppgrader til Stirling Server-planen – <strong>ubegrensede plasser</strong>, PDF-tekstredigering og full admin-kontroll for $99/server/mnd."
+overLimitBody = "Lisensieringen vår tillater opptil <strong>{{freeTierLimit}}</strong> brukere gratis per server. Du har <strong>{{overLimitUserCopy}}</strong> Chronicle-brukere. For å fortsette uten avbrudd, oppgrader til Chronicle server-planen – <strong>ubegrensede plasser</strong>, PDF-tekstredigering og full admin-kontroll for $99/server/mnd."
 overLimitTitle = "Serverlisens kreves"
 seePlans = "Se planer →"
 upgrade = "Oppgrader nå →"
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6192,25 +6192,25 @@ comingSoon = "Kommer snart"
 [portal.accountLink.card]
 billingNote = "Uovervåket behandling faktureres mot organisasjonens lommebok."
 eyebrow = "Kontokobling"
-linkButton = "Koble til Stirling-kontoen din"
+linkButton = "Koble til Chronicle-kontoen din"
 linked = "Koblet til"
 linkedAs = "Koblet til som {{name}}."
 linkedGeneric = "Denne instansen er koblet til."
 notLinked = "Ikke koblet til"
-title = "Koble denne organisasjonen til Stirling-kontoen dens"
+title = "Koble denne organisasjonen til Chronicle-kontoen dens"
 unlink = "Koble fra"
 
 [portal.accountLink.card.error]
 title = "Kunne ikke koble til"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "for å aktivere kontokobling mot den hostede Stirling-kontoen. I dev kan du simulere innlogging fra koblingsdialogen."
+after = "for å aktivere kontokobling mot den hostede Chronicle-kontoen. I dev kan du simulere innlogging fra koblingsdialogen."
 before = "Angi"
 title = "SaaS-innlogging er ikke konfigurert"
 
 [portal.accountLink.gate]
 action = "Koble til konto"
-description = "Koble til denne organisasjonens Stirling-konto for å bruke fakturerbare funksjoner."
+description = "Koble til denne organisasjonens Chronicle-konto for å bruke fakturerbare funksjoner."
 title = "Koble til for å låse opp"
 titleFeature = "Koble til for å låse opp {{feature}}"
 
@@ -6242,13 +6242,13 @@ never = "aldri"
 
 [portal.accountLink.modal]
 linkSubtitle = "Logg på kontoen denne serveren skal fakturere mot."
-linkTitle = "Koble til Stirling-kontoen din"
-reauthSubtitle = "Økten din er utløpt — logg på Stirling-kontoen din igjen. Instansen din forblir koblet til."
+linkTitle = "Koble til Chronicle-kontoen din"
+reauthSubtitle = "Økten din er utløpt — logg på Chronicle-kontoen din igjen. Instansen din forblir koblet til."
 reauthTitle = "Logg på igjen"
 simulateSignIn = "Simuler innlogging (dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "for å aktivere kobling i appen mot den hostede Stirling-kontoen."
+after = "for å aktivere kobling i appen mot den hostede Chronicle-kontoen."
 and = "og"
 before = "Angi"
 title = "SaaS-innlogging er ikke konfigurert"
@@ -6257,7 +6257,7 @@ title = "SaaS-innlogging er ikke konfigurert"
 instancesSub = "Hver selvhostede instans registrert til denne organisasjonen. Tilbakekall en legitimasjon for umiddelbart å avbryte dens uovervåkede tilgang."
 instancesTitle = "Tilkoblede instanser"
 revokeError = "Kunne ikke tilbakekalle instans"
-sub = "Koble denne selvhostede organisasjonen til Stirling-kontoen dens, slik at uovervåket behandling faktureres mot organisasjonens lommebok."
+sub = "Koble denne selvhostede organisasjonen til Chronicle-kontoen dens, slik at uovervåket behandling faktureres mot organisasjonens lommebok."
 
 [portal.accountLink.panel.loadError]
 forbidden = "Bare teameieren kan vise organisasjonens tilkoblede instanser."
@@ -6354,7 +6354,7 @@ close = "Lukk assistent"
 error = "Kunne ikke nå assistenten."
 errorWithDetail = "Kunne ikke nå assistenten: {{detail}}"
 inputAriaLabel = "Spør assistenten"
-inputPlaceholder = "Spør om Stirling…"
+inputPlaceholder = "Spør om Chronicle…"
 open = "Åpne assistent"
 send = "Send"
 title = "Assistent"
@@ -6392,7 +6392,7 @@ title = "Stripe er ikke konfigurert"
 cta = "Bygg ditt Enterprise-tilbud"
 description = "Volumrabatter med forpliktelse, air-gapped utrulling, tilpasset MSA og sikkerhetsgjennomganger, samt partnerskap med tredjepartsdistributører."
 eyebrow = "Volumrabatt · 1M+ PDF-er"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "Aktive denne måneden"
@@ -6439,9 +6439,9 @@ viewAriaLabel = "Vis faktura {{number}} i Stripe"
 viewLink = "Vis ↗"
 
 [portal.billing.linkPrompt]
-cta = "Koble til Stirling-konto"
+cta = "Koble til Chronicle-konto"
 description = "Manuell PDF-redigering — visning, signering, sammenslåing, splitting, vannmerking, komprimering, konvertering, manuell OCR — er alltid gratis, koblet til eller ikke. Koble til for å kreve 500 gratis PDF-er med målt behandling (automatisering, AI og API); når du trenger mer, slår du på Processor-planen og betaler bare for det du bruker."
-title = "Koble til Stirling-kontoen din"
+title = "Koble til Chronicle-kontoen din"
 
 [portal.billing.paymentMethod]
 billedMonthly = "Faktureres månedlig"
@@ -6869,7 +6869,7 @@ title = "Utsted en API-nøkkel"
 [portal.infrastructure]
 manageEditorDeployment = "Administrer Editor-distribusjon"
 sectionsAriaLabel = "Infrastrukturseksjoner"
-subtitle = "Distribusjoner, legitimasjon, sikkerhetsstilling, lagring og revisjonssporet for Stirling-arbeidsområdet ditt."
+subtitle = "Distribusjoner, legitimasjon, sikkerhetsstilling, lagring og revisjonssporet for Chronicle-arbeidsområdet ditt."
 title = "Infrastruktur"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "Nøkkelnavn"
 keyNamePlaceholder = "f.eks. Produksjon · inntak"
 permissionsLabel = "Tillatelser"
 secretKeyCaption = "Hemmelig nøkkel"
-secretWarning = "Lagre dette i en hemmelighetsbehandler. Stirling lagrer bare en hash — det finnes ingen måte å gjenopprette den senere."
+secretWarning = "Lagre dette i en hemmelighetsbehandler. Chronicle lagrer bare en hash — det finnes ingen måte å gjenopprette den senere."
 subtitle = "Avgrens nøkkelen til det minste den trenger. Du kan rotere eller tilbakekalle når som helst."
 subtitleCreated = "Kopier denne hemmeligheten nå — den vises ikke igjen."
 title = "Opprett API-nøkkel"
@@ -6993,7 +6993,7 @@ version = "Versjon"
 
 [portal.infrastructure.deployments.regions]
 heading = "Regioner"
-subheading = "Sanntidshelse for hver distribuerte Stirling-region — latens, belastning og utrullingsversjon."
+subheading = "Sanntidshelse for hver distribuerte Chronicle-region — latens, belastning og utrullingsversjon."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "Distribuerte regioner vises her når arbeidsområdet ditt er klargjort."
@@ -7050,15 +7050,15 @@ operation = "Operasjon"
 routedTo = "Rutet til"
 
 [portal.infrastructure.security.access.byok]
-description = "Oppgi en nøkkel fra din egen KMS. Stirling krypterer med den, men kan fortsatt lese."
+description = "Oppgi en nøkkel fra din egen KMS. Chronicle krypterer med den, men kan fortsatt lese."
 label = "Ta med din egen nøkkel (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "Nøkler forlater aldri din KMS. Stirling holder bare chiffertekst."
+description = "Nøkler forlater aldri din KMS. Chronicle holder bare chiffertekst."
 label = "Hold din egen nøkkel (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Stirling administrerer krypteringsnøkler. Enklest — null nøkkeldrift på din side."
+[portal.infrastructure.security.access.Chronicle]
+description = "Chronicle administrerer krypteringsnøkler. Enklest — null nøkkeldrift på din side."
 label = "Nøkler holdt av Chronicle"
 
 [portal.infrastructure.security.accessPolicy]
@@ -7073,15 +7073,15 @@ viewReport = "Vis rapport →"
 
 [portal.infrastructure.security.compliance]
 heading = "Samsvar"
-subheading = "Attestasjoner og sertifiseringer som dekker Stirling-plattformen."
+subheading = "Attestasjoner og sertifiseringer som dekker Chronicle-plattformen."
 
 [portal.infrastructure.security.empty]
 description = "Sikkerhetskonfigurasjonen for arbeidsområdet ditt vises her."
 title = "Sikkerhetsstilling utilgjengelig"
 
 [portal.infrastructure.security.hyokBanner]
-description = "Med HYOK forlater krypteringsnøkler aldri din KMS. Stirling lagrer og behandler bare chiffertekst som du kan tilbakekalle når som helst."
-title = "Stirling kan ikke dekryptere dokumentene dine"
+description = "Med HYOK forlater krypteringsnøkler aldri din KMS. Chronicle lagrer og behandler bare chiffertekst som du kan tilbakekalle når som helst."
+title = "Chronicle kan ikke dekryptere dokumentene dine"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "Ingen IP-områder konfigurert — alle IP-er tillatt."
@@ -7110,7 +7110,7 @@ subheading = "Forvaring av nøklene som krypterer dokumenter i ro — hvem som k
 
 [portal.infrastructure.security.managedBanner]
 description = "Forvaring med ta-med-din-egen-nøkkel (BYOK) og hold-din-egen-nøkkel (HYOK) er tilgjengelig på Enterprise. Oppgrader for å oppgi nøkler fra din egen KMS."
-title = "Nøkler administreres av Stirling på planen din"
+title = "Nøkler administreres av Chronicle på planen din"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "Last opp"
 
 [portal.procurement.agreement]
 agreeCta = "Godta og abonner"
-confirm = "Jeg har lest og godtar Stirling Enterprise Agreement."
+confirm = "Jeg har lest og godtar Chronicle Enterprise Agreement."
 eyebrow = "Avtale"
 intro = "Én samlet avtale dekker avtalen din: Master Service Agreement, bestillingsskjema, EULA og databehandleravtale. Se gjennom den, og godta deretter for å akseptere tilbudet som et forpliktende abonnement."
 title = "Se gjennom enterprise-avtalen din"
@@ -7606,7 +7606,7 @@ country = "Land"
 countryEuro = "Eurosonen (EUR €)"
 countryUK = "Storbritannia (GBP £)"
 countryUS = "USA (USD $)"
-eula = "Jeg har lest og godtar Stirling Enterprise EULA. Den styrer avtalen som genereres fra dette tilbudet."
+eula = "Jeg har lest og godtar Chronicle Enterprise EULA. Den styrer avtalen som genereres fra dette tilbudet."
 generate = "Generer tilbud"
 included = "Inkludert"
 indemnification = "IP-skadesløsholdelse"
@@ -7689,7 +7689,7 @@ daysLeft_one = "{{count}} dag igjen"
 daysLeft_other = "{{count}} dager igjen"
 engineerLabel = "Din løsningsingeniør"
 eyebrow = "Utrullingen din"
-live = "Du er i drift på Stirling Enterprise"
+live = "Du er i drift på Chronicle Enterprise"
 nextStep = "Neste trinn: {{action}}"
 subtitle = "Løsningsingeniøren din er med på hvert trinn. Én neste handling om gangen; hele sjekklisten er nedenfor."
 title = "Fra prøveperiode til drift, én veiledet vei"
@@ -7716,7 +7716,7 @@ gatingAction = "Godta tilbudet ditt"
 label = "Tilbud"
 
 [portal.procurement.journeySteps.trial]
-blurb = "Evaluer Stirling mot dokumentene og arbeidsflytene dine."
+blurb = "Evaluer Chronicle mot dokumentene og arbeidsflytene dine."
 gatingAction = "Bygg tilbudet ditt"
 label = "Prøveperiode"
 
@@ -7730,14 +7730,14 @@ label = "Lisensnøkkelen din"
 
 [portal.procurement.link]
 cta = "Koble til konto"
-description = "Innkjøp kjører på den tilkoblede Stirling-kontoen din: det er slik vi klargjør prøveperioden, priser tilbudet ditt og starter fakturering. Koble til en konto for å starte."
+description = "Innkjøp kjører på den tilkoblede Chronicle-kontoen din: det er slik vi klargjør prøveperioden, priser tilbudet ditt og starter fakturering. Koble til en konto for å starte."
 eyebrow = "Enterprise"
 title = "Koble til kontoen din for å begynne"
 
 [portal.procurement.live]
 description = "Abonnementet ditt er aktivt og lisensen din er utstedt. Teamet ditt er klargjort, og fakturering har startet."
 eyebrow = "I drift"
-title = "Du er i drift på Stirling Enterprise"
+title = "Du er i drift på Chronicle Enterprise"
 
 [portal.procurement.locked]
 description = "Prøvenøkler, tilbud for forpliktet volum, avtalen med én signatur, betaling og dokumentregisteret ditt finnes alle her når du starter en enterprise-evaluering."
@@ -7772,7 +7772,7 @@ requestBodyFree = "Vi genererer dette på forespørsel. Bekreft, så sender løs
 requestBodyPaid = "Dette er et betalt tillegg. Bekreft, så avgrenser løsningsingeniøren din det og sender papirarbeidet."
 requestCta = "Be om"
 requestTitle = "Be om dette dokumentet"
-signBody = "Åpner Stirling Enterprise Agreement for e-signatur: én signatur dekker MSA, bestillingsskjema, EULA og DPA. Vi motsignerer automatisk, og du går videre til betaling."
+signBody = "Åpner Chronicle Enterprise Agreement for e-signatur: én signatur dekker MSA, bestillingsskjema, EULA og DPA. Vi motsignerer automatisk, og du går videre til betaling."
 signCta = "Åpne for signering"
 signTitle = "Se gjennom og signer avtalen din"
 uploadBody = "Send oss innkjøpsordren din, så fakturerer vi mot den på dine vilkår. Dra inn PDF-en eller velg en fil nedenfor."
@@ -7824,7 +7824,7 @@ title = "Ingenting her ennå"
 
 [portal.search]
 ariaLabel = "Søk"
-placeholder = "Søk i Stirling — endpoints, pipelines, docs…"
+placeholder = "Søk i Chronicle — endpoints, pipelines, docs…"
 
 [portal.search.empty]
 noActionsDescription = "Hurtighandlinger vises her når de er tilgjengelige."
@@ -7852,9 +7852,9 @@ switchToLight = "Bytt til lyst tema"
 [portal.shell.sidebar]
 appEditor = "Editor"
 appProcessor = "Processor"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} dokumenter"
-linkAccount = "Koble til Stirling-konto"
+linkAccount = "Koble til Chronicle-konto"
 planEditor = "Editor-abonnement"
 planEnterprise = "Enterprise-abonnement"
 planProcessor = "Processor-abonnement"
@@ -7862,7 +7862,7 @@ primaryNav = "Primær navigasjon"
 switchApp = "Bytt app"
 
 [portal.sources]
-subtitle = "Gjenbrukbare inndatakoblinger som mater dokumenter inn i Stirling. Konfigurer en kobling én gang, og referer deretter til den fra et hvilket som helst antall policyer. Klikk på en rad for konfigurasjonen og hvilke policyer som bruker den."
+subtitle = "Gjenbrukbare inndatakoblinger som mater dokumenter inn i Chronicle. Konfigurer en kobling én gang, og referer deretter til den fra et hvilket som helst antall policyer. Klikk på en rad for konfigurasjonen og hvilke policyer som bruker den."
 title = "Kilder"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "Overvåk en katalog på serveren for nye dokumenter."
 label = "Mappe"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Absolutt sti som Stirling overvåker for filer som skal behandles."
+helperText = "Absolutt sti som Chronicle overvåker for filer som skal behandles."
 label = "Katalogsti"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "Se gjennom og koble til"
 
 [portal.usage]
 managePayment = "Administrer betaling"
-subtitle = "Forbruk, fakturaer og abonnementsadministrasjon for hver PDF Stirling har fakturert, i én konsoll."
+subtitle = "Forbruk, fakturaer og abonnementsadministrasjon for hver PDF Chronicle har fakturert, i én konsoll."
 title = "Bruk og fakturering"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "Wallet utilgjengelig: {{status}} {{statusText}}"
 
 [portal.usage.sessionExpired]
 action = "Logg på igjen"
-body = "Stirling-kontoøkten din er utløpt. Logg på igjen for å vise fakturering — instansen din forblir koblet."
+body = "Chronicle-kontoøkten din er utløpt. Logg på igjen for å vise fakturering — instansen din forblir koblet."
 title = "Økten er utløpt"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "Logget inn som"
 
 [settings.connection.mode]
 local = "Kun lokalt"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "Selvhostet"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "Bruksanalyse"
 [settings.planBilling]
 currentPlan = "Gjeldende plan"
 loading = "Laster faktureringsinformasjon..."
-notAvailable = "Plan og fakturering er bare tilgjengelig når du er koblet til Stirling Cloud (SaaS-modus)."
+notAvailable = "Plan og fakturering er bare tilgjengelig når du er koblet til Chronicle Cloud (SaaS-modus)."
 title = "Plan og fakturering"
 
 [settings.planBilling.billing]
@@ -10015,7 +10015,7 @@ processorDeferred = "Invitasjon sendt, men Processor-tilgang kunne ikke gis enn�
 processorDesc = "Styringsflaten, kjør pipelines, agenter og API."
 role = "Rolle"
 send2 = "Send invitasjon"
-subtitle2 = "De får en e-post for å bli med i Stirling-arbeidsområdet ditt."
+subtitle2 = "De får en e-post for å bli med i Chronicle-arbeidsområdet ditt."
 team = "Team"
 title = "Inviter personer"
 username = "Brukernavn"

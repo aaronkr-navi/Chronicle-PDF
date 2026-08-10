@@ -1158,8 +1158,8 @@ description = "SMTP 驗證使用者名稱"
 label = "SMTP 使用者名稱"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -2742,7 +2742,7 @@ close = "Close chat"
 open = "Open Chronicle AI assistant"
 
 [chat.header]
-agentMenu = "Stirling 代理選項"
+agentMenu = "Chronicle 代理選項"
 clearChat = "清除聊天"
 
 [chat.input]
@@ -3072,7 +3072,7 @@ upgradeButton = "升級帳號"
 
 [config.apiKeys]
 copyKeyAriaLabel = "複製 API 金鑰"
-description = "用於存取 Stirling 的 PDF 工具套件的 API 金鑰。將它複製到您的專案，或重新產生以建立新金鑰。"
+description = "用於存取 Chronicle 的 PDF 工具套件的 API 金鑰。將它複製到您的專案，或重新產生以建立新金鑰。"
 docsDescription = "深入了解如何與 Chronicle PDF 整合："
 docsLink = "API 文件"
 docsTitle = "API 文件"
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -4669,7 +4669,7 @@ terms = "使用條款"
 title = "第三方授權條款"
 
 [localMode]
-toolUnavailable = "此工具需要帳號。請登入 Stirling Cloud 或連線至自架伺服器以使用。"
+toolUnavailable = "此工具需要帳號。請登入 Chronicle Cloud 或連線至自架伺服器以使用。"
 
 [localMode.toolPicker]
 message = "登入以解鎖所有工具。"
@@ -4989,7 +4989,7 @@ skipForNow = "暫時略過"
 skipTheTour = "略過導覽"
 
 [onboarding.desktopInstall]
-body = "Stirling 最適合以桌面應用程式使用。您可以離線操作、更快存取文件，並在電腦本機進行編輯。"
+body = "Chronicle 最適合以桌面應用程式使用。您可以離線操作、更快存取文件，並在電腦本機進行編輯。"
 selectOs = "選擇作業系統"
 title = "下載"
 titleWithOs = "下載適用於 {{osLabel}} 的版本"
@@ -4999,8 +4999,8 @@ authenticationCode = "驗證碼"
 qrCodeLoading = "正在產生您的 QR 碼…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "啟用登入模式後，您可以管理使用者、設定參數並監控伺服器健康狀態。伺服器上的前 <strong>{{freeTierLimit}}</strong> 人可免費使用 Stirling。"
-adminBodyLoginEnabled = "身為管理員，您可以管理使用者、設定參數並監控伺服器健康狀態。伺服器上的前 <strong>{{freeTierLimit}}</strong> 人可免費使用 Stirling。"
+adminBodyLoginDisabled = "啟用登入模式後，您可以管理使用者、設定參數並監控伺服器健康狀態。伺服器上的前 <strong>{{freeTierLimit}}</strong> 人可免費使用 Chronicle。"
+adminBodyLoginEnabled = "身為管理員，您可以管理使用者、設定參數並監控伺服器健康狀態。伺服器上的前 <strong>{{freeTierLimit}}</strong> 人可免費使用 Chronicle。"
 adminTitle = "管理員總覽"
 userBody = "邀請隊友、指派角色，並在單一安全的工作區中整理您的文件。當您準備好超越個人使用時，可隨時啟用登入模式。"
 userTitle = "方案總覽"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "確認您的角色"
 roleUser = "使用者"
 
 [onboarding.serverLicense]
-freeBody = "我們的 <strong>Open-Core</strong> 授權允許每台伺服器最多 <strong>{{freeTierLimit}}</strong> 位使用者免費使用。若要無縫擴充並搶先體驗全新的 <strong>PDF 文字編輯工具</strong>，建議升級至 Stirling Server 方案 - 完整編輯與 <strong>不限席次</strong>，每台伺服器 $99/月。"
+freeBody = "我們的 <strong>Open-Core</strong> 授權允許每台伺服器最多 <strong>{{freeTierLimit}}</strong> 位使用者免費使用。若要無縫擴充並搶先體驗全新的 <strong>PDF 文字編輯工具</strong>，建議升級至 Chronicle server 方案 - 完整編輯與 <strong>不限席次</strong>，每台伺服器 $99/月。"
 freeTitle = "伺服器授權"
-overLimitBody = "我們的授權允許每台伺服器最多 <strong>{{freeTierLimit}}</strong> 位使用者免費使用。您有 <strong>{{overLimitUserCopy}}</strong> 位 Stirling 使用者。若要不中斷使用，請升級至 Stirling Server 方案 - <strong>不限席次</strong>、PDF 文字編輯，以及完整管理控制，每台伺服器 $99/月。"
+overLimitBody = "我們的授權允許每台伺服器最多 <strong>{{freeTierLimit}}</strong> 位使用者免費使用。您有 <strong>{{overLimitUserCopy}}</strong> 位 Chronicle 使用者。若要不中斷使用，請升級至 Chronicle server 方案 - <strong>不限席次</strong>、PDF 文字編輯，以及完整管理控制，每台伺服器 $99/月。"
 overLimitTitle = "需要伺服器授權"
 seePlans = "查看方案 →"
 upgrade = "立即升級 →"
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6192,25 +6192,25 @@ comingSoon = "即將推出"
 [portal.accountLink.card]
 billingNote = "自動處理會從您的組織錢包扣款。"
 eyebrow = "帳戶連結"
-linkButton = "連結您的 Stirling 帳戶"
+linkButton = "連結您的 Chronicle 帳戶"
 linked = "已連結"
 linkedAs = "已連結為 {{name}}。"
 linkedGeneric = "此執行個體已連結。"
 notLinked = "未連結"
-title = "將此組織連結到其 Stirling 帳戶"
+title = "將此組織連結到其 Chronicle 帳戶"
 unlink = "取消連結"
 
 [portal.accountLink.card.error]
 title = "無法連結"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "以啟用與託管的 Stirling 帳戶進行帳戶連結。在 dev 中，您可以從連結對話方塊模擬登入。"
+after = "以啟用與託管的 Chronicle 帳戶進行帳戶連結。在 dev 中，您可以從連結對話方塊模擬登入。"
 before = "設定"
 title = "尚未設定 SaaS 登入"
 
 [portal.accountLink.gate]
 action = "連結帳戶"
-description = "連結此組織的 Stirling 帳戶以使用可計費功能。"
+description = "連結此組織的 Chronicle 帳戶以使用可計費功能。"
 title = "連結以解鎖"
 titleFeature = "連結以解鎖 {{feature}}"
 
@@ -6242,13 +6242,13 @@ never = "從未"
 
 [portal.accountLink.modal]
 linkSubtitle = "登入此伺服器應計費的帳戶。"
-linkTitle = "連結您的 Stirling 帳戶"
-reauthSubtitle = "您的工作階段已過期 — 請重新登入您的 Stirling 帳戶。您的執行個體會保持連結。"
+linkTitle = "連結您的 Chronicle 帳戶"
+reauthSubtitle = "您的工作階段已過期 — 請重新登入您的 Chronicle 帳戶。您的執行個體會保持連結。"
 reauthTitle = "再次登入"
 simulateSignIn = "模擬登入（dev）"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "以啟用應用程式內與託管的 Stirling 帳戶連結。"
+after = "以啟用應用程式內與託管的 Chronicle 帳戶連結。"
 and = "和"
 before = "設定"
 title = "尚未設定 SaaS 登入"
@@ -6257,7 +6257,7 @@ title = "尚未設定 SaaS 登入"
 instancesSub = "註冊到此組織的每個自架執行個體。撤銷憑證可立即中斷其自動存取。"
 instancesTitle = "已連結的執行個體"
 revokeError = "無法撤銷執行個體"
-sub = "將此自架組織連結到其 Stirling 帳戶，讓自動處理從您的組織錢包扣款。"
+sub = "將此自架組織連結到其 Chronicle 帳戶，讓自動處理從您的組織錢包扣款。"
 
 [portal.accountLink.panel.loadError]
 forbidden = "只有團隊擁有者可以檢視組織已連結的執行個體。"
@@ -6354,7 +6354,7 @@ close = "關閉助理"
 error = "無法連線到助理。"
 errorWithDetail = "無法連線到助理：{{detail}}"
 inputAriaLabel = "詢問助理"
-inputPlaceholder = "詢問關於 Stirling…"
+inputPlaceholder = "詢問關於 Chronicle…"
 open = "開啟助理"
 send = "傳送"
 title = "助理"
@@ -6392,7 +6392,7 @@ title = "尚未設定 Stripe"
 cta = "建立您的 Enterprise 報價"
 description = "承諾用量折扣、隔離部署、自訂 MSA 與安全性審查，以及第三方經銷商合作。"
 eyebrow = "用量折扣 · 1M+ PDFs"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "本月活躍"
@@ -6439,9 +6439,9 @@ viewAriaLabel = "在 Stripe 中檢視發票 {{number}}"
 viewLink = "檢視 ↗"
 
 [portal.billing.linkPrompt]
-cta = "連結 Stirling 帳戶"
+cta = "連結 Chronicle 帳戶"
 description = "手動 PDF 編輯 — 檢視、簽署、合併、分割、浮水印、壓縮、轉換、手動 OCR — 無論是否連結，一律免費。連結即可取得 500 個免費 PDFs 的計量處理額度（自動化、AI 和 API）；需要更多時，啟用 Processor 方案，只需為使用量付費。"
-title = "連結您的 Stirling 帳戶"
+title = "連結您的 Chronicle 帳戶"
 
 [portal.billing.paymentMethod]
 billedMonthly = "每月計費"
@@ -6869,7 +6869,7 @@ title = "發行 API 金鑰"
 [portal.infrastructure]
 manageEditorDeployment = "管理編輯器部署"
 sectionsAriaLabel = "基礎設施區段"
-subtitle = "您 Stirling 工作區的部署、憑證、安全狀態、儲存空間與稽核軌跡。"
+subtitle = "您 Chronicle 工作區的部署、憑證、安全狀態、儲存空間與稽核軌跡。"
 title = "基礎設施"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "金鑰名稱"
 keyNamePlaceholder = "例如：Production · ingest"
 permissionsLabel = "權限"
 secretKeyCaption = "秘密金鑰"
-secretWarning = "請將此儲存在 secrets manager 中。Stirling 只會儲存 hash — 之後無法復原。"
+secretWarning = "請將此儲存在 secrets manager 中。Chronicle 只會儲存 hash — 之後無法復原。"
 subtitle = "將金鑰範圍限制在最低需求。您可以隨時輪換或撤銷。"
 subtitleCreated = "立即複製此秘密 — 之後不會再顯示。"
 title = "建立 API 金鑰"
@@ -6993,7 +6993,7 @@ version = "版本"
 
 [portal.infrastructure.deployments.regions]
 heading = "區域"
-subheading = "每個已部署 Stirling 區域的即時健康狀態 — 延遲、負載與推出版本。"
+subheading = "每個已部署 Chronicle 區域的即時健康狀態 — 延遲、負載與推出版本。"
 
 [portal.infrastructure.deployments.regions.empty]
 description = "工作區佈建後，已部署區域會顯示在這裡。"
@@ -7050,16 +7050,16 @@ operation = "操作"
 routedTo = "路由至"
 
 [portal.infrastructure.security.access.byok]
-description = "提供來自您自己 KMS 的金鑰。Stirling 會使用它加密，但仍可讀取。"
+description = "提供來自您自己 KMS 的金鑰。Chronicle 會使用它加密，但仍可讀取。"
 label = "帶入您自己的金鑰 (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "金鑰永不離開您的 KMS。Stirling 只持有密文。"
+description = "金鑰永不離開您的 KMS。Chronicle 只持有密文。"
 label = "保留您自己的金鑰 (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Stirling 管理加密金鑰。最簡單 — 您這邊無需金鑰操作。"
-label = "Stirling 持有的金鑰"
+[portal.infrastructure.security.access.Chronicle]
+description = "Chronicle 管理加密金鑰。最簡單 — 您這邊無需金鑰操作。"
+label = "Chronicle 持有的金鑰"
 
 [portal.infrastructure.security.accessPolicy]
 heading = "文件存取政策"
@@ -7073,15 +7073,15 @@ viewReport = "檢視報告 →"
 
 [portal.infrastructure.security.compliance]
 heading = "合規性"
-subheading = "涵蓋 Stirling 平台的證明與認證。"
+subheading = "涵蓋 Chronicle 平台的證明與認證。"
 
 [portal.infrastructure.security.empty]
 description = "工作區的安全性設定會顯示在這裡。"
 title = "安全狀態無法使用"
 
 [portal.infrastructure.security.hyokBanner]
-description = "使用 HYOK 時，加密金鑰永不離開您的 KMS。Stirling 只儲存和處理您可隨時撤銷的密文。"
-title = "Stirling 無法解密您的文件"
+description = "使用 HYOK 時，加密金鑰永不離開您的 KMS。Chronicle 只儲存和處理您可隨時撤銷的密文。"
+title = "Chronicle 無法解密您的文件"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "未設定 IP 範圍 — 允許所有 IP。"
@@ -7110,7 +7110,7 @@ subheading = "加密靜態儲存文件的金鑰保管 — 誰可以解密，以�
 
 [portal.infrastructure.security.managedBanner]
 description = "帶入您自己的金鑰 (BYOK) 和保留您自己的金鑰 (HYOK) 保管可於 Enterprise 使用。升級以提供來自您自己 KMS 的金鑰。"
-title = "在您的方案中，金鑰由 Stirling 管理"
+title = "在您的方案中，金鑰由 Chronicle 管理"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "上傳"
 
 [portal.procurement.agreement]
 agreeCta = "同意並訂閱"
-confirm = "我已閱讀並同意 Stirling Enterprise Agreement。"
+confirm = "我已閱讀並同意 Chronicle Enterprise Agreement。"
 eyebrow = "協議"
 intro = "一份合併協議涵蓋您的交易：Master Service Agreement、Order Form、EULA 和 Data Processing Agreement。檢閱後同意，即可接受報價並轉為承諾訂閱。"
 title = "檢閱您的企業協議"
@@ -7606,7 +7606,7 @@ country = "國家/地區"
 countryEuro = "歐元區 (EUR €)"
 countryUK = "英國 (GBP £)"
 countryUS = "美國 (USD $)"
-eula = "我已閱讀並同意 Stirling Enterprise EULA。它規範由此報價產生的協議。"
+eula = "我已閱讀並同意 Chronicle Enterprise EULA。它規範由此報價產生的協議。"
 generate = "產生報價"
 included = "已包含"
 indemnification = "IP 賠償保障"
@@ -7689,7 +7689,7 @@ daysLeft_one = "剩餘 {{count}} 天"
 daysLeft_other = "剩餘 {{count}} 天"
 engineerLabel = "您的解決方案工程師"
 eyebrow = "您的推出流程"
-live = "您已在 Stirling Enterprise 上線"
+live = "您已在 Chronicle Enterprise 上線"
 nextStep = "下一步：{{action}}"
 subtitle = "您的解決方案工程師會陪同每個步驟。一次只需完成下一個動作；完整清單如下。"
 title = "從試用到上線，一條受引導的路徑"
@@ -7716,7 +7716,7 @@ gatingAction = "接受您的報價"
 label = "報價"
 
 [portal.procurement.journeySteps.trial]
-blurb = "以您的文件和工作流程評估 Stirling。"
+blurb = "以您的文件和工作流程評估 Chronicle。"
 gatingAction = "建立您的報價"
 label = "試用"
 
@@ -7730,14 +7730,14 @@ label = "您的授權金鑰"
 
 [portal.procurement.link]
 cta = "連結帳戶"
-description = "採購流程會在您連結的 Stirling 帳戶上執行：我們會用它來佈建試用、為報價定價並開始計費。連結帳戶即可開始。"
+description = "採購流程會在您連結的 Chronicle 帳戶上執行：我們會用它來佈建試用、為報價定價並開始計費。連結帳戶即可開始。"
 eyebrow = "Enterprise"
 title = "連結您的帳戶以開始"
 
 [portal.procurement.live]
 description = "您的訂閱已啟用，授權已核發。您的團隊已完成佈建，計費也已開始。"
 eyebrow = "上線"
-title = "您已在 Stirling Enterprise 上線"
+title = "您已在 Chronicle Enterprise 上線"
 
 [portal.procurement.locked]
 description = "開始企業評估後，試用金鑰、承諾數量報價、一簽式協議、付款和文件帳本都會在這裡。"
@@ -7772,7 +7772,7 @@ requestBodyFree = "我們會依需求產生此文件。確認後，您的解決�
 requestBodyPaid = "這是付費附加項目。確認後，您的解決方案工程師會評估範圍並寄送文件。"
 requestCta = "要求"
 requestTitle = "要求此文件"
-signBody = "開啟 Stirling Enterprise Agreement 進行電子簽署：一個簽名涵蓋 MSA、order form、EULA 和 DPA。我們會自動會簽，您將進入付款步驟。"
+signBody = "開啟 Chronicle Enterprise Agreement 進行電子簽署：一個簽名涵蓋 MSA、order form、EULA 和 DPA。我們會自動會簽，您將進入付款步驟。"
 signCta = "開啟以簽署"
 signTitle = "檢閱並簽署您的協議"
 uploadBody = "將您的 PO 傳送給我們，我們會依您的條款開立發票。將 PDF 拖曳至此，或在下方選擇檔案。"
@@ -7824,7 +7824,7 @@ title = "這裡還沒有內容"
 
 [portal.search]
 ariaLabel = "搜尋"
-placeholder = "搜尋 Stirling — endpoints、pipelines、文件…"
+placeholder = "搜尋 Chronicle — endpoints、pipelines、文件…"
 
 [portal.search.empty]
 noActionsDescription = "快速動作可用後會顯示在這裡。"
@@ -7852,9 +7852,9 @@ switchToLight = "切換至淺色主題"
 [portal.shell.sidebar]
 appEditor = "編輯器"
 appProcessor = "處理器"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} 份文件"
-linkAccount = "連結 Stirling 帳戶"
+linkAccount = "連結 Chronicle 帳戶"
 planEditor = "Editor 方案"
 planEnterprise = "Enterprise 方案"
 planProcessor = "Processor 方案"
@@ -7862,7 +7862,7 @@ primaryNav = "主要導覽"
 switchApp = "切換應用程式"
 
 [portal.sources]
-subtitle = "可重複使用的輸入連線，將文件送入 Stirling。設定一次連線後，即可從任意數量的政策參照它。點擊一列可查看其設定，以及使用它的政策。"
+subtitle = "可重複使用的輸入連線，將文件送入 Chronicle。設定一次連線後，即可從任意數量的政策參照它。點擊一列可查看其設定，以及使用它的政策。"
 title = "來源"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "監看伺服器上的目錄以取得新文件。"
 label = "資料夾"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Stirling 監看以處理檔案的絕對路徑。"
+helperText = "Chronicle 監看以處理檔案的絕對路徑。"
 label = "目錄路徑"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "檢閱並連接"
 
 [portal.usage]
 managePayment = "管理付款"
-subtitle = "在單一主控台中管理 Stirling 已計費的每份 PDF 的用量、發票和方案。"
+subtitle = "在單一主控台中管理 Chronicle 已計費的每份 PDF 的用量、發票和方案。"
 title = "用量與帳務"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "錢包無法使用：{{status}} {{statusText}}"
 
 [portal.usage.sessionExpired]
 action = "重新登入"
-body = "您的 Stirling 帳戶工作階段已過期。請重新登入以檢視帳務 — 您的執行個體會保持連結。"
+body = "您的 Chronicle 帳戶工作階段已過期。請重新登入以檢視帳務 — 您的執行個體會保持連結。"
 title = "工作階段已過期"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "已登入身分"
 
 [settings.connection.mode]
 local = "僅限本機"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "自託管"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "使用分析"
 [settings.planBilling]
 currentPlan = "目前方案"
 loading = "正在載入帳務資訊..."
-notAvailable = "僅在連線至 Stirling Cloud（SaaS 模式）時可使用「方案與計費」。"
+notAvailable = "僅在連線至 Chronicle Cloud（SaaS 模式）時可使用「方案與計費」。"
 title = "方案與計費"
 
 [settings.planBilling.billing]
@@ -10015,7 +10015,7 @@ processorDeferred = "邀請已送出，但尚無法授予 Processor 存取權 �
 processorDesc = "治理介面、執行 pipelines、agents 和 API。"
 role = "角色"
 send2 = "傳送邀請"
-subtitle2 = "他們會收到電子郵件以加入您的 Stirling 工作區。"
+subtitle2 = "他們會收到電子郵件以加入您的 Chronicle 工作區。"
 team = "團隊"
 title = "邀請成員"
 username = "使用者名稱"

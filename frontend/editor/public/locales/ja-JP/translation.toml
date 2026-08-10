@@ -1158,8 +1158,8 @@ description = "SMTP 認証のユーザー名"
 label = "SMTP ユーザー名"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -2742,7 +2742,7 @@ close = "Close chat"
 open = "Open Chronicle AI assistant"
 
 [chat.header]
-agentMenu = "Stirling エージェントのオプション"
+agentMenu = "Chronicle エージェントのオプション"
 clearChat = "チャットをクリア"
 
 [chat.input]
@@ -3072,7 +3072,7 @@ upgradeButton = "アカウントをアップグレード"
 
 [config.apiKeys]
 copyKeyAriaLabel = "API キーをコピー"
-description = "Stirling の PDF ツール群にアクセスするための API キーです。プロジェクトにコピーするか、更新して新しいキーを生成できます。"
+description = "Chronicle の PDF ツール群にアクセスするための API キーです。プロジェクトにコピーするか、更新して新しいキーを生成できます。"
 docsDescription = "Chronicle PDF との統合について詳しくはこちら:"
 docsLink = "API ドキュメント"
 docsTitle = "API ドキュメント"
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -3939,7 +3939,7 @@ title = "フォルダへ移動"
 [filesPage.origin]
 all = "すべてのソース"
 cloud = "クラウド"
-cloudHint = "Stirling サーバーに保存"
+cloudHint = "Chronicle サーバーに保存"
 local = "ローカル"
 localHint = "このブラウザにのみ保存"
 shared = "共有"
@@ -4669,7 +4669,7 @@ terms = "利用規約"
 title = "サードパーティライセンス"
 
 [localMode]
-toolUnavailable = "このツールにはアカウントが必要です。Stirling Cloud にサインインするか、セルフホストサーバーに接続して使用してください。"
+toolUnavailable = "このツールにはアカウントが必要です。Chronicle Cloud にサインインするか、セルフホストサーバーに接続して使用してください。"
 
 [localMode.toolPicker]
 message = "サインインしてすべてのツールを利用可能にします。"
@@ -4989,7 +4989,7 @@ skipForNow = "今はスキップ"
 skipTheTour = "ツアーをスキップ"
 
 [onboarding.desktopInstall]
-body = "Stirling はデスクトップアプリとして最適に動作します。オフラインでも使えて、文書に素早くアクセスし、PC上でローカル編集できます。"
+body = "Chronicle はデスクトップアプリとして最適に動作します。オフラインでも使えて、文書に素早くアクセスし、PC上でローカル編集できます。"
 selectOs = "オペレーティングシステムを選択"
 title = "ダウンロード"
 titleWithOs = "{{osLabel}} 用をダウンロード"
@@ -4999,8 +4999,8 @@ authenticationCode = "認証コード"
 qrCodeLoading = "QRコードを生成中…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "ログインモードを有効にすると、ユーザー管理、設定の構成、サーバーの健全性監視が可能です。サーバー上の最初の <strong>{{freeTierLimit}}</strong> 人は無料で Stirling を利用できます。"
-adminBodyLoginEnabled = "管理者として、ユーザー管理、設定の構成、サーバーの健全性監視ができます。サーバー上の最初の <strong>{{freeTierLimit}}</strong> 人は無料で Stirling を利用できます。"
+adminBodyLoginDisabled = "ログインモードを有効にすると、ユーザー管理、設定の構成、サーバーの健全性監視が可能です。サーバー上の最初の <strong>{{freeTierLimit}}</strong> 人は無料で Chronicle を利用できます。"
+adminBodyLoginEnabled = "管理者として、ユーザー管理、設定の構成、サーバーの健全性監視ができます。サーバー上の最初の <strong>{{freeTierLimit}}</strong> 人は無料で Chronicle を利用できます。"
 adminTitle = "管理者向け概要"
 userBody = "メンバーを招待し、役割を割り当て、1つの安全なワークスペースで文書を整理できます。ソロ利用を超えて拡大する準備ができたら、いつでもログインモードを有効にしてください。"
 userTitle = "プラン概要"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "役割を確認してください"
 roleUser = "ユーザー"
 
 [onboarding.serverLicense]
-freeBody = "当社の <strong>オープンコア</strong> ライセンスでは、サーバーごとに最大 <strong>{{freeTierLimit}}</strong> ユーザーまで無料です。中断なく拡張し、新しい <strong>PDF テキスト編集ツール</strong> に早期アクセスするには、Stirling Server プランをお勧めします。完全編集と <strong>無制限席数</strong> が $99/サーバー/月 です。"
+freeBody = "当社の <strong>オープンコア</strong> ライセンスでは、サーバーごとに最大 <strong>{{freeTierLimit}}</strong> ユーザーまで無料です。中断なく拡張し、新しい <strong>PDF テキスト編集ツール</strong> に早期アクセスするには、Chronicle server プランをお勧めします。完全編集と <strong>無制限席数</strong> が $99/サーバー/月 です。"
 freeTitle = "サーバーライセンス"
-overLimitBody = "当社のライセンスでは、サーバーごとに <strong>{{freeTierLimit}}</strong> ユーザーまで無料です。現在 <strong>{{overLimitUserCopy}}</strong> の Stirling ユーザーがいます。中断なく利用を続けるには、Stirling Server プランにアップグレードしてください - <strong>無制限席数</strong>、PDF テキスト編集、完全な管理機能が $99/サーバー/月 です。"
+overLimitBody = "当社のライセンスでは、サーバーごとに <strong>{{freeTierLimit}}</strong> ユーザーまで無料です。現在 <strong>{{overLimitUserCopy}}</strong> の Chronicle ユーザーがいます。中断なく利用を続けるには、Chronicle server プランにアップグレードしてください - <strong>無制限席数</strong>、PDF テキスト編集、完全な管理機能が $99/サーバー/月 です。"
 overLimitTitle = "サーバーライセンスが必要です"
 seePlans = "プランを見る →"
 upgrade = "今すぐアップグレード →"
@@ -5041,7 +5041,7 @@ title = "ツアーの概要"
 
 [onboarding.welcomeSlide]
 body = "Chronicle PDF はあらゆる規模のチームで使えるようになりました。このアップデートには新しいレイアウト、強力な管理機能、そして最も要望の多かった機能 - <strong>テキスト編集</strong> が含まれます。"
-title = "Stirling へようこそ"
+title = "Chronicle へようこそ"
 
 [onboarding.whatsNew]
 activeFilesView = "アクティブファイルで開いているすべてを確認し、作業対象を選択できます。"
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6192,25 +6192,25 @@ comingSoon = "近日公開"
 [portal.accountLink.card]
 billingNote = "無人処理は組織ウォレットに請求されます。"
 eyebrow = "アカウントリンク"
-linkButton = "Stirling アカウントをリンク"
+linkButton = "Chronicle アカウントをリンク"
 linked = "リンク済み"
 linkedAs = "{{name}} としてリンク済み。"
 linkedGeneric = "このインスタンスはリンクされています。"
 notLinked = "未リンク"
-title = "この組織を Stirling アカウントにリンク"
+title = "この組織を Chronicle アカウントにリンク"
 unlink = "リンクを解除"
 
 [portal.accountLink.card.error]
 title = "リンクできませんでした"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "を設定して、ホストされた Stirling アカウントとのアカウントリンクを有効にしてください。開発環境では、リンクダイアログからサインインをシミュレートできます。"
+after = "を設定して、ホストされた Chronicle アカウントとのアカウントリンクを有効にしてください。開発環境では、リンクダイアログからサインインをシミュレートできます。"
 before = "設定"
 title = "SaaS ログインが設定されていません"
 
 [portal.accountLink.gate]
 action = "アカウントをリンク"
-description = "請求対象機能を使用するには、この組織の Stirling アカウントをリンクしてください。"
+description = "請求対象機能を使用するには、この組織の Chronicle アカウントをリンクしてください。"
 title = "リンクしてロック解除"
 titleFeature = "リンクして {{feature}} をロック解除"
 
@@ -6242,13 +6242,13 @@ never = "なし"
 
 [portal.accountLink.modal]
 linkSubtitle = "このサーバーの請求先にするアカウントにサインインしてください。"
-linkTitle = "Stirling アカウントをリンク"
-reauthSubtitle = "セッションの有効期限が切れました — Stirling アカウントに再度サインインしてください。インスタンスのリンクは維持されます。"
+linkTitle = "Chronicle アカウントをリンク"
+reauthSubtitle = "セッションの有効期限が切れました — Chronicle アカウントに再度サインインしてください。インスタンスのリンクは維持されます。"
 reauthTitle = "再度サインイン"
 simulateSignIn = "サインインをシミュレート（dev）"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "を設定して、ホストされた Stirling アカウントとのアプリ内リンクを有効にしてください。"
+after = "を設定して、ホストされた Chronicle アカウントとのアプリ内リンクを有効にしてください。"
 and = "および"
 before = "設定"
 title = "SaaS ログインが設定されていません"
@@ -6257,7 +6257,7 @@ title = "SaaS ログインが設定されていません"
 instancesSub = "この組織に登録されているすべてのセルフホストインスタンス。認証情報を取り消すと、無人アクセスを直ちに遮断できます。"
 instancesTitle = "リンクされたインスタンス"
 revokeError = "インスタンスを取り消せませんでした"
-sub = "このセルフホスト組織を Stirling アカウントにリンクして、無人処理を組織ウォレットに請求します。"
+sub = "このセルフホスト組織を Chronicle アカウントにリンクして、無人処理を組織ウォレットに請求します。"
 
 [portal.accountLink.panel.loadError]
 forbidden = "チームオーナーのみが組織のリンクされたインスタンスを表示できます。"
@@ -6354,7 +6354,7 @@ close = "アシスタントを閉じる"
 error = "アシスタントに接続できませんでした。"
 errorWithDetail = "アシスタントに接続できませんでした: {{detail}}"
 inputAriaLabel = "アシスタントに質問"
-inputPlaceholder = "Stirling について質問…"
+inputPlaceholder = "Chronicle について質問…"
 open = "アシスタントを開く"
 send = "送信"
 title = "アシスタント"
@@ -6392,7 +6392,7 @@ title = "Stripe が設定されていません"
 cta = "Enterprise 見積もりを作成"
 description = "コミット済みボリューム割引、エアギャップデプロイ、カスタム MSA とセキュリティレビュー、サードパーティ販売代理店パートナーシップ。"
 eyebrow = "ボリューム割引 · 100万以上のPDF"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "今月のアクティブ数"
@@ -6439,9 +6439,9 @@ viewAriaLabel = "請求書 {{number}} を Stripe で表示"
 viewLink = "表示 ↗"
 
 [portal.billing.linkPrompt]
-cta = "Stirling アカウントをリンク"
+cta = "Chronicle アカウントをリンク"
 description = "手動のPDF編集 — 表示、署名、結合、分割、透かし、圧縮、変換、手動 OCR — はリンクの有無に関係なく常に無料です。リンクすると、従量制処理（自動化、AI、API）の無料PDF 500件を受け取れます。さらに必要な場合は Processorプランを有効にし、使用した分だけお支払いください。"
-title = "Stirling アカウントをリンク"
+title = "Chronicle アカウントをリンク"
 
 [portal.billing.paymentMethod]
 billedMonthly = "月次請求"
@@ -6869,7 +6869,7 @@ title = "API キーを発行"
 [portal.infrastructure]
 manageEditorDeployment = "Editor デプロイメントを管理"
 sectionsAriaLabel = "インフラストラクチャセクション"
-subtitle = "Stirling ワークスペースのデプロイメント、認証情報、セキュリティ態勢、ストレージ、監査証跡。"
+subtitle = "Chronicle ワークスペースのデプロイメント、認証情報、セキュリティ態勢、ストレージ、監査証跡。"
 title = "インフラストラクチャ"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "キー名"
 keyNamePlaceholder = "例: Production · ingest"
 permissionsLabel = "権限"
 secretKeyCaption = "シークレットキー"
-secretWarning = "これをシークレットマネージャーに保存してください。Stirling はハッシュのみを保存します — 後で復元する方法はありません。"
+secretWarning = "これをシークレットマネージャーに保存してください。Chronicle はハッシュのみを保存します — 後で復元する方法はありません。"
 subtitle = "キーのスコープを必要最小限にします。いつでもローテーションまたは失効できます。"
 subtitleCreated = "今すぐこのシークレットをコピーしてください — 再表示されません。"
 title = "API キーを作成"
@@ -6993,7 +6993,7 @@ version = "バージョン"
 
 [portal.infrastructure.deployments.regions]
 heading = "リージョン"
-subheading = "デプロイ済みのすべての Stirling リージョンのライブ健全性 — レイテンシ、負荷、ロールアウトバージョン。"
+subheading = "デプロイ済みのすべての Chronicle リージョンのライブ健全性 — レイテンシ、負荷、ロールアウトバージョン。"
 
 [portal.infrastructure.deployments.regions.empty]
 description = "ワークスペースがプロビジョニングされると、デプロイ済みリージョンがここに表示されます。"
@@ -7050,16 +7050,16 @@ operation = "操作"
 routedTo = "ルーティング先"
 
 [portal.infrastructure.security.access.byok]
-description = "独自の KMS からキーを提供します。Stirling はそのキーで暗号化しますが、引き続き読み取り可能です。"
+description = "独自の KMS からキーを提供します。Chronicle はそのキーで暗号化しますが、引き続き読み取り可能です。"
 label = "独自キーを持ち込む（BYOK）"
 
 [portal.infrastructure.security.access.hyok]
-description = "キーは KMS から外に出ません。Stirling は暗号文のみを保持します。"
+description = "キーは KMS から外に出ません。Chronicle は暗号文のみを保持します。"
 label = "独自キーを保持する（HYOK）"
 
-[portal.infrastructure.security.access.stirling]
-description = "Stirling が暗号化キーを管理します。最も簡単で、ユーザー側のキー運用は不要です。"
-label = "Stirling 保持のキー"
+[portal.infrastructure.security.access.Chronicle]
+description = "Chronicle が暗号化キーを管理します。最も簡単で、ユーザー側のキー運用は不要です。"
+label = "Chronicle 保持のキー"
 
 [portal.infrastructure.security.accessPolicy]
 heading = "ドキュメントアクセスポリシー"
@@ -7073,15 +7073,15 @@ viewReport = "レポートを表示 →"
 
 [portal.infrastructure.security.compliance]
 heading = "コンプライアンス"
-subheading = "Stirling プラットフォームを対象とする証明と認証。"
+subheading = "Chronicle プラットフォームを対象とする証明と認証。"
 
 [portal.infrastructure.security.empty]
 description = "ワークスペースのセキュリティ設定がここに表示されます。"
 title = "セキュリティ態勢を利用できません"
 
 [portal.infrastructure.security.hyokBanner]
-description = "HYOK では、暗号化キーが KMS から外に出ることはありません。Stirling は暗号文のみを保存および処理し、いつでも取り消すことができます。"
-title = "Stirling はドキュメントを復号できません"
+description = "HYOK では、暗号化キーが KMS から外に出ることはありません。Chronicle は暗号文のみを保存および処理し、いつでも取り消すことができます。"
+title = "Chronicle はドキュメントを復号できません"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "設定された IP 範囲はありません — すべての IP が許可されています。"
@@ -7110,7 +7110,7 @@ subheading = "保存中のドキュメントを暗号化するキーの管理 �
 
 [portal.infrastructure.security.managedBanner]
 description = "Bring-your-own-key（BYOK）と hold-your-own-key（HYOK）の管理は Enterprise で利用できます。独自の KMS からキーを提供するにはアップグレードしてください。"
-title = "お使いのプランではキーは Stirling によって管理されます"
+title = "お使いのプランではキーは Chronicle によって管理されます"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "アップロード"
 
 [portal.procurement.agreement]
 agreeCta = "同意して購読"
-confirm = "Stirling Enterprise Agreement を読み、同意します。"
+confirm = "Chronicle Enterprise Agreement を読み、同意します。"
 eyebrow = "契約"
 intro = "1つの統合契約で、Master Service Agreement、Order Form、EULA、Data Processing Agreement をカバーします。内容を確認し、見積もりをコミット済みサブスクリプションとして受け入れることに同意してください。"
 title = "エンタープライズ契約を確認"
@@ -7606,7 +7606,7 @@ country = "国"
 countryEuro = "ユーロ圏 (EUR €)"
 countryUK = "英国 (GBP £)"
 countryUS = "米国 (USD $)"
-eula = "Stirling Enterprise EULA を読み、同意します。この見積もりから生成される契約に適用されます。"
+eula = "Chronicle Enterprise EULA を読み、同意します。この見積もりから生成される契約に適用されます。"
 generate = "見積もりを生成"
 included = "含まれています"
 indemnification = "IP 補償"
@@ -7689,7 +7689,7 @@ daysLeft_one = "残り {{count}}日"
 daysLeft_other = "残り {{count}}日"
 engineerLabel = "担当ソリューションエンジニア"
 eyebrow = "ロールアウト"
-live = "Stirling Enterprise で利用開始済みです"
+live = "Chronicle Enterprise で利用開始済みです"
 nextStep = "次のステップ: {{action}}"
 subtitle = "担当ソリューションエンジニアがすべてのステップをサポートします。一度に1つの次のアクションを進め、完全なチェックリストは下にあります。"
 title = "トライアルから本番利用まで、1つのガイド付きパスで"
@@ -7716,7 +7716,7 @@ gatingAction = "見積もりを承諾"
 label = "見積もり"
 
 [portal.procurement.journeySteps.trial]
-blurb = "お客様のドキュメントとワークフローで Stirling を評価します。"
+blurb = "お客様のドキュメントとワークフローで Chronicle を評価します。"
 gatingAction = "見積もりを作成"
 label = "トライアル"
 
@@ -7730,14 +7730,14 @@ label = "ライセンスキー"
 
 [portal.procurement.link]
 cta = "アカウントをリンク"
-description = "調達はリンクされた Stirling アカウントで実行されます。トライアルのプロビジョニング、見積もり価格の算出、請求の開始に使用します。開始するにはアカウントをリンクしてください。"
+description = "調達はリンクされた Chronicle アカウントで実行されます。トライアルのプロビジョニング、見積もり価格の算出、請求の開始に使用します。開始するにはアカウントをリンクしてください。"
 eyebrow = "Enterprise"
 title = "開始するにはアカウントをリンク"
 
 [portal.procurement.live]
 description = "サブスクリプションがアクティブで、ライセンスが発行されています。チームはプロビジョニング済みで、請求も開始されています。"
 eyebrow = "本番稼働"
-title = "Stirling Enterprise で利用開始済みです"
+title = "Chronicle Enterprise で利用開始済みです"
 
 [portal.procurement.locked]
 description = "Enterprise 評価を開始すると、トライアルキー、コミット済みボリューム見積もり、1署名の契約、支払い、ドキュメント台帳がすべてここに表示されます。"
@@ -7772,7 +7772,7 @@ requestBodyFree = "これはオンデマンドで生成します。確認する�
 requestBodyPaid = "これは有料アドオンです。確認すると、担当ソリューションエンジニアが範囲を確認し、書類を送付します。"
 requestCta = "リクエスト"
 requestTitle = "このドキュメントをリクエスト"
-signBody = "Stirling Enterprise Agreement を電子署名用に開きます。1つの署名で MSA、注文書、EULA、DPA をカバーします。当社が自動的に副署し、支払いに進みます。"
+signBody = "Chronicle Enterprise Agreement を電子署名用に開きます。1つの署名で MSA、注文書、EULA、DPA をカバーします。当社が自動的に副署し、支払いに進みます。"
 signCta = "署名用に開く"
 signTitle = "契約を確認して署名"
 uploadBody = "PO を送信してください。お客様の条件に基づいて請求します。PDF をドラッグするか、下からファイルを選択してください。"
@@ -7824,7 +7824,7 @@ title = "まだ何もありません"
 
 [portal.search]
 ariaLabel = "検索"
-placeholder = "Stirling を検索 — エンドポイント、パイプライン、ドキュメント…"
+placeholder = "Chronicle を検索 — エンドポイント、パイプライン、ドキュメント…"
 
 [portal.search.empty]
 noActionsDescription = "利用可能になると、クイックアクションがここに表示されます。"
@@ -7852,9 +7852,9 @@ switchToLight = "ライトテーマに切り替え"
 [portal.shell.sidebar]
 appEditor = "エディター"
 appProcessor = "プロセッサー"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}}件のドキュメント"
-linkAccount = "Stirling アカウントをリンク"
+linkAccount = "Chronicle アカウントをリンク"
 planEditor = "エディタープラン"
 planEnterprise = "Enterprise プラン"
 planProcessor = "プロセッサープラン"
@@ -7862,7 +7862,7 @@ primaryNav = "プライマリナビゲーション"
 switchApp = "アプリを切り替え"
 
 [portal.sources]
-subtitle = "ドキュメントを Stirling に供給する再利用可能な入力接続です。一度接続を設定すれば、任意の数のポリシーから参照できます。行をクリックすると、その設定と使用中のポリシーを確認できます。"
+subtitle = "ドキュメントを Chronicle に供給する再利用可能な入力接続です。一度接続を設定すれば、任意の数のポリシーから参照できます。行をクリックすると、その設定と使用中のポリシーを確認できます。"
 title = "ソース"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "サーバー上のディレクトリを監視して新しいド�
 label = "フォルダー"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Stirling が処理対象ファイルを監視する絶対パス。"
+helperText = "Chronicle が処理対象ファイルを監視する絶対パス。"
 label = "ディレクトリパス"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "確認して接続"
 
 [portal.usage]
 managePayment = "支払いを管理"
-subtitle = "Stirling が請求対象としたすべての PDF の使用量、請求書、プラン管理を1つのコンソールで行えます。"
+subtitle = "Chronicle が請求対象としたすべての PDF の使用量、請求書、プラン管理を1つのコンソールで行えます。"
 title = "使用量と請求"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "ウォレットを利用できません: {{status}} {{statu
 
 [portal.usage.sessionExpired]
 action = "再度サインイン"
-body = "Stirling アカウントのセッションが期限切れです。請求を表示するには再度サインインしてください。インスタンスのリンクは維持されます。"
+body = "Chronicle アカウントのセッションが期限切れです。請求を表示するには再度サインインしてください。インスタンスのリンクは維持されます。"
 title = "セッションの期限切れ"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "ログイン中:"
 
 [settings.connection.mode]
 local = "ローカルのみ"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "セルフホスト"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "利用分析"
 [settings.planBilling]
 currentPlan = "現在のプラン"
 loading = "請求情報を読み込み中..."
-notAvailable = "プランと請求は、Stirling Cloud（SaaS モード）に接続している場合にのみ利用できます。"
+notAvailable = "プランと請求は、Chronicle Cloud（SaaS モード）に接続している場合にのみ利用できます。"
 title = "プランと請求"
 
 [settings.planBilling.billing]
@@ -9068,7 +9068,7 @@ emptyUsername = "ユーザー名を入力してください"
 oauthFailed = "OAuth ログインに失敗しました。もう一度お試しください。"
 
 [setup.saas]
-title = "Stirling にサインイン"
+title = "Chronicle にサインイン"
 
 [setup.selfhosted]
 changeServerLocked = "あなたの組織はこのアプリを特定のサーバーに制限しています"
@@ -10015,7 +10015,7 @@ processorDeferred = "招待は送信されましたが、Processor アクセス�
 processorDesc = "ガバナンス画面、パイプライン実行、エージェント、API。"
 role = "ロール"
 send2 = "招待を送信"
-subtitle2 = "Stirling ワークスペースに参加するためのメールが送信されます。"
+subtitle2 = "Chronicle ワークスペースに参加するためのメールが送信されます。"
 team = "チーム"
 title = "ユーザーを招待"
 username = "ユーザー名"

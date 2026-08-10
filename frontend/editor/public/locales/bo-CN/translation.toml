@@ -1155,8 +1155,8 @@ description = "SMTP བདེན་དཔང་ཆེད་དུ་སྤྱོ
 label = "SMTP བེད་སྤྱོད་མིང་།"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1186,7 +1186,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1203,7 +1203,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -2735,7 +2735,7 @@ close = "Close chat"
 open = "Open Chronicle AI assistant"
 
 [chat.header]
-agentMenu = "Stirling agent འདེམས་ཚན"
+agentMenu = "Chronicle agent འདེམས་ཚན"
 clearChat = "གླེང་མོལ་བཤོལ"
 
 [chat.input]
@@ -3115,7 +3115,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -3905,7 +3905,7 @@ title = "སྣོད་འགེངས་ལ་སྤོ་བསྒྱུར"
 [filesPage.origin]
 all = "ཁུངས་ཡོངས"
 cloud = "Cloud"
-cloudHint = "Stirling སར་བར་ནང་ཉར"
+cloudHint = "Chronicle སར་བར་ནང་ཉར"
 local = "Local"
 localHint = "མི་སྣང་ཆས་འདི་ནང་ཙམ་ཉར"
 shared = "མཉམ་སྤྱོད"
@@ -4635,7 +4635,7 @@ terms = "ཆ་རྐྱེན་དང་ཆ་རྐྱེན།"
 title = "གསུམ་པའི་ཕྱོགས་ནས་ཆོག་མཆན།"
 
 [localMode]
-toolUnavailable = "ལག་ཆ་འདི་ལ་རྩིས་ཁྲོད་དགོས། Stirling Cloud ལ་ནང་འཇུག ཡང་ན་རང་དབང་ཞབས་ཞུ་ལ་མཐུད་ནས་སྤྱོད།"
+toolUnavailable = "ལག་ཆ་འདི་ལ་རྩིས་ཁྲོད་དགོས། Chronicle Cloud ལ་ནང་འཇུག ཡང་ན་རང་དབང་ཞབས་ཞུ་ལ་མཐུད་ནས་སྤྱོད།"
 
 [localMode.toolPicker]
 message = "ལག་ཆ་ཡོངས་འབྱེད་པར་ནང་འཇུག་བྱོས།"
@@ -4992,9 +4992,9 @@ rolePlaceholder = "ཁྱེད་ཀྱི་ལས་འགན་གཏན་�
 roleUser = "སྤྱོད་མཁན"
 
 [onboarding.serverLicense]
-freeBody = "ང་ཚོའི <strong>Open-Core</strong> ཆོག་མཆན་ནས་སར་བར་རེ་ལ་སྤྱོད་མཁན་<strong>{{freeTierLimit}}</strong> བར་རིན་མེད་དུ་ཆོག་པ་ཡིན། མ་ཆད་པར་འཕེལ་རྒྱས་བྱ་ཆེད་ Stirling Server འཆར་གཞི་ལ་<strong>སྡོད་སྒྲིག་མཐའ་མེད</strong> དང་ <strong>SSO support</strong> སྤྲོད་པ་དེ་ $99/server/mo རིན་གོང་ཡིན།"
+freeBody = "ང་ཚོའི <strong>Open-Core</strong> ཆོག་མཆན་ནས་སར་བར་རེ་ལ་སྤྱོད་མཁན་<strong>{{freeTierLimit}}</strong> བར་རིན་མེད་དུ་ཆོག་པ་ཡིན། མ་ཆད་པར་འཕེལ་རྒྱས་བྱ་ཆེད་ Chronicle server འཆར་གཞི་ལ་<strong>སྡོད་སྒྲིག་མཐའ་མེད</strong> དང་ <strong>SSO support</strong> སྤྲོད་པ་དེ་ $99/server/mo རིན་གོང་ཡིན།"
 freeTitle = "སར་བར་ལག་ཁྱེར།"
-overLimitBody = "ང་ཚོའི་ཆོག་མཆན་ནས་སར་བར་རེ་ལ་སྤྱོད་མཁན་<strong>{{freeTierLimit}}</strong> བར་རིན་མེད་དུ་ཆོག་པ་ཡིན། ཁྱེད་ལ་<strong>{{overLimitUserCopy}}</strong> Stirling སྤྱོད་མཁན་ཡོད། མ་ཆད་པར་མུ་མཐུད་བྱ་དགོས་ན་ Stirling Server འཆར་གཞི་ལ་རིམ་སྤོར་བྱོས། <strong>སྡོད་སྒྲིག་མཐའ་མེད</strong> དང་ PDF ཡིག་གཟུགས་རྩོམ་སྒྲིག དེ་བཞིན་འཛིན་སྐྱོང་ཆ་ཚང་ $99/server/mo རིན་གོང་ཡིན།"
+overLimitBody = "ང་ཚོའི་ཆོག་མཆན་ནས་སར་བར་རེ་ལ་སྤྱོད་མཁན་<strong>{{freeTierLimit}}</strong> བར་རིན་མེད་དུ་ཆོག་པ་ཡིན། ཁྱེད་ལ་<strong>{{overLimitUserCopy}}</strong> Chronicle སྤྱོད་མཁན་ཡོད། མ་ཆད་པར་མུ་མཐུད་བྱ་དགོས་ན་ Chronicle server འཆར་གཞི་ལ་རིམ་སྤོར་བྱོས། <strong>སྡོད་སྒྲིག་མཐའ་མེད</strong> དང་ PDF ཡིག་གཟུགས་རྩོམ་སྒྲིག དེ་བཞིན་འཛིན་སྐྱོང་ཆ་ཚང་ $99/server/mo རིན་གོང་ཡིན།"
 overLimitTitle = "སར་བར་ཆོག་མཆན་དགོས་པ།"
 seePlans = "འཆར་གཞི་ལ་གཟིགས།"
 upgrade = "ད་ལྟ་རིམ་སྤོར་ →"
@@ -5311,7 +5311,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5370,7 +5370,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5418,7 +5418,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5426,7 +5426,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6943,7 +6943,7 @@ usageAnalytics = "བེད་སྤྱོད་དབྱེ་ཞིབ།"
 [settings.planBilling]
 currentPlan = "མིག་སྔའི་གྲལ་གཞི"
 loading = "ཐོ་རྩིས་སྤྲོད་ཆ་འཕྲིན་ཕབ་ལེན་བརྒྱབ་བཞིན..."
-notAvailable = "གྲལ་གཞི་དང་ཐོ་རྩིས་སྤྲོད་ནི་ Stirling Cloud (SaaS mode) ལ་མཐུད་ཡོད་དུས་ཙམ་སྤྱོད་ཆོག"
+notAvailable = "གྲལ་གཞི་དང་ཐོ་རྩིས་སྤྲོད་ནི་ Chronicle Cloud (SaaS mode) ལ་མཐུད་ཡོད་དུས་ཙམ་སྤྱོད་ཆོག"
 title = "གྲལ་གཞི་དང་ཐོ་རྩིས་སྤྲོད"
 
 [settings.planBilling.billing]

@@ -1158,8 +1158,8 @@ description = "Tên người dùng để xác thực SMTP"
 label = "Tên người dùng SMTP"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -3072,7 +3072,7 @@ upgradeButton = "Nâng cấp tài khoản"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Sao chép khóa API"
-description = "Khóa API của bạn để truy cập bộ công cụ PDF của Stirling. Sao chép vào dự án của bạn hoặc làm mới để tạo khóa mới."
+description = "Khóa API của bạn để truy cập bộ công cụ PDF của Chronicle. Sao chép vào dự án của bạn hoặc làm mới để tạo khóa mới."
 docsDescription = "Tìm hiểu thêm về tích hợp với Chronicle PDF:"
 docsLink = "Tài liệu API"
 docsTitle = "Tài liệu API"
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -4669,7 +4669,7 @@ terms = "Điều khoản và điều kiện"
 title = "Giấy phép bên thứ 3"
 
 [localMode]
-toolUnavailable = "Công cụ này cần có tài khoản. Đăng nhập vào Stirling Cloud hoặc kết nối với máy chủ tự lưu trữ để sử dụng."
+toolUnavailable = "Công cụ này cần có tài khoản. Đăng nhập vào Chronicle Cloud hoặc kết nối với máy chủ tự lưu trữ để sử dụng."
 
 [localMode.toolPicker]
 message = "Đăng nhập để mở khóa tất cả công cụ."
@@ -4989,7 +4989,7 @@ skipForNow = "Bỏ qua tạm thời"
 skipTheTour = "Bỏ qua hướng dẫn"
 
 [onboarding.desktopInstall]
-body = "Stirling hoạt động tốt nhất như ứng dụng desktop. Bạn có thể dùng offline, truy cập tài liệu nhanh hơn và chỉnh sửa trực tiếp trên máy."
+body = "Chronicle hoạt động tốt nhất như ứng dụng desktop. Bạn có thể dùng offline, truy cập tài liệu nhanh hơn và chỉnh sửa trực tiếp trên máy."
 selectOs = "Chọn hệ điều hành"
 title = "Tải xuống"
 titleWithOs = "Tải cho {{osLabel}}"
@@ -4999,8 +4999,8 @@ authenticationCode = "Mã xác thực"
 qrCodeLoading = "Đang tạo mã QR của bạn…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "Khi bật chế độ đăng nhập, bạn có thể quản lý người dùng, cấu hình cài đặt và theo dõi tình trạng server. <strong>{{freeTierLimit}}</strong> người đầu tiên trên server của bạn được dùng Stirling miễn phí."
-adminBodyLoginEnabled = "Là admin, bạn có thể quản lý người dùng, cấu hình cài đặt và theo dõi tình trạng server. <strong>{{freeTierLimit}}</strong> người đầu tiên trên server của bạn được dùng Stirling miễn phí."
+adminBodyLoginDisabled = "Khi bật chế độ đăng nhập, bạn có thể quản lý người dùng, cấu hình cài đặt và theo dõi tình trạng server. <strong>{{freeTierLimit}}</strong> người đầu tiên trên server của bạn được dùng Chronicle miễn phí."
+adminBodyLoginEnabled = "Là admin, bạn có thể quản lý người dùng, cấu hình cài đặt và theo dõi tình trạng server. <strong>{{freeTierLimit}}</strong> người đầu tiên trên server của bạn được dùng Chronicle miễn phí."
 adminTitle = "Tổng quan Admin"
 userBody = "Mời đồng đội, gán vai trò và quản lý tài liệu gọn gàng trong một không gian làm việc an toàn. Bật chế độ đăng nhập khi bạn sẵn sàng vượt qua chế độ dùng cá nhân."
 userTitle = "Tổng quan gói"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "Xác nhận vai trò của bạn"
 roleUser = "Người dùng"
 
 [onboarding.serverLicense]
-freeBody = "Giấy phép <strong>Open-Core</strong> của chúng tôi cho phép tối đa <strong>{{freeTierLimit}}</strong> người dùng miễn phí mỗi server. Để mở rộng không gián đoạn và truy cập sớm <strong>công cụ chỉnh sửa văn bản PDF</strong> mới, chúng tôi khuyến nghị gói Stirling Server - chỉnh sửa đầy đủ và <strong>số ghế không giới hạn</strong> với $99/server/tháng."
+freeBody = "Giấy phép <strong>Open-Core</strong> của chúng tôi cho phép tối đa <strong>{{freeTierLimit}}</strong> người dùng miễn phí mỗi server. Để mở rộng không gián đoạn và truy cập sớm <strong>công cụ chỉnh sửa văn bản PDF</strong> mới, chúng tôi khuyến nghị gói Chronicle server - chỉnh sửa đầy đủ và <strong>số ghế không giới hạn</strong> với $99/server/tháng."
 freeTitle = "Giấy phép Server"
-overLimitBody = "Giấy phép của chúng tôi cho phép tối đa <strong>{{freeTierLimit}}</strong> người dùng miễn phí mỗi server. Bạn có <strong>{{overLimitUserCopy}}</strong> người dùng Stirling. Để tiếp tục không gián đoạn, hãy nâng cấp lên gói Stirling Server - <strong>số ghế không giới hạn</strong>, chỉnh sửa văn bản PDF và toàn quyền quản trị với $99/server/tháng."
+overLimitBody = "Giấy phép của chúng tôi cho phép tối đa <strong>{{freeTierLimit}}</strong> người dùng miễn phí mỗi server. Bạn có <strong>{{overLimitUserCopy}}</strong> người dùng Chronicle. Để tiếp tục không gián đoạn, hãy nâng cấp lên gói Chronicle server - <strong>số ghế không giới hạn</strong>, chỉnh sửa văn bản PDF và toàn quyền quản trị với $99/server/tháng."
 overLimitTitle = "Cần giấy phép Server"
 seePlans = "Xem gói →"
 upgrade = "Nâng cấp ngay →"
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6192,25 +6192,25 @@ comingSoon = "Sắp ra mắt"
 [portal.accountLink.card]
 billingNote = "Xử lý không giám sát được tính phí vào ví tổ chức của bạn."
 eyebrow = "Liên kết tài khoản"
-linkButton = "Liên kết tài khoản Stirling của bạn"
+linkButton = "Liên kết tài khoản Chronicle của bạn"
 linked = "Đã liên kết"
 linkedAs = "Đã liên kết dưới tên {{name}}."
 linkedGeneric = "Phiên bản này đã được liên kết."
 notLinked = "Chưa liên kết"
-title = "Liên kết tổ chức này với tài khoản Stirling của tổ chức"
+title = "Liên kết tổ chức này với tài khoản Chronicle của tổ chức"
 unlink = "Hủy liên kết"
 
 [portal.accountLink.card.error]
 title = "Không thể liên kết"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "để bật liên kết tài khoản với tài khoản Stirling được lưu trữ. Trong môi trường dev, bạn có thể mô phỏng đăng nhập từ hộp thoại liên kết."
+after = "để bật liên kết tài khoản với tài khoản Chronicle được lưu trữ. Trong môi trường dev, bạn có thể mô phỏng đăng nhập từ hộp thoại liên kết."
 before = "Đặt"
 title = "Chưa cấu hình đăng nhập SaaS"
 
 [portal.accountLink.gate]
 action = "Liên kết tài khoản"
-description = "Liên kết tài khoản Stirling của tổ chức này để dùng các tính năng tính phí."
+description = "Liên kết tài khoản Chronicle của tổ chức này để dùng các tính năng tính phí."
 title = "Liên kết để mở khóa"
 titleFeature = "Liên kết để mở khóa {{feature}}"
 
@@ -6242,13 +6242,13 @@ never = "chưa bao giờ"
 
 [portal.accountLink.modal]
 linkSubtitle = "Đăng nhập vào tài khoản mà máy chủ này sẽ tính phí."
-linkTitle = "Liên kết tài khoản Stirling của bạn"
-reauthSubtitle = "Phiên của bạn đã hết hạn — hãy đăng nhập lại vào tài khoản Stirling của bạn. Phiên bản của bạn vẫn được liên kết."
+linkTitle = "Liên kết tài khoản Chronicle của bạn"
+reauthSubtitle = "Phiên của bạn đã hết hạn — hãy đăng nhập lại vào tài khoản Chronicle của bạn. Phiên bản của bạn vẫn được liên kết."
 reauthTitle = "Đăng nhập lại"
 simulateSignIn = "Mô phỏng đăng nhập (dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "để bật liên kết trong ứng dụng với tài khoản Stirling được lưu trữ."
+after = "để bật liên kết trong ứng dụng với tài khoản Chronicle được lưu trữ."
 and = "và"
 before = "Đặt"
 title = "Chưa cấu hình đăng nhập SaaS"
@@ -6257,7 +6257,7 @@ title = "Chưa cấu hình đăng nhập SaaS"
 instancesSub = "Mọi phiên bản tự lưu trữ đã đăng ký với tổ chức này. Thu hồi thông tin xác thực để ngay lập tức cắt quyền truy cập không giám sát của phiên bản đó."
 instancesTitle = "Phiên bản đã liên kết"
 revokeError = "Không thể thu hồi phiên bản"
-sub = "Liên kết tổ chức tự lưu trữ này với tài khoản Stirling của tổ chức để xử lý không giám sát được tính phí vào ví tổ chức của bạn."
+sub = "Liên kết tổ chức tự lưu trữ này với tài khoản Chronicle của tổ chức để xử lý không giám sát được tính phí vào ví tổ chức của bạn."
 
 [portal.accountLink.panel.loadError]
 forbidden = "Chỉ chủ sở hữu nhóm mới có thể xem các phiên bản đã liên kết của tổ chức."
@@ -6354,7 +6354,7 @@ close = "Đóng trợ lý"
 error = "Không thể kết nối với trợ lý."
 errorWithDetail = "Không thể kết nối với trợ lý: {{detail}}"
 inputAriaLabel = "Hỏi trợ lý"
-inputPlaceholder = "Hỏi về Stirling…"
+inputPlaceholder = "Hỏi về Chronicle…"
 open = "Mở trợ lý"
 send = "Gửi"
 title = "Trợ lý"
@@ -6392,7 +6392,7 @@ title = "Chưa cấu hình Stripe"
 cta = "Tạo báo giá Enterprise của bạn"
 description = "Chiết khấu theo khối lượng cam kết, triển khai air-gapped, MSA tùy chỉnh và đánh giá bảo mật, cùng quan hệ đối tác nhà phân phối bên thứ 3."
 eyebrow = "Chiết khấu khối lượng · 1M+ PDF"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "Hoạt động trong tháng này"
@@ -6441,7 +6441,7 @@ viewLink = "Xem ↗"
 [portal.billing.linkPrompt]
 cta = "Liên kết tài khoản Chronicle"
 description = "Chỉnh sửa PDF thủ công — xem, ký, hợp nhất, tách, watermark, nén, chuyển đổi, OCR thủ công — luôn miễn phí, dù có liên kết hay không. Liên kết để nhận 500 PDF miễn phí cho xử lý tính theo mức sử dụng (tự động hóa, AI và API); khi cần thêm, hãy bật gói Processor và chỉ trả tiền cho những gì bạn dùng."
-title = "Liên kết tài khoản Stirling của bạn"
+title = "Liên kết tài khoản Chronicle của bạn"
 
 [portal.billing.paymentMethod]
 billedMonthly = "Tính phí hàng tháng"
@@ -6869,7 +6869,7 @@ title = "Cấp khóa API"
 [portal.infrastructure]
 manageEditorDeployment = "Quản lý triển khai Editor"
 sectionsAriaLabel = "Các phần hạ tầng"
-subtitle = "Triển khai, thông tin xác thực, tư thế bảo mật, lưu trữ và dấu vết kiểm tra cho workspace Stirling của bạn."
+subtitle = "Triển khai, thông tin xác thực, tư thế bảo mật, lưu trữ và dấu vết kiểm tra cho workspace Chronicle của bạn."
 title = "Hạ tầng"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "Tên khóa"
 keyNamePlaceholder = "ví dụ: Production · ingest"
 permissionsLabel = "Quyền"
 secretKeyCaption = "Khóa bí mật"
-secretWarning = "Lưu khóa này trong trình quản lý bí mật. Stirling chỉ lưu hash — không có cách nào khôi phục lại sau này."
+secretWarning = "Lưu khóa này trong trình quản lý bí mật. Chronicle chỉ lưu hash — không có cách nào khôi phục lại sau này."
 subtitle = "Giới hạn phạm vi khóa ở mức tối thiểu cần thiết. Bạn có thể xoay vòng hoặc thu hồi bất cứ lúc nào."
 subtitleCreated = "Sao chép bí mật này ngay — nó sẽ không được hiển thị lại."
 title = "Tạo khóa API"
@@ -6993,7 +6993,7 @@ version = "Phiên bản"
 
 [portal.infrastructure.deployments.regions]
 heading = "Khu vực"
-subheading = "Tình trạng trực tiếp cho từng khu vực Stirling đã triển khai — độ trễ, tải và phiên bản phát hành."
+subheading = "Tình trạng trực tiếp cho từng khu vực Chronicle đã triển khai — độ trễ, tải và phiên bản phát hành."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "Các khu vực đã triển khai sẽ xuất hiện tại đây sau khi workspace của bạn được cấp phát."
@@ -7050,16 +7050,16 @@ operation = "Thao tác"
 routedTo = "Định tuyến đến"
 
 [portal.infrastructure.security.access.byok]
-description = "Cung cấp khóa từ KMS của riêng bạn. Stirling mã hóa bằng khóa đó nhưng vẫn có thể đọc."
+description = "Cung cấp khóa từ KMS của riêng bạn. Chronicle mã hóa bằng khóa đó nhưng vẫn có thể đọc."
 label = "Mang khóa của riêng bạn (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "Khóa không bao giờ rời khỏi KMS của bạn. Stirling chỉ giữ ciphertext."
+description = "Khóa không bao giờ rời khỏi KMS của bạn. Chronicle chỉ giữ ciphertext."
 label = "Giữ khóa của riêng bạn (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Stirling quản lý khóa mã hóa. Đơn giản nhất — phía bạn không cần vận hành khóa."
-label = "Khóa do Stirling giữ"
+[portal.infrastructure.security.access.Chronicle]
+description = "Chronicle quản lý khóa mã hóa. Đơn giản nhất — phía bạn không cần vận hành khóa."
+label = "Khóa do Chronicle giữ"
 
 [portal.infrastructure.security.accessPolicy]
 heading = "Chính sách truy cập tài liệu"
@@ -7073,15 +7073,15 @@ viewReport = "Xem báo cáo →"
 
 [portal.infrastructure.security.compliance]
 heading = "Tuân thủ"
-subheading = "Chứng nhận và chứng chỉ bao phủ nền tảng Stirling."
+subheading = "Chứng nhận và chứng chỉ bao phủ nền tảng Chronicle."
 
 [portal.infrastructure.security.empty]
 description = "Cấu hình bảo mật của workspace sẽ xuất hiện tại đây."
 title = "Không có tư thế bảo mật"
 
 [portal.infrastructure.security.hyokBanner]
-description = "Với HYOK, khóa mã hóa không bao giờ rời khỏi KMS của bạn. Stirling chỉ lưu trữ và xử lý ciphertext mà bạn có thể thu hồi bất cứ lúc nào."
-title = "Stirling không thể giải mã tài liệu của bạn"
+description = "Với HYOK, khóa mã hóa không bao giờ rời khỏi KMS của bạn. Chronicle chỉ lưu trữ và xử lý ciphertext mà bạn có thể thu hồi bất cứ lúc nào."
+title = "Chronicle không thể giải mã tài liệu của bạn"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "Chưa cấu hình dải IP nào — tất cả IP đều được phép."
@@ -7110,7 +7110,7 @@ subheading = "Quyền lưu giữ các khóa mã hóa tài liệu khi lưu trữ 
 
 [portal.infrastructure.security.managedBanner]
 description = "Quyền lưu giữ bring-your-own-key (BYOK) và hold-your-own-key (HYOK) khả dụng trên Enterprise. Nâng cấp để cung cấp khóa từ KMS của riêng bạn."
-title = "Khóa được Stirling quản lý trên gói của bạn"
+title = "Khóa được Chronicle quản lý trên gói của bạn"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "Tải lên"
 
 [portal.procurement.agreement]
 agreeCta = "Đồng ý & đăng ký"
-confirm = "Tôi đã đọc và đồng ý với Thỏa thuận Stirling Enterprise."
+confirm = "Tôi đã đọc và đồng ý với Thỏa thuận Chronicle Enterprise."
 eyebrow = "Thỏa thuận"
 intro = "Một thỏa thuận kết hợp bao gồm giao dịch của bạn: Master Service Agreement, Order Form, EULA và Data Processing Agreement. Hãy xem lại, sau đó đồng ý chấp nhận báo giá thành một đăng ký cam kết."
 title = "Xem lại thỏa thuận enterprise của bạn"
@@ -7606,7 +7606,7 @@ country = "Quốc gia"
 countryEuro = "Khu vực đồng Euro (EUR €)"
 countryUK = "Vương quốc Anh (GBP £)"
 countryUS = "Hoa Kỳ (USD $)"
-eula = "Tôi đã đọc và đồng ý với Stirling Enterprise EULA. EULA này điều chỉnh thỏa thuận được tạo từ báo giá này."
+eula = "Tôi đã đọc và đồng ý với Chronicle Enterprise EULA. EULA này điều chỉnh thỏa thuận được tạo từ báo giá này."
 generate = "Tạo báo giá"
 included = "Đã bao gồm"
 indemnification = "Bồi thường IP"
@@ -7689,7 +7689,7 @@ daysLeft_one = "Còn {{count}} ngày"
 daysLeft_other = "Còn {{count}} ngày"
 engineerLabel = "Kỹ sư giải pháp của bạn"
 eyebrow = "Triển khai của bạn"
-live = "Bạn đã hoạt động trên Stirling Enterprise"
+live = "Bạn đã hoạt động trên Chronicle Enterprise"
 nextStep = "Bước tiếp theo: {{action}}"
 subtitle = "Kỹ sư giải pháp của bạn đồng hành ở mọi bước. Mỗi lần một hành động tiếp theo; danh sách kiểm tra đầy đủ ở bên dưới."
 title = "Từ dùng thử đến hoạt động, một lộ trình có hướng dẫn"
@@ -7716,7 +7716,7 @@ gatingAction = "Chấp nhận báo giá của bạn"
 label = "Báo giá"
 
 [portal.procurement.journeySteps.trial]
-blurb = "Đánh giá Stirling với tài liệu và workflow của bạn."
+blurb = "Đánh giá Chronicle với tài liệu và workflow của bạn."
 gatingAction = "Tạo báo giá của bạn"
 label = "Dùng thử"
 
@@ -7730,14 +7730,14 @@ label = "Khóa giấy phép của bạn"
 
 [portal.procurement.link]
 cta = "Liên kết tài khoản"
-description = "Mua sắm chạy trên tài khoản Stirling được liên kết của bạn: đó là cách chúng tôi cấp phát bản dùng thử, định giá báo giá và bắt đầu lập hóa đơn. Liên kết một tài khoản để bắt đầu."
+description = "Mua sắm chạy trên tài khoản Chronicle được liên kết của bạn: đó là cách chúng tôi cấp phát bản dùng thử, định giá báo giá và bắt đầu lập hóa đơn. Liên kết một tài khoản để bắt đầu."
 eyebrow = "Enterprise"
 title = "Liên kết tài khoản của bạn để bắt đầu"
 
 [portal.procurement.live]
 description = "Đăng ký của bạn đang hoạt động và giấy phép của bạn đã được cấp. Đội ngũ của bạn đã được cấp phát và việc lập hóa đơn đã bắt đầu."
 eyebrow = "Hoạt động"
-title = "Bạn đã hoạt động trên Stirling Enterprise"
+title = "Bạn đã hoạt động trên Chronicle Enterprise"
 
 [portal.procurement.locked]
 description = "Khóa dùng thử, báo giá theo khối lượng cam kết, thỏa thuận một chữ ký, thanh toán và sổ cái tài liệu của bạn đều ở đây sau khi bạn bắt đầu đánh giá enterprise."
@@ -7772,7 +7772,7 @@ requestBodyFree = "Chúng tôi tạo tài liệu này theo yêu cầu. Xác nh�
 requestBodyPaid = "Đây là tiện ích bổ sung trả phí. Xác nhận và kỹ sư giải pháp của bạn sẽ xác định phạm vi và gửi giấy tờ."
 requestCta = "Yêu cầu"
 requestTitle = "Yêu cầu tài liệu này"
-signBody = "Mở Thỏa thuận Stirling Enterprise để ký điện tử: một chữ ký bao gồm MSA, order form, EULA và DPA. Chúng tôi tự động ký đối ứng và bạn chuyển sang thanh toán."
+signBody = "Mở Thỏa thuận Chronicle Enterprise để ký điện tử: một chữ ký bao gồm MSA, order form, EULA và DPA. Chúng tôi tự động ký đối ứng và bạn chuyển sang thanh toán."
 signCta = "Mở để ký"
 signTitle = "Xem lại và ký thỏa thuận của bạn"
 uploadBody = "Gửi cho chúng tôi PO của bạn và chúng tôi sẽ lập hóa đơn theo điều khoản của bạn. Kéo PDF vào hoặc chọn một file bên dưới."
@@ -7824,7 +7824,7 @@ title = "Chưa có gì ở đây"
 
 [portal.search]
 ariaLabel = "Tìm kiếm"
-placeholder = "Tìm kiếm Stirling — endpoint, pipeline, tài liệu…"
+placeholder = "Tìm kiếm Chronicle — endpoint, pipeline, tài liệu…"
 
 [portal.search.empty]
 noActionsDescription = "Hành động nhanh sẽ xuất hiện ở đây khi có sẵn."
@@ -7852,7 +7852,7 @@ switchToLight = "Chuyển sang giao diện sáng"
 [portal.shell.sidebar]
 appEditor = "Trình chỉnh sửa"
 appProcessor = "Trình xử lý"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} tài liệu"
 linkAccount = "Liên kết tài khoản Chronicle"
 planEditor = "Gói Editor"
@@ -7862,7 +7862,7 @@ primaryNav = "Điều hướng chính"
 switchApp = "Chuyển ứng dụng"
 
 [portal.sources]
-subtitle = "Các kết nối đầu vào có thể tái sử dụng để đưa tài liệu vào Stirling. Cấu hình một kết nối một lần, sau đó tham chiếu nó từ bất kỳ số lượng chính sách nào. Nhấp vào một hàng để xem cấu hình và những chính sách sử dụng nó."
+subtitle = "Các kết nối đầu vào có thể tái sử dụng để đưa tài liệu vào Chronicle. Cấu hình một kết nối một lần, sau đó tham chiếu nó từ bất kỳ số lượng chính sách nào. Nhấp vào một hàng để xem cấu hình và những chính sách sử dụng nó."
 title = "Nguồn"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "Theo dõi một thư mục trên server để phát hiện tài l
 label = "Thư mục"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Đường dẫn tuyệt đối mà Stirling theo dõi để xử lý file."
+helperText = "Đường dẫn tuyệt đối mà Chronicle theo dõi để xử lý file."
 label = "Đường dẫn thư mục"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "Xem lại & kết nối"
 
 [portal.usage]
 managePayment = "Quản lý thanh toán"
-subtitle = "Tiêu thụ, hóa đơn và quản lý gói cho mọi PDF Stirling đã lập hóa đơn, trong một bảng điều khiển."
+subtitle = "Tiêu thụ, hóa đơn và quản lý gói cho mọi PDF Chronicle đã lập hóa đơn, trong một bảng điều khiển."
 title = "Sử dụng & thanh toán"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "Ví không khả dụng: {{status}} {{statusText}}"
 
 [portal.usage.sessionExpired]
 action = "Đăng nhập lại"
-body = "Phiên tài khoản Stirling của bạn đã hết hạn. Đăng nhập lại để xem thanh toán — phiên bản của bạn vẫn được liên kết."
+body = "Phiên tài khoản Chronicle của bạn đã hết hạn. Đăng nhập lại để xem thanh toán — phiên bản của bạn vẫn được liên kết."
 title = "Phiên đã hết hạn"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "Đăng nhập với tư cách"
 
 [settings.connection.mode]
 local = "Chỉ cục bộ"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "Tự lưu trữ"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "Phân tích sử dụng"
 [settings.planBilling]
 currentPlan = "Gói hiện tại"
 loading = "Đang tải thông tin thanh toán..."
-notAvailable = "Gói & Thanh toán chỉ khả dụng khi kết nối với Stirling Cloud (chế độ SaaS)."
+notAvailable = "Gói & Thanh toán chỉ khả dụng khi kết nối với Chronicle Cloud (chế độ SaaS)."
 title = "Gói & Thanh toán"
 
 [settings.planBilling.billing]
@@ -10015,7 +10015,7 @@ processorDeferred = "Đã gửi lời mời, nhưng chưa thể cấp quyền tr
 processorDesc = "Bề mặt quản trị, chạy pipeline, agent và API."
 role = "Vai trò"
 send2 = "Gửi lời mời"
-subtitle2 = "Họ sẽ nhận được email để tham gia không gian làm việc Stirling của bạn."
+subtitle2 = "Họ sẽ nhận được email để tham gia không gian làm việc Chronicle của bạn."
 team = "Nhóm"
 title = "Mời mọi người"
 username = "Tên người dùng"

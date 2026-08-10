@@ -1158,8 +1158,8 @@ description = "SMTP autentifikaziorako erabiltzaile-izena"
 label = "SMTP erabiltzaile-izena"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -2742,7 +2742,7 @@ close = "Close chat"
 open = "Open Chronicle AI assistant"
 
 [chat.header]
-agentMenu = "Stirling agentearen aukerak"
+agentMenu = "Chronicle agentearen aukerak"
 clearChat = "Garbitu txata"
 
 [chat.input]
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -3939,7 +3939,7 @@ title = "Eraman karpetara"
 [filesPage.origin]
 all = "Jatorri guztiak"
 cloud = "Hodeia"
-cloudHint = "Stirling zerbitzarian gordeta"
+cloudHint = "Chronicle zerbitzarian gordeta"
 local = "Tokikoa"
 localHint = "Nabigatzaile honetan soilik gordeta"
 shared = "Partekatuak"
@@ -4669,7 +4669,7 @@ terms = "Baldintzak eta erabilera-baldintzak"
 title = "3rd Party Licenses"
 
 [localMode]
-toolUnavailable = "Tresna honek kontu bat behar du. Hasi saioa Stirling Cloud-en edo konektatu norberak ostatatutako zerbitzari batera erabiltzeko."
+toolUnavailable = "Tresna honek kontu bat behar du. Hasi saioa Chronicle Cloud-en edo konektatu norberak ostatatutako zerbitzari batera erabiltzeko."
 
 [localMode.toolPicker]
 message = "Hasi saioa tresna guztiak desblokeatzeko."
@@ -4989,7 +4989,7 @@ skipForNow = "Utzi oraingoz"
 skipTheTour = "Utzi bisita gidatua"
 
 [onboarding.desktopInstall]
-body = "Stirling hobekien funtzionatzen du mahaigaineko aplikazio gisa. Offline erabil dezakezu, dokumentuak azkarrago atzitu, eta editatu tokian bertan zure ordenagailuan."
+body = "Chronicle hobekien funtzionatzen du mahaigaineko aplikazio gisa. Offline erabil dezakezu, dokumentuak azkarrago atzitu, eta editatu tokian bertan zure ordenagailuan."
 selectOs = "Hautatu sistema eragilea"
 title = "Deskargatu"
 titleWithOs = "Deskargatu {{osLabel}}-rako"
@@ -4999,8 +4999,8 @@ authenticationCode = "Autentifikazio-kodea"
 qrCodeLoading = "Zure QR kodea sortzen…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "Saio-hasiera modua gaitzen duzunean, erabiltzaileak kudeatu, ezarpenak konfiguratu eta zerbitzariaren osasuna monitorizatu ahal izango dituzu. Zure zerbitzariko lehen <strong>{{freeTierLimit}}</strong> pertsonek doan erabil dezakete Stirling."
-adminBodyLoginEnabled = "Admin gisa, erabiltzaileak kudeatu, ezarpenak konfiguratu eta zerbitzariaren osasuna monitorizatu ditzakezu. Zure zerbitzariko lehen <strong>{{freeTierLimit}}</strong> pertsonak doan erabil dezakete Stirling."
+adminBodyLoginDisabled = "Saio-hasiera modua gaitzen duzunean, erabiltzaileak kudeatu, ezarpenak konfiguratu eta zerbitzariaren osasuna monitorizatu ahal izango dituzu. Zure zerbitzariko lehen <strong>{{freeTierLimit}}</strong> pertsonek doan erabil dezakete Chronicle."
+adminBodyLoginEnabled = "Admin gisa, erabiltzaileak kudeatu, ezarpenak konfiguratu eta zerbitzariaren osasuna monitorizatu ditzakezu. Zure zerbitzariko lehen <strong>{{freeTierLimit}}</strong> pertsonak doan erabil dezakete Chronicle."
 adminTitle = "Admin ikuspegi orokorra"
 userBody = "Gonbidatu taldekideak, esleitu rolak eta mantendu dokumentuak antolatuta lan-espazio seguruan. Gaitu saio-hasiera modua bakarkako erabileratik harago hazteko prest zaudenean."
 userTitle = "Planaren ikuspegi orokorra"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "Baieztatu zure rola"
 roleUser = "Erabiltzailea"
 
 [onboarding.serverLicense]
-freeBody = "Gure <strong>Open-Core</strong> lizentziak <strong>{{freeTierLimit}}</strong> erabiltzaile arte baimentzen ditu doan zerbitzari bakoitzeko. Etenik gabe eskalatzeko eta gure <strong>PDF testu-edizio tresna</strong> berrirako sarbide goiztiarra lortzeko, gomendatzen dugu Stirling Server plana - edizio osoa eta <strong>eserleku mugagabeak</strong> $99/zerbitzari/hilean."
+freeBody = "Gure <strong>Open-Core</strong> lizentziak <strong>{{freeTierLimit}}</strong> erabiltzaile arte baimentzen ditu doan zerbitzari bakoitzeko. Etenik gabe eskalatzeko eta gure <strong>PDF testu-edizio tresna</strong> berrirako sarbide goiztiarra lortzeko, gomendatzen dugu Chronicle server plana - edizio osoa eta <strong>eserleku mugagabeak</strong> $99/zerbitzari/hilean."
 freeTitle = "Zerbitzari-lizentzia"
-overLimitBody = "Gure lizentziak baimentzen ditu <strong>{{freeTierLimit}}</strong> erabiltzaile doan zerbitzari bakoitzeko. <strong>{{overLimitUserCopy}}</strong> Stirling erabiltzaile dituzu. Jarraitzeko etenik gabe, eguneratu Stirling Server planera - <strong>eserleku mugagabeak</strong>, PDF testu-edizioa, eta admin kontrol osoa $99/zerbitzari/hilean."
+overLimitBody = "Gure lizentziak baimentzen ditu <strong>{{freeTierLimit}}</strong> erabiltzaile doan zerbitzari bakoitzeko. <strong>{{overLimitUserCopy}}</strong> Chronicle erabiltzaile dituzu. Jarraitzeko etenik gabe, eguneratu Chronicle server planera - <strong>eserleku mugagabeak</strong>, PDF testu-edizioa, eta admin kontrol osoa $99/zerbitzari/hilean."
 overLimitTitle = "Beharrezkoa da zerbitzari-lizentzia"
 seePlans = "Ikusi planak →"
 upgrade = "Eguneratu orain →"
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6192,25 +6192,25 @@ comingSoon = "Laster"
 [portal.accountLink.card]
 billingNote = "Gainbegiratu gabeko prozesamendua zure erakundearen zorroari fakturatzen zaio."
 eyebrow = "Kontu-lotura"
-linkButton = "Lotu zure Stirling kontua"
+linkButton = "Lotu zure Chronicle kontua"
 linked = "Lotuta"
 linkedAs = "{{name}} gisa lotuta."
 linkedGeneric = "Instantzia hau lotuta dago."
 notLinked = "Lotu gabe"
-title = "Lotu erakunde hau bere Stirling kontuarekin"
+title = "Lotu erakunde hau bere Chronicle kontuarekin"
 unlink = "Kendu lotura"
 
 [portal.accountLink.card.error]
 title = "Ezin izan da lotu"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "hostatutako Stirling kontuarekin kontu-lotura gaitzeko. Garapenean, saio-hasiera simula dezakezu lotura-elkarrizketatik."
+after = "hostatutako Chronicle kontuarekin kontu-lotura gaitzeko. Garapenean, saio-hasiera simula dezakezu lotura-elkarrizketatik."
 before = "Ezarri"
 title = "SaaS saio-hasiera ez dago konfiguratuta"
 
 [portal.accountLink.gate]
 action = "Lotu kontua"
-description = "Lotu erakunde honen Stirling kontua fakturagarriak diren eginbideak erabiltzeko."
+description = "Lotu erakunde honen Chronicle kontua fakturagarriak diren eginbideak erabiltzeko."
 title = "Lotu desblokeatzeko"
 titleFeature = "Lotu {{feature}} desblokeatzeko"
 
@@ -6242,13 +6242,13 @@ never = "inoiz ez"
 
 [portal.accountLink.modal]
 linkSubtitle = "Hasi saioa zerbitzari honek fakturatu behar duen kontuan."
-linkTitle = "Lotu zure Stirling kontua"
-reauthSubtitle = "Zure saioa iraungi da — hasi saioa berriro zure Stirling kontuan. Zure instantziak lotuta jarraituko du."
+linkTitle = "Lotu zure Chronicle kontua"
+reauthSubtitle = "Zure saioa iraungi da — hasi saioa berriro zure Chronicle kontuan. Zure instantziak lotuta jarraituko du."
 reauthTitle = "Hasi saioa berriro"
 simulateSignIn = "Simulatu saio-hasiera (dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "hostatutako Stirling kontuarekin aplikazio barruko lotura gaitzeko."
+after = "hostatutako Chronicle kontuarekin aplikazio barruko lotura gaitzeko."
 and = "eta"
 before = "Ezarri"
 title = "SaaS saio-hasiera ez dago konfiguratuta"
@@ -6257,7 +6257,7 @@ title = "SaaS saio-hasiera ez dago konfiguratuta"
 instancesSub = "Erakunde honetan erregistratutako self-hosted instantzia guztiak. Ezeztatu kredentzial bat berehala haren gainbegiratu gabeko sarbidea eteteko."
 instancesTitle = "Lotutako instantziak"
 revokeError = "Ezin izan da instantzia ezeztatu"
-sub = "Lotu self-hosted erakunde hau bere Stirling kontuarekin, gainbegiratu gabeko prozesamendua zure erakundearen zorroari fakturatzeko."
+sub = "Lotu self-hosted erakunde hau bere Chronicle kontuarekin, gainbegiratu gabeko prozesamendua zure erakundearen zorroari fakturatzeko."
 
 [portal.accountLink.panel.loadError]
 forbidden = "Taldearen jabeak bakarrik ikus ditzake erakundearen lotutako instantziak."
@@ -6354,7 +6354,7 @@ close = "Itxi laguntzailea"
 error = "Ezin izan da laguntzailearekin konektatu."
 errorWithDetail = "Ezin izan da laguntzailearekin konektatu: {{detail}}"
 inputAriaLabel = "Galdetu laguntzaileari"
-inputPlaceholder = "Galdetu Stirling-i buruz…"
+inputPlaceholder = "Galdetu Chronicle-i buruz…"
 open = "Ireki laguntzailea"
 send = "Bidali"
 title = "Laguntzailea"
@@ -6392,7 +6392,7 @@ title = "Stripe ez dago konfiguratuta"
 cta = "Sortu zure Enterprise aurrekontua"
 description = "Bolumen-konpromisoagatiko deskontuak, air-gapped hedapena, MSA pertsonalizatua eta segurtasun-berrikuspenak, eta hirugarrenen banatzaileekin lankidetzak."
 eyebrow = "Bolumen-deskontua · 1M+ PDF"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "Aktibo hilabete honetan"
@@ -6439,9 +6439,9 @@ viewAriaLabel = "Ikusi {{number}} faktura Stripe-n"
 viewLink = "Ikusi ↗"
 
 [portal.billing.linkPrompt]
-cta = "Lotu Stirling kontua"
+cta = "Lotu Chronicle kontua"
 description = "Eskuzko PDF edizioa — ikusi, sinatu, bateratu, zatitu, ur-marka jarri, konprimitu, bihurtu, eskuzko OCR — beti doakoa da, lotuta egon ala ez. Lotu 500 PDF doako neurtutako prozesamendurako (automatizazioa, AI eta API) eskuratzeko; gehiago behar duzunean, aktibatu Processor plana eta ordaindu erabiltzen duzunagatik soilik."
-title = "Lotu zure Stirling kontua"
+title = "Lotu zure Chronicle kontua"
 
 [portal.billing.paymentMethod]
 billedMonthly = "Hilero fakturatua"
@@ -6869,7 +6869,7 @@ title = "Jaulki API gako bat"
 [portal.infrastructure]
 manageEditorDeployment = "Kudeatu Editorearen hedapena"
 sectionsAriaLabel = "Azpiegitura-atalak"
-subtitle = "Hedapenak, kredentzialak, segurtasun-jarrera, biltegiratzea eta auditoria-arrastoa zure Stirling lan-eremurako."
+subtitle = "Hedapenak, kredentzialak, segurtasun-jarrera, biltegiratzea eta auditoria-arrastoa zure Chronicle lan-eremurako."
 title = "Azpiegitura"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "Gakoaren izena"
 keyNamePlaceholder = "adib. Ekoizpena · ingestioa"
 permissionsLabel = "Baimenak"
 secretKeyCaption = "Gako sekretua"
-secretWarning = "Gorde hau sekretuen kudeatzaile batean. Stirling-ek hash bat baino ez du gordetzen — ez dago gero berreskuratzeko modurik."
+secretWarning = "Gorde hau sekretuen kudeatzaile batean. Chronicle-ek hash bat baino ez du gordetzen — ez dago gero berreskuratzeko modurik."
 subtitle = "Mugatu gakoa behar duen gutxienekora. Edonoiz biratu edo baliogabetu dezakezu."
 subtitleCreated = "Kopiatu sekretu hau orain — ez da berriro erakutsiko."
 title = "Sortu API gakoa"
@@ -6993,7 +6993,7 @@ version = "Bertsioa"
 
 [portal.infrastructure.deployments.regions]
 heading = "Eskualdeak"
-subheading = "Hedatutako Stirling eskualde bakoitzaren zuzeneko osasuna — latentzia, karga eta zabalkunde-bertsioa."
+subheading = "Hedatutako Chronicle eskualde bakoitzaren zuzeneko osasuna — latentzia, karga eta zabalkunde-bertsioa."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "Hedatutako eskualdeak hemen agertuko dira zure lan-eremua hornitu ondoren."
@@ -7050,16 +7050,16 @@ operation = "Eragiketa"
 routedTo = "Hona bideratua"
 
 [portal.infrastructure.security.access.byok]
-description = "Eman zure KMS propioaren gako bat. Stirling-ek harekin zifratzen du, baina oraindik irakur dezake."
+description = "Eman zure KMS propioaren gako bat. Chronicle-ek harekin zifratzen du, baina oraindik irakur dezake."
 label = "Ekarri zure gakoa (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "Gakoak ez dira inoiz zure KMS-tik irteten. Stirling-ek zifratu-testua baino ez du gordetzen."
+description = "Gakoak ez dira inoiz zure KMS-tik irteten. Chronicle-ek zifratu-testua baino ez du gordetzen."
 label = "Gorde zure gakoa (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Stirling-ek zifratze-gakoak kudeatzen ditu. Errazena — zure aldetik gako-eragiketarik gabe."
-label = "Stirling-ek gordetako gakoak"
+[portal.infrastructure.security.access.Chronicle]
+description = "Chronicle-ek zifratze-gakoak kudeatzen ditu. Errazena — zure aldetik gako-eragiketarik gabe."
+label = "Chronicle-ek gordetako gakoak"
 
 [portal.infrastructure.security.accessPolicy]
 heading = "Dokumentuetarako sarbide-gidalerroa"
@@ -7073,15 +7073,15 @@ viewReport = "Ikusi txostena →"
 
 [portal.infrastructure.security.compliance]
 heading = "Betetzea"
-subheading = "Stirling plataforma estaltzen duten egiaztapenak eta ziurtagiriak."
+subheading = "Chronicle plataforma estaltzen duten egiaztapenak eta ziurtagiriak."
 
 [portal.infrastructure.security.empty]
 description = "Zure lan-eremuko segurtasun-konfigurazioa hemen agertuko da."
 title = "Segurtasun-jarrera ez dago eskuragarri"
 
 [portal.infrastructure.security.hyokBanner]
-description = "HYOK erabiliz, zifratze-gakoak ez dira inoiz zure KMS-tik irteten. Stirling-ek edozein unetan baliogabetu dezakezun zifratu-testua baino ez du gordetzen eta prozesatzen."
-title = "Stirling-ek ezin ditu zure dokumentuak deszifratu"
+description = "HYOK erabiliz, zifratze-gakoak ez dira inoiz zure KMS-tik irteten. Chronicle-ek edozein unetan baliogabetu dezakezun zifratu-testua baino ez du gordetzen eta prozesatzen."
+title = "Chronicle-ek ezin ditu zure dokumentuak deszifratu"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "Ez dago IP barrutirik konfiguratuta — IP guztiak baimenduta daude."
@@ -7110,7 +7110,7 @@ subheading = "Atsedenean dokumentuak zifratzen dituzten gakoen zaintza — nork 
 
 [portal.infrastructure.security.managedBanner]
 description = "Bring-your-own-key (BYOK) eta hold-your-own-key (HYOK) zaintza Enterprise planean daude eskuragarri. Berritu zure KMS propioko gakoak emateko."
-title = "Zure planean, gakoak Stirling-ek kudeatzen ditu"
+title = "Zure planean, gakoak Chronicle-ek kudeatzen ditu"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "Kargatu"
 
 [portal.procurement.agreement]
 agreeCta = "Adostu eta harpidetu"
-confirm = "Stirling Enterprise Agreement irakurri dut eta ados nago."
+confirm = "Chronicle Enterprise Agreement irakurri dut eta ados nago."
 eyebrow = "Akordioa"
 intro = "Akordio bateratu batek zure tratua estaltzen du: Master Service Agreement, Order Form, EULA eta Data Processing Agreement. Berrikusi, eta gero adostu aurrekontua harpidetza konprometitu gisa onartzeko."
 title = "Berrikusi zure enpresa-akordioa"
@@ -7606,7 +7606,7 @@ country = "Herrialdea"
 countryEuro = "Eurogunea (EUR €)"
 countryUK = "Erresuma Batua (GBP £)"
 countryUS = "Estatu Batuak (USD $)"
-eula = "Stirling Enterprise EULA irakurri dut eta ados nago. Aurrekontu honetatik sortutako akordioa arautzen du."
+eula = "Chronicle Enterprise EULA irakurri dut eta ados nago. Aurrekontu honetatik sortutako akordioa arautzen du."
 generate = "Sortu aurrekontua"
 included = "Barne"
 indemnification = "IP kalte-ordaina"
@@ -7689,7 +7689,7 @@ daysLeft_one = "{{count}} egun geratzen da"
 daysLeft_other = "{{count}} egun geratzen dira"
 engineerLabel = "Zure solutions engineer"
 eyebrow = "Zure hedapena"
-live = "Stirling Enterprise-n martxan zaude"
+live = "Chronicle Enterprise-n martxan zaude"
 nextStep = "Hurrengo urratsa: {{action}}"
 subtitle = "Zure solutions engineer urrats guztietan dago. Hurrengo ekintza bat aldi berean; kontrol-zerrenda osoa behean dago."
 title = "Probalditik martxan egotera, bide gidatu bakarra"
@@ -7716,7 +7716,7 @@ gatingAction = "Onartu zure aurrekontua"
 label = "Aurrekontua"
 
 [portal.procurement.journeySteps.trial]
-blurb = "Ebaluatu Stirling zure dokumentu eta lan-fluxuen aurka."
+blurb = "Ebaluatu Chronicle zure dokumentu eta lan-fluxuen aurka."
 gatingAction = "Eraiki zure aurrekontua"
 label = "Probaldia"
 
@@ -7730,14 +7730,14 @@ label = "Zure lizentzia-gakoa"
 
 [portal.procurement.link]
 cta = "Lotu kontua"
-description = "Erosketa zure lotutako Stirling kontuan exekutatzen da: horrela hornitzen dugu probaldia, aurrekontuaren prezioa kalkulatzen dugu eta fakturazioa hasten dugu. Lotu kontu bat hasteko."
+description = "Erosketa zure lotutako Chronicle kontuan exekutatzen da: horrela hornitzen dugu probaldia, aurrekontuaren prezioa kalkulatzen dugu eta fakturazioa hasten dugu. Lotu kontu bat hasteko."
 eyebrow = "Enterprise"
 title = "Lotu zure kontua hasteko"
 
 [portal.procurement.live]
 description = "Zure harpidetza aktibo dago eta zure lizentzia jaulkita dago. Zure taldea hornituta dago eta fakturazioa hasi da."
 eyebrow = "Martxan"
-title = "Stirling Enterprise-n martxan zaude"
+title = "Chronicle Enterprise-n martxan zaude"
 
 [portal.procurement.locked]
 description = "Probaldi-gakoak, bolumen konprometituaren aurrekontuak, sinadura bakarreko akordioa, ordainketa eta zure dokumentu-liburua hemen egongo dira enterprise ebaluazioa hasten duzunean."
@@ -7772,7 +7772,7 @@ requestBodyFree = "Eskariaren arabera sortzen dugu. Berretsi eta zure solutions 
 requestBodyPaid = "Hau ordainpeko gehigarria da. Berretsi eta zure solutions engineer-ek irismena zehaztu eta dokumentazioa bidaliko du."
 requestCta = "Eskatu"
 requestTitle = "Eskatu dokumentu hau"
-signBody = "Stirling Enterprise Agreement irekitzen du e-sinadurarako: sinadura batek MSA, order form, EULA eta DPA estaltzen ditu. Guk automatikoki kontrassinatu eta ordainketara aurreratzen zara."
+signBody = "Chronicle Enterprise Agreement irekitzen du e-sinadurarako: sinadura batek MSA, order form, EULA eta DPA estaltzen ditu. Guk automatikoki kontrassinatu eta ordainketara aurreratzen zara."
 signCta = "Ireki sinatzeko"
 signTitle = "Berrikusi eta sinatu zure akordioa"
 uploadBody = "Bidali zure PO eta haren kontra fakturatuko dizugu zure baldintzetan. Arrastatu PDFa edo aukeratu fitxategi bat behean."
@@ -7824,7 +7824,7 @@ title = "Oraindik ez dago ezer hemen"
 
 [portal.search]
 ariaLabel = "Bilatu"
-placeholder = "Bilatu Stirling — endpointak, pipelineak, dokumentuak…"
+placeholder = "Bilatu Chronicle — endpointak, pipelineak, dokumentuak…"
 
 [portal.search.empty]
 noActionsDescription = "Ekintza azkarrak hemen agertuko dira erabilgarri daudenean."
@@ -7852,9 +7852,9 @@ switchToLight = "Aldatu gai argira"
 [portal.shell.sidebar]
 appEditor = "Editorea"
 appProcessor = "Prozesadorea"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} dok."
-linkAccount = "Lotu Stirling kontua"
+linkAccount = "Lotu Chronicle kontua"
 planEditor = "Editor plana"
 planEnterprise = "Enterprise plana"
 planProcessor = "Processor plana"
@@ -7862,7 +7862,7 @@ primaryNav = "Nabigazio nagusia"
 switchApp = "Aldatu aplikazioa"
 
 [portal.sources]
-subtitle = "Stirling-era dokumentuak elikatzen dituzten sarrera-konexio berrerabilgarriak. Konfiguratu konexio bat behin, eta erreferentziatu nahi adina politikatan. Egin klik errenkada batean haren konfigurazioa eta zein politikek erabiltzen duten ikusteko."
+subtitle = "Chronicle-era dokumentuak elikatzen dituzten sarrera-konexio berrerabilgarriak. Konfiguratu konexio bat behin, eta erreferentziatu nahi adina politikatan. Egin klik errenkada batean haren konfigurazioa eta zein politikek erabiltzen duten ikusteko."
 title = "Iturburuak"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "Begiratu zerbitzariko direktorio bat dokumentu berriak detektatze
 label = "Karpeta"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Stirling-ek prozesatzeko fitxategiak zaintzen dituen bide absolutua."
+helperText = "Chronicle-ek prozesatzeko fitxategiak zaintzen dituen bide absolutua."
 label = "Direktorioaren bidea"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "Berrikusi eta konektatu"
 
 [portal.usage]
 managePayment = "Kudeatu ordainketa"
-subtitle = "Stirling-ek fakturatutako PDF guztien kontsumoa, fakturak eta plan-kudeaketa, kontsola bakarrean."
+subtitle = "Chronicle-ek fakturatutako PDF guztien kontsumoa, fakturak eta plan-kudeaketa, kontsola bakarrean."
 title = "Erabilera eta fakturazioa"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "Wallet ez dago erabilgarri: {{status}} {{statusText}}"
 
 [portal.usage.sessionExpired]
 action = "Hasi saioa berriro"
-body = "Zure Stirling kontuaren saioa iraungi da. Hasi saioa berriro fakturazioa ikusteko — zure instantziak lotuta jarraitzen du."
+body = "Zure Chronicle kontuaren saioa iraungi da. Hasi saioa berriro fakturazioa ikusteko — zure instantziak lotuta jarraitzen du."
 title = "Saioa iraungi da"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "Saioa hasita:"
 
 [settings.connection.mode]
 local = "Tokikoa bakarrik"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "Auto-ostatua"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "Erabilera-analitika"
 [settings.planBilling]
 currentPlan = "Uneko plana"
 loading = "Fakturazio-informazioa kargatzen..."
-notAvailable = "Planak eta Fakturazioa erabilgarri daude soilik Stirling Cloud-era konektatuta dagoenean (SaaS modua)."
+notAvailable = "Planak eta Fakturazioa erabilgarri daude soilik Chronicle Cloud-era konektatuta dagoenean (SaaS modua)."
 title = "Plana eta Fakturazioa"
 
 [settings.planBilling.billing]
@@ -9068,7 +9068,7 @@ emptyUsername = "Sartu zure erabiltzaile-izena"
 oauthFailed = "OAuth saio-hasierak huts egin du. Saiatu berriro."
 
 [setup.saas]
-title = "Hasi saioa Stirlingen"
+title = "Hasi saioa Chronicleen"
 
 [setup.selfhosted]
 changeServerLocked = "Zure erakundeak aplikazio hau zerbitzari jakin batera mugatu du"
@@ -10015,7 +10015,7 @@ processorDeferred = "Gonbidapena bidalita, baina Processor sarbidea oraindik ezi
 processorDesc = "Gobernantza-azalera, pipelineak, agenteak eta API exekutatzeko."
 role = "Rola"
 send2 = "Bidali gonbidapena"
-subtitle2 = "Mezu elektroniko bat jasoko dute zure Stirling lan-eremura sartzeko."
+subtitle2 = "Mezu elektroniko bat jasoko dute zure Chronicle lan-eremura sartzeko."
 team = "Taldea"
 title = "Gonbidatu pertsonak"
 username = "Erabiltzaile-izena"

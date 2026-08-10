@@ -1158,8 +1158,8 @@ description = "Nama pengguna untuk autentikasi SMTP"
 label = "Nama Pengguna SMTP"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -3072,7 +3072,7 @@ upgradeButton = "Tingkatkan Akun"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Salin kunci API"
-description = "Kunci API Anda untuk mengakses rangkaian alat PDF Stirling. Salin ke proyek Anda atau segarkan untuk membuat yang baru."
+description = "Kunci API Anda untuk mengakses rangkaian alat PDF Chronicle. Salin ke proyek Anda atau segarkan untuk membuat yang baru."
 docsDescription = "Pelajari lebih lanjut tentang integrasi dengan Chronicle PDF:"
 docsLink = "Dokumentasi API"
 docsTitle = "Dokumentasi API"
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -4669,7 +4669,7 @@ terms = "Syarat dan Ketentuan"
 title = "Lisensi Pihak Ketiga"
 
 [localMode]
-toolUnavailable = "Alat ini memerlukan akun. Masuk ke Stirling Cloud atau hubungkan ke server self-hosted untuk menggunakannya."
+toolUnavailable = "Alat ini memerlukan akun. Masuk ke Chronicle Cloud atau hubungkan ke server self-hosted untuk menggunakannya."
 
 [localMode.toolPicker]
 message = "Masuk untuk membuka semua alat."
@@ -4989,7 +4989,7 @@ skipForNow = "Lewati dulu"
 skipTheTour = "Lewati tur"
 
 [onboarding.desktopInstall]
-body = "Stirling paling baik digunakan sebagai aplikasi desktop. Anda dapat menggunakannya offline, mengakses dokumen lebih cepat, dan mengedit secara lokal di komputer Anda."
+body = "Chronicle paling baik digunakan sebagai aplikasi desktop. Anda dapat menggunakannya offline, mengakses dokumen lebih cepat, dan mengedit secara lokal di komputer Anda."
 selectOs = "Pilih sistem operasi"
 title = "Unduh"
 titleWithOs = "Unduh untuk {{osLabel}}"
@@ -4999,8 +4999,8 @@ authenticationCode = "Kode autentikasi"
 qrCodeLoading = "Membuat kode QR Anda…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "Setelah Anda mengaktifkan mode login, Anda dapat mengelola pengguna, mengonfigurasi pengaturan, dan memantau kesehatan server. <strong>{{freeTierLimit}}</strong> orang pertama di server Anda dapat menggunakan Stirling gratis."
-adminBodyLoginEnabled = "Sebagai admin, Anda dapat mengelola pengguna, mengonfigurasi pengaturan, dan memantau kesehatan server. <strong>{{freeTierLimit}}</strong> orang pertama di server Anda dapat menggunakan Stirling gratis."
+adminBodyLoginDisabled = "Setelah Anda mengaktifkan mode login, Anda dapat mengelola pengguna, mengonfigurasi pengaturan, dan memantau kesehatan server. <strong>{{freeTierLimit}}</strong> orang pertama di server Anda dapat menggunakan Chronicle gratis."
+adminBodyLoginEnabled = "Sebagai admin, Anda dapat mengelola pengguna, mengonfigurasi pengaturan, dan memantau kesehatan server. <strong>{{freeTierLimit}}</strong> orang pertama di server Anda dapat menggunakan Chronicle gratis."
 adminTitle = "Ringkasan Admin"
 userBody = "Undang rekan, tetapkan peran, dan jaga dokumen Anda tetap teratur dalam satu workspace yang aman. Aktifkan mode login kapan pun Anda siap berkembang dari penggunaan solo."
 userTitle = "Ringkasan Paket"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "Konfirmasi peran Anda"
 roleUser = "Pengguna"
 
 [onboarding.serverLicense]
-freeBody = "Lisensi <strong>Open-Core</strong> kami mengizinkan hingga <strong>{{freeTierLimit}}</strong> pengguna gratis per server. Untuk skala tanpa hambatan dan mendapatkan akses awal ke <strong>alat pengeditan teks PDF</strong> baru kami, kami sarankan paket Stirling Server - pengeditan penuh dan <strong>kursi tanpa batas</strong> seharga $99/server/bulan."
+freeBody = "Lisensi <strong>Open-Core</strong> kami mengizinkan hingga <strong>{{freeTierLimit}}</strong> pengguna gratis per server. Untuk skala tanpa hambatan dan mendapatkan akses awal ke <strong>alat pengeditan teks PDF</strong> baru kami, kami sarankan paket Chronicle server - pengeditan penuh dan <strong>kursi tanpa batas</strong> seharga $99/server/bulan."
 freeTitle = "Lisensi Server"
-overLimitBody = "Lisensi kami mengizinkan hingga <strong>{{freeTierLimit}}</strong> pengguna gratis per server. Anda memiliki <strong>{{overLimitUserCopy}}</strong> pengguna Stirling. Untuk terus berjalan tanpa gangguan, upgrade ke paket Stirling Server - <strong>kursi tanpa batas</strong>, pengeditan teks PDF, dan kontrol admin penuh seharga $99/server/bulan."
+overLimitBody = "Lisensi kami mengizinkan hingga <strong>{{freeTierLimit}}</strong> pengguna gratis per server. Anda memiliki <strong>{{overLimitUserCopy}}</strong> pengguna Chronicle. Untuk terus berjalan tanpa gangguan, upgrade ke paket Chronicle server - <strong>kursi tanpa batas</strong>, pengeditan teks PDF, dan kontrol admin penuh seharga $99/server/bulan."
 overLimitTitle = "Perlu Lisensi Server"
 seePlans = "Lihat Paket →"
 upgrade = "Upgrade sekarang →"
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6192,25 +6192,25 @@ comingSoon = "Segera hadir"
 [portal.accountLink.card]
 billingNote = "Pemrosesan tanpa pengawasan ditagihkan ke dompet organisasi Anda."
 eyebrow = "Tautan akun"
-linkButton = "Tautkan akun Stirling Anda"
+linkButton = "Tautkan akun Chronicle Anda"
 linked = "Tertaut"
 linkedAs = "Tertaut sebagai {{name}}."
 linkedGeneric = "Instans ini tertaut."
 notLinked = "Belum tertaut"
-title = "Tautkan organisasi ini ke akun Stirling-nya"
+title = "Tautkan organisasi ini ke akun Chronicle-nya"
 unlink = "Batalkan tautan"
 
 [portal.accountLink.card.error]
 title = "Tidak dapat menautkan"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "untuk mengaktifkan penautan akun terhadap akun Stirling yang di-host. Dalam dev, Anda dapat menyimulasikan masuk dari dialog tautan."
+after = "untuk mengaktifkan penautan akun terhadap akun Chronicle yang di-host. Dalam dev, Anda dapat menyimulasikan masuk dari dialog tautan."
 before = "Atur"
 title = "Login SaaS belum dikonfigurasi"
 
 [portal.accountLink.gate]
 action = "Tautkan akun"
-description = "Tautkan akun Stirling organisasi ini untuk menggunakan fitur berbayar."
+description = "Tautkan akun Chronicle organisasi ini untuk menggunakan fitur berbayar."
 title = "Tautkan untuk membuka akses"
 titleFeature = "Tautkan untuk membuka {{feature}}"
 
@@ -6242,13 +6242,13 @@ never = "tidak pernah"
 
 [portal.accountLink.modal]
 linkSubtitle = "Masuk ke akun yang harus digunakan server ini untuk penagihan."
-linkTitle = "Tautkan akun Stirling Anda"
-reauthSubtitle = "Sesi Anda kedaluwarsa — masuk kembali ke akun Stirling Anda. Instans Anda tetap tertaut."
+linkTitle = "Tautkan akun Chronicle Anda"
+reauthSubtitle = "Sesi Anda kedaluwarsa — masuk kembali ke akun Chronicle Anda. Instans Anda tetap tertaut."
 reauthTitle = "Masuk lagi"
 simulateSignIn = "Simulasikan masuk (dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "untuk mengaktifkan penautan dalam aplikasi terhadap akun Stirling yang di-host."
+after = "untuk mengaktifkan penautan dalam aplikasi terhadap akun Chronicle yang di-host."
 and = "dan"
 before = "Atur"
 title = "Login SaaS belum dikonfigurasi"
@@ -6257,7 +6257,7 @@ title = "Login SaaS belum dikonfigurasi"
 instancesSub = "Setiap instans self-hosted yang terdaftar ke organisasi ini. Cabut kredensial untuk segera memutus akses tanpa pengawasannya."
 instancesTitle = "Instans tertaut"
 revokeError = "Tidak dapat mencabut instans"
-sub = "Tautkan organisasi self-hosted ini ke akun Stirling-nya agar pemrosesan tanpa pengawasan ditagihkan ke dompet organisasi Anda."
+sub = "Tautkan organisasi self-hosted ini ke akun Chronicle-nya agar pemrosesan tanpa pengawasan ditagihkan ke dompet organisasi Anda."
 
 [portal.accountLink.panel.loadError]
 forbidden = "Hanya pemilik tim yang dapat melihat instans tertaut organisasi."
@@ -6354,7 +6354,7 @@ close = "Tutup asisten"
 error = "Tidak dapat menghubungi asisten."
 errorWithDetail = "Tidak dapat menghubungi asisten: {{detail}}"
 inputAriaLabel = "Tanya asisten"
-inputPlaceholder = "Tanyakan tentang Stirling…"
+inputPlaceholder = "Tanyakan tentang Chronicle…"
 open = "Buka asisten"
 send = "Kirim"
 title = "Asisten"
@@ -6392,7 +6392,7 @@ title = "Stripe belum dikonfigurasi"
 cta = "Buat penawaran Enterprise Anda"
 description = "Diskon volume berkomitmen, deployment air-gapped, MSA khusus dan tinjauan keamanan, serta kemitraan distributor pihak ketiga."
 eyebrow = "Diskon volume · 1M+ PDF"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "Aktif bulan ini"
@@ -6441,7 +6441,7 @@ viewLink = "Lihat ↗"
 [portal.billing.linkPrompt]
 cta = "Tautkan akun Chronicle"
 description = "Pengeditan PDF manual — lihat, tanda tangani, gabung, pisah, watermark, kompres, konversi, OCR manual — selalu gratis, tertaut atau tidak. Tautkan untuk mengklaim 500 PDF gratis dari pemrosesan bermeter (otomatisasi, AI, dan API); saat Anda membutuhkan lebih banyak, aktifkan paket Processor dan hanya bayar yang Anda gunakan."
-title = "Tautkan akun Stirling Anda"
+title = "Tautkan akun Chronicle Anda"
 
 [portal.billing.paymentMethod]
 billedMonthly = "Ditagih bulanan"
@@ -6869,7 +6869,7 @@ title = "Terbitkan API key"
 [portal.infrastructure]
 manageEditorDeployment = "Kelola penerapan Editor"
 sectionsAriaLabel = "Bagian infrastruktur"
-subtitle = "Penerapan, kredensial, postur keamanan, penyimpanan, dan jejak audit untuk workspace Stirling Anda."
+subtitle = "Penerapan, kredensial, postur keamanan, penyimpanan, dan jejak audit untuk workspace Chronicle Anda."
 title = "Infrastruktur"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "Nama kunci"
 keyNamePlaceholder = "mis. Production · ingest"
 permissionsLabel = "Izin"
 secretKeyCaption = "Kunci rahasia"
-secretWarning = "Simpan ini di pengelola rahasia. Stirling hanya menyimpan hash — tidak ada cara untuk memulihkannya nanti."
+secretWarning = "Simpan ini di pengelola rahasia. Chronicle hanya menyimpan hash — tidak ada cara untuk memulihkannya nanti."
 subtitle = "Batasi kunci ke minimum yang dibutuhkan. Anda dapat merotasi atau mencabutnya kapan saja."
 subtitleCreated = "Salin rahasia ini sekarang — tidak akan ditampilkan lagi."
 title = "Buat API key"
@@ -6993,7 +6993,7 @@ version = "Versi"
 
 [portal.infrastructure.deployments.regions]
 heading = "Region"
-subheading = "Kesehatan langsung untuk setiap region Stirling yang diterapkan — latensi, beban, dan versi rollout."
+subheading = "Kesehatan langsung untuk setiap region Chronicle yang diterapkan — latensi, beban, dan versi rollout."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "Region yang diterapkan muncul di sini setelah workspace Anda disediakan."
@@ -7050,15 +7050,15 @@ operation = "Operasi"
 routedTo = "Dirutekan ke"
 
 [portal.infrastructure.security.access.byok]
-description = "Sediakan kunci dari KMS Anda sendiri. Stirling mengenkripsi dengannya tetapi masih dapat membaca."
+description = "Sediakan kunci dari KMS Anda sendiri. Chronicle mengenkripsi dengannya tetapi masih dapat membaca."
 label = "Bring your own key (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "Kunci tidak pernah meninggalkan KMS Anda. Stirling hanya menyimpan ciphertext."
+description = "Kunci tidak pernah meninggalkan KMS Anda. Chronicle hanya menyimpan ciphertext."
 label = "Hold your own key (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Stirling mengelola kunci enkripsi. Paling sederhana — tanpa operasi kunci di sisi Anda."
+[portal.infrastructure.security.access.Chronicle]
+description = "Chronicle mengelola kunci enkripsi. Paling sederhana — tanpa operasi kunci di sisi Anda."
 label = "Kunci yang dipegang Chronicle"
 
 [portal.infrastructure.security.accessPolicy]
@@ -7073,15 +7073,15 @@ viewReport = "Lihat laporan →"
 
 [portal.infrastructure.security.compliance]
 heading = "Kepatuhan"
-subheading = "Atestasi dan sertifikasi yang mencakup platform Stirling."
+subheading = "Atestasi dan sertifikasi yang mencakup platform Chronicle."
 
 [portal.infrastructure.security.empty]
 description = "Konfigurasi keamanan workspace Anda akan muncul di sini."
 title = "Postur keamanan tidak tersedia"
 
 [portal.infrastructure.security.hyokBanner]
-description = "Dengan HYOK, kunci enkripsi tidak pernah meninggalkan KMS Anda. Stirling menyimpan dan memproses hanya ciphertext yang dapat Anda cabut kapan saja."
-title = "Stirling tidak dapat mendekripsi dokumen Anda"
+description = "Dengan HYOK, kunci enkripsi tidak pernah meninggalkan KMS Anda. Chronicle menyimpan dan memproses hanya ciphertext yang dapat Anda cabut kapan saja."
+title = "Chronicle tidak dapat mendekripsi dokumen Anda"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "Tidak ada rentang IP yang dikonfigurasi — semua IP diizinkan."
@@ -7110,7 +7110,7 @@ subheading = "Penitipan kunci yang mengenkripsi dokumen saat disimpan — siapa 
 
 [portal.infrastructure.security.managedBanner]
 description = "Penitipan bring-your-own-key (BYOK) dan hold-your-own-key (HYOK) tersedia pada Enterprise. Tingkatkan untuk menyediakan kunci dari KMS Anda sendiri."
-title = "Kunci dikelola oleh Stirling pada paket Anda"
+title = "Kunci dikelola oleh Chronicle pada paket Anda"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "Upload"
 
 [portal.procurement.agreement]
 agreeCta = "Setujui & berlangganan"
-confirm = "Saya telah membaca dan menyetujui Stirling Enterprise Agreement."
+confirm = "Saya telah membaca dan menyetujui Chronicle Enterprise Agreement."
 eyebrow = "Perjanjian"
 intro = "Satu perjanjian gabungan mencakup kesepakatan Anda: Master Service Agreement, Order Form, EULA, dan Data Processing Agreement. Tinjau, lalu setujui untuk menerima penawaran menjadi langganan berkomitmen."
 title = "Tinjau perjanjian enterprise Anda"
@@ -7606,7 +7606,7 @@ country = "Negara"
 countryEuro = "Eurozone (EUR €)"
 countryUK = "United Kingdom (GBP £)"
 countryUS = "United States (USD $)"
-eula = "Saya telah membaca dan menyetujui Stirling Enterprise EULA. Ini mengatur perjanjian yang dihasilkan dari penawaran ini."
+eula = "Saya telah membaca dan menyetujui Chronicle Enterprise EULA. Ini mengatur perjanjian yang dihasilkan dari penawaran ini."
 generate = "Buat penawaran"
 included = "Termasuk"
 indemnification = "Indemnifikasi IP"
@@ -7689,7 +7689,7 @@ daysLeft_one = "Sisa {{count}} hari"
 daysLeft_other = "Sisa {{count}} hari"
 engineerLabel = "Engineer solusi Anda"
 eyebrow = "Rollout Anda"
-live = "Anda sudah live di Stirling Enterprise"
+live = "Anda sudah live di Chronicle Enterprise"
 nextStep = "Langkah berikutnya: {{action}}"
 subtitle = "Engineer solusi Anda ada di setiap langkah. Satu tindakan berikutnya pada satu waktu; checklist lengkap ada di bawah."
 title = "Dari uji coba hingga live, satu jalur terpandu"
@@ -7716,7 +7716,7 @@ gatingAction = "Terima penawaran Anda"
 label = "Penawaran"
 
 [portal.procurement.journeySteps.trial]
-blurb = "Evaluasi Stirling terhadap dokumen dan workflow Anda."
+blurb = "Evaluasi Chronicle terhadap dokumen dan workflow Anda."
 gatingAction = "Buat penawaran Anda"
 label = "Uji coba"
 
@@ -7730,14 +7730,14 @@ label = "Kunci lisensi Anda"
 
 [portal.procurement.link]
 cta = "Tautkan akun"
-description = "Pengadaan berjalan pada akun Stirling tertaut Anda: begitulah cara kami memprovision uji coba, memberi harga penawaran, dan memulai penagihan. Tautkan akun untuk memulai."
+description = "Pengadaan berjalan pada akun Chronicle tertaut Anda: begitulah cara kami memprovision uji coba, memberi harga penawaran, dan memulai penagihan. Tautkan akun untuk memulai."
 eyebrow = "Enterprise"
 title = "Tautkan akun Anda untuk memulai"
 
 [portal.procurement.live]
 description = "Langganan Anda aktif dan lisensi Anda telah diterbitkan. Tim Anda telah diprovision dan penagihan telah dimulai."
 eyebrow = "Live"
-title = "Anda sudah live di Stirling Enterprise"
+title = "Anda sudah live di Chronicle Enterprise"
 
 [portal.procurement.locked]
 description = "Kunci uji coba, penawaran volume berkomitmen, perjanjian satu tanda tangan, pembayaran, dan buku besar dokumen Anda semuanya ada di sini setelah Anda memulai evaluasi enterprise."
@@ -7772,7 +7772,7 @@ requestBodyFree = "Kami membuat ini sesuai permintaan. Konfirmasi dan engineer s
 requestBodyPaid = "Ini adalah add-on berbayar. Konfirmasi dan engineer solusi Anda akan menentukannya serta mengirim dokumen."
 requestCta = "Minta"
 requestTitle = "Minta dokumen ini"
-signBody = "Membuka Stirling Enterprise Agreement untuk e-signature: satu tanda tangan mencakup MSA, order form, EULA, dan DPA. Kami melakukan countersign otomatis dan Anda maju ke pembayaran."
+signBody = "Membuka Chronicle Enterprise Agreement untuk e-signature: satu tanda tangan mencakup MSA, order form, EULA, dan DPA. Kami melakukan countersign otomatis dan Anda maju ke pembayaran."
 signCta = "Buka untuk tanda tangan"
 signTitle = "Tinjau dan tanda tangani perjanjian Anda"
 uploadBody = "Kirim PO Anda kepada kami dan kami menagih sesuai ketentuan Anda. Seret PDF atau pilih file di bawah."
@@ -7824,7 +7824,7 @@ title = "Belum ada apa pun di sini"
 
 [portal.search]
 ariaLabel = "Cari"
-placeholder = "Cari Stirling — endpoint, pipeline, dokumen…"
+placeholder = "Cari Chronicle — endpoint, pipeline, dokumen…"
 
 [portal.search.empty]
 noActionsDescription = "Tindakan cepat akan muncul di sini setelah tersedia."
@@ -7852,7 +7852,7 @@ switchToLight = "Beralih ke tema terang"
 [portal.shell.sidebar]
 appEditor = "Editor"
 appProcessor = "Processor"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} dokumen"
 linkAccount = "Tautkan akun Chronicle"
 planEditor = "Paket Editor"
@@ -7862,7 +7862,7 @@ primaryNav = "Navigasi utama"
 switchApp = "Ganti aplikasi"
 
 [portal.sources]
-subtitle = "Koneksi input yang dapat digunakan ulang untuk memasukkan dokumen ke Stirling. Konfigurasi koneksi sekali, lalu referensikan dari sejumlah kebijakan. Klik baris untuk konfigurasinya dan kebijakan mana yang menggunakannya."
+subtitle = "Koneksi input yang dapat digunakan ulang untuk memasukkan dokumen ke Chronicle. Konfigurasi koneksi sekali, lalu referensikan dari sejumlah kebijakan. Klik baris untuk konfigurasinya dan kebijakan mana yang menggunakannya."
 title = "Sumber"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "Pantau direktori di server untuk dokumen baru."
 label = "Folder"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Path absolut yang dipantau Stirling untuk file yang akan diproses."
+helperText = "Path absolut yang dipantau Chronicle untuk file yang akan diproses."
 label = "Path direktori"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "Tinjau & hubungkan"
 
 [portal.usage]
 managePayment = "Kelola Pembayaran"
-subtitle = "Konsumsi, invoice, dan manajemen paket untuk setiap PDF yang ditagih Stirling, dalam satu konsol."
+subtitle = "Konsumsi, invoice, dan manajemen paket untuk setiap PDF yang ditagih Chronicle, dalam satu konsol."
 title = "Penggunaan & penagihan"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "Wallet tidak tersedia: {{status}} {{statusText}}"
 
 [portal.usage.sessionExpired]
 action = "Masuk lagi"
-body = "Sesi akun Stirling Anda telah kedaluwarsa. Masuk lagi untuk melihat penagihan — instance Anda tetap tertaut."
+body = "Sesi akun Chronicle Anda telah kedaluwarsa. Masuk lagi untuk melihat penagihan — instance Anda tetap tertaut."
 title = "Sesi kedaluwarsa"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "Masuk sebagai"
 
 [settings.connection.mode]
 local = "Hanya Lokal"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "Self-Hosted"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "Analitik Penggunaan"
 [settings.planBilling]
 currentPlan = "Paket Saat Ini"
 loading = "Memuat informasi penagihan..."
-notAvailable = "Paket & Penagihan hanya tersedia saat terhubung ke Stirling Cloud (mode SaaS)."
+notAvailable = "Paket & Penagihan hanya tersedia saat terhubung ke Chronicle Cloud (mode SaaS)."
 title = "Paket & Penagihan"
 
 [settings.planBilling.billing]
@@ -10015,7 +10015,7 @@ processorDeferred = "Undangan terkirim, tetapi akses Processor belum dapat diber
 processorDesc = "Permukaan tata kelola, jalankan pipeline, agen, dan API."
 role = "Peran"
 send2 = "Kirim undangan"
-subtitle2 = "Mereka akan menerima email untuk bergabung dengan ruang kerja Stirling Anda."
+subtitle2 = "Mereka akan menerima email untuk bergabung dengan ruang kerja Chronicle Anda."
 team = "Tim"
 title = "Undang orang"
 username = "Nama pengguna"

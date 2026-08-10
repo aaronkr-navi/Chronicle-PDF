@@ -1158,8 +1158,8 @@ description = "SMTP 인증 사용자 이름"
 label = "SMTP 사용자 이름"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -2742,7 +2742,7 @@ close = "Close chat"
 open = "Open Chronicle AI assistant"
 
 [chat.header]
-agentMenu = "Stirling 에이전트 옵션"
+agentMenu = "Chronicle 에이전트 옵션"
 clearChat = "채팅 지우기"
 
 [chat.input]
@@ -3072,7 +3072,7 @@ upgradeButton = "계정 업그레이드"
 
 [config.apiKeys]
 copyKeyAriaLabel = "API 키 복사"
-description = "Stirling의 PDF 도구 모음에 접근하기 위한 API 키입니다. 프로젝트에 복사하거나 새로고침하여 새 키를 생성하세요."
+description = "Chronicle의 PDF 도구 모음에 접근하기 위한 API 키입니다. 프로젝트에 복사하거나 새로고침하여 새 키를 생성하세요."
 docsDescription = "Chronicle PDF 연동에 대해 더 알아보세요:"
 docsLink = "API 문서"
 docsTitle = "API 문서"
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -3939,7 +3939,7 @@ title = "폴더로 이동"
 [filesPage.origin]
 all = "모든 원본"
 cloud = "클라우드"
-cloudHint = "Stirling 서버에 저장됨"
+cloudHint = "Chronicle 서버에 저장됨"
 local = "로컬"
 localHint = "이 브라우저에만 저장됨"
 shared = "공유됨"
@@ -4669,7 +4669,7 @@ terms = "이용약관"
 title = "제3자 라이선스"
 
 [localMode]
-toolUnavailable = "이 도구를 사용하려면 계정이 필요합니다. Stirling Cloud에 로그인하거나 자가 호스팅 서버에 연결하세요."
+toolUnavailable = "이 도구를 사용하려면 계정이 필요합니다. Chronicle Cloud에 로그인하거나 자가 호스팅 서버에 연결하세요."
 
 [localMode.toolPicker]
 message = "모든 도구를 사용하려면 로그인하세요."
@@ -4989,7 +4989,7 @@ skipForNow = "나중에 건너뛰기"
 skipTheTour = "투어 건너뛰기"
 
 [onboarding.desktopInstall]
-body = "Stirling은 데스크톱 앱으로 사용할 때 가장 잘 작동합니다. 오프라인으로 사용하고, 문서를 더 빠르게 열며, 컴퓨터에서 로컬로 편집할 수 있습니다."
+body = "Chronicle은 데스크톱 앱으로 사용할 때 가장 잘 작동합니다. 오프라인으로 사용하고, 문서를 더 빠르게 열며, 컴퓨터에서 로컬로 편집할 수 있습니다."
 selectOs = "운영 체제 선택"
 title = "다운로드"
 titleWithOs = "{{osLabel}}용 다운로드"
@@ -4999,8 +4999,8 @@ authenticationCode = "인증 코드"
 qrCodeLoading = "QR 코드 생성 중…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "로그인 모드를 활성화하면 사용자 관리, 설정 구성, 서버 상태 모니터링을 할 수 있습니다. 서버의 첫 <strong>{{freeTierLimit}}</strong>명은 무료로 Stirling을 사용할 수 있습니다."
-adminBodyLoginEnabled = "관리자로서 사용자 관리, 설정 구성, 서버 상태 모니터링을 할 수 있습니다. 서버의 첫 <strong>{{freeTierLimit}}</strong>명은 무료로 Stirling을 사용할 수 있습니다."
+adminBodyLoginDisabled = "로그인 모드를 활성화하면 사용자 관리, 설정 구성, 서버 상태 모니터링을 할 수 있습니다. 서버의 첫 <strong>{{freeTierLimit}}</strong>명은 무료로 Chronicle을 사용할 수 있습니다."
+adminBodyLoginEnabled = "관리자로서 사용자 관리, 설정 구성, 서버 상태 모니터링을 할 수 있습니다. 서버의 첫 <strong>{{freeTierLimit}}</strong>명은 무료로 Chronicle을 사용할 수 있습니다."
 adminTitle = "관리자 개요"
 userBody = "팀원을 초대하고 역할을 지정하며 문서를 하나의 안전한 작업 공간에서 정리하세요. 솔로 사용을 넘어 성장할 준비가 되면 언제든 로그인 모드를 활성화하세요."
 userTitle = "플랜 개요"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "역할 확인"
 roleUser = "사용자"
 
 [onboarding.serverLicense]
-freeBody = "당사의 <strong>Open-Core</strong> 라이선스는 서버당 최대 <strong>{{freeTierLimit}}</strong>명의 사용자를 무료로 허용합니다. 중단 없이 확장하고 새로운 <strong>PDF 텍스트 편집 도구</strong>에 조기 액세스하려면 Stirling Server 플랜을 권장합니다 - 전체 편집과 <strong>무제한 좌석</strong>을 $99/서버/월에 제공합니다."
+freeBody = "당사의 <strong>Open-Core</strong> 라이선스는 서버당 최대 <strong>{{freeTierLimit}}</strong>명의 사용자를 무료로 허용합니다. 중단 없이 확장하고 새로운 <strong>PDF 텍스트 편집 도구</strong>에 조기 액세스하려면 Chronicle server 플랜을 권장합니다 - 전체 편집과 <strong>무제한 좌석</strong>을 $99/서버/월에 제공합니다."
 freeTitle = "서버 라이선스"
-overLimitBody = "당사의 라이선스는 서버당 무료로 최대 <strong>{{freeTierLimit}}</strong>명의 사용자를 허용합니다. 현재 <strong>{{overLimitUserCopy}}</strong>명의 Stirling 사용자가 있습니다. 중단 없이 계속 사용하려면 Stirling Server 플랜으로 업그레이드하세요 - <strong>무제한 좌석</strong>, PDF 텍스트 편집, 전체 관리자 제어 제공, $99/서버/월."
+overLimitBody = "당사의 라이선스는 서버당 무료로 최대 <strong>{{freeTierLimit}}</strong>명의 사용자를 허용합니다. 현재 <strong>{{overLimitUserCopy}}</strong>명의 Chronicle 사용자가 있습니다. 중단 없이 계속 사용하려면 Chronicle server 플랜으로 업그레이드하세요 - <strong>무제한 좌석</strong>, PDF 텍스트 편집, 전체 관리자 제어 제공, $99/서버/월."
 overLimitTitle = "서버 라이선스 필요"
 seePlans = "요금제 보기 →"
 upgrade = "지금 업그레이드 →"
@@ -5041,7 +5041,7 @@ title = "둘러보기 개요"
 
 [onboarding.welcomeSlide]
 body = "Chronicle PDF는 이제 모든 규모의 팀을 지원합니다. 이번 업데이트에는 새로운 레이아웃, 강력한 관리자 기능, 그리고 가장 많은 요청을 받은 기능 - <strong>텍스트 편집</strong>이 포함됩니다."
-title = "Stirling에 오신 것을 환영합니다"
+title = "Chronicle에 오신 것을 환영합니다"
 
 [onboarding.whatsNew]
 activeFilesView = "활성 파일에서 열려 있는 모든 항목을 보고 작업할 대상을 선택하세요."
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6192,25 +6192,25 @@ comingSoon = "곧 제공 예정"
 [portal.accountLink.card]
 billingNote = "무인 처리는 조직 지갑에 청구됩니다."
 eyebrow = "계정 연결"
-linkButton = "Stirling 계정 연결"
+linkButton = "Chronicle 계정 연결"
 linked = "연결됨"
 linkedAs = "{{name}}(으)로 연결됨."
 linkedGeneric = "이 인스턴스는 연결되었습니다."
 notLinked = "연결되지 않음"
-title = "이 조직을 Stirling 계정에 연결"
+title = "이 조직을 Chronicle 계정에 연결"
 unlink = "연결 해제"
 
 [portal.accountLink.card.error]
 title = "연결할 수 없음"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "호스팅된 Stirling 계정에 대한 계정 연결을 활성화하세요. 개발 환경에서는 연결 대화 상자에서 로그인을 시뮬레이션할 수 있습니다."
+after = "호스팅된 Chronicle 계정에 대한 계정 연결을 활성화하세요. 개발 환경에서는 연결 대화 상자에서 로그인을 시뮬레이션할 수 있습니다."
 before = "설정"
 title = "SaaS 로그인이 구성되지 않음"
 
 [portal.accountLink.gate]
 action = "계정 연결"
-description = "청구 가능 기능을 사용하려면 이 조직의 Stirling 계정을 연결하세요."
+description = "청구 가능 기능을 사용하려면 이 조직의 Chronicle 계정을 연결하세요."
 title = "연결하여 잠금 해제"
 titleFeature = "연결하여 {{feature}} 잠금 해제"
 
@@ -6242,13 +6242,13 @@ never = "없음"
 
 [portal.accountLink.modal]
 linkSubtitle = "이 서버에서 청구할 계정으로 로그인하세요."
-linkTitle = "Stirling 계정 연결"
-reauthSubtitle = "세션이 만료되었습니다 — Stirling 계정에 다시 로그인하세요. 인스턴스 연결은 유지됩니다."
+linkTitle = "Chronicle 계정 연결"
+reauthSubtitle = "세션이 만료되었습니다 — Chronicle 계정에 다시 로그인하세요. 인스턴스 연결은 유지됩니다."
 reauthTitle = "다시 로그인"
 simulateSignIn = "로그인 시뮬레이션(dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "호스팅된 Stirling 계정에 대한 앱 내 연결을 활성화하세요."
+after = "호스팅된 Chronicle 계정에 대한 앱 내 연결을 활성화하세요."
 and = "및"
 before = "설정"
 title = "SaaS 로그인이 구성되지 않음"
@@ -6257,7 +6257,7 @@ title = "SaaS 로그인이 구성되지 않음"
 instancesSub = "이 조직에 등록된 모든 자체 호스팅 인스턴스입니다. 자격 증명을 취소하면 무인 액세스가 즉시 차단됩니다."
 instancesTitle = "연결된 인스턴스"
 revokeError = "인스턴스를 취소할 수 없음"
-sub = "무인 처리 비용이 조직 지갑에 청구되도록 이 자체 호스팅 조직을 Stirling 계정에 연결하세요."
+sub = "무인 처리 비용이 조직 지갑에 청구되도록 이 자체 호스팅 조직을 Chronicle 계정에 연결하세요."
 
 [portal.accountLink.panel.loadError]
 forbidden = "팀 소유자만 조직의 연결된 인스턴스를 볼 수 있습니다."
@@ -6354,7 +6354,7 @@ close = "Assistant 닫기"
 error = "Assistant에 연결할 수 없습니다."
 errorWithDetail = "Assistant에 연결할 수 없습니다: {{detail}}"
 inputAriaLabel = "Assistant에게 질문"
-inputPlaceholder = "Stirling에 대해 질문하세요…"
+inputPlaceholder = "Chronicle에 대해 질문하세요…"
 open = "Assistant 열기"
 send = "보내기"
 title = "Assistant"
@@ -6392,7 +6392,7 @@ title = "Stripe가 구성되지 않음"
 cta = "Enterprise 견적 만들기"
 description = "약정 사용량 할인, air-gapped 배포, 맞춤 MSA 및 보안 검토, 3rd-party 배포 파트너십."
 eyebrow = "사용량 할인 · 1M+ PDFs"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "이번 달 활성"
@@ -6439,9 +6439,9 @@ viewAriaLabel = "Stripe에서 송장 {{number}} 보기"
 viewLink = "보기 ↗"
 
 [portal.billing.linkPrompt]
-cta = "Stirling 계정 연결"
+cta = "Chronicle 계정 연결"
 description = "수동 PDF 편집 — 보기, 서명, 병합, 분할, 워터마크, 압축, 변환, 수동 OCR — 은 연결 여부와 관계없이 항상 무료입니다. 연결하면 종량제 처리(자동화, AI, API)용 무료 PDF 500개를 받을 수 있습니다. 더 필요할 때 Processor 플랜을 켜고 사용한 만큼만 결제하세요."
-title = "Stirling 계정 연결"
+title = "Chronicle 계정 연결"
 
 [portal.billing.paymentMethod]
 billedMonthly = "월별 청구"
@@ -6869,7 +6869,7 @@ title = "API 키 발급"
 [portal.infrastructure]
 manageEditorDeployment = "Editor 배포 관리"
 sectionsAriaLabel = "인프라 섹션"
-subtitle = "Stirling 워크스페이스의 배포, 자격 증명, 보안 상태, 스토리지, 감사 추적."
+subtitle = "Chronicle 워크스페이스의 배포, 자격 증명, 보안 상태, 스토리지, 감사 추적."
 title = "인프라"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "키 이름"
 keyNamePlaceholder = "예: Production · ingest"
 permissionsLabel = "권한"
 secretKeyCaption = "비밀 키"
-secretWarning = "이를 secrets manager에 저장하세요. Stirling은 항상 해시만 저장하므로 나중에 복구할 방법이 없습니다."
+secretWarning = "이를 secrets manager에 저장하세요. Chronicle은 항상 해시만 저장하므로 나중에 복구할 방법이 없습니다."
 subtitle = "키 범위는 필요한 최소한으로 지정하세요. 언제든지 교체하거나 취소할 수 있습니다."
 subtitleCreated = "지금 이 비밀을 복사하세요 — 다시 표시되지 않습니다."
 title = "API 키 생성"
@@ -6993,7 +6993,7 @@ version = "버전"
 
 [portal.infrastructure.deployments.regions]
 heading = "지역"
-subheading = "배포된 모든 Stirling 지역의 실시간 상태 — 지연 시간, 부하, 롤아웃 버전."
+subheading = "배포된 모든 Chronicle 지역의 실시간 상태 — 지연 시간, 부하, 롤아웃 버전."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "워크스페이스가 프로비저닝되면 배포된 지역이 여기에 표시됩니다."
@@ -7050,16 +7050,16 @@ operation = "작업"
 routedTo = "라우팅 대상"
 
 [portal.infrastructure.security.access.byok]
-description = "자체 KMS의 키를 제공하세요. Stirling은 이 키로 암호화하지만 여전히 읽을 수 있습니다."
+description = "자체 KMS의 키를 제공하세요. Chronicle은 이 키로 암호화하지만 여전히 읽을 수 있습니다."
 label = "자체 키 가져오기(BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "키는 KMS를 벗어나지 않습니다. Stirling은 암호문만 보유합니다."
+description = "키는 KMS를 벗어나지 않습니다. Chronicle은 암호문만 보유합니다."
 label = "자체 키 보유(HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Stirling이 암호화 키를 관리합니다. 가장 간단하며 사용자가 키 작업을 할 필요가 없습니다."
-label = "Stirling 보유 키"
+[portal.infrastructure.security.access.Chronicle]
+description = "Chronicle이 암호화 키를 관리합니다. 가장 간단하며 사용자가 키 작업을 할 필요가 없습니다."
+label = "Chronicle 보유 키"
 
 [portal.infrastructure.security.accessPolicy]
 heading = "문서 접근 정책"
@@ -7073,15 +7073,15 @@ viewReport = "보고서 보기 →"
 
 [portal.infrastructure.security.compliance]
 heading = "컴플라이언스"
-subheading = "Stirling 플랫폼을 포괄하는 증명 및 인증입니다."
+subheading = "Chronicle 플랫폼을 포괄하는 증명 및 인증입니다."
 
 [portal.infrastructure.security.empty]
 description = "워크스페이스의 보안 구성이 여기에 표시됩니다."
 title = "보안 상태를 사용할 수 없음"
 
 [portal.infrastructure.security.hyokBanner]
-description = "HYOK를 사용하면 암호화 키가 KMS를 벗어나지 않습니다. Stirling은 언제든지 취소할 수 있는 암호문만 저장하고 처리합니다."
-title = "Stirling은 문서를 복호화할 수 없습니다"
+description = "HYOK를 사용하면 암호화 키가 KMS를 벗어나지 않습니다. Chronicle은 언제든지 취소할 수 있는 암호문만 저장하고 처리합니다."
+title = "Chronicle은 문서를 복호화할 수 없습니다"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "구성된 IP 범위가 없습니다 — 모든 IP가 허용됩니다."
@@ -7110,7 +7110,7 @@ subheading = "저장된 문서를 암호화하는 키의 보관 관리 — 복�
 
 [portal.infrastructure.security.managedBanner]
 description = "Bring-your-own-key(BYOK) 및 hold-your-own-key(HYOK) 보관 관리는 Enterprise에서 사용할 수 있습니다. 자체 KMS의 키를 제공하려면 업그레이드하세요."
-title = "현재 플랜에서는 키가 Stirling에서 관리됩니다"
+title = "현재 플랜에서는 키가 Chronicle에서 관리됩니다"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "업로드"
 
 [portal.procurement.agreement]
 agreeCta = "동의하고 구독"
-confirm = "Stirling Enterprise Agreement를 읽었으며 이에 동의합니다."
+confirm = "Chronicle Enterprise Agreement를 읽었으며 이에 동의합니다."
 eyebrow = "계약"
 intro = "하나의 통합 계약으로 거래를 포괄합니다: Master Service Agreement, Order Form, EULA, Data Processing Agreement. 검토한 후 견적을 확정 구독으로 수락하려면 동의하세요."
 title = "엔터프라이즈 계약 검토"
@@ -7606,7 +7606,7 @@ country = "국가"
 countryEuro = "유로존(EUR €)"
 countryUK = "영국(GBP £)"
 countryUS = "미국(USD $)"
-eula = "Stirling Enterprise EULA를 읽었으며 이에 동의합니다. 이 견적에서 생성되는 계약에 적용됩니다."
+eula = "Chronicle Enterprise EULA를 읽었으며 이에 동의합니다. 이 견적에서 생성되는 계약에 적용됩니다."
 generate = "견적 생성"
 included = "포함됨"
 indemnification = "IP 면책"
@@ -7689,7 +7689,7 @@ daysLeft_one = "{{count}}일 남음"
 daysLeft_other = "{{count}}일 남음"
 engineerLabel = "담당 솔루션 엔지니어"
 eyebrow = "롤아웃"
-live = "Stirling Enterprise에서 라이브 상태입니다"
+live = "Chronicle Enterprise에서 라이브 상태입니다"
 nextStep = "다음 단계: {{action}}"
 subtitle = "담당 솔루션 엔지니어가 모든 단계에 함께합니다. 한 번에 하나의 다음 작업을 진행하며, 전체 체크리스트는 아래에 있습니다."
 title = "평가판에서 라이브까지, 하나의 안내 경로"
@@ -7716,7 +7716,7 @@ gatingAction = "견적 수락"
 label = "견적"
 
 [portal.procurement.journeySteps.trial]
-blurb = "문서와 워크플로에 대해 Stirling을 평가하세요."
+blurb = "문서와 워크플로에 대해 Chronicle을 평가하세요."
 gatingAction = "견적 만들기"
 label = "평가판"
 
@@ -7730,14 +7730,14 @@ label = "라이선스 키"
 
 [portal.procurement.link]
 cta = "계정 연결"
-description = "조달은 연결된 Stirling 계정에서 실행됩니다. 이 계정으로 평가판을 프로비저닝하고, 견적 가격을 책정하며, 청구를 시작합니다. 시작하려면 계정을 연결하세요."
+description = "조달은 연결된 Chronicle 계정에서 실행됩니다. 이 계정으로 평가판을 프로비저닝하고, 견적 가격을 책정하며, 청구를 시작합니다. 시작하려면 계정을 연결하세요."
 eyebrow = "Enterprise"
 title = "시작하려면 계정을 연결하세요"
 
 [portal.procurement.live]
 description = "구독이 활성화되었으며 라이선스가 발급되었습니다. 팀이 프로비저닝되었고 청구가 시작되었습니다."
 eyebrow = "라이브"
-title = "Stirling Enterprise에서 라이브 상태입니다"
+title = "Chronicle Enterprise에서 라이브 상태입니다"
 
 [portal.procurement.locked]
 description = "엔터프라이즈 평가를 시작하면 평가판 키, 약정 볼륨 견적, 단일 서명 계약, 결제 및 문서 원장이 모두 여기에 표시됩니다."
@@ -7772,7 +7772,7 @@ requestBodyFree = "요청 시 생성합니다. 확인하면 담당 솔루션 엔
 requestBodyPaid = "유료 추가 기능입니다. 확인하면 담당 솔루션 엔지니어가 범위를 정하고 서류를 보내드립니다."
 requestCta = "요청"
 requestTitle = "이 문서 요청"
-signBody = "전자 서명을 위해 Stirling Enterprise Agreement를 엽니다. 하나의 서명으로 MSA, 주문서, EULA, DPA를 포괄합니다. 당사가 자동으로 대응 서명하고 결제로 진행됩니다."
+signBody = "전자 서명을 위해 Chronicle Enterprise Agreement를 엽니다. 하나의 서명으로 MSA, 주문서, EULA, DPA를 포괄합니다. 당사가 자동으로 대응 서명하고 결제로 진행됩니다."
 signCta = "서명용으로 열기"
 signTitle = "계약 검토 및 서명"
 uploadBody = "PO를 보내주시면 귀하의 조건에 맞춰 송장을 발행합니다. PDF를 끌어오거나 아래에서 파일을 선택하세요."
@@ -7824,7 +7824,7 @@ title = "아직 아무것도 없음"
 
 [portal.search]
 ariaLabel = "검색"
-placeholder = "Stirling 검색 — 엔드포인트, 파이프라인, 문서…"
+placeholder = "Chronicle 검색 — 엔드포인트, 파이프라인, 문서…"
 
 [portal.search.empty]
 noActionsDescription = "빠른 작업을 사용할 수 있게 되면 여기에 표시됩니다."
@@ -7852,9 +7852,9 @@ switchToLight = "라이트 테마로 전환"
 [portal.shell.sidebar]
 appEditor = "편집기"
 appProcessor = "프로세서"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}}개 문서"
-linkAccount = "Stirling 계정 연결"
+linkAccount = "Chronicle 계정 연결"
 planEditor = "Editor 플랜"
 planEnterprise = "Enterprise 플랜"
 planProcessor = "Processor 플랜"
@@ -7862,7 +7862,7 @@ primaryNav = "기본 탐색"
 switchApp = "앱 전환"
 
 [portal.sources]
-subtitle = "문서를 Stirling으로 공급하는 재사용 가능한 입력 연결입니다. 연결을 한 번 구성한 다음 여러 정책에서 참조하세요. 행을 클릭하면 해당 구성과 사용하는 정책을 볼 수 있습니다."
+subtitle = "문서를 Chronicle으로 공급하는 재사용 가능한 입력 연결입니다. 연결을 한 번 구성한 다음 여러 정책에서 참조하세요. 행을 클릭하면 해당 구성과 사용하는 정책을 볼 수 있습니다."
 title = "소스"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "서버의 디렉터리에서 새 문서를 감시합니다."
 label = "폴더"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Stirling이 처리할 파일을 감시하는 절대 경로입니다."
+helperText = "Chronicle이 처리할 파일을 감시하는 절대 경로입니다."
 label = "디렉터리 경로"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "검토 및 연결"
 
 [portal.usage]
 managePayment = "결제 관리"
-subtitle = "Stirling이 청구한 모든 PDF에 대한 사용량, 송장 및 플랜 관리를 하나의 콘솔에서 제공합니다."
+subtitle = "Chronicle이 청구한 모든 PDF에 대한 사용량, 송장 및 플랜 관리를 하나의 콘솔에서 제공합니다."
 title = "사용량 및 청구"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "지갑을 사용할 수 없음: {{status}} {{statusText}}"
 
 [portal.usage.sessionExpired]
 action = "다시 로그인"
-body = "Stirling 계정 세션이 만료되었습니다. 청구를 보려면 다시 로그인하세요. 인스턴스 연결은 유지됩니다."
+body = "Chronicle 계정 세션이 만료되었습니다. 청구를 보려면 다시 로그인하세요. 인스턴스 연결은 유지됩니다."
 title = "세션 만료됨"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "로그인 사용자"
 
 [settings.connection.mode]
 local = "로컬 전용"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "자가 호스팅"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "사용 분석"
 [settings.planBilling]
 currentPlan = "현재 요금제"
 loading = "청구 정보를 불러오는 중..."
-notAvailable = "Plan & Billing은 Stirling Cloud(SaaS 모드)에 연결된 경우에만 사용할 수 있습니다."
+notAvailable = "Plan & Billing은 Chronicle Cloud(SaaS 모드)에 연결된 경우에만 사용할 수 있습니다."
 title = "요금제 및 청구"
 
 [settings.planBilling.billing]
@@ -9068,7 +9068,7 @@ emptyUsername = "사용자 이름을 입력하세요"
 oauthFailed = "OAuth 로그인에 실패했습니다. 다시 시도하세요."
 
 [setup.saas]
-title = "Stirling에 로그인"
+title = "Chronicle에 로그인"
 
 [setup.selfhosted]
 changeServerLocked = "조직에서 이 앱을 특정 서버로 제한했습니다"
@@ -10015,7 +10015,7 @@ processorDeferred = "초대가 전송되었지만 아직 Processor 액세스 권
 processorDesc = "거버넌스 표면, 파이프라인 실행, 에이전트 및 API."
 role = "역할"
 send2 = "초대 보내기"
-subtitle2 = "Stirling 작업 공간에 참여할 수 있도록 이메일을 받게 됩니다."
+subtitle2 = "Chronicle 작업 공간에 참여할 수 있도록 이메일을 받게 됩니다."
 team = "팀"
 title = "사용자 초대"
 username = "사용자 이름"

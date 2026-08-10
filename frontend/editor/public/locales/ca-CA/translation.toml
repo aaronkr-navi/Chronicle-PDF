@@ -1158,8 +1158,8 @@ description = "Nom d'usuari per a l'autenticació SMTP"
 label = "Nom d'usuari SMTP"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
-description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Chronicle user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+description = "Expose Chronicle's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
 [admin.settings.mcp.acceptedAudiences]
@@ -1189,7 +1189,7 @@ step3ApiKeyb = "header (or Authorization: Bearer <key>). No OAuth or metadata di
 step4 = "Approve the sign-in; the client retries with a token. Tools appear grouped: convert, pages, misc, security, ai."
 step4ApiKey = "Tools appear grouped: convert, pages, misc, security, ai - and every call is audited as the key's owner."
 tip = "Tip: register the resource ID as an allowed audience in your IdP. Tested with MCP Inspector and Claude Desktop."
-tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Stirling user."
+tipApiKey = "Tip: API-key mode needs no external IdP - simplest for self-host. The key maps to its owning Chronicle user."
 title = "Connect an MCP client"
 
 [admin.settings.mcp.issuerUri]
@@ -1206,7 +1206,7 @@ description = "OAuth needs an external IdP. API key uses a Chronicle per-user AP
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
-description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
+description = "Only let tokens through if their subject maps to a provisioned, enabled Chronicle user."
 label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
@@ -3072,7 +3072,7 @@ upgradeButton = "Actualitza el compte"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Copia la clau API"
-description = "La vostra clau API per accedir al conjunt d’eines PDF de Stirling. Copieu-la al vostre projecte o actualitzeu-la per generar-ne una de nova."
+description = "La vostra clau API per accedir al conjunt d’eines PDF de Chronicle. Copieu-la al vostre projecte o actualitzeu-la per generar-ne una de nova."
 docsDescription = "Més informació sobre la integració amb Chronicle PDF:"
 docsLink = "Documentació de l’API"
 docsTitle = "Documentació de l’API"
@@ -3123,7 +3123,7 @@ label = "Your MCP endpoint"
 
 [config.mcp.setup]
 addTo = "Add to"
-hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Stirling account on first use - no keys to copy."
+hint = "Pick your client, paste the snippet into the file shown, then restart it. You'll sign in with your Chronicle account on first use - no keys to copy."
 title = "Connect your AI assistant"
 
 [config.overview]
@@ -4669,7 +4669,7 @@ terms = "Termes i condicions"
 title = "Llicències de Tercers"
 
 [localMode]
-toolUnavailable = "Aquesta eina requereix un compte. Inicia sessió a Stirling Cloud o connecta’t a un servidor autoallotjat per utilitzar-la."
+toolUnavailable = "Aquesta eina requereix un compte. Inicia sessió a Chronicle Cloud o connecta’t a un servidor autoallotjat per utilitzar-la."
 
 [localMode.toolPicker]
 message = "Inicia sessió per desbloquejar totes les eines."
@@ -4989,7 +4989,7 @@ skipForNow = "Omet per ara"
 skipTheTour = "Omet la visita guiada"
 
 [onboarding.desktopInstall]
-body = "Stirling funciona millor com a aplicació d'escriptori. Pots usar-la fora de línia, accedir als documents més ràpid i fer edicions localment a l'ordinador."
+body = "Chronicle funciona millor com a aplicació d'escriptori. Pots usar-la fora de línia, accedir als documents més ràpid i fer edicions localment a l'ordinador."
 selectOs = "Selecciona el sistema operatiu"
 title = "Baixa"
 titleWithOs = "Baixa per a {{osLabel}}"
@@ -4999,8 +4999,8 @@ authenticationCode = "Codi d'autenticació"
 qrCodeLoading = "Generant el codi QR…"
 
 [onboarding.planOverview]
-adminBodyLoginDisabled = "Quan habilitis el mode d'inici de sessió, podràs gestionar usuaris, configurar paràmetres i supervisar la salut del servidor. Les primeres <strong>{{freeTierLimit}}</strong> persones del teu servidor poden usar Stirling gratuïtament."
-adminBodyLoginEnabled = "Com a administrador, pots gestionar usuaris, configurar paràmetres i supervisar la salut del servidor. Les primeres <strong>{{freeTierLimit}}</strong> persones del teu servidor poden usar Stirling gratuïtament."
+adminBodyLoginDisabled = "Quan habilitis el mode d'inici de sessió, podràs gestionar usuaris, configurar paràmetres i supervisar la salut del servidor. Les primeres <strong>{{freeTierLimit}}</strong> persones del teu servidor poden usar Chronicle gratuïtament."
+adminBodyLoginEnabled = "Com a administrador, pots gestionar usuaris, configurar paràmetres i supervisar la salut del servidor. Les primeres <strong>{{freeTierLimit}}</strong> persones del teu servidor poden usar Chronicle gratuïtament."
 adminTitle = "Resum d'administració"
 userBody = "Convida companys, assigna rols i mantén els documents organitzats en un espai de treball segur. Habilita el mode d'inici de sessió quan estiguis llest per anar més enllà de l'ús individual."
 userTitle = "Resum del pla"
@@ -5028,9 +5028,9 @@ rolePlaceholder = "Confirma el teu rol"
 roleUser = "Usuari"
 
 [onboarding.serverLicense]
-freeBody = "La nostra llicència <strong>Open-Core</strong> permet fins a <strong>{{freeTierLimit}}</strong> usuaris gratuïts per servidor. Per escalar sense interrupcions i obtenir accés anticipat a la nova <strong>eina d'edició de text PDF</strong>, recomanem el pla Stirling Server: edició completa i <strong>seients il·limitats</strong> per 99 $/servidor/mes."
+freeBody = "La nostra llicència <strong>Open-Core</strong> permet fins a <strong>{{freeTierLimit}}</strong> usuaris gratuïts per servidor. Per escalar sense interrupcions i obtenir accés anticipat a la nova <strong>eina d'edició de text PDF</strong>, recomanem el pla Chronicle server: edició completa i <strong>seients il·limitats</strong> per 99 $/servidor/mes."
 freeTitle = "Llicència del servidor"
-overLimitBody = "La nostra llicència permet fins a <strong>{{freeTierLimit}}</strong> usuaris gratuïts per servidor. Tens <strong>{{overLimitUserCopy}}</strong> usuaris de Stirling. Per continuar sense interrupcions, actualitza al pla Stirling Server: <strong>seients il·limitats</strong>, edició de text de PDF i control d'administració complet per 99 $/servidor/mes."
+overLimitBody = "La nostra llicència permet fins a <strong>{{freeTierLimit}}</strong> usuaris gratuïts per servidor. Tens <strong>{{overLimitUserCopy}}</strong> usuaris de Chronicle. Per continuar sense interrupcions, actualitza al pla Chronicle server: <strong>seients il·limitats</strong>, edició de text de PDF i control d'administració complet per 99 $/servidor/mes."
 overLimitTitle = "Cal una llicència de servidor"
 seePlans = "Veure plans →"
 upgrade = "Actualitza ara →"
@@ -5347,7 +5347,7 @@ benefit1Body = "chain tools, schedule runs, batch process"
 benefit1Title = "Automation pipelines"
 benefit2Body = "summarise, classify, redact, AI-OCR"
 benefit2Title = "AI tools"
-benefit3Body = "call any Stirling endpoint programmatically"
+benefit3Body = "call any Chronicle endpoint programmatically"
 benefit3Title = "API access"
 button = "Turn on Processor →"
 reassurance = "No minimum · Set a $0 cap to test · Cancel anytime"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Chronicle as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5454,7 +5454,7 @@ usdNote = "Estimated in USD. You can adjust your cap any time after subscribing,
 [payg.upgrade.checkout]
 capValue = "{{symbol}}{{amount}} / month"
 edit = "Edit"
-help = "Stripe handles your card details. Stirling never sees them."
+help = "Stripe handles your card details. Chronicle never sees them."
 loading = "Loading checkout…"
 noCap = "No cap"
 title = "Add your payment method"
@@ -5462,7 +5462,7 @@ title = "Add your payment method"
 [payg.upgrade.help]
 aiBody = "summarise, classify, redact, AI-OCR"
 aiTitle = "AI tools"
-apiBody = "programmatic access to any Stirling endpoint"
+apiBody = "programmatic access to any Chronicle endpoint"
 apiTitle = "API calls"
 automationBody = "chained tools or scheduled runs that don't need clicks"
 automationTitle = "Automation pipelines"
@@ -6204,13 +6204,13 @@ unlink = "Desenllaça"
 title = "No s'ha pogut enllaçar"
 
 [portal.accountLink.card.loginNotConfigured]
-after = "per habilitar l'enllaç de comptes amb el compte de Stirling allotjat. En dev pots simular l'inici de sessió des del diàleg d'enllaç."
+after = "per habilitar l'enllaç de comptes amb el compte de Chronicle allotjat. En dev pots simular l'inici de sessió des del diàleg d'enllaç."
 before = "Defineix"
 title = "L'inici de sessió SaaS no està configurat"
 
 [portal.accountLink.gate]
 action = "Enllaça el compte"
-description = "Enllaça el compte de Stirling d'aquesta organització per utilitzar funcions facturables."
+description = "Enllaça el compte de Chronicle d'aquesta organització per utilitzar funcions facturables."
 title = "Enllaça per desbloquejar"
 titleFeature = "Enllaça per desbloquejar {{feature}}"
 
@@ -6243,12 +6243,12 @@ never = "mai"
 [portal.accountLink.modal]
 linkSubtitle = "Inicia la sessió al compte al qual s'hauria de facturar aquest servidor."
 linkTitle = "Enllaça el teu compte de Chronicle"
-reauthSubtitle = "La sessió ha caducat: torna a iniciar la sessió al teu compte de Stirling. La instància continua enllaçada."
+reauthSubtitle = "La sessió ha caducat: torna a iniciar la sessió al teu compte de Chronicle. La instància continua enllaçada."
 reauthTitle = "Torna a iniciar la sessió"
 simulateSignIn = "Simula l'inici de sessió (dev)"
 
 [portal.accountLink.modal.loginNotConfigured]
-after = "per habilitar l'enllaç dins de l'aplicació amb el compte de Stirling allotjat."
+after = "per habilitar l'enllaç dins de l'aplicació amb el compte de Chronicle allotjat."
 and = "i"
 before = "Defineix"
 title = "L'inici de sessió SaaS no està configurat"
@@ -6257,7 +6257,7 @@ title = "L'inici de sessió SaaS no està configurat"
 instancesSub = "Totes les instàncies autoallotjades registrades en aquesta organització. Revoca una credencial per tallar-ne immediatament l'accés desatès."
 instancesTitle = "Instàncies enllaçades"
 revokeError = "No s'ha pogut revocar la instància"
-sub = "Enllaça aquesta organització autoallotjada amb el seu compte de Stirling perquè el processament desatès es facturi al moneder de la teva organització."
+sub = "Enllaça aquesta organització autoallotjada amb el seu compte de Chronicle perquè el processament desatès es facturi al moneder de la teva organització."
 
 [portal.accountLink.panel.loadError]
 forbidden = "Només el propietari de l'equip pot veure les instàncies enllaçades de l'organització."
@@ -6354,7 +6354,7 @@ close = "Tanca l'assistent"
 error = "No s'ha pogut contactar amb l'assistent."
 errorWithDetail = "No s'ha pogut contactar amb l'assistent: {{detail}}"
 inputAriaLabel = "Pregunta a l'assistent"
-inputPlaceholder = "Pregunta sobre Stirling…"
+inputPlaceholder = "Pregunta sobre Chronicle…"
 open = "Obre l'assistent"
 send = "Envia"
 title = "Assistent"
@@ -6392,7 +6392,7 @@ title = "Stripe no està configurat"
 cta = "Crea el teu pressupost Enterprise"
 description = "Descomptes per volum compromès, desplegament air-gapped, MSA personalitzat i revisions de seguretat, i col·laboracions amb distribuïdors de tercers."
 eyebrow = "Descompte per volum · 1M+ PDF"
-title = "Stirling Enterprise"
+title = "Chronicle Enterprise"
 
 [portal.billing.freeEditors]
 activeThisMonth = "Actius aquest mes"
@@ -6869,7 +6869,7 @@ title = "Emet una clau API"
 [portal.infrastructure]
 manageEditorDeployment = "Gestiona el desplegament de l'Editor"
 sectionsAriaLabel = "Seccions d'infraestructura"
-subtitle = "Desplegaments, credencials, postura de seguretat, emmagatzematge i el rastre d'auditoria del teu espai de treball de Stirling."
+subtitle = "Desplegaments, credencials, postura de seguretat, emmagatzematge i el rastre d'auditoria del teu espai de treball de Chronicle."
 title = "Infraestructura"
 
 [portal.infrastructure.apiKeys]
@@ -6958,7 +6958,7 @@ keyNameLabel = "Nom de la clau"
 keyNamePlaceholder = "p. ex. Producció · ingestió"
 permissionsLabel = "Permisos"
 secretKeyCaption = "Clau secreta"
-secretWarning = "Desa-ho en un gestor de secrets. Stirling només emmagatzema un hash — no hi ha manera de recuperar-ho més tard."
+secretWarning = "Desa-ho en un gestor de secrets. Chronicle només emmagatzema un hash — no hi ha manera de recuperar-ho més tard."
 subtitle = "Limita la clau al mínim que necessita. La pots rotar o revocar en qualsevol moment."
 subtitleCreated = "Copia aquest secret ara — no es tornarà a mostrar."
 title = "Crea una clau API"
@@ -6993,7 +6993,7 @@ version = "Versió"
 
 [portal.infrastructure.deployments.regions]
 heading = "Regions"
-subheading = "Salut en directe de cada regió Stirling desplegada — latència, càrrega i versió del desplegament."
+subheading = "Salut en directe de cada regió Chronicle desplegada — latència, càrrega i versió del desplegament."
 
 [portal.infrastructure.deployments.regions.empty]
 description = "Les regions desplegades apareixen aquí un cop s'hagi proveït el teu espai de treball."
@@ -7050,15 +7050,15 @@ operation = "Operació"
 routedTo = "Encaminat a"
 
 [portal.infrastructure.security.access.byok]
-description = "Proporciona una clau del teu propi KMS. Stirling hi xifra però encara pot llegir."
+description = "Proporciona una clau del teu propi KMS. Chronicle hi xifra però encara pot llegir."
 label = "Porta la teva pròpia clau (BYOK)"
 
 [portal.infrastructure.security.access.hyok]
-description = "Les claus no surten mai del teu KMS. Stirling només conserva text xifrat."
+description = "Les claus no surten mai del teu KMS. Chronicle només conserva text xifrat."
 label = "Conserva la teva pròpia clau (HYOK)"
 
-[portal.infrastructure.security.access.stirling]
-description = "Stirling gestiona les claus de xifratge. El més senzill — zero operacions de claus per part teva."
+[portal.infrastructure.security.access.Chronicle]
+description = "Chronicle gestiona les claus de xifratge. El més senzill — zero operacions de claus per part teva."
 label = "Claus conservades per Chronicle"
 
 [portal.infrastructure.security.accessPolicy]
@@ -7073,15 +7073,15 @@ viewReport = "Mostra l'informe →"
 
 [portal.infrastructure.security.compliance]
 heading = "Compliment"
-subheading = "Atestacions i certificacions que cobreixen la plataforma Stirling."
+subheading = "Atestacions i certificacions que cobreixen la plataforma Chronicle."
 
 [portal.infrastructure.security.empty]
 description = "La configuració de seguretat del teu espai de treball apareixerà aquí."
 title = "Postura de seguretat no disponible"
 
 [portal.infrastructure.security.hyokBanner]
-description = "Amb HYOK, les claus de xifratge no surten mai del teu KMS. Stirling emmagatzema i processa només text xifrat que pots revocar en qualsevol moment."
-title = "Stirling no pot desxifrar els teus documents"
+description = "Amb HYOK, les claus de xifratge no surten mai del teu KMS. Chronicle emmagatzema i processa només text xifrat que pots revocar en qualsevol moment."
+title = "Chronicle no pot desxifrar els teus documents"
 
 [portal.infrastructure.security.ipAllowlist]
 empty = "No hi ha intervals IP configurats — es permeten totes les IP."
@@ -7110,7 +7110,7 @@ subheading = "Custòdia de les claus que xifren documents en repòs — qui pot 
 
 [portal.infrastructure.security.managedBanner]
 description = "La custòdia porta-la-teva-pròpia-clau (BYOK) i conserva-la-teva-pròpia-clau (HYOK) està disponible a Enterprise. Actualitza per proporcionar claus del teu propi KMS."
-title = "Les claus les gestiona Stirling al teu pla"
+title = "Les claus les gestiona Chronicle al teu pla"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7591,7 +7591,7 @@ upload = "Carrega"
 
 [portal.procurement.agreement]
 agreeCta = "Accepta i subscriu-te"
-confirm = "He llegit i accepto el Stirling Enterprise Agreement."
+confirm = "He llegit i accepto el Chronicle Enterprise Agreement."
 eyebrow = "Acord"
 intro = "Un únic acord combinat cobreix el teu tracte: Master Service Agreement, Order Form, EULA i Data Processing Agreement. Revisa'l i després accepta per convertir el pressupost en una subscripció compromesa."
 title = "Revisa el teu acord enterprise"
@@ -7606,7 +7606,7 @@ country = "País"
 countryEuro = "Eurozona (EUR €)"
 countryUK = "Regne Unit (GBP £)"
 countryUS = "Estats Units (USD $)"
-eula = "He llegit i accepto l'EULA de Stirling Enterprise. Regeix l'acord generat a partir d'aquest pressupost."
+eula = "He llegit i accepto l'EULA de Chronicle Enterprise. Regeix l'acord generat a partir d'aquest pressupost."
 generate = "Genera pressupost"
 included = "Inclòs"
 indemnification = "Indemnització de PI"
@@ -7689,7 +7689,7 @@ daysLeft_one = "Queda {{count}} dia"
 daysLeft_other = "Queden {{count}} dies"
 engineerLabel = "El teu enginyer de solucions"
 eyebrow = "El teu desplegament"
-live = "Ja estàs en producció amb Stirling Enterprise"
+live = "Ja estàs en producció amb Chronicle Enterprise"
 nextStep = "Pas següent: {{action}}"
 subtitle = "El teu enginyer de solucions és present en cada pas. Una acció següent cada vegada; la llista completa és a sota."
 title = "De la prova a producció, un camí guiat"
@@ -7716,7 +7716,7 @@ gatingAction = "Accepta el teu pressupost"
 label = "Pressupost"
 
 [portal.procurement.journeySteps.trial]
-blurb = "Avalua Stirling amb els teus documents i fluxos de treball."
+blurb = "Avalua Chronicle amb els teus documents i fluxos de treball."
 gatingAction = "Crea el teu pressupost"
 label = "Prova"
 
@@ -7730,14 +7730,14 @@ label = "La teva clau de llicència"
 
 [portal.procurement.link]
 cta = "Enllaça el compte"
-description = "La contractació s'executa amb el teu compte de Stirling enllaçat: així aprovisionem la prova, fixem el preu del pressupost i iniciem la facturació. Enllaça un compte per començar."
+description = "La contractació s'executa amb el teu compte de Chronicle enllaçat: així aprovisionem la prova, fixem el preu del pressupost i iniciem la facturació. Enllaça un compte per començar."
 eyebrow = "Enterprise"
 title = "Enllaça el teu compte per començar"
 
 [portal.procurement.live]
 description = "La teva subscripció és activa i la teva llicència s'ha emès. El teu equip està aprovisionat i la facturació ha començat."
 eyebrow = "En producció"
-title = "Ja estàs en producció amb Stirling Enterprise"
+title = "Ja estàs en producció amb Chronicle Enterprise"
 
 [portal.procurement.locked]
 description = "Les claus de prova, els pressupostos per volum compromès, l'acord d'una sola signatura, el pagament i el teu registre de documents seran aquí quan iniciïs una avaluació enterprise."
@@ -7772,7 +7772,7 @@ requestBodyFree = "Ho generem sota demanda. Confirma-ho i el teu enginyer de sol
 requestBodyPaid = "Aquest és un complement de pagament. Confirma-ho i el teu enginyer de solucions el dimensionarà i t'enviarà la documentació."
 requestCta = "Sol·licita"
 requestTitle = "Sol·licita aquest document"
-signBody = "Obre el Stirling Enterprise Agreement per a signatura electrònica: una signatura cobreix l'MSA, el formulari de comanda, l'EULA i el DPA. Contrasignem automàticament i avances al pagament."
+signBody = "Obre el Chronicle Enterprise Agreement per a signatura electrònica: una signatura cobreix l'MSA, el formulari de comanda, l'EULA i el DPA. Contrasignem automàticament i avances al pagament."
 signCta = "Obre per signar"
 signTitle = "Revisa i signa el teu acord"
 uploadBody = "Envia'ns la teva PO i emetrem la factura segons les teves condicions. Arrossega el PDF o tria un fitxer a sota."
@@ -7824,7 +7824,7 @@ title = "Encara no hi ha res aquí"
 
 [portal.search]
 ariaLabel = "Cerca"
-placeholder = "Cerca a Stirling — endpoints, pipelines, docs…"
+placeholder = "Cerca a Chronicle — endpoints, pipelines, docs…"
 
 [portal.search.empty]
 noActionsDescription = "Les accions ràpides apareixeran aquí quan estiguin disponibles."
@@ -7852,7 +7852,7 @@ switchToLight = "Canvia al tema clar"
 [portal.shell.sidebar]
 appEditor = "Editor"
 appProcessor = "Processador"
-brandSuffix = "Stirling Processor"
+brandSuffix = "Chronicle Processor"
 docsCount = "{{docs}} docs"
 linkAccount = "Enllaça el compte de Chronicle"
 planEditor = "Pla Editor"
@@ -7862,7 +7862,7 @@ primaryNav = "Navegació principal"
 switchApp = "Canvia d'aplicació"
 
 [portal.sources]
-subtitle = "Connexions d'entrada reutilitzables que alimenten documents a Stirling. Configura una connexió una vegada i després referencia-la des de qualsevol nombre de polítiques. Fes clic en una fila per veure'n la configuració i quines polítiques la utilitzen."
+subtitle = "Connexions d'entrada reutilitzables que alimenten documents a Chronicle. Configura una connexió una vegada i després referencia-la des de qualsevol nombre de polítiques. Fes clic en una fila per veure'n la configuració i quines polítiques la utilitzen."
 title = "Fonts"
 
 [portal.sources.actions]
@@ -7917,7 +7917,7 @@ description = "Vigila un directori del servidor per detectar documents nous."
 label = "Carpeta"
 
 [portal.sources.types.folder.fields.directory]
-helperText = "Camí absolut que Stirling vigila per als fitxers a processar."
+helperText = "Camí absolut que Chronicle vigila per als fitxers a processar."
 label = "Camí del directori"
 placeholder = "/data/incoming"
 
@@ -7965,7 +7965,7 @@ review = "Revisa i connecta"
 
 [portal.usage]
 managePayment = "Gestiona el pagament"
-subtitle = "Consum, factures i gestió del pla per a cada PDF que Stirling hagi facturat, en una sola consola."
+subtitle = "Consum, factures i gestió del pla per a cada PDF que Chronicle hagi facturat, en una sola consola."
 title = "Ús i facturació"
 
 [portal.usage.error]
@@ -7975,7 +7975,7 @@ walletUnavailable = "Cartera no disponible: {{status}} {{statusText}}"
 
 [portal.usage.sessionExpired]
 action = "Torna a iniciar la sessió"
-body = "La sessió del teu compte de Stirling ha caducat. Torna a iniciar la sessió per veure la facturació — la teva instància continua enllaçada."
+body = "La sessió del teu compte de Chronicle ha caducat. Torna a iniciar la sessió per veure la facturació — la teva instància continua enllaçada."
 title = "Sessió caducada"
 
 [portal.users]
@@ -8782,7 +8782,7 @@ user = "Sessió iniciada com"
 
 [settings.connection.mode]
 local = "Només local"
-saas = "Stirling Cloud"
+saas = "Chronicle Cloud"
 selfhosted = "Autoallotjat"
 
 [settings.developer]
@@ -8942,7 +8942,7 @@ usageAnalytics = "Analítiques d'ús"
 [settings.planBilling]
 currentPlan = "Pla actual"
 loading = "S'està carregant la informació de facturació..."
-notAvailable = "Pla i Facturació només disponible quan esteu connectats a Stirling Cloud (mode SaaS)."
+notAvailable = "Pla i Facturació només disponible quan esteu connectats a Chronicle Cloud (mode SaaS)."
 title = "Pla i Facturació"
 
 [settings.planBilling.billing]
@@ -10015,7 +10015,7 @@ processorDeferred = "La invitació s'ha enviat, però encara no s'ha pogut conce
 processorDesc = "La superfície de governança, executa pipelines, agents i l'API."
 role = "Rol"
 send2 = "Envia la invitació"
-subtitle2 = "Rebran un correu electrònic per unir-se al teu espai de treball de Stirling."
+subtitle2 = "Rebran un correu electrònic per unir-se al teu espai de treball de Chronicle."
 team = "Equip"
 title = "Convida persones"
 username = "Nom d'usuari"
