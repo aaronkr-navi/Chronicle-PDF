@@ -64,7 +64,7 @@ public class InternalApiClient {
      * PaygChargeInterceptor.determineCategory} precedence chain, where this header dominates any
      * per-tool {@code @RequiresFeature} annotation.
      */
-    public static final String AUTOMATION_HEADER = "X-Stirling-Automation";
+    public static final String AUTOMATION_HEADER = "X-Chronicle-Automation";
 
     /**
      * Header carrying the parent policy's name onto each sub-step dispatch, read from MDC key
@@ -72,7 +72,7 @@ public class InternalApiClient {
      * layer attribute a tool step to the policy that ran it, instead of showing it as a bare direct
      * call.
      */
-    public static final String POLICY_NAME_HEADER = "X-Stirling-Policy-Name";
+    public static final String POLICY_NAME_HEADER = "X-Chronicle-Policy-Name";
 
     /** MDC key the policy runner stamps with the running policy's name; forwarded as a header. */
     public static final String POLICY_NAME_MDC_KEY = "auditPolicyName";

@@ -21,7 +21,7 @@ package stirling.software.common.service;
 public final class AutomationRunContext {
 
     /** Header carrying the run id on internal sub-step dispatches. */
-    public static final String RUN_ID_HEADER = "X-Stirling-Run-Id";
+    public static final String RUN_ID_HEADER = "X-Chronicle-Run-Id";
 
     private static final ThreadLocal<String> CURRENT = new ThreadLocal<>();
 

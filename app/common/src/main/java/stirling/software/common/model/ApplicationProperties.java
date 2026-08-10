@@ -865,7 +865,7 @@ public class ApplicationProperties {
                                         "Logout from the provider "
                                                 + registrationId
                                                 + " is not supported. Report it at"
-                                                + " https://github.com/Stirling-Tools/Stirling-PDF/issues");
+                                                + " https://github.com/aaronkr-navi/Chronicle-PDF/issues");
                     };
                 }
             }
@@ -1060,8 +1060,8 @@ public class ApplicationProperties {
         @Data
         public static class ServerCertificate {
             private boolean enabled =
-                    true; // Enable server-side "Sign with Stirling-PDF" certificate
-            private String organizationName = "Stirling PDF Inc";
+                    true; // Enable server-side "Sign with Chronicle-PDF" certificate
+            private String organizationName = "Chronicle PDF Inc";
             private int validity = 365; // Certificate validity in days
             private boolean regenerateOnStartup =
                     false; // Generate a new certificate on each startup
@@ -1237,7 +1237,7 @@ public class ApplicationProperties {
                 return baseTmpDir;
             }
             String tmp = java.lang.System.getProperty("java.io.tmpdir");
-            return new File(tmp, "stirling-pdf").getPath();
+            return new File(tmp, "Chronicle-PDF").getPath();
         }
 
         @JsonIgnore
@@ -1370,12 +1370,12 @@ public class ApplicationProperties {
 
             @Deprecated
             public String getCreator() {
-                return creator == null || creator.trim().isEmpty() ? "Stirling-PDF" : creator;
+                return creator == null || creator.trim().isEmpty() ? "Chronicle-PDF" : creator;
             }
 
             @Deprecated
             public String getProducer() {
-                return producer == null || producer.trim().isEmpty() ? "Stirling-PDF" : producer;
+                return producer == null || producer.trim().isEmpty() ? "Chronicle-PDF" : producer;
             }
         }
     }
@@ -1534,12 +1534,12 @@ public class ApplicationProperties {
                 private String producer;
 
                 public String getCreator() {
-                    return creator == null || creator.trim().isEmpty() ? "Stirling-PDF" : creator;
+                    return creator == null || creator.trim().isEmpty() ? "Chronicle-PDF" : creator;
                 }
 
                 public String getProducer() {
                     return producer == null || producer.trim().isEmpty()
-                            ? "Stirling-PDF"
+                            ? "Chronicle-PDF"
                             : producer;
                 }
             }

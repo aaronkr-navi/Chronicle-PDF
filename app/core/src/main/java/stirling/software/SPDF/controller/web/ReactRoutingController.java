@@ -272,7 +272,7 @@ public class ReactRoutingController {
                   <head>
                     <meta charset="utf-8" />
                     <base href="%s" />
-                    <title>Stirling PDF</title>
+                    <title>Chronicle PDF</title>
                     <script>
                       // Minimal handler for SSO callback when index.html is missing (desktop fallback)
                       (function() {

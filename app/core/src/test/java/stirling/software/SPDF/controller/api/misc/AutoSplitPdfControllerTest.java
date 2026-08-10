@@ -629,8 +629,8 @@ class AutoSplitPdfControllerTest {
             f.setAccessible(true);
             Set<String> valid = new HashSet<>((Set<String>) f.get(null));
             assertTrue(valid.contains("https://stirlingpdf.com"));
-            assertTrue(valid.contains("https://github.com/Stirling-Tools/Stirling-PDF"));
-            assertTrue(valid.contains("https://github.com/Frooodle/Stirling-PDF"));
+            assertTrue(valid.contains("https://github.com/aaronkr-navi/Chronicle-PDF"));
+            assertTrue(valid.contains("https://github.com/aaronkr-navi/Chronicle-PDF"));
             assertFalse(valid.contains("https://example.com"));
         }
     }

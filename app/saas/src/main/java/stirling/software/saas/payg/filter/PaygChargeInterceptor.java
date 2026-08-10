@@ -88,7 +88,7 @@ public class PaygChargeInterceptor implements AsyncHandlerInterceptor {
     static final String ATTR_FAILED = PaygChargeInterceptor.class.getName() + ".FAILED";
     static final String ATTR_TOOL_ID = PaygChargeInterceptor.class.getName() + ".TOOL_ID";
 
-    private static final String AUTOMATION_HEADER = "X-Stirling-Automation";
+    private static final String AUTOMATION_HEADER = "X-Chronicle-Automation";
 
     /**
      * Optional header the Tauri desktop shell sets so saas-side traffic from the embedded client

@@ -425,7 +425,7 @@ class PaygChargeInterceptorTest {
 
         MockMultipartHttpServletRequest req = newMultipart();
         req.addFile(new MockMultipartFile("file", "x.pdf", "application/pdf", "abc".getBytes()));
-        req.addHeader("X-Stirling-Automation", "true");
+        req.addHeader("X-Chronicle-Automation", "true");
 
         interceptor.preHandle(req, new MockHttpServletResponse(), handlerMethodForFakeController());
 
@@ -448,8 +448,8 @@ class PaygChargeInterceptorTest {
 
         MockMultipartHttpServletRequest req = newMultipart();
         req.addFile(new MockMultipartFile("file", "x.pdf", "application/pdf", "abc".getBytes()));
-        req.addHeader("X-Stirling-Automation", "true");
-        req.addHeader("X-Stirling-Run-Id", "run-abc");
+        req.addHeader("X-Chronicle-Automation", "true");
+        req.addHeader("X-Chronicle-Run-Id", "run-abc");
 
         interceptor.preHandle(req, new MockHttpServletResponse(), handlerMethodForFakeController());
 
@@ -472,7 +472,7 @@ class PaygChargeInterceptorTest {
 
         MockMultipartHttpServletRequest req = newMultipart();
         req.addFile(new MockMultipartFile("file", "x.pdf", "application/pdf", "abc".getBytes()));
-        req.addHeader("X-Stirling-Run-Id", "run-spoofed");
+        req.addHeader("X-Chronicle-Run-Id", "run-spoofed");
 
         interceptor.preHandle(req, new MockHttpServletResponse(), handlerMethodForFakeController());
 
@@ -649,7 +649,7 @@ class PaygChargeInterceptorTest {
 
         MockMultipartHttpServletRequest req = newMultipart();
         req.addFile(new MockMultipartFile("file", "x.pdf", "application/pdf", "abc".getBytes()));
-        req.addHeader("X-Stirling-Automation", "true");
+        req.addHeader("X-Chronicle-Automation", "true");
 
         interceptor.preHandle(req, new MockHttpServletResponse(), handlerMethodForAi());
 
@@ -699,7 +699,7 @@ class PaygChargeInterceptorTest {
         req.setRequestURI("/api/v1/ai/tools/pdf-comment-agent");
         req.addFile(
                 new MockMultipartFile("fileInput", "x.pdf", "application/pdf", "abc".getBytes()));
-        req.addHeader("X-Stirling-Automation", "true");
+        req.addHeader("X-Chronicle-Automation", "true");
 
         interceptor.preHandle(req, new MockHttpServletResponse(), handlerMethodForPlain());
 

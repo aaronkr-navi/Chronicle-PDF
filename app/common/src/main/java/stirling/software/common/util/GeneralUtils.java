@@ -81,7 +81,7 @@ public class GeneralUtils {
             }
             tempFile = Files.createTempFile(tempDir, "stirling-pdf-", null).toFile();
         } else {
-            Path tempDir = Path.of(System.getProperty("java.io.tmpdir"), "stirling-pdf");
+            Path tempDir = Path.of(System.getProperty("java.io.tmpdir"), "Chronicle-PDF");
             if (!Files.exists(tempDir)) {
                 Files.createDirectories(tempDir);
             }
