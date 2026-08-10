@@ -27,7 +27,7 @@ const SITE_TITLE = "Chronicle PDF";
 const SITE_DESC = "The Free Adobe Acrobat alternative (10M+ Downloads)";
 const DEFAULT_IMAGE_BASENAME = "home";
 
-// SaaS (stirling.com) link-preview cards. Only the SaaS build (`--mode saas`)
+// SaaS (chronicle-pdf.com) link-preview cards. Only the SaaS build (`--mode saas`)
 // uses og-metadata.saas.json; every other flavour keeps the tool-registry copy
 // above. `ogTitle` is the punchy social headline; `title` is the SEO <title>.
 // `home` overrides the site default (served at `/app`); the rest are extra
@@ -209,7 +209,7 @@ const manifest = {
 };
 
 // SaaS manifest: same tool pages as above, but the home default and two extra
-// marketing routes carry the stirling.com cards. Keeps all per-tool OG intact.
+// marketing routes carry the chronicle-pdf.com cards. Keeps all per-tool OG intact.
 const saasManifest = {
   default: SAAS_DEFAULT,
   byTool: { ...byTool },

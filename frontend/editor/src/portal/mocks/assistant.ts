@@ -14,7 +14,7 @@ export const ASSISTANT_ROUTES: AssistantRoute[] = [
   {
     patterns: [/mcp/i, /\bagent\b/i, /connect.*agent/i],
     reply:
-      "MCP wiring lives under Sources → Add → Agent. You'll get an MCP URL of the shape mcp://stirling.com/agents/{id} plus scoped credentials. Scenarios drive the eval set the agent must pass before it can take real traffic.",
+      "MCP wiring lives under Sources → Add → Agent. You'll get an MCP URL of the shape mcp://chronicle-pdf.com/agents/{id} plus scoped credentials. Scenarios drive the eval set the agent must pass before it can take real traffic.",
   },
   {
     patterns: [/redact/i, /pii/i],

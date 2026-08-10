@@ -133,7 +133,7 @@ export const ConnectionSettings: React.FC = () => {
                   </Text>
                   <Text size="sm" c="dimmed">
                     {config.mode === "saas"
-                      ? "stirling.com"
+                      ? "chronicle-pdf.com"
                       : config.server_config.url}
                   </Text>
                 </div>

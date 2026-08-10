@@ -27,7 +27,7 @@ import {
 } from "@app/utils/loadJscanify";
 import apiClient from "@app/services/apiClient";
 
-// Use the configured API base (e.g. api.stirling.com), not the page origin.
+// Use the configured API base (e.g. api.chronicle-pdf.com), not the page origin.
 const API_BASE = (apiClient.defaults.baseURL ?? "").replace(/\/+$/, "");
 
 // Experimental camera controls (W3C Image Capture / MediaStream extensions) that

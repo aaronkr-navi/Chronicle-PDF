@@ -10,8 +10,8 @@ describe("saasApiBase — SaaS build (one backend, VITE_API_BASE_URL)", () => {
   });
 
   it("trims a trailing slash", () => {
-    vi.stubEnv("VITE_API_BASE_URL", "https://app.stirling.com/");
-    expect(saasApiBase()).toBe("https://app.stirling.com");
+    vi.stubEnv("VITE_API_BASE_URL", "https://app.chronicle-pdf.com/");
+    expect(saasApiBase()).toBe("https://app.chronicle-pdf.com");
   });
 
   it("maps same-origin '/' to '' — a valid (non-null) base, never 'unconfigured'", () => {

@@ -49,13 +49,13 @@ def lookupEnvOrProperty = { String name ->
 
 def asBool = { String value -> 'true'.equalsIgnoreCase(value) }
 
-def stirlingFlavor = lookupEnvOrProperty('STIRLING_FLAVOR')?.toLowerCase()
+def chronicleFlavor = lookupEnvOrProperty('STIRLING_FLAVOR')?.toLowerCase()
 
 boolean disableAdditional
 boolean enableSaas
 
-if (stirlingFlavor != null && !stirlingFlavor.isEmpty()) {
-    switch (stirlingFlavor) {
+if (chronicleFlavor != null && !chronicleFlavor.isEmpty()) {
+    switch (chronicleFlavor) {
         case 'core':
             disableAdditional = true
             enableSaas = false
@@ -70,7 +70,7 @@ if (stirlingFlavor != null && !stirlingFlavor.isEmpty()) {
             break
         default:
             throw new GradleException(
-                "Unknown STIRLING_FLAVOR='${stirlingFlavor}'. Expected one of: core, proprietary, saas.")
+                "Unknown STIRLING_FLAVOR='${chronicleFlavor}'. Expected one of: core, proprietary, saas.")
     }
 } else {
     disableAdditional = asBool(lookupEnvOrProperty('DISABLE_ADDITIONAL_FEATURES'))

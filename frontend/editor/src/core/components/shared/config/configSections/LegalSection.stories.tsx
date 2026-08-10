@@ -58,7 +58,7 @@ export const WithAnalyticsEnabled: Story = {
   ],
 };
 
-/** No legal documents configured — only Privacy Policy and Terms show, using the stirling.com fallback links. */
+/** No legal documents configured — only Privacy Policy and Terms show, using the chronicle-pdf.com fallback links. */
 export const MinimalLinks: Story = {
   decorators: [
     (StoryComponent) => (

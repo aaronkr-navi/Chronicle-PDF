@@ -18,7 +18,7 @@ import {
 import { openAppSettings } from "@app/utils/appSettings";
 import { requestStartTour } from "@app/constants/events";
 import apiClient from "@app/services/apiClient";
-import stirlingMark from "@app/assets/brand/modern-logo/logo512.png";
+import chronicleMark from "@app/assets/brand/modern-logo/logo512.png";
 import styles from "@app/components/onboarding/OnboardingChecklist.module.css";
 
 const FLOW_ID = "saas-checklist";
@@ -173,7 +173,7 @@ export function OnboardingChecklist() {
         >
           <span className={styles.titleGroup}>
             <img
-              src={stirlingMark}
+              src={chronicleMark}
               alt=""
               aria-hidden="true"
               className={styles.logo}

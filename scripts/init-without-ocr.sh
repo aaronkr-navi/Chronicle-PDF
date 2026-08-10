@@ -809,7 +809,7 @@ if [ "$AOT_ENABLED" = "true" ]; then
   elif validate_aot_cache "$AOT_CACHE"; then
     log "AOT cache valid: $AOT_CACHE"
     JAVA_BASE_OPTS="${JAVA_BASE_OPTS} -XX:AOTCache=${AOT_CACHE}"
-    rm -f /app/stirling.jsa /app/chronicle.aot /app/chronicle.aot.fingerprint 2>/dev/null || true
+    rm -f /app/chronicle.jsa /app/chronicle.aot /app/chronicle.aot.fingerprint 2>/dev/null || true
   else
     log "No valid AOT cache found. Will generate in background after app starts."
     AOT_GENERATE_BACKGROUND=true

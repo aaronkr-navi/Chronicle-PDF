@@ -117,7 +117,7 @@ RUN mkdir -p $HOME /configs /logs /customFiles /pipeline/watchedFolders /pipelin
 # Copy scripts and built artifacts after OS package layer to maximize cache reuse.
 COPY --chown=1000:1000 scripts/init-without-ocr.sh /scripts/init-without-ocr.sh
 COPY --chown=1000:1000 scripts/installFonts.sh /scripts/installFonts.sh
-COPY --chown=1000:1000 scripts/stirling-diagnostics.sh /scripts/stirling-diagnostics.sh
+COPY --chown=1000:1000 scripts/chronicle-diagnostics.sh /scripts/chronicle-diagnostics.sh
 
 # Copy built JARs from build stage
 COPY --from=build --chown=1000:1000 \

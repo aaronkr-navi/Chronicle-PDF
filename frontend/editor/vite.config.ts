@@ -89,7 +89,7 @@ function compressStaticCopyPlugin(): PluginOption {
 // origin serves the page (correct for self-hosted Docker). Logic lives in
 // scripts/og-prerender.mjs so it can be unit-tested without a full build.
 function prerenderOgPlugin(isSaas: boolean): PluginOption {
-  // SaaS (stirling.com) prerenders the marketing cards from a dedicated
+  // SaaS (chronicle-pdf.com) prerenders the marketing cards from a dedicated
   // manifest; every other flavour uses the tool-registry manifest.
   const manifestFile = isSaas
     ? "public/og-metadata.saas.json"

@@ -40,14 +40,14 @@ const LegalSection: React.FC = () => {
       label: t("legal.privacy", "Privacy Policy"),
       href: isValidLink(privacyPolicy)
         ? privacyPolicy!
-        : "https://www.stirling.com/privacy",
+        : "https://www.chronicle-pdf.com/privacy",
     },
     {
       key: "terms",
       label: t("legal.terms", "Terms and Conditions"),
       href: isValidLink(termsAndConditions)
         ? termsAndConditions!
-        : "https://www.stirling.com/terms",
+        : "https://www.chronicle-pdf.com/terms",
     },
     ...(isValidLink(accessibilityStatement)
       ? [

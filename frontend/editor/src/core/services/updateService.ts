@@ -41,7 +41,7 @@ export interface MachineInfo {
 
 export class UpdateService {
   private readonly baseUrl =
-    "https://supabase.stirling.com/functions/v1/updates";
+    "https://supabase.chronicle-pdf.com/functions/v1/updates";
 
   /**
    * Compare two version strings
