@@ -1,4 +1,4 @@
-package stirling.software.common.configuration;
+package Chronicle.software.common.configuration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.mock.env.MockEnvironment;
 import org.springframework.test.util.ReflectionTestUtils;
 
-import stirling.software.common.model.ApplicationProperties;
+import Chronicle.software.common.model.ApplicationProperties;
 
 class AppConfigTest {
 
@@ -66,7 +66,7 @@ class AppConfigTest {
         @Test
         @DisplayName("ChroniclePDFLabel embeds version")
         void stirlingLabel() {
-            assertThat(appConfig.ChroniclePDFLabel()).startsWith("Stirling-PDF v");
+            assertThat(appConfig.ChroniclePDFLabel()).startsWith("Chronicle-PDF v");
         }
     }
 

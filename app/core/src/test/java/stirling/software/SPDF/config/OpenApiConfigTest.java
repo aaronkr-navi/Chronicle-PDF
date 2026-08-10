@@ -1,4 +1,4 @@
-package stirling.software.SPDF.config;
+package Chronicle.software.SPDF.config;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -13,7 +13,7 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.media.ComposedSchema;
 import io.swagger.v3.oas.models.media.Schema;
 
-import stirling.software.common.model.ApplicationProperties;
+import Chronicle.software.common.model.ApplicationProperties;
 
 @DisplayName("OpenApiConfig")
 class OpenApiConfigTest {
@@ -39,7 +39,7 @@ class OpenApiConfigTest {
             assertThat(openAPI).isNotNull();
             assertThat(openAPI.getOpenapi()).isEqualTo("3.0.3");
             assertThat(openAPI.getInfo()).isNotNull();
-            assertThat(openAPI.getInfo().getTitle()).isEqualTo("Stirling PDF API");
+            assertThat(openAPI.getInfo().getTitle()).isEqualTo("Chronicle PDF API");
             // Version falls back to 1.0.0 when no implementation version on the package.
             assertThat(openAPI.getInfo().getVersion()).isNotBlank();
         }
@@ -52,10 +52,10 @@ class OpenApiConfigTest {
             assertThat(openAPI.getInfo().getLicense()).isNotNull();
             assertThat(openAPI.getInfo().getLicense().getName()).contains("MIT");
             assertThat(openAPI.getInfo().getTermsOfService())
-                    .isEqualTo("https://www.stirlingpdf.com/terms");
+                    .isEqualTo("https://www.ChroniclePDF.com/terms");
             assertThat(openAPI.getInfo().getContact()).isNotNull();
             assertThat(openAPI.getInfo().getContact().getEmail())
-                    .isEqualTo("contact@stirlingpdf.com");
+                    .isEqualTo("contact@ChroniclePDF.com");
         }
 
         @Test

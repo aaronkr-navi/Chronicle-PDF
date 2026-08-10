@@ -1,4 +1,4 @@
-package stirling.software.proprietary.integration.api;
+package Chronicle.software.proprietary.integration.api;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -34,15 +34,15 @@ import org.springframework.mock.web.MockMultipartFile;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.common.service.PdfMetadataService;
-import stirling.software.common.util.TempFileManager;
-import stirling.software.common.util.TempFileRegistry;
-import stirling.software.proprietary.integration.model.IntegrationType;
-import stirling.software.proprietary.integration.purview.PdfSensitivityLabels;
-import stirling.software.proprietary.integration.purview.SensitivityLabel;
-import stirling.software.proprietary.integration.purview.SensitivityLabel.AssignmentMethod;
-import stirling.software.proprietary.service.AiToolResponseHeaders;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.common.service.PdfMetadataService;
+import Chronicle.software.common.util.TempFileManager;
+import Chronicle.software.common.util.TempFileRegistry;
+import Chronicle.software.proprietary.integration.model.IntegrationType;
+import Chronicle.software.proprietary.integration.purview.PdfSensitivityLabels;
+import Chronicle.software.proprietary.integration.purview.SensitivityLabel;
+import Chronicle.software.proprietary.integration.purview.SensitivityLabel.AssignmentMethod;
+import Chronicle.software.proprietary.service.AiToolResponseHeaders;
 
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
@@ -404,7 +404,7 @@ class ExternalApiCallControllerLiveTest {
 
         assertThat(receivedMethod).isEqualTo("POST");
         assertThat(receivedContentType).startsWith("multipart/form-data");
-        // Fields the vendor asked for, filled from what Stirling already knew - no extra calls.
+        // Fields the vendor asked for, filled from what Chronicle already knew - no extra calls.
         assertThat(receivedBody).contains("name=\"label\"").contains("Confidential");
         assertThat(receivedBody).contains("name=\"class\"").contains("invoice");
         assertThat(receivedBody).contains("name=\"pages\"").contains("2");

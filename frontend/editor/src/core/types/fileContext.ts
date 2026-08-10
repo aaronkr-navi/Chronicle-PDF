@@ -107,7 +107,7 @@ export function getFormFillFileId(
   if (!file) return null;
 
   if (isStirlingFile(file)) {
-    return `stirling-${file.fileId}`;
+    return `Chronicle-${file.fileId}`;
   }
 
   if (file instanceof File) {
@@ -120,7 +120,7 @@ export function getFormFillFileId(
 
 // Create a StirlingFile from a regular File object
 export function createStirlingFile(file: File, id?: FileId): StirlingFile {
-  // If the file already has Stirling metadata and we aren't trying to override it,
+  // If the file already has Chronicle metadata and we aren't trying to override it,
   // return as–is. When a new id is requested we clone the File so we can embed
   // the fresh identifier without mutating the original object.
   if (isStirlingFile(file)) {

@@ -1,4 +1,4 @@
-package stirling.software.saas.procurement.pricing;
+package Chronicle.software.saas.procurement.pricing;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -201,6 +201,6 @@ public class ProcurementPricingService {
     private static String deploymentLabel(String deployment) {
         if ("airgap".equalsIgnoreCase(deployment)) return "Air-gapped";
         if ("selfhost".equalsIgnoreCase(deployment)) return "Self-hosted";
-        return "Stirling Cloud";
+        return "Chronicle Cloud";
     }
 }

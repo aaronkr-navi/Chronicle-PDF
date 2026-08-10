@@ -1,4 +1,4 @@
-package stirling.software.proprietary.model.api.ai;
+package Chronicle.software.proprietary.model.api.ai;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Schema(description = "Descriptor for a file produced by an AI workflow")
 public class AiWorkflowResultFile {
 
-    @Schema(description = "Stirling file ID — download with GET /api/v1/general/files/{fileId}")
+    @Schema(description = "Chronicle file ID — download with GET /api/v1/general/files/{fileId}")
     private String fileId;
 
     @Schema(description = "Original filename for the file")

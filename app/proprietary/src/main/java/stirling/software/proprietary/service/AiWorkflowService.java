@@ -1,4 +1,4 @@
-package stirling.software.proprietary.service;
+package Chronicle.software.proprietary.service;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -27,39 +27,39 @@ import io.github.pixee.security.Filenames;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.common.service.AutomationRunContext;
-import stirling.software.common.service.CustomPDFDocumentFactory;
-import stirling.software.common.service.FileStorage;
-import stirling.software.common.service.InternalApiTimeoutException;
-import stirling.software.common.service.UserServiceInterface;
-import stirling.software.common.util.ExceptionUtils;
-import stirling.software.common.util.TempFile;
-import stirling.software.common.util.TempFileManager;
-import stirling.software.proprietary.model.api.ai.AiConversationMessage;
-import stirling.software.proprietary.model.api.ai.AiDocumentIngestRequest;
-import stirling.software.proprietary.model.api.ai.AiEngineProgressDetail;
-import stirling.software.proprietary.model.api.ai.AiFile;
-import stirling.software.proprietary.model.api.ai.AiPageText;
-import stirling.software.proprietary.model.api.ai.AiWorkflowFileInput;
-import stirling.software.proprietary.model.api.ai.AiWorkflowFileRequest;
-import stirling.software.proprietary.model.api.ai.AiWorkflowOutcome;
-import stirling.software.proprietary.model.api.ai.AiWorkflowPhase;
-import stirling.software.proprietary.model.api.ai.AiWorkflowProgressEvent;
-import stirling.software.proprietary.model.api.ai.AiWorkflowRequest;
-import stirling.software.proprietary.model.api.ai.AiWorkflowResponse;
-import stirling.software.proprietary.model.api.ai.AiWorkflowResultFile;
-import stirling.software.proprietary.policy.engine.PolicyExecutionResult;
-import stirling.software.proprietary.policy.engine.PolicyExecutor;
-import stirling.software.proprietary.policy.model.OutputSpec;
-import stirling.software.proprietary.policy.model.PipelineDefinition;
-import stirling.software.proprietary.policy.model.PipelineStep;
-import stirling.software.proprietary.policy.model.PolicyInputs;
-import stirling.software.proprietary.policy.progress.PolicyProgressListener;
-import stirling.software.proprietary.security.util.DesktopClientUtils;
-import stirling.software.proprietary.service.PdfContentExtractor.LoadedFile;
-import stirling.software.proprietary.service.PdfContentExtractor.PdfContentResult;
-import stirling.software.proprietary.service.PdfContentExtractor.WorkflowArtifact;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.common.service.AutomationRunContext;
+import Chronicle.software.common.service.CustomPDFDocumentFactory;
+import Chronicle.software.common.service.FileStorage;
+import Chronicle.software.common.service.InternalApiTimeoutException;
+import Chronicle.software.common.service.UserServiceInterface;
+import Chronicle.software.common.util.ExceptionUtils;
+import Chronicle.software.common.util.TempFile;
+import Chronicle.software.common.util.TempFileManager;
+import Chronicle.software.proprietary.model.api.ai.AiConversationMessage;
+import Chronicle.software.proprietary.model.api.ai.AiDocumentIngestRequest;
+import Chronicle.software.proprietary.model.api.ai.AiEngineProgressDetail;
+import Chronicle.software.proprietary.model.api.ai.AiFile;
+import Chronicle.software.proprietary.model.api.ai.AiPageText;
+import Chronicle.software.proprietary.model.api.ai.AiWorkflowFileInput;
+import Chronicle.software.proprietary.model.api.ai.AiWorkflowFileRequest;
+import Chronicle.software.proprietary.model.api.ai.AiWorkflowOutcome;
+import Chronicle.software.proprietary.model.api.ai.AiWorkflowPhase;
+import Chronicle.software.proprietary.model.api.ai.AiWorkflowProgressEvent;
+import Chronicle.software.proprietary.model.api.ai.AiWorkflowRequest;
+import Chronicle.software.proprietary.model.api.ai.AiWorkflowResponse;
+import Chronicle.software.proprietary.model.api.ai.AiWorkflowResultFile;
+import Chronicle.software.proprietary.policy.engine.PolicyExecutionResult;
+import Chronicle.software.proprietary.policy.engine.PolicyExecutor;
+import Chronicle.software.proprietary.policy.model.OutputSpec;
+import Chronicle.software.proprietary.policy.model.PipelineDefinition;
+import Chronicle.software.proprietary.policy.model.PipelineStep;
+import Chronicle.software.proprietary.policy.model.PolicyInputs;
+import Chronicle.software.proprietary.policy.progress.PolicyProgressListener;
+import Chronicle.software.proprietary.security.util.DesktopClientUtils;
+import Chronicle.software.proprietary.service.PdfContentExtractor.LoadedFile;
+import Chronicle.software.proprietary.service.PdfContentExtractor.PdfContentResult;
+import Chronicle.software.proprietary.service.PdfContentExtractor.WorkflowArtifact;
 
 import tools.jackson.core.JacksonException;
 import tools.jackson.databind.JsonNode;
@@ -632,7 +632,7 @@ public class AiWorkflowService {
             List<String> inputFileNames,
             JsonNode report)
             throws IOException {
-        // Store every output file individually so each gets its own Stirling file ID and the
+        // Store every output file individually so each gets its own Chronicle file ID and the
         // frontend can add them as independent variants without going through a zip.
         // Count outputs per source so only a clean 1:1 transform (one output for a source) reuses
         // the input's name; a split (one input → many outputs) keeps each entry's own name.

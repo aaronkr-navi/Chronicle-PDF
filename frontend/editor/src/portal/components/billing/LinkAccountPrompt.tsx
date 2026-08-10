@@ -3,7 +3,7 @@ import { Button, Card, EmptyState } from "@app/ui";
 import { useUI } from "@portal/contexts/UIContext";
 
 /**
- * Unlinked state — the billing page asks the admin to link their Stirling
+ * Unlinked state — the billing page asks the admin to link their Chronicle
  * account to claim the 500-PDF free grant. The CTA opens the login modal
  * directly (no detour through Settings).
  */

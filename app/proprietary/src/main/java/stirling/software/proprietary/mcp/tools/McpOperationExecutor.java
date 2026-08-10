@@ -1,4 +1,4 @@
-package stirling.software.proprietary.mcp.tools;
+package Chronicle.software.proprietary.mcp.tools;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,11 +19,11 @@ import org.springframework.web.client.RestClientResponseException;
 
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.common.service.FileStorage;
-import stirling.software.common.service.InternalApiClient;
-import stirling.software.common.service.InternalApiTimeoutException;
-import stirling.software.proprietary.mcp.catalog.OperationMeta;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.common.service.FileStorage;
+import Chronicle.software.common.service.InternalApiClient;
+import Chronicle.software.common.service.InternalApiTimeoutException;
+import Chronicle.software.proprietary.mcp.catalog.OperationMeta;
 
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.JsonNode;
@@ -32,7 +32,7 @@ import tools.jackson.databind.node.ObjectNode;
 
 /**
  * Runs a JAVA_ENDPOINT operation: resolves the input file (inline base64 or a fileId), dispatches
- * to the Stirling endpoint over the loopback via {@link InternalApiClient}, and stores the result.
+ * to the Chronicle endpoint over the loopback via {@link InternalApiClient}, and stores the result.
  */
 @Slf4j
 @Component
@@ -183,7 +183,7 @@ public class McpOperationExecutor {
                                 mapper, summary + "The file is included inline below."),
                         McpResponses.resourceBlock(
                                 mapper,
-                                "stirling://file/" + fileId,
+                                "Chronicle://file/" + fileId,
                                 mimeType,
                                 Base64.getEncoder().encodeToString(inline)));
             }

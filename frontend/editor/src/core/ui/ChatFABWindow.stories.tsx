@@ -34,7 +34,7 @@ function MockChat() {
           fontWeight: 600,
         }}
       >
-        Stirling
+        Chronicle
       </div>
       <div
         style={{

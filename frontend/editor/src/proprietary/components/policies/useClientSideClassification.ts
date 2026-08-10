@@ -29,7 +29,7 @@ const FILE_WAIT_TRIES = 20;
 const FILE_WAIT_MS = 250;
 
 /** localStorage flag: set to "true" for a full per-file scoring breakdown in the console. */
-const DEBUG_FLAG = "stirling-classification-debug";
+const DEBUG_FLAG = "Chronicle-classification-debug";
 
 function isClassificationDebug(): boolean {
   try {

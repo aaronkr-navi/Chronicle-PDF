@@ -1,4 +1,4 @@
-package stirling.software.proprietary.mcp.tools;
+package Chronicle.software.proprietary.mcp.tools;
 
 import java.io.IOException;
 import java.util.Base64;
@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.common.service.FileStorage;
-import stirling.software.proprietary.mcp.McpCallContext;
-import stirling.software.proprietary.mcp.McpTool;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.common.service.FileStorage;
+import Chronicle.software.proprietary.mcp.McpCallContext;
+import Chronicle.software.proprietary.mcp.McpTool;
 
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
@@ -86,7 +86,7 @@ public class StirlingDownloadTool implements McpTool {
                                 + " bytes, over the inline limit of "
                                 + maxInline
                                 + " bytes. Raise mcp.maxInlineResponseBytes or retrieve it via the"
-                                + " Stirling UI/API.");
+                                + " Chronicle UI/API.");
             }
             byte[] bytes = fileStorage.retrieveBytes(fileId);
             return McpResponses.result(
@@ -101,7 +101,7 @@ public class StirlingDownloadTool implements McpTool {
                                     + " bytes) included inline below."),
                     McpResponses.resourceBlock(
                             mapper,
-                            "stirling://file/" + fileId,
+                            "Chronicle://file/" + fileId,
                             MediaType.APPLICATION_OCTET_STREAM_VALUE,
                             Base64.getEncoder().encodeToString(bytes)));
         } catch (SecurityException e) {

@@ -1,4 +1,4 @@
-package stirling.software.common.util;
+package Chronicle.software.common.util;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -99,9 +99,9 @@ class FormUtilsTest {
             attachField(setup, checkBox, new PDRectangle(60, 680, 16, 16));
 
             FormUtils.applyFieldValues(
-                    document, Map.of("company", "Stirling", "subscribed", true), false);
+                    document, Map.of("company", "Chronicle", "subscribed", true), false);
 
-            assertEquals("Stirling", textField.getValueAsString());
+            assertEquals("Chronicle", textField.getValueAsString());
             assertTrue(checkBox.isChecked());
 
             FormUtils.applyFieldValues(document, Map.of("subscribed", false), false);

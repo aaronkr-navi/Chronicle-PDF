@@ -1,4 +1,4 @@
-package stirling.software.Stirling.Stats;
+package Chronicle.software.Chronicle.Stats;
 
 import java.nio.file.*;
 import java.nio.charset.MalformedInputException;

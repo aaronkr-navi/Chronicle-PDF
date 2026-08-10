@@ -222,6 +222,6 @@ test.describe("CertSign tool - hardware signing (desktop)", () => {
     // The single enumerated cert is auto-selected into the picker input.
     await expect(
       page.getByRole("textbox", { name: /^certificate$/i }),
-    ).toHaveValue(/Anthony Stirling/, { timeout: 10_000 });
+    ).toHaveValue(/Anthony Chronicle/, { timeout: 10_000 });
   });
 });

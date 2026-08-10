@@ -1,4 +1,4 @@
-package stirling.software.common.service;
+package Chronicle.software.common.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -19,15 +19,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.common.model.ApplicationProperties.Premium;
-import stirling.software.common.model.ApplicationProperties.Premium.ProFeatures;
-import stirling.software.common.model.ApplicationProperties.Premium.ProFeatures.CustomMetadata;
-import stirling.software.common.model.PdfMetadata;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.common.model.ApplicationProperties.Premium;
+import Chronicle.software.common.model.ApplicationProperties.Premium.ProFeatures;
+import Chronicle.software.common.model.ApplicationProperties.Premium.ProFeatures.CustomMetadata;
+import Chronicle.software.common.model.PdfMetadata;
 
 class PdfMetadataServiceTest {
 
-    private static final String LABEL = "Stirling-PDF v1.0.0";
+    private static final String LABEL = "Chronicle-PDF v1.0.0";
 
     /**
      * Builds a service whose pro-features are disabled (real ApplicationProperties, all defaults).
@@ -223,7 +223,7 @@ class PdfMetadataServiceTest {
 
                 Calendar creationCal = doc.getDocumentInformation().getCreationDate();
                 assertNotNull(creationCal);
-                // Non-pro path writes the Stirling label as the creator.
+                // Non-pro path writes the Chronicle label as the creator.
                 assertEquals(LABEL, doc.getDocumentInformation().getCreator());
             }
         }

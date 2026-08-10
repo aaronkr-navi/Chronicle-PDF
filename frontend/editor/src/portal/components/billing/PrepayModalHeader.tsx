@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { Button } from "@app/ui";
-// The trademarked Stirling wordmark — the font is baked into the SVG (no brand webfont is loaded), so
+// The trademarked Chronicle wordmark — the font is baked into the SVG (no brand webfont is loaded), so
 // we render the same asset the portal nav uses rather than styled text. Theme-switched in CSS.
 import wordmarkLight from "@app/assets/brand/modern-logo/ChronicleProcessorLogoBlackText.svg";
 import wordmarkDark from "@app/assets/brand/modern-logo/ChronicleProcessorLogoWhiteText.svg";
 
 /**
  * Shared header for the prepay-flow modals — the prepaid wizard (activation → calculator → pay, of 3)
- * and the metered checkout (spend limit → payment, of 2): Stirling brand + "Step N of M" badge + close,
+ * and the metered checkout (spend limit → payment, of 2): Chronicle brand + "Step N of M" badge + close,
  * an M-segment progress bar, and the step title. Pass {@code step=undefined} to hide the badge +
  * progress (e.g. a terminal confirmation).
  */

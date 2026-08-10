@@ -1,4 +1,4 @@
-package stirling.software.proprietary.integration.api;
+package Chronicle.software.proprietary.integration.api;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

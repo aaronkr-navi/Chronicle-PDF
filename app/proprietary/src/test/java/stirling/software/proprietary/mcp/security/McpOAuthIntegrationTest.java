@@ -1,4 +1,4 @@
-package stirling.software.proprietary.mcp.security;
+package Chronicle.software.proprietary.mcp.security;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -34,15 +34,15 @@ import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.proprietary.mcp.McpServerController;
-import stirling.software.proprietary.mcp.tools.DescribeOperationTool;
-import stirling.software.proprietary.mcp.tools.StirlingAiTool;
-import stirling.software.proprietary.mcp.tools.StirlingConvertTool;
-import stirling.software.proprietary.mcp.tools.StirlingMiscTool;
-import stirling.software.proprietary.mcp.tools.StirlingPagesTool;
-import stirling.software.proprietary.mcp.tools.StirlingSecurityTool;
-import stirling.software.proprietary.security.service.UserService;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.proprietary.mcp.McpServerController;
+import Chronicle.software.proprietary.mcp.tools.DescribeOperationTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingAiTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingConvertTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingMiscTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingPagesTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingSecurityTool;
+import Chronicle.software.proprietary.security.service.UserService;
 
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockResponse;
@@ -340,9 +340,9 @@ class McpOAuthIntegrationTest {
         @Bean
         UserService userService() {
             UserService mock = org.mockito.Mockito.mock(UserService.class);
-            stirling.software.proprietary.security.model.User account =
+            Chronicle.software.proprietary.security.model.User account =
                     org.mockito.Mockito.mock(
-                            stirling.software.proprietary.security.model.User.class);
+                            Chronicle.software.proprietary.security.model.User.class);
             org.mockito.Mockito.when(account.isEnabled()).thenReturn(true);
             org.mockito.Mockito.when(account.getUsername()).thenReturn("test-user");
             org.mockito.Mockito.when(

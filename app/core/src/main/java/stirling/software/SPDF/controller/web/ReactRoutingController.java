@@ -1,4 +1,4 @@
-package stirling.software.SPDF.controller.web;
+package Chronicle.software.SPDF.controller.web;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,7 +22,7 @@ import org.springframework.web.util.JavaScriptUtils;
 import jakarta.annotation.PostConstruct;
 import jakarta.servlet.http.HttpServletRequest;
 
-import stirling.software.common.configuration.InstallationPathConfig;
+import Chronicle.software.common.configuration.InstallationPathConfig;
 
 @Controller
 public class ReactRoutingController {
@@ -295,7 +295,7 @@ public class ReactRoutingController {
                             const encodedToken = encodeURIComponent(token);
                             const encodedServer = encodeURIComponent(serverUrl);
                             const encodedNonce = nonceFromUrl ? encodeURIComponent(nonceFromUrl) : '';
-                            const deepLink = `stirlingpdf://auth/sso-complete?server=${encodedServer}#access_token=${encodedToken}&nonce=${encodedNonce}&type=sso-selfhosted`;
+                            const deepLink = `ChroniclePDF://auth/sso-complete?server=${encodedServer}#access_token=${encodedToken}&nonce=${encodedNonce}&type=sso-selfhosted`;
                             window.location.href = deepLink;
                             return;
                           } catch (_) {
@@ -308,7 +308,7 @@ public class ReactRoutingController {
                     </script>
                   </head>
                   <body>
-                    <p>Stirling PDF is running.</p>
+                    <p>Chronicle PDF is running.</p>
                   </body>
                 </html>
                 """
@@ -474,7 +474,7 @@ public class ReactRoutingController {
                               const encodedValue = encodeURIComponent(value || '');
                               const encodedServer = encodeURIComponent(serverUrl);
                               const hashKey = key || 'access_token';
-                              const deepLink = `stirlingpdf://auth/sso-complete?server=${encodedServer}#${hashKey}=${encodedValue}&type=${type}`;
+                              const deepLink = `ChroniclePDF://auth/sso-complete?server=${encodedServer}#${hashKey}=${encodedValue}&type=${type}`;
                               window.location.href = deepLink;
                             } catch (_) {
                               // ignore deep link errors
@@ -512,7 +512,7 @@ public class ReactRoutingController {
                                 const encodedToken = encodeURIComponent(token);
                                 const encodedServer = encodeURIComponent(serverUrl);
                                 const encodedNonce = nonceFromUrl ? encodeURIComponent(nonceFromUrl) : '';
-                                const deepLink = `stirlingpdf://auth/sso-complete?server=${encodedServer}#access_token=${encodedToken}&nonce=${encodedNonce}&type=sso-selfhosted`;
+                                const deepLink = `ChroniclePDF://auth/sso-complete?server=${encodedServer}#access_token=${encodedToken}&nonce=${encodedNonce}&type=sso-selfhosted`;
                                 window.location.href = deepLink;
                               } catch (err) {
                                 console.error('[Auth Callback] Failed to trigger deep link:', err);
@@ -552,7 +552,7 @@ public class ReactRoutingController {
                     <div class="container">
                       <div class="icon" id="auth-icon">&#10003;</div>
                       <h1 id="auth-title">Authentication complete</h1>
-                      <p id="auth-message">You can close this window and return to Stirling PDF.</p>
+                      <p id="auth-message">You can close this window and return to Chronicle PDF.</p>
                       <div class="error-details" id="auth-error-details"></div>
                     </div>
                   </body>

@@ -1,4 +1,4 @@
-package stirling.software.proprietary.mcp.security;
+package Chronicle.software.proprietary.mcp.security;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -18,16 +18,16 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.proprietary.mcp.McpServerController;
-import stirling.software.proprietary.mcp.tools.DescribeOperationTool;
-import stirling.software.proprietary.mcp.tools.StirlingAiTool;
-import stirling.software.proprietary.mcp.tools.StirlingConvertTool;
-import stirling.software.proprietary.mcp.tools.StirlingMiscTool;
-import stirling.software.proprietary.mcp.tools.StirlingPagesTool;
-import stirling.software.proprietary.mcp.tools.StirlingSecurityTool;
-import stirling.software.proprietary.security.model.User;
-import stirling.software.proprietary.security.service.UserService;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.proprietary.mcp.McpServerController;
+import Chronicle.software.proprietary.mcp.tools.DescribeOperationTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingAiTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingConvertTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingMiscTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingPagesTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingSecurityTool;
+import Chronicle.software.proprietary.security.model.User;
+import Chronicle.software.proprietary.security.service.UserService;
 
 /**
  * End-to-end test of {@code mcp.auth.mode=apikey} against the real security chain on live Jetty.
@@ -37,7 +37,7 @@ import stirling.software.proprietary.security.service.UserService;
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class McpApiKeyIntegrationTest {
 
-    private static final String VALID_KEY = "stirling-test-key-abc123";
+    private static final String VALID_KEY = "Chronicle-test-key-abc123";
 
     @LocalServerPort private int port;
     private final HttpClient http = HttpClient.newHttpClient();

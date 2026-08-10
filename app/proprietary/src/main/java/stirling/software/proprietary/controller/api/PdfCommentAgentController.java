@@ -1,4 +1,4 @@
-package stirling.software.proprietary.controller.api;
+package Chronicle.software.proprietary.controller.api;
 
 import java.io.IOException;
 import java.util.regex.Pattern;
@@ -21,10 +21,10 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.proprietary.service.AiFeatureGate;
-import stirling.software.proprietary.service.AiToolResponseHeaders;
-import stirling.software.proprietary.service.PdfCommentAgentOrchestrator;
-import stirling.software.proprietary.service.PdfCommentAgentOrchestrator.AnnotatedPdf;
+import Chronicle.software.proprietary.service.AiFeatureGate;
+import Chronicle.software.proprietary.service.AiToolResponseHeaders;
+import Chronicle.software.proprietary.service.PdfCommentAgentOrchestrator;
+import Chronicle.software.proprietary.service.PdfCommentAgentOrchestrator.AnnotatedPdf;
 
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;
@@ -35,7 +35,7 @@ import tools.jackson.databind.node.ObjectNode;
  * <p>Accepts a PDF and a natural-language prompt, delegates to {@link PdfCommentAgentOrchestrator}
  * which consults the Python engine and applies {@code PDAnnotationText} sticky-note annotations,
  * then streams the annotated PDF back in the response body. This shape matches the rest of the
- * Stirling tool endpoints ({@code /api/v1/misc/*}, {@code /api/v1/general/*}) and is what the AI
+ * Chronicle tool endpoints ({@code /api/v1/misc/*}, {@code /api/v1/general/*}) and is what the AI
  * workflow orchestrator expects when dispatching this tool as a plan step.
  *
  * <p>The raw PDF never leaves Java. Python only receives positioned text chunks.

@@ -1,4 +1,4 @@
-package stirling.software.proprietary.cluster.s3;
+package Chronicle.software.proprietary.cluster.s3;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -21,11 +21,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.springframework.mock.web.MockMultipartFile;
 
-import stirling.software.common.cluster.FileStore;
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.proprietary.security.model.User;
-import stirling.software.proprietary.storage.provider.S3StorageProvider;
-import stirling.software.proprietary.storage.provider.StoredObject;
+import Chronicle.software.common.cluster.FileStore;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.proprietary.security.model.User;
+import Chronicle.software.proprietary.storage.provider.S3StorageProvider;
+import Chronicle.software.proprietary.storage.provider.StoredObject;
 
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.model.NoSuchBucketException;
@@ -54,7 +54,7 @@ import software.amazon.awssdk.services.s3.presigner.model.PresignedGetObjectRequ
 @EnabledIfEnvironmentVariable(named = "S3_SMOKE_ENDPOINT", matches = ".+")
 class S3VendorComprehensiveTest {
 
-    private static final String PREFIX = "stirling-comprehensive/" + UUID.randomUUID() + "/";
+    private static final String PREFIX = "Chronicle-comprehensive/" + UUID.randomUUID() + "/";
 
     private static ApplicationProperties.Storage.S3 cfg;
     private static S3Clients.Bundle bundle;
@@ -437,7 +437,7 @@ class S3VendorComprehensiveTest {
 
     @Test
     void nonExistentBucket_throwsOnHeadOrPut() {
-        String fakeBucket = "stirling-no-such-bucket-" + UUID.randomUUID();
+        String fakeBucket = "Chronicle-no-such-bucket-" + UUID.randomUUID();
         assertThatThrownBy(() -> bundle.client().headBucket(h -> h.bucket(fakeBucket)))
                 .isInstanceOfAny(NoSuchBucketException.class, S3Exception.class);
     }
@@ -568,7 +568,7 @@ class S3VendorComprehensiveTest {
 
     @Test
     void key_200Chars_isStoredAndRetrievable() {
-        // Stirling production keys are ~45 chars ({ownerId}/{uuid}). 200 chars exceeds that by
+        // Chronicle production keys are ~45 chars ({ownerId}/{uuid}). 200 chars exceeds that by
         // ~5x but stays inside every vendor's documented limit. The S3 spec max is 1024 bytes
         // but some vendors (Supabase) impose stricter caps (~250-byte total path including
         // bucket prefix - 1000 chars fails with KeyTooLongError).
@@ -588,7 +588,7 @@ class S3VendorComprehensiveTest {
     @Test
     void key_safeSpecialChars_areSignedAndRetrievableViaSdk() {
         // Restrict to chars every S3-compatible vendor accepts: dot, dash, underscore.
-        // Stirling's production key format ({ownerId}/{uuid}) is even narrower; this test
+        // Chronicle's production key format ({ownerId}/{uuid}) is even narrower; this test
         // confirms the SDK SigV4 signer copes with slightly more exotic ASCII-safe keys.
         // Note: Supabase rejects keys containing space / + / ? / & / # ("400 Invalid key"),
         // see documentsVendorKeyRestrictions_tolerantTest for that documentation.
@@ -609,7 +609,7 @@ class S3VendorComprehensiveTest {
     @Test
     void documentsVendorKeyRestrictions_tolerantTest() {
         // Documents - rather than enforces - which key characters cause vendor rejection.
-        // Stirling production code is safe because S3StorageProvider always emits an
+        // Chronicle production code is safe because S3StorageProvider always emits an
         // ASCII-safe UUID-only key. If you ever change that, this test becomes a canary.
         // AWS S3 and MinIO accept all of these; Supabase rejects all of them with 400.
         String[] suspiciousKeys = {
@@ -640,7 +640,7 @@ class S3VendorComprehensiveTest {
     }
 
     // ==========================================================================================
-    // Presigned-URL: TTL bounds + Content-Disposition behavior (Stirling uses this for shares)
+    // Presigned-URL: TTL bounds + Content-Disposition behavior (Chronicle uses this for shares)
     // ==========================================================================================
 
     @Test

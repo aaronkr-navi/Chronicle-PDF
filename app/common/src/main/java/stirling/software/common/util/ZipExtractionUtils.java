@@ -1,4 +1,4 @@
-package stirling.software.common.util;
+package Chronicle.software.common.util;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,7 +19,7 @@ import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Helpers for detecting and extracting ZIP-formatted responses returned from Stirling API
+ * Helpers for detecting and extracting ZIP-formatted responses returned from Chronicle API
  * endpoints. Shared between {@code PipelineProcessor} and {@code AiWorkflowService} so both callers
  * unpack ZIPs consistently (hardened against zip-slip, depth-limited, backed by managed temp
  * files).

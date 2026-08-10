@@ -1,4 +1,4 @@
-package stirling.software.SPDF.service;
+package Chronicle.software.SPDF.service;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -33,10 +33,10 @@ import jakarta.servlet.http.HttpServletRequest;
 
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.SPDF.model.api.security.HardwareCertificateInfo;
-import stirling.software.SPDF.model.api.security.HardwareSigningCapabilities;
-import stirling.software.SPDF.model.api.security.HardwareSigningCapabilities.Pkcs11LibraryInfo;
-import stirling.software.common.util.ExceptionUtils;
+import Chronicle.software.SPDF.model.api.security.HardwareCertificateInfo;
+import Chronicle.software.SPDF.model.api.security.HardwareSigningCapabilities;
+import Chronicle.software.SPDF.model.api.security.HardwareSigningCapabilities.Pkcs11LibraryInfo;
+import Chronicle.software.common.util.ExceptionUtils;
 
 /**
  * Bridges PDF signing to hardware-held keys: the Windows certificate store (via the JDK SunMSCAPI
@@ -63,7 +63,7 @@ public class HardwareKeyStoreService {
     private static final String PKCS11_LIBRARIES_ENV = "STIRLING_PKCS11_LIBRARIES";
 
     /** Same as {@link #PKCS11_LIBRARIES_ENV} but as a JVM system property. */
-    private static final String PKCS11_LIBRARIES_PROP = "stirling.pkcs11.libraries";
+    private static final String PKCS11_LIBRARIES_PROP = "Chronicle.pkcs11.libraries";
 
     private final String machineType;
 

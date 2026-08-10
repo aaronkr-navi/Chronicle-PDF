@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { StirlingLogoAnimated } from "@app/components/agents/StirlingLogoAnimated";
+import { ChronicleLogoAnimated } from "@app/components/agents/ChronicleLogoAnimated";
 
 /**
- * Animated Stirling logo mark, used as a "thinking" indicator in the chat panel.
+ * Animated Chronicle logo mark, used as a "thinking" indicator in the chat panel.
  */
-const meta: Meta<typeof StirlingLogoAnimated> = {
-  title: "Agents/StirlingLogoAnimated",
-  component: StirlingLogoAnimated,
+const meta: Meta<typeof ChronicleLogoAnimated> = {
+  title: "Agents/ChronicleLogoAnimated",
+  component: ChronicleLogoAnimated,
   parameters: { layout: "padded" },
   args: {
     size: 20,

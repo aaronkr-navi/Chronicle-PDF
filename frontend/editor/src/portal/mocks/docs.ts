@@ -87,7 +87,7 @@ const QUICKSTART_SAMPLES: CodeSample[] = [
     key: "curl",
     label: "cURL",
     lang: "bash",
-    code: `curl https://api.stirlingpdf.com/v1/invoice \\
+    code: `curl https://api.ChroniclePDF.com/v1/invoice \\
   -H "Authorization: Bearer $STIRLING_API_KEY" \\
   -F "file=@invoice.pdf"`,
   },
@@ -95,9 +95,9 @@ const QUICKSTART_SAMPLES: CodeSample[] = [
     key: "python",
     label: "Python",
     lang: "python",
-    code: `from stirling import Stirling
+    code: `from Chronicle import Chronicle
 
-client = Stirling(api_key="sk_live_...")
+client = Chronicle(api_key="sk_live_...")
 
 result = client.extract(
     endpoint="/v1/invoice",
@@ -109,9 +109,9 @@ print(result.fields["total"])`,
     key: "node",
     label: "Node",
     lang: "typescript",
-    code: `import { Stirling } from "@stirling/sdk";
+    code: `import { Chronicle } from "@Chronicle/sdk";
 
-const client = new Stirling({ apiKey: process.env.STIRLING_API_KEY });
+const client = new Chronicle({ apiKey: process.env.STIRLING_API_KEY });
 
 const result = await client.extract({
   endpoint: "/v1/invoice",
@@ -166,35 +166,35 @@ const SDKS: Sdk[] = [
   {
     name: "Python",
     icon: "🐍",
-    install: "pip install stirling",
+    install: "pip install Chronicle",
     lang: "bash",
     status: "ga",
   },
   {
     name: "Node / TypeScript",
     icon: "⬢",
-    install: "npm install @stirling/sdk",
+    install: "npm install @Chronicle/sdk",
     lang: "bash",
     status: "ga",
   },
   {
     name: "Go",
     icon: "◉",
-    install: "go get github.com/stirling/stirling-go",
+    install: "go get github.com/Chronicle/Chronicle-go",
     lang: "bash",
     status: "ga",
   },
   {
     name: "Ruby",
     icon: "◆",
-    install: "gem install stirling",
+    install: "gem install Chronicle",
     lang: "bash",
     status: "ga",
   },
   {
     name: "Java",
     icon: "☕",
-    install: "implementation 'com.stirling:sdk:1.x'",
+    install: "implementation 'com.Chronicle:sdk:1.x'",
     lang: "bash",
     status: "ga",
   },
@@ -209,7 +209,7 @@ const SDKS: Sdk[] = [
   {
     name: "PHP",
     icon: "🐘",
-    install: "composer require stirling/stirling-php:^0.9",
+    install: "composer require Chronicle/Chronicle-php:^0.9",
     lang: "bash",
     status: "deprecated",
   },
@@ -235,7 +235,7 @@ const COMPONENTS: EmbedComponent[] = [
   },
   {
     name: "Web component",
-    blurb: "<stirling-viewer> custom element for non-React stacks.",
+    blurb: "<Chronicle-viewer> custom element for non-React stacks.",
     tag: "Web",
   },
 ];

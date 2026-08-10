@@ -15,7 +15,7 @@ export interface DeploymentRegion {
   /** Current load as a fraction of provisioned capacity (0–1). */
   load: number;
   status: RegionStatus;
-  /** Deployed Stirling engine version. */
+  /** Deployed Chronicle engine version. */
   version: string;
   /** 30-day uptime as a fraction (0–1). */
   uptime: number;
@@ -76,7 +76,7 @@ export interface CreatedApiKey {
 /*  Security                                                                 */
 /* ──────────────────────────────────────────────────────────────────────── */
 
-export type AccessPolicy = "stirling" | "byok" | "hyok";
+export type AccessPolicy = "Chronicle" | "byok" | "hyok";
 export type DataResidency = "us" | "eu" | "apac";
 export type CertStatus = "certified" | "in-progress" | "not-started";
 
@@ -99,9 +99,9 @@ export interface IpAllowEntry {
  * Where encryption keys live. Mirrors the {@link AccessPolicy} posture but is
  * surfaced separately because the key *custody model* (who can decrypt) is the
  * detail security teams scrutinise:
- *   - `managed` — Stirling-owned KMS keys; zero key ops on the customer side.
- *   - `byok` — customer key, but Stirling can use it to decrypt while processing.
- *   - `hyok` — key never leaves the customer KMS; Stirling holds only ciphertext.
+ *   - `managed` — Chronicle-owned KMS keys; zero key ops on the customer side.
+ *   - `byok` — customer key, but Chronicle can use it to decrypt while processing.
+ *   - `hyok` — key never leaves the customer KMS; Chronicle holds only ciphertext.
  */
 export type KeyMode = "managed" | "byok" | "hyok";
 
@@ -118,7 +118,7 @@ export interface KeyManagement {
   /** Rotation cadence summary, e.g. "Automatic · every 90 days". */
   rotationPolicy: string;
   /**
-   * Whether the customer may switch key custody (BYOK/HYOK). Stirling-managed
+   * Whether the customer may switch key custody (BYOK/HYOK). Chronicle-managed
    * tiers see the posture but cannot change provider — only enterprise can.
    */
   customerManaged: boolean;
@@ -156,7 +156,7 @@ export type RetentionWindow = "30" | "60" | "90" | "180" | "never";
 export interface StorageProvider {
   id: string;
   name: string;
-  kind: "stirling" | "s3" | "azure";
+  kind: "Chronicle" | "s3" | "azure";
   connected: boolean;
   detail: string;
   usedGb: number;
@@ -215,7 +215,7 @@ export interface AuditLogResponse {
 /*  Models                                                                   */
 /* ──────────────────────────────────────────────────────────────────────── */
 
-export type ModelProvider = "stirling" | "openai" | "anthropic" | "on-prem";
+export type ModelProvider = "Chronicle" | "openai" | "anthropic" | "on-prem";
 export type ModelType = "extraction" | "classification" | "ocr" | "llm";
 export type ModelStatus = "active" | "degraded" | "disabled";
 

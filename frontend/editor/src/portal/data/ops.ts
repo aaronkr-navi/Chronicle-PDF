@@ -1,5 +1,5 @@
 /**
- * The Stirling operation library.
+ * The Chronicle operation library.
  *
  * Three layers, ported faithfully from the prototype:
  *
@@ -61,7 +61,7 @@ export interface LibraryOp extends Omit<
   "defaultOn" | "pipelineOnly"
 > {
   category: OpCategory;
-  provider?: "claude" | "stirling";
+  provider?: "claude" | "Chronicle";
 }
 
 export interface PipelineAgent {
@@ -1117,7 +1117,7 @@ export const LIBRARY_OPS: readonly LibraryOp[] = [
     icon: "check",
     kind: "validate",
     category: "Document Review",
-    provider: "stirling",
+    provider: "Chronicle",
     desc: "Check documents against regulatory requirements",
   },
   {
@@ -1144,7 +1144,7 @@ export const LIBRARY_OPS: readonly LibraryOp[] = [
     icon: "fileText",
     kind: "modify",
     category: "Automation",
-    provider: "stirling",
+    provider: "Chronicle",
     desc: "Auto-fill forms and extract submissions",
   },
 

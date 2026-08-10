@@ -69,6 +69,6 @@ test.describe("Chronicle PDF seed", () => {
     ).toBeVisible({ timeout: 15000 });
 
     // Verify the title contains Chronicle PDF
-    await expect(page).toHaveTitle(/Stirling/i);
+    await expect(page).toHaveTitle(/Chronicle/i);
   });
 });

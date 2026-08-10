@@ -1,4 +1,4 @@
-package stirling.software.saas.payg.api;
+package Chronicle.software.saas.payg.api;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -22,16 +22,16 @@ import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import stirling.software.proprietary.model.Team;
-import stirling.software.proprietary.model.TeamMembership;
-import stirling.software.proprietary.security.database.repository.UserRepository;
-import stirling.software.proprietary.security.model.User;
-import stirling.software.proprietary.security.repository.TeamMembershipRepository;
-import stirling.software.saas.payg.api.PaygInvoicesController.InvoiceResponse;
-import stirling.software.saas.payg.policy.PaygTeamExtensions;
-import stirling.software.saas.payg.repository.PaygTeamExtensionsRepository;
-import stirling.software.saas.payg.stripe.StripeInvoiceDao;
-import stirling.software.saas.util.AuthenticationUtils;
+import Chronicle.software.proprietary.model.Team;
+import Chronicle.software.proprietary.model.TeamMembership;
+import Chronicle.software.proprietary.security.database.repository.UserRepository;
+import Chronicle.software.proprietary.security.model.User;
+import Chronicle.software.proprietary.security.repository.TeamMembershipRepository;
+import Chronicle.software.saas.payg.api.PaygInvoicesController.InvoiceResponse;
+import Chronicle.software.saas.payg.policy.PaygTeamExtensions;
+import Chronicle.software.saas.payg.repository.PaygTeamExtensionsRepository;
+import Chronicle.software.saas.payg.stripe.StripeInvoiceDao;
+import Chronicle.software.saas.util.AuthenticationUtils;
 
 /**
  * Pure-Mockito unit tests for {@link PaygInvoicesController}. Confirms team is resolved from the
@@ -124,7 +124,7 @@ class PaygInvoicesControllerTest {
                         LocalDateTime.of(2026, 5, 31, 23, 59),
                         "https://stripe/invoice/1",
                         "https://stripe/invoice/1.pdf",
-                        "Stirling Processor Plan",
+                        "Chronicle Processor Plan",
                         50000L);
 
         try (var mocked = org.mockito.Mockito.mockStatic(AuthenticationUtils.class)) {
@@ -146,7 +146,7 @@ class PaygInvoicesControllerTest {
             assertThat(body.totalMinor()).isEqualTo(2500L);
             assertThat(body.currency()).isEqualTo("usd");
             assertThat(body.hostedInvoiceUrl()).isEqualTo("https://stripe/invoice/1");
-            assertThat(body.description()).isEqualTo("Stirling Processor Plan");
+            assertThat(body.description()).isEqualTo("Chronicle Processor Plan");
             assertThat(body.pdfsProcessed()).isEqualTo(50000L);
         }
     }

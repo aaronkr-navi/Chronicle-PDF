@@ -1,13 +1,13 @@
-package stirling.software.proprietary.mcp.tools;
+package Chronicle.software.proprietary.mcp.tools;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
-import stirling.software.proprietary.mcp.McpCallContext;
-import stirling.software.proprietary.mcp.McpTool;
-import stirling.software.proprietary.mcp.catalog.McpToolCatalog;
-import stirling.software.proprietary.mcp.catalog.OperationMeta;
+import Chronicle.software.proprietary.mcp.McpCallContext;
+import Chronicle.software.proprietary.mcp.McpTool;
+import Chronicle.software.proprietary.mcp.catalog.McpToolCatalog;
+import Chronicle.software.proprietary.mcp.catalog.OperationMeta;
 
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
@@ -34,7 +34,7 @@ public class DescribeOperationTool implements McpTool {
 
     @Override
     public String description() {
-        return "Return the full JSON Schema for one Stirling operation's parameters. Call this "
+        return "Return the full JSON Schema for one Chronicle operation's parameters. Call this "
                 + "before invoking a category tool to learn the exact shape of `parameters`. "
                 + "Argument: { operation: <op-id> } where <op-id> appears in the enum of any "
                 + "category tool (chronicle_convert, _pages, _misc, _security, _ai).";

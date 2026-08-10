@@ -1,4 +1,4 @@
-package stirling.software.proprietary.mcp.catalog;
+package Chronicle.software.proprietary.mcp.catalog;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -133,7 +133,7 @@ public final class SimpleSchemaGenerator {
             out.put("format", "file-id");
             out.put(
                     "description",
-                    "Reference to a previously-uploaded file in Stirling's job store.");
+                    "Reference to a previously-uploaded file in Chronicle's job store.");
             return;
         }
         if (c.isArray()) {

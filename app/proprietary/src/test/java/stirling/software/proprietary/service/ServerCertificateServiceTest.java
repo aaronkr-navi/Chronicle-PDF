@@ -1,4 +1,4 @@
-package stirling.software.proprietary.service;
+package Chronicle.software.proprietary.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -24,10 +24,10 @@ import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.util.ReflectionTestUtils;
 
-import stirling.software.common.configuration.InstallationPathConfig;
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.proprietary.security.configuration.ee.KeygenLicenseVerifier.License;
-import stirling.software.proprietary.security.configuration.ee.LicenseKeyChecker;
+import Chronicle.software.common.configuration.InstallationPathConfig;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.proprietary.security.configuration.ee.KeygenLicenseVerifier.License;
+import Chronicle.software.proprietary.security.configuration.ee.LicenseKeyChecker;
 
 /**
  * Tests for {@link ServerCertificateService}. Uses a {@link TempDir} for the keystore location
@@ -44,13 +44,13 @@ class ServerCertificateServiceTest {
     private ServerCertificateService service;
 
     private static final String KEYSTORE_FILE = "server-certificate.p12";
-    private static final String KEYSTORE_ALIAS = "stirling-pdf-server";
-    private static final String DEFAULT_PASSWORD = "stirling-pdf-server-cert";
+    private static final String KEYSTORE_ALIAS = "Chronicle-PDF-server";
+    private static final String DEFAULT_PASSWORD = "Chronicle-PDF-server-cert";
 
     @BeforeEach
     void setUp() {
         service = new ServerCertificateService(licenseKeyChecker, new ApplicationProperties());
-        // default: feature enabled, validity 365, org Stirling-PDF, no regenerate
+        // default: feature enabled, validity 365, org Chronicle-PDF, no regenerate
         ReflectionTestUtils.setField(service, "enabled", true);
         ReflectionTestUtils.setField(service, "organizationName", "Chronicle-PDF");
         ReflectionTestUtils.setField(service, "validityDays", 365);

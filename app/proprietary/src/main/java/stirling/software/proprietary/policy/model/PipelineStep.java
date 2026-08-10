@@ -1,9 +1,9 @@
-package stirling.software.proprietary.policy.model;
+package Chronicle.software.proprietary.policy.model;
 
 import java.util.Map;
 
 /**
- * A single tool invocation. {@code operation} is a Stirling endpoint path (e.g. {@code
+ * A single tool invocation. {@code operation} is a Chronicle endpoint path (e.g. {@code
  * /api/v1/misc/compress-pdf}) per the {@code InternalApiClient} convention; {@code parameters} are
  * scalar form fields.
  *

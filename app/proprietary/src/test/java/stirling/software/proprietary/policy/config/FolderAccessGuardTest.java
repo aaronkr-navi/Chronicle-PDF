@@ -1,4 +1,4 @@
-package stirling.software.proprietary.policy.config;
+package Chronicle.software.proprietary.policy.config;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -12,16 +12,16 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import org.springframework.core.env.StandardEnvironment;
 
-import stirling.software.common.configuration.InstallationPathConfig;
-import stirling.software.common.configuration.RuntimePathConfig;
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.proprietary.policy.model.InputSpec;
-import stirling.software.proprietary.policy.model.OutputSpec;
-import stirling.software.proprietary.policy.model.PipelineInput;
-import stirling.software.proprietary.policy.model.Policy;
-import stirling.software.proprietary.policy.source.InProcessSourceStore;
-import stirling.software.proprietary.policy.source.Source;
-import stirling.software.proprietary.policy.source.SourceStore;
+import Chronicle.software.common.configuration.InstallationPathConfig;
+import Chronicle.software.common.configuration.RuntimePathConfig;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.proprietary.policy.model.InputSpec;
+import Chronicle.software.proprietary.policy.model.OutputSpec;
+import Chronicle.software.proprietary.policy.model.PipelineInput;
+import Chronicle.software.proprietary.policy.model.Policy;
+import Chronicle.software.proprietary.policy.source.InProcessSourceStore;
+import Chronicle.software.proprietary.policy.source.Source;
+import Chronicle.software.proprietary.policy.source.SourceStore;
 
 /**
  * Tests for {@link FolderAccessGuard}: folder access is fail-closed, confined to the configured

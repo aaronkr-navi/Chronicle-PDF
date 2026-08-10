@@ -1,4 +1,4 @@
-package stirling.software.proprietary.mcp;
+package Chronicle.software.proprietary.mcp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -11,18 +11,18 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Profile;
 
-import stirling.software.proprietary.mcp.catalog.McpToolCatalog;
-import stirling.software.proprietary.mcp.engine.EngineCapabilityClient;
-import stirling.software.proprietary.mcp.security.McpSecurityConfig;
-import stirling.software.proprietary.mcp.tools.DescribeOperationTool;
-import stirling.software.proprietary.mcp.tools.McpOperationExecutor;
-import stirling.software.proprietary.mcp.tools.StirlingAiTool;
-import stirling.software.proprietary.mcp.tools.StirlingConvertTool;
-import stirling.software.proprietary.mcp.tools.StirlingDownloadTool;
-import stirling.software.proprietary.mcp.tools.StirlingMiscTool;
-import stirling.software.proprietary.mcp.tools.StirlingPagesTool;
-import stirling.software.proprietary.mcp.tools.StirlingSecurityTool;
-import stirling.software.proprietary.mcp.tools.StirlingUploadTool;
+import Chronicle.software.proprietary.mcp.catalog.McpToolCatalog;
+import Chronicle.software.proprietary.mcp.engine.EngineCapabilityClient;
+import Chronicle.software.proprietary.mcp.security.McpSecurityConfig;
+import Chronicle.software.proprietary.mcp.tools.DescribeOperationTool;
+import Chronicle.software.proprietary.mcp.tools.McpOperationExecutor;
+import Chronicle.software.proprietary.mcp.tools.StirlingAiTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingConvertTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingDownloadTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingMiscTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingPagesTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingSecurityTool;
+import Chronicle.software.proprietary.mcp.tools.StirlingUploadTool;
 
 /** Verifies MCP beans are gated behind {@code @ConditionalOnProperty(name="mcp.enabled")}. */
 class McpConditionalTest {

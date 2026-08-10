@@ -1,10 +1,10 @@
-package stirling.software.proprietary.mcp.security;
+package Chronicle.software.proprietary.mcp.security;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import stirling.software.common.model.ApplicationProperties;
+import Chronicle.software.common.model.ApplicationProperties;
 
 /**
  * Startup sanity-checks for MCP config; {@link McpSecurityConfig} logs the findings at boot so a
@@ -29,7 +29,7 @@ public final class McpConfigValidator {
         if ("apikey".equalsIgnoreCase(auth.getMode())) {
             findings.add(
                     info(
-                            "auth mode = apikey - clients send a Stirling API key via X-API-KEY (or"
+                            "auth mode = apikey - clients send a Chronicle API key via X-API-KEY (or"
                                     + " Authorization: Bearer <key>); no external IdP needed. The key"
                                     + " must belong to a provisioned, enabled account (Account -> API"
                                     + " Keys)."));
@@ -125,7 +125,7 @@ public final class McpConfigValidator {
                     warn(
                             "mcp.auth.username-claim='sub' with require-existing-account=true: many"
                                     + " IdPs (e.g. Entra ID, Google) set 'sub' to an opaque id that won't"
-                                    + " match a Stirling username. Set mcp.auth.username-claim to 'email'"
+                                    + " match a Chronicle username. Set mcp.auth.username-claim to 'email'"
                                     + " or 'preferred_username', or provision accounts keyed by sub."));
         }
 

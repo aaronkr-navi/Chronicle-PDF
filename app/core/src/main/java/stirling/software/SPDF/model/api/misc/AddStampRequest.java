@@ -1,4 +1,4 @@
-package stirling.software.SPDF.model.api.misc;
+package Chronicle.software.SPDF.model.api.misc;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import stirling.software.SPDF.model.api.PDFWithPageNums;
+import Chronicle.software.SPDF.model.api.PDFWithPageNums;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -19,7 +19,7 @@ public class AddStampRequest extends PDFWithPageNums {
             requiredMode = Schema.RequiredMode.REQUIRED)
     private String stampType;
 
-    @Schema(description = "The stamp text", defaultValue = "Stirling Software")
+    @Schema(description = "The stamp text", defaultValue = "Chronicle Software")
     private String stampText;
 
     @Schema(description = "The stamp image")

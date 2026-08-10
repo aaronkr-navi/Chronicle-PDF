@@ -1,4 +1,4 @@
-package stirling.software.proprietary.mcp.tools;
+package Chronicle.software.proprietary.mcp.tools;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
@@ -7,9 +7,9 @@ import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.common.service.FileStorage;
-import stirling.software.proprietary.mcp.McpCallContext;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.common.service.FileStorage;
+import Chronicle.software.proprietary.mcp.McpCallContext;
 
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;

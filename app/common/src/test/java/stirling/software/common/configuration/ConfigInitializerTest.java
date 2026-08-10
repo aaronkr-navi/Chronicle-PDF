@@ -1,11 +1,11 @@
-package stirling.software.common.configuration;
+package Chronicle.software.common.configuration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.snakeyaml.engine.v2.api.LoadSettings;
 
-import stirling.software.common.util.YamlHelper;
+import Chronicle.software.common.util.YamlHelper;
 
 class ConfigInitializerTest {
 
@@ -26,8 +26,8 @@ class ConfigInitializerTest {
                 customMetadata:
                   autoUpdateMetadata: false
                   author: username
-                  creator: Stirling-PDF
-                  producer: Stirling-PDF
+                  creator: Chronicle-PDF
+                  producer: Chronicle-PDF
             """;
 
     @Test

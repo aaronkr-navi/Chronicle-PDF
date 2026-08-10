@@ -1,11 +1,11 @@
-package stirling.software.proprietary.mcp.tools;
+package Chronicle.software.proprietary.mcp.tools;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
-import stirling.software.proprietary.mcp.catalog.McpToolCatalog;
-import stirling.software.proprietary.mcp.catalog.OperationCategory;
+import Chronicle.software.proprietary.mcp.catalog.McpToolCatalog;
+import Chronicle.software.proprietary.mcp.catalog.OperationCategory;
 
 import tools.jackson.databind.ObjectMapper;
 

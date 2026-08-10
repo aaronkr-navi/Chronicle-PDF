@@ -1,4 +1,4 @@
-package stirling.software.saas.payg.stripe;
+package Chronicle.software.saas.payg.stripe;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -61,7 +61,7 @@ public class StripeInvoiceDao {
     //
     // The LATERAL join walks the same subscription → subscription_items → prices
     // → products chain {@link StripeSubscriptionDao} uses to get the per-doc
-    // rate; here we use it to get the product NAME (e.g. "Stirling Processor
+    // rate; here we use it to get the product NAME (e.g. "Chronicle Processor
     // Plan") so the portal can render Stripe's row label rather than the
     // monospace invoice id. Falls back to {@code i.description}, then null.
     private static final String QUERY =

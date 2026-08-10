@@ -1,4 +1,4 @@
-package stirling.software.saas.payg.filter;
+package Chronicle.software.saas.payg.filter;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,8 +17,8 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.common.util.TempFile;
-import stirling.software.common.util.TempFileManager;
+import Chronicle.software.common.util.TempFile;
+import Chronicle.software.common.util.TempFileManager;
 
 /**
  * Extracts the PDF artefacts from a controller's response body for lineage OUTPUT recording. Two
@@ -94,7 +94,7 @@ public class PaygOutputExtractor {
         if (ZIP_CONTENT_TYPE.equalsIgnoreCase(mediaType)) {
             return extractZip(bodyPath);
         }
-        // Stirling-PDF tool endpoints sometimes set Content-Type to application/octet-stream (or
+        // Chronicle-PDF tool endpoints sometimes set Content-Type to application/octet-stream (or
         // no header at all) even when the body is a real PDF or ZIP — Spring's default
         // StreamingResponseBody path doesn't always negotiate content type. When the declared
         // Content-Type is missing or generic, sniff magic bytes in a single head-read so we don't

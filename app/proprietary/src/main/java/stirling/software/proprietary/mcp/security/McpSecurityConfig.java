@@ -1,4 +1,4 @@
-package stirling.software.proprietary.mcp.security;
+package Chronicle.software.proprietary.mcp.security;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -37,8 +37,8 @@ import jakarta.annotation.PostConstruct;
 
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.proprietary.security.service.UserService;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.proprietary.security.service.UserService;
 
 /**
  * MCP security chain: validates JWTs (JWKS + RFC 8707 audience), maps scope claims to authorities,
@@ -126,11 +126,11 @@ public class McpSecurityConfig {
                                             response.setStatus(401);
                                             response.setHeader(
                                                     "WWW-Authenticate",
-                                                    "Bearer realm=\"Stirling MCP (API key)\"");
+                                                    "Bearer realm=\"Chronicle MCP (API key)\"");
                                             response.setContentType("application/json");
                                             response.getWriter()
                                                     .write(
-                                                            "{\"error\":\"unauthorized\",\"message\":\"Provide a valid Stirling API key via the X-API-KEY header (or Authorization: Bearer <key>).\"}");
+                                                            "{\"error\":\"unauthorized\",\"message\":\"Provide a valid Chronicle API key via the X-API-KEY header (or Authorization: Bearer <key>).\"}");
                                         }))
                 .addFilterBefore(
                         new McpRequestSizeFilter(
@@ -168,7 +168,7 @@ public class McpSecurityConfig {
                                         .permitAll()
                                         .anyRequest()
                                         .authenticated())
-                // Cap body size pre-auth, then bind the validated token to a Stirling user after
+                // Cap body size pre-auth, then bind the validated token to a Chronicle user after
                 // the bearer filter.
                 .addFilterBefore(
                         new McpRequestSizeFilter(

@@ -1,4 +1,4 @@
-package stirling.software.saas.payg.filter;
+package Chronicle.software.saas.payg.filter;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,9 +14,9 @@ import java.util.zip.ZipOutputStream;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.common.util.TempFileManager;
-import stirling.software.common.util.TempFileRegistry;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.common.util.TempFileManager;
+import Chronicle.software.common.util.TempFileRegistry;
 
 class PaygOutputExtractorTest {
 
@@ -113,7 +113,7 @@ class PaygOutputExtractorTest {
 
     @Test
     void octetStreamWithPdfMagic_treatedAsPdf(@TempDir Path tmp) throws IOException {
-        // Stirling tool endpoints sometimes set Content-Type to
+        // Chronicle tool endpoints sometimes set Content-Type to
         // application/octet-stream for streamed responses even when the body
         // is a real PDF. The extractor must sniff magic bytes when the
         // declared Content-Type is generic.

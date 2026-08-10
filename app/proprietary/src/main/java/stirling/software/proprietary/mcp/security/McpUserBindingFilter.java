@@ -1,4 +1,4 @@
-package stirling.software.proprietary.mcp.security;
+package Chronicle.software.proprietary.mcp.security;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -18,15 +18,15 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.proprietary.security.model.User;
-import stirling.software.proprietary.security.service.UserService;
+import Chronicle.software.proprietary.security.model.User;
+import Chronicle.software.proprietary.security.service.UserService;
 
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;
 
 /**
- * Binds an MCP-validated JWT to a provisioned Stirling user: optionally rejects subjects with no
- * enabled account, then rebinds the principal to the canonical Stirling username (scope authorities
+ * Binds an MCP-validated JWT to a provisioned Chronicle user: optionally rejects subjects with no
+ * enabled account, then rebinds the principal to the canonical Chronicle username (scope authorities
  * only) so audit/metering attribute correctly.
  */
 @Slf4j
@@ -63,7 +63,7 @@ public class McpUserBindingFilter extends OncePerRequestFilter {
                         "Token is missing the '"
                                 + usernameClaim
                                 + "' claim used to map to a"
-                                + " Stirling user.");
+                                + " Chronicle user.");
                 return;
             }
 
@@ -74,18 +74,18 @@ public class McpUserBindingFilter extends OncePerRequestFilter {
                 Optional<User> account = userService.findByUsernameIgnoreCase(username);
                 if (account.isEmpty() || !account.get().isEnabled()) {
                     log.warn(
-                            "MCP access denied: token subject '{}' has no active Stirling account",
+                            "MCP access denied: token subject '{}' has no active Chronicle account",
                             sanitizeForLog(username));
                     reject(
                             response,
-                            "MCP access requires a provisioned, enabled Stirling account for this"
+                            "MCP access requires a provisioned, enabled Chronicle account for this"
                                     + " subject.");
                     return;
                 }
                 boundUsername = account.get().getUsername();
             }
 
-            // Rebind to the Stirling username, carrying only the OAuth scope authorities.
+            // Rebind to the Chronicle username, carrying only the OAuth scope authorities.
             UsernamePasswordAuthenticationToken bound =
                     new UsernamePasswordAuthenticationToken(
                             boundUsername, null, jwtAuth.getAuthorities());

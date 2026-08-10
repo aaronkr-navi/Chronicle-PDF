@@ -1,4 +1,4 @@
-package stirling.software.saas.ai.controller;
+package Chronicle.software.saas.ai.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -23,11 +23,11 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.saas.ai.model.AiCreateSession;
-import stirling.software.saas.ai.model.AiCreateSessionStatus;
-import stirling.software.saas.ai.service.AiCreateSessionService;
-import stirling.software.saas.payg.cap.RequiresFeature;
-import stirling.software.saas.payg.model.FeatureGate;
+import Chronicle.software.saas.ai.model.AiCreateSession;
+import Chronicle.software.saas.ai.model.AiCreateSessionStatus;
+import Chronicle.software.saas.ai.service.AiCreateSessionService;
+import Chronicle.software.saas.payg.cap.RequiresFeature;
+import Chronicle.software.saas.payg.model.FeatureGate;
 
 @RestController
 @Profile("saas")
@@ -40,7 +40,7 @@ import stirling.software.saas.payg.model.FeatureGate;
 public class AiCreateInternalController {
 
     private final AiCreateSessionService sessionService;
-    // Inlined: Stirling's parent build uses Jackson 3 (tools.jackson), no Jackson 2 ObjectMapper
+    // Inlined: Chronicle's parent build uses Jackson 3 (tools.jackson), no Jackson 2 ObjectMapper
     // bean in the context. Stateless usage, so a fresh instance per controller is fine.
     private final ObjectMapper objectMapper = new ObjectMapper();
 

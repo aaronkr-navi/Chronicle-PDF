@@ -302,12 +302,12 @@ const IP_ALLOWLIST: IpAllowEntry[] = [
   },
 ];
 
-// Stirling-managed key custody — what free/pro tiers run on. No key ops on the
-// customer side, so the provider/key fields describe Stirling's own KMS.
+// Chronicle-managed key custody — what free/pro tiers run on. No key ops on the
+// customer side, so the provider/key fields describe Chronicle's own KMS.
 const KEY_MANAGED: KeyManagement = {
   mode: "managed",
   provider: "Chronicle KMS",
-  keyId: "arn:stirling:kms:us-east-1:platform/cmk-default",
+  keyId: "arn:Chronicle:kms:us-east-1:platform/cmk-default",
   algorithm: "AES-256-GCM",
   lastRotated: "32 days ago",
   rotationPolicy: "Automatic · every 90 days",
@@ -417,7 +417,7 @@ const ATTESTATIONS_FREE: ComplianceAttestation[] = [
 export function securityFor(tier: Tier): SecurityConfig {
   if (tier === "free") {
     return {
-      accessPolicy: "stirling",
+      accessPolicy: "Chronicle",
       dataResidency: "us",
       certs: CERTS_FREE,
       ipAllowlist: [],
@@ -431,7 +431,7 @@ export function securityFor(tier: Tier): SecurityConfig {
       dataResidency: "us",
       certs: CERTS_FULL,
       ipAllowlist: IP_ALLOWLIST.slice(0, 2),
-      // Pro stays on Stirling-managed keys; BYOK/HYOK is an enterprise lever.
+      // Pro stays on Chronicle-managed keys; BYOK/HYOK is an enterprise lever.
       keyManagement: KEY_MANAGED,
       attestations: ATTESTATIONS_FREE,
     };
@@ -452,9 +452,9 @@ export function securityFor(tier: Tier): SecurityConfig {
 
 const PROVIDERS_FULL: StorageProvider[] = [
   {
-    id: "stirling",
+    id: "Chronicle",
     name: "Chronicle Cloud",
-    kind: "stirling",
+    kind: "Chronicle",
     connected: true,
     detail: "Primary vault · us-east-1",
     usedGb: 612,
@@ -546,7 +546,7 @@ const AUDIT_EVENTS_ALL: AuditEvent[] = [
     timestamp: "2026-07-07 17:58:44",
     category: "config",
     action: "Admin settings changed",
-    actor: "admin@stirlingpdf.com",
+    actor: "admin@ChroniclePDF.com",
     target: "/api/v1/admin/settings/update",
     status: "info",
     latencyMs: 210,
@@ -656,7 +656,7 @@ const AUDIT_EVENTS_ALL: AuditEvent[] = [
     timestamp: "2026-07-07 13:30:44",
     category: "config",
     action: "Admin settings changed",
-    actor: "admin@stirlingpdf.com",
+    actor: "admin@ChroniclePDF.com",
     target: "/api/v1/admin/team/update",
     status: "info",
     latencyMs: 320,
@@ -701,7 +701,7 @@ const MODELS_ALL: ModelEntry[] = [
   {
     id: "m-extract-v3",
     name: "Chronicle Extract",
-    provider: "stirling",
+    provider: "Chronicle",
     type: "extraction",
     status: "active",
     latencyMs: 142,
@@ -714,7 +714,7 @@ const MODELS_ALL: ModelEntry[] = [
   {
     id: "m-classify-v2",
     name: "Chronicle Classify",
-    provider: "stirling",
+    provider: "Chronicle",
     type: "classification",
     status: "active",
     latencyMs: 61,
@@ -727,7 +727,7 @@ const MODELS_ALL: ModelEntry[] = [
   {
     id: "m-ocr-tess",
     name: "Chronicle OCR",
-    provider: "stirling",
+    provider: "Chronicle",
     type: "ocr",
     status: "active",
     latencyMs: 318,
@@ -793,7 +793,7 @@ const MODELS_ALL: ModelEntry[] = [
 ];
 
 export function modelsFor(tier: Tier): ModelEntry[] {
-  // Free sees only the two managed Stirling models it can actually use.
+  // Free sees only the two managed Chronicle models it can actually use.
   if (tier === "free")
     return MODELS_ALL.filter(
       (m) => m.id === "m-extract-v3" || m.id === "m-classify-v2",

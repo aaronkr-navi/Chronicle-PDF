@@ -51,10 +51,10 @@ security:
     provider: "" # The name of your Provider
     autoCreateUser: true # set to 'true' to allow auto-creation of non-existing users
     blockRegistration: false # set to 'true' to deny login with SSO without prior registration by an admin
-    registrationId: stirling # The name of your Service Provider (SP) app name. Should match the name in the path for your SSO & SLO URLs
+    registrationId: Chronicle # The name of your Service Provider (SP) app name. Should match the name in the path for your SSO & SLO URLs
     idpMetadataUri: https://dev-XXXXXXXX.okta.com/app/externalKey/sso/saml/metadata # The uri for your Provider's metadata
-    idpSingleLoginUrl: https://dev-XXXXXXXX.okta.com/app/dev-XXXXXXXX_stirlingpdf_1/externalKey/sso/saml # The URL for initiating SSO. Provided by your Provider
-    idpSingleLogoutUrl: https://dev-XXXXXXXX.okta.com/app/dev-XXXXXXXX_stirlingpdf_1/externalKey/slo/saml # The URL for initiating SLO. Provided by your Provider
+    idpSingleLoginUrl: https://dev-XXXXXXXX.okta.com/app/dev-XXXXXXXX_ChroniclePDF_1/externalKey/sso/saml # The URL for initiating SSO. Provided by your Provider
+    idpSingleLogoutUrl: https://dev-XXXXXXXX.okta.com/app/dev-XXXXXXXX_ChroniclePDF_1/externalKey/slo/saml # The URL for initiating SLO. Provided by your Provider
     idpIssuer: "" # The ID of your Provider
     idpCert: classpath:okta.cert # The certificate your Provider will use to authenticate your app's SAML authentication requests. Provided by your Provider
     privateKey: classpath:saml-private-key.key # Your private key. Generated from your keypair
@@ -96,8 +96,8 @@ premium:
     customMetadata:
       autoUpdateMetadata: false
       author: username
-      creator: Stirling-PDF
-      producer: Stirling-PDF
+      creator: Chronicle-PDF
+      producer: Chronicle-PDF
     googleDrive:
       enabled: false # Enable Google Drive file picker integration
       clientId: "" # Google OAuth 2.0 client ID (obtain from Google Cloud Console)
@@ -158,8 +158,8 @@ telegram:
       processing: true # set to 'false' to hide/suppress processing messages to users (to avoid spam)
 
 legal:
-  termsAndConditions: https://www.stirling.com/legal/terms-of-service # URL to the terms and conditions of your application (e.g. https://example.com/terms). Empty string to disable or filename to load from local file in static folder
-  privacyPolicy: https://www.stirling.com/legal/privacy-policy # URL to the privacy policy of your application (e.g. https://example.com/privacy). Empty string to disable or filename to load from local file in static folder
+  termsAndConditions: https://www.Chronicle.com/legal/terms-of-service # URL to the terms and conditions of your application (e.g. https://example.com/terms). Empty string to disable or filename to load from local file in static folder
+  privacyPolicy: https://www.Chronicle.com/legal/privacy-policy # URL to the privacy policy of your application (e.g. https://example.com/privacy). Empty string to disable or filename to load from local file in static folder
   accessibilityStatement: "" # URL to the accessibility statement of your application (e.g. https://example.com/accessibility). Empty string to disable or filename to load from local file in static folder
   cookiePolicy: "" # URL to the cookie policy of your application (e.g. https://example.com/cookie). Empty string to disable or filename to load from local file in static folder
   impressum: "" # URL to the impressum of your application (e.g. https://example.com/impressum). Empty string to disable or filename to load from local file in static folder
@@ -194,8 +194,8 @@ system:
     pageFormat: A4 # Page format for converted PDFs: 'keep' (original image dimensions), 'A4' (A4 page size), or 'letter' (US Letter page size). Only applies when convertToPdf is true.
     stretchToFit: false # Whether to stretch images to fill the entire page (may distort aspect ratio). If false, images are centered with preserved aspect ratio. Only applies when convertToPdf is true.
   serverCertificate:
-    enabled: true # Enable server-side certificate for "Sign with Stirling-PDF" option
-    organizationName: Stirling PDF Inc # Organization name for generated certificates
+    enabled: true # Enable server-side certificate for "Sign with Chronicle-PDF" option
+    organizationName: Chronicle PDF Inc # Organization name for generated certificates
     validity: 365 # Certificate validity in days
     regenerateOnStartup: false # Generate new certificate on each startup
   html:
@@ -232,10 +232,10 @@ system:
       soffice: "" # Defaults to /usr/bin/soffice
   fileUploadLimit: "" # Defaults to "". No limit when string is empty. Set a number, between 0 and 999, followed by one of the following strings to set a limit. "KB", "MB", "GB".
   tempFileManagement:
-    baseTmpDir: "" # Defaults to java.io.tmpdir/stirling-pdf
+    baseTmpDir: "" # Defaults to java.io.tmpdir/Chronicle-PDF
     libreofficeDir: "" # Defaults to tempFileManagement.baseTmpDir/libreoffice
     systemTempDir: "" # Only used if cleanupSystemTemp is true
-    prefix: stirling-pdf- # Prefix for temp file names
+    prefix: Chronicle-PDF- # Prefix for temp file names
     maxAgeHours: 24 # Maximum age in hours before temp files are cleaned up
     cleanupIntervalMinutes: 30 # How often to run cleanup (in minutes)
     startupCleanup: true # Clean up old temp files on startup
@@ -297,7 +297,7 @@ storage:
   # ====================================================================================
   # Encrypts stored files (AES-256 envelope encryption, per-team keys). The master key is
   # resolved in this order:
-  #   1. stirling.security.fileEncryptionKey property
+  #   1. Chronicle.security.fileEncryptionKey property
   #   2. STIRLING_FILE_ENCRYPTION_KEY environment variable
   #   3. an auto-generated configs/file-encryption.key (single-node only; cluster mode
   #      requires an explicitly shared key on every node)
@@ -322,7 +322,7 @@ autoPipeline:
     allowedExtensions: [] # Optional extension allow-list (case-insensitive, without the leading dot). Empty list = accept all extensions. Example: ["pdf", "tiff"]
 
 ui:
-  appNameNavbar: "" # custom app/brand name. NOTE: no longer shown in the navbar (the navbar renders the logo). It IS used as the browser tab title and as the TOTP/2FA issuer label in authenticator apps. Empty falls back to "Stirling PDF"
+  appNameNavbar: "" # custom app/brand name. NOTE: no longer shown in the navbar (the navbar renders the logo). It IS used as the browser tab title and as the TOTP/2FA issuer label in authenticator apps. Empty falls back to "Chronicle PDF"
   logoStyle: classic # Options: 'classic' (default - classic S icon) or 'modern' (minimalist logo)
   languages: [] # If empty, all languages are enabled. To restrict to specific languages, use a whitelist like ["de_DE", "pl_PL", "sv_SE"]. Empty list or not restricting any languages will enable all available languages.
   defaultHideUnavailableTools: false # Default user preference: hide disabled tools instead of greying them out
@@ -421,7 +421,7 @@ policies:
   # security boundary. Leave allowedFolderRoots empty (default) to disable folder sources/outputs,
   # other than from directories that are always permitted like server file-storage and watched folders.
   # List absolute directories to permit folder access within them.
-  # Stirling's own config directory is always off-limits, and folder access is always
+  # Chronicle's own config directory is always off-limits, and folder access is always
   # disabled in SaaS mode.
   allowedFolderRoots: [] # e.g. ["/data/inbox", "/data/outbox"]
   scheduleSweepSeconds: 60 # How often (seconds) scheduled policies are checked for being due
@@ -430,7 +430,7 @@ policies:
   streamTimeoutMs: 1800000 # SSE timeout (ms) for live run-progress streams
   runExpiryMinutes: 30 # How long (minutes) a finished run's in-memory state is kept before eviction
 
-# Model Context Protocol (MCP) server. Exposes Stirling's PDF tools (grouped by namespace)
+# Model Context Protocol (MCP) server. Exposes Chronicle's PDF tools (grouped by namespace)
 # plus the AI agents to MCP clients (Inspector, Claude Desktop, custom). OAuth-protected.
 # Disabled by default - enable explicitly per deployment after configuring mcp.auth.
 mcp:
@@ -441,7 +441,7 @@ mcp:
   allowedOperations: [] # Tool allow-list (operation ids, e.g. ['compress-pdf']). Empty = all. When set, ONLY these are exposed over MCP.
   blockedOperations: [] # Tool deny-list (operation ids). Always removed from MCP even if otherwise allowed.
   auth:
-    mode: oauth # 'oauth' (full OAuth2 resource server) or 'apikey' (Stirling per-user API key via X-API-KEY header; no external IdP needed - the low-friction self-host option)
+    mode: oauth # 'oauth' (full OAuth2 resource server) or 'apikey' (Chronicle per-user API key via X-API-KEY header; no external IdP needed - the low-friction self-host option)
     issuerUri: "" # OAuth2 issuer URI (e.g. http://localhost:9000). Required when mode=oauth.
     jwksUri: "" # JWKS URI. Blank -> derived from issuer's /.well-known/openid-configuration.
     resourceId: "" # RFC 8707 resource identifier of THIS MCP server (e.g. http://localhost:8080/mcp).
@@ -449,8 +449,8 @@ mcp:
     acceptedAudiences: [] # Extra `aud` values accepted on top of resourceId. Empty = strict RFC 8707.
                           # For IdPs that cannot mint resource audiences (Supabase OAuth server always
                           # issues aud=authenticated) list that audience here, e.g. ['authenticated'].
-    usernameClaim: sub # JWT claim matched against a Stirling username (e.g. 'sub', 'email', 'preferred_username')
-    requireExistingAccount: true # Reject tokens whose subject has no enabled Stirling account (recommended)
+    usernameClaim: sub # JWT claim matched against a Chronicle username (e.g. 'sub', 'email', 'preferred_username')
+    requireExistingAccount: true # Reject tokens whose subject has no enabled Chronicle account (recommended)
   engineCapabilityRefreshMinutes: 5 # How often to refresh the AI capabilities manifest from the engine
 
 # Cluster configuration. NOT YET ENABLED - scaffolding for later work. Leave at defaults.

@@ -1,4 +1,4 @@
-package stirling.software.proprietary.mcp.tools;
+package Chronicle.software.proprietary.mcp.tools;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.proprietary.mcp.McpCallContext;
-import stirling.software.proprietary.mcp.McpTool;
-import stirling.software.proprietary.mcp.catalog.McpToolCatalog;
-import stirling.software.proprietary.mcp.catalog.OperationCategory;
-import stirling.software.proprietary.mcp.catalog.OperationMeta;
-import stirling.software.proprietary.service.AiEngineClient;
+import Chronicle.software.proprietary.mcp.McpCallContext;
+import Chronicle.software.proprietary.mcp.McpTool;
+import Chronicle.software.proprietary.mcp.catalog.McpToolCatalog;
+import Chronicle.software.proprietary.mcp.catalog.OperationCategory;
+import Chronicle.software.proprietary.mcp.catalog.OperationMeta;
+import Chronicle.software.proprietary.service.AiEngineClient;
 
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
@@ -50,7 +50,7 @@ public class StirlingAiTool implements McpTool {
 
     @Override
     public String description() {
-        return "Invoke a Stirling AI agent capability (Q&A about a PDF, edit-plan generation,"
+        return "Invoke a Chronicle AI agent capability (Q&A about a PDF, edit-plan generation,"
                 + " inline comments, math audit, draft-spec helper). Call"
                 + " chronicle_describe_operation with the chosen capability id to get its"
                 + " parameters schema before invoking this tool. Some capabilities return content"
@@ -84,7 +84,7 @@ public class StirlingAiTool implements McpTool {
         fileId.put("type", "string");
         fileId.put(
                 "description",
-                "Reference to a previously-uploaded PDF in Stirling's job store. Required for"
+                "Reference to a previously-uploaded PDF in Chronicle's job store. Required for"
                         + " capabilities that consume a document.");
 
         ArrayNode required = schema.putArray("required");

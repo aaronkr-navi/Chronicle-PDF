@@ -1,4 +1,4 @@
-package stirling.software.saas.payg.test;
+package Chronicle.software.saas.payg.test;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.MediaType;
@@ -12,8 +12,8 @@ import io.swagger.v3.oas.annotations.Hidden;
 
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.common.annotations.AutoJobPostMapping;
-import stirling.software.common.enumeration.ResourceWeight;
+import Chronicle.software.common.annotations.AutoJobPostMapping;
+import Chronicle.software.common.enumeration.ResourceWeight;
 
 /**
  * Cucumber-only force-5xx endpoint. Gated behind the {@code payg-cucumber} Spring profile so the
@@ -21,7 +21,7 @@ import stirling.software.common.enumeration.ResourceWeight;
  * (via {@code SPRING_PROFILES_ACTIVE=saas,payg-cucumber} in {@code docker-compose-saas.yml}).
  *
  * <p>Purpose: drive the PAYG filter+interceptor's 5xx-first-step branch end-to-end. No reliably-
- * 5xx-ing real tool endpoint exists in current Stirling — every malformed input is caught as 4xx by
+ * 5xx-ing real tool endpoint exists in current Chronicle — every malformed input is caught as 4xx by
  * {@code GlobalExceptionHandler}. Without this stub the only way to exercise the refund path was a
  * manual procedure (a temporary throw endpoint added, run, removed) documented in {@code
  * notes/PAYG_DESIGN.md} §7.5.2 M1. This controller replaces that procedure with a profile- gated

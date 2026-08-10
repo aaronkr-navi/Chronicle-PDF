@@ -1,4 +1,4 @@
-package stirling.software.proprietary.security.service;
+package Chronicle.software.proprietary.security.service;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -9,7 +9,7 @@ import java.util.HexFormat;
 /** Generates opaque API-key secrets and hashes them for storage/lookup. */
 public final class ApiKeyHasher {
 
-    /** Human-recognisable prefix so a leaked string is identifiable as a Stirling API key. */
+    /** Human-recognisable prefix so a leaked string is identifiable as a Chronicle API key. */
     public static final String KEY_PREFIX = "sk_";
 
     /** Chars of the raw key kept for non-secret display (includes the {@code sk_} prefix). */

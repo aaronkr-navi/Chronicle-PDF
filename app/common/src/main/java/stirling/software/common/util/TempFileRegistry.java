@@ -1,4 +1,4 @@
-package stirling.software.common.util;
+package Chronicle.software.common.util;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -17,7 +17,7 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Central registry for tracking temporary files created by Stirling-PDF. Maintains a thread-safe
+ * Central registry for tracking temporary files created by Chronicle-PDF. Maintains a thread-safe
  * collection of paths with their creation timestamps.
  */
 @Slf4j

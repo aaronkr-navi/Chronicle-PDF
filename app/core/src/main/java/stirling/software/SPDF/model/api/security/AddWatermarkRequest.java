@@ -1,4 +1,4 @@
-package stirling.software.SPDF.model.api.security;
+package Chronicle.software.SPDF.model.api.security;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -10,7 +10,7 @@ import jakarta.validation.constraints.Min;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import stirling.software.common.model.api.PDFFile;
+import Chronicle.software.common.model.api.PDFFile;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -22,7 +22,7 @@ public class AddWatermarkRequest extends PDFFile {
             requiredMode = Schema.RequiredMode.REQUIRED)
     private String watermarkType;
 
-    @Schema(description = "The watermark text", defaultValue = "Stirling Software")
+    @Schema(description = "The watermark text", defaultValue = "Chronicle Software")
     private String watermarkText;
 
     @Schema(description = "The watermark image")

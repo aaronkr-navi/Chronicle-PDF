@@ -1,8 +1,8 @@
-package stirling.software.proprietary.mcp;
+package Chronicle.software.proprietary.mcp;
 
 import java.util.Set;
 
-/** Per-call context: resolved Stirling identity and granted scopes for an {@link McpTool#call}. */
+/** Per-call context: resolved Chronicle identity and granted scopes for an {@link McpTool#call}. */
 public record McpCallContext(
         String stirlingUserId, Set<String> grantedScopes, boolean scopesEnabled) {
 

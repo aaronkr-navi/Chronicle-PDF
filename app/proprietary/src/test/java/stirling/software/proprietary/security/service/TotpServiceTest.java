@@ -1,4 +1,4 @@
-package stirling.software.proprietary.security.service;
+package Chronicle.software.proprietary.security.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -12,8 +12,8 @@ import java.util.regex.Pattern;
 
 import org.junit.jupiter.api.Test;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.proprietary.security.util.Base32Codec;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.proprietary.security.util.Base32Codec;
 
 class TotpServiceTest {
 
@@ -40,12 +40,12 @@ class TotpServiceTest {
 
     @Test
     void buildOtpAuthUriIncludesIssuerAndUsername() {
-        TotpService service = buildService("Stirling Test");
+        TotpService service = buildService("Chronicle Test");
 
         String uri = service.buildOtpAuthUri("user@example.com", "SECRET");
 
-        assertTrue(uri.contains("issuer=Stirling%20Test"));
-        assertTrue(uri.contains("Stirling%20Test%3Auser%40example.com"));
+        assertTrue(uri.contains("issuer=Chronicle%20Test"));
+        assertTrue(uri.contains("Chronicle%20Test%3Auser%40example.com"));
     }
 
     @Test
@@ -86,7 +86,7 @@ class TotpServiceTest {
 
         String uri = service.buildOtpAuthUri("user@example.com", "SECRET");
 
-        assertTrue(uri.contains("issuer=Stirling%20PDF"));
+        assertTrue(uri.contains("issuer=Chronicle%20PDF"));
     }
 
     private String generateCode(TotpService service, byte[] secretBytes, long timeStep)

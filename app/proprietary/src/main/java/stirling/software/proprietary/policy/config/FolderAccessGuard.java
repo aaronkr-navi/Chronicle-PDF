@@ -1,4 +1,4 @@
-package stirling.software.proprietary.policy.config;
+package Chronicle.software.proprietary.policy.config;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -9,11 +9,11 @@ import java.util.Optional;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
-import stirling.software.common.configuration.InstallationPathConfig;
-import stirling.software.common.configuration.RuntimePathConfig;
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.proprietary.policy.model.Policy;
-import stirling.software.proprietary.policy.source.SourceStore;
+import Chronicle.software.common.configuration.InstallationPathConfig;
+import Chronicle.software.common.configuration.RuntimePathConfig;
+import Chronicle.software.common.model.ApplicationProperties;
+import Chronicle.software.proprietary.policy.model.Policy;
+import Chronicle.software.proprietary.policy.source.SourceStore;
 
 /**
  * Authority on which filesystem locations a policy may read/write. Checked at save time and again
@@ -23,7 +23,7 @@ import stirling.software.proprietary.policy.source.SourceStore;
  *   <li>denied entirely under the {@code saas} profile;
  *   <li>Chronicle's own config dir always rejected, even if an allowed root were misconfigured to
  *       contain it;
- *   <li>Stirling-owned "implied" roots are always permitted (even with none configured): the local
+ *   <li>Chronicle-owned "implied" roots are always permitted (even with none configured): the local
  *       server file-storage directory when that storage provider is enabled, and the pipeline
  *       watched-folder directories, so automations use them without the admin listing them;
  *   <li>must resolve within {@code policies.allowedFolderRoots}; none configured means all denied.
@@ -74,10 +74,10 @@ public class FolderAccessGuard {
         for (Path protectedRoot : protectedRoots) {
             if (normalized.startsWith(protectedRoot)) {
                 throw new IllegalArgumentException(
-                        "folder may not point inside a protected Stirling directory");
+                        "folder may not point inside a protected Chronicle directory");
             }
         }
-        // Stirling-owned implied roots are always permitted, even with no configured roots, so
+        // Chronicle-owned implied roots are always permitted, even with no configured roots, so
         // automations work against them out of the box.
         if (impliedRoots.stream().anyMatch(root -> normalized.startsWith(root.path()))) {
             return normalized;
@@ -94,7 +94,7 @@ public class FolderAccessGuard {
         return normalized;
     }
 
-    /** The Stirling-owned directories always permitted, with a reason key for each (read-only). */
+    /** The Chronicle-owned directories always permitted, with a reason key for each (read-only). */
     public List<ImpliedRoot> impliedRoots() {
         return impliedRoots;
     }
@@ -112,7 +112,7 @@ public class FolderAccessGuard {
     }
 
     /**
-     * Stirling-owned directories always permitted regardless of {@code allowedFolderRoots}, so
+     * Chronicle-owned directories always permitted regardless of {@code allowedFolderRoots}, so
      * folder automations work against them out of the box.
      */
     private static List<ImpliedRoot> impliedRoots(

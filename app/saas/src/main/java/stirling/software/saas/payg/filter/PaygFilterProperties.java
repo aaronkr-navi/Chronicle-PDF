@@ -1,4 +1,4 @@
-package stirling.software.saas.payg.filter;
+package Chronicle.software.saas.payg.filter;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Profile;
@@ -41,7 +41,7 @@ public class PaygFilterProperties {
         /**
          * Ceiling for OUTPUT recording. Responses larger than this skip the per-PDF hash + ZIP
          * unpack — the bytes still flowed through to the client unmodified, only lineage capture is
-         * dropped. Default 500 MiB is generous for the largest realistic Stirling responses (full
+         * dropped. Default 500 MiB is generous for the largest realistic Chronicle responses (full
          * split-to-ZIP on a 1000-page document) while preventing pathological cases from tying up
          * the interceptor for minutes. Set to {@code null} for "no ceiling at all".
          */

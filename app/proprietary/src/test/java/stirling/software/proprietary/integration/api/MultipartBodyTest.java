@@ -1,4 +1,4 @@
-package stirling.software.proprietary.integration.api;
+package Chronicle.software.proprietary.integration.api;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

@@ -1,4 +1,4 @@
-package stirling.software.proprietary.security.controller.api;
+package Chronicle.software.proprietary.security.controller.api;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,7 +27,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.common.configuration.RuntimePathConfig;
+import Chronicle.software.common.configuration.RuntimePathConfig;
 
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
@@ -154,7 +154,7 @@ public class UIDataTessdataController {
             URL url = URI.create(downloadUrl).toURL();
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
-            connection.setRequestProperty("User-Agent", "Stirling-PDF-App");
+            connection.setRequestProperty("User-Agent", "Chronicle-PDF-App");
             connection.setRequestProperty("Accept", "application/octet-stream");
             connection.setConnectTimeout(5000);
             connection.setReadTimeout(30000);
@@ -203,7 +203,7 @@ public class UIDataTessdataController {
             URL url = URI.create(apiUrl).toURL();
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
-            connection.setRequestProperty("User-Agent", "Stirling-PDF-App");
+            connection.setRequestProperty("User-Agent", "Chronicle-PDF-App");
             connection.setRequestProperty("Accept", "application/vnd.github+json");
             connection.setConnectTimeout(5000);
             connection.setReadTimeout(30000);

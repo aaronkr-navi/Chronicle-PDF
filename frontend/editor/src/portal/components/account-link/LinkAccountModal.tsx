@@ -29,7 +29,7 @@ interface Props {
 }
 
 /**
- * In-app account-link login. Signs the admin in to their Stirling (SaaS) account
+ * In-app account-link login. Signs the admin in to their Chronicle (SaaS) account
  * via the shared Supabase login (SSO + email/password), then hands the resulting
  * session to the caller to register this instance. No popup; the device secret
  * never reaches the browser. SSO redirects away and is finished by useAccountLink

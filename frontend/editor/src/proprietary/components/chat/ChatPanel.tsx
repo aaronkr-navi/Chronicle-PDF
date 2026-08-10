@@ -40,7 +40,7 @@ import {
 } from "@app/components/chat/ChatContext";
 import { formatRelativeTime } from "@app/utils/timeUtils";
 import { useTranslatedToolCatalog } from "@app/data/useTranslatedToolRegistry";
-import { StirlingLogoAnimated } from "@app/components/agents/StirlingLogoAnimated";
+import { ChronicleLogoAnimated } from "@app/components/agents/ChronicleLogoAnimated";
 import { BrandMark } from "@app/components/shared/BrandMark";
 import { Logo } from "@app/ui/Logo";
 import { PanelHeader } from "@app/ui/PanelHeader";
@@ -201,7 +201,7 @@ function ProgressLogDisplay({
   return (
     <div className="chat-progress-live">
       <span className="chat-progress-live__logo">
-        <StirlingLogoAnimated size={18} />
+        <ChronicleLogoAnimated size={18} />
       </span>
       <span className="chat-progress-live__label">{label}</span>
       {current && (

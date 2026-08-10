@@ -1,4 +1,4 @@
-package stirling.software.common.configuration;
+package Chronicle.software.common.configuration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.io.TempDir;
 import org.mockito.MockedStatic;
 import org.snakeyaml.engine.v2.api.LoadSettings;
 
-import stirling.software.common.util.YamlHelper;
+import Chronicle.software.common.util.YamlHelper;
 
 class ConfigInitializerMoreTest {
 
@@ -39,8 +39,8 @@ class ConfigInitializerMoreTest {
                 customMetadata:
                   autoUpdateMetadata: false
                   author: username
-                  creator: Stirling-PDF
-                  producer: Stirling-PDF
+                  creator: Chronicle-PDF
+                  producer: Chronicle-PDF
             """;
 
     @Nested

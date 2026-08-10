@@ -1,4 +1,4 @@
-# Stirling-PDF backend-only image — JAR built with -PbuildWithFrontend=false, UI ships separately.
+# Chronicle-PDF backend-only image — JAR built with -PbuildWithFrontend=false, UI ships separately.
 
 ARG BASE_VERSION=1.0.2@sha256:c7698687f486707ddef9e0298587ca8b44c4e96185e1bdb0c3d119eb2bf9a82e
 ARG BASE_IMAGE=chronicle-pdf-base:${BASE_VERSION}
@@ -77,10 +77,10 @@ RUN set -eux; \
     ln -s /customFiles /app/customFiles; \
     ln -s /pipeline /app/pipeline; \
     ln -s /storage /app/storage; \
-    chown -h stirlingpdfuser:stirlingpdfgroup /app/logs /app/configs /app/customFiles /app/pipeline /app/storage; \
-    chown stirlingpdfuser:stirlingpdfgroup /app; \
-    chmod 750 /tmp/stirling-pdf; \
-    chmod 750 /tmp/stirling-pdf/heap_dumps; \
+    chown -h ChroniclePDFuser:ChroniclePDFgroup /app/logs /app/configs /app/customFiles /app/pipeline /app/storage; \
+    chown ChroniclePDFuser:ChroniclePDFgroup /app; \
+    chmod 750 /tmp/Chronicle-PDF; \
+    chmod 750 /tmp/Chronicle-PDF/heap_dumps; \
     fc-cache -f
 
 # Version file for scripts (init-without-ocr.sh reads /etc/stirling_version).
@@ -93,16 +93,16 @@ ENV VERSION_TAG=$VERSION_TAG \
     _JVM_OPTS_BALANCED="-XX:+ExitOnOutOfMemoryError -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/configs/heap_dumps -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:G1HeapRegionSize=4m -XX:G1PeriodicGCInterval=60000 -XX:+UseStringDeduplication -XX:+UseCompactObjectHeaders -XX:+ExplicitGCInvokesConcurrent -Dspring.threads.virtual.enabled=true -Djava.awt.headless=true" \
     _JVM_OPTS_PERFORMANCE="-XX:+ExitOnOutOfMemoryError -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/configs/heap_dumps -XX:+UseShenandoahGC -XX:ShenandoahGCMode=generational -XX:+UseCompactObjectHeaders -XX:+UseStringDeduplication -XX:+AlwaysPreTouch -XX:+ExplicitGCInvokesConcurrent -Dspring.threads.virtual.enabled=true -Djava.awt.headless=true" \
     JAVA_CUSTOM_OPTS="" \
-    HOME=/home/stirlingpdfuser \
+    HOME=/home/ChroniclePDFuser \
     PUID=1000 \
     PGID=1000 \
     UMASK=022 \
-    STIRLING_TEMPFILES_DIRECTORY=/tmp/stirling-pdf \
-    TMPDIR=/tmp/stirling-pdf \
-    TEMP=/tmp/stirling-pdf \
-    TMP=/tmp/stirling-pdf \
+    STIRLING_TEMPFILES_DIRECTORY=/tmp/Chronicle-PDF \
+    TMPDIR=/tmp/Chronicle-PDF \
+    TEMP=/tmp/Chronicle-PDF \
+    TMP=/tmp/Chronicle-PDF \
     DBUS_SESSION_BUS_ADDRESS=/dev/null \
-    SAL_TMP=/tmp/stirling-pdf/libre
+    SAL_TMP=/tmp/Chronicle-PDF/libre
 
 # Metadata labels
 LABEL org.opencontainers.image.title="Chronicle PDF Backend" \

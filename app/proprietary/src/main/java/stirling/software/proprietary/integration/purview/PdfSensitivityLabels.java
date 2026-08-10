@@ -1,4 +1,4 @@
-package stirling.software.proprietary.integration.purview;
+package Chronicle.software.proprietary.integration.purview;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -107,7 +107,7 @@ public final class PdfSensitivityLabels {
             // reader the content is protected when it is plaintext. Refuse rather than lie.
             throw new IllegalArgumentException(
                     "This label requires encryption, which needs the Microsoft Purview client or"
-                            + " MIP SDK; Stirling can apply the label metadata but cannot protect"
+                            + " MIP SDK; Chronicle can apply the label metadata but cannot protect"
                             + " the content.");
         }
         // "An object can only have one label from the same organization." Replace this tenant's
