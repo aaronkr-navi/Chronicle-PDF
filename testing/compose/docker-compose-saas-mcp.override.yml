@@ -12,7 +12,7 @@
 #   docker-compose -f docker-compose-saas.yml -f docker-compose-saas-mcp.override.yml up -d --build
 #   MCP_AUTH_ISSUERURI=<your issuer> bash validate-mcp-saas-chain.sh
 services:
-  stirling-pdf-saas:
+  chronicle-pdf-saas:
     environment:
       # Base compose pins this to "disabled" (Supabase JWT enforcement off) for the payg
       # cucumber tests. For full-stack MCP/consent testing against a real Supabase

@@ -48,9 +48,9 @@ services:
     networks:
       - stirling-mcp-test
 
-  stirling-pdf-mcp:
-    container_name: stirling-pdf-mcp-test
-    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
+  chronicle-pdf-mcp:
+    container_name: Chronicle-PDF-mcp-test
+    image: chronicle-pdf:latest
     build:
       context: ../..
       dockerfile: docker/embedded/Dockerfile
@@ -77,9 +77,9 @@ services:
       SYSTEM_BACKENDURL: "http://localhost:8080"
       PREMIUM_KEY: "${PREMIUM_KEY:-00000000-0000-0000-0000-000000000000}"
       PREMIUM_ENABLED: "true"
-      UI_APPNAME: Stirling-PDF MCP Test
+      UI_APPNAME: Chronicle PDF MCP Test
       UI_HOMEDESCRIPTION: Keycloak MCP (OAuth resource server) Test Instance
-      UI_APPNAMENAVBAR: Stirling-PDF MCP
+      UI_APPNAMENAVBAR: Chronicle PDF MCP
       SYSTEM_MAXFILESIZE: "100"
 
       # Seed the Stirling account the Keycloak "email" claim binds to (proves account-binding).

@@ -1,11 +1,11 @@
-# Multi-node Stirling-PDF processor test stack: shared Postgres/MinIO/Valkey behind an nginx LB fronting N app nodes, with enterprise features unlocked via a local test licence key.
+# Multi-node Chronicle PDF processor test stack: shared Postgres/MinIO/Valkey behind an nginx LB fronting N app nodes, with enterprise features unlocked via a local test licence key.
 # Bring up: ./start-multinode-test.sh   Validate: ./validate-multinode-test.sh   Access: http://localhost:8080 (admin / stirling)
 
 x-stirling-node: &stirling-node
   build:
     context: ../..
     dockerfile: docker/embedded/Dockerfile
-  image: stirling-pdf-multinode:local
+  image: chronicle-pdf-multinode:local
   restart: unless-stopped
   depends_on:
     postgres:
@@ -82,7 +82,7 @@ x-stirling-node: &stirling-node
     METRICS_ENABLED: "true"
     SYSTEM_DEFAULTLOCALE: "en-US"
     SYSTEM_MAXFILESIZE: "100"
-    UI_APPNAME: "Stirling-PDF Multi-Node"
+    UI_APPNAME: "Chronicle PDF Multi-Node"
     UI_APPNAMENAVBAR: "Stirling Multi-Node"
   networks:
     - stirling-multinode

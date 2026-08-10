@@ -26,13 +26,13 @@ services:
       - payg-cucumber-network
 
   # ---------------------------------------------------------------------
-  # Stirling-PDF backend with STIRLING_FLAVOR=saas. Authenticates via
+  # Chronicle PDF backend with STIRLING_FLAVOR=saas. Authenticates via
   # API key (SECURITY_CUSTOMGLOBALAPIKEY) — Supabase JWT enforcement is
   # disabled for the test profile via SAAS_DB_PROJECT_REF=disabled so the
   # OAuth resource-server filter no-ops. The PaygChargeInterceptor's
   # resolveUser() ApiKey-token path is what the cucumber tests exercise.
   # ---------------------------------------------------------------------
-  stirling-pdf-saas:
+  chronicle-pdf-saas:
     build:
       context: ../..
       dockerfile: docker/embedded/Dockerfile

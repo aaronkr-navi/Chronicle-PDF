@@ -1,9 +1,9 @@
 services:
-  stirling-pdf:
+  chronicle-pdf:
     build:
       context: ../..
       dockerfile: docker/embedded/Dockerfile
-    container_name: stirling-pdf
+    container_name: Chronicle-PDF
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8080$${SYSTEM_ROOTURIPATH:-''}/api/v1/info/status | grep -q 'UP'"]
@@ -20,9 +20,9 @@ services:
       DISABLE_ADDITIONAL_FEATURES: "true"
       SECURITY_ENABLELOGIN: "false"
       SYSTEM_DEFAULTLOCALE: en-US
-      UI_APPNAME: Stirling-PDF
-      UI_HOMEDESCRIPTION: Demo site for Stirling-PDF Latest
-      UI_APPNAMENAVBAR: Stirling-PDF Latest
+      UI_APPNAME: Chronicle PDF
+      UI_HOMEDESCRIPTION: Demo site for Chronicle PDF Latest
+      UI_APPNAMENAVBAR: Chronicle PDF Latest
       SYSTEM_MAXFILESIZE: "100"
       METRICS_ENABLED: "true"
       SYSTEM_GOOGLEVISIBILITY: "true"

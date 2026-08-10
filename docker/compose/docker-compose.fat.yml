@@ -1,9 +1,9 @@
 services:
-  stirling-pdf:
+  chronicle-pdf:
     build:
       context: ../..
       dockerfile: docker/embedded/Dockerfile.fat
-    container_name: stirling-pdf-fat
+    container_name: Chronicle-PDF-fat
     restart: unless-stopped
     deploy:
       resources:
@@ -25,9 +25,9 @@ services:
       SECURITY_ENABLELOGIN: "false"
       FAT_DOCKER: "true"
       SYSTEM_DEFAULTLOCALE: en-US
-      UI_APPNAME: Stirling-PDF
-      UI_HOMEDESCRIPTION: Full-featured Stirling-PDF with all capabilities
-      UI_APPNAMENAVBAR: Stirling-PDF Fat
+      UI_APPNAME: Chronicle PDF
+      UI_HOMEDESCRIPTION: Full-featured Chronicle PDF with all capabilities
+      UI_APPNAMENAVBAR: Chronicle PDF Fat
       SYSTEM_MAXFILESIZE: "200"
       METRICS_ENABLED: "true"
       SYSTEM_GOOGLEVISIBILITY: "true"

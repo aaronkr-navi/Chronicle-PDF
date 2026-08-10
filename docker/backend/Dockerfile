@@ -1,7 +1,7 @@
 # Stirling-PDF backend-only image — JAR built with -PbuildWithFrontend=false, UI ships separately.
 
 ARG BASE_VERSION=1.0.2@sha256:c7698687f486707ddef9e0298587ca8b44c4e96185e1bdb0c3d119eb2bf9a82e
-ARG BASE_IMAGE=stirlingtools/stirling-pdf-base:${BASE_VERSION}
+ARG BASE_IMAGE=chronicle-pdf-base:${BASE_VERSION}
 
 # Stage 1: Build the Java application (backend only, no frontend)
 FROM gradle:9.6.1-jdk25@sha256:934a520ae0cc1f46764c2e6e1f6510d2fcdf6a7e12328b6aee34192d14f171a2 AS app-build
@@ -105,15 +105,15 @@ ENV VERSION_TAG=$VERSION_TAG \
     SAL_TMP=/tmp/stirling-pdf/libre
 
 # Metadata labels
-LABEL org.opencontainers.image.title="Stirling-PDF Backend" \
+LABEL org.opencontainers.image.title="Chronicle PDF Backend" \
       org.opencontainers.image.description="Backend-only version (no embedded UI) with Calibre, LibreOffice, Tesseract, OCRmyPDF" \
-      org.opencontainers.image.source="https://github.com/Stirling-Tools/Stirling-PDF" \
+      org.opencontainers.image.source="https://github.com/aaronkr-navi/Chronicle-PDF" \
       org.opencontainers.image.licenses="MIT" \
-      org.opencontainers.image.vendor="Stirling-Tools" \
-      org.opencontainers.image.url="https://www.stirlingpdf.com" \
-      org.opencontainers.image.documentation="https://docs.stirlingpdf.com" \
-      maintainer="Stirling-Tools" \
-      org.opencontainers.image.authors="Stirling-Tools" \
+      org.opencontainers.image.vendor="Chronicle PDF" \
+      org.opencontainers.image.url="https://github.com/aaronkr-navi/Chronicle-PDF" \
+      org.opencontainers.image.documentation="https://github.com/aaronkr-navi/Chronicle-PDF" \
+      maintainer="Chronicle PDF" \
+      org.opencontainers.image.authors="Chronicle PDF" \
       org.opencontainers.image.version="${VERSION_TAG}" \
       org.opencontainers.image.keywords="PDF, manipulation, backend, API, Spring Boot"
 

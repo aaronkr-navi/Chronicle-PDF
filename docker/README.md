@@ -1,4 +1,4 @@
-# Docker Setup for Stirling-PDF
+# Docker Setup for Chronicle PDF
 
 This directory contains the organized Docker configurations for the split frontend/backend architecture.
 

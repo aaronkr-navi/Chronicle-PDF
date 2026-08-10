@@ -1,5 +1,5 @@
-# Standalone unoserver image for Stirling-PDF remote UNO mode.
-# Pinned to unoserver 3.6 to match Stirling-PDF's client (avoids 3.4/3.6 wire mismatch).
+# Standalone unoserver image for Chronicle PDF remote UNO mode.
+# Pinned to unoserver 3.6 to match Chronicle PDF's client (avoids 3.4/3.6 wire mismatch).
 
 FROM ubuntu:noble@sha256:4fbb8e6a8395de5a7550b33509421a2bafbc0aab6c06ba2cef9ebffbc7092d90
 
@@ -99,8 +99,8 @@ HEALTHCHECK --interval=15s --timeout=5s --retries=4 --start-period=45s \
 
 ENTRYPOINT ["/usr/bin/tini", "--", "/usr/local/bin/entrypoint.sh"]
 
-LABEL org.opencontainers.image.title="Stirling-PDF Unoserver" \
-      org.opencontainers.image.description="Pinned unoserver build for Stirling-PDF remote UNO mode" \
-      org.opencontainers.image.source="https://github.com/Stirling-Tools/Stirling-PDF" \
+LABEL org.opencontainers.image.title="Chronicle PDF Unoserver" \
+      org.opencontainers.image.description="Pinned unoserver build for Chronicle PDF remote UNO mode" \
+      org.opencontainers.image.source="https://github.com/aaronkr-navi/Chronicle-PDF" \
       org.opencontainers.image.licenses="MIT" \
-      org.opencontainers.image.vendor="Stirling-Tools"
+      org.opencontainers.image.vendor="Chronicle PDF"
