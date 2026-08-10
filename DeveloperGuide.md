@@ -138,7 +138,7 @@ See [the frontend README](frontend/README.md#tauri) for detailed build instructi
 ```bash
 Chronicle-PDF/
 ├── .github/               # GitHub-specific files (workflows, issue templates)
-├── configs/               # Configuration files used by stirling at runtime (generated at runtime)
+├── configs/               # Configuration files used by chronicle at runtime (generated at runtime)
 ├── frontend/              # Frontend workspace (Chronicle 2.0)
 │   ├── editor/            # PDF editor app (the original React SPA)
 │   │   ├── src/
@@ -168,7 +168,7 @@ Chronicle-PDF/
 ├── src/                   # Source code
 │   ├── main/
 │   │   ├── java/
-│   │   │   └── stirling/
+│   │   │   └── chronicle/
 │   │   │       └── software/
 │   │   │           └── SPDF/
 │   │   │               ├── config/
@@ -581,7 +581,7 @@ For Chronicle 2.0, new features are built as React components:
 
 ### Declaring tool inputs and outputs
 
-An endpoint that transforms a document declares what it accepts and produces with `@ToolIO`. This is the single source of truth: it is published into the OpenAPI spec as an `x-stirling-io` extension, and generated from there into the frontend (`toolIO.ts`) and the AI engine (`tool_io.py`). A pipeline can therefore be checked while it is being edited, instead of failing part-way through a job.
+An endpoint that transforms a document declares what it accepts and produces with `@ToolIO`. This is the single source of truth: it is published into the OpenAPI spec as an `x-chronicle-io` extension, and generated from there into the frontend (`toolIO.ts`) and the AI engine (`tool_io.py`). A pipeline can therefore be checked while it is being edited, instead of failing part-way through a job.
 
 ```java
 @ToolIO(produces = ToolFormat.PDF)

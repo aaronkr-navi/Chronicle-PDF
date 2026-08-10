@@ -12,7 +12,7 @@ import type { AiEngineApiResponse } from "@app/components/shared/config/configSe
 // test never clicks Save, so those aren't stubbed here.
 const baseSettings: AiEngineApiResponse = {
   enabled: true,
-  url: "http://stirling-pdf-engine:5001",
+  url: "http://chronicle-pdf-engine:5001",
   timeoutSeconds: 30,
   longRunningTimeoutSeconds: 120,
   streamTimeoutSeconds: 60,
@@ -74,7 +74,7 @@ export const PendingRestart: Story = {
       handlers: [
         handlerFor({
           ...baseSettings,
-          _pending: { url: "http://stirling-pdf-engine:6001" },
+          _pending: { url: "http://chronicle-pdf-engine:6001" },
         }),
       ],
     },

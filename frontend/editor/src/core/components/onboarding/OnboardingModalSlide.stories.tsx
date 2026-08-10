@@ -128,7 +128,7 @@ export const SteppedFlowExample: Story = {
 /** Force a password change on first login (user types current + new). */
 export const FirstLogin: Story = { args: { slideId: "first-login" } };
 
-/** First login when the account is still on the default `stirling` password —
+/** First login when the account is still on the default `chronicle` password —
  * the current-password field is hidden. */
 export const FirstLoginDefaultCredentials: Story = {
   args: {

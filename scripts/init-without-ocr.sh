@@ -15,13 +15,13 @@ if [ -d /scripts ] && [[ ":${PATH}:" != *":/scripts:"* ]]; then
   export PATH="/scripts:${PATH}"
 fi
 
-if [ -x /scripts/stirling-diagnostics.sh ]; then
+if [ -x /scripts/chronicle-diagnostics.sh ]; then
   mkdir -p /usr/local/bin
-  ln -sf /scripts/stirling-diagnostics.sh /usr/local/bin/diagnostics
-  ln -sf /scripts/stirling-diagnostics.sh /usr/local/bin/stirling-diagnostics
-  ln -sf /scripts/stirling-diagnostics.sh /usr/local/bin/diag
-  ln -sf /scripts/stirling-diagnostics.sh /usr/local/bin/debug
-  ln -sf /scripts/stirling-diagnostics.sh /usr/local/bin/diagnostic
+  ln -sf /scripts/chronicle-diagnostics.sh /usr/local/bin/diagnostics
+  ln -sf /scripts/chronicle-diagnostics.sh /usr/local/bin/chronicle-diagnostics
+  ln -sf /scripts/chronicle-diagnostics.sh /usr/local/bin/diag
+  ln -sf /scripts/chronicle-diagnostics.sh /usr/local/bin/debug
+  ln -sf /scripts/chronicle-diagnostics.sh /usr/local/bin/diagnostic
 fi
 if [ -x /scripts/aot-diagnostics.sh ] && [ "${STIRLING_AOT_ENABLE:-false}" = "true" ]; then
   mkdir -p /usr/local/bin
@@ -183,7 +183,7 @@ SWITCH_USER_WARNING_EMITTED=false
 
 warn_switch_user_once() {
   if [ "$SWITCH_USER_WARNING_EMITTED" = false ]; then
-    log "WARNING: Unable to switch to user ${RUNTIME_USER:-stirlingpdfuser}; running command as ${CURRENT_USER}."
+    log "WARNING: Unable to switch to user ${RUNTIME_USER:-chroniclepdfuser}; running command as ${CURRENT_USER}."
     SWITCH_USER_WARNING_EMITTED=true
   fi
 }
@@ -383,8 +383,8 @@ start_unoserver_pool() {
 
 # ---------- VERSION_TAG ----------
 # Load VERSION_TAG from file if not provided via environment.
-if [ -z "${VERSION_TAG:-}" ] && [ -f /etc/stirling_version ]; then
-  VERSION_TAG="$(tr -d '\r\n' < /etc/stirling_version)"
+if [ -z "${VERSION_TAG:-}" ] && [ -f /etc/chronicle_version ]; then
+  VERSION_TAG="$(tr -d '\r\n' < /etc/chronicle_version)"
   export VERSION_TAG
 fi
 
@@ -496,7 +496,7 @@ generate_aot_cache() {
   aot_dir=$(dirname "$aot_path")
   mkdir -p "$aot_dir" 2>/dev/null || true
 
-  local aot_conf="/tmp/stirling.aotconf"
+  local aot_conf="/tmp/chronicle.aotconf"
   local arch
   arch=$(uname -m)
 
@@ -539,7 +539,7 @@ generate_aot_cache() {
            -XX:AOTConfiguration="$aot_conf" \
            -Dspring.main.banner-mode=off \
            -Dspring.context.exit=onRefresh \
-           -Dstirling.datasource.url="jdbc:h2:mem:aottraining;DB_CLOSE_DELAY=-1;MODE=PostgreSQL" \
+           -Dchronicle.datasource.url="jdbc:h2:mem:aottraining;DB_CLOSE_DELAY=-1;MODE=PostgreSQL" \
            "$@" >/tmp/aot-record.log 2>&1 || record_exit=$?
   else
     JAVA_TOOL_OPTIONS= JDK_JAVA_OPTIONS= _JAVA_OPTIONS= \
@@ -549,7 +549,7 @@ generate_aot_cache() {
          -XX:AOTConfiguration="$aot_conf" \
          -Dspring.main.banner-mode=off \
          -Dspring.context.exit=onRefresh \
-         -Dstirling.datasource.url="jdbc:h2:mem:aottraining;DB_CLOSE_DELAY=-1;MODE=PostgreSQL" \
+         -Dchronicle.datasource.url="jdbc:h2:mem:aottraining;DB_CLOSE_DELAY=-1;MODE=PostgreSQL" \
          "$@" >/tmp/aot-record.log 2>&1 || record_exit=$?
   fi
 
@@ -794,7 +794,7 @@ if [ "$AOT_ENABLED" = "true" ]; then
 fi
 
 # ---------- AOT Cache Management (Project Leyden) ----------
-AOT_CACHE="/configs/cache/stirling.aot"
+AOT_CACHE="/configs/cache/chronicle.aot"
 AOT_GENERATE_BACKGROUND=false
 
 if [ "$AOT_ENABLED" = "true" ]; then
@@ -809,7 +809,7 @@ if [ "$AOT_ENABLED" = "true" ]; then
   elif validate_aot_cache "$AOT_CACHE"; then
     log "AOT cache valid: $AOT_CACHE"
     JAVA_BASE_OPTS="${JAVA_BASE_OPTS} -XX:AOTCache=${AOT_CACHE}"
-    rm -f /app/stirling.jsa /app/stirling.aot /app/stirling.aot.fingerprint 2>/dev/null || true
+    rm -f /app/stirling.jsa /app/chronicle.aot /app/chronicle.aot.fingerprint 2>/dev/null || true
   else
     log "No valid AOT cache found. Will generate in background after app starts."
     AOT_GENERATE_BACKGROUND=true
@@ -837,7 +837,7 @@ umask "$UMASK_VAL" 2>/dev/null || umask 022
 
 # ---------- XDG_RUNTIME_DIR ----------
 # Create the runtime directory, respecting UID/GID settings.
-RUNTIME_USER="stirlingpdfuser"
+RUNTIME_USER="chroniclepdfuser"
 if id -u "$RUNTIME_USER" >/dev/null 2>&1; then
   RUID="$(id -u "$RUNTIME_USER")"
   RGRP="$(id -gn "$RUNTIME_USER")"
@@ -871,15 +871,15 @@ fi
 # ---------- UID/GID remap ----------
 # Remap user/group IDs to match container runtime settings.
 if [ "$(id -u)" -eq 0 ]; then
-  if id -u stirlingpdfuser >/dev/null 2>&1; then
-    if [ -n "${PUID:-}" ] && [ "$PUID" != "$(id -u stirlingpdfuser)" ]; then
-      usermod -o -u "$PUID" stirlingpdfuser || true
-      chown stirlingpdfuser:stirlingpdfgroup "${XDG_RUNTIME_DIR}" 2>/dev/null || true
+  if id -u chroniclepdfuser >/dev/null 2>&1; then
+    if [ -n "${PUID:-}" ] && [ "$PUID" != "$(id -u chroniclepdfuser)" ]; then
+      usermod -o -u "$PUID" chroniclepdfuser || true
+      chown chroniclepdfuser:chroniclepdfgroup "${XDG_RUNTIME_DIR}" 2>/dev/null || true
     fi
   fi
-  if getent group stirlingpdfgroup >/dev/null 2>&1; then
-    if [ -n "${PGID:-}" ] && [ "$PGID" != "$(getent group stirlingpdfgroup | cut -d: -f3)" ]; then
-      groupmod -o -g "$PGID" stirlingpdfgroup || true
+  if getent group chroniclepdfgroup >/dev/null 2>&1; then
+    if [ -n "${PGID:-}" ] && [ "$PGID" != "$(getent group chroniclepdfgroup | cut -d: -f3)" ]; then
+      groupmod -o -g "$PGID" chroniclepdfgroup || true
     fi
   fi
 fi
@@ -893,7 +893,7 @@ CHOWN_PATHS=("$HOME" "/logs" "/scripts" "/configs" "/customFiles" "/pipeline" "/
 CHOWN_OK=true
 for p in "${CHOWN_PATHS[@]}"; do
   if [ -e "$p" ]; then
-    chown -R "stirlingpdfuser:stirlingpdfgroup" "$p" 2>/dev/null || CHOWN_OK=false
+    chown -R "chroniclepdfuser:chroniclepdfgroup" "$p" 2>/dev/null || CHOWN_OK=false
     chmod -R 755 "$p" 2>/dev/null || true
   fi
 done

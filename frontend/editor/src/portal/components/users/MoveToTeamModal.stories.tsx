@@ -6,7 +6,7 @@ import type { Team } from "@portal/api/teams";
 const MEMBER: Member = {
   id: "3",
   name: "Sarah Kowalski",
-  email: "sarah@stirlingpdf.com",
+  email: "sarah@chronicle-pdf.com",
   role: "member",
   status: "active",
   lastActive: "30m ago",

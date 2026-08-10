@@ -76,7 +76,7 @@ export interface DesktopInstallCanInstall {
 
 /** Docs URL referenced from the blocked alert. */
 const WINDOWS_INSTALL_DOCS_URL =
-  "https://docs.stirlingpdf.com/Installation/Windows%20Installation/#automated-installation-msi-installer";
+  "https://docs.chronicle-pdf.com/Installation/Windows%20Installation/#automated-installation-msi-installer";
 
 interface UpdateModalProps {
   opened: boolean;

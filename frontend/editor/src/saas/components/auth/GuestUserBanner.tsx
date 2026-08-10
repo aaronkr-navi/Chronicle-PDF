@@ -48,8 +48,8 @@ export function GuestUserBanner({ className = "" }: GuestUserBannerProps) {
       setVisible(true);
       hasShownThisLoad = true;
     };
-    window.addEventListener("stirling:show-guest-banner", show);
-    return () => window.removeEventListener("stirling:show-guest-banner", show);
+    window.addEventListener("chronicle:show-guest-banner", show);
+    return () => window.removeEventListener("chronicle:show-guest-banner", show);
   }, []);
 
   if (!isAnon || isDismissed || !visible) {

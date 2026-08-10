@@ -108,8 +108,8 @@ export const Checkbox_GridOfCategories: Story = {
 export const Radio_Group: Story = {
   render: () => {
     function Bound() {
-      const [mode, setMode] = useState<"stirling" | "byok" | "hyok">(
-        "stirling",
+      const [mode, setMode] = useState<"chronicle" | "byok" | "hyok">(
+        "chronicle",
       );
       return (
         <FormField label="Key mode">
@@ -119,7 +119,7 @@ export const Radio_Group: Story = {
             onChange={setMode}
             options={[
               {
-                value: "stirling",
+                value: "chronicle",
                 label: "Chronicle-managed",
                 description: "Chronicle generates and rotates keys.",
               },
@@ -216,8 +216,8 @@ export const FullForm: Story = {
     function Form() {
       const [name, setName] = useState("");
       const [retention, setRetention] = useState("90");
-      const [mode, setMode] = useState<"stirling" | "byok" | "hyok">(
-        "stirling",
+      const [mode, setMode] = useState<"chronicle" | "byok" | "hyok">(
+        "chronicle",
       );
       const [conf, setConf] = useState(0.85);
       const [notify, setNotify] = useState(true);
@@ -248,7 +248,7 @@ export const FullForm: Story = {
               value={mode}
               onChange={setMode}
               options={[
-                { value: "stirling", label: "Chronicle-managed" },
+                { value: "chronicle", label: "Chronicle-managed" },
                 { value: "byok", label: "BYOK" },
                 { value: "hyok", label: "HYOK" },
               ]}

@@ -51,7 +51,7 @@ describe("policyStorage", () => {
 
   it("heals missing categories from corrupt/partial storage", () => {
     localStorage.setItem(
-      "stirling-policies-state",
+      "chronicle-policies-state",
       JSON.stringify({ ingestion: { configured: true, status: "active" } }),
     );
     const p = loadPolicies();

@@ -126,9 +126,9 @@ jobs:
         run: |
           for i in $(seq 1 60); do
             bash validate-oauth-test.sh 2>/dev/null && exit 0 || true
-            # validate script also pings stirling on :8080 — accept just the
-            # keycloak realm as our gate here, stirling boots in the next step
-            curl -fsS http://localhost:9080/realms/stirling-oauth >/dev/null 2>&1 && exit 0
+            # validate script also pings chronicle on :8080 — accept just the
+            # keycloak realm as our gate here, chronicle boots in the next step
+            curl -fsS http://localhost:9080/realms/chronicle-oauth >/dev/null 2>&1 && exit 0
             sleep 5
           done
           docker compose -f docker-compose-keycloak-oauth.yml logs --tail=200 keycloak-oauth
@@ -142,7 +142,7 @@ jobs:
           # Keycloak issues redirect URIs against KC_HOSTNAME, which the
           # compose default sets to kubernetes.docker.internal. Match here
           # (resolves to localhost via /etc/hosts mapping above).
-          SECURITY_OAUTH2_CLIENT_KEYCLOAK_ISSUER: "http://kubernetes.docker.internal:9080/realms/stirling-oauth"
+          SECURITY_OAUTH2_CLIENT_KEYCLOAK_ISSUER: "http://kubernetes.docker.internal:9080/realms/chronicle-oauth"
           SECURITY_OAUTH2_CLIENT_KEYCLOAK_CLIENTID: "Chronicle-PDF-client"
           SECURITY_OAUTH2_CLIENT_KEYCLOAK_CLIENTSECRET: "test-client-secret-change-in-production"
           SECURITY_OAUTH2_CLIENT_KEYCLOAK_USEASUSERNAME: "email"
@@ -172,7 +172,7 @@ jobs:
         working-directory: testing/compose
         run: |
           for i in $(seq 1 60); do
-            curl -fsS http://localhost:9080/realms/stirling-saml >/dev/null 2>&1 && exit 0
+            curl -fsS http://localhost:9080/realms/chronicle-saml >/dev/null 2>&1 && exit 0
             sleep 5
           done
           docker compose -f docker-compose-keycloak-saml.yml logs --tail=200 keycloak-saml
@@ -189,7 +189,7 @@ jobs:
             -days 3650 -nodes \
             -subj "/CN=Chronicle-PDF-saml-sp" >/dev/null 2>&1
           # Fetch Keycloak's SAML signing cert from the realm descriptor
-          CERT_BODY=$(curl -sf http://localhost:9080/realms/stirling-saml/protocol/saml/descriptor \
+          CERT_BODY=$(curl -sf http://localhost:9080/realms/chronicle-saml/protocol/saml/descriptor \
             | awk 'BEGIN{RS="<[^>]*X509Certificate>|</[^>]*X509Certificate>"} NR==2{gsub(/[[:space:]]+/,""); print; exit}')
           {
             echo "-----BEGIN CERTIFICATE-----"
@@ -208,11 +208,11 @@ jobs:
           SECURITY_SAML2_AUTOCREATEUSER: "true"
           SECURITY_SAML2_PROVIDER: "keycloak"
           SECURITY_SAML2_REGISTRATIONID: "keycloak"
-          SECURITY_SAML2_IDP_ISSUER: "http://localhost:9080/realms/stirling-saml"
-          SECURITY_SAML2_IDP_ENTITYID: "http://localhost:9080/realms/stirling-saml"
-          SECURITY_SAML2_IDP_METADATAURI: "http://localhost:9080/realms/stirling-saml/protocol/saml/descriptor"
-          SECURITY_SAML2_IDPSINGLELOGINURL: "http://localhost:9080/realms/stirling-saml/protocol/saml"
-          SECURITY_SAML2_IDPSINGLELOGOUTURL: "http://localhost:9080/realms/stirling-saml/protocol/saml"
+          SECURITY_SAML2_IDP_ISSUER: "http://localhost:9080/realms/chronicle-saml"
+          SECURITY_SAML2_IDP_ENTITYID: "http://localhost:9080/realms/chronicle-saml"
+          SECURITY_SAML2_IDP_METADATAURI: "http://localhost:9080/realms/chronicle-saml/protocol/saml/descriptor"
+          SECURITY_SAML2_IDPSINGLELOGINURL: "http://localhost:9080/realms/chronicle-saml/protocol/saml"
+          SECURITY_SAML2_IDPSINGLELOGOUTURL: "http://localhost:9080/realms/chronicle-saml/protocol/saml"
           SECURITY_SAML2_IDP_CERT: "${{ github.workspace }}/testing/compose/keycloak-saml-cert.pem"
           SECURITY_SAML2_PRIVATEKEY: "${{ github.workspace }}/testing/compose/saml-private-key.key"
           SECURITY_SAML2_SP_CERT: "${{ github.workspace }}/testing/compose/saml-public-cert.crt"
@@ -336,13 +336,13 @@ jobs:
         run: |
           docker compose -f "$MN_COMPOSE" up -d
           for i in $(seq 1 90); do
-            h1=$(docker inspect -f '{{.State.Health.Status}}' multinode-stirling-1 2>/dev/null || echo starting)
-            h2=$(docker inspect -f '{{.State.Health.Status}}' multinode-stirling-2 2>/dev/null || echo starting)
+            h1=$(docker inspect -f '{{.State.Health.Status}}' multinode-chronicle-1 2>/dev/null || echo starting)
+            h2=$(docker inspect -f '{{.State.Health.Status}}' multinode-chronicle-2 2>/dev/null || echo starting)
             if [ "$h1" = healthy ] && [ "$h2" = healthy ]; then echo "both nodes healthy"; exit 0; fi
             sleep 5
           done
           echo "::error::nodes did not become healthy"
-          docker compose -f "$MN_COMPOSE" logs --tail=200 stirling-1 stirling-2
+          docker compose -f "$MN_COMPOSE" logs --tail=200 chronicle-1 chronicle-2
           exit 1
       - name: Seed the cluster (teams, users, S3 connection, policy)
         working-directory: testing/compose
@@ -357,7 +357,7 @@ jobs:
       - name: Dump node logs on failure
         if: failure()
         working-directory: testing/compose
-        run: docker compose -f "$MN_COMPOSE" logs --tail=400 stirling-1 stirling-2
+        run: docker compose -f "$MN_COMPOSE" logs --tail=400 chronicle-1 chronicle-2
       - name: Tear down
         if: always()
         working-directory: testing/compose

@@ -332,7 +332,7 @@ export const STEP_OPERATIONS: StepOperation[] = [
       includeFile: false,
       responseMode: "report",
       bodyTemplate: JSON.stringify({
-        sourcetype: "stirling:policy",
+        sourcetype: "chronicle:policy",
         event: {
           action: "policy.document.processed",
           policy: "{{run.policyName}}",
@@ -372,7 +372,7 @@ export const STEP_OPERATIONS: StepOperation[] = [
         labelKey: `${PREFIX}.fields.index.label`,
         control: "text",
         required: true,
-        defaultValue: "stirling-audit",
+        defaultValue: "chronicle-audit",
       },
     ],
   },

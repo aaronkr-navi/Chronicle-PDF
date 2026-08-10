@@ -57,7 +57,7 @@ function key(overrides: Partial<StubKey> = {}): StubKey {
 
 /** Log in as the default admin; returns the JWT, or null when no backend answers. */
 async function adminJwt(request: APIRequestContext): Promise<string | null> {
-  for (const password of ["adminadmin", "stirling"]) {
+  for (const password of ["adminadmin", "chronicle"]) {
     const res = await request
       .post("/api/v1/auth/login", { data: { username: "admin", password } })
       .catch(() => null);

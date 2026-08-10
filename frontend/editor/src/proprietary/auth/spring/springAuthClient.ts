@@ -71,7 +71,7 @@ function defaultRedirectPath(): string {
   return `${basePath() || ""}/auth/callback`;
 }
 
-export const POST_LOGIN_REDIRECT_STORAGE_KEY = "stirling_post_login_path";
+export const POST_LOGIN_REDIRECT_STORAGE_KEY = "chronicle_post_login_path";
 
 function normalizeRedirectPath(target?: string): string {
   if (!target || typeof target !== "string") {
@@ -552,7 +552,7 @@ class SpringAuthClient {
     try {
       if (typeof window !== "undefined") {
         window.sessionStorage.setItem(
-          "stirling_sso_auto_login_logged_out",
+          "chronicle_sso_auto_login_logged_out",
           "1",
         );
       }

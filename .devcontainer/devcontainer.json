@@ -68,7 +68,7 @@
                     "jakarta",
                     "lombok",
                     "me",
-                    "stirling"
+                    "chronicle"
                 ],
                 "java.project.resourceFilters": [
                     ".devcontainer/",

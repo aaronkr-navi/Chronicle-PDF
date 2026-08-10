@@ -33,13 +33,13 @@ services:
       SYSTEM_GOOGLEVISIBILITY: "true"
       SHOW_SURVEY: "true"
     networks:
-      - stirling-network
+      - chronicle-network
 
 networks:
-  stirling-network:
+  chronicle-network:
     driver: bridge
 
 volumes:
-  stirling-data:
-  stirling-config:
-  stirling-logs:
+  chronicle-data:
+  chronicle-config:
+  chronicle-logs:

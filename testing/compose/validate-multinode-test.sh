@@ -6,8 +6,8 @@ set -uo pipefail
 cd "$(dirname "$0")"
 
 LB="http://localhost:8080"
-ADMIN_USER="admin"; ADMIN_PASS="stirling"
-NODES="multinode-stirling-1 multinode-stirling-2"
+ADMIN_USER="admin"; ADMIN_PASS="chronicle"
+NODES="multinode-chronicle-1 multinode-chronicle-2"
 # An authed, admin-visible endpoint that returns 200 with a valid token, 401 without.
 PROBE="/api/v1/sources"
 pass=0; fail=0
@@ -48,8 +48,8 @@ count_of() { # $1=node -> number of sources that node reports
   docker exec "$1" curl -s -H "Authorization: Bearer $jwt" "http://localhost:8080$PROBE" 2>/dev/null \
     | grep -o '"id"' | grep -c .
 }
-a=$(count_of multinode-stirling-1); b=$(count_of multinode-stirling-2)
-echo "  stirling-1 sources: $a   stirling-2 sources: $b"
+a=$(count_of multinode-chronicle-1); b=$(count_of multinode-chronicle-2)
+echo "  chronicle-1 sources: $a   chronicle-2 sources: $b"
 if [ "$a" -gt 0 ] && [ "$a" = "$b" ]; then
   ok "both nodes report the same $a sources (shared DB)"
 else
@@ -57,9 +57,9 @@ else
 fi
 
 echo "== 4. Seeded org is in the shared DB =="
-users=$(docker exec multinode-postgres psql -U stirling -d stirling -tAc "select count(*) from users" 2>/dev/null | tr -d '[:space:]')
-teams=$(docker exec multinode-postgres psql -U stirling -d stirling -tAc "select count(*) from teams" 2>/dev/null | tr -d '[:space:]')
-conns=$(docker exec multinode-postgres psql -U stirling -d stirling -tAc "select count(*) from integration_configs" 2>/dev/null | tr -d '[:space:]')
+users=$(docker exec multinode-postgres psql -U chronicle -d chronicle -tAc "select count(*) from users" 2>/dev/null | tr -d '[:space:]')
+teams=$(docker exec multinode-postgres psql -U chronicle -d chronicle -tAc "select count(*) from teams" 2>/dev/null | tr -d '[:space:]')
+conns=$(docker exec multinode-postgres psql -U chronicle -d chronicle -tAc "select count(*) from integration_configs" 2>/dev/null | tr -d '[:space:]')
 echo "  users=$users teams=$teams integration_configs=$conns"
 [ "${users:-0}" -ge 40 ] && ok "$users users present" || bad "only ${users:-0} users (did the seed run?)"
 [ "${conns:-0}" -ge 1 ]  && ok "$conns S3/integration connection(s) present" || bad "no integration connections"
@@ -76,6 +76,6 @@ fi
 echo
 echo "============================================================"
 echo " Multi-node validation: $pass passed, $fail failed."
-echo " Stack left running: $LB  (admin / stirling)"
+echo " Stack left running: $LB  (admin / chronicle)"
 echo "============================================================"
 [ "$fail" -eq 0 ]

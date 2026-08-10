@@ -11,7 +11,7 @@ spotless {
         removeUnusedImports()
         googleJavaFormat(rootProject.ext.googleJavaFormatVersion).aosp().reorderImports(false)
 
-        importOrder('java', 'javax', 'org', 'com', 'net', 'io', 'jakarta', 'lombok', 'me', 'stirling')
+        importOrder('java', 'javax', 'org', 'com', 'net', 'io', 'jakarta', 'lombok', 'me', 'chronicle')
         trimTrailingWhitespace()
         leadingTabsToSpaces()
         endWithNewline()

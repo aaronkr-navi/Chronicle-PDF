@@ -33,7 +33,7 @@ export default function AuthCallback() {
     const handleCallback = async () => {
       if (
         typeof window !== "undefined" &&
-        window.sessionStorage.getItem("stirling_sso_auto_login_logged_out") ===
+        window.sessionStorage.getItem("chronicle_sso_auto_login_logged_out") ===
           "1"
       ) {
         navigate("/login", {

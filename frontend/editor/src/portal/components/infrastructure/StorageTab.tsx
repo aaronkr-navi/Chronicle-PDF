@@ -27,7 +27,7 @@ const PROVIDER_ICON: Record<
   StorageConfig["providers"][number]["kind"],
   ComponentType<{ style?: CSSProperties }>
 > = {
-  stirling: StorageRounded,
+  chronicle: StorageRounded,
   s3: CloudRounded,
   azure: CloudRounded,
 };

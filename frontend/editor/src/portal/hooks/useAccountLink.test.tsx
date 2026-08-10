@@ -23,7 +23,7 @@ vi.mock("@portal/api/link", () => ({
   unlinkInstance,
 }));
 vi.mock("@portal/auth/saasSupabase", () => ({
-  PENDING_LINK_KEY: "stirling_pending_link",
+  PENDING_LINK_KEY: "chronicle_pending_link",
   isSaasSupabaseConfigured: true,
   SAAS_OAUTH_PROVIDERS: [],
   ensureSaasSupabase: () => ({ auth: { getSession } }),

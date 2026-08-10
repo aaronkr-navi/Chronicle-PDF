@@ -59,7 +59,7 @@ export default function OAuthButtons({
 
   // Build provider list - extract provider ID from full path for display
   const providers = providersToShow.map((pathOrId) => {
-    // Extract provider ID from full path (e.g., '/saml2/authenticate/stirling' -> 'stirling')
+    // Extract provider ID from full path (e.g., '/saml2/authenticate/stirling' -> 'chronicle')
     const providerId = pathOrId.split("/").pop() || pathOrId;
 
     if (providerId in oauthProviderConfig) {

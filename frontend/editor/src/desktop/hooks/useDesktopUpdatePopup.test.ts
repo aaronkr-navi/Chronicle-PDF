@@ -52,7 +52,7 @@ async function flushMicrotasks() {
   }
 }
 
-const AUTO_FAILURE_KEY = "stirling-pdf-updater:autoFailedAt";
+const AUTO_FAILURE_KEY = "chronicle-pdf-updater:autoFailedAt";
 
 /**
  * Run the hook through its startup timer + async chain. The post-render

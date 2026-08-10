@@ -282,8 +282,8 @@ jobs:
                 SYSTEM_MAXFILESIZE: "100"
                 METRICS_ENABLED: "true"
                 SYSTEM_GOOGLEVISIBILITY: "false"
-                SWAGGER_SERVER_URL: "https://${V2_PORT}.ssl.stirlingpdf.cloud"
-                baseUrl: "https://${V2_PORT}.ssl.stirlingpdf.cloud"
+                SWAGGER_SERVER_URL: "https://${V2_PORT}.ssl.chronicle-pdf.cloud"
+                baseUrl: "https://${V2_PORT}.ssl.chronicle-pdf.cloud"
               restart: on-failure:5
           EOF
 

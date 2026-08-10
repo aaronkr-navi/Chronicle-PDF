@@ -10,7 +10,7 @@ import { FolderFileMetadata, FolderRecord } from "@app/types/watchedFolders";
 const FOLDER_CHANGE_EVENT = "folder-storage-changed";
 
 class WatchedFolderFileStorage {
-  private dbName = "stirling-pdf-folder-files";
+  private dbName = "chronicle-pdf-folder-files";
   private dbVersion = 3;
   private recordsStore = "folderRecords";
   private db: IDBDatabase | null = null;

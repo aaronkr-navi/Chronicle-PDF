@@ -110,7 +110,7 @@ export class AuthService {
       try {
         await invoke("save_refresh_token", { token: refreshToken });
         // Only remove from localStorage after successful save
-        localStorage.removeItem("stirling_refresh_token");
+        localStorage.removeItem("chronicle_refresh_token");
       } catch (error) {
         console.error(
           "[Desktop AuthService] Failed to save refresh token:",
@@ -182,7 +182,7 @@ export class AuthService {
     // Best effort: clear web storage
     try {
       localStorage.removeItem("chronicle_jwt");
-      localStorage.removeItem("stirling_refresh_token");
+      localStorage.removeItem("chronicle_refresh_token");
     } catch (error) {
       console.warn(
         "[Desktop AuthService] Failed to clear localStorage tokens",

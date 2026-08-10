@@ -1,6 +1,6 @@
 {
-  "id": "stirling-mcp",
-  "realm": "stirling-mcp",
+  "id": "chronicle-mcp",
+  "realm": "chronicle-mcp",
   "displayName": "Chronicle PDF MCP Test",
   "displayNameHtml": "<div class=\"kc-logo-text\"><span>Chronicle PDF MCP</span></div>",
   "enabled": true,
@@ -21,8 +21,8 @@
   "offlineSessionIdleTimeout": 2592000,
   "users": [
     {
-      "username": "mcpuser@stirling.local",
-      "email": "mcpuser@stirling.local",
+      "username": "mcpuser@chronicle.local",
+      "email": "mcpuser@chronicle.local",
       "emailVerified": true,
       "firstName": "MCP",
       "lastName": "TestUser",
@@ -37,8 +37,8 @@
       "realmRoles": ["user"]
     },
     {
-      "username": "ghost@stirling.local",
-      "email": "ghost@stirling.local",
+      "username": "ghost@chronicle.local",
+      "email": "ghost@chronicle.local",
       "emailVerified": true,
       "firstName": "Ghost",
       "lastName": "NoAccount",

@@ -25,23 +25,23 @@ import type {
 /*  Snippet builders                                                         */
 /* ──────────────────────────────────────────────────────────────────────── */
 
-const DOCKER_SNIPPET = `docker run -d --name stirling-editor \\
+const DOCKER_SNIPPET = `docker run -d --name chronicle-editor \\
   -p 8080:8080 \\
   -e STIRLING_ORG_PAIRING_TOKEN="$PAIRING_TOKEN" \\
   -e STIRLING_REGION="us-east-1" \\
-  -v stirling-data:/var/lib/stirling \\
-  stirlingpdf/editor:3.2.1`;
+  -v chronicle-data:/var/lib/stirling \\
+  chroniclepdf/editor:3.2.1`;
 
-const HELM_SNIPPET = `helm repo add stirling https://charts.stirlingpdf.com
-helm install editor stirling/editor \\
-  --namespace stirling --create-namespace \\
+const HELM_SNIPPET = `helm repo add chronicle https://charts.chronicle-pdf.com
+helm install editor chronicle/editor \\
+  --namespace chronicle --create-namespace \\
   --set org.pairingToken="$PAIRING_TOKEN" \\
   --set image.tag=3.2.1 \\
   --set replicaCount=3`;
 
 const CLOUD_SNIPPET = `# Managed Cloud is provisioned for you — no install step.
 # Point your users at the org workspace URL:
-https://app.stirlingpdf.com/o/acme/editor`;
+https://app.chronicle-pdf.com/o/acme/editor`;
 
 /* ──────────────────────────────────────────────────────────────────────── */
 /*  Tier-aware fixture assembly                                              */
@@ -125,7 +125,7 @@ function pairingsFor(tier: Tier): PairingOption[] {
         "Terraform / Pulumi module input so instances pair on apply — no manual token handling.",
       requiresTier: "enterprise",
       value: iacUnlocked
-        ? 'module "stirling_editor" { org_id = "acme" }'
+        ? 'module "chronicle_editor" { org_id = "acme" }'
         : "Enterprise only",
       locked: !iacUnlocked,
     },
@@ -249,7 +249,7 @@ function summaryFor(
       lastRotated: tier === "enterprise" ? "11 days ago" : "34 days ago",
     },
     offlineActivationAvailable: tier === "enterprise",
-    workspaceUrl: "https://app.stirlingpdf.com/o/acme/editor",
+    workspaceUrl: "https://app.chronicle-pdf.com/o/acme/editor",
   };
 }
 

@@ -27,9 +27,9 @@ const OVER_CAP: StorageConfig = {
   retention: "180",
   providers: [
     {
-      id: "stirling",
+      id: "chronicle",
       name: "Chronicle Cloud",
-      kind: "stirling",
+      kind: "chronicle",
       connected: true,
       detail: "Primary vault · us-east-1",
       usedGb: 1532,

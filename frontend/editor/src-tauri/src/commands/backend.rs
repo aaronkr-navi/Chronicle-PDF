@@ -85,11 +85,11 @@ fn find_chronicle_jar(resource_dir: &PathBuf) -> Result<PathBuf, String> {
         .filter_map(|entry| entry.ok())
         .filter(|entry| {
             let path = entry.path();
-            // Match any .jar file containing "chronicle-pdf" or "stirling-pdf" (case-insensitive)
+            // Match any .jar file containing "chronicle-pdf" or "chronicle-pdf" (case-insensitive)
             path.extension().and_then(|s| s.to_str()).map(|ext| ext.eq_ignore_ascii_case("jar")).unwrap_or(false)
                 && path.file_name()
                     .and_then(|f| f.to_str())
-                    .map(|name| { let lower = name.to_ascii_lowercase(); lower.contains("chronicle-pdf") || lower.contains("stirling-pdf") })
+                    .map(|name| { let lower = name.to_ascii_lowercase(); lower.contains("chronicle-pdf") || lower.contains("chronicle-pdf") })
                     .unwrap_or(false)
         })
         .collect();

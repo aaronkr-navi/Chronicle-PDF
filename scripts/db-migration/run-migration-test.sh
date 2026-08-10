@@ -23,7 +23,7 @@ FIXTURE_DIR="${FIXTURE_DIR:-$REPO_ROOT/app/proprietary/src/test/resources/db-mig
 STIRLING_JAR="${STIRLING_JAR:-}"
 JAVA_BIN="${JAVA_BIN:-${MIGRATION_TEST_JAVA:-}}"
 ADMIN_USERNAME="${ADMIN_USERNAME:-admin}"
-ADMIN_PASSWORD="${ADMIN_PASSWORD:-stirling}"
+ADMIN_PASSWORD="${ADMIN_PASSWORD:-chronicle}"
 STARTUP_TIMEOUT_SEC="${STARTUP_TIMEOUT_SEC:-300}"
 
 log()  { printf '[migration-test] %s\n' "$*" >&2; }
@@ -210,7 +210,7 @@ test_fixture() {
         # Preserve workdir so CI can upload the app log as an artifact for
         # post-mortem. Move it to a stable name so the upload path is fixed.
         local preserved
-        preserved="${MIGRATION_TEST_LOG_DIR:-/tmp}/stirling-migration-failed-$label"
+        preserved="${MIGRATION_TEST_LOG_DIR:-/tmp}/chronicle-migration-failed-$label"
         rm -rf "$preserved"
         mv "$workdir" "$preserved" 2>/dev/null || true
         log "  preserved failing workdir at $preserved"

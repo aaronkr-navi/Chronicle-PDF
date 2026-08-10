@@ -21,7 +21,7 @@ export interface UpdateProgress {
 
 /**
  * Headless-install update policy, set via the `updateMode` field of a
- * `stirling-provisioning.json` file dropped by MDM / Intune tooling — or
+ * `chronicle-provisioning.json` file dropped by MDM / Intune tooling — or
  * from the Settings → Software Updates panel by the user.
  *
  * * `prompt`   – default. Show the update popup and let the user decide.
@@ -53,7 +53,7 @@ export interface CanInstallResult {
 }
 
 // ─── localStorage keys ────────────────────────────────────────────────────────
-const KEY_PREFIX = "stirling-pdf-updater:";
+const KEY_PREFIX = "chronicle-pdf-updater:";
 const KEY_LAST_CHECKED = `${KEY_PREFIX}lastChecked`;
 const KEY_CHECK_INTERVAL_HOURS = `${KEY_PREFIX}checkIntervalHours`;
 const KEY_AUTO_DOWNLOAD = `${KEY_PREFIX}autoDownload`;

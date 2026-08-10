@@ -38,7 +38,7 @@ services:
       dockerfile: docker/embedded/Dockerfile
       args:
         STIRLING_FLAVOR: saas
-    container_name: payg-cucumber-stirling
+    container_name: payg-cucumber-chronicle
     depends_on:
       postgres-saas:
         condition: service_healthy

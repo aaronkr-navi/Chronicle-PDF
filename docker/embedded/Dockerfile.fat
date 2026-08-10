@@ -88,14 +88,14 @@ RUN set -eux; \
     ln -s /customFiles /app/customFiles; \
     ln -s /pipeline /app/pipeline; \
     ln -s /storage /app/storage; \
-    chown -h stirlingpdfuser:stirlingpdfgroup /app/logs /app/configs /app/customFiles /app/pipeline /app/storage; \
-    chown stirlingpdfuser:stirlingpdfgroup /app; \
-    chmod 750 /tmp/stirling-pdf; \
-    chmod 750 /tmp/stirling-pdf/heap_dumps; \
+    chown -h chroniclepdfuser:chroniclepdfgroup /app/logs /app/configs /app/customFiles /app/pipeline /app/storage; \
+    chown chroniclepdfuser:chroniclepdfgroup /app; \
+    chmod 750 /tmp/chronicle-pdf; \
+    chmod 750 /tmp/chronicle-pdf/heap_dumps; \
     fc-cache -f
 
 # Write version to a file so it is readable by scripts without env-var inheritance.
-RUN echo "${VERSION_TAG:-dev}" > /etc/stirling_version
+RUN echo "${VERSION_TAG:-dev}" > /etc/chronicle_version
 
 # Environment variables
 ENV VERSION_TAG=$VERSION_TAG \
@@ -104,18 +104,18 @@ ENV VERSION_TAG=$VERSION_TAG \
     _JVM_OPTS_BALANCED="-XX:+ExitOnOutOfMemoryError -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/configs/heap_dumps -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:G1HeapRegionSize=4m -XX:G1PeriodicGCInterval=60000 -XX:+UseStringDeduplication -XX:+UseCompactObjectHeaders -XX:+ExplicitGCInvokesConcurrent -Dspring.threads.virtual.enabled=true -Djava.awt.headless=true" \
     _JVM_OPTS_PERFORMANCE="-XX:+ExitOnOutOfMemoryError -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/configs/heap_dumps -XX:+UseShenandoahGC -XX:ShenandoahGCMode=generational -XX:+UseCompactObjectHeaders -XX:+UseStringDeduplication -XX:+AlwaysPreTouch -XX:+ExplicitGCInvokesConcurrent -Dspring.threads.virtual.enabled=true -Djava.awt.headless=true" \
     JAVA_CUSTOM_OPTS="" \
-    HOME=/home/stirlingpdfuser \
+    HOME=/home/chroniclepdfuser \
     PUID=1000 \
     PGID=1000 \
     UMASK=022 \
     FAT_DOCKER=true \
     INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false \
-    STIRLING_TEMPFILES_DIRECTORY=/tmp/stirling-pdf \
-    TMPDIR=/tmp/stirling-pdf \
-    TEMP=/tmp/stirling-pdf \
-    TMP=/tmp/stirling-pdf \
+    STIRLING_TEMPFILES_DIRECTORY=/tmp/chronicle-pdf \
+    TMPDIR=/tmp/chronicle-pdf \
+    TEMP=/tmp/chronicle-pdf \
+    TMP=/tmp/chronicle-pdf \
     DBUS_SESSION_BUS_ADDRESS=/dev/null \
-    SAL_TMP=/tmp/stirling-pdf/libre
+    SAL_TMP=/tmp/chronicle-pdf/libre
 
 # Metadata labels
 LABEL org.opencontainers.image.title="Chronicle PDF Fat" \

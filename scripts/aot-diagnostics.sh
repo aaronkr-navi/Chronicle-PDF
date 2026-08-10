@@ -9,13 +9,13 @@
 #
 #   --test         Run a quick AOT RECORD smoke test (~10-30s). Shows exactly
 #                  what error the JVM produces, useful for ARM debugging.
-#   --cache PATH   Override the AOT cache path (default: /configs/cache/stirling.aot)
+#   --cache PATH   Override the AOT cache path (default: /configs/cache/chronicle.aot)
 #
 # Symlink aliases set up by init-without-ocr.sh: aot-diag, aot-diagnostics
 
 set -euo pipefail
 
-AOT_CACHE_DEFAULT="/configs/cache/stirling.aot"
+AOT_CACHE_DEFAULT="/configs/cache/chronicle.aot"
 RUN_SMOKE_TEST=false
 AOT_CACHE_PATH=""
 
@@ -57,12 +57,12 @@ info "Date:         $(date -u +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null || date)"
 info "Hostname:     $(hostname 2>/dev/null || echo unknown)"
 info "Architecture: $(uname -m)"
 info "Kernel:       $(uname -r)"
-if [ -f /etc/stirling_version ]; then
-  info "Version:      $(tr -d '\r\n' < /etc/stirling_version)"
+if [ -f /etc/chronicle_version ]; then
+  info "Version:      $(tr -d '\r\n' < /etc/chronicle_version)"
 elif [ -n "${VERSION_TAG:-}" ]; then
   info "Version:      ${VERSION_TAG}"
 else
-  warn "VERSION_TAG not set and /etc/stirling_version not found"
+  warn "VERSION_TAG not set and /etc/chronicle_version not found"
 fi
 
 if [ -f /etc/os-release ]; then
@@ -310,7 +310,7 @@ if [ "$RUN_SMOKE_TEST" = true ]; then
       -XX:AOTConfiguration="$SMOKE_CONF"
       -Dspring.main.banner-mode=off
       -Dspring.context.exit=onRefresh
-      -Dstirling.datasource.url="jdbc:h2:mem:aotsmoke;DB_CLOSE_DELAY=-1;MODE=PostgreSQL")
+      -Dchronicle.datasource.url="jdbc:h2:mem:aotsmoke;DB_CLOSE_DELAY=-1;MODE=PostgreSQL")
 
     case "$JAR_LAYOUT" in
       layered)  SMOKE_CMD+=(-cp "/app/app.jar:/app/lib/*" stirling.software.SPDF.SPDFApplication) ;;

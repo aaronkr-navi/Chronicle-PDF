@@ -17,7 +17,7 @@ export interface SidebarCategory {
   hidden?: boolean;
 }
 
-const HIDDEN_STORAGE_KEY = "stirling.fileSidebarHiddenCategories.v1";
+const HIDDEN_STORAGE_KEY = "chronicle.fileSidebarHiddenCategories.v1";
 
 /** The fixed, shared category set — never mutated. */
 const BASE_CATEGORIES: readonly Omit<SidebarCategory, "hidden">[] =

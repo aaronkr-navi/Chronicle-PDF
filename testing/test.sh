@@ -331,21 +331,21 @@ capture_file_list() {
         -not -path '/config/*' \
         -not -path '/configs/*' \
         -not -path '/logs/*' \
-        -not -path '*/home/stirlingpdfuser/.config/libreoffice/*' \
-        -not -path '*/home/stirlingpdfuser/.config/calibre/*' \
-        -not -path '*/home/stirlingpdfuser/.java/fonts/*' \
-        -not -path '*/home/stirlingpdfuser/.pdfbox.cache' \
-        -not -path '*/tmp/stirling-pdf/PDFBox*' \
-        -not -path '*/tmp/stirling-pdf/hsperfdata_stirlingpdfuser/*' \
-        -not -path '*/tmp/hsperfdata_stirlingpdfuser/*' \
+        -not -path '*/home/chroniclepdfuser/.config/libreoffice/*' \
+        -not -path '*/home/chroniclepdfuser/.config/calibre/*' \
+        -not -path '*/home/chroniclepdfuser/.java/fonts/*' \
+        -not -path '*/home/chroniclepdfuser/.pdfbox.cache' \
+        -not -path '*/tmp/chronicle-pdf/PDFBox*' \
+        -not -path '*/tmp/chronicle-pdf/hsperfdata_chroniclepdfuser/*' \
+        -not -path '*/tmp/hsperfdata_chroniclepdfuser/*' \
         -not -path '*/tmp/hsperfdata_root/*' \
-        -not -path '*/tmp/stirling-pdf/jetty-*/*' \
-        -not -path '*/tmp/stirling-pdf/lu*' \
-        -not -path '*/tmp/stirling-pdf/tmp*' \
+        -not -path '*/tmp/chronicle-pdf/jetty-*/*' \
+        -not -path '*/tmp/chronicle-pdf/lu*' \
+        -not -path '*/tmp/chronicle-pdf/tmp*' \
         -not -path '/tmp/lu*' \
         -not -path '*/tmp/*/user/registrymodifications.xcu' \
-        -not -path '/app/stirling.aot' \
-        -not -path '*/tmp/stirling.aotconf' \
+        -not -path '/app/chronicle.aot' \
+        -not -path '*/tmp/chronicle.aotconf' \
         -not -path '*/tmp/aot-*.log' \
         2>/dev/null | xargs -I{} sh -c 'stat -c \"%n %s %Y\" \"{}\" 2>/dev/null || true' | sort" > "$output_file"
 
@@ -362,21 +362,21 @@ capture_file_list() {
             -not -path '/config/*' \
         -not -path '/configs/*' \
             -not -path '/logs/*' \
-            -not -path '*/home/stirlingpdfuser/.config/libreoffice/*' \
-            -not -path '*/home/stirlingpdfuser/.config/calibre/*' \
-            -not -path '*/home/stirlingpdfuser/.java/fonts/*' \
-            -not -path '*/home/stirlingpdfuser/.pdfbox.cache' \
+            -not -path '*/home/chroniclepdfuser/.config/libreoffice/*' \
+            -not -path '*/home/chroniclepdfuser/.config/calibre/*' \
+            -not -path '*/home/chroniclepdfuser/.java/fonts/*' \
+            -not -path '*/home/chroniclepdfuser/.pdfbox.cache' \
             -not -path '*/tmp/PDFBox*' \
-            -not -path '*/tmp/hsperfdata_stirlingpdfuser/*' \
+            -not -path '*/tmp/hsperfdata_chroniclepdfuser/*' \
             -not -path '*/tmp/hsperfdata_root/*' \
-            -not -path '*/tmp/stirling-pdf/hsperfdata_stirlingpdfuser/*' \
-            -not -path '*/tmp/stirling-pdf/jetty-*/*' \
-            -not -path '*/tmp/stirling-pdf/lu*' \
-            -not -path '*/tmp/stirling-pdf/tmp*' \
+            -not -path '*/tmp/chronicle-pdf/hsperfdata_chroniclepdfuser/*' \
+            -not -path '*/tmp/chronicle-pdf/jetty-*/*' \
+            -not -path '*/tmp/chronicle-pdf/lu*' \
+            -not -path '*/tmp/chronicle-pdf/tmp*' \
             -not -path '*/tmp/lu*' \
             -not -path '*/tmp/tmp*' \
-            -not -path '/app/stirling.aot' \
-            -not -path '*/tmp/stirling.aotconf' \
+            -not -path '/app/chronicle.aot' \
+            -not -path '*/tmp/chronicle.aotconf' \
             -not -path '*/tmp/aot-*.log' \
             2>/dev/null | sort" > "$output_file"
 
@@ -873,16 +873,16 @@ main() {
     # ==================================================================
     # 3. Regression test with login (test_cicd.yml)
     # ==================================================================
-    # STIRLING_PDF_TEST_COVERAGE=1 layers the JaCoCo agent override over
+    # chronicle_pdf_TEST_COVERAGE=1 layers the JaCoCo agent override over
     # the cucumber container ONLY. The agent jar is bind-mounted from
     # build/jacoco/jacocoagent.jar so the published image never carries
     # it. After behave finishes, we trigger `docker compose down` (further
     # down) which sends SIGTERM and lets dumponexit=true flush the .exec
     # to testing/cucumber-coverage/cucumber.exec on the host.
     COVERAGE_COMPOSE_FILE=""
-    if [ -n "${STIRLING_PDF_TEST_COVERAGE:-}" ]; then
+    if [ -n "${chronicle_pdf_TEST_COVERAGE:-}" ]; then
         if [ ! -f "$PROJECT_ROOT/build/jacoco/jacocoagent.jar" ]; then
-            echo "::warning::STIRLING_PDF_TEST_COVERAGE=1 but build/jacoco/jacocoagent.jar is missing - run ./gradlew copyJacocoAgent first"
+            echo "::warning::chronicle_pdf_TEST_COVERAGE=1 but build/jacoco/jacocoagent.jar is missing - run ./gradlew copyJacocoAgent first"
         else
             mkdir -p "$PROJECT_ROOT/testing/cucumber-coverage"
             rm -f "$PROJECT_ROOT/testing/cucumber-coverage/cucumber.exec"

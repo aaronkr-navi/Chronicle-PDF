@@ -80,7 +80,7 @@ export KEYCLOAK_HOST
 
 # Preflight check: ensure host can resolve the issuer hostname (skippable + bounded timeouts)
 if [ "${SKIP_OAUTH_PREFLIGHT:-false}" != "true" ]; then
-    if ! curl -sf --connect-timeout 2 --max-time 3 "http://${KEYCLOAK_HOST}:9080/realms/stirling-oauth" >/dev/null 2>&1; then
+    if ! curl -sf --connect-timeout 2 --max-time 3 "http://${KEYCLOAK_HOST}:9080/realms/chronicle-oauth" >/dev/null 2>&1; then
         echo -e "${YELLOW}⚠ Cannot reach http://${KEYCLOAK_HOST}:9080 from this machine.${NC}"
         echo -e "${YELLOW}  Add a hosts entry pointing ${KEYCLOAK_HOST} to 127.0.0.1, then retry.${NC}"
         echo ""
@@ -125,7 +125,7 @@ echo -e "${YELLOW}▶ Waiting for Keycloak (OAuth)...${NC}"
 MAX_WAIT=180
 WAITED=0
 while [ $WAITED -lt $MAX_WAIT ]; do
-    if curl -sf http://localhost:9080/realms/stirling-oauth > /dev/null 2>&1; then
+    if curl -sf http://localhost:9080/realms/chronicle-oauth > /dev/null 2>&1; then
         echo -e "${GREEN}✓ Keycloak is ready${NC}"
         break
     fi
@@ -141,7 +141,7 @@ fi
 
 echo ""
 echo -e "${YELLOW}▶ Starting Chronicle PDF...${NC}"
-docker-compose -f docker-compose-keycloak-oauth.yml up "${COMPOSE_UP_ARGS[@]}" stirling-pdf-oauth
+docker-compose -f docker-compose-keycloak-oauth.yml up "${COMPOSE_UP_ARGS[@]}" chronicle-pdf-oauth
 
 echo ""
 echo -e "${YELLOW}▶ Waiting for Chronicle PDF...${NC}"

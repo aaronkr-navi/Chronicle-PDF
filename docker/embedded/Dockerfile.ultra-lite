@@ -85,18 +85,18 @@ ENV VERSION_TAG=$VERSION_TAG \
     _JVM_OPTS_BALANCED="-XX:+ExitOnOutOfMemoryError -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/configs/heap_dumps -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -XX:G1HeapRegionSize=4m -XX:G1PeriodicGCInterval=60000 -XX:+UseStringDeduplication -XX:+UseCompactObjectHeaders -XX:+ExplicitGCInvokesConcurrent -Dspring.threads.virtual.enabled=true -Djava.awt.headless=true" \
     _JVM_OPTS_PERFORMANCE="-XX:+ExitOnOutOfMemoryError -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/configs/heap_dumps -XX:+UseShenandoahGC -XX:ShenandoahGCMode=generational -XX:+UseCompactObjectHeaders -XX:+UseStringDeduplication -XX:+AlwaysPreTouch -XX:+ExplicitGCInvokesConcurrent -Dspring.threads.virtual.enabled=true -Djava.awt.headless=true" \
     JAVA_CUSTOM_OPTS="" \
-    HOME=/home/stirlingpdfuser \
+    HOME=/home/chroniclepdfuser \
     PUID=1000 \
     PGID=1000 \
     UMASK=022 \
-    STIRLING_TEMPFILES_DIRECTORY=/tmp/stirling-pdf \
-    TMPDIR=/tmp/stirling-pdf \
-    TEMP=/tmp/stirling-pdf \
-    TMP=/tmp/stirling-pdf \
+    STIRLING_TEMPFILES_DIRECTORY=/tmp/chronicle-pdf \
+    TMPDIR=/tmp/chronicle-pdf \
+    TEMP=/tmp/chronicle-pdf \
+    TMP=/tmp/chronicle-pdf \
     ENDPOINTS_GROUPS_TO_REMOVE=CLI
 
 # Install minimal dependencies
-RUN mkdir -p $HOME /configs /logs /customFiles /pipeline/watchedFolders /pipeline/finishedFolders /storage /tmp/stirling-pdf /tmp/stirling-pdf/heap_dumps && \
+RUN mkdir -p $HOME /configs /logs /customFiles /pipeline/watchedFolders /pipeline/finishedFolders /storage /tmp/chronicle-pdf /tmp/chronicle-pdf/heap_dumps && \
     mkdir -p /usr/share/fonts/opentype/noto && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -111,8 +111,8 @@ RUN mkdir -p $HOME /configs /logs /customFiles /pipeline/watchedFolders /pipelin
     # User permissions
     userdel -r ubuntu 2>/dev/null || true && \
     groupdel ubuntu 2>/dev/null || true && \
-    groupadd -g 1000 stirlingpdfgroup && useradd -u 1000 -d $HOME -s /bin/bash -g stirlingpdfgroup stirlingpdfuser && \
-    chown -R stirlingpdfuser:stirlingpdfgroup $HOME /configs /customFiles /pipeline /storage /tmp/stirling-pdf
+    groupadd -g 1000 chroniclepdfgroup && useradd -u 1000 -d $HOME -s /bin/bash -g chroniclepdfgroup chroniclepdfuser && \
+    chown -R chroniclepdfuser:chroniclepdfgroup $HOME /configs /customFiles /pipeline /storage /tmp/chronicle-pdf
 
 # Copy scripts and built artifacts after OS package layer to maximize cache reuse.
 COPY --chown=1000:1000 scripts/init-without-ocr.sh /scripts/init-without-ocr.sh

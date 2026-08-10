@@ -86,7 +86,7 @@ async function resolveIcon(icon) {
 async function buildHtml({ name, description, iconSvg, theme }) {
   const t = theme;
   const lockup = await fs.readFile(
-    path.join(HERE, "og-assets/stirling-lockup.png"),
+    path.join(HERE, "og-assets/chronicle-lockup.png"),
   );
   const lockupUri = `data:image/png;base64,${lockup.toString("base64")}`;
   return `<!doctype html><html><head><meta charset="utf-8" />

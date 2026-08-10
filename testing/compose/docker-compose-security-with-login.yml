@@ -25,7 +25,7 @@ services:
       DOCKER_ENABLE_SECURITY: "true"
       SECURITY_ENABLELOGIN: "true"
       SECURITY_INITIALLOGIN_USERNAME: "admin"
-      SECURITY_INITIALLOGIN_PASSWORD: "stirling"
+      SECURITY_INITIALLOGIN_PASSWORD: "chronicle"
       SYSTEM_DEFAULTLOCALE: en-US
       UI_APPNAME: Chronicle PDF
       UI_HOMEDESCRIPTION: Demo site for Chronicle PDF Latest with Security and Login
@@ -36,13 +36,13 @@ services:
       SECURITY_CUSTOMGLOBALAPIKEY: "123456789"
       SHOW_SURVEY: "true"
     networks:
-      - stirling-network
+      - chronicle-network
 
 networks:
-  stirling-network:
+  chronicle-network:
     driver: bridge
 
 volumes:
-  stirling-data:
-  stirling-config:
-  stirling-logs:
+  chronicle-data:
+  chronicle-config:
+  chronicle-logs:

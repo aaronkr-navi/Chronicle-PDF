@@ -1,6 +1,6 @@
 services:
   keycloak-saml:
-    container_name: stirling-keycloak-saml
+    container_name: chronicle-keycloak-saml
     image: quay.io/keycloak/keycloak:24.0
     command:
       - start-dev
@@ -26,16 +26,16 @@ services:
       keycloak-saml-db:
         condition: service_healthy
     healthcheck:
-      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/8080 && echo -e 'GET /realms/stirling-saml/protocol/saml/descriptor HTTP/1.1\\nHost: localhost\\nConnection: close\\n\\n' >&3 && timeout 2 cat <&3 | grep -q 'EntityDescriptor'"]
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/8080 && echo -e 'GET /realms/chronicle-saml/protocol/saml/descriptor HTTP/1.1\\nHost: localhost\\nConnection: close\\n\\n' >&3 && timeout 2 cat <&3 | grep -q 'EntityDescriptor'"]
       interval: 10s
       timeout: 10s
       retries: 30
       start_period: 60s
     networks:
-      - stirling-saml-test
+      - chronicle-saml-test
 
   keycloak-saml-db:
-    container_name: stirling-keycloak-saml-db
+    container_name: chronicle-keycloak-saml-db
     image: postgres:16-alpine
     environment:
       POSTGRES_DB: keycloak
@@ -47,7 +47,7 @@ services:
       timeout: 5s
       retries: 10
     networks:
-      - stirling-saml-test
+      - chronicle-saml-test
 
   chronicle-pdf-saml:
     container_name: Chronicle-PDF-saml-test
@@ -112,14 +112,14 @@ services:
       SECURITY_SAML2_PROVIDER: "keycloak"
       SECURITY_SAML2_REGISTRATIONID: "keycloak"
       # IdP Issuer must match what's in the SAML metadata
-      SECURITY_SAML2_IDP_ISSUER: "http://localhost:9080/realms/stirling-saml"
+      SECURITY_SAML2_IDP_ISSUER: "http://localhost:9080/realms/chronicle-saml"
       # Entity ID must match what's configured in Keycloak
-      SECURITY_SAML2_IDP_ENTITYID: "http://localhost:9080/realms/stirling-saml"
+      SECURITY_SAML2_IDP_ENTITYID: "http://localhost:9080/realms/chronicle-saml"
       # Metadata URL for Keycloak realm (use service name for internal)
-      SECURITY_SAML2_IDP_METADATAURI: "http://keycloak-saml:8080/realms/stirling-saml/protocol/saml/descriptor"
+      SECURITY_SAML2_IDP_METADATAURI: "http://keycloak-saml:8080/realms/chronicle-saml/protocol/saml/descriptor"
       # SSO/SLO URLs (required - metadata URI doesn't auto-populate these)
-      SECURITY_SAML2_IDPSINGLELOGINURL: "http://localhost:9080/realms/stirling-saml/protocol/saml"
-      SECURITY_SAML2_IDPSINGLELOGOUTURL: "http://localhost:9080/realms/stirling-saml/protocol/saml"
+      SECURITY_SAML2_IDPSINGLELOGINURL: "http://localhost:9080/realms/chronicle-saml/protocol/saml"
+      SECURITY_SAML2_IDPSINGLELOGOUTURL: "http://localhost:9080/realms/chronicle-saml/protocol/saml"
       # Certificate file paths
       SECURITY_SAML2_IDP_CERT: "/app/keycloak-saml-cert.pem"
       SECURITY_SAML2_PRIVATEKEY: "/app/saml-private-key.key"
@@ -153,9 +153,9 @@ services:
       keycloak-saml:
         condition: service_healthy
     networks:
-      - stirling-saml-test
+      - chronicle-saml-test
     restart: on-failure:5
 
 networks:
-  stirling-saml-test:
+  chronicle-saml-test:
     driver: bridge

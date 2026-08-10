@@ -23,7 +23,7 @@ print_manual_panel() {
     echo -e "   OAuth client id   ${YELLOW}mcp-client${NC}  (public - leave the client secret blank)"
     echo ""
     echo -e "   ${BLUE}The client redirects you to a sign-in page; log in with:${NC}"
-    echo -e "     ${YELLOW}mcpuser@stirling.local${NC} / ${YELLOW}mcppassword${NC}"
+    echo -e "     ${YELLOW}mcpuser@chronicle.local${NC} / ${YELLOW}mcppassword${NC}"
     echo ""
     echo -e "${BLUE}Stop:${NC} docker-compose -f docker-compose-keycloak-mcp.yml down -v"
     echo ""
@@ -34,7 +34,7 @@ print_manual_panel_apikey() {
     local jwt key
     jwt=$(curl -s -X POST http://localhost:8080/api/v1/auth/login \
         -H "Content-Type: application/json" \
-        -d '{"username":"mcpuser@stirling.local","password":"mcppassword"}' \
+        -d '{"username":"mcpuser@chronicle.local","password":"mcppassword"}' \
         | sed -n 's/.*"access_token":"\([^"]*\)".*/\1/p')
     # Reuse the user's existing key if any; else create one.
     key=$(curl -s -X POST http://localhost:8080/api/v1/user/get-api-key \
@@ -62,7 +62,7 @@ print_manual_panel_apikey() {
         echo -e "   ${RED}(could not mint a key automatically; is the stack up in apikey mode?)${NC}"
     fi
     echo ""
-    echo -e "   ${BLUE}No browser redirect, no IdP. The key maps to ${YELLOW}mcpuser@stirling.local${BLUE} and${NC}"
+    echo -e "   ${BLUE}No browser redirect, no IdP. The key maps to ${YELLOW}mcpuser@chronicle.local${BLUE} and${NC}"
     echo -e "   ${BLUE}every call is audited as that user. Use this when a client's OAuth can't reach localhost.${NC}"
     echo ""
     echo -e "${BLUE}Stop:${NC} docker-compose -f docker-compose-keycloak-mcp.yml down -v"
@@ -154,7 +154,7 @@ export KEYCLOAK_HOST
 
 # Preflight: the host must resolve the issuer hostname.
 if [ "${SKIP_MCP_PREFLIGHT:-false}" != "true" ]; then
-    if ! curl -sf --connect-timeout 2 --max-time 3 "http://${KEYCLOAK_HOST}:9080/realms/stirling-mcp" >/dev/null 2>&1; then
+    if ! curl -sf --connect-timeout 2 --max-time 3 "http://${KEYCLOAK_HOST}:9080/realms/chronicle-mcp" >/dev/null 2>&1; then
         echo -e "${YELLOW}⚠ Cannot reach http://${KEYCLOAK_HOST}:9080 from this machine yet.${NC}"
         echo -e "${YELLOW}  That is expected before the stack is up. If validation later fails to${NC}"
         echo -e "${YELLOW}  resolve the host, add a hosts entry pointing ${KEYCLOAK_HOST} to 127.0.0.1:${NC}"
@@ -188,7 +188,7 @@ echo -e "${YELLOW}▶ Waiting for Keycloak (MCP)...${NC}"
 MAX_WAIT=180
 WAITED=0
 while [ $WAITED -lt $MAX_WAIT ]; do
-    if curl -sf http://localhost:9080/realms/stirling-mcp > /dev/null 2>&1; then
+    if curl -sf http://localhost:9080/realms/chronicle-mcp > /dev/null 2>&1; then
         echo -e "${GREEN}✓ Keycloak is ready${NC}"
         break
     fi
@@ -204,7 +204,7 @@ fi
 
 echo ""
 echo -e "${YELLOW}▶ Starting Chronicle PDF (MCP resource server)...${NC}"
-docker-compose -f docker-compose-keycloak-mcp.yml up "${COMPOSE_UP_ARGS[@]}" stirling-pdf-mcp
+docker-compose -f docker-compose-keycloak-mcp.yml up "${COMPOSE_UP_ARGS[@]}" chronicle-pdf-mcp
 
 echo ""
 echo -e "${YELLOW}▶ Waiting for Chronicle PDF...${NC}"
@@ -240,12 +240,12 @@ fi
 echo -e "   Keycloak Admin: ${GREEN}http://${KEYCLOAK_HOST}:9080/admin${NC} (admin / admin)"
 echo ""
 echo -e "${BLUE}👤 Test user (exists in Keycloak AND as a Chronicle account):${NC}"
-echo -e "     Email:    ${GREEN}mcpuser@stirling.local${NC}"
+echo -e "     Email:    ${GREEN}mcpuser@chronicle.local${NC}"
 echo -e "     Password: ${GREEN}mcppassword${NC}"
 echo ""
 if [ "$APIKEY_MODE" != true ]; then
     echo -e "${BLUE}👻 Negative-test user (valid Keycloak login, no Chronicle account):${NC}"
-    echo -e "     Email:    ${GREEN}ghost@stirling.local${NC}"
+    echo -e "     Email:    ${GREEN}ghost@chronicle.local${NC}"
     echo -e "     Password: ${GREEN}ghostpassword${NC}   (expect HTTP 403 at /mcp)"
     echo ""
     echo -e "${BLUE}🔐 OAuth clients:${NC}"

@@ -28,7 +28,7 @@ echo "==> Starting Postgres + Valkey + MinIO + 2 app nodes + nginx..."
 $COMPOSE up -d
 
 echo "==> Waiting for both app nodes to report healthy..."
-for node in multinode-stirling-1 multinode-stirling-2; do
+for node in multinode-chronicle-1 multinode-chronicle-2; do
   for i in $(seq 1 60); do
     status=$(docker inspect -f '{{.State.Health.Status}}' "$node" 2>/dev/null || echo "starting")
     [ "$status" = "healthy" ] && { echo "    $node: healthy"; break; }
@@ -47,19 +47,19 @@ cat <<EOF
 ============================================================================
  Multi-node Chronicle PDF is UP.
 
-   App (via load balancer): http://localhost:8080     (admin / stirling)
+   App (via load balancer): http://localhost:8080     (admin / chronicle)
    MinIO console:           http://localhost:9001     (minioadmin / minioadmin)
-   Postgres:                localhost:5434            (stirling / stirling, db 'stirling')
+   Postgres:                localhost:5434            (chronicle / chronicle, db 'chronicle')
 
-   Seeded users:            user01..user40@stirling.test / Password123!
+   Seeded users:            user01..user40@chronicle.test / Password123!
    Global API key:          multinode-test-key   (header: X-API-KEY)
 
  Try it:
    ./validate-multinode-test.sh        # multi-node smoke tests (optional)
-   $COMPOSE logs -f stirling-1         # tail a node
+   $COMPOSE logs -f chronicle-1         # tail a node
    ./start-multinode-test.sh --down    # stop + wipe
 
  Nodes are reachable directly for cross-node checks:
-   docker compose -f docker-compose-multinode.yml exec stirling-1 curl -s localhost:8080/api/v1/info/status
+   docker compose -f docker-compose-multinode.yml exec chronicle-1 curl -s localhost:8080/api/v1/info/status
 ============================================================================
 EOF

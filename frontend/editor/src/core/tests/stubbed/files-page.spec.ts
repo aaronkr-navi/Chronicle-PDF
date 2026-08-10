@@ -37,7 +37,7 @@ async function seedFiles(page: Page, files: SeedFile[]): Promise<void> {
   );
   await page.addInitScript(
     ({ records, dbVersion }) => {
-      const open = window.indexedDB.open("stirling-pdf-files", dbVersion);
+      const open = window.indexedDB.open("chronicle-pdf-files", dbVersion);
       open.onupgradeneeded = (event) => {
         const db = (event.target as IDBOpenDBRequest).result;
         // Create both `files` and `folders` stores on this DB.

@@ -111,7 +111,7 @@ jobs:
           pkgname: Chronicle-PDF-desktop
           pkgbuild: .github/aur/Chronicle-PDF-desktop/PKGBUILD
           commit_username: Chronicle PDF Inc
-          commit_email: contact@stirlingpdf.com
+          commit_email: contact@chronicle-pdf.com
           ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
           commit_message: "Update to v${{ needs.get-release-info.outputs.version }}"
 
@@ -123,6 +123,6 @@ jobs:
       #     pkgname: Chronicle-PDF-server-bin
       #     pkgbuild: .github/aur/Chronicle-PDF-server-bin/PKGBUILD
       #     commit_username: Chronicle PDF Inc
-      #     commit_email: contact@stirlingpdf.com
+      #     commit_email: contact@chronicle-pdf.com
       #     ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
       #     commit_message: "Update to v${{ needs.get-release-info.outputs.version }}"

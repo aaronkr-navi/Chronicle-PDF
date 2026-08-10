@@ -114,7 +114,7 @@ export default function AdminAdvancedSection() {
           baseTmpDir: "",
           libreofficeDir: "",
           systemTempDir: "",
-          prefix: "stirling-pdf-",
+          prefix: "chronicle-pdf-",
           maxAgeHours: 24,
           cleanupIntervalMinutes: 30,
           startupCleanup: true,
@@ -797,7 +797,7 @@ export default function AdminAdvancedSection() {
                 )}
                 description={t(
                   "admin.settings.advanced.tempFileManagement.baseTmpDir.description",
-                  "Base directory for temporary files (leave empty for default: java.io.tmpdir/stirling-pdf)",
+                  "Base directory for temporary files (leave empty for default: java.io.tmpdir/chronicle-pdf)",
                 )}
                 value={settings.tempFileManagement?.baseTmpDir || ""}
                 onChange={(e) =>
@@ -811,7 +811,7 @@ export default function AdminAdvancedSection() {
                 }
                 placeholder={t(
                   "admin.settings.advanced.tempFileManagement.baseTmpDir.placeholder",
-                  "Default: java.io.tmpdir/stirling-pdf",
+                  "Default: java.io.tmpdir/chronicle-pdf",
                 )}
                 disabled={!loginEnabled}
               />
@@ -883,7 +883,7 @@ export default function AdminAdvancedSection() {
                   "admin.settings.advanced.tempFileManagement.prefix.description",
                   "Prefix for temp file names",
                 )}
-                value={settings.tempFileManagement?.prefix || "stirling-pdf-"}
+                value={settings.tempFileManagement?.prefix || "chronicle-pdf-"}
                 onChange={(e) =>
                   setSettings({
                     ...settings,
@@ -893,7 +893,7 @@ export default function AdminAdvancedSection() {
                     },
                   })
                 }
-                placeholder="stirling-pdf-"
+                placeholder="chronicle-pdf-"
                 disabled={!loginEnabled}
               />
             </div>

@@ -9,12 +9,12 @@ on:
         type: boolean
         default: true
       build_unoserver:
-        description: "Build & push the standalone stirling-unoserver image."
+        description: "Build & push the standalone chronicle-unoserver image."
         required: false
         type: boolean
         default: true
       force_unoserver_rebuild:
-        description: "Rebuild stirling-unoserver even if its source hash is unchanged."
+        description: "Rebuild chronicle-unoserver even if its source hash is unchanged."
         required: false
         type: boolean
         default: false
@@ -298,8 +298,8 @@ jobs:
         env:
           UNOSERVER_VERSION: ${{ steps.unoserverVersion.outputs.version }}
           UNOSERVER_HASH: ${{ steps.unoserverHash.outputs.hash }}
-          UNOSERVER_IMAGE: ghcr.io/${{ steps.repoowner.outputs.lowercase }}/stirling-unoserver
-          UNOSERVER_HASH_ANNOTATION: org.stirlingpdf.unoserver-source-hash
+          UNOSERVER_IMAGE: ghcr.io/${{ steps.repoowner.outputs.lowercase }}/chronicle-unoserver
+          UNOSERVER_HASH_ANNOTATION: org.chroniclepdf.unoserver-source-hash
           FORCE_REBUILD: ${{ inputs.force_unoserver_rebuild }}
           GH_REF: ${{ github.ref }}
           EVENT_NAME: ${{ github.event_name }}
@@ -329,9 +329,9 @@ jobs:
                 mode="stable"
                 tags="${UNOSERVER_IMAGE}:${UNOSERVER_VERSION},${UNOSERVER_IMAGE}:latest"
               elif docker manifest inspect "${UNOSERVER_IMAGE}:${UNOSERVER_VERSION}" >/dev/null 2>&1; then
-                echo "stirling-unoserver:${UNOSERVER_VERSION} already on GHCR — skipping"
+                echo "chronicle-unoserver:${UNOSERVER_VERSION} already on GHCR — skipping"
               else
-                echo "stirling-unoserver:${UNOSERVER_VERSION} is new — will publish"
+                echo "chronicle-unoserver:${UNOSERVER_VERSION} is new — will publish"
                 mode="stable"
                 tags="${UNOSERVER_IMAGE}:${UNOSERVER_VERSION},${UNOSERVER_IMAGE}:latest"
               fi
@@ -370,12 +370,12 @@ jobs:
           context: .
           file: ./docker/unoserver/Dockerfile
           push: true
-          cache-from: type=gha,scope=stirling-unoserver
-          cache-to: type=gha,mode=max,scope=stirling-unoserver
+          cache-from: type=gha,scope=chronicle-unoserver
+          cache-to: type=gha,mode=max,scope=chronicle-unoserver
           tags: ${{ steps.unoserverDecision.outputs.tags }}
           # Manifest annotation read by the decision step above to detect drift.
           annotations: |
-            index:org.stirlingpdf.unoserver-source-hash=${{ steps.unoserverHash.outputs.hash }}
+            index:org.chroniclepdf.unoserver-source-hash=${{ steps.unoserverHash.outputs.hash }}
           platforms: linux/amd64,linux/arm64/v8
           provenance: true
           sbom: true

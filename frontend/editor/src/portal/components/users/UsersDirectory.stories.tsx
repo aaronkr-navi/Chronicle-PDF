@@ -51,7 +51,7 @@ const MEMBERS: Member[] = [
   {
     id: "1",
     name: "Matt Joseph",
-    email: "matt@stirlingpdf.com",
+    email: "matt@chronicle-pdf.com",
     role: "admin",
     status: "active",
     lastActive: "Now",
@@ -64,7 +64,7 @@ const MEMBERS: Member[] = [
   {
     id: "2",
     name: "Tom Reilly",
-    email: "tom@stirlingpdf.com",
+    email: "tom@chronicle-pdf.com",
     role: "team_owner",
     status: "active",
     lastActive: "12m ago",
@@ -77,7 +77,7 @@ const MEMBERS: Member[] = [
   {
     id: "3",
     name: "Sarah Kowalski",
-    email: "sarah@stirlingpdf.com",
+    email: "sarah@chronicle-pdf.com",
     role: "member",
     status: "active",
     lastActive: "30m ago",
@@ -90,7 +90,7 @@ const MEMBERS: Member[] = [
   {
     id: "4",
     name: "Priya Patel",
-    email: "priya@stirlingpdf.com",
+    email: "priya@chronicle-pdf.com",
     role: "member",
     status: "active",
     lastActive: "Never",
@@ -102,7 +102,7 @@ const MEMBERS: Member[] = [
   {
     id: "5",
     name: "Dana Okafor",
-    email: "dana@stirlingpdf.com",
+    email: "dana@chronicle-pdf.com",
     role: "team_owner",
     status: "active",
     lastActive: "1h ago",
@@ -115,7 +115,7 @@ const MEMBERS: Member[] = [
   {
     id: "6",
     name: "Lars Eriksson",
-    email: "lars@stirlingpdf.com",
+    email: "lars@chronicle-pdf.com",
     role: "member",
     status: "active",
     lastActive: "3h ago",
@@ -146,7 +146,7 @@ const STATE_MEMBERS: Member[] = [
   {
     id: "1",
     name: "Matt Joseph",
-    email: "matt@stirlingpdf.com",
+    email: "matt@chronicle-pdf.com",
     role: "admin",
     status: "active",
     lastActive: "Now",

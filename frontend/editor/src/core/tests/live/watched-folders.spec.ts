@@ -31,7 +31,7 @@ test.beforeEach(() => {
 async function setupApp(page: Page): Promise<void> {
   // Use the shared login helper (real UI login with the bootstrapped
   // `admin / adminadmin` credentials). The previous bespoke /api/v1/auth/login
-  // call used the pre-bootstrap `stirling` password and always 401'd.
+  // call used the pre-bootstrap `chronicle` password and always 401'd.
   await loginAndSetup(page);
   await page.waitForSelector('[data-testid="watchedFolders-button"]', {
     timeout: 30000,
@@ -48,7 +48,7 @@ async function navigateToWatchedFolders(page: Page): Promise<void> {
 async function getIDBFolderCount(page: Page): Promise<number> {
   return page.evaluate(async () => {
     return new Promise<number>((resolve) => {
-      const req = indexedDB.open("stirling-pdf-watched-folders");
+      const req = indexedDB.open("chronicle-pdf-watched-folders");
       req.onsuccess = () => {
         const db = req.result;
         const storeName = db.objectStoreNames[0];
@@ -71,7 +71,7 @@ async function getIDBFolders(
 ): Promise<{ id: string; name: string }[]> {
   return page.evaluate(async () => {
     return new Promise<{ id: string; name: string }[]>((resolve) => {
-      const req = indexedDB.open("stirling-pdf-watched-folders");
+      const req = indexedDB.open("chronicle-pdf-watched-folders");
       req.onsuccess = () => {
         const db = req.result;
         const storeName = db.objectStoreNames[0];
@@ -98,12 +98,12 @@ async function getIDBFolders(
 async function clearAllIDBFolders(page: Page): Promise<void> {
   await page.evaluate(async () => {
     const dbNames = [
-      "stirling-pdf-watched-folders",
-      "stirling-pdf-folder-files",
-      "stirling-pdf-folder-run-state",
-      "stirling-pdf-retry-schedule",
-      "stirling-pdf-folder-seen-files",
-      "stirling-pdf-folder-directory-handles",
+      "chronicle-pdf-watched-folders",
+      "chronicle-pdf-folder-files",
+      "chronicle-pdf-folder-run-state",
+      "chronicle-pdf-retry-schedule",
+      "chronicle-pdf-folder-seen-files",
+      "chronicle-pdf-folder-directory-handles",
     ];
     for (const name of dbNames) {
       await new Promise<void>((resolve) => {
@@ -297,7 +297,7 @@ test.describe("Watched Folders — Create / Edit / Delete", () => {
           });
 
         await seedStore(
-          "stirling-pdf-folder-seen-files",
+          "chronicle-pdf-folder-seen-files",
           "seenFiles",
           `${folderId}|test.pdf|1234|5678`,
           Date.now(),
@@ -312,7 +312,7 @@ test.describe("Watched Folders — Create / Edit / Delete", () => {
       async ({ folderId }) => {
         // Delete from watched folder storage
         await new Promise<void>((resolve) => {
-          const req = indexedDB.open("stirling-pdf-watched-folders");
+          const req = indexedDB.open("chronicle-pdf-watched-folders");
           req.onsuccess = () => {
             const db = req.result;
             const storeName = db.objectStoreNames[0];

@@ -23,7 +23,7 @@ import {
 const REPO = process.env.DOCS_REPO ?? "aaronkr-navi/Chronicle-PDF";
 const REF = process.env.DOCS_REF ?? "main";
 const ROOT = process.env.DOCS_ROOT ?? "docs";
-const SITE = "https://docs.stirlingpdf.com";
+const SITE = "https://docs.chronicle-pdf.com";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(HERE, "../src/portal/generated/docsManifest.json");
@@ -95,7 +95,7 @@ async function main(): Promise<void> {
   const res = await fetch(url, {
     headers: {
       Accept: "application/vnd.github+json",
-      "User-Agent": "stirling-portal-docs-sync",
+      "User-Agent": "chronicle-portal-docs-sync",
       ...(process.env.GITHUB_TOKEN
         ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
         : {}),

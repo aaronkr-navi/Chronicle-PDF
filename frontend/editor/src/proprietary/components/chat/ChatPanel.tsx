@@ -480,7 +480,7 @@ export function ChatPanel({ onBack, backLabel }: ChatPanelProps) {
           <Logo
             variant="textOnly"
             textHeight="17px"
-            alt={t("agents.stirling_name", "Chronicle")}
+            alt={t("agents.chronicle_name", "Chronicle")}
           />
         }
         loading={isLoading}

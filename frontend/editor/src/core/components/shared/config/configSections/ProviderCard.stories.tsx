@@ -8,7 +8,7 @@ const mockProvider: Provider = {
   icon: "key-rounded",
   type: "oauth2",
   scope: "Sign-in authentication",
-  documentationUrl: "https://docs.stirlingpdf.com/Configuration/OAuth",
+  documentationUrl: "https://docs.chronicle-pdf.com/Configuration/OAuth",
   fields: [
     {
       key: "clientId",

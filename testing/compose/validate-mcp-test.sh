@@ -9,7 +9,7 @@ BLUE='\033[0;34m'
 NC='\033[0m'
 
 KEYCLOAK_HOST="${KEYCLOAK_HOST:-kubernetes.docker.internal}"
-REALM="stirling-mcp"
+REALM="chronicle-mcp"
 CLIENT_ID="mcp-test-client"
 CLIENT_SECRET="mcp-test-secret"
 MCP_URL="http://localhost:8080/mcp"
@@ -136,11 +136,11 @@ get_token() {
         --data-urlencode "scope=openid email mcp.tools.read mcp.tools.write" \
         | sed -n 's/.*"access_token":"\([^"]*\)".*/\1/p'
 }
-USER_TOKEN=$(get_token "mcpuser@stirling.local" "mcppassword")
+USER_TOKEN=$(get_token "mcpuser@chronicle.local" "mcppassword")
 if [ -n "$USER_TOKEN" ]; then
-    pass "Obtained access token for mcpuser@stirling.local"
+    pass "Obtained access token for mcpuser@chronicle.local"
 else
-    fail "Could not obtain access token for mcpuser@stirling.local (check Keycloak/client)"
+    fail "Could not obtain access token for mcpuser@chronicle.local (check Keycloak/client)"
 fi
 echo ""
 
@@ -156,7 +156,7 @@ if [ -n "$USER_TOKEN" ]; then
     else
         fail "POST /mcp tools/list with valid token -> $LIST_CODE (expected 200)"
     fi
-    for t in stirling_describe_operation stirling_convert stirling_pages stirling_misc stirling_security; do
+    for t in chronicle_describe_operation chronicle_convert chronicle_pages chronicle_misc chronicle_security; do
         if echo "$LIST_BODY" | grep -q "\"$t\""; then
             pass "tools/list advertises $t"
         else
@@ -168,13 +168,13 @@ else
 fi
 echo ""
 
-# tools/call stirling_describe_operation
-echo -e "${YELLOW}[5] Deep schema via stirling_describe_operation${NC}"
+# tools/call chronicle_describe_operation
+echo -e "${YELLOW}[5] Deep schema via chronicle_describe_operation${NC}"
 if [ -n "$USER_TOKEN" ]; then
     OP=$(echo "$LIST_BODY" | grep -oE '"enum":\[[^]]+\]' | head -1 | grep -oE '"[^"]+"' | sed -n '2p' | tr -d '"')
     if [ -n "$OP" ]; then
         echo -e "    ${BLUE}using operation:${NC} $OP"
-        DESC_RPC="{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/call\",\"params\":{\"name\":\"stirling_describe_operation\",\"arguments\":{\"operation\":\"$OP\"}}}"
+        DESC_RPC="{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/call\",\"params\":{\"name\":\"chronicle_describe_operation\",\"arguments\":{\"operation\":\"$OP\"}}}"
         DESC_CODE=$(curl -s -o /tmp/mcp_desc.json -w "%{http_code}" -X POST "$MCP_URL" \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer $USER_TOKEN" -d "$DESC_RPC")
@@ -194,9 +194,9 @@ echo ""
 
 # account-binding: valid Keycloak user with no Chronicle account -> 403
 echo -e "${YELLOW}[6] Account-binding rejects users without a Chronicle account${NC}"
-GHOST_TOKEN=$(get_token "ghost@stirling.local" "ghostpassword")
+GHOST_TOKEN=$(get_token "ghost@chronicle.local" "ghostpassword")
 if [ -n "$GHOST_TOKEN" ]; then
-    pass "Obtained a valid Keycloak token for ghost@stirling.local"
+    pass "Obtained a valid Keycloak token for ghost@chronicle.local"
     GHOST_CODE=$(curl -s -o /dev/null -w "%{http_code}" -X POST "$MCP_URL" \
         -H "Content-Type: application/json" \
         -H "Authorization: Bearer $GHOST_TOKEN" -d "$RPC_LIST")
@@ -206,7 +206,7 @@ if [ -n "$GHOST_TOKEN" ]; then
         fail "ghost user -> $GHOST_CODE (expected 403)"
     fi
 else
-    fail "Could not obtain a token for ghost@stirling.local (cannot test account-binding)"
+    fail "Could not obtain a token for ghost@chronicle.local (cannot test account-binding)"
 fi
 echo ""
 
@@ -216,7 +216,7 @@ echo -e "${YELLOW}[7] Hardening - bad tokens & endpoint isolation${NC}"
 b64url() { printf '%s' "$1" | base64 | tr '+/' '-_' | tr -d '='; }
 
 # unsigned alg:none token must be rejected
-NONE_JWT="$(b64url '{"alg":"none","typ":"JWT"}').$(b64url '{"sub":"mcpuser","iss":"http://kubernetes.docker.internal:9080/realms/stirling-mcp","aud":"http://localhost:8080/mcp","email":"mcpuser@stirling.local","scope":"mcp.tools.read mcp.tools.write","exp":9999999999}')."
+NONE_JWT="$(b64url '{"alg":"none","typ":"JWT"}').$(b64url '{"sub":"mcpuser","iss":"http://kubernetes.docker.internal:9080/realms/chronicle-mcp","aud":"http://localhost:8080/mcp","email":"mcpuser@chronicle.local","scope":"mcp.tools.read mcp.tools.write","exp":9999999999}')."
 NONE_CODE=$(curl -s -o /dev/null -w "%{http_code}" -X POST "$MCP_URL" \
     -H "Content-Type: application/json" -H "Authorization: Bearer $NONE_JWT" -d "$RPC_LIST")
 if [ "$NONE_CODE" = "401" ] || [ "$NONE_CODE" = "400" ]; then
@@ -229,7 +229,7 @@ fi
 WRONG_AUD=$(curl -s -X POST "$TOKEN_URL" \
     --data-urlencode "grant_type=password" \
     --data-urlencode "client_id=other-client" \
-    --data-urlencode "username=mcpuser@stirling.local" \
+    --data-urlencode "username=mcpuser@chronicle.local" \
     --data-urlencode "password=mcppassword" \
     --data-urlencode "scope=openid email" \
     | sed -n 's/.*"access_token":"\([^"]*\)".*/\1/p')
@@ -284,7 +284,7 @@ if [ -n "$USER_TOKEN" ]; then
     # a PDF category tool must return an honest error (isError), not a fake success
     CAT=$(curl -s -X POST "$MCP_URL" -H "Content-Type: application/json" \
         -H "Authorization: Bearer $USER_TOKEN" \
-        -d '{"jsonrpc":"2.0","id":81,"method":"tools/call","params":{"name":"stirling_security","arguments":{"operation":"add-password"}}}')
+        -d '{"jsonrpc":"2.0","id":81,"method":"tools/call","params":{"name":"chronicle_security","arguments":{"operation":"add-password"}}}')
     if echo "$CAT" | grep -q '"isError":true'; then
         pass "category tool returns isError, not a fake success"
     else
@@ -396,7 +396,7 @@ elif [ ! -f "$SAMPLE_PDF" ]; then
     fail "sample PDF not found at $SAMPLE_PDF"
 else
     B64=$(base64 -w0 "$SAMPLE_PDF" 2>/dev/null || base64 "$SAMPLE_PDF" | tr -d '\n')
-    EXEC_RPC=$(printf '{"jsonrpc":"2.0","id":91,"method":"tools/call","params":{"name":"stirling_pages","arguments":{"operation":"rotate-pdf","fileName":"example.pdf","parameters":{"angle":90},"file":"%s"}}}' "$B64")
+    EXEC_RPC=$(printf '{"jsonrpc":"2.0","id":91,"method":"tools/call","params":{"name":"chronicle_pages","arguments":{"operation":"rotate-pdf","fileName":"example.pdf","parameters":{"angle":90},"file":"%s"}}}' "$B64")
     EXEC=$(curl -s -X POST "$MCP_URL" -H "Content-Type: application/json" \
         -H "Authorization: Bearer $USER_TOKEN" -d "$EXEC_RPC")
     if echo "$EXEC" | grep -q '"isError":true'; then

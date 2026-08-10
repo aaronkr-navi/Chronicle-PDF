@@ -1,6 +1,6 @@
 {
-  "id": "stirling-oauth",
-  "realm": "stirling-oauth",
+  "id": "chronicle-oauth",
+  "realm": "chronicle-oauth",
   "displayName": "Chronicle PDF OAuth Test",
   "displayNameHtml": "<div class=\"kc-logo-text\"><span>Chronicle PDF OAuth</span></div>",
   "enabled": true,

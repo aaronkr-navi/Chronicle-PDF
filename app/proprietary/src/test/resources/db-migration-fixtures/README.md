@@ -15,7 +15,7 @@ format, so the runtime driver can open any of them without conversion.
 
 ## What's in each fixture
 
-* `admin` user with the default password `stirling` (BCrypt `$2a$10$...`).
+* `admin` user with the default password `chronicle` (BCrypt `$2a$10$...`).
 * The internal API user `Chronicle-PDF-BACKEND-API-USER`.
 * `ROLE_ADMIN` authority row for the admin user.
 * `Default` and `Internal` teams.
@@ -36,7 +36,7 @@ which for each fixture:
    working directory.
 2. Boots the current `:Chronicle-PDF:bootJar` against it on a free port.
 3. Waits for Spring to start (no `SchemaManagementException` in the log).
-4. POSTs `{"username":"admin","password":"stirling"}` to `/api/v1/auth/login`
+4. POSTs `{"username":"admin","password":"chronicle"}` to `/api/v1/auth/login`
    and asserts the response is `200 OK`.
 
 A red CI on this job means a schema change in the PR is not backwards
@@ -59,7 +59,7 @@ manual steps are short. For each version you want to capture:
 gh release download v2.10.0 \
   --repo aaronkr-navi/Chronicle-PDF \
   --pattern 'Chronicle-PDF-with-login.jar' \
-  --output /tmp/stirling-v2.10.0.jar
+  --output /tmp/chronicle-v2.10.0.jar
 
 # 2. Boot the JAR in a clean working directory. DB_CLOSE_ON_EXIT=TRUE is
 #    the only override that matters - it makes the H2 file flush on JVM exit
@@ -67,7 +67,7 @@ gh release download v2.10.0 \
 workdir=$(mktemp -d)
 mkdir -p "$workdir/configs"
 cd "$workdir"
-java -jar /tmp/stirling-v2.10.0.jar \
+java -jar /tmp/chronicle-v2.10.0.jar \
   --server.port=8089 \
   --spring.datasource.url='jdbc:h2:file:./configs/Chronicle-PDF-DB-2.3.232;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE;MODE=PostgreSQL' \
   &
@@ -75,7 +75,7 @@ java -jar /tmp/stirling-v2.10.0.jar \
 # 3. Wait until http://localhost:8089/login responds, then log in once to
 #    materialize whatever rows the app writes on first boot.
 curl -sf -X POST -H 'Content-Type: application/json' \
-  -d '{"username":"admin","password":"stirling"}' \
+  -d '{"username":"admin","password":"chronicle"}' \
   http://localhost:8089/api/v1/auth/login
 
 # 4. Shut it down (any kill works - DB_CLOSE_ON_EXIT=TRUE handles the flush).

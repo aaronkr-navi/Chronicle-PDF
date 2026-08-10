@@ -1,6 +1,6 @@
 {
-  "id": "stirling-saml",
-  "realm": "stirling-saml",
+  "id": "chronicle-saml",
+  "realm": "chronicle-saml",
   "displayName": "Chronicle PDF SAML Test",
   "displayNameHtml": "<div class=\"kc-logo-text\"><span>Chronicle PDF SAML</span></div>",
   "enabled": true,

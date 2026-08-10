@@ -24,7 +24,7 @@ export const Loaded: Story = {
         bootstrapMode="non-blocking"
         initialConfig={{
           appNameNavbar: "Chronicle PDF",
-          baseUrl: "https://stirlingpdf.example.com",
+          baseUrl: "https://chronicle-pdf.example.com",
           contextPath: "/",
           serverPort: 8080,
           enableLogin: true,

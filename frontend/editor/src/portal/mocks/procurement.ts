@@ -29,7 +29,7 @@ const ENTERPRISE_DEAL: Deal = {
   engineer: {
     name: "Priya Raman",
     title: "Senior Solutions Engineer",
-    email: "priya.raman@stirlingpdf.com",
+    email: "priya.raman@chronicle-pdf.com",
   },
   trial: {
     key: "TRIAL-NWND-7F3A-2C9E",

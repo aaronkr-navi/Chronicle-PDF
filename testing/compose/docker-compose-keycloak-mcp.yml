@@ -1,6 +1,6 @@
 services:
   keycloak-mcp-db:
-    container_name: stirling-keycloak-mcp-db
+    container_name: chronicle-keycloak-mcp-db
     image: postgres:16-alpine
     environment:
       POSTGRES_DB: keycloak
@@ -12,10 +12,10 @@ services:
       timeout: 5s
       retries: 10
     networks:
-      - stirling-mcp-test
+      - chronicle-mcp-test
 
   keycloak-mcp:
-    container_name: stirling-keycloak-mcp
+    container_name: chronicle-keycloak-mcp
     image: quay.io/keycloak/keycloak:24.0
     command:
       - start-dev
@@ -40,13 +40,13 @@ services:
       keycloak-mcp-db:
         condition: service_healthy
     healthcheck:
-      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/8080 && echo -e 'GET /realms/stirling-mcp HTTP/1.1\\nHost: localhost\\nConnection: close\\n\\n' >&3 && timeout 2 cat <&3 | head -n 1 | grep -q '200'"]
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/8080 && echo -e 'GET /realms/chronicle-mcp HTTP/1.1\\nHost: localhost\\nConnection: close\\n\\n' >&3 && timeout 2 cat <&3 | head -n 1 | grep -q '200'"]
       interval: 10s
       timeout: 10s
       retries: 30
       start_period: 60s
     networks:
-      - stirling-mcp-test
+      - chronicle-mcp-test
 
   chronicle-pdf-mcp:
     container_name: Chronicle-PDF-mcp-test
@@ -83,7 +83,7 @@ services:
       SYSTEM_MAXFILESIZE: "100"
 
       # Seed the Chronicle account the Keycloak "email" claim binds to (proves account-binding).
-      SECURITY_INITIALLOGIN_USERNAME: "mcpuser@stirling.local"
+      SECURITY_INITIALLOGIN_USERNAME: "mcpuser@chronicle.local"
       SECURITY_INITIALLOGIN_PASSWORD: "mcppassword"
 
       # MCP server: OAuth2 resource-server mode (validates Keycloak tokens at /mcp, no web SSO).
@@ -92,7 +92,7 @@ services:
       # Lowered so the oversized-body 413 check stays fast; production default is 10MB.
       MCP_MAXREQUESTBYTES: "262144"
       # Must match the token "iss" exactly.
-      MCP_AUTH_ISSUERURI: "http://${KEYCLOAK_HOST:-kubernetes.docker.internal}:9080/realms/stirling-mcp"
+      MCP_AUTH_ISSUERURI: "http://${KEYCLOAK_HOST:-kubernetes.docker.internal}:9080/realms/chronicle-mcp"
       # RFC 8707 audience - must equal the "aud" the realm's mapper injects.
       MCP_AUTH_RESOURCEID: "http://localhost:8080/mcp"
       # Bind the JWT to a Chronicle user by the "email" claim.
@@ -126,9 +126,9 @@ services:
       keycloak-mcp:
         condition: service_healthy
     networks:
-      - stirling-mcp-test
+      - chronicle-mcp-test
     restart: on-failure:5
 
 networks:
-  stirling-mcp-test:
+  chronicle-mcp-test:
     driver: bridge

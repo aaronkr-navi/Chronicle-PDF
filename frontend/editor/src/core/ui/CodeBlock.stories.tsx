@@ -18,7 +18,7 @@ const JSON_RESULT = `{
   "confidence_avg": 0.96
 }`;
 
-const PYTHON_EXAMPLE = `import stirling
+const PYTHON_EXAMPLE = `import chronicle
 
 client = stirling.Client(api_key="sk_live_a3f8...")
 result = client.extract(file="certificate.pdf", schema="coi.v2")

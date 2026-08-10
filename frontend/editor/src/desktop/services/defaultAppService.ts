@@ -1,6 +1,6 @@
 import { invoke } from "@tauri-apps/api/core";
 
-const PROMPT_DISMISSED_KEY = "stirlingpdf_default_app_prompt_dismissed";
+const PROMPT_DISMISSED_KEY = "chroniclepdf_default_app_prompt_dismissed";
 
 type PromptDismissedListener = () => void;
 const promptDismissedListeners = new Set<PromptDismissedListener>();

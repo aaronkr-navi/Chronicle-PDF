@@ -6,13 +6,13 @@ set -u
 
 BASE_URL="${BASE_URL:-http://localhost:8080}"
 ADMIN_USER="${ADMIN_USER:-admin}"
-ADMIN_PASS="${ADMIN_PASS:-stirling}"
+ADMIN_PASS="${ADMIN_PASS:-chronicle}"
 USER_COUNT="${USER_COUNT:-40}"
 USER_PASS="${USER_PASS:-Password123!}"
 PGHOST="${PGHOST:-postgres}"
-PGUSER="${PGUSER:-stirling}"
-PGPASSWORD="${PGPASSWORD:-stirling}"
-PGDATABASE="${PGDATABASE:-stirling}"
+PGUSER="${PGUSER:-chronicle}"
+PGPASSWORD="${PGPASSWORD:-chronicle}"
+PGDATABASE="${PGDATABASE:-chronicle}"
 export PGPASSWORD
 
 TEAMS="Engineering Finance Legal Operations"
@@ -62,7 +62,7 @@ log "seedable team ids:$seed_team_ids (count=$team_count)"
 created=0; failed=0
 n=1
 while [ "$n" -le "$USER_COUNT" ]; do
-  uname=$(printf "user%02d@stirling.test" "$n")
+  uname=$(printf "user%02d@chronicle.test" "$n")
   role="ROLE_USER"; [ "$n" -le 2 ] && role="ROLE_ADMIN"
   team_id=""
   if [ "$team_count" -gt 0 ]; then
@@ -137,4 +137,4 @@ fi
 
 log "seed complete."
 log "  login: $ADMIN_USER / $ADMIN_PASS at $BASE_URL"
-log "  users: user01..$(printf '%02d' "$USER_COUNT")@stirling.test / $USER_PASS"
+log "  users: user01..$(printf '%02d' "$USER_COUNT")@chronicle.test / $USER_PASS"

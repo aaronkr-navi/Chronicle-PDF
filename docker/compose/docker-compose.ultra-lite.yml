@@ -30,8 +30,8 @@ services:
       UI_APPNAMENAVBAR: Chronicle PDF Ultra-lite
       SYSTEM_MAXFILESIZE: "50"
     networks:
-      - stirling-network
+      - chronicle-network
 
 networks:
-  stirling-network:
+  chronicle-network:
     driver: bridge

@@ -119,7 +119,7 @@ describe("operation form", () => {
     const elastic = operationById("elasticIndex")!;
     const seeded = emptyOperationValues(elastic);
 
-    expect(seeded.index).toBe("stirling-audit");
+    expect(seeded.index).toBe("chronicle-audit");
     expect(operationFormValid(elastic, seeded)).toBe(true);
     expect(operationFormValid(elastic, { index: "  " })).toBe(false);
   });

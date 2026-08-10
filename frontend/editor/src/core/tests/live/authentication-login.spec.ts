@@ -14,7 +14,7 @@ test.describe("1. Authentication and Login", () => {
       await expect(
         page
           .locator(
-            'img[alt*="Chronicle"], img[src*="stirling"], img[src*="logo"]',
+            'img[alt*="Chronicle"], img[src*="chronicle"], img[src*="logo"]',
           )
           .first(),
       ).toBeVisible();
@@ -119,7 +119,7 @@ test.describe("1. Authentication and Login", () => {
       await page.context().clearCookies();
       await page.evaluate(() => {
         localStorage.removeItem("chronicle_jwt");
-        localStorage.removeItem("stirling_refresh_token");
+        localStorage.removeItem("chronicle_refresh_token");
       });
       await page.context().addCookies([
         {

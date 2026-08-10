@@ -155,7 +155,7 @@ echo -e "${YELLOW}▶ Waiting for Keycloak (SAML)...${NC}"
 MAX_WAIT=180
 WAITED=0
 while [ $WAITED -lt $MAX_WAIT ]; do
-    if curl -sf http://localhost:9080/realms/stirling-saml/protocol/saml/descriptor 2>/dev/null | grep -q "EntityDescriptor"; then
+    if curl -sf http://localhost:9080/realms/chronicle-saml/protocol/saml/descriptor 2>/dev/null | grep -q "EntityDescriptor"; then
         echo -e "${GREEN}✓ Keycloak is ready${NC}"
         break
     fi
@@ -180,7 +180,7 @@ PUBLIC_CERT="${SCRIPT_DIR}/saml-public-cert.crt"
 
 if [ ! -f "$PRIVATE_KEY" ] || [ ! -f "$PUBLIC_CERT" ]; then
     openssl req -x509 -newkey rsa:2048 -keyout "$PRIVATE_KEY" -out "$PUBLIC_CERT" \
-        -days 3650 -nodes -subj "/CN=stirling-pdf-saml-sp" >/dev/null 2>&1
+        -days 3650 -nodes -subj "/CN=chronicle-pdf-saml-sp" >/dev/null 2>&1
     echo -e "${GREEN}✓ Generated SAML SP certificates${NC}"
 else
     echo -e "${BLUE}Using existing SAML SP certificates${NC}"
@@ -189,7 +189,7 @@ fi
 echo ""
 echo -e "${YELLOW}▶ Fetching Keycloak SAML signing certificate...${NC}"
 CERT_PATH="${SCRIPT_DIR}/keycloak-saml-cert.pem"
-CERT_BODY="$(curl -sf http://localhost:9080/realms/stirling-saml/protocol/saml/descriptor \
+CERT_BODY="$(curl -sf http://localhost:9080/realms/chronicle-saml/protocol/saml/descriptor \
     | awk 'BEGIN{RS="<[^>]*X509Certificate>|</[^>]*X509Certificate>"} NR==2{gsub(/[[:space:]]+/,""); print; exit}')"
 if [ -n "$CERT_BODY" ]; then
     {
@@ -206,7 +206,7 @@ echo -e "${GREEN}✓ Keycloak SAML certificate updated${NC}"
 
 echo ""
 echo -e "${YELLOW}▶ Starting Chronicle PDF...${NC}"
-docker-compose -f docker-compose-keycloak-saml.yml up "${COMPOSE_UP_ARGS[@]}" stirling-pdf-saml
+docker-compose -f docker-compose-keycloak-saml.yml up "${COMPOSE_UP_ARGS[@]}" chronicle-pdf-saml
 
 echo ""
 echo -e "${YELLOW}▶ Waiting for Chronicle PDF...${NC}"

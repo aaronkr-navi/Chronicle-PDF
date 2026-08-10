@@ -615,15 +615,15 @@ ARG PUID=1000
 ARG PGID=1000
 
 RUN set -eux; \
-    if ! getent group stirlingpdfgroup >/dev/null 2>&1; then \
-      groupadd -g "${PGID}" stirlingpdfgroup 2>/dev/null \
-        || groupadd stirlingpdfgroup; \
+    if ! getent group chroniclepdfgroup >/dev/null 2>&1; then \
+      groupadd -g "${PGID}" chroniclepdfgroup 2>/dev/null \
+        || groupadd chroniclepdfgroup; \
     fi; \
-    if ! id -u stirlingpdfuser >/dev/null 2>&1; then \
-      useradd -m -u "${PUID}" -g stirlingpdfgroup \
-        -d /home/stirlingpdfuser -s /bin/bash stirlingpdfuser 2>/dev/null \
-        || useradd -m -g stirlingpdfgroup \
-          -d /home/stirlingpdfuser -s /bin/bash stirlingpdfuser; \
+    if ! id -u chroniclepdfuser >/dev/null 2>&1; then \
+      useradd -m -u "${PUID}" -g chroniclepdfgroup \
+        -d /home/chroniclepdfuser -s /bin/bash chroniclepdfuser 2>/dev/null \
+        || useradd -m -g chroniclepdfgroup \
+          -d /home/chroniclepdfuser -s /bin/bash chroniclepdfuser; \
     fi
 
 # Application directories
@@ -631,12 +631,12 @@ RUN set -eux; \
     mkdir -p /configs /configs/cache /configs/heap_dumps /logs /customFiles \
              /pipeline/watchedFolders /pipeline/finishedFolders \
              /storage \
-             /tmp/stirling-pdf/heap_dumps; \
-    chown -R stirlingpdfuser:stirlingpdfgroup \
-      /home/stirlingpdfuser /configs /logs /customFiles /pipeline /storage \
-      /tmp/stirling-pdf; \
-    chmod 750 /tmp/stirling-pdf; \
-    chmod 750 /tmp/stirling-pdf/heap_dumps
+             /tmp/chronicle-pdf/heap_dumps; \
+    chown -R chroniclepdfuser:chroniclepdfgroup \
+      /home/chroniclepdfuser /configs /logs /customFiles /pipeline /storage \
+      /tmp/chronicle-pdf; \
+    chmod 750 /tmp/chronicle-pdf; \
+    chmod 750 /tmp/chronicle-pdf/heap_dumps
 
 # Tool symlinks
 RUN set -eux; \

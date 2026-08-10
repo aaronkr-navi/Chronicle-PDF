@@ -82,6 +82,6 @@ jobs:
           name: db-migration-app-logs
           # Path matches the preserved workdir in run-migration-test.sh -
           # only failing fixtures leave a directory behind.
-          path: /tmp/stirling-migration-failed-*/app.log
+          path: /tmp/chronicle-migration-failed-*/app.log
           retention-days: 7
           if-no-files-found: warn

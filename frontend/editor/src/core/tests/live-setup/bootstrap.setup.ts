@@ -10,7 +10,7 @@ import {
  * Live-suite bootstrap. Two responsibilities:
  *
  *   1. **Pristine CI path** — log in as the backend's default
- *      `admin / stirling` user (created with firstLogin=true), exercise
+ *      `admin / chronicle` user (created with firstLogin=true), exercise
  *      the FirstLoginSlide UI, change to `admin / adminadmin`, verify
  *      the post-change toast. Real coverage of the forced-first-login
  *      flow.
@@ -25,7 +25,7 @@ import {
  * depends on it so it runs once before every other live spec.
  */
 
-const DEFAULT_BACKEND_PASSWORD = "stirling";
+const DEFAULT_BACKEND_PASSWORD = "chronicle";
 
 async function adminAdminadminAlreadyExists(
   request: import("@playwright/test").APIRequestContext,

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/aaronkr-navi/Chronicle-PDF/main/docs/stirling.png" width="80">
+  <img src="https://raw.githubusercontent.com/aaronkr-navi/Chronicle-PDF/main/docs/chronicle.png" width="80">
   <br>
   <h1 align="center">Chronicle-PDF</h1>
 </p>

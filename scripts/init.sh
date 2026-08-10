@@ -94,7 +94,7 @@ log_warn "Using TESSDATA_PREFIX=$TESSDATA_PREFIX"
 # === Temp dir ===
 # Ensure the temporary directory exists and has proper permissions.
 mkdir -p /tmp/Chronicle-PDF
-chown -R stirlingpdfuser:stirlingpdfgroup /tmp/Chronicle-PDF || true
+chown -R chroniclepdfuser:chroniclepdfgroup /tmp/Chronicle-PDF || true
 chmod -R 755 /tmp/Chronicle-PDF || true
 
 # === Start application ===

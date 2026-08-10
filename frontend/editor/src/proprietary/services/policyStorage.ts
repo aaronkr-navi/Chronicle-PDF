@@ -8,8 +8,8 @@
 import { loadPolicyCatalog } from "@app/services/policyCatalog";
 import type { PoliciesByCategory, PolicyState } from "@app/types/policies";
 
-const STORAGE_KEY = "stirling-policies-state";
-export const POLICIES_CHANGE_EVENT = "stirling:policies-changed";
+const STORAGE_KEY = "chronicle-policies-state";
+export const POLICIES_CHANGE_EVENT = "chronicle:policies-changed";
 
 function defaultState(): PolicyState {
   // Unconfigured by default. The backend is the source of truth for what's
@@ -36,7 +36,7 @@ function defaultState(): PolicyState {
 
 /** An obsolete reviewer email scrubbed from persisted state on read so it can
  *  re-default to the real signed-in user. */
-const STALE_REVIEWER_EMAIL = "matt@stirlingpdf.com";
+const STALE_REVIEWER_EMAIL = "matt@chronicle-pdf.com";
 
 /** Read the full policy state, seeding + healing any missing categories. */
 export function loadPolicies(): PoliciesByCategory {

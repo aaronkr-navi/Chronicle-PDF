@@ -1,7 +1,7 @@
 # Multi-node Chronicle PDF processor test stack: shared Postgres/MinIO/Valkey behind an nginx LB fronting N app nodes, with enterprise features unlocked via a local test licence key.
-# Bring up: ./start-multinode-test.sh   Validate: ./validate-multinode-test.sh   Access: http://localhost:8080 (admin / stirling)
+# Bring up: ./start-multinode-test.sh   Validate: ./validate-multinode-test.sh   Access: http://localhost:8080 (admin / chronicle)
 
-x-stirling-node: &stirling-node
+x-chronicle-node: &chronicle-node
   build:
     context: ../..
     dockerfile: docker/embedded/Dockerfile
@@ -24,7 +24,7 @@ x-stirling-node: &stirling-node
     timeout: 10s
     retries: 30
     start_period: 90s
-  environment: &stirling-env
+  environment: &chronicle-env
     # --- Licensing: unlock pro/enterprise (custom DB + cluster mode) ---
     # Cluster mode is licence-gated - set PREMIUM_KEY (locally: export PREMIUM_KEY=...; CI: the PREMIUM_KEY_ENTERPRISE secret); the default below is a non-functional placeholder, never a real key.
     PREMIUM_ENABLED: "true"
@@ -35,7 +35,7 @@ x-stirling-node: &stirling-node
     DOCKER_ENABLE_SECURITY: "true"
     SECURITY_ENABLELOGIN: "true"
     SECURITY_INITIALLOGIN_USERNAME: "admin"
-    SECURITY_INITIALLOGIN_PASSWORD: "stirling"
+    SECURITY_INITIALLOGIN_PASSWORD: "chronicle"
     # Global API key: lets the seed/validate scripts call admin APIs without a login flow.
     SECURITY_CUSTOMGLOBALAPIKEY: "multinode-test-key"
 
@@ -45,16 +45,16 @@ x-stirling-node: &stirling-node
     SYSTEM_DATASOURCE_TYPE: "postgresql"
     SYSTEM_DATASOURCE_HOSTNAME: "postgres"
     SYSTEM_DATASOURCE_PORT: "5432"
-    SYSTEM_DATASOURCE_NAME: "stirling"
-    SYSTEM_DATASOURCE_USERNAME: "stirling"
-    SYSTEM_DATASOURCE_PASSWORD: "stirling"
+    SYSTEM_DATASOURCE_NAME: "chronicle"
+    SYSTEM_DATASOURCE_USERNAME: "chronicle"
+    SYSTEM_DATASOURCE_PASSWORD: "chronicle"
     # User.settings has no @Lob annotation - with one, Postgres treats it as a large object and every login 500s ("Large Objects may not be used in auto-commit mode"); see multinode/README.md.
 
     # --- Shared object storage (persistent user uploads + share/store feature) ---
     STORAGE_ENABLED: "true"
     STORAGE_PROVIDER: "s3"
     STORAGE_S3_ENDPOINT: "http://minio:9000"
-    STORAGE_S3_BUCKET: "stirling-storage"
+    STORAGE_S3_BUCKET: "chronicle-storage"
     STORAGE_S3_REGION: "us-east-1"
     STORAGE_S3_ACCESSKEY: "minioadmin"
     STORAGE_S3_SECRETKEY: "minioadmin"
@@ -85,7 +85,7 @@ x-stirling-node: &stirling-node
     UI_APPNAME: "Chronicle PDF Multi-Node"
     UI_APPNAMENAVBAR: "Chronicle Multi-Node"
   networks:
-    - stirling-multinode
+    - chronicle-multinode
 
 services:
   # ---- Shared Postgres: the single DB all nodes coordinate through ----------
@@ -93,20 +93,20 @@ services:
     image: postgres:17-alpine
     container_name: multinode-postgres
     environment:
-      POSTGRES_USER: stirling
-      POSTGRES_PASSWORD: stirling
-      POSTGRES_DB: stirling
+      POSTGRES_USER: chronicle
+      POSTGRES_PASSWORD: chronicle
+      POSTGRES_DB: chronicle
     ports:
-      - "5434:5432" # host access for inspection (psql -h localhost -p 5434 -U stirling)
+      - "5434:5432" # host access for inspection (psql -h localhost -p 5434 -U chronicle)
     volumes:
       - postgres-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U stirling -d stirling"]
+      test: ["CMD-SHELL", "pg_isready -U chronicle -d chronicle"]
       interval: 3s
       timeout: 5s
       retries: 30
     networks:
-      - stirling-multinode
+      - chronicle-multinode
 
   # ---- Valkey: cluster backplane (shared job state / rate limiting) ---------
   valkey:
@@ -119,7 +119,7 @@ services:
       timeout: 5s
       retries: 30
     networks:
-      - stirling-multinode
+      - chronicle-multinode
 
   # ---- MinIO: shared S3 (platform storage + policy connections + webhook staging) ----
   minio:
@@ -140,7 +140,7 @@ services:
       timeout: 5s
       retries: 30
     networks:
-      - stirling-multinode
+      - chronicle-multinode
 
   # ---- One-shot: create the buckets the stack needs -------------------------
   minio-init:
@@ -152,28 +152,28 @@ services:
     entrypoint: >
       /bin/sh -c "
       mc alias set local http://minio:9000 minioadmin minioadmin &&
-      mc mb --ignore-existing local/stirling-storage &&
+      mc mb --ignore-existing local/chronicle-storage &&
       mc mb --ignore-existing local/policy-data &&
-      echo 'buckets ready: stirling-storage, policy-data'
+      echo 'buckets ready: chronicle-storage, policy-data'
       "
     networks:
-      - stirling-multinode
+      - chronicle-multinode
 
   # ---- App node 1 -----------------------------------------------------------
-  stirling-1:
-    <<: *stirling-node
-    container_name: multinode-stirling-1
+  chronicle-1:
+    <<: *chronicle-node
+    container_name: multinode-chronicle-1
     environment:
-      <<: *stirling-env
+      <<: *chronicle-env
       SYSTEM_NODEID: "node-1"
 
   # ---- App node 2 -----------------------------------------------------------
   # No ordering vs node-1 needed - each node mints its own signing key at boot and publishes the public half to the shared DB, so both verify each other's tokens.
-  stirling-2:
-    <<: *stirling-node
-    container_name: multinode-stirling-2
+  chronicle-2:
+    <<: *chronicle-node
+    container_name: multinode-chronicle-2
     environment:
-      <<: *stirling-env
+      <<: *chronicle-env
       SYSTEM_NODEID: "node-2"
 
   # ---- One-shot seeder: teams, ~40 users, S3 connection, policies -----------
@@ -183,41 +183,41 @@ services:
     container_name: multinode-seed
     profiles: ["seed"]
     depends_on:
-      stirling-1:
+      chronicle-1:
         condition: service_healthy
-      stirling-2:
+      chronicle-2:
         condition: service_healthy
     environment:
       BASE_URL: "http://nginx:8080"
       PGHOST: "postgres"
-      PGUSER: "stirling"
-      PGPASSWORD: "stirling"
-      PGDATABASE: "stirling"
+      PGUSER: "chronicle"
+      PGPASSWORD: "chronicle"
+      PGDATABASE: "chronicle"
       USER_COUNT: "40"
     volumes:
       - ./multinode/seed.sh:/seed.sh:ro
     entrypoint: ["/bin/sh", "-c", "apk add --no-cache curl jq >/dev/null && sh /seed.sh"]
     networks:
-      - stirling-multinode
+      - chronicle-multinode
 
   # ---- nginx load balancer: single entrypoint round-robining the nodes ------
   nginx:
     image: nginx:1.27-alpine
     container_name: multinode-nginx
     depends_on:
-      stirling-1:
+      chronicle-1:
         condition: service_healthy
-      stirling-2:
+      chronicle-2:
         condition: service_healthy
     ports:
       - "8080:8080"
     volumes:
       - ./multinode/nginx.conf:/etc/nginx/nginx.conf:ro
     networks:
-      - stirling-multinode
+      - chronicle-multinode
 
 networks:
-  stirling-multinode:
+  chronicle-multinode:
     driver: bridge
 
 volumes:

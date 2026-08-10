@@ -83,8 +83,8 @@ RUN set -eux; \
     chmod 750 /tmp/Chronicle-PDF/heap_dumps; \
     fc-cache -f
 
-# Version file for scripts (init-without-ocr.sh reads /etc/stirling_version).
-RUN echo "${VERSION_TAG:-dev}" > /etc/stirling_version
+# Version file for scripts (init-without-ocr.sh reads /etc/chronicle_version).
+RUN echo "${VERSION_TAG:-dev}" > /etc/chronicle_version
 
 # Environment variables
 ENV VERSION_TAG=$VERSION_TAG \

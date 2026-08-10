@@ -18,6 +18,6 @@ export const Default: Story = {};
 /** Custom return URL to redirect back to once the billing portal session ends. */
 export const CustomReturnUrl: Story = {
   args: {
-    returnUrl: "https://stirlingpdf.com/account",
+    returnUrl: "https://chronicle-pdf.com/account",
   },
 };

@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
  * action (clicking a download button / pressing Done in the install modal) mark
  * the step complete immediately. Persisted so it survives reloads.
  */
-const KEY = "stirling.portal.editorInstalled";
-const EVENT = "stirling:editor-installed";
+const KEY = "chronicle.portal.editorInstalled";
+const EVENT = "chronicle:editor-installed";
 
 export function markEditorInstalled(): void {
   try {

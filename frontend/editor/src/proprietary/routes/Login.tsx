@@ -59,9 +59,9 @@ export default function Login() {
   // fresh login (arrived signed-out, then signed in) from an already-authed visit.
   const sawSignedOutRef = useRef(false);
 
-  const AUTO_LOGIN_ATTEMPTS_KEY = "stirling_sso_auto_login_attempts";
-  const AUTO_LOGIN_ERRORS_KEY = "stirling_sso_auto_login_errors";
-  const AUTO_LOGIN_LOGOUT_KEY = "stirling_sso_auto_login_logged_out";
+  const AUTO_LOGIN_ATTEMPTS_KEY = "chronicle_sso_auto_login_attempts";
+  const AUTO_LOGIN_ERRORS_KEY = "chronicle_sso_auto_login_errors";
+  const AUTO_LOGIN_LOGOUT_KEY = "chronicle_sso_auto_login_logged_out";
   const MAX_AUTO_LOGIN_ATTEMPTS = 2;
   const MAX_AUTO_LOGIN_ERRORS = 1;
 

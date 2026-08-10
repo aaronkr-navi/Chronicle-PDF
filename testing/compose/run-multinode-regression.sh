@@ -17,7 +17,7 @@ for arg in "$@"; do
 done
 
 echo "==> Ensuring the multi-node stack is up..."
-if ! docker inspect -f '{{.State.Health.Status}}' multinode-stirling-1 2>/dev/null | grep -q healthy; then
+if ! docker inspect -f '{{.State.Health.Status}}' multinode-chronicle-1 2>/dev/null | grep -q healthy; then
   ./start-multinode-test.sh $([ "$SEED" = 0 ] && echo --no-seed) || exit 1
 elif [ "$SEED" = 1 ]; then
   echo "    stack already up; seeding (idempotent)..."
@@ -51,7 +51,7 @@ if [ "$RUN_FAILOVER" = 1 ]; then
   run_behave "@destructive" "failover" || rc=1
   echo "==> Restoring any killed nodes..."
   $COMPOSE up -d >/dev/null 2>&1
-  for n in multinode-stirling-1 multinode-stirling-2; do
+  for n in multinode-chronicle-1 multinode-chronicle-2; do
     for i in $(seq 1 24); do
       [ "$(docker inspect -f '{{.State.Health.Status}}' "$n" 2>/dev/null)" = "healthy" ] && break
       sleep 5
@@ -64,6 +64,6 @@ echo "============================================================"
 echo " Regression run complete. Reports: $REPORT_DIR"
 echo " Exit $rc (non-zero = at least one scenario failed;"
 echo " @known_gap scenarios are expected to fail - see the report)."
-echo " Stack left running: http://localhost:8080  (admin / stirling)"
+echo " Stack left running: http://localhost:8080  (admin / chronicle)"
 echo "============================================================"
 exit $rc

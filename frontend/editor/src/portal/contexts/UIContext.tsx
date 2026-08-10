@@ -54,7 +54,7 @@ interface UIContextValue {
 
 const UIContext = createContext<UIContextValue | null>(null);
 
-const SIDEBAR_COLLAPSED_KEY = "stirling.portalSidebarCollapsed";
+const SIDEBAR_COLLAPSED_KEY = "chronicle.portalSidebarCollapsed";
 
 function readSidebarCollapsed(): boolean {
   try {

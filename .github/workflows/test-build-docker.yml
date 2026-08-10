@@ -26,7 +26,7 @@ jobs:
   # shared artifacts for the three matrix entries below to consume:
   #   1. `task backend:build` — currently runs 3× in parallel with
   #      identical env (DISABLE_ADDITIONAL_FEATURES=true,
-  #      STIRLING_PDF_DESKTOP_UI=false). Build once, upload the JAR as an
+  #      chronicle_pdf_DESKTOP_UI=false). Build once, upload the JAR as an
   #      artifact, matrix entries download.
   #   2. The base-image `docker build` (gated on docker-base-changed) —
   #      currently runs 3× in parallel against the same Dockerfile and
@@ -108,7 +108,7 @@ jobs:
           MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
           MAVEN_PUBLIC_URL: ${{ secrets.MAVEN_PUBLIC_URL }}
           DISABLE_ADDITIONAL_FEATURES: true
-          STIRLING_PDF_DESKTOP_UI: false
+          chronicle_pdf_DESKTOP_UI: false
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a # v4.0.0
@@ -217,10 +217,10 @@ jobs:
           file: ./docker/unoserver/Dockerfile
           push: false
           load: true
-          cache-from: type=gha,scope=stirling-unoserver
-          cache-to: type=gha,mode=max,scope=stirling-unoserver
+          cache-from: type=gha,scope=chronicle-unoserver
+          cache-to: type=gha,mode=max,scope=chronicle-unoserver
           platforms: linux/amd64
-          tags: stirling-unoserver:pr-test
+          tags: chronicle-unoserver:pr-test
           provenance: false
           sbom: false
 
@@ -229,7 +229,7 @@ jobs:
           set -eu
           docker run -d --name unoserver-smoke \
             -e UNOSERVER_RECYCLE_INTERVAL_SECONDS=0 \
-            stirling-unoserver:pr-test
+            chronicle-unoserver:pr-test
           deadline=$((SECONDS + 60))
           while [ $SECONDS -lt $deadline ]; do
             status=$(docker inspect -f '{{.State.Health.Status}}' unoserver-smoke 2>/dev/null || echo "starting")

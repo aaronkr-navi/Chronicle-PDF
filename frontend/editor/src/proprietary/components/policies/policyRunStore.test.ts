@@ -42,7 +42,7 @@ describe("policyRunStore", () => {
     expect(isDispatched("security", "f1")).toBe(false);
     recordRunStart(rec({}));
     expect(isDispatched("security", "f1")).toBe(true);
-    const stored = read("stirling-policy-runs");
+    const stored = read("chronicle-policy-runs");
     expect(stored.runs).toHaveLength(1);
     expect(stored.dispatched).toContain(dispatchKey("security", "f1"));
   });
@@ -51,7 +51,7 @@ describe("policyRunStore", () => {
     markDispatched("routing", "f9");
     markDispatched("routing", "f9");
     expect(isDispatched("routing", "f9")).toBe(true);
-    expect(read("stirling-policy-runs").dispatched).toHaveLength(1);
+    expect(read("chronicle-policy-runs").dispatched).toHaveLength(1);
   });
 
   it("updateRun patches an in-flight run's status + outputs", () => {
@@ -60,7 +60,7 @@ describe("policyRunStore", () => {
       status: "COMPLETED",
       outputs: [{ fileId: "out-1", fileName: "redacted.pdf" }],
     });
-    const run = read("stirling-policy-runs").runs[0];
+    const run = read("chronicle-policy-runs").runs[0];
     expect(run.status).toBe("COMPLETED");
     expect(run.outputs).toEqual([
       { fileId: "out-1", fileName: "redacted.pdf" },
@@ -70,7 +70,7 @@ describe("policyRunStore", () => {
   it("updateRun ignores an unknown run id", () => {
     recordRunStart(rec({ runId: "abc", status: "PENDING" }));
     updateRun("nope", { status: "FAILED" });
-    expect(read("stirling-policy-runs").runs[0].status).toBe("PENDING");
+    expect(read("chronicle-policy-runs").runs[0].status).toBe("PENDING");
   });
 
   it("getRun returns the record by id, removeRun drops it but keeps the dispatched key", () => {
@@ -78,7 +78,7 @@ describe("policyRunStore", () => {
     expect(getRun("abc")?.fileId).toBe("f1");
     removeRun("abc");
     expect(getRun("abc")).toBeUndefined();
-    expect(read("stirling-policy-runs").runs).toHaveLength(0);
+    expect(read("chronicle-policy-runs").runs).toHaveLength(0);
     // The (policy, file) pair stays dispatched so the auto-run doesn't re-fire on its own.
     expect(isDispatched("security", "f1")).toBe(true);
   });
@@ -97,7 +97,7 @@ describe("policyRunStore", () => {
         }),
       );
     }
-    const runs = read("stirling-policy-runs").runs;
+    const runs = read("chronicle-policy-runs").runs;
     expect(runs).toHaveLength(210);
     expect(runs[0].runId).toBe("r209"); // newest first
   });
@@ -116,7 +116,7 @@ describe("policyRunStore", () => {
         }),
       );
     }
-    const runs = read("stirling-policy-runs").runs;
+    const runs = read("chronicle-policy-runs").runs;
     expect(runs).toHaveLength(200); // trimmed to MAX_RUNS
     expect(runs[0].runId).toBe("r209"); // newest kept
     expect(runs.some((r: PolicyRunRecord) => r.runId === "r0")).toBe(false); // oldest dropped
@@ -133,7 +133,7 @@ describe("policyRunStore", () => {
         }),
       );
     }
-    const runs = read("stirling-policy-runs").runs;
+    const runs = read("chronicle-policy-runs").runs;
     expect(runs).toHaveLength(210);
     expect(runs.some((r: PolicyRunRecord) => r.runId === "r0")).toBe(true);
   });
@@ -141,14 +141,14 @@ describe("policyRunStore", () => {
   describe("processing wave (scopes the panel's progress counts to this upload)", () => {
     it("begins a new wave when recording with nothing in flight", () => {
       recordRunStart(rec({ runId: "a", fileId: "fa", startedAt: 500 }));
-      expect(read("stirling-policy-runs").waveStartedAt).toBe(500);
+      expect(read("chronicle-policy-runs").waveStartedAt).toBe(500);
     });
 
     it("keeps the wave while earlier runs are still in flight", () => {
       recordRunStart(rec({ runId: "a", fileId: "fa", startedAt: 100 }));
       recordRunStart(rec({ runId: "b", fileId: "fb", startedAt: 200 }));
       // b joined a's wave (a still PENDING) — the boundary stays at a.
-      expect(read("stirling-policy-runs").waveStartedAt).toBe(100);
+      expect(read("chronicle-policy-runs").waveStartedAt).toBe(100);
     });
 
     it("starts a fresh wave once the prior batch has all finished", () => {
@@ -157,7 +157,7 @@ describe("policyRunStore", () => {
       updateRun("a", { status: "COMPLETED", imported: true });
       // A new upload after the lull resets the wave to itself.
       recordRunStart(rec({ runId: "b", fileId: "fb", startedAt: 5000 }));
-      expect(read("stirling-policy-runs").waveStartedAt).toBe(5000);
+      expect(read("chronicle-policy-runs").waveStartedAt).toBe(5000);
     });
   });
 });

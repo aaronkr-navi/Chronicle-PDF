@@ -414,8 +414,8 @@ function checkLicenseCompatibility(licenseSummary, licenseArray) {
       (dep) =>
         dep.name === "frontend" ||
         dep.name.toLowerCase().includes("Chronicle-PDF") ||
-        dep.name.toLowerCase().includes("stirling_pdf") ||
-        dep.name.toLowerCase().includes("stirlingpdf"),
+        dep.name.toLowerCase().includes("chronicle_pdf") ||
+        dep.name.toLowerCase().includes("chroniclepdf"),
     );
 
     if (

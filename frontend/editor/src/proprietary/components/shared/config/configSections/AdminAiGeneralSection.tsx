@@ -220,13 +220,13 @@ export default function AdminAiGeneralSection() {
               }
               description={t(
                 "admin.settings.ai.general.url.description",
-                "Internal URL of the Python AI engine, e.g. http://stirling-pdf-engine:5001.",
+                "Internal URL of the Python AI engine, e.g. http://chronicle-pdf-engine:5001.",
               )}
               value={settings.url || ""}
               onChange={(e) =>
                 setSettings({ ...settings, url: e.target.value })
               }
-              placeholder="http://stirling-pdf-engine:5001"
+              placeholder="http://chronicle-pdf-engine:5001"
               disabled={!enabled}
             />
 

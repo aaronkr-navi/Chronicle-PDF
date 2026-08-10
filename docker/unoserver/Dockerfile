@@ -60,7 +60,7 @@ RUN set -eu; \
         > "/usr/share/myspell/infos/ooo/hyphen-${lang}-${country}"; \
     done
 
-COPY --chmod=0644 docker/unoserver/fonts.conf /etc/fonts/conf.d/100-stirling.conf
+COPY --chmod=0644 docker/unoserver/fonts.conf /etc/fonts/conf.d/100-chronicle.conf
 RUN fc-cache -f
 
 # venv with --system-site-packages so it picks up distro python3-uno.

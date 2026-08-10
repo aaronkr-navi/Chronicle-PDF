@@ -23,7 +23,7 @@ export default function AuthDefaultCredentials() {
           <Text component="span" fw={600} style={{ color: "var(--c-text)" }}>
             {t("login.password", "Password")}:
           </Text>{" "}
-          stirling
+          chronicle
         </Text>
         <Text
           size="xs"

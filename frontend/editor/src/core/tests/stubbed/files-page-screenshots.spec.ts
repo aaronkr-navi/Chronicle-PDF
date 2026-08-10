@@ -37,7 +37,7 @@ async function seedFiles(page: Page, files: SeedFile[]): Promise<void> {
   );
   await page.addInitScript(
     ({ records, dbVersion }) => {
-      const open = window.indexedDB.open("stirling-pdf-files", dbVersion);
+      const open = window.indexedDB.open("chronicle-pdf-files", dbVersion);
       open.onupgradeneeded = (event) => {
         const db = (event.target as IDBOpenDBRequest).result;
         // Create both `files` and `folders` stores on this DB.
@@ -443,8 +443,8 @@ test.describe("Files page screenshots", () => {
     // Seed language + dir before first paint.
     await page.addInitScript(() => {
       localStorage.setItem("i18nextLng", "ar-AR");
-      localStorage.setItem("stirling-language", "ar-AR");
-      localStorage.setItem("stirling-language-source", "user");
+      localStorage.setItem("chronicle-language", "ar-AR");
+      localStorage.setItem("chronicle-language-source", "user");
       // On webkit, `document.documentElement` is still null when Playwright
       // runs init scripts, so calling setAttribute directly throws - and that
       // uncaught error aborts the *following* init script (the IndexedDB seed
