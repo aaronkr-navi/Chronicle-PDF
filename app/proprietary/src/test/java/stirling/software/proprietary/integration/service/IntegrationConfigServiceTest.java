@@ -31,7 +31,6 @@ import stirling.software.proprietary.integration.model.IntegrationConfig;
 import stirling.software.proprietary.integration.model.IntegrationType;
 import stirling.software.proprietary.integration.repository.IntegrationConfigRepository;
 import stirling.software.proprietary.security.model.User;
-
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
 

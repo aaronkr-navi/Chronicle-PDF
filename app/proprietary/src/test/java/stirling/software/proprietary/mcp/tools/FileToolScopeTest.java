@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import stirling.software.common.model.ApplicationProperties;
 import stirling.software.common.service.FileStorage;
 import stirling.software.proprietary.mcp.McpCallContext;
-
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;
 

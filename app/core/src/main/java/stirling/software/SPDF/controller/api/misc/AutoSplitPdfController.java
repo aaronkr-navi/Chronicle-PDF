@@ -57,10 +57,7 @@ import stirling.software.common.util.WebResponseUtils;
 public class AutoSplitPdfController {
 
     private static final Set<String> VALID_QR_CONTENTS =
-            Set.of(
-                    "https://github.com/aaronkr-navi/Chronicle-PDF",
-                    "https://github.com/aaronkr-navi/Chronicle-PDF",
-                    "https://stirlingpdf.com");
+            Set.of("https://github.com/aaronkr-navi/Chronicle-PDF", "https://chronicle-pdf.com");
 
     private static final int MAX_IMAGES_FOR_DIRECT_EXTRACTION = 3;
 

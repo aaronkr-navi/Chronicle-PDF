@@ -63,7 +63,6 @@ import stirling.software.proprietary.policy.output.PolicyOutputResolver;
 import stirling.software.proprietary.policy.output.PolicyOutputSink;
 import stirling.software.proprietary.policy.progress.PolicyProgressListener;
 import stirling.software.proprietary.policy.source.InProcessSourceStore;
-
 import tools.jackson.databind.json.JsonMapper;
 
 /**

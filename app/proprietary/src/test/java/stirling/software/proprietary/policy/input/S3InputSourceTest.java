@@ -25,12 +25,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.proprietary.policy.ledger.InProcessProcessedLedger;
-import stirling.software.proprietary.policy.model.InputSpec;
-import stirling.software.proprietary.policy.s3.S3ConnectionPool;
-import stirling.software.proprietary.policy.s3.S3TestConnections;
-
 import software.amazon.awssdk.core.ResponseInputStream;
 import software.amazon.awssdk.core.exception.SdkClientException;
 import software.amazon.awssdk.http.AbortableInputStream;
@@ -43,6 +37,11 @@ import software.amazon.awssdk.services.s3.model.HeadObjectResponse;
 import software.amazon.awssdk.services.s3.model.ListObjectsV2Request;
 import software.amazon.awssdk.services.s3.model.ListObjectsV2Response;
 import software.amazon.awssdk.services.s3.model.S3Object;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.proprietary.policy.ledger.InProcessProcessedLedger;
+import stirling.software.proprietary.policy.model.InputSpec;
+import stirling.software.proprietary.policy.s3.S3ConnectionPool;
+import stirling.software.proprietary.policy.s3.S3TestConnections;
 
 /**
  * Tests for {@link S3InputSource}: consume mode tracks objects in place through the ledger and

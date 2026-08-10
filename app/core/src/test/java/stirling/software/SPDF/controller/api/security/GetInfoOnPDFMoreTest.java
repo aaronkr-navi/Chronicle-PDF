@@ -47,7 +47,6 @@ import org.springframework.web.multipart.MultipartFile;
 import stirling.software.SPDF.service.VeraPDFService;
 import stirling.software.common.model.api.PDFFile;
 import stirling.software.common.service.CustomPDFDocumentFactory;
-
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.json.JsonMapper;

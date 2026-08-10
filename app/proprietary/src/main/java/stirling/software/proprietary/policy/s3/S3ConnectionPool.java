@@ -10,9 +10,6 @@ import org.springframework.stereotype.Service;
 
 import jakarta.annotation.PreDestroy;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.proprietary.cluster.s3.S3Clients;
-
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.http.urlconnection.UrlConnectionHttpClient;
@@ -20,6 +17,8 @@ import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.S3ClientBuilder;
 import software.amazon.awssdk.services.s3.S3Configuration;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.proprietary.cluster.s3.S3Clients;
 
 /**
  * Long-lived {@link S3Client}s for policy S3 sources and sinks, one per distinct {@link S3Config},

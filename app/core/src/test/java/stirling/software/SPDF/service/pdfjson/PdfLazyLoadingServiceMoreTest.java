@@ -32,7 +32,6 @@ import stirling.software.SPDF.model.json.PdfJsonImageElement;
 import stirling.software.SPDF.model.json.PdfJsonPageDimension;
 import stirling.software.common.service.CustomPDFDocumentFactory;
 import stirling.software.common.service.TaskManager;
-
 import tools.jackson.databind.ObjectMapper;
 
 /**

@@ -28,7 +28,6 @@ import stirling.software.proprietary.model.api.ai.comments.PdfCommentEngineReque
 import stirling.software.proprietary.model.api.ai.comments.PdfCommentEngineResponse;
 import stirling.software.proprietary.model.api.ai.comments.PdfCommentInstruction;
 import stirling.software.proprietary.model.api.ai.comments.TextChunk;
-
 import tools.jackson.databind.ObjectMapper;
 
 /**

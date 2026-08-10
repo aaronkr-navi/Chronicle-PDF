@@ -51,12 +51,12 @@ public class OpenApiConfig {
                                         .name("Open-Core - MIT Licensed")
                                         .url(
                                                 "https://raw.githubusercontent.com/aaronkr-navi/Chronicle-PDF/refs/heads/main/LICENSE"))
-                        .termsOfService("https://www.stirlingpdf.com/terms")
+                        .termsOfService("https://www.chronicle-pdf.com/terms")
                         .contact(
                                 new Contact()
                                         .name("Chronicle PDF")
-                                        .url("https://www.stirlingpdf.com")
-                                        .email("contact@stirlingpdf.com"))
+                                        .url("https://www.chronicle-pdf.com")
+                                        .email("contact@chronicle-pdf.com"))
                         .description(DEFAULT_DESCRIPTION);
 
         OpenAPI openAPI = new OpenAPI().info(info).openapi("3.0.3");

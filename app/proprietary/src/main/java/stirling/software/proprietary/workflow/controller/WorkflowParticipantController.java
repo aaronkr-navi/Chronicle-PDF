@@ -44,7 +44,6 @@ import stirling.software.proprietary.workflow.service.CertificateSubmissionValid
 import stirling.software.proprietary.workflow.service.MetadataEncryptionService;
 import stirling.software.proprietary.workflow.service.WorkflowSessionService;
 import stirling.software.proprietary.workflow.util.WorkflowMapper;
-
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
 

@@ -30,12 +30,11 @@ import org.springframework.security.oauth2.core.oidc.IdTokenClaimNames;
 import org.springframework.security.oauth2.core.oidc.OidcIdToken;
 import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
 
-import stirling.software.common.model.ApplicationProperties;
-
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.read.ListAppender;
+import stirling.software.common.model.ApplicationProperties;
 
 /**
  * Verifies the opt-in OAuth2/OIDC claim-dump diagnostic logging added to {@link

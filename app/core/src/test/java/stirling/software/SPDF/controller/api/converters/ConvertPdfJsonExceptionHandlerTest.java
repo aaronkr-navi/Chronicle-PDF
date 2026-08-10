@@ -12,7 +12,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
 import stirling.software.SPDF.exception.CacheUnavailableException;
-
 import tools.jackson.databind.ObjectMapper;
 
 /**

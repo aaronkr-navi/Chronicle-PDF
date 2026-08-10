@@ -18,7 +18,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import stirling.software.common.configuration.RuntimePathConfig;
-
 import tools.jackson.databind.json.JsonMapper;
 
 class UIDataTessdataControllerTest {

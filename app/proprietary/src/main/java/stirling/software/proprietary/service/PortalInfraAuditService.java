@@ -16,7 +16,6 @@ import stirling.software.proprietary.audit.PortalAuditEventRow;
 import stirling.software.proprietary.model.api.audit.InfraAuditEventDto;
 import stirling.software.proprietary.model.api.audit.InfraAuditLogResponse;
 import stirling.software.proprietary.model.api.audit.InfraAuditSummary;
-
 import tools.jackson.core.JacksonException;
 import tools.jackson.databind.ObjectMapper;
 

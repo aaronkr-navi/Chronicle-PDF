@@ -37,8 +37,8 @@ import stirling.software.proprietary.security.configuration.ee.LicenseKeyChecker
 public class ServerCertificateService implements ServerCertificateServiceInterface {
 
     private static final String KEYSTORE_FILENAME = "server-certificate.p12";
-    private static final String KEYSTORE_ALIAS = "stirling-pdf-server";
-    private static final String DEFAULT_PASSWORD = "stirling-pdf-server-cert";
+    private static final String KEYSTORE_ALIAS = "chronicle-pdf-server";
+    private static final String DEFAULT_PASSWORD = "chronicle-pdf-server-cert";
 
     private boolean enabled;
     private String organizationName;

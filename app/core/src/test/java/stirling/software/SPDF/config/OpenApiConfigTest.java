@@ -52,10 +52,10 @@ class OpenApiConfigTest {
             assertThat(openAPI.getInfo().getLicense()).isNotNull();
             assertThat(openAPI.getInfo().getLicense().getName()).contains("MIT");
             assertThat(openAPI.getInfo().getTermsOfService())
-                    .isEqualTo("https://www.ChroniclePDF.com/terms");
+                    .isEqualTo("https://www.chronicle-pdf.com/terms");
             assertThat(openAPI.getInfo().getContact()).isNotNull();
             assertThat(openAPI.getInfo().getContact().getEmail())
-                    .isEqualTo("contact@ChroniclePDF.com");
+                    .isEqualTo("contact@chronicle-pdf.com");
         }
 
         @Test

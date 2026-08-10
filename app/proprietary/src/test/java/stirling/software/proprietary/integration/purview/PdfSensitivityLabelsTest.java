@@ -229,7 +229,8 @@ class PdfSensitivityLabelsTest {
     void preservesUnrelatedXmpAndInfoMetadata() throws IOException {
         PDDocument document = newDocument();
         document.getDocumentInformation().setAuthor("Anthony");
-        document.getDocumentInformation().setCustomMetadataValue("ChroniclePDFClassification", "{}");
+        document.getDocumentInformation()
+                .setCustomMetadataValue("ChroniclePDFClassification", "{}");
         PdfSensitivityLabels.apply(document, confidential());
 
         try (PDDocument reloaded = saveAndReload(document)) {

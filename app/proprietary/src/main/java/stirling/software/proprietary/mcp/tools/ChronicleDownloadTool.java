@@ -11,7 +11,6 @@ import stirling.software.common.model.ApplicationProperties;
 import stirling.software.common.service.FileStorage;
 import stirling.software.proprietary.mcp.McpCallContext;
 import stirling.software.proprietary.mcp.McpTool;
-
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;

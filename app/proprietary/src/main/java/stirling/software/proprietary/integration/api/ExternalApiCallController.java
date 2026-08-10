@@ -33,7 +33,6 @@ import stirling.software.common.service.AutomationRunContext;
 import stirling.software.common.service.InternalApiClient;
 import stirling.software.common.util.TempFileManager;
 import stirling.software.proprietary.service.AiToolResponseHeaders;
-
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;

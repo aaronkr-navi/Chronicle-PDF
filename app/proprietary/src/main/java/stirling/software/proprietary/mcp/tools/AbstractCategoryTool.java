@@ -9,7 +9,6 @@ import stirling.software.proprietary.mcp.McpTool;
 import stirling.software.proprietary.mcp.catalog.McpToolCatalog;
 import stirling.software.proprietary.mcp.catalog.OperationCategory;
 import stirling.software.proprietary.mcp.catalog.OperationMeta;
-
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ArrayNode;

@@ -38,7 +38,6 @@ import org.springframework.web.multipart.MultipartFile;
 import stirling.software.common.service.CustomPDFDocumentFactory;
 import stirling.software.common.service.UserServiceInterface;
 import stirling.software.proprietary.model.api.ai.Verdict;
-
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.json.JsonMapper;
 

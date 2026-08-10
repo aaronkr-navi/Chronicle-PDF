@@ -15,7 +15,6 @@ import jakarta.servlet.ServletContext;
 
 import stirling.software.SPDF.model.ApiEndpoint;
 import stirling.software.common.service.UserServiceInterface;
-
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.json.JsonMapper;

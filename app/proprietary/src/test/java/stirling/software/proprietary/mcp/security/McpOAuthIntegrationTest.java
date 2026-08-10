@@ -34,20 +34,19 @@ import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
 
+import okhttp3.mockwebserver.Dispatcher;
+import okhttp3.mockwebserver.MockResponse;
+import okhttp3.mockwebserver.MockWebServer;
+import okhttp3.mockwebserver.RecordedRequest;
 import stirling.software.common.model.ApplicationProperties;
 import stirling.software.proprietary.mcp.McpServerController;
-import stirling.software.proprietary.mcp.tools.DescribeOperationTool;
 import stirling.software.proprietary.mcp.tools.ChronicleAiTool;
 import stirling.software.proprietary.mcp.tools.ChronicleConvertTool;
 import stirling.software.proprietary.mcp.tools.ChronicleMiscTool;
 import stirling.software.proprietary.mcp.tools.ChroniclePagesTool;
 import stirling.software.proprietary.mcp.tools.ChronicleSecurityTool;
+import stirling.software.proprietary.mcp.tools.DescribeOperationTool;
 import stirling.software.proprietary.security.service.UserService;
-
-import okhttp3.mockwebserver.Dispatcher;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
-import okhttp3.mockwebserver.RecordedRequest;
 
 /**
  * End-to-end OAuth test against the real {@link McpSecurityConfig} chain. A real RSA keypair signs

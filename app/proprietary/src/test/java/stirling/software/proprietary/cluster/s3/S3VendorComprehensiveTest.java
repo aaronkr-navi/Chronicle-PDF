@@ -21,18 +21,17 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.springframework.mock.web.MockMultipartFile;
 
-import stirling.software.common.cluster.FileStore;
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.proprietary.security.model.User;
-import stirling.software.proprietary.storage.provider.S3StorageProvider;
-import stirling.software.proprietary.storage.provider.StoredObject;
-
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.model.NoSuchBucketException;
 import software.amazon.awssdk.services.s3.model.NoSuchKeyException;
 import software.amazon.awssdk.services.s3.model.S3Exception;
 import software.amazon.awssdk.services.s3.presigner.model.GetObjectPresignRequest;
 import software.amazon.awssdk.services.s3.presigner.model.PresignedGetObjectRequest;
+import stirling.software.common.cluster.FileStore;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.proprietary.security.model.User;
+import stirling.software.proprietary.storage.provider.S3StorageProvider;
+import stirling.software.proprietary.storage.provider.StoredObject;
 
 /**
  * Comprehensive live-vendor test against a real S3-compatible endpoint specified via {@code

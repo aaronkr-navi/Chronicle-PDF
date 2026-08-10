@@ -15,7 +15,6 @@ import stirling.software.proprietary.mcp.catalog.McpToolCatalog;
 import stirling.software.proprietary.mcp.catalog.OperationCategory;
 import stirling.software.proprietary.mcp.catalog.OperationMeta;
 import stirling.software.proprietary.service.AiEngineClient;
-
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ArrayNode;
@@ -130,7 +129,7 @@ public class ChronicleAiTool implements McpTool {
         JsonNode params = arguments.get("parameters");
         String body = (params == null ? mapper.createObjectNode() : params).toString();
         try {
-            String response = client.post(meta.endpointPath(), body, context.ChronicleUserId());
+            String response = client.post(meta.endpointPath(), body, context.stirlingUserId());
             return McpResponses.text(mapper, response);
         } catch (IOException e) {
             log.warn("MCP AI capability '{}' engine request failed", opId, e);

@@ -47,7 +47,6 @@ import stirling.software.proprietary.security.model.api.admin.SettingValueRespon
 import stirling.software.proprietary.security.model.api.admin.UpdateSettingValueRequest;
 import stirling.software.proprietary.security.model.api.admin.UpdateSettingsRequest;
 import stirling.software.proprietary.service.AiEngineConfigSync;
-
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
 

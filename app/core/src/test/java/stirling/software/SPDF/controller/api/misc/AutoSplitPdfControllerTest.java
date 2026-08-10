@@ -628,8 +628,7 @@ class AutoSplitPdfControllerTest {
                     AutoSplitPdfController.class.getDeclaredField("VALID_QR_CONTENTS");
             f.setAccessible(true);
             Set<String> valid = new HashSet<>((Set<String>) f.get(null));
-            assertTrue(valid.contains("https://stirlingpdf.com"));
-            assertTrue(valid.contains("https://github.com/aaronkr-navi/Chronicle-PDF"));
+            assertTrue(valid.contains("https://chronicle-pdf.com"));
             assertTrue(valid.contains("https://github.com/aaronkr-navi/Chronicle-PDF"));
             assertFalse(valid.contains("https://example.com"));
         }

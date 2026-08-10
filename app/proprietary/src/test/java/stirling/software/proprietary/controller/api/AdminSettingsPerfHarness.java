@@ -46,7 +46,6 @@ import stirling.software.proprietary.security.service.LoginAttemptService;
 import stirling.software.proprietary.security.service.MfaService;
 import stirling.software.proprietary.security.session.SessionPersistentRegistry;
 import stirling.software.proprietary.service.UserLicenseSettingsService;
-
 import tools.jackson.databind.ObjectMapper;
 
 /** Shared seeding, wiring, and statement-count measurement for the admin-roster query tests. */

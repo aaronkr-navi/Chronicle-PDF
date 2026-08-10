@@ -20,7 +20,6 @@ import lombok.extern.slf4j.Slf4j;
 import stirling.software.common.service.PdfMetadataService;
 import stirling.software.proprietary.integration.purview.PdfSensitivityLabels;
 import stirling.software.proprietary.integration.purview.SensitivityLabel;
-
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;

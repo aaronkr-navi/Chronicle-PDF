@@ -16,13 +16,12 @@ import org.testcontainers.containers.localstack.LocalStackContainer;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
 
-import stirling.software.common.cluster.FileStore;
-import stirling.software.common.model.ApplicationProperties;
-
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.model.S3Exception;
 import software.amazon.awssdk.services.s3.presigner.model.GetObjectPresignRequest;
 import software.amazon.awssdk.services.s3.presigner.model.PresignedGetObjectRequest;
+import stirling.software.common.cluster.FileStore;
+import stirling.software.common.model.ApplicationProperties;
 
 /**
  * End-to-end smoke against the full {@link S3Clients#build} path. Defaults to a LocalStack

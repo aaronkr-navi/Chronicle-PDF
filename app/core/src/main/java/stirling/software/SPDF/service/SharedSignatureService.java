@@ -20,7 +20,6 @@ import stirling.software.SPDF.model.SignatureFile;
 import stirling.software.SPDF.model.api.signature.SavedSignatureRequest;
 import stirling.software.SPDF.model.api.signature.SavedSignatureResponse;
 import stirling.software.common.configuration.InstallationPathConfig;
-
 import tools.jackson.databind.ObjectMapper;
 
 @Service

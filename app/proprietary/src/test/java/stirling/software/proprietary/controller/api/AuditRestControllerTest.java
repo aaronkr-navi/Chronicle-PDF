@@ -32,7 +32,6 @@ import stirling.software.proprietary.controller.api.AuditRestController.AuditEve
 import stirling.software.proprietary.controller.api.AuditRestController.AuditStatsData;
 import stirling.software.proprietary.model.security.PersistentAuditEvent;
 import stirling.software.proprietary.repository.PersistentAuditEventRepository;
-
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.json.JsonMapper;
 

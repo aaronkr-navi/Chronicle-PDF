@@ -16,7 +16,6 @@ import stirling.software.common.service.PdfMetadataService;
 import stirling.software.proprietary.integration.purview.PdfSensitivityLabels;
 import stirling.software.proprietary.integration.purview.SensitivityLabel;
 import stirling.software.proprietary.integration.purview.SensitivityLabel.AssignmentMethod;
-
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;
 

@@ -18,15 +18,14 @@ import org.springframework.http.ResponseEntity;
 
 import stirling.software.common.model.ApplicationProperties;
 import stirling.software.proprietary.mcp.catalog.McpToolCatalog;
-import stirling.software.proprietary.mcp.tools.DescribeOperationTool;
-import stirling.software.proprietary.mcp.tools.McpOperationExecutor;
 import stirling.software.proprietary.mcp.tools.ChronicleAiTool;
 import stirling.software.proprietary.mcp.tools.ChronicleConvertTool;
 import stirling.software.proprietary.mcp.tools.ChronicleMiscTool;
 import stirling.software.proprietary.mcp.tools.ChroniclePagesTool;
 import stirling.software.proprietary.mcp.tools.ChronicleSecurityTool;
+import stirling.software.proprietary.mcp.tools.DescribeOperationTool;
+import stirling.software.proprietary.mcp.tools.McpOperationExecutor;
 import stirling.software.proprietary.service.AiEngineClient;
-
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 
@@ -126,7 +125,7 @@ class McpServerControllerTest {
 
         JsonNode result = mapper.valueToTree(response.getBody()).get("result");
         assertNotNull(result.get("protocolVersion"));
-        assertEquals("Chronicle-PDF-mcp", result.get("serverInfo").get("name").asText());
+        assertEquals("chronicle-pdf-mcp", result.get("serverInfo").get("name").asText());
         assertEquals("test-version", result.get("serverInfo").get("version").asText());
         assertNotNull(result.get("capabilities").get("tools"), "tools capability advertised");
     }

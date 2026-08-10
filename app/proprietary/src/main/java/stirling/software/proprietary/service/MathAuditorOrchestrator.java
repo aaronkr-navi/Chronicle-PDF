@@ -22,7 +22,6 @@ import stirling.software.proprietary.model.api.ai.FolioManifest;
 import stirling.software.proprietary.model.api.ai.FolioType;
 import stirling.software.proprietary.model.api.ai.Requisition;
 import stirling.software.proprietary.model.api.ai.Verdict;
-
 import tools.jackson.databind.ObjectMapper;
 
 /**

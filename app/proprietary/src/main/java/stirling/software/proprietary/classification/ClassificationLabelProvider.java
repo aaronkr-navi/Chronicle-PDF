@@ -11,7 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 
 import stirling.software.proprietary.classification.model.ClassificationLabel;
 import stirling.software.proprietary.classification.model.ClassificationLabels;
-
 import tools.jackson.databind.ObjectMapper;
 
 /**

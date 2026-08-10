@@ -19,7 +19,6 @@ import org.springframework.boot.actuate.audit.AuditEvent;
 
 import stirling.software.proprietary.model.security.PersistentAuditEvent;
 import stirling.software.proprietary.repository.PersistentAuditEventRepository;
-
 import tools.jackson.databind.json.JsonMapper;
 
 class CustomAuditEventRepositoryTest {

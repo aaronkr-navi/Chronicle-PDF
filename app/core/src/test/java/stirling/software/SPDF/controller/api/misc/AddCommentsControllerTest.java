@@ -44,7 +44,6 @@ import stirling.software.common.service.PdfAnnotationService;
 import stirling.software.common.util.PdfTextLocator;
 import stirling.software.common.util.TempFile;
 import stirling.software.common.util.TempFileManager;
-
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.json.JsonMapper;
 

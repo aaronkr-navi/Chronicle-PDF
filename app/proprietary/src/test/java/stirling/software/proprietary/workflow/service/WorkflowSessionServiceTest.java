@@ -41,7 +41,6 @@ import stirling.software.proprietary.workflow.model.WorkflowStatus;
 import stirling.software.proprietary.workflow.model.WorkflowType;
 import stirling.software.proprietary.workflow.repository.WorkflowParticipantRepository;
 import stirling.software.proprietary.workflow.repository.WorkflowSessionRepository;
-
 import tools.jackson.databind.ObjectMapper;
 
 @ExtendWith(MockitoExtension.class)

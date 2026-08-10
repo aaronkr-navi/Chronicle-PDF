@@ -20,7 +20,7 @@ import stirling.software.SPDF.model.api.security.HardwareSigningCapabilities;
 /** Unit tests for the gating / allowlist logic that protects the hardware signing paths. */
 class HardwareKeyStoreServiceTest {
 
-    private static final String PKCS11_PROP = "stirling.pkcs11.libraries";
+    private static final String PKCS11_PROP = "Chronicle.pkcs11.libraries";
 
     private HardwareKeyStoreService service(String machineType) {
         return new HardwareKeyStoreService(machineType);
@@ -38,17 +38,17 @@ class HardwareKeyStoreServiceTest {
 
     @Test
     void isDesktop_trueInTauriModeEvenWithoutClientMachineType() {
-        // The Tauri bundle sets STIRLING_PDF_TAURI_MODE=true while machineType stays Server-jar.
-        String previous = System.getProperty("STIRLING_PDF_TAURI_MODE");
+        // The Tauri bundle sets Chronicle_PDF_TAURI_MODE=true while machineType stays Server-jar.
+        String previous = System.getProperty("Chronicle_PDF_TAURI_MODE");
         try {
-            System.setProperty("STIRLING_PDF_TAURI_MODE", "true");
+            System.setProperty("Chronicle_PDF_TAURI_MODE", "true");
             assertTrue(service("Server-jar").isDesktop());
             assertTrue(service(null).isDesktop());
         } finally {
             if (previous == null) {
-                System.clearProperty("STIRLING_PDF_TAURI_MODE");
+                System.clearProperty("Chronicle_PDF_TAURI_MODE");
             } else {
-                System.setProperty("STIRLING_PDF_TAURI_MODE", previous);
+                System.setProperty("Chronicle_PDF_TAURI_MODE", previous);
             }
         }
     }

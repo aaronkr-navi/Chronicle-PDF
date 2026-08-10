@@ -28,7 +28,6 @@ import org.apache.pdfbox.pdmodel.graphics.form.PDFormXObject;
 import stirling.software.SPDF.service.pdfjson.type3.Type3FontSignatureCalculator;
 import stirling.software.SPDF.service.pdfjson.type3.Type3GlyphExtractor;
 import stirling.software.SPDF.service.pdfjson.type3.model.Type3GlyphOutline;
-
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.ObjectWriter;
 import tools.jackson.databind.SerializationFeature;

@@ -19,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 import stirling.software.SPDF.model.json.PdfJsonFont;
 import stirling.software.common.service.CustomPDFDocumentFactory;
 import stirling.software.common.service.TaskManager;
-
 import tools.jackson.databind.ObjectMapper;
 
 class PdfLazyLoadingServiceTest {

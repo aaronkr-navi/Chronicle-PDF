@@ -15,7 +15,6 @@ import org.junit.jupiter.api.Test;
 
 import stirling.software.common.model.ApplicationProperties;
 import stirling.software.proprietary.security.configuration.ee.KeygenLicenseVerifier.License;
-
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;
 

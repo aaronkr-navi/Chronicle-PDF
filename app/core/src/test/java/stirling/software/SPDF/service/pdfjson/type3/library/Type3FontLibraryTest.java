@@ -27,7 +27,6 @@ import org.springframework.core.io.ResourceLoader;
 
 import stirling.software.SPDF.service.pdfjson.type3.Type3FontSignatureCalculator;
 import stirling.software.common.model.ApplicationProperties;
-
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.json.JsonMapper;
 

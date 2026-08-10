@@ -44,8 +44,8 @@ class ServerCertificateServiceTest {
     private ServerCertificateService service;
 
     private static final String KEYSTORE_FILE = "server-certificate.p12";
-    private static final String KEYSTORE_ALIAS = "Chronicle-PDF-server";
-    private static final String DEFAULT_PASSWORD = "Chronicle-PDF-server-cert";
+    private static final String KEYSTORE_ALIAS = "chronicle-pdf-server";
+    private static final String DEFAULT_PASSWORD = "chronicle-pdf-server-cert";
 
     @BeforeEach
     void setUp() {

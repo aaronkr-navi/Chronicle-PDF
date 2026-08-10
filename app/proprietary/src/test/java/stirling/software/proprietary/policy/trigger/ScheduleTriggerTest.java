@@ -32,7 +32,6 @@ import stirling.software.proprietary.policy.model.PolicyBinding;
 import stirling.software.proprietary.policy.model.Schedule;
 import stirling.software.proprietary.policy.model.TriggerConfig;
 import stirling.software.proprietary.policy.store.PolicyStore;
-
 import tools.jackson.databind.json.JsonMapper;
 
 /**

@@ -520,18 +520,18 @@ public class ApplicationProperties {
             private List<String> acceptedAudiences = new ArrayList<>();
 
             /**
-             * JWT claim whose value is matched against a provisioned Chronicle username. Defaults to
-             * {@code sub}; set to {@code email} or {@code preferred_username} to match how your IdP
-             * maps users to Chronicle accounts.
+             * JWT claim whose value is matched against a provisioned Chronicle username. Defaults
+             * to {@code sub}; set to {@code email} or {@code preferred_username} to match how your
+             * IdP maps users to Chronicle accounts.
              */
             private String usernameClaim = "sub";
 
             /**
              * When {@code true} (default), a validated token is accepted only if its {@link
              * #usernameClaim} value resolves to an existing, enabled Chronicle user account. Tokens
-             * whose subject has no Chronicle account (or a disabled one) are rejected with HTTP 403.
-             * Set to {@code false} only if you intentionally want any IdP-valid token to use MCP
-             * without a local account.
+             * whose subject has no Chronicle account (or a disabled one) are rejected with HTTP
+             * 403. Set to {@code false} only if you intentionally want any IdP-valid token to use
+             * MCP without a local account.
              */
             private boolean requireExistingAccount = true;
         }

@@ -25,15 +25,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.common.model.job.ResultFile;
-import stirling.software.proprietary.policy.ledger.ClaimState;
-import stirling.software.proprietary.policy.ledger.InProcessProcessedLedger;
-import stirling.software.proprietary.policy.ledger.ProcessedFileStatus;
-import stirling.software.proprietary.policy.model.OutputSpec;
-import stirling.software.proprietary.policy.s3.S3ConnectionPool;
-import stirling.software.proprietary.policy.s3.S3TestConnections;
-
 import software.amazon.awssdk.awscore.exception.AwsServiceException;
 import software.amazon.awssdk.core.exception.SdkClientException;
 import software.amazon.awssdk.core.sync.RequestBody;
@@ -42,6 +33,14 @@ import software.amazon.awssdk.services.s3.model.HeadObjectRequest;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.model.PutObjectResponse;
 import software.amazon.awssdk.services.s3.model.S3Exception;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.common.model.job.ResultFile;
+import stirling.software.proprietary.policy.ledger.ClaimState;
+import stirling.software.proprietary.policy.ledger.InProcessProcessedLedger;
+import stirling.software.proprietary.policy.ledger.ProcessedFileStatus;
+import stirling.software.proprietary.policy.model.OutputSpec;
+import stirling.software.proprietary.policy.s3.S3ConnectionPool;
+import stirling.software.proprietary.policy.s3.S3TestConnections;
 
 /**
  * Tests for {@link S3OutputSink}: the ledger row exists before the object is visible, collisions

@@ -20,7 +20,6 @@ import stirling.software.common.configuration.InstallationPathConfig;
 import stirling.software.common.service.PersonalSignatureServiceInterface;
 import stirling.software.proprietary.model.api.signature.SavedSignatureRequest;
 import stirling.software.proprietary.model.api.signature.SavedSignatureResponse;
-
 import tools.jackson.databind.ObjectMapper;
 
 /**

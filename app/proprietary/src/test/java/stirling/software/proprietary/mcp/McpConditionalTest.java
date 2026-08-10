@@ -14,8 +14,6 @@ import org.springframework.context.annotation.Profile;
 import stirling.software.proprietary.mcp.catalog.McpToolCatalog;
 import stirling.software.proprietary.mcp.engine.EngineCapabilityClient;
 import stirling.software.proprietary.mcp.security.McpSecurityConfig;
-import stirling.software.proprietary.mcp.tools.DescribeOperationTool;
-import stirling.software.proprietary.mcp.tools.McpOperationExecutor;
 import stirling.software.proprietary.mcp.tools.ChronicleAiTool;
 import stirling.software.proprietary.mcp.tools.ChronicleConvertTool;
 import stirling.software.proprietary.mcp.tools.ChronicleDownloadTool;
@@ -23,6 +21,8 @@ import stirling.software.proprietary.mcp.tools.ChronicleMiscTool;
 import stirling.software.proprietary.mcp.tools.ChroniclePagesTool;
 import stirling.software.proprietary.mcp.tools.ChronicleSecurityTool;
 import stirling.software.proprietary.mcp.tools.ChronicleUploadTool;
+import stirling.software.proprietary.mcp.tools.DescribeOperationTool;
+import stirling.software.proprietary.mcp.tools.McpOperationExecutor;
 
 /** Verifies MCP beans are gated behind {@code @ConditionalOnProperty(name="mcp.enabled")}. */
 class McpConditionalTest {

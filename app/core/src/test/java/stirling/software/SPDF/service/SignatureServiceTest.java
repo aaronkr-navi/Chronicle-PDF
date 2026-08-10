@@ -19,7 +19,6 @@ import org.mockito.MockedStatic;
 
 import stirling.software.SPDF.model.SignatureFile;
 import stirling.software.common.configuration.InstallationPathConfig;
-
 import tools.jackson.databind.json.JsonMapper;
 
 class SignatureServiceTest {

@@ -36,7 +36,6 @@ import stirling.software.SPDF.model.json.PdfJsonTextElement;
 import stirling.software.common.service.CustomPDFDocumentFactory;
 import stirling.software.common.service.TaskManager;
 import stirling.software.common.util.ExceptionUtils;
-
 import tools.jackson.databind.ObjectMapper;
 
 /**

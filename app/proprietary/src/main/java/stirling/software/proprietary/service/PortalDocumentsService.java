@@ -18,7 +18,6 @@ import stirling.software.proprietary.model.api.documents.PortalDocAuditEventDto;
 import stirling.software.proprietary.model.api.documents.PortalDocumentsResponseDto;
 import stirling.software.proprietary.model.api.documents.PortalDocumentsSummaryDto;
 import stirling.software.proprietary.model.api.documents.PortalReviewDocumentDto;
-
 import tools.jackson.core.JacksonException;
 import tools.jackson.databind.ObjectMapper;
 

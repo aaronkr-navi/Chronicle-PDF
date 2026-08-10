@@ -15,7 +15,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import stirling.software.proprietary.audit.AuditEventType;
 import stirling.software.proprietary.audit.PortalAuditEventRow;
 import stirling.software.proprietary.model.api.audit.InfraAuditEventDto;
-
 import tools.jackson.databind.json.JsonMapper;
 
 /**

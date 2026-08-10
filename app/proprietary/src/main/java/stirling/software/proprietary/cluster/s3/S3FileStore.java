@@ -13,8 +13,6 @@ import java.util.UUID;
 
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.common.cluster.FileStore;
-
 import software.amazon.awssdk.core.ResponseInputStream;
 import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.core.sync.RequestBody;
@@ -27,6 +25,7 @@ import software.amazon.awssdk.services.s3.model.HeadObjectResponse;
 import software.amazon.awssdk.services.s3.model.NoSuchKeyException;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.model.S3Exception;
+import stirling.software.common.cluster.FileStore;
 
 /**
  * S3-backed {@link FileStore} for transient job-result files. Objects are namespaced under a

@@ -19,17 +19,6 @@ import org.testcontainers.containers.MinIOContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-import stirling.software.common.model.ApplicationProperties;
-import stirling.software.common.model.job.ResultFile;
-import stirling.software.proprietary.policy.input.ResolveContext;
-import stirling.software.proprietary.policy.input.ResolvedInput;
-import stirling.software.proprietary.policy.input.S3InputSource;
-import stirling.software.proprietary.policy.ledger.InProcessProcessedLedger;
-import stirling.software.proprietary.policy.model.InputSpec;
-import stirling.software.proprietary.policy.model.OutputSpec;
-import stirling.software.proprietary.policy.s3.S3ConnectionPool;
-import stirling.software.proprietary.policy.s3.S3TestConnections;
-
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.core.ResponseInputStream;
@@ -42,6 +31,16 @@ import software.amazon.awssdk.services.s3.model.CreateBucketRequest;
 import software.amazon.awssdk.services.s3.model.GetObjectRequest;
 import software.amazon.awssdk.services.s3.model.GetObjectResponse;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.common.model.job.ResultFile;
+import stirling.software.proprietary.policy.input.ResolveContext;
+import stirling.software.proprietary.policy.input.ResolvedInput;
+import stirling.software.proprietary.policy.input.S3InputSource;
+import stirling.software.proprietary.policy.ledger.InProcessProcessedLedger;
+import stirling.software.proprietary.policy.model.InputSpec;
+import stirling.software.proprietary.policy.model.OutputSpec;
+import stirling.software.proprietary.policy.s3.S3ConnectionPool;
+import stirling.software.proprietary.policy.s3.S3TestConnections;
 
 /**
  * End-to-end {@link S3OutputSink} test against a real S3 API (MinIO): uploads, collision renaming,

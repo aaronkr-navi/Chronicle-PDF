@@ -13,7 +13,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import stirling.software.SPDF.exception.CacheUnavailableException;
-
 import tools.jackson.databind.ObjectMapper;
 
 @ControllerAdvice(assignableTypes = ConvertPdfJsonController.class)

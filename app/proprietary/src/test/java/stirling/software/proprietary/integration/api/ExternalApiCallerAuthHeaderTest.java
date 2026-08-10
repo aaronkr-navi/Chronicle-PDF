@@ -17,7 +17,6 @@ import org.junit.jupiter.api.Test;
 import com.sun.net.httpserver.HttpServer;
 
 import stirling.software.common.model.ApplicationProperties;
-
 import tools.jackson.databind.ObjectMapper;
 
 /**

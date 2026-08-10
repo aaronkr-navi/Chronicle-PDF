@@ -79,7 +79,8 @@ class MultipartBodyTest {
                 .contains("name=\"file\"; filename=\"claim.pdf\"")
                 .contains("Content-Type: application/pdf")
                 .contains("%PDF-1.7");
-        assertThat(body.contentType()).startsWith("multipart/form-data; boundary=ChronicleBoundary");
+        assertThat(body.contentType())
+                .startsWith("multipart/form-data; boundary=ChronicleBoundary");
     }
 
     @ParameterizedTest

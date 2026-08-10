@@ -20,14 +20,13 @@ import lombok.extern.slf4j.Slf4j;
 
 import stirling.software.proprietary.security.model.User;
 import stirling.software.proprietary.security.service.UserService;
-
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;
 
 /**
  * Binds an MCP-validated JWT to a provisioned Chronicle user: optionally rejects subjects with no
- * enabled account, then rebinds the principal to the canonical Chronicle username (scope authorities
- * only) so audit/metering attribute correctly.
+ * enabled account, then rebinds the principal to the canonical Chronicle username (scope
+ * authorities only) so audit/metering attribute correctly.
  */
 @Slf4j
 public class McpUserBindingFilter extends OncePerRequestFilter {

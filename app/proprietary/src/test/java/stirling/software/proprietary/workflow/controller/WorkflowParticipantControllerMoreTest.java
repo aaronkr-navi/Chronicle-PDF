@@ -32,7 +32,6 @@ import stirling.software.proprietary.workflow.repository.WorkflowParticipantRepo
 import stirling.software.proprietary.workflow.service.CertificateSubmissionValidator;
 import stirling.software.proprietary.workflow.service.MetadataEncryptionService;
 import stirling.software.proprietary.workflow.service.WorkflowSessionService;
-
 import tools.jackson.databind.ObjectMapper;
 
 // Covers the participant-facing token endpoints not in WorkflowParticipantValidateCertificateTest.

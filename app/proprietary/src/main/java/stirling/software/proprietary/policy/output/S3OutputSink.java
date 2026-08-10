@@ -21,14 +21,6 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.common.model.job.ResultFile;
-import stirling.software.proprietary.policy.ledger.ProcessedLedger;
-import stirling.software.proprietary.policy.model.OutputSpec;
-import stirling.software.proprietary.policy.s3.S3Config;
-import stirling.software.proprietary.policy.s3.S3ConnectionPool;
-import stirling.software.proprietary.policy.s3.S3ConnectionResolver;
-import stirling.software.proprietary.policy.s3.S3Identities;
-
 import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.S3Client;
@@ -37,6 +29,13 @@ import software.amazon.awssdk.services.s3.model.NoSuchKeyException;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.model.PutObjectResponse;
 import software.amazon.awssdk.services.s3.model.S3Exception;
+import stirling.software.common.model.job.ResultFile;
+import stirling.software.proprietary.policy.ledger.ProcessedLedger;
+import stirling.software.proprietary.policy.model.OutputSpec;
+import stirling.software.proprietary.policy.s3.S3Config;
+import stirling.software.proprietary.policy.s3.S3ConnectionPool;
+import stirling.software.proprietary.policy.s3.S3ConnectionResolver;
+import stirling.software.proprietary.policy.s3.S3Identities;
 
 /**
  * Uploads a run's outputs to the bucket and key prefix given in the {@link OutputSpec} (same

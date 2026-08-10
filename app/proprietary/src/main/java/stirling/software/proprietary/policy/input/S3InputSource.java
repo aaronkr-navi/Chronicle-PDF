@@ -13,13 +13,6 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import stirling.software.proprietary.policy.model.InputSpec;
-import stirling.software.proprietary.policy.model.PolicyInputs;
-import stirling.software.proprietary.policy.s3.S3Config;
-import stirling.software.proprietary.policy.s3.S3ConnectionPool;
-import stirling.software.proprietary.policy.s3.S3ConnectionResolver;
-import stirling.software.proprietary.policy.s3.S3Identities;
-
 import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.DeleteObjectRequest;
@@ -31,6 +24,12 @@ import software.amazon.awssdk.services.s3.model.ListObjectsV2Response;
 import software.amazon.awssdk.services.s3.model.NoSuchKeyException;
 import software.amazon.awssdk.services.s3.model.S3Exception;
 import software.amazon.awssdk.services.s3.model.S3Object;
+import stirling.software.proprietary.policy.model.InputSpec;
+import stirling.software.proprietary.policy.model.PolicyInputs;
+import stirling.software.proprietary.policy.s3.S3Config;
+import stirling.software.proprietary.policy.s3.S3ConnectionPool;
+import stirling.software.proprietary.policy.s3.S3ConnectionResolver;
+import stirling.software.proprietary.policy.s3.S3Identities;
 
 /**
  * Reads input files from an Amazon S3 (or S3-compatible) bucket; each listed object is its own unit

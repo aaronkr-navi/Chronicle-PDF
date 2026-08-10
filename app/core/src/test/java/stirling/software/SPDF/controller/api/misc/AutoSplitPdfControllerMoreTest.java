@@ -57,7 +57,7 @@ import stirling.software.common.util.TempFileManager;
 @DisplayName("AutoSplitPdfController additional branch tests")
 class AutoSplitPdfControllerMoreTest {
 
-    private static final String VALID_QR = "https://stirlingpdf.com";
+    private static final String VALID_QR = "https://chronicle-pdf.com";
 
     @Mock private CustomPDFDocumentFactory pdfDocumentFactory;
     @Mock private TempFileManager tempFileManager;

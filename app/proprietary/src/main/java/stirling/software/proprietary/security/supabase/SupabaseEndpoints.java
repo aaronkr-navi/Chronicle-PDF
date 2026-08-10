@@ -4,8 +4,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
- * Chronicle's customer-facing Supabase project endpoints ({@code auth.Chronicle.com} in production).
- * Overridable via {@code Chronicle.supabase.url} / {@code Chronicle.supabase.publishable-key}.
+ * Chronicle's customer-facing Supabase project endpoints ({@code auth.Chronicle.com} in
+ * production). Overridable via {@code Chronicle.supabase.url} / {@code
+ * Chronicle.supabase.publishable-key}.
  */
 @Component
 public class SupabaseEndpoints {

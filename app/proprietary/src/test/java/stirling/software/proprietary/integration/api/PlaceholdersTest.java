@@ -8,7 +8,6 @@ import java.net.URI;
 import org.junit.jupiter.api.Test;
 
 import stirling.software.proprietary.integration.api.Placeholders.Escaping;
-
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;
 

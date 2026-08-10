@@ -30,7 +30,6 @@ import org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolv
 import stirling.software.proprietary.service.AiFeatureGate;
 import stirling.software.proprietary.service.PdfCommentAgentOrchestrator;
 import stirling.software.proprietary.service.PdfCommentAgentOrchestrator.AnnotatedPdf;
-
 import tools.jackson.databind.json.JsonMapper;
 
 /**

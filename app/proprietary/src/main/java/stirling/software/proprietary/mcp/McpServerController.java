@@ -22,7 +22,6 @@ import stirling.software.common.model.ApplicationProperties;
 import stirling.software.proprietary.mcp.jsonrpc.JsonRpcError;
 import stirling.software.proprietary.mcp.jsonrpc.JsonRpcRequest;
 import stirling.software.proprietary.mcp.jsonrpc.JsonRpcResponse;
-
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ArrayNode;
@@ -38,7 +37,7 @@ public class McpServerController {
     private static final String PREFERRED_PROTOCOL_VERSION = "2025-06-18";
     private static final Set<String> SUPPORTED_PROTOCOL_VERSIONS =
             Set.of("2025-06-18", "2025-03-26", "2024-11-05");
-    private static final String SERVER_NAME = "stirling-pdf-mcp";
+    private static final String SERVER_NAME = "chronicle-pdf-mcp";
 
     private final ObjectMapper mapper;
     private final ApplicationProperties applicationProperties;

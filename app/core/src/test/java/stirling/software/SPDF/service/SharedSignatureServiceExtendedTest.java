@@ -18,7 +18,6 @@ import org.mockito.MockedStatic;
 import stirling.software.SPDF.model.api.signature.SavedSignatureRequest;
 import stirling.software.SPDF.model.api.signature.SavedSignatureResponse;
 import stirling.software.common.configuration.InstallationPathConfig;
-
 import tools.jackson.databind.json.JsonMapper;
 
 class SharedSignatureServiceExtendedTest {

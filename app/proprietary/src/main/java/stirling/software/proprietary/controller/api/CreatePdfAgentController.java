@@ -35,7 +35,6 @@ import stirling.software.common.util.WebResponseUtils;
 import stirling.software.proprietary.model.api.ai.create.AiDocument;
 import stirling.software.proprietary.service.AiDocumentHtmlRenderer;
 import stirling.software.proprietary.service.AiFeatureGate;
-
 import tools.jackson.core.JacksonException;
 import tools.jackson.databind.ObjectMapper;
 

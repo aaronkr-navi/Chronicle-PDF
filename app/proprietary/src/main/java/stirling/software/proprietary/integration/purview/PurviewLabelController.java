@@ -33,7 +33,6 @@ import stirling.software.proprietary.integration.api.ApiConnectionResolver;
 import stirling.software.proprietary.integration.model.IntegrationType;
 import stirling.software.proprietary.integration.purview.SensitivityLabel.AssignmentMethod;
 import stirling.software.proprietary.service.AiToolResponseHeaders;
-
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ArrayNode;
 import tools.jackson.databind.node.ObjectNode;

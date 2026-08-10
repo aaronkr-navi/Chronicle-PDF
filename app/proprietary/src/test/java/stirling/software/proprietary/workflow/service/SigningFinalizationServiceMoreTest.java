@@ -44,7 +44,6 @@ import stirling.software.proprietary.workflow.model.ParticipantStatus;
 import stirling.software.proprietary.workflow.model.WorkflowParticipant;
 import stirling.software.proprietary.workflow.model.WorkflowSession;
 import stirling.software.proprietary.workflow.repository.WorkflowParticipantRepository;
-
 import tools.jackson.databind.ObjectMapper;
 
 /**
