@@ -85,6 +85,6 @@ non-2xx). Views consume via `useAsync()` + `useSectionFlags()` (`hooks/useAsync.
 > Catalogue generated from `mocks/handlers/*.ts`. The `api/<surface>.ts` JSDoc on
 > each function is the authoritative per-endpoint reference.
 >
-> **Policies** targets the **real** backend base `/api/v1/policies` (Stirling's
+> **Policies** targets the **real** backend base `/api/v1/policies` (Chronicle's
 > `PolicyController`) rather than the mock `/v1/...` convention — its contract
 > mirrors the live policy engine.

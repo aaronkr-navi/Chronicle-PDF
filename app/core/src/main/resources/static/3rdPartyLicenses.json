@@ -326,43 +326,43 @@
             "moduleLicenseUrl": "https://opensource.org/licenses/mit-license.php"
         },
         {
-            "moduleName": "com.stirling:jpdfium",
-            "moduleUrl": "https://github.com/Stirling-Tools/JPDFium",
+            "moduleName": "com.Chronicle:jpdfium",
+            "moduleUrl": "https://github.com/aaronkr-navi/JPDFium",
             "moduleVersion": "1.0.2",
             "moduleLicense": "MIT License",
             "moduleLicenseUrl": "https://opensource.org/licenses/MIT"
         },
         {
-            "moduleName": "com.stirling:jpdfium-natives-darwin-arm64",
-            "moduleUrl": "https://github.com/Stirling-Tools/JPDFium",
+            "moduleName": "com.Chronicle:jpdfium-natives-darwin-arm64",
+            "moduleUrl": "https://github.com/aaronkr-navi/JPDFium",
             "moduleVersion": "1.0.2",
             "moduleLicense": "MIT License",
             "moduleLicenseUrl": "https://opensource.org/licenses/MIT"
         },
         {
-            "moduleName": "com.stirling:jpdfium-natives-darwin-x64",
-            "moduleUrl": "https://github.com/Stirling-Tools/JPDFium",
+            "moduleName": "com.Chronicle:jpdfium-natives-darwin-x64",
+            "moduleUrl": "https://github.com/aaronkr-navi/JPDFium",
             "moduleVersion": "1.0.2",
             "moduleLicense": "MIT License",
             "moduleLicenseUrl": "https://opensource.org/licenses/MIT"
         },
         {
-            "moduleName": "com.stirling:jpdfium-natives-linux-arm64",
-            "moduleUrl": "https://github.com/Stirling-Tools/JPDFium",
+            "moduleName": "com.Chronicle:jpdfium-natives-linux-arm64",
+            "moduleUrl": "https://github.com/aaronkr-navi/JPDFium",
             "moduleVersion": "1.0.2",
             "moduleLicense": "MIT License",
             "moduleLicenseUrl": "https://opensource.org/licenses/MIT"
         },
         {
-            "moduleName": "com.stirling:jpdfium-natives-linux-x64",
-            "moduleUrl": "https://github.com/Stirling-Tools/JPDFium",
+            "moduleName": "com.Chronicle:jpdfium-natives-linux-x64",
+            "moduleUrl": "https://github.com/aaronkr-navi/JPDFium",
             "moduleVersion": "1.0.2",
             "moduleLicense": "MIT License",
             "moduleLicenseUrl": "https://opensource.org/licenses/MIT"
         },
         {
-            "moduleName": "com.stirling:jpdfium-natives-windows-x64",
-            "moduleUrl": "https://github.com/Stirling-Tools/JPDFium",
+            "moduleName": "com.Chronicle:jpdfium-natives-windows-x64",
+            "moduleUrl": "https://github.com/aaronkr-navi/JPDFium",
             "moduleVersion": "1.0.2",
             "moduleLicense": "MIT License",
             "moduleLicenseUrl": "https://opensource.org/licenses/MIT"

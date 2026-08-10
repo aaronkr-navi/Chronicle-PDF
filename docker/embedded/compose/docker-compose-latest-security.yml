@@ -1,7 +1,7 @@
 services:
-  stirling-pdf:
-    container_name: Stirling-PDF-Security
-    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
+  Chronicle-PDF:
+    container_name: Chronicle-PDF-Security
+    image: docker.chronicle-pdf.com/stirlingtools/Chronicle-PDF:latest
     build:
       context: ../../..
       dockerfile: docker/embedded/Dockerfile
@@ -13,9 +13,9 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ../../../stirling/latest/data:/usr/share/tessdata:rw
-      - ../../../stirling/latest/config:/configs:rw
-      - ../../../stirling/latest/logs:/logs:rw
+      - ../../../Chronicle/latest/data:/usr/share/tessdata:rw
+      - ../../../Chronicle/latest/config:/configs:rw
+      - ../../../Chronicle/latest/logs:/logs:rw
     environment:
       DISABLE_ADDITIONAL_FEATURES: "false"
       SECURITY_ENABLELOGIN: "false"
@@ -27,9 +27,9 @@ services:
       PGID: 1002
       UMASK: "022"
       SYSTEM_DEFAULTLOCALE: en-US
-      UI_APPNAME: Stirling-PDF
-      UI_HOMEDESCRIPTION: Demo site for Stirling-PDF Latest with Security
-      UI_APPNAMENAVBAR: Stirling-PDF Latest
+      UI_APPNAME: Chronicle-PDF
+      UI_HOMEDESCRIPTION: Demo site for Chronicle-PDF Latest with Security
+      UI_APPNAMENAVBAR: Chronicle-PDF Latest
       SYSTEM_MAXFILESIZE: "100"
       METRICS_ENABLED: "true"
       SYSTEM_GOOGLEVISIBILITY: "true"

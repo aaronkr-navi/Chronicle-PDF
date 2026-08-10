@@ -4,7 +4,7 @@ A lightweight COM DLL that provides PDF page-preview thumbnails in Windows Explo
 
 ## Why this exists
 
-When Chronicle-PDF registers as the default PDF handler, Windows associates `.pdf` files with Stirling's ProgID. Without a thumbnail handler on that ProgID, Explorer falls back to showing the application icon (the big S logo) instead of a page preview. This DLL restores thumbnail previews by implementing the Windows Shell `IThumbnailProvider` COM interface.
+When Chronicle-PDF registers as the default PDF handler, Windows associates `.pdf` files with Chronicle's ProgID. Without a thumbnail handler on that ProgID, Explorer falls back to showing the application icon (the big S logo) instead of a page preview. This DLL restores thumbnail previews by implementing the Windows Shell `IThumbnailProvider` COM interface.
 
 ## How it works
 

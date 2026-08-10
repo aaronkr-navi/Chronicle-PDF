@@ -1,4 +1,4 @@
-"""Shared services used by the Stirling AI runtime."""
+"""Shared services used by the Chronicle AI runtime."""
 
 from .progress import (
     ProgressEmitter,

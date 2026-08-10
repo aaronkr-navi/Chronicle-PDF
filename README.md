@@ -4,7 +4,7 @@
 
 <h1 align="center">Chronicle PDF</h1>
 
-Chronicle PDF is a powerful, open-source PDF editing platform built on [Stirling PDF](https://github.com/Stirling-Tools/Stirling-PDF). Run it as a personal desktop app, in the browser, or deploy it on your own servers with a private API. Edit, sign, redact, convert, and automate PDFs without sending documents to external services.
+Chronicle PDF is a powerful, open-source PDF editing platform built on [Chronicle PDF](https://github.com/aaronkr-navi/Chronicle-PDF). Run it as a personal desktop app, in the browser, or deploy it on your own servers with a private API. Edit, sign, redact, convert, and automate PDFs without sending documents to external services.
 
 ## Key Capabilities
 
@@ -34,7 +34,7 @@ This project uses [Task](https://taskfile.dev/) as a unified command runner for 
 
 ## Acknowledgments
 
-Chronicle PDF is a fork of [Stirling PDF](https://github.com/Stirling-Tools/Stirling-PDF), an excellent open-source PDF platform. We're grateful to the Stirling-Tools team and community for their work.
+Chronicle PDF is a fork of [Chronicle PDF](https://github.com/aaronkr-navi/Chronicle-PDF), an excellent open-source PDF platform. We're grateful to the aaronkr-navi team and community for their work.
 
 ## License
 

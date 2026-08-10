@@ -1,8 +1,8 @@
 
 services:
-  stirling-pdf:
-    container_name: Stirling-PDF-Fat-Disable-Endpoints
-    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:fat
+  Chronicle-PDF:
+    container_name: Chronicle-PDF-Fat-Disable-Endpoints
+    image: docker.chronicle-pdf.com/stirlingtools/Chronicle-PDF:fat
     build:
       context: ../../../
       dockerfile: docker/embedded/Dockerfile.fat
@@ -18,9 +18,9 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ../../../stirling/latest/data:/usr/share/tessdata:rw
-      - ../../../stirling/latest/config:/configs:rw
-      - ../../../stirling/latest/logs:/logs:rw
+      - ../../../Chronicle/latest/data:/usr/share/tessdata:rw
+      - ../../../Chronicle/latest/config:/configs:rw
+      - ../../../Chronicle/latest/logs:/logs:rw
       - ../../../testing/allEndpointsRemovedSettings.yml:/configs/settings.yml:rw
     environment:
       DISABLE_ADDITIONAL_FEATURES: "false"
@@ -31,9 +31,9 @@ services:
       PGID: 1002
       UMASK: "022"
       SYSTEM_DEFAULTLOCALE: en-US
-      UI_APPNAME: Stirling-PDF
-      UI_HOMEDESCRIPTION: Demo site for Stirling-PDF Latest-fat with  all Endpoints Disabled
-      UI_APPNAMENAVBAR: Stirling-PDF Latest-fat
+      UI_APPNAME: Chronicle-PDF
+      UI_HOMEDESCRIPTION: Demo site for Chronicle-PDF Latest-fat with  all Endpoints Disabled
+      UI_APPNAMENAVBAR: Chronicle-PDF Latest-fat
       SYSTEM_MAXFILESIZE: "100"
       METRICS_ENABLED: "true"
       SYSTEM_GOOGLEVISIBILITY: "true"
