@@ -57,7 +57,7 @@ import stirling.software.common.util.TempFileManager;
 @MockitoSettings(strictness = Strictness.LENIENT)
 class AutoSplitPdfControllerTest {
 
-    private static final String VALID_QR = "https://stirlingpdf.com";
+    private static final String VALID_QR = "https://chronicle-pdf.com";
 
     @Mock private CustomPDFDocumentFactory pdfDocumentFactory;
     @Mock private TempFileManager tempFileManager;

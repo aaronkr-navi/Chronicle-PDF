@@ -63,14 +63,14 @@ public class InitialSetup {
         // Initialize Terms and Conditions
         String termsUrl = applicationProperties.getLegal().getTermsAndConditions();
         if (StringUtils.isEmpty(termsUrl)) {
-            String defaultTermsUrl = "https://www.stirlingpdf.com/terms";
+            String defaultTermsUrl = "https://www.chronicle-pdf.com/terms";
             GeneralUtils.saveKeyToSettings("legal.termsAndConditions", defaultTermsUrl);
             applicationProperties.getLegal().setTermsAndConditions(defaultTermsUrl);
         }
         // Initialize Privacy Policy
         String privacyUrl = applicationProperties.getLegal().getPrivacyPolicy();
         if (StringUtils.isEmpty(privacyUrl)) {
-            String defaultPrivacyUrl = "https://www.stirlingpdf.com/privacy-policy";
+            String defaultPrivacyUrl = "https://www.chronicle-pdf.com/privacy-policy";
             GeneralUtils.saveKeyToSettings("legal.privacyPolicy", defaultPrivacyUrl);
             applicationProperties.getLegal().setPrivacyPolicy(defaultPrivacyUrl);
         }

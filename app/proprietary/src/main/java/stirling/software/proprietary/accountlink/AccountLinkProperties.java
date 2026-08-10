@@ -31,7 +31,7 @@ public class AccountLinkProperties {
      * <p>STUB: defaults to the public cloud host; an operator overrides it for staging. There is no
      * existing SaaS-base-url property in the self-hosted profile, so this is introduced here.
      */
-    private String saasBaseUrl = "https://stirling.com/app";
+    private String saasBaseUrl = "https://chronicle-pdf.com/app";
 
     /** Cached entitlement is reused for this long before a refresh is attempted. */
     private long entitlementCacheSeconds = 300;
