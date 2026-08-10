@@ -70,7 +70,7 @@ export default function McpSection() {
   const { config } = useAppConfig();
   const { user } = useAuth();
   // Guests can't authorise an MCP client - the OAuth flow mints an anonymous
-  // token with no email, which the server can't map to a Stirling account. So
+  // token with no email, which the server can't map to a Chronicle account. So
   // mirror the API-keys section: show a "create an account" card instead of a
   // connection guide that would only dead-end at sign-in.
   const isAnonymous = Boolean(user && isUserAnonymous(user));
@@ -103,7 +103,7 @@ export default function McpSection() {
         config: JSON.stringify(
           {
             mcpServers: {
-              "stirling-pdf": {
+              "Chronicle PDF": {
                 command: "npx",
                 args: ["-y", "mcp-remote", mcpUrl],
               },
@@ -118,7 +118,7 @@ export default function McpSection() {
         label: "Claude Code",
         file: ".mcp.json",
         config: JSON.stringify(
-          { mcpServers: { "stirling-pdf": { type: "http", url: mcpUrl } } },
+          { mcpServers: { "Chronicle PDF": { type: "http", url: mcpUrl } } },
           null,
           2,
         ),
@@ -127,14 +127,14 @@ export default function McpSection() {
         value: "codex",
         label: "Codex CLI",
         file: "~/.codex/config.toml",
-        config: `[mcp_servers.stirling-pdf]\nurl = "${mcpUrl}"`,
+        config: `[mcp_servers.chronicle-pdf]\nurl = "${mcpUrl}"`,
       },
       {
         value: "vscode",
         label: "VS Code",
         file: ".vscode/mcp.json",
         config: JSON.stringify(
-          { servers: { "stirling-pdf": { type: "http", url: mcpUrl } } },
+          { servers: { "Chronicle PDF": { type: "http", url: mcpUrl } } },
           null,
           2,
         ),

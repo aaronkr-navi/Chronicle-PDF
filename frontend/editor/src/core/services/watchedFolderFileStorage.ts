@@ -1,6 +1,6 @@
 /**
  * Service for managing folder-file associations in IndexedDB.
- * File blobs are stored in the main stirling-pdf-files database (fileStorage).
+ * File blobs are stored in the main Chronicle PDF-files database (fileStorage).
  * This service only maintains folder record metadata: which file IDs belong to
  * which folders and their processing status.
  */

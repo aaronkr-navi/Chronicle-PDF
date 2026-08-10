@@ -47,7 +47,7 @@ class IndexedDBManager {
       return existingPromise;
     }
 
-    // SaaS lineage shipped a v6 and a v7 of stirling-pdf-files whose
+    // SaaS lineage shipped a v6 and a v7 of Chronicle PDF-files whose
     // upgrade paths corrupted records (separate cursor walks racing in
     // one versionchange transaction). The SaaS build wipes those
     // databases on open to get users unstuck; we carry the wipe forward
@@ -192,7 +192,7 @@ class IndexedDBManager {
   }
 
   /**
-   * Single-pass migration for the `files` store on stirling-pdf-files.
+   * Single-pass migration for the `files` store on Chronicle PDF-files.
    *
    * Runs ONE openCursor() walk and applies every applicable per-version
    * delta to each record before `cursor.update()` writes it back. The

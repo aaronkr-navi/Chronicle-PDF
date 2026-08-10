@@ -8,7 +8,7 @@ import { PORTAL_BASENAME } from "@app/routes/portalBasename";
 /**
  * SaaS sidebar brand header. When the backend says this user can open the
  * processor (`/api/v1/auth/me` → `portalAccess` — the exact signal the
- * processor's own gate uses), the Stirling logo doubles as the
+ * processor's own gate uses), the Chronicle logo doubles as the
  * editor⇄processor switcher: the mark morphs into a chevron and opens the
  * switch menu (same BrandSwitcher the processor sidebar uses). Users without
  * access get a plain logo.

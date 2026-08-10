@@ -18,12 +18,12 @@ import "@portal/components/DownloadEditorModal.css";
 /* ──────────────────────────────────────────────────────────────────────── */
 
 const WINGET = "winget install StirlingTools.StirlingPDF";
-const BREW = "brew install --cask stirling-pdf";
+const BREW = "brew install --cask Chronicle PDF";
 const dockerCmd = (tag: string) =>
-  `docker run -d --name stirling-pdf -p 8080:8080 \\\n  -v ./stirling-data:/configs \\\n  stirlingtools/stirling-pdf:${tag}`;
-const HELM = `helm repo add stirling-pdf https://stirling-tools.github.io/Chronicle PDF/
+  `docker run -d --name Chronicle PDF -p 8080:8080 \\\n  -v ./stirling-data:/configs \\\n  stirlingtools/stirling-pdf:${tag}`;
+const HELM = `helm repo add Chronicle PDF https://stirling-tools.github.io/Chronicle PDF/
 helm repo update
-helm install stirling-pdf stirling-pdf/stirling-pdf-chart \\\n  --namespace stirling-pdf --create-namespace`;
+helm install Chronicle PDF Chronicle PDF/stirling-pdf-chart \\\n  --namespace Chronicle PDF --create-namespace`;
 const JAR_URL = "https://files.stirlingpdf.com/Chronicle PDF-with-login.jar";
 const JAR =
   "java -Xmx2g -jar Chronicle PDF-with-login.jar\n# then open http://localhost:8080";

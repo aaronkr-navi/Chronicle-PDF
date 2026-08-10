@@ -434,10 +434,10 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
                 <Text
                   size="sm"
                   component="a"
-                  href={`https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v${updateSummary.latest_version}`}
+                  href={`https://github.com/aaronkr-navi/Chronicle-PDF/releases/tag/v${updateSummary.latest_version}`}
                   target="_blank"
                   onClick={handleExternalLink(
-                    `https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v${updateSummary.latest_version}`,
+                    `https://github.com/aaronkr-navi/Chronicle-PDF/releases/tag/v${updateSummary.latest_version}`,
                   )}
                   c="blue"
                   style={{
@@ -453,10 +453,10 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
                 <Text
                   size="sm"
                   component="a"
-                  href="https://github.com/Stirling-Tools/Stirling-PDF/releases"
+                  href="https://github.com/aaronkr-navi/Chronicle-PDF/releases"
                   target="_blank"
                   onClick={handleExternalLink(
-                    "https://github.com/Stirling-Tools/Stirling-PDF/releases",
+                    "https://github.com/aaronkr-navi/Chronicle-PDF/releases",
                   )}
                   c="dimmed"
                   style={{
@@ -620,12 +620,12 @@ const UpdateModal: React.FC<UpdateModalProps> = ({
                         <Group gap={4}>
                           <Button
                             as="a"
-                            href={`https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v${version.version}`}
+                            href={`https://github.com/aaronkr-navi/Chronicle-PDF/releases/tag/v${version.version}`}
                             target="_blank"
                             variant="tertiary"
                             size="sm"
                             onClick={handleExternalLink(
-                              `https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v${version.version}`,
+                              `https://github.com/aaronkr-navi/Chronicle-PDF/releases/tag/v${version.version}`,
                             )}
                             rightSection={
                               <OpenInNewIcon style={{ fontSize: 11 }} />

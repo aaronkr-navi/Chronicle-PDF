@@ -7,7 +7,7 @@ interface BrandMarkProps {
 }
 
 /**
- * The Stirling logo mark as inline SVG so it can morph. At rest it is the
+ * the Chronicle logo mark as inline SVG so it can morph. At rest it is the
  * two-tone red brand mark; when an ancestor marked `[data-brandmark-morph]` is
  * hovered / focused / open (`.is-open`), the two parallelograms slide into a
  * smaller downward chevron in the primary text colour — a self-explaining

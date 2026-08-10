@@ -14,7 +14,7 @@ const meta: Meta<typeof LinkAccountModal> = {
 export default meta;
 type Story = StoryObj<typeof LinkAccountModal>;
 
-/** Default "link" mode — sign in to register this instance against a Stirling account. */
+/** Default "link" mode — sign in to register this instance against a Chronicle account. */
 export const Default: Story = {};
 
 /** "reauth" mode — an already-linked instance's session expired and needs a fresh sign-in. */
