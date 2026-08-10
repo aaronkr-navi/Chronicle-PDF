@@ -57,7 +57,7 @@ keepWorking = "ทำงานต่อ"
 loading = "กำลังโหลด..."
 loginAgreementAccept = "ยอมรับ"
 loginAgreementDecline = "ปฏิเสธ"
-loginAgreementProvider = "ประกาศนี้จัดทำโดยผู้ดูแลระบบของคุณ ไม่ใช่ Stirling PDF Inc."
+loginAgreementProvider = "ประกาศนี้จัดทำโดยผู้ดูแลระบบของคุณ ไม่ใช่ Chronicle PDF Inc."
 loginAgreementTitle = "ข้อตกลงการเข้าสู่ระบบ"
 logOut = "ออกจากระบบ"
 marginTooltip = "ระยะห่างระหว่างหมายเลขหน้ากับขอบกระดาษ"
@@ -633,9 +633,9 @@ description = "กำหนดค่าการจัดเก็บไฟล�
 label = "การจัดการไฟล์ชั่วคราว"
 
 [admin.settings.advanced.tempFileManagement.baseTmpDir]
-description = "ไดเรกทอรีหลักสำหรับไฟล์ชั่วคราว (ปล่อยว่างเพื่อค่าเริ่มต้น: java.io.tmpdir/stirling-pdf)"
+description = "ไดเรกทอรีหลักสำหรับไฟล์ชั่วคราว (ปล่อยว่างเพื่อค่าเริ่มต้น: java.io.tmpdir/Chronicle-PDF)"
 label = "ไดเรกทอรีชั่วคราวหลัก"
-placeholder = "ค่าเริ่มต้น: java.io.tmpdir/stirling-pdf"
+placeholder = "ค่าเริ่มต้น: java.io.tmpdir/Chronicle-PDF"
 
 [admin.settings.advanced.tempFileManagement.cleanupIntervalMinutes]
 description = "ความถี่ในการรันการล้าง (เป็นนาที)"
@@ -919,11 +919,11 @@ description = "กำหนดค่าฟีเจอร์และควา�
 title = "ฟีเจอร์"
 
 [admin.settings.features.serverCertificate]
-description = "กำหนดค่าการสร้างใบรับรองฝั่งเซิร์ฟเวอร์สำหรับฟังก์ชัน \"Sign with Stirling-PDF\""
+description = "กำหนดค่าการสร้างใบรับรองฝั่งเซิร์ฟเวอร์สำหรับฟังก์ชัน \"Sign with Chronicle-PDF\""
 label = "ใบรับรองเซิร์ฟเวอร์"
 
 [admin.settings.features.serverCertificate.enabled]
-description = "เปิดใช้งานใบรับรองฝั่งเซิร์ฟเวอร์สำหรับตัวเลือก \"Sign with Stirling-PDF\""
+description = "เปิดใช้งานใบรับรองฝั่งเซิร์ฟเวอร์สำหรับตัวเลือก \"Sign with Chronicle-PDF\""
 label = "เปิดใช้งานใบรับรองเซิร์ฟเวอร์"
 
 [admin.settings.features.serverCertificate.organizationName]
@@ -1071,7 +1071,7 @@ description = "URL หรือชื่อไฟล์ไปยังนโย�
 label = "นโยบายคุกกี้"
 
 [admin.settings.legal.disclaimer]
-message = "ด้วยการปรับแต่งเอกสารทางกฎหมายเหล่านี้ คุณยอมรับความรับผิดชอบอย่างเต็มที่ในการให้เป็นไปตามกฎหมายและข้อบังคับทั้งหมดที่เกี่ยวข้อง รวมถึงแต่ไม่จำกัดเพียง GDPR และข้อกำหนดการคุ้มครองข้อมูลของสหภาพยุโรปอื่น ๆ ให้ปรับเปลี่ยนการตั้งค่าเหล่านี้เฉพาะเมื่อ: (1) คุณใช้งานอินสแตนซ์ส่วนตัว/ส่วนบุคคล, (2) คุณอยู่นอกเขตอำนาจศาลของสหภาพยุโรปและเข้าใจข้อผูกพันทางกฎหมายในพื้นที่ของคุณ, หรือ (3) คุณได้รับคำปรึกษาทางกฎหมายที่เหมาะสมและยอมรับความรับผิดชอบต่อข้อมูลผู้ใช้และการปฏิบัติตามกฎหมายทั้งหมดแต่เพียงผู้เดียว Stirling-PDF และนักพัฒนาของระบบจะไม่รับผิดต่อข้อผูกพันทางกฎหมายของคุณ"
+message = "ด้วยการปรับแต่งเอกสารทางกฎหมายเหล่านี้ คุณยอมรับความรับผิดชอบอย่างเต็มที่ในการให้เป็นไปตามกฎหมายและข้อบังคับทั้งหมดที่เกี่ยวข้อง รวมถึงแต่ไม่จำกัดเพียง GDPR และข้อกำหนดการคุ้มครองข้อมูลของสหภาพยุโรปอื่น ๆ ให้ปรับเปลี่ยนการตั้งค่าเหล่านี้เฉพาะเมื่อ: (1) คุณใช้งานอินสแตนซ์ส่วนตัว/ส่วนบุคคล, (2) คุณอยู่นอกเขตอำนาจศาลของสหภาพยุโรปและเข้าใจข้อผูกพันทางกฎหมายในพื้นที่ของคุณ, หรือ (3) คุณได้รับคำปรึกษาทางกฎหมายที่เหมาะสมและยอมรับความรับผิดชอบต่อข้อมูลผู้ใช้และการปฏิบัติตามกฎหมายทั้งหมดแต่เพียงผู้เดียว Chronicle-PDF และนักพัฒนาของระบบจะไม่รับผิดต่อข้อผูกพันทางกฎหมายของคุณ"
 title = "คำเตือนความรับผิดชอบทางกฎหมาย"
 
 [admin.settings.legal.impressum]
@@ -1158,7 +1158,7 @@ description = "ชื่อผู้ใช้สำหรับการยื�
 label = "ชื่อผู้ใช้ SMTP"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Stirling API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
 description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
@@ -1202,12 +1202,12 @@ label = "JWKS URL (optional)"
 placeholder = "Auto-discovered from issuer"
 
 [admin.settings.mcp.mode]
-description = "OAuth needs an external IdP. API key uses a Stirling per-user API key (X-API-KEY) - simplest for self-host."
+description = "OAuth needs an external IdP. API key uses a Chronicle per-user API key (X-API-KEY) - simplest for self-host."
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
 description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
-label = "Require an existing Stirling account"
+label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
 description = "This server's public /mcp URL. Tokens must list it in their audience (RFC 8707) or they are rejected."
@@ -1218,7 +1218,7 @@ description = "Require mcp.tools.read for read ops and mcp.tools.write for write
 label = "Enforce OAuth scopes"
 
 [admin.settings.mcp.usernameClaim]
-description = "JWT claim matched against a Stirling username (e.g. sub, email, preferred_username)."
+description = "JWT claim matched against a Chronicle username (e.g. sub, email, preferred_username)."
 label = "Username claim"
 
 [admin.settings.plan.noData]
@@ -1539,7 +1539,7 @@ description = "เมื่อเปิดใช้งาน จะมีเพ�
 label = "อนุญาตเฉพาะ User ID ที่กำหนด"
 
 [admin.settings.telegram.enabled]
-description = "อนุญาตให้ผู้ใช้โต้ตอบกับ Stirling PDF ผ่าน Telegram bot ที่คุณกำหนดค่าไว้"
+description = "อนุญาตให้ผู้ใช้โต้ตอบกับ Chronicle PDF ผ่าน Telegram bot ที่คุณกำหนดค่าไว้"
 label = "เปิดใช้งาน Telegram Bot"
 
 [admin.settings.telegram.feedback]
@@ -1612,20 +1612,20 @@ settingsOverview = "นี่คือ <strong>แผงการตั้งค
 systemCustomization = "เรามีหลายวิธีในการปรับแต่ง UI: <strong>การตั้งค่าระบบ</strong> ให้คุณเปลี่ยนชื่อแอปและภาษา <strong>คุณลักษณะ</strong> อนุญาตให้จัดการใบรับรองเซิร์ฟเวอร์ และ <strong>ปลายทาง</strong> ให้คุณเปิดหรือปิดเครื่องมือเฉพาะสำหรับผู้ใช้ของคุณ"
 teamsAndUsers = "จัดการ <strong>ทีม</strong> และผู้ใช้รายบุคคลได้ที่นี่ คุณสามารถเชิญผู้ใช้ใหม่ทางอีเมล ลิงก์ที่แชร์ได้ หรือสร้างบัญชีแบบกำหนดเองให้พวกเขาเอง"
 welcome = "ยินดีต้อนรับสู่ <strong>ทัวร์ผู้ดูแลระบบ</strong> มาสำรวจฟีเจอร์องค์กรอันทรงพลังและการตั้งค่าที่มีให้ผู้ดูแลระบบกัน"
-wrapUp = "จบทัวร์ผู้ดูแล! คุณได้เห็นฟีเจอร์ระดับองค์กรที่ทำให้ Stirling PDF เป็นโซลูชันที่ทรงพลังและปรับแต่งได้สำหรับองค์กร เข้าถึงทัวร์นี้ได้ทุกเมื่อจากเมนู <strong>ช่วยเหลือ</strong>"
+wrapUp = "จบทัวร์ผู้ดูแล! คุณได้เห็นฟีเจอร์ระดับองค์กรที่ทำให้ Chronicle PDF เป็นโซลูชันที่ทรงพลังและปรับแต่งได้สำหรับองค์กร เข้าถึงทัวร์นี้ได้ทุกเมื่อจากเมนู <strong>ช่วยเหลือ</strong>"
 
 [adminUserSettings]
 admin = "ผู้ดูแลระบบ"
 title = "การควบคุมผู้ใช้"
 
 [agents]
-stirling_name = "Stirling"
+stirling_name = "Chronicle"
 
 [analytics]
 learnMore = "เรียนรู้เพิ่มเติม"
-paragraph1 = "Stirling PDF มีการวิเคราะห์แบบสมัครใจเพื่อช่วยเราปรับปรุงผลิตภัณฑ์ เราไม่นำทางความเป็นส่วนตัวหรือเนื้อหาของไฟล์ไปเก็บข้อมูลใด ๆ"
-paragraph2 = "โปรดพิจารณาการเปิดใช้งานการวิเคราะห์เพื่อช่วยให้ Stirling-PDF เจริญเติบโตและทำให้เราเข้าใจผู้ใช้งานมากขึ้น"
-title = "คุณต้องการที่จะทำให้ Stirling PDF ดียิ่งขึ้นไหม?"
+paragraph1 = "Chronicle PDF มีการวิเคราะห์แบบสมัครใจเพื่อช่วยเราปรับปรุงผลิตภัณฑ์ เราไม่นำทางความเป็นส่วนตัวหรือเนื้อหาของไฟล์ไปเก็บข้อมูลใด ๆ"
+paragraph2 = "โปรดพิจารณาการเปิดใช้งานการวิเคราะห์เพื่อช่วยให้ Chronicle-PDF เจริญเติบโตและทำให้เราเข้าใจผู้ใช้งานมากขึ้น"
+title = "คุณต้องการที่จะทำให้ Chronicle PDF ดียิ่งขึ้นไหม?"
 
 [annotate]
 tags = "annotate,highlight,draw,markup,comment,notes,review,redline,feedback,markup tools,sticky notes,shapes,arrows,text box,freehand"
@@ -2558,7 +2558,7 @@ bullet1 = "รองรับรูปแบบ PEM, PKCS12, JKS และใบ
 bullet2 = "เลือกแสดงหรือซ่อนลายเซ็นบน PDF ได้"
 bullet3 = "เพิ่มเหตุผล สถานที่ และชื่อผู้ลงนาม"
 bullet4 = "เลือกหน้าที่จะวางลายเซ็นที่มองเห็นได้"
-bullet5 = "ใช้ใบรับรองของเซิร์ฟเวอร์สำหรับตัวเลือก 'Sign with Stirling-PDF' ที่ง่าย"
+bullet5 = "ใช้ใบรับรองของเซิร์ฟเวอร์สำหรับตัวเลือก 'Sign with Chronicle-PDF' ที่ง่าย"
 text = "ในการลงนาม PDF คุณต้องมีใบรับรองดิจิทัล (เช่น PEM, PKCS12 หรือ JKS) คุณสามารถเลือกให้ลายเซ็นมองเห็นได้บนเอกสารหรือให้มองไม่เห็นเพื่อเน้นด้านความปลอดภัยเท่านั้น"
 title = "การเพิ่มลายเซ็น"
 
@@ -2739,10 +2739,10 @@ copy = "คัดลอกข้อความ"
 
 [chat.fab]
 close = "Close chat"
-open = "Open Stirling AI assistant"
+open = "Open Chronicle AI assistant"
 
 [chat.header]
-agentMenu = "ตัวเลือกเอเจนต์ของ Stirling"
+agentMenu = "ตัวเลือกเอเจนต์ของ Chronicle"
 clearChat = "ล้างแชต"
 
 [chat.input]
@@ -3073,13 +3073,13 @@ upgradeButton = "อัปเกรดบัญชี"
 [config.apiKeys]
 copyKeyAriaLabel = "คัดลอก API key"
 description = "API key ของคุณสำหรับเข้าถึงชุดเครื่องมือ PDF ของ Stirling คัดลอกไปยังโปรเจกต์ของคุณหรือรีเฟรชเพื่อสร้างใหม่"
-docsDescription = "เรียนรู้เพิ่มเติมเกี่ยวกับการผสานรวมกับ Stirling PDF:"
+docsDescription = "เรียนรู้เพิ่มเติมเกี่ยวกับการผสานรวมกับ Chronicle PDF:"
 docsLink = "เอกสาร API"
 docsTitle = "เอกสาร API"
 generateError = "ไม่สามารถสร้าง API key ของคุณได้"
 goToAccount = "ไปที่บัญชี"
 guestInfo = "ผู้ใช้แบบแขกจะไม่ได้รับ API key สร้างบัญชีเพื่อรับ API key สำหรับใช้งานในแอปพลิเคชันของคุณ"
-intro = "ใช้ API key ของคุณเพื่อเข้าถึงความสามารถในการประมวลผลของ Stirling PDF แบบโปรแกรม"
+intro = "ใช้ API key ของคุณเพื่อเข้าถึงความสามารถในการประมวลผลของ Chronicle PDF แบบโปรแกรม"
 label = "API Key"
 publicKeyAriaLabel = "คีย์ API สาธารณะ"
 refreshAriaLabel = "รีเฟรช API key"
@@ -3103,10 +3103,10 @@ title = "รีเฟรช API Keys"
 warning = "⚠️ คำเตือน: การดำเนินการนี้จะสร้างคีย์ API ใหม่และทำให้คีย์ก่อนหน้าใช้ไม่ได้"
 
 [config.mcp]
-description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Stirling PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
-guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Stirling PDF tools on your behalf."
+description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Chronicle PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
+guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Chronicle PDF tools on your behalf."
 navLabel = "MCP Server"
-tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Stirling PDF directly."
+tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Chronicle PDF directly."
 title = "MCP Server"
 viewApiKeys = "View API keys"
 
@@ -3232,7 +3232,7 @@ showPreferencesBtn = "จัดการการตั้งค่า"
 title = "เราใช้คุกกี้อย่างไร"
 
 [cookieBanner.popUp.description]
-1 = "เราใช้คุกกี้และเทคโนโลยีอื่น ๆ เพื่อให้ Stirling PDF ทำงานได้ดียิ่งขึ้นสำหรับคุณ—ช่วยให้เราพัฒนาเครื่องมือและสร้างฟีเจอร์ที่คุณชื่นชอบต่อไป"
+1 = "เราใช้คุกกี้และเทคโนโลยีอื่น ๆ เพื่อให้ Chronicle PDF ทำงานได้ดียิ่งขึ้นสำหรับคุณ—ช่วยให้เราพัฒนาเครื่องมือและสร้างฟีเจอร์ที่คุณชื่นชอบต่อไป"
 2 = "If you’d rather not, clicking 'No Thanks' will only enable the essential cookies needed to keep things running smoothly."
 
 [cookieBanner.preferencesModal]
@@ -3245,12 +3245,12 @@ subtitle = "การใช้คุกกี้"
 title = "ศูนย์การตั้งค่าความยินยอม"
 
 [cookieBanner.preferencesModal.analytics]
-description = "คุกกี้เหล่านี้ช่วยให้เราเข้าใจว่าเครื่องมือของเราถูกใช้อย่างไร เพื่อให้เรามุ่งเน้นสร้างฟีเจอร์ที่ชุมชนให้คุณค่ามากที่สุด มั่นใจได้ว่า Stirling PDF ไม่สามารถและจะไม่มีวันติดตามเนื้อหาของเอกสารที่คุณทำงานด้วย"
+description = "คุกกี้เหล่านี้ช่วยให้เราเข้าใจว่าเครื่องมือของเราถูกใช้อย่างไร เพื่อให้เรามุ่งเน้นสร้างฟีเจอร์ที่ชุมชนให้คุณค่ามากที่สุด มั่นใจได้ว่า Chronicle PDF ไม่สามารถและจะไม่มีวันติดตามเนื้อหาของเอกสารที่คุณทำงานด้วย"
 title = "การวิเคราะห์"
 
 [cookieBanner.preferencesModal.description]
-1 = "Stirling PDF ใช้คุกกี้และเทคโนโลยีที่คล้ายกันเพื่อยกระดับประสบการณ์ของคุณและเข้าใจการใช้งานเครื่องมือของเรา ซึ่งช่วยให้เราปรับปรุงประสิทธิภาพ พัฒนาฟีเจอร์ที่คุณให้ความสำคัญ และสนับสนุนผู้ใช้อย่างต่อเนื่อง"
-2 = "Stirling PDF ไม่สามารถ—และจะไม่มีวัน—ติดตามหรือเข้าถึงเนื้อหาของเอกสารที่คุณใช้"
+1 = "Chronicle PDF ใช้คุกกี้และเทคโนโลยีที่คล้ายกันเพื่อยกระดับประสบการณ์ของคุณและเข้าใจการใช้งานเครื่องมือของเรา ซึ่งช่วยให้เราปรับปรุงประสิทธิภาพ พัฒนาฟีเจอร์ที่คุณให้ความสำคัญ และสนับสนุนผู้ใช้อย่างต่อเนื่อง"
+2 = "Chronicle PDF ไม่สามารถ—และจะไม่มีวัน—ติดตามหรือเข้าถึงเนื้อหาของเอกสารที่คุณใช้"
 3 = "ความเป็นส่วนตัวและความไว้วางใจของคุณคือหัวใจสำคัญของงานที่เราทำ"
 
 [cookieBanner.preferencesModal.necessary]
@@ -3346,14 +3346,14 @@ message = "ตั้งตัวจัดการ PDF เริ่มต้น�
 title = "ข้อผิดพลาด"
 
 [defaultApp.prompt]
-message = "ทำให้ Stirling PDF เป็นแอปเริ่มต้นสำหรับเปิดไฟล์ PDF"
+message = "ทำให้ Chronicle PDF เป็นแอปเริ่มต้นสำหรับเปิดไฟล์ PDF"
 
 [defaultApp.settingsOpened]
-message = "โปรดเลือก Stirling PDF ในการตั้งค่าระบบของคุณ"
+message = "โปรดเลือก Chronicle PDF ในการตั้งค่าระบบของคุณ"
 title = "เปิดการตั้งค่าแล้ว"
 
 [defaultApp.success]
-message = "Stirling PDF เป็นโปรแกรมแก้ไข PDF เริ่มต้นของคุณแล้ว"
+message = "Chronicle PDF เป็นโปรแกรมแก้ไข PDF เริ่มต้นของคุณแล้ว"
 title = "ตั้งเป็นแอปเริ่มต้นแล้ว"
 
 [desktopUpdate]
@@ -3369,7 +3369,7 @@ updateFailedMessage = "ไม่สามารถดาวน์โหลดห
 
 [desktopUpdate.blocked]
 docsLink = "ดูเอกสารการติดตั้ง"
-message = "Stirling-PDF ไม่มีสิทธิ์ในการอัปเดตตัวเองบนเครื่องนี้."
+message = "Chronicle-PDF ไม่มีสิทธิ์ในการอัปเดตตัวเองบนเครื่องนี้."
 title = "ต้องมีสิทธิ์ผู้ดูแลระบบ"
 
 [devAirgapped]
@@ -3939,7 +3939,7 @@ title = "ย้ายไปยังโฟลเดอร์"
 [filesPage.origin]
 all = "ทุกแหล่งที่มา"
 cloud = "คลาวด์"
-cloudHint = "เก็บไว้บนเซิร์ฟเวอร์ของ Stirling"
+cloudHint = "เก็บไว้บนเซิร์ฟเวอร์ของ Chronicle"
 local = "ในเครื่อง"
 localHint = "เก็บไว้เฉพาะในเบราว์เซอร์นี้"
 shared = "แชร์"
@@ -4203,7 +4203,7 @@ invisible = "ไม่แสดง (เฉพาะเมทาดาต้า)"
 location = "สถานที่:"
 logo = "โลโก้:"
 logoHidden = "ไม่มีโลโก้"
-logoShown = "แสดงโลโก้ Stirling PDF"
+logoShown = "แสดงโลโก้ Chronicle PDF"
 participantCount_one = "{{count}} participant will sign in order"
 participantCount_other = "{{count}} participants will sign in order"
 participants = "ผู้เข้าร่วม"
@@ -4257,7 +4257,7 @@ title = "การลงนามตามลำดับ"
 dismiss = "ปิดแบนเนอร์"
 message = "สร้างบัญชีฟรีเพื่อบันทึกงานของคุณ เข้าถึงฟีเจอร์เพิ่มเติม และสนับสนุนโครงการ"
 signUp = "สมัครฟรี"
-title = "คุณกำลังใช้ Stirling PDF ในฐานะผู้เยี่ยมชม!"
+title = "คุณกำลังใช้ Chronicle PDF ในฐานะผู้เยี่ยมชม!"
 
 [home.addAttachments]
 desc = "เพิ่มหรือลบไฟล์ที่ฝัง (ไฟล์แนบ) เข้า/ออกจาก PDF"
@@ -4416,7 +4416,7 @@ tags = "รวม,เชื่อม,ผสาน"
 title = "รวมไฟล์ PDF"
 
 [home.mobile]
-brandAlt = "โลโก้ Stirling PDF"
+brandAlt = "โลโก้ Chronicle PDF"
 openFiles = "เปิดไฟล์"
 swipeHint = "ปัดซ้ายหรือขวาเพื่อสลับมุมมอง"
 tools = "เครื่องมือ"
@@ -4455,7 +4455,7 @@ tags = "จัดระเบียบ,จัดเรียงใหม่,เ�
 title = "จัดระเบียบ"
 
 [home.pdfTextEditor]
-desc = "ตรวจทานและแก้ไขไฟล์ JSON ที่ส่งออกจาก Stirling PDF ด้วยการแก้ไขข้อความแบบกลุ่มและการสร้าง PDF ใหม่"
+desc = "ตรวจทานและแก้ไขไฟล์ JSON ที่ส่งออกจาก Chronicle PDF ด้วยการแก้ไขข้อความแบบกลุ่มและการสร้าง PDF ใหม่"
 tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
 title = "แก้ไขข้อความ PDF"
 
@@ -4641,7 +4641,7 @@ passwordRequired = "ต้องระบุรหัสผ่าน"
 signIn = "เข้าสู่ระบบ"
 validating = "กำลังตรวจสอบคำเชิญ..."
 validationError = "ไม่สามารถตรวจสอบลิงก์คำเชิญ"
-welcome = "ยินดีต้อนรับสู่ Stirling PDF"
+welcome = "ยินดีต้อนรับสู่ Chronicle PDF"
 welcomeSubtitle = "กรอกการตั้งค่าบัญชีของคุณเพื่อเริ่มต้นใช้งาน"
 welcomeTitle = "คุณได้รับคำเชิญ!"
 
@@ -4726,7 +4726,7 @@ subtitle = "ด้วยเครื่องมือกว่าหนึ่�
 title = "แก้ไข PDF เพื่อแสดง/ปกป้องข้อมูลที่คุณต้องการ"
 
 [login.slides.overview]
-alt = "ภาพรวม Stirling PDF"
+alt = "ภาพรวม Chronicle PDF"
 subtitle = "ชุดเครื่องมือบนคลาวด์ที่ให้ความสำคัญกับความเป็นส่วนตัว ช่วยให้คุณแปลงไฟล์ ลงนาม ปกปิดข้อมูล และจัดการเอกสาร พร้อมเครื่องมือทรงพลังกว่า 50 รายการ"
 title = "ทุกสิ่งสำหรับงาน PDF ของคุณในที่เดียว"
 
@@ -4844,7 +4844,7 @@ message = "การยืนยันตัวตนไม่สำเร็จ
 title = "ยืนยันตัวตนล้มเหลว"
 
 [oauth.success]
-message = "คุณสามารถปิดหน้าต่างนี้และกลับไปที่ Stirling PDF"
+message = "คุณสามารถปิดหน้าต่างนี้และกลับไปที่ Chronicle PDF"
 title = "ยืนยันตัวตนสำเร็จ"
 
 [oauthConsent]
@@ -4857,17 +4857,17 @@ loadFailed = "This authorisation request is invalid or has expired. Close this t
 loading = "Loading authorisation request..."
 missingId = "Missing authorisation request. Start the connection from your app and try again."
 redirecting = "Returning you to the app..."
-requesting = "{{app}} wants to access your Stirling PDF account"
+requesting = "{{app}} wants to access your Chronicle PDF account"
 scopesIntro = "This will allow {{app}} to:"
 signedInAs = "Signed in as {{name}}"
 signInButton = "Sign in to continue"
-signInPrompt = "Sign in to your Stirling PDF account to continue connecting the app."
+signInPrompt = "Sign in to your Chronicle PDF account to continue connecting the app."
 title = "Authorise access"
 unknownApp = "A third-party application"
 
 [oauthConsent.access]
 actAsYou = "Act as you - everything {{app}} does runs under your account and counts towards your usage"
-tools = "Use your Stirling PDF tools on your behalf - convert, edit, sign, secure and process your documents"
+tools = "Use your Chronicle PDF tools on your behalf - convert, edit, sign, secure and process your documents"
 
 [oauthConsent.scope]
 email = "See your email address"
@@ -5008,7 +5008,7 @@ userTitle = "ภาพรวมแพ็กเกจ"
 [onboarding.saas.freeEditor]
 freeLine = "The editor is now <free>completely free</free>."
 premium = "We've added loads of new features, including <strong>Policies</strong> and <strong>Agent Chat</strong>."
-title = "Welcome to Stirling"
+title = "Welcome to Chronicle"
 
 [onboarding.saas.team]
 addButton = "Add"
@@ -5036,12 +5036,12 @@ seePlans = "ดูแพ็กเกจ →"
 upgrade = "อัปเกรดเลย →"
 
 [onboarding.tourOverview]
-body = "Stirling PDF V2 มาพร้อมเครื่องมือหลายสิบรายการและเลย์เอาต์ใหม่ ลองทัวร์แบบย่อเพื่อดูสิ่งที่เปลี่ยนไปและตำแหน่งของฟีเจอร์ที่คุณต้องการ"
+body = "Chronicle PDF V2 มาพร้อมเครื่องมือหลายสิบรายการและเลย์เอาต์ใหม่ ลองทัวร์แบบย่อเพื่อดูสิ่งที่เปลี่ยนไปและตำแหน่งของฟีเจอร์ที่คุณต้องการ"
 title = "ภาพรวมทัวร์"
 
 [onboarding.welcomeSlide]
-body = "Stirling PDF พร้อมสำหรับทีมทุกขนาดแล้ว การอัปเดตนี้มีเลย์เอาต์ใหม่ ความสามารถแอดมินที่ทรงพลัง และฟีเจอร์ที่มีคนขอมากที่สุด - <strong>แก้ไขข้อความ</strong>"
-title = "ยินดีต้อนรับสู่ Stirling"
+body = "Chronicle PDF พร้อมสำหรับทีมทุกขนาดแล้ว การอัปเดตนี้มีเลย์เอาต์ใหม่ ความสามารถแอดมินที่ทรงพลัง และฟีเจอร์ที่มีคนขอมากที่สุด - <strong>แก้ไขข้อความ</strong>"
+title = "ยินดีต้อนรับสู่ Chronicle"
 
 [onboarding.whatsNew]
 activeFilesView = "ใช้ Active Files เพื่อดูทุกไฟล์ที่คุณเปิดและเลือกสิ่งที่จะทำงานต่อ"
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Stirling PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5893,7 +5893,7 @@ upToFiveUsers = "สูงสุด 5 ผู้ใช้"
 usageTrackingPrometheus = "การติดตามการใช้งานและ Prometheus"
 
 [plan.licenseWarning]
-body = "คุณมีผู้ใช้ {{total}} คน แต่ระดับฟรีรองรับเพียง {{limit}} ต่อเซิร์ฟเวอร์ อัปเกรดเพื่อให้ Stirling PDF ทำงานราบรื่น"
+body = "คุณมีผู้ใช้ {{total}} คน แต่ระดับฟรีรองรับเพียง {{limit}} ต่อเซิร์ฟเวอร์ อัปเกรดเพื่อให้ Chronicle PDF ทำงานราบรื่น"
 cta = "ดูแพ็กเกจ"
 overLimit = "มากกว่า {{limit}}"
 title = "ถึงขีดจำกัดฟรีสำหรับโฮสต์เองแล้ว"
@@ -6197,7 +6197,7 @@ linked = "เชื่อมโยงแล้ว"
 linkedAs = "เชื่อมโยงเป็น {{name}}"
 linkedGeneric = "อินสแตนซ์นี้เชื่อมโยงแล้ว"
 notLinked = "ยังไม่ได้เชื่อมโยง"
-title = "เชื่อมโยงองค์กรนี้กับบัญชี Stirling"
+title = "เชื่อมโยงองค์กรนี้กับบัญชี Chronicle"
 unlink = "ยกเลิกการเชื่อมโยง"
 
 [portal.accountLink.card.error]
@@ -6439,7 +6439,7 @@ viewAriaLabel = "ดูใบแจ้งหนี้ {{number}} ใน Stripe"
 viewLink = "ดู ↗"
 
 [portal.billing.linkPrompt]
-cta = "เชื่อมโยงบัญชี Stirling"
+cta = "เชื่อมโยงบัญชี Chronicle"
 description = "การแก้ไข PDF ด้วยตนเอง — ดู ลงชื่อ รวม แยก ลายน้ำ บีบอัด แปลง OCR ด้วยตนเอง — ฟรีเสมอ ไม่ว่าจะเชื่อมโยงหรือไม่ เชื่อมโยงเพื่อรับสิทธิ์ประมวลผลตามปริมาณการใช้งานฟรี 500 PDFs (ระบบอัตโนมัติ, AI และ API); เมื่อคุณต้องการมากกว่านั้น ให้เปิดใช้แผน Processor และจ่ายเฉพาะเท่าที่ใช้"
 title = "เชื่อมโยงบัญชี Stirling ของคุณ"
 
@@ -6723,7 +6723,7 @@ time = "เวลา"
 user = "ผู้ใช้"
 
 [portal.editorAdmin]
-subtitle = "ปรับใช้ Stirling PDF Editor, จับคู่อินสแตนซ์ที่โฮสต์เองกับองค์กรของคุณ และจัดการฟลีตที่กำลังทำงาน — เป้าหมาย สุขภาพ ข้อมูลประจำตัว และการเปิดใช้งานออฟไลน์ในที่เดียว"
+subtitle = "ปรับใช้ Chronicle PDF Editor, จับคู่อินสแตนซ์ที่โฮสต์เองกับองค์กรของคุณ และจัดการฟลีตที่กำลังทำงาน — เป้าหมาย สุขภาพ ข้อมูลประจำตัว และการเปิดใช้งานออฟไลน์ในที่เดียว"
 title = "การปรับใช้ Editor"
 
 [portal.editorAdmin.health.columns]
@@ -6809,7 +6809,7 @@ title = "มีบางอย่างผิดพลาดในหน้า�
 [portal.home.editor]
 activeUsers = "{{n}} ใช้งานอยู่"
 invite = "เชิญเพื่อนร่วมทีม"
-name = "Stirling PDF Editor"
+name = "Chronicle PDF Editor"
 open = "เปิดในเบราว์เซอร์"
 updated = "อัปเดตเมื่อ {{time}}"
 
@@ -6889,7 +6889,7 @@ usageMonth = "การใช้งานเดือนนี้"
 usageToday = "การใช้งานวันนี้"
 
 [portal.infrastructure.apiKeys.empty]
-description = "สร้างคีย์แบบกำหนดขอบเขตเพื่อเริ่มเรียกใช้ Stirling API"
+description = "สร้างคีย์แบบกำหนดขอบเขตเพื่อเริ่มเรียกใช้ Chronicle API"
 title = "ยังไม่มี API keys"
 
 [portal.infrastructure.audit]
@@ -7073,7 +7073,7 @@ viewReport = "ดูรายงาน →"
 
 [portal.infrastructure.security.compliance]
 heading = "การปฏิบัติตามข้อกำหนด"
-subheading = "การรับรองและใบรับรองที่ครอบคลุมแพลตฟอร์ม Stirling"
+subheading = "การรับรองและใบรับรองที่ครอบคลุมแพลตฟอร์ม Chronicle"
 
 [portal.infrastructure.security.empty]
 description = "การกำหนดค่าความปลอดภัยของ workspace ของคุณจะแสดงที่นี่"
@@ -7854,7 +7854,7 @@ appEditor = "Editor"
 appProcessor = "Processor"
 brandSuffix = "Stirling Processor"
 docsCount = "{{docs}} เอกสาร"
-linkAccount = "เชื่อมโยงบัญชี Stirling"
+linkAccount = "เชื่อมโยงบัญชี Chronicle"
 planEditor = "แผน Editor"
 planEnterprise = "แผน Enterprise"
 planProcessor = "แผน Processor"
@@ -8022,7 +8022,7 @@ summary = "เป็นเจ้าของทีม — จัดการท�
 3 = "ทุกอย่างที่ Member ทำได้"
 
 [portal.welcome]
-ariaLabel = "ยินดีต้อนรับสู่ Stirling PDF"
+ariaLabel = "ยินดีต้อนรับสู่ Chronicle PDF"
 badge = "Open-source"
 installEditor = "ติดตั้ง Editor"
 inviteTeammates = "เชิญเพื่อนร่วมทีม"
@@ -8030,7 +8030,7 @@ openInBrowser = "เปิดในเบราว์เซอร์"
 perks = "ฟรีตลอดไป · Self-hostable"
 subtitle = "PDF Editor ที่ปลอดภัยที่สุดในโลกใช้ฟรีสำหรับทีมทุกขนาด รวมการดำเนินการ PDF มากกว่า 60 รายการและ SSO"
 title = "ยินดีต้อนรับสู่"
-titleAccent = "Stirling PDF"
+titleAccent = "Chronicle PDF"
 
 [printFile]
 title = "พิมพ์ไฟล์"
@@ -8721,8 +8721,8 @@ hideTools = "ซ่อนเครื่องมือที่ใช้งา�
 messageNoFallback = "เครื่องมือจะไม่พร้อมใช้งานจนกว่าเซิร์ฟเวอร์ของคุณจะกลับมาออนไลน์"
 messageWithFallback = "เครื่องมือบางอย่างต้องการการเชื่อมต่อกับเซิร์ฟเวอร์"
 showTools = "ดูเครื่องมือที่ใช้งานไม่ได้ ▾"
-title = "ไม่สามารถเข้าถึงเซิร์ฟเวอร์ Stirling-PDF ของคุณ"
-toolNotAvailableLocally = "เซิร์ฟเวอร์ Stirling-PDF ของคุณออฟไลน์และ \"{{endpoint}}\" ไม่มีในแบ็กเอนด์ภายในเครื่อง"
+title = "ไม่สามารถเข้าถึงเซิร์ฟเวอร์ Chronicle-PDF ของคุณ"
+toolNotAvailableLocally = "เซิร์ฟเวอร์ Chronicle-PDF ของคุณออฟไลน์และ \"{{endpoint}}\" ไม่มีในแบ็กเอนด์ภายในเครื่อง"
 
 [session]
 expired = "สถานะของคุณในระบบหมดอายุ กรุณารีเฟรชหน้าและลองใหม่อีกครั้ง"
@@ -8797,7 +8797,7 @@ autoUnzipFileLimitDescription = "จำนวนไฟล์สูงสุด�
 autoUnzipFileLimitTooltip = "แตกไฟล์ก็ต่อเมื่อ ZIP มีจำนวนไฟล์เท่ากับหรือน้อยกว่านี้ ตั้งค่าสูงขึ้นเพื่อแตก ZIP ขนาดใหญ่"
 autoUnzipTooltip = "แยกไฟล์ ZIP ที่ส่งกลับจากการทำงานของ API โดยอัตโนมัติ ปิดเพื่อเก็บไฟล์ ZIP ไว้ครบถ้วน การตั้งค่านี้ไม่กระทบเวิร์กโฟลว์อัตโนมัติ"
 defaultPdfEditor = "โปรแกรมแก้ไข PDF เริ่มต้น"
-defaultPdfEditorActive = "Stirling PDF เป็นโปรแกรมแก้ไข PDF เริ่มต้นของคุณ"
+defaultPdfEditorActive = "Chronicle PDF เป็นโปรแกรมแก้ไข PDF เริ่มต้นของคุณ"
 defaultPdfEditorChecking = "กำลังตรวจสอบ..."
 defaultPdfEditorInactive = "มีแอปอื่นตั้งเป็นค่าเริ่มต้น"
 defaultPdfEditorSet = "เป็นค่าเริ่มต้นอยู่แล้ว"
@@ -8858,7 +8858,7 @@ updateBehavior = "พฤติกรรมการอัปเดต"
 updateBehaviorDescription = "เลือกว่าจะให้ถามก่อนติดตั้งอัปเดต ติดตั้งอัตโนมัติ หรือข้ามการตรวจสอบอัปเดตทั้งหมด."
 updateBehaviorError = "ไม่สามารถเปลี่ยนพฤติกรรมการอัปเดตได้"
 updateBehaviorErrorLocked = "การตั้งค่านี้ถูกล็อกโดยผู้ดูแลระบบของคุณ."
-updateBehaviorLockedDescription = "ผู้ดูแลระบบของคุณได้กำหนดค่าไว้ว่า Stirling-PDF จัดการการอัปเดตบนเครื่องนี้อย่างไร โปรดติดต่อพวกเขาหากต้องการเปลี่ยนแปลง."
+updateBehaviorLockedDescription = "ผู้ดูแลระบบของคุณได้กำหนดค่าไว้ว่า Chronicle-PDF จัดการการอัปเดตบนเครื่องนี้อย่างไร โปรดติดต่อพวกเขาหากต้องการเปลี่ยนแปลง."
 updateBehaviorSaved = "บันทึกพฤติกรรมการอัปเดตแล้ว."
 versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 viewDetails = "ดูรายละเอียด"
@@ -9068,7 +9068,7 @@ emptyUsername = "โปรดป้อนชื่อผู้ใช้"
 oauthFailed = "เข้าสู่ระบบ OAuth ไม่สำเร็จ โปรดลองอีกครั้ง"
 
 [setup.saas]
-title = "ลงชื่อเข้าใช้ Stirling"
+title = "ลงชื่อเข้าใช้ Chronicle"
 
 [setup.selfhosted]
 changeServerLocked = "องค์กรของคุณจำกัดแอปนี้ไว้กับเซิร์ฟเวอร์เฉพาะ"
@@ -9106,7 +9106,7 @@ step3 = "เริ่มเซิร์ฟเวอร์ใหม่"
 title = "ไม่ได้เปิดใช้งานการเข้าสู่ระบบ"
 
 [setup.server.url]
-description = "ป้อน URL แบบเต็มของเซิร์ฟเวอร์ Stirling PDF ที่โฮสต์เองของคุณ"
+description = "ป้อน URL แบบเต็มของเซิร์ฟเวอร์ Chronicle PDF ที่โฮสต์เองของคุณ"
 label = "URL เซิร์ฟเวอร์"
 
 [sharedSign]
@@ -9342,7 +9342,7 @@ pleaseFillAllFields = "โปรดกรอกข้อมูลให้คร
 signUp = "สมัครใช้งาน"
 signUpWith = "Sign up with"
 skip = "Skip"
-subtitle = "เข้าร่วม Stirling PDF เพื่อเริ่มต้น"
+subtitle = "เข้าร่วม Chronicle PDF เพื่อเริ่มต้น"
 title = "สร้างบัญชี"
 unexpectedError = "ข้อผิดพลาดที่ไม่คาดคิด: {{message}}"
 
@@ -9569,7 +9569,7 @@ download = "ดาวน์โหลด"
 downloaded = "ดาวน์โหลดแล้ว"
 downloadFailed = "ไม่สามารถดาวน์โหลดไฟล์นี้ได้"
 downloadsCount = "ดาวน์โหลด: {{count}}"
-emailWarningBody = "นี่ดูเหมือนเป็นที่อยู่อีเมล หากบุคคลนี้ยังไม่เป็นผู้ใช้ Stirling PDF พวกเขาจะไม่สามารถเข้าถึงไฟล์ได้"
+emailWarningBody = "นี่ดูเหมือนเป็นที่อยู่อีเมล หากบุคคลนี้ยังไม่เป็นผู้ใช้ Chronicle PDF พวกเขาจะไม่สามารถเข้าถึงไฟล์ได้"
 emailWarningConfirm = "แชร์ต่อไป"
 emailWarningTitle = "ที่อยู่อีเมล"
 errorTitle = "แชร์ไม่สำเร็จ"
@@ -9600,7 +9600,7 @@ manageTitle = "จัดการการแชร์"
 noActivity = "ยังไม่มีกิจกรรม"
 noLinks = "ยังไม่มีลิงก์แชร์ที่ใช้งานอยู่"
 noSharedUsers = "ยังไม่มีผู้ใช้ที่มีสิทธิ์เข้าถึง"
-openInApp = "เปิดใน Stirling PDF"
+openInApp = "เปิดใน Chronicle PDF"
 ownerLabel = "เจ้าของ"
 ownerUnknown = "ไม่ทราบ"
 removeLink = "นำลิงก์ออก"
@@ -9654,7 +9654,7 @@ updateButton = "อัปเดตบนเซิร์ฟเวอร์"
 uploadButton = "อัปโหลดไปยังเซิร์ฟเวอร์"
 
 [survey]
-title = "Stirling-PDF Survey"
+title = "Chronicle-PDF Survey"
 
 [swagger]
 tags = "api,documentation,swagger,endpoints,development"
@@ -9782,7 +9782,7 @@ favorites = "รายการโปรด"
 heading = "เครื่องมือทั้งหมด (มุมมองเต็มหน้าจอ)"
 noResults = "ลองปรับการค้นหาหรือสลับคำอธิบายเพื่อค้นหาสิ่งที่ต้องการ"
 recommended = "แนะนำ"
-selfHostedOffline = "ต้องใช้เซิร์ฟเวอร์ Stirling-PDF ของคุณ (ขณะนี้ออฟไลน์):"
+selfHostedOffline = "ต้องใช้เซิร์ฟเวอร์ Chronicle-PDF ของคุณ (ขณะนี้ออฟไลน์):"
 showDetails = "แสดงรายละเอียด"
 unavailable = "ปิดใช้งานโดยผู้ดูแลเซิร์ฟเวอร์:"
 unavailableDependency = "ไม่พร้อมใช้ - ไม่มีเครื่องมือที่จำเป็นบนเซิร์ฟเวอร์:"
@@ -9791,7 +9791,7 @@ unfavorite = "นำออกจากรายการโปรด"
 [toolPanel.modePrompt]
 chooseFullscreen = "ใช้โหมดเต็มหน้าจอ"
 chooseSidebar = "ใช้โหมดแถบด้านข้าง"
-description = "ดูตัวอย่างทั้งสองเลย์เอาต์และตัดสินใจว่าต้องการสำรวจเครื่องมือของ Stirling PDF อย่างไร"
+description = "ดูตัวอย่างทั้งสองเลย์เอาต์และตัดสินใจว่าต้องการสำรวจเครื่องมือของ Chronicle PDF อย่างไร"
 dismiss = "ไว้ทีหลัง"
 fullscreenDescription = "เรียกดูทุกเครื่องมือในแค็ตตาล็อกที่ครอบคลุมพื้นที่ทำงานจนกว่าคุณจะเลือก"
 fullscreenTitle = "โหมดเต็มหน้าจอ - (แบบเก่า)"
@@ -9859,7 +9859,7 @@ loadingDetailedInfo = "กำลังโหลดข้อมูลรายล
 migrationGuide = "คู่มือการย้าย"
 migrationGuides = "คู่มือการย้าย"
 migrationGuidesDesc = "ตรวจสอบการเปลี่ยนแปลงสำคัญก่อนอัปเดต."
-modalSubtitle = "มีเวอร์ชันใหม่ของ Stirling PDF พร้อมติดตั้งแล้ว."
+modalSubtitle = "มีเวอร์ชันใหม่ของ Chronicle PDF พร้อมติดตั้งแล้ว."
 modalTitle = "มีอัปเดต"
 notes = "บันทึก"
 releaseNotes = "บันทึกรุ่น"
@@ -9883,7 +9883,7 @@ urgent = "เร่งด่วน"
 attentionBody = "ผู้ดูแลของคุณต้องลงชื่อเข้าใช้เพื่อดูข้อมูลเพิ่มเติม โปรดติดต่อพวกเขาทันที"
 attentionBodyAdmin = "ทบทวนข้อกำหนดไลเซนส์เพื่อให้เซิร์ฟเวอร์นี้สอดคล้อง"
 attentionTitle = "เซิร์ฟเวอร์นี้ต้องการการดูแลจากแอดมิน"
-message = "ใช้ Stirling PDF ได้เต็มที่ด้วยผู้ใช้ไม่จำกัดและฟีเจอร์ขั้นสูง"
+message = "ใช้ Chronicle PDF ได้เต็มที่ด้วยผู้ใช้ไม่จำกัดและฟีเจอร์ขั้นสูง"
 seeInfo = "ดูข้อมูล"
 title = "อัปเกรดเป็นแพ็กเกจ Server"
 upgradeButton = "อัปเกรดเลย"
@@ -10000,7 +10000,7 @@ authWeb = "รหัสผ่าน"
 create = "สร้างบัญชี"
 createSubtitle = "สร้างบัญชี self-hosted ด้วยรหัสผ่านหรือ SSO"
 createTitle = "สร้างบัญชี"
-editorDesc = "แก้ไข PDFs ใน Stirling PDF Editor ทุกคนจะได้รับสิ่งนี้"
+editorDesc = "แก้ไข PDFs ใน Chronicle PDF Editor ทุกคนจะได้รับสิ่งนี้"
 email = "ที่อยู่อีเมล"
 emailError = "ป้อนที่อยู่อีเมลที่ถูกต้อง"
 emailPlaceholder2 = "name@company.com"
@@ -10138,7 +10138,7 @@ downloads = "ดาวน์โหลด"
 entryLabel = "สรุปลายเซ็น"
 filesEvaluated_one = "ประเมินแล้ว {{count}} ไฟล์"
 filesEvaluated_other = "ประเมินแล้ว {{count}} ไฟล์"
-footer = "ตรวจสอบโดย Stirling PDF"
+footer = "ตรวจสอบโดย Chronicle PDF"
 generatedAt = "สร้างเมื่อ"
 noPdf = "รายงาน PDF จะพร้อมหลังจากตรวจสอบสำเร็จ"
 page = "หน้า"

@@ -56,7 +56,7 @@ keepWorking = "མུ་མཐུད་དུ་ལས་ཀ་བྱེད་�
 loading = "འཇུག་བཞིན་པ།"
 loginAgreementAccept = "དང་ལེན"
 loginAgreementDecline = "དང་ལེན་མེད"
-loginAgreementProvider = "བརྡ་འཕྲིན་འདི་ནི་ཁྱེད་ཀྱི་དོ་དམ་པས་སྤྲོད་པ་ཡིན་པ་ལས Stirling PDF Inc. མིན།"
+loginAgreementProvider = "བརྡ་འཕྲིན་འདི་ནི་ཁྱེད་ཀྱི་དོ་དམ་པས་སྤྲོད་པ་ཡིན་པ་ལས Chronicle PDF Inc. མིན།"
 loginAgreementTitle = "ཐོ་འགོད་གྲོས་ཆིངས"
 logOut = "ཕྱིར་ཐོན།"
 marginTooltip = "ཤོག་ངོས་ཨང་གྲངས་དང་ཤོག་ངོས་ཀྱི་མཐའ་མཚམས་བར་ཐག་རིང་།"
@@ -630,9 +630,9 @@ description = "གནས་སྐབས་ཀྱི་ཡིག་ཆ་གས�
 label = "ཊེམ་པི་ཡིག་ཆ་དོ་དམ།"
 
 [admin.settings.advanced.tempFileManagement.baseTmpDir]
-description = "གནས་སྐབས་ཡིག་ཆའི་གཞི་རྩའི་སྣོད་ཐོ། (སྔོན་སྒྲིག་ཆེད་དུ་སྟོང་པར་བཞག་པ་: java.io.tmpdir/stirling-pdf)"
+description = "གནས་སྐབས་ཡིག་ཆའི་གཞི་རྩའི་སྣོད་ཐོ། (སྔོན་སྒྲིག་ཆེད་དུ་སྟོང་པར་བཞག་པ་: java.io.tmpdir/Chronicle-PDF)"
 label = "གཞི་རྟེན་ཊེམ་པི་སྣོད་ཐོ།"
-placeholder = "སོར་བཞག: java.io.tmpdir/stirling-pdf"
+placeholder = "སོར་བཞག: java.io.tmpdir/Chronicle-PDF"
 
 [admin.settings.advanced.tempFileManagement.cleanupIntervalMinutes]
 description = "གཙང་སྦྲ་བྱེད་ཐེངས་མང་དག་ཐེངས་མང་།(སྐར་མ་ཁ་ཤས་ནང་)"
@@ -916,7 +916,7 @@ description = "གདམ་གའི་ཁྱད་ཆོས་དང་བྱ�
 title = "ཁྱད་ཆོས"
 
 [admin.settings.features.serverCertificate]
-description = "\"Sign with Stirling-PDF\" བྱེད་ནུས་ལ་སར་བར་གྱི་ལག་འཁྱེར་བཟོ་སྟངས་སྒྲིག་བཀོད་བྱེད།"
+description = "\"Sign with Chronicle-PDF\" བྱེད་ནུས་ལ་སར་བར་གྱི་ལག་འཁྱེར་བཟོ་སྟངས་སྒྲིག་བཀོད་བྱེད།"
 label = "སར་བར་ལག་ཁྱེར།"
 
 [admin.settings.features.serverCertificate.enabled]
@@ -1155,7 +1155,7 @@ description = "SMTP བདེན་དཔང་ཆེད་དུ་སྤྱོ
 label = "SMTP བེད་སྤྱོད་མིང་།"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Stirling API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
 description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
@@ -1199,12 +1199,12 @@ label = "JWKS URL (optional)"
 placeholder = "Auto-discovered from issuer"
 
 [admin.settings.mcp.mode]
-description = "OAuth needs an external IdP. API key uses a Stirling per-user API key (X-API-KEY) - simplest for self-host."
+description = "OAuth needs an external IdP. API key uses a Chronicle per-user API key (X-API-KEY) - simplest for self-host."
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
 description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
-label = "Require an existing Stirling account"
+label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
 description = "This server's public /mcp URL. Tokens must list it in their audience (RFC 8707) or they are rejected."
@@ -1215,7 +1215,7 @@ description = "Require mcp.tools.read for read ops and mcp.tools.write for write
 label = "Enforce OAuth scopes"
 
 [admin.settings.mcp.usernameClaim]
-description = "JWT claim matched against a Stirling username (e.g. sub, email, preferred_username)."
+description = "JWT claim matched against a Chronicle username (e.g. sub, email, preferred_username)."
 label = "Username claim"
 
 [admin.settings.plan.noData]
@@ -1536,7 +1536,7 @@ description = "འགོ་སློངས་ན་ ཐོ་ཡིག་དུ�
 label = "སྤྱོད་མཁན ID དམིགས་བསལ་ཆོག"
 
 [admin.settings.telegram.enabled]
-description = "ཁྱེད་ཀྱིས་སྒྲིག་འགོད་བྱས་ Telegram bot བརྒྱུད་པར་སྤྱོད་མཁན་ཚོས Stirling PDF དང་འབྲེལ་བ་བྱེད་ཆོག"
+description = "ཁྱེད་ཀྱིས་སྒྲིག་འགོད་བྱས་ Telegram bot བརྒྱུད་པར་སྤྱོད་མཁན་ཚོས Chronicle PDF དང་འབྲེལ་བ་བྱེད་ཆོག"
 label = "Telegram Bot འགོ་སློང"
 
 [admin.settings.telegram.feedback]
@@ -1616,7 +1616,7 @@ admin = "འཛིན་སྐྱོང་།"
 title = "སྤྱོད་མཁན་ཚོད་འཛིན་སྒྲིག་སྟངས།"
 
 [agents]
-stirling_name = "Stirling"
+stirling_name = "Chronicle"
 
 [analytics]
 learnMore = "ང་ཚོའི་དབྱེ་ཞིབ་སྐོར་ལ་མང་ཙམ་ཤེས་དགོས།"
@@ -2551,7 +2551,7 @@ bullet1 = "PEMདང་། PKCS12། JKS། སར་བར་གྱི་ལག
 bullet2 = "PDF ཐོག་མིང་རྟགས་སྟོན་པའམ་ཡང་ན་སྦས་སྐུང་བྱེད་པའི་གདམ་ག།"
 bullet3 = "རྒྱུ་མཚན་དང་ས་གནས་དང་མིང་རྟགས་བཀོད་པའི་མིང་ཁ་སྣོན་བྱེད།"
 bullet4 = "མཐོང་ཐུབ་པའི་མཚན་རྟགས་བཀོད་དགོས་མིན་ཤོག་ལྷེ་གང་འདེམས་དགོས།"
-bullet5 = "'Sign with Stirling-PDF' གདམ་ཁ་སྟབས་བདེ་ལ་སར་བར་གྱི་ལག་འཁྱེར་བེད་སྤྱོད་བྱེད་དགོས།"
+bullet5 = "'Sign with Chronicle-PDF' གདམ་ཁ་སྟབས་བདེ་ལ་སར་བར་གྱི་ལག་འཁྱེར་བེད་སྤྱོད་བྱེད་དགོས།"
 text = "PDF ལ་མིང་རྟགས་བཀོད་པར་ཁྱེད་ལ་དྲ་རྒྱའི་ལག་ཁྱེར་དགོས། (དཔེར་ན། PEM, PKCS12, ཡང་ན་ JKS ལྟ་བུ) ཁྱེད་ཀྱིས་མིང་རྟགས་དེ་ཡིག་ཆའི་སྟེང་མཐོང་ཐུབ་པ་བྱ་ཆོག་པའམ་ཡང་ན་བདེ་འཇགས་ཆེད་དུ་མཐོང་མི་ཐུབ་པའི་གནས་སུ་འཇོག་ཐུབ།"
 title = "མཚན་རྟགས་ཁ་སྣོན་བྱེད་པ།"
 
@@ -2732,7 +2732,7 @@ copy = "འཕྲིན་དོན་འདྲ་བཤུས"
 
 [chat.fab]
 close = "Close chat"
-open = "Open Stirling AI assistant"
+open = "Open Chronicle AI assistant"
 
 [chat.header]
 agentMenu = "Stirling agent འདེམས་ཚན"
@@ -3095,10 +3095,10 @@ title = "གསར་བརྗེའི་APIལྡེ་མིག"
 warning = "⚠️ ཉེན་བརྡ། བྱ་སྤྱོད་འདིས་API ལྡེ་མིག་གསར་པ་བཟོས་ནས་ཁྱེད་ཀྱི་སྔོན་གྱི་ལྡེ་མིག་དེ་ནུས་མེད་བཟོ་ཐུབ།"
 
 [config.mcp]
-description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Stirling PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
-guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Stirling PDF tools on your behalf."
+description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Chronicle PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
+guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Chronicle PDF tools on your behalf."
 navLabel = "MCP Server"
-tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Stirling PDF directly."
+tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Chronicle PDF directly."
 title = "MCP Server"
 viewApiKeys = "View API keys"
 
@@ -3338,7 +3338,7 @@ message = "སྔོན་སྒྲིག་PDFའཛིན་སྐྱོང་
 title = "ནོར་འཁྲུལ"
 
 [defaultApp.prompt]
-message = "ཁྱེད་རང་གི་སྔོན་སྒྲིག་མཉེན་ཆས་PDFཡིག་ཆ་ཁ་ཕྱེ་བའི་ཆེད་དུ་PDF stirling PDF བཟོས།"
+message = "ཁྱེད་རང་གི་སྔོན་སྒྲིག་མཉེན་ཆས་PDFཡིག་ཆ་ཁ་ཕྱེ་བའི་ཆེད་དུ་PDF Chronicle PDF བཟོས།"
 
 [defaultApp.settingsOpened]
 message = "ཝིན་ཌོ་སྒྲིག་སྟངས་ནང་ 'PDF' འཚོལ་ཞིབ་བྱས་ནས་ཁྱེད་ཀྱི་སྔོན་སྒྲིག་མཉེན་ཆས་ལྟར་སི་ཊར་ལིང་ PDF འདེམས།"
@@ -3361,7 +3361,7 @@ updateFailedMessage = "གསར་སྒྱུར་ཕབ་ལེན་ཡང
 
 [desktopUpdate.blocked]
 docsLink = "འཇུག་ཐབས་ཡིག་ཆ་ལྟ"
-message = "Stirling-PDF ལ་འཕྲུལ་ཆས་འདིའི་སྟེང་རང་ཉིད་ལ་གསར་སྒྱུར་བྱེད་པའི་དབང་ཆ་མེད།"
+message = "Chronicle-PDF ལ་འཕྲུལ་ཆས་འདིའི་སྟེང་རང་ཉིད་ལ་གསར་སྒྱུར་བྱེད་པའི་དབང་ཆ་མེད།"
 title = "དོ་དམ་པའི་དབང་ཆ་དགོས།"
 
 [devAirgapped]
@@ -4169,7 +4169,7 @@ invisible = "མཐོང་མི་རུང (metadata ཙམ)"
 location = "གནས་ཡུལ:"
 logo = "ལས་རྟགས:"
 logoHidden = "ལས་རྟགས་མེད"
-logoShown = "Stirling PDF ལས་རྟགས་མངོན"
+logoShown = "Chronicle PDF ལས་རྟགས་མངོན"
 participantCount_one = "{{count}} participant will sign in order"
 participantCount_other = "{{count}} participants will sign in order"
 participants = "ཞུགས་མཁན"
@@ -4614,7 +4614,7 @@ welcomeTitle = "ཁྱེད་རང་གདན་འདྲེན་ཞུས�
 [landing]
 addFiles = "ཡིག་ཆ་ཁ་སྣོན་བྱེད།"
 heroSubtitle = "འགོ་སློང་བྱེད་དུ PDF ཞིག་འདྲུད་ནས་བཙུགས་ ཡང་ན་ ཡོད་པའི་ PDF ཞུགས་སྣོན་བྱས།"
-heroTitle = "Stirling PDF"
+heroTitle = "Chronicle PDF"
 mobileUpload = "ཁ་པར་ནས་ཡར་འཇུག"
 openFromComputer = "གློག་ཀླད་ནས་ཁ་ཕྱེ་བ།"
 uploadFromComputer = "གློག་ཀླད་ནས་ཡར་བླངས།"
@@ -4823,17 +4823,17 @@ loadFailed = "This authorisation request is invalid or has expired. Close this t
 loading = "Loading authorisation request..."
 missingId = "Missing authorisation request. Start the connection from your app and try again."
 redirecting = "Returning you to the app..."
-requesting = "{{app}} wants to access your Stirling PDF account"
+requesting = "{{app}} wants to access your Chronicle PDF account"
 scopesIntro = "This will allow {{app}} to:"
 signedInAs = "Signed in as {{name}}"
 signInButton = "Sign in to continue"
-signInPrompt = "Sign in to your Stirling PDF account to continue connecting the app."
+signInPrompt = "Sign in to your Chronicle PDF account to continue connecting the app."
 title = "Authorise access"
 unknownApp = "A third-party application"
 
 [oauthConsent.access]
 actAsYou = "Act as you - everything {{app}} does runs under your account and counts towards your usage"
-tools = "Use your Stirling PDF tools on your behalf - convert, edit, sign, secure and process your documents"
+tools = "Use your Chronicle PDF tools on your behalf - convert, edit, sign, secure and process your documents"
 
 [oauthConsent.scope]
 email = "See your email address"
@@ -4972,7 +4972,7 @@ userTitle = "འཆར་གཞིའི་སྤྱི་བསྡོམས།"
 [onboarding.saas.freeEditor]
 freeLine = "The editor is now <free>completely free</free>."
 premium = "We've added loads of new features, including <strong>Policies</strong> and <strong>Agent Chat</strong>."
-title = "Welcome to Stirling"
+title = "Welcome to Chronicle"
 
 [onboarding.saas.team]
 addButton = "Add"
@@ -5370,7 +5370,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Stirling PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5855,7 +5855,7 @@ upToFiveUsers = "སྤྱོད་མཁན 5 ཚན་ཚོད"
 usageTrackingPrometheus = "བཀོལ་སྤྱོད་འཚོར དང་ Prometheus"
 
 [plan.licenseWarning]
-body = "ཁྱེད་ལ་{{total}} སྤྱོད་མཁན་ཡོད་པ་ཡིན་ན་ཡང་། རིན་མེད་གནས་ཚད་ནི་སར་བར་རེ་ལ་{{limit}} ཙམ་རང་ལ་རྒྱབ་སྐྱོར་བྱེད། Stirling PDF ཚགས་པའི་ངང་འགྲོ་བར་རིམ་སྤོར་བྱོས།"
+body = "ཁྱེད་ལ་{{total}} སྤྱོད་མཁན་ཡོད་པ་ཡིན་ན་ཡང་། རིན་མེད་གནས་ཚད་ནི་སར་བར་རེ་ལ་{{limit}} ཙམ་རང་ལ་རྒྱབ་སྐྱོར་བྱེད། Chronicle PDF ཚགས་པའི་ངང་འགྲོ་བར་རིམ་སྤོར་བྱོས།"
 cta = "འཆར་གཞི་ལ་གཟིགས།"
 overLimit = "{{limit}} ལས་མང་བ"
 title = "རིན་མེད་རང་གཉེར་གྱི་ཚད་བཀག་བསླེབས་པ།"
@@ -6737,8 +6737,8 @@ hideTools = "མི་འཐོབ་ལག་ཆ་སྦེད་ ▴"
 messageNoFallback = "ཁྱེད་ཀྱི་ཞབས་ཞུ་དྲྭ་ཐོག་ལ་ཕྱིར་འབྱོར་མ་བྱས་བར་ལག་ཆ་མི་འཐོབ།"
 messageWithFallback = "ལག་ཆ་ཁ་ཤས་ལ་ཞབས་ཞུ་མཐུད་དགོས།"
 showTools = "མི་འཐོབ་ལག་ཆ་ལྟ་ ▾"
-title = "ཁྱེད་ཀྱི Stirling-PDF ཞབས་ཞུ་ལ་མཐུད་མི་ཐུབ"
-toolNotAvailableLocally = "ཁྱེད་ཀྱི Stirling-PDF ཞབས་ཞུ་ཨོླཕ་ལ་ཡིན་པས \"{{endpoint}}\" རང་གནས་རྒྱབ་སྟེགས་ནང་མི་འཐོབ།"
+title = "ཁྱེད་ཀྱི Chronicle-PDF ཞབས་ཞུ་ལ་མཐུད་མི་ཐུབ"
+toolNotAvailableLocally = "ཁྱེད་ཀྱི Chronicle-PDF ཞབས་ཞུ་ཨོླཕ་ལ་ཡིན་པས \"{{endpoint}}\" རང་གནས་རྒྱབ་སྟེགས་ནང་མི་འཐོབ།"
 
 [session]
 expired = "ཁྱེད་རང་གི་ཚོགས་ཐུན་དུས་ཚོད་རྫོགས་ཡོད། ཤོག་བུ་གསར་བཟོ་བྱས་ནས་བསྐྱར་དུ་ཚོད་ལྟ་གནང་རོགས།"
@@ -6874,7 +6874,7 @@ updateBehavior = "གསར་སྒྱུར་སྤྱོད་སྟངས"
 updateBehaviorDescription = "གསར་སྒྱུར་འཇུག་སྔོན་ལ་དྲིས་པ། ཡང་ན་རང་འགུལ་འཇུག་ཡང་ན་གསར་སྒྱུར་ཞིབ་བཤེར་ཡོད་མེད་བརྗེ་བ།"
 updateBehaviorError = "གསར་སྒྱུར་སྤྱོད་སྟངས་བཟོ་མ་ཐུབ"
 updateBehaviorErrorLocked = "སྒྲིག་འགོད་འདི་དོ་དམ་པས་བཀག་སྡོམ་བྱས་ཡོད།"
-updateBehaviorLockedDescription = "ཁྱེད་ཀྱི་འཕྲུལ་ཆས་འདི་སྟེང་གསར་སྒྱུར་གཙོ་འཁོར་གྱི་སྟངས་ལ་ Stirling-PDF ཡིས་འགོ་འཛུགས་བྱས་ཡོད། བཅོས་དག་བྱེད་པར་དོ་དམ་པ་ལ་འབྲེལ་བ།"
+updateBehaviorLockedDescription = "ཁྱེད་ཀྱི་འཕྲུལ་ཆས་འདི་སྟེང་གསར་སྒྱུར་གཙོ་འཁོར་གྱི་སྟངས་ལ་ Chronicle-PDF ཡིས་འགོ་འཛུགས་བྱས་ཡོད། བཅོས་དག་བྱེད་པར་དོ་དམ་པ་ལ་འབྲེལ་བ།"
 updateBehaviorSaved = "གསར་སྒྱུར་སྤྱོད་སྟངས་སྲུངས་ཟིན།"
 versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 viewDetails = "ཞིབ་ཕྲའི་གནས་ཚུལ་ལ་ལྟོས།"
@@ -7570,7 +7570,7 @@ download = "ཕབ་ལེན"
 downloaded = "ཕབ་ལེན་བྱས་ཟིན།"
 downloadFailed = "ཡིག་ཆ་འདི་ཕབ་ལེན་མི་ཐུབ།"
 downloadsCount = "ཕབ་ལེན: {{count}}"
-emailWarningBody = "འདི་གློག་འཕྲིན་གྲངས་འཛིན་ལྟར་མཐོང་བ་ཡིན། མི་འདི་ནི Stirling PDF སྤྱོད་མཁན་མ་རེད་ན་ཡིག་ཆ་ལ་འཛུལ་མི་ཐུབ།"
+emailWarningBody = "འདི་གློག་འཕྲིན་གྲངས་འཛིན་ལྟར་མཐོང་བ་ཡིན། མི་འདི་ནི Chronicle PDF སྤྱོད་མཁན་མ་རེད་ན་ཡིག་ཆ་ལ་འཛུལ་མི་ཐུབ།"
 emailWarningConfirm = "མཉམ་སྤྱོད་གང་རེད་ཀྱང་"
 emailWarningTitle = "གློག་འཕྲིན་གྲངས་འཛིན"
 errorTitle = "མཉམ་སྤྱོད་ཕམ་པ"
@@ -7601,7 +7601,7 @@ manageTitle = "མཉམ་སྤྱོད་དོ་དམ"
 noActivity = "ལཱ་འགུལ་མེད།"
 noLinks = "མཉམ་སྤྱོད་འབྲེལ་ཐག་མ་འདུག"
 noSharedUsers = "འཛུལ་ས་ཡོད་པའི་མི་མེད།"
-openInApp = "Stirling PDF ནང་ཁ་ཕྱེ"
+openInApp = "Chronicle PDF ནང་ཁ་ཕྱེ"
 ownerLabel = "བདག་པོ"
 ownerUnknown = "མ་ཤེས"
 removeLink = "འབྲེལ་ཐག་བསུབ"
@@ -7655,7 +7655,7 @@ updateButton = "སར་བར་ནང་གསར་སྒྱུར།"
 uploadButton = "སར་བར་ལ་ཡར་བསྐུར།"
 
 [survey]
-title = "Stirling-PDF Survey"
+title = "Chronicle-PDF Survey"
 
 [swagger]
 tags = "api, ཡིག་ཆ། ཐང་ག། མཐའ་སྟོན། འཕེལ་རྒྱས།"
@@ -7780,7 +7780,7 @@ favorites = "དགའ་ཤོས།"
 heading = "ལག་ཆ་ཚང་མ།(གློག་བརྙན་ཆ་ཚང་གི་ལྟ་ཚུལ།)"
 noResults = "ཁྱེད་ལ་དགོས་མཁོ་ཡོད་པའི་དངོས་པོ་འཚོལ་བར་འཚོལ་ཞིབ་ཡང་ན་འགྲེལ་བཤད་བསྒྱུར་ཐབས་བྱོས།"
 recommended = "འོས་སྦྱོར་བྱས་པའི"
-selfHostedOffline = "ཁྱེད་ཀྱི Stirling-PDF ཞབས་ཞུ་དགོས (དེང་སླར་ཨོླཕ་ལ་ཡིན):"
+selfHostedOffline = "ཁྱེད་ཀྱི Chronicle-PDF ཞབས་ཞུ་དགོས (དེང་སླར་ཨོླཕ་ལ་ཡིན):"
 showDetails = "ཞིབ་ཕྲ།"
 unavailable = "སར་བར་གྱི་དོ་དམ་པས་ལྕོགས་མིན་བཟོས།"
 unavailableDependency = "མེད་པ། ཞབས་ཞུའི་སྟེང་དགོས་མཁོའི་ལག་ཆ་མེད་པ་"
@@ -7857,7 +7857,7 @@ loadingDetailedInfo = "ཞིབ་ཕྲའི་གནས་ཚུལ་མང
 migrationGuide = "གནས་སྤོའི་ལམ་སྟོན།"
 migrationGuides = "གནས་སྤོའི་ལམ་སྟོན།"
 migrationGuidesDesc = "གསར་སྒྱུར་སྔོན་ལ་གནས་འགྱུར་གལ་ཆེའི་གཏོགས་མཐུད་ལྟ་བ།"
-modalSubtitle = "Stirling PDF ཐོན་རྟགས་གསར་པ་འཇུག་གྲ་སྒྲིག་ཡོད།"
+modalSubtitle = "Chronicle PDF ཐོན་རྟགས་གསར་པ་འཇུག་གྲ་སྒྲིག་ཡོད།"
 modalTitle = "གསར་བརྗེ།"
 notes = "མཆན"
 releaseNotes = "གློད་བཀྲོལ་དྲན་ཐོ།"

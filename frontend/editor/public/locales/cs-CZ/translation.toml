@@ -57,7 +57,7 @@ keepWorking = "Pokračovat v práci"
 loading = "Načítání..."
 loginAgreementAccept = "Přijmout"
 loginAgreementDecline = "Odmítnout"
-loginAgreementProvider = "Toto upozornění poskytl váš správce, ne společnost Stirling PDF Inc."
+loginAgreementProvider = "Toto upozornění poskytl váš správce, ne společnost Chronicle PDF Inc."
 loginAgreementTitle = "Přihlašovací ujednání"
 logOut = "Odhlásit se"
 marginTooltip = "Vzdálenost mezi číslem stránky a okrajem stránky."
@@ -633,9 +633,9 @@ description = "Nakonfigurujte úložiště dočasných souborů a chování či�
 label = "Správa dočasných souborů"
 
 [admin.settings.advanced.tempFileManagement.baseTmpDir]
-description = "Základní adresář pro dočasné soubory (ponechte prázdné pro výchozí: java.io.tmpdir/stirling-pdf)"
+description = "Základní adresář pro dočasné soubory (ponechte prázdné pro výchozí: java.io.tmpdir/Chronicle-PDF)"
 label = "Základní dočasný adresář"
-placeholder = "Výchozí: java.io.tmpdir/stirling-pdf"
+placeholder = "Výchozí: java.io.tmpdir/Chronicle-PDF"
 
 [admin.settings.advanced.tempFileManagement.cleanupIntervalMinutes]
 description = "Jak často spouštět čištění (v minutách)"
@@ -919,11 +919,11 @@ description = "Nakonfigurujte volitelné funkce a funkcionalitu."
 title = "Funkce"
 
 [admin.settings.features.serverCertificate]
-description = "Nakonfigurujte generování certifikátu na straně serveru pro funkci „Sign with Stirling-PDF“"
+description = "Nakonfigurujte generování certifikátu na straně serveru pro funkci „Sign with Chronicle-PDF“"
 label = "Serverový certifikát"
 
 [admin.settings.features.serverCertificate.enabled]
-description = "Povolit serverový certifikát pro možnost „Sign with Stirling-PDF“"
+description = "Povolit serverový certifikát pro možnost „Sign with Chronicle-PDF“"
 label = "Povolit serverový certifikát"
 
 [admin.settings.features.serverCertificate.organizationName]
@@ -1071,7 +1071,7 @@ description = "URL nebo název souboru se zásadami používání souborů cooki
 label = "Zásady používání souborů cookie"
 
 [admin.settings.legal.disclaimer]
-message = "Úpravou těchto právních dokumentů přebíráte plnou odpovědnost za zajištění souladu se všemi platnými zákony a předpisy, včetně, ale nejen GDPR a dalších požadavků EU na ochranu dat. Tyto hodnoty upravujte pouze pokud: (1) provozujete osobní/soukromou instanci, (2) nacházíte se mimo jurisdikci EU a rozumíte svým místním právním povinnostem, nebo (3) máte zajištěné odpovídající právní poradenství a přijímáte plnou odpovědnost za veškerá uživatelská data a právní soulad. Stirling-PDF a jeho vývojáři nenesou žádnou odpovědnost za vaše právní povinnosti."
+message = "Úpravou těchto právních dokumentů přebíráte plnou odpovědnost za zajištění souladu se všemi platnými zákony a předpisy, včetně, ale nejen GDPR a dalších požadavků EU na ochranu dat. Tyto hodnoty upravujte pouze pokud: (1) provozujete osobní/soukromou instanci, (2) nacházíte se mimo jurisdikci EU a rozumíte svým místním právním povinnostem, nebo (3) máte zajištěné odpovídající právní poradenství a přijímáte plnou odpovědnost za veškerá uživatelská data a právní soulad. Chronicle-PDF a jeho vývojáři nenesou žádnou odpovědnost za vaše právní povinnosti."
 title = "Upozornění na právní odpovědnost"
 
 [admin.settings.legal.impressum]
@@ -1158,7 +1158,7 @@ description = "Uživatelské jméno pro autentizaci SMTP"
 label = "Uživatelské jméno SMTP"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Stirling API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
 description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
@@ -1202,12 +1202,12 @@ label = "JWKS URL (optional)"
 placeholder = "Auto-discovered from issuer"
 
 [admin.settings.mcp.mode]
-description = "OAuth needs an external IdP. API key uses a Stirling per-user API key (X-API-KEY) - simplest for self-host."
+description = "OAuth needs an external IdP. API key uses a Chronicle per-user API key (X-API-KEY) - simplest for self-host."
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
 description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
-label = "Require an existing Stirling account"
+label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
 description = "This server's public /mcp URL. Tokens must list it in their audience (RFC 8707) or they are rejected."
@@ -1218,7 +1218,7 @@ description = "Require mcp.tools.read for read ops and mcp.tools.write for write
 label = "Enforce OAuth scopes"
 
 [admin.settings.mcp.usernameClaim]
-description = "JWT claim matched against a Stirling username (e.g. sub, email, preferred_username)."
+description = "JWT claim matched against a Chronicle username (e.g. sub, email, preferred_username)."
 label = "Username claim"
 
 [admin.settings.plan.noData]
@@ -1539,7 +1539,7 @@ description = "Pokud je zapnuto, bota mohou používat pouze uvedená ID uživat
 label = "Povolit konkrétní ID uživatelů"
 
 [admin.settings.telegram.enabled]
-description = "Umožněte uživatelům pracovat se Stirling PDF prostřednictvím vámi nastaveného Telegram bota."
+description = "Umožněte uživatelům pracovat se Chronicle PDF prostřednictvím vámi nastaveného Telegram bota."
 label = "Povolit Telegram bota"
 
 [admin.settings.telegram.feedback]
@@ -1612,20 +1612,20 @@ settingsOverview = "Toto je <strong>Panel nastavení</strong>. Administrátorsk�
 systemCustomization = "Nabízíme rozsáhlé možnosti přizpůsobení UI: <strong>Systémová nastavení</strong> umožňují změnit název aplikace a jazyky, <strong>Funkce</strong> umožňují správu serverových certifikátů a <strong>Koncové body</strong> umožňují povolit či zakázat konkrétní nástroje pro vaše uživatele."
 teamsAndUsers = "Zde spravujte <strong>Týmy</strong> a jednotlivé uživatele. Můžete zvát nové uživatele e‑mailem, sdílenými odkazy nebo jim sami vytvářet vlastní účty."
 welcome = "Vítejte v <strong>Prohlídce pro administrátory</strong>! Prozkoumejme výkonné podnikové funkce a nastavení dostupné správcům systému."
-wrapUp = "To je vše z admin prohlídky! Viděli jste podnikové funkce, které dělají ze Stirling PDF výkonné, přizpůsobitelné řešení pro organizace. Prohlídku najdete kdykoli v nabídce <strong>Nápověda</strong>."
+wrapUp = "To je vše z admin prohlídky! Viděli jste podnikové funkce, které dělají ze Chronicle PDF výkonné, přizpůsobitelné řešení pro organizace. Prohlídku najdete kdykoli v nabídce <strong>Nápověda</strong>."
 
 [adminUserSettings]
 admin = "Správce"
 title = "Nastavení správy uživatelů"
 
 [agents]
-stirling_name = "Stirling"
+stirling_name = "Chronicle"
 
 [analytics]
 learnMore = "Více informací"
-paragraph1 = "Stirling PDF nabízí volitelnou analytiku, která nám pomáhá zlepšovat produkt. Nesledujeme žádné osobní údaje ani obsah souborů."
-paragraph2 = "Zvažte prosím povolení analytiky, abyste pomohli růstu Stirling-PDF a umožnili nám lépe porozumět našim uživatelům."
-title = "Chcete pomoci vylepšit Stirling PDF?"
+paragraph1 = "Chronicle PDF nabízí volitelnou analytiku, která nám pomáhá zlepšovat produkt. Nesledujeme žádné osobní údaje ani obsah souborů."
+paragraph2 = "Zvažte prosím povolení analytiky, abyste pomohli růstu Chronicle-PDF a umožnili nám lépe porozumět našim uživatelům."
+title = "Chcete pomoci vylepšit Chronicle PDF?"
 
 [annotate]
 tags = "annotate,highlight,draw,markup,comment,notes,review,redline,feedback,markup tools,sticky notes,shapes,arrows,text box,freehand"
@@ -2558,7 +2558,7 @@ bullet1 = "Podporuje formáty PEM, PKCS12, JKS a serverové certifikáty"
 bullet2 = "Možnost zobrazit nebo skrýt podpis v PDF"
 bullet3 = "Přidat důvod, místo a jméno podepisujícího"
 bullet4 = "Vyberte, na kterou stránku umístit viditelné podpisy"
-bullet5 = "Použijte serverový certifikát pro jednoduchou možnost 'Podepsat pomocí Stirling-PDF'"
+bullet5 = "Použijte serverový certifikát pro jednoduchou možnost 'Podepsat pomocí Chronicle-PDF'"
 text = "K podepsání PDF potřebujete digitální certifikát (např. PEM, PKCS12 nebo JKS). Můžete zvolit, zda bude podpis na dokumentu viditelný, nebo zůstane neviditelný pouze pro ověření."
 title = "Přidávání podpisů"
 
@@ -2739,10 +2739,10 @@ copy = "Kopírovat zprávu"
 
 [chat.fab]
 close = "Close chat"
-open = "Open Stirling AI assistant"
+open = "Open Chronicle AI assistant"
 
 [chat.header]
-agentMenu = "Možnosti agenta Stirling"
+agentMenu = "Možnosti agenta Chronicle"
 clearChat = "Vymazat chat"
 
 [chat.input]
@@ -3073,13 +3073,13 @@ upgradeButton = "Vylepšit účet"
 [config.apiKeys]
 copyKeyAriaLabel = "Kopírovat API klíč"
 description = "Váš API klíč pro přístup k sadě PDF nástrojů Stirlingu. Zkopírujte si ho do projektu nebo obnovte pro vygenerování nového."
-docsDescription = "Zjistěte více o integraci se Stirling PDF:"
+docsDescription = "Zjistěte více o integraci se Chronicle PDF:"
 docsLink = "API dokumentace"
 docsTitle = "API dokumentace"
 generateError = "Nepodařilo se vygenerovat váš API klíč."
 goToAccount = "Přejít do účtu"
 guestInfo = "Hosté nedostávají API klíče. Vytvořte si účet a získejte API klíč, který můžete používat ve svých aplikacích."
-intro = "Pomocí svého API klíče můžete programově využívat zpracování Stirling PDF."
+intro = "Pomocí svého API klíče můžete programově využívat zpracování Chronicle PDF."
 label = "API klíč"
 publicKeyAriaLabel = "Veřejný API klíč"
 refreshAriaLabel = "Obnovit API klíč"
@@ -3103,10 +3103,10 @@ title = "Obnovit API klíče"
 warning = "⚠️ Varování: Tato akce vygeneruje nové API klíče a zneplatní vaše předchozí klíče."
 
 [config.mcp]
-description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Stirling PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
-guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Stirling PDF tools on your behalf."
+description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Chronicle PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
+guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Chronicle PDF tools on your behalf."
 navLabel = "MCP Server"
-tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Stirling PDF directly."
+tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Chronicle PDF directly."
 title = "MCP Server"
 viewApiKeys = "View API keys"
 
@@ -3232,7 +3232,7 @@ showPreferencesBtn = "Spravovat předvolby"
 title = "Jak používáme soubory cookie"
 
 [cookieBanner.popUp.description]
-1 = "Používáme soubory cookie a další technologie, aby Stirling PDF fungoval lépe pro vás—pomáhají nám zlepšovat naše nástroje a dál přinášet funkce, které si zamilujete."
+1 = "Používáme soubory cookie a další technologie, aby Chronicle PDF fungoval lépe pro vás—pomáhají nám zlepšovat naše nástroje a dál přinášet funkce, které si zamilujete."
 2 = "If you’d rather not, clicking 'No Thanks' will only enable the essential cookies needed to keep things running smoothly."
 
 [cookieBanner.preferencesModal]
@@ -3245,12 +3245,12 @@ subtitle = "Použití cookies"
 title = "Centrum správy souhlasu"
 
 [cookieBanner.preferencesModal.analytics]
-description = "Tyto soubory cookie nám pomáhají pochopit, jak jsou naše nástroje používány, abychom se mohli soustředit na budování funkcí, kterých si naše komunita nejvíce cení. Buďte bez obav—Stirling PDF nemůže a nikdy nebude sledovat obsah dokumentů, se kterými pracujete."
+description = "Tyto soubory cookie nám pomáhají pochopit, jak jsou naše nástroje používány, abychom se mohli soustředit na budování funkcí, kterých si naše komunita nejvíce cení. Buďte bez obav—Chronicle PDF nemůže a nikdy nebude sledovat obsah dokumentů, se kterými pracujete."
 title = "Analytika"
 
 [cookieBanner.preferencesModal.description]
-1 = "Stirling PDF používá soubory cookie a podobné technologie ke zlepšení vašeho prostředí a pochopení, jak jsou naše nástroje používány. To nám pomáhá zlepšovat výkon, vyvíjet funkce, na kterých vám záleží, a poskytovat našim uživatelům průběžnou podporu."
-2 = "Stirling PDF nemůže—a nikdy nebude—sledovat ani přistupovat k obsahu dokumentů, které používáte."
+1 = "Chronicle PDF používá soubory cookie a podobné technologie ke zlepšení vašeho prostředí a pochopení, jak jsou naše nástroje používány. To nám pomáhá zlepšovat výkon, vyvíjet funkce, na kterých vám záleží, a poskytovat našim uživatelům průběžnou podporu."
+2 = "Chronicle PDF nemůže—a nikdy nebude—sledovat ani přistupovat k obsahu dokumentů, které používáte."
 3 = "Vaše soukromí a důvěra jsou středobodem toho, co děláme."
 
 [cookieBanner.preferencesModal.necessary]
@@ -3346,14 +3346,14 @@ message = "Nepodařilo se nastavit výchozí aplikaci pro PDF"
 title = "Chyba"
 
 [defaultApp.prompt]
-message = "Nastavte Stirling PDF jako výchozí aplikaci pro otevírání souborů PDF."
+message = "Nastavte Chronicle PDF jako výchozí aplikaci pro otevírání souborů PDF."
 
 [defaultApp.settingsOpened]
-message = "Vyberte prosím v nastavení systému Stirling PDF"
+message = "Vyberte prosím v nastavení systému Chronicle PDF"
 title = "Otevřeno nastavení"
 
 [defaultApp.success]
-message = "Stirling PDF je nyní váš výchozí editor PDF"
+message = "Chronicle PDF je nyní váš výchozí editor PDF"
 title = "Výchozí aplikace nastavena"
 
 [desktopUpdate]
@@ -3369,7 +3369,7 @@ updateFailedMessage = "Nepodařilo se stáhnout nebo nainstalovat aktualizaci."
 
 [desktopUpdate.blocked]
 docsLink = "Zobrazit dokumentaci k instalaci"
-message = "Stirling-PDF nemá oprávnění k samoaktualizaci na tomto zařízení."
+message = "Chronicle-PDF nemá oprávnění k samoaktualizaci na tomto zařízení."
 title = "Vyžadována oprávnění správce"
 
 [devAirgapped]
@@ -3939,7 +3939,7 @@ title = "Přesunout do složky"
 [filesPage.origin]
 all = "Všechny zdroje"
 cloud = "Cloud"
-cloudHint = "Uloženo na serveru Stirling"
+cloudHint = "Uloženo na serveru Chronicle"
 local = "Místní"
 localHint = "Uloženo pouze v tomto prohlížeči"
 shared = "Sdílené"
@@ -4203,7 +4203,7 @@ invisible = "Neviditelné (pouze metadata)"
 location = "Místo:"
 logo = "Logo:"
 logoHidden = "Bez loga"
-logoShown = "Zobrazeno logo Stirling PDF"
+logoShown = "Zobrazeno logo Chronicle PDF"
 participantCount_one = "{{count}} participant will sign in order"
 participantCount_other = "{{count}} participants will sign in order"
 participants = "Účastníci"
@@ -4257,7 +4257,7 @@ title = "Sekvenční podepisování"
 dismiss = "Skrýt banner"
 message = "Vytvořte si bezplatný účet, ukládejte svou práci, získejte více funkcí a podpořte projekt."
 signUp = "Zaregistrovat se zdarma"
-title = "Používáte Stirling PDF jako host!"
+title = "Používáte Chronicle PDF jako host!"
 
 [home.addAttachments]
 desc = "Přidat nebo odebrat vložené soubory (přílohy) do/z PDF"
@@ -4416,7 +4416,7 @@ tags = "sloučit,spojit,sjednotit"
 title = "Sloučit"
 
 [home.mobile]
-brandAlt = "Logo Stirling PDF"
+brandAlt = "Logo Chronicle PDF"
 openFiles = "Otevřít soubory"
 swipeHint = "Přejeďte doleva nebo doprava pro přepnutí zobrazení"
 tools = "Nástroje"
@@ -4455,7 +4455,7 @@ tags = "uspořádat,přeuspořádat,přeřadit"
 title = "Uspořádat"
 
 [home.pdfTextEditor]
-desc = "Prohlížejte a upravujte exporty JSON ze Stirling PDF se skupinovými úpravami textu a regenerací PDF"
+desc = "Prohlížejte a upravujte exporty JSON ze Chronicle PDF se skupinovými úpravami textu a regenerací PDF"
 tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
 title = "Editor textu PDF"
 
@@ -4641,7 +4641,7 @@ passwordRequired = "Heslo je povinné"
 signIn = "Přihlásit se"
 validating = "Ověřování pozvánky..."
 validationError = "Nepodařilo se ověřit pozvánkový odkaz"
-welcome = "Vítejte ve Stirling PDF"
+welcome = "Vítejte ve Chronicle PDF"
 welcomeSubtitle = "Dokončete nastavení účtu a začněte"
 welcomeTitle = "Byli jste pozváni!"
 
@@ -4726,7 +4726,7 @@ subtitle = "Více než desítka nástrojů pro začerňování, podepisování, 
 title = "Upravujte PDF pro zobrazení/ochranu požadovaných informací"
 
 [login.slides.overview]
-alt = "Přehled Stirling PDF"
+alt = "Přehled Chronicle PDF"
 subtitle = "Cloudová sada s důrazem na soukromí pro práci s PDF, která umožňuje konvertovat, podepisovat, začerňovat a spravovat dokumenty, a nabízí přes 50 dalších užitečných nástrojů."
 title = "Vše pro práci s PDF na jednom místě."
 
@@ -4844,7 +4844,7 @@ message = "Ověření nebylo úspěšné. Toto okno můžete zavřít a zkusit t
 title = "Ověření selhalo"
 
 [oauth.success]
-message = "Toto okno můžete zavřít a vrátit se do Stirling PDF."
+message = "Toto okno můžete zavřít a vrátit se do Chronicle PDF."
 title = "Ověření úspěšné"
 
 [oauthConsent]
@@ -4857,17 +4857,17 @@ loadFailed = "This authorisation request is invalid or has expired. Close this t
 loading = "Loading authorisation request..."
 missingId = "Missing authorisation request. Start the connection from your app and try again."
 redirecting = "Returning you to the app..."
-requesting = "{{app}} wants to access your Stirling PDF account"
+requesting = "{{app}} wants to access your Chronicle PDF account"
 scopesIntro = "This will allow {{app}} to:"
 signedInAs = "Signed in as {{name}}"
 signInButton = "Sign in to continue"
-signInPrompt = "Sign in to your Stirling PDF account to continue connecting the app."
+signInPrompt = "Sign in to your Chronicle PDF account to continue connecting the app."
 title = "Authorise access"
 unknownApp = "A third-party application"
 
 [oauthConsent.access]
 actAsYou = "Act as you - everything {{app}} does runs under your account and counts towards your usage"
-tools = "Use your Stirling PDF tools on your behalf - convert, edit, sign, secure and process your documents"
+tools = "Use your Chronicle PDF tools on your behalf - convert, edit, sign, secure and process your documents"
 
 [oauthConsent.scope]
 email = "See your email address"
@@ -5008,7 +5008,7 @@ userTitle = "Přehled plánu"
 [onboarding.saas.freeEditor]
 freeLine = "The editor is now <free>completely free</free>."
 premium = "We've added loads of new features, including <strong>Policies</strong> and <strong>Agent Chat</strong>."
-title = "Welcome to Stirling"
+title = "Welcome to Chronicle"
 
 [onboarding.saas.team]
 addButton = "Add"
@@ -5036,12 +5036,12 @@ seePlans = "Zobrazit plány →"
 upgrade = "Upgradovat nyní →"
 
 [onboarding.tourOverview]
-body = "Stirling PDF V2 ships with dozens of tools and a refreshed layout. Take a quick tour to see what changed and where to find the features you need."
+body = "Chronicle PDF V2 ships with dozens of tools and a refreshed layout. Take a quick tour to see what changed and where to find the features you need."
 title = "Tour Overview"
 
 [onboarding.welcomeSlide]
-body = "Stirling PDF je nyní připraven pro týmy všech velikostí. Tato aktualizace přináší nové rozvržení, výkonné nové funkce pro správce a naši nejžádanější funkci – <strong>Úpravy textu</strong>."
-title = "Vítejte ve Stirling"
+body = "Chronicle PDF je nyní připraven pro týmy všech velikostí. Tato aktualizace přináší nové rozvržení, výkonné nové funkce pro správce a naši nejžádanější funkci – <strong>Úpravy textu</strong>."
+title = "Vítejte ve Chronicle"
 
 [onboarding.whatsNew]
 activeFilesView = "Use Active Files to see everything you have open and pick what to work on."
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Stirling PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5893,7 +5893,7 @@ upToFiveUsers = "Až 5 uživatelů"
 usageTrackingPrometheus = "Sledování používání a Prometheus"
 
 [plan.licenseWarning]
-body = "Máte {{total}} uživatelů, ale bezplatná úroveň podporuje pouze {{limit}} na server. Upgradujte, aby Stirling PDF běžel hladce."
+body = "Máte {{total}} uživatelů, ale bezplatná úroveň podporuje pouze {{limit}} na server. Upgradujte, aby Chronicle PDF běžel hladce."
 cta = "Zobrazit plány"
 overLimit = "více než {{limit}}"
 title = "Dosažen limit bezplatné self-hosted verze"
@@ -6192,12 +6192,12 @@ comingSoon = "Již brzy"
 [portal.accountLink.card]
 billingNote = "Bezobslužné zpracování se účtuje z peněženky vaší organizace."
 eyebrow = "Propojení účtu"
-linkButton = "Propojit účet Stirling"
+linkButton = "Propojit účet Chronicle"
 linked = "Propojeno"
 linkedAs = "Propojeno jako {{name}}."
 linkedGeneric = "Tato instance je propojena."
 notLinked = "Nepropojeno"
-title = "Propojit tuto organizaci s jejím účtem Stirling"
+title = "Propojit tuto organizaci s jejím účtem Chronicle"
 unlink = "Zrušit propojení"
 
 [portal.accountLink.card.error]
@@ -6242,7 +6242,7 @@ never = "nikdy"
 
 [portal.accountLink.modal]
 linkSubtitle = "Přihlaste se k účtu, kterému má tento server účtovat."
-linkTitle = "Propojit účet Stirling"
+linkTitle = "Propojit účet Chronicle"
 reauthSubtitle = "Vaše relace vypršela — přihlaste se znovu ke svému účtu Stirling. Vaše instance zůstává propojena."
 reauthTitle = "Přihlaste se znovu"
 simulateSignIn = "Simulovat přihlášení (dev)"
@@ -6439,9 +6439,9 @@ viewAriaLabel = "Zobrazit fakturu {{number}} ve Stripe"
 viewLink = "Zobrazit ↗"
 
 [portal.billing.linkPrompt]
-cta = "Propojit účet Stirling"
+cta = "Propojit účet Chronicle"
 description = "Ruční úpravy PDF — zobrazení, podepisování, slučování, rozdělování, vodoznak, komprese, převod, ruční OCR — jsou vždy zdarma, ať už je účet propojený, nebo ne. Propojením získáte 500 bezplatných PDFs měřeného zpracování (automatizace, AI a API); když budete potřebovat více, zapněte plán Processor a plaťte pouze za to, co použijete."
-title = "Propojit účet Stirling"
+title = "Propojit účet Chronicle"
 
 [portal.billing.paymentMethod]
 billedMonthly = "Účtováno měsíčně"
@@ -6723,7 +6723,7 @@ time = "Čas"
 user = "Uživatel"
 
 [portal.editorAdmin]
-subtitle = "Nasaďte Stirling PDF Editor, spárujte self-hosted instance s vaší organizací a spravujte běžící flotilu — cíle, stav, přihlašovací údaje a offline aktivaci na jednom místě."
+subtitle = "Nasaďte Chronicle PDF Editor, spárujte self-hosted instance s vaší organizací a spravujte běžící flotilu — cíle, stav, přihlašovací údaje a offline aktivaci na jednom místě."
 title = "Nasazení Editoru"
 
 [portal.editorAdmin.health.columns]
@@ -6809,7 +6809,7 @@ title = "Na této stránce se něco pokazilo"
 [portal.home.editor]
 activeUsers = "{{n}} aktivních"
 invite = "Pozvat členy týmu"
-name = "Stirling PDF Editor"
+name = "Chronicle PDF Editor"
 open = "Otevřít v prohlížeči"
 updated = "aktualizováno {{time}}"
 
@@ -6889,7 +6889,7 @@ usageMonth = "Využití tento měsíc"
 usageToday = "Využití dnes"
 
 [portal.infrastructure.apiKeys.empty]
-description = "Vytvořte klíč s vymezeným rozsahem a začněte volat Stirling API."
+description = "Vytvořte klíč s vymezeným rozsahem a začněte volat Chronicle API."
 title = "Zatím žádné API klíče"
 
 [portal.infrastructure.audit]
@@ -7059,7 +7059,7 @@ label = "Hold your own key (HYOK)"
 
 [portal.infrastructure.security.access.stirling]
 description = "Stirling spravuje šifrovací klíče. Nejjednodušší — na vaší straně žádné operace s klíči."
-label = "Klíče držené Stirling"
+label = "Klíče držené Chronicle"
 
 [portal.infrastructure.security.accessPolicy]
 heading = "Zásady přístupu k dokumentům"
@@ -7110,7 +7110,7 @@ subheading = "Správa klíčů, které šifrují dokumenty v klidu — kdo můž
 
 [portal.infrastructure.security.managedBanner]
 description = "Správa klíčů bring-your-own-key (BYOK) a hold-your-own-key (HYOK) je dostupná v Enterprise. Upgradujte a poskytněte klíče z vlastního KMS."
-title = "Klíče jsou ve vašem plánu spravovány Stirling"
+title = "Klíče jsou ve vašem plánu spravovány Chronicle"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -7854,7 +7854,7 @@ appEditor = "Editor"
 appProcessor = "Processor"
 brandSuffix = "Stirling Processor"
 docsCount = "{{docs}} dok."
-linkAccount = "Propojit účet Stirling"
+linkAccount = "Propojit účet Chronicle"
 planEditor = "Plán Editor"
 planEnterprise = "Plán Enterprise"
 planProcessor = "Plán Processor"
@@ -8022,7 +8022,7 @@ summary = "Vlastní tým — spravuje prostředky jeho členů a sdílené konfi
 3 = "Vše, co může člen"
 
 [portal.welcome]
-ariaLabel = "Vítejte ve Stirling PDF"
+ariaLabel = "Vítejte ve Chronicle PDF"
 badge = "Open-source"
 installEditor = "Nainstalovat Editor"
 inviteTeammates = "Pozvat členy týmu"
@@ -8030,7 +8030,7 @@ openInBrowser = "Otevřít v prohlížeči"
 perks = "Navždy zdarma · Self-hostable"
 subtitle = "Nejbezpečnější PDF Editor na světě je zdarma pro týmy všech velikostí. Zahrnuje 60+ PDF operací a SSO."
 title = "Vítejte v"
-titleAccent = "Stirling PDF"
+titleAccent = "Chronicle PDF"
 
 [printFile]
 title = "Tisk souboru"
@@ -8721,8 +8721,8 @@ hideTools = "Skrýt nedostupné nástroje ▴"
 messageNoFallback = "Nástroje nebudou dostupné, dokud se váš server znovu nepřipojí."
 messageWithFallback = "Některé nástroje vyžadují připojení k serveru."
 showTools = "Zobrazit nedostupné nástroje ▾"
-title = "Váš server Stirling-PDF je nedostupný"
-toolNotAvailableLocally = "Váš server Stirling-PDF je offline a \"{{endpoint}}\" není dostupný v místním backendu."
+title = "Váš server Chronicle-PDF je nedostupný"
+toolNotAvailableLocally = "Váš server Chronicle-PDF je offline a \"{{endpoint}}\" není dostupný v místním backendu."
 
 [session]
 expired = "Vaše relace vypršela. Obnovte prosím stránku a zkuste to znovu."
@@ -8797,7 +8797,7 @@ autoUnzipFileLimitDescription = "Maximální počet souborů k extrahování ze 
 autoUnzipFileLimitTooltip = "Rozbalit pouze, pokud ZIP obsahuje tolik nebo méně souborů. Nastavte vyšší hodnotu pro rozbalení větších ZIP archivů."
 autoUnzipTooltip = "Automaticky extrahuje ZIP soubory vrácené z operací API. Vypněte pro zachování ZIP souborů. Toto neovlivňuje automatizační workflow."
 defaultPdfEditor = "Výchozí editor PDF"
-defaultPdfEditorActive = "Stirling PDF je váš výchozí editor PDF"
+defaultPdfEditorActive = "Chronicle PDF je váš výchozí editor PDF"
 defaultPdfEditorChecking = "Kontrola..."
 defaultPdfEditorInactive = "Jiná aplikace je nastavena jako výchozí"
 defaultPdfEditorSet = "Již výchozí"
@@ -8858,7 +8858,7 @@ updateBehavior = "Chování aktualizací"
 updateBehaviorDescription = "Zvolte, zda se má před instalací aktualizací ptát, instalovat je automaticky, nebo kontroly aktualizací úplně přeskočit."
 updateBehaviorError = "Nepodařilo se změnit chování aktualizací"
 updateBehaviorErrorLocked = "Toto nastavení je uzamčeno vaším správcem."
-updateBehaviorLockedDescription = "Váš správce nastavil, jak Stirling-PDF na tomto počítači zachází s aktualizacemi. Kontaktujte ho pro změnu."
+updateBehaviorLockedDescription = "Váš správce nastavil, jak Chronicle-PDF na tomto počítači zachází s aktualizacemi. Kontaktujte ho pro změnu."
 updateBehaviorSaved = "Chování aktualizací uloženo."
 versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 viewDetails = "Zobrazit podrobnosti"
@@ -9068,7 +9068,7 @@ emptyUsername = "Zadejte své uživatelské jméno"
 oauthFailed = "Přihlášení přes OAuth selhalo. Zkuste to znovu."
 
 [setup.saas]
-title = "Přihlásit se do Stirling"
+title = "Přihlásit se do Chronicle"
 
 [setup.selfhosted]
 changeServerLocked = "Vaše organizace omezila tuto aplikaci na konkrétní server"
@@ -9106,7 +9106,7 @@ step3 = "Restartujte server"
 title = "Přihlášení není povoleno"
 
 [setup.server.url]
-description = "Zadejte úplnou URL vašeho samohostovaného serveru Stirling PDF"
+description = "Zadejte úplnou URL vašeho samohostovaného serveru Chronicle PDF"
 label = "URL serveru"
 
 [sharedSign]
@@ -9342,7 +9342,7 @@ pleaseFillAllFields = "Vyplňte prosím všechna pole"
 signUp = "Zaregistrovat se"
 signUpWith = "Sign up with"
 skip = "Skip"
-subtitle = "Připojte se ke Stirling PDF a začněte"
+subtitle = "Připojte se ke Chronicle PDF a začněte"
 title = "Vytvořit účet"
 unexpectedError = "Neočekávaná chyba: {{message}}"
 
@@ -9569,7 +9569,7 @@ download = "Stáhnout"
 downloaded = "Staženo"
 downloadFailed = "Tento soubor nelze stáhnout."
 downloadsCount = "Stažení: {{count}}"
-emailWarningBody = "Vypadá to jako e-mailová adresa. Pokud tato osoba ještě není uživatelem Stirling PDF, k souboru se nedostane."
+emailWarningBody = "Vypadá to jako e-mailová adresa. Pokud tato osoba ještě není uživatelem Chronicle PDF, k souboru se nedostane."
 emailWarningConfirm = "Sdílet i tak"
 emailWarningTitle = "E-mailová adresa"
 errorTitle = "Sdílení se nezdařilo"
@@ -9600,7 +9600,7 @@ manageTitle = "Správa sdílení"
 noActivity = "Zatím žádná aktivita."
 noLinks = "Zatím nejsou žádné aktivní odkazy ke sdílení."
 noSharedUsers = "Zatím nemá přístup žádný uživatel."
-openInApp = "Otevřít ve Stirling PDF"
+openInApp = "Otevřít ve Chronicle PDF"
 ownerLabel = "Vlastník"
 ownerUnknown = "Neznámý"
 removeLink = "Odebrat odkaz"
@@ -9654,7 +9654,7 @@ updateButton = "Aktualizovat na serveru"
 uploadButton = "Nahrát na server"
 
 [survey]
-title = "Stirling-PDF Survey"
+title = "Chronicle-PDF Survey"
 
 [swagger]
 tags = "api,dokumentace,swagger,endpointy,vývoj"
@@ -9782,7 +9782,7 @@ favorites = "Oblíbené"
 heading = "Všechny nástroje (zobrazení na celou obrazovku)"
 noResults = "Zkuste upravit hledání nebo přepnout popisy, abyste našli, co potřebujete."
 recommended = "Doporučeno"
-selfHostedOffline = "Vyžaduje váš server Stirling-PDF (aktuálně offline):"
+selfHostedOffline = "Vyžaduje váš server Chronicle-PDF (aktuálně offline):"
 showDetails = "Zobrazit podrobnosti"
 unavailable = "Zakázáno správcem serveru:"
 unavailableDependency = "Nedostupné – na serveru chybí požadovaný nástroj:"
@@ -9791,7 +9791,7 @@ unfavorite = "Odebrat z oblíbených"
 [toolPanel.modePrompt]
 chooseFullscreen = "Použít režim na celou obrazovku"
 chooseSidebar = "Použít režim postranního panelu"
-description = "Prohlédněte si obě rozložení a rozhodněte, jak chcete prozkoumávat nástroje Stirling PDF."
+description = "Prohlédněte si obě rozložení a rozhodněte, jak chcete prozkoumávat nástroje Chronicle PDF."
 dismiss = "Možná později"
 fullscreenDescription = "Procházejte všechny nástroje v katalogu, který překryje pracovní prostor, dokud si nevyberete."
 fullscreenTitle = "Režim na celou obrazovku – (zastaralé)"
@@ -9859,7 +9859,7 @@ loadingDetailedInfo = "Načítání podrobných informací..."
 migrationGuide = "Migrační průvodce"
 migrationGuides = "Migrační průvodci"
 migrationGuidesDesc = "Před aktualizací si projděte důležité změny."
-modalSubtitle = "Nová verze Stirling PDF je připravena k instalaci."
+modalSubtitle = "Nová verze Chronicle PDF je připravena k instalaci."
 modalTitle = "Dostupná aktualizace"
 notes = "Poznámky"
 releaseNotes = "Poznámky k vydání"
@@ -9883,7 +9883,7 @@ urgent = "Naléhavá"
 attentionBody = "Váš správce se musí přihlásit, aby zobrazil další informace. Kontaktujte jej prosím co nejdříve."
 attentionBodyAdmin = "Zkontrolujte licenční požadavky, aby byl tento server v souladu."
 attentionTitle = "Tento server vyžaduje zásah správce"
-message = "Využijte Stirling PDF naplno s neomezeným počtem uživatelů a pokročilými funkcemi"
+message = "Využijte Chronicle PDF naplno s neomezeným počtem uživatelů a pokročilými funkcemi"
 seeInfo = "Zobrazit informace"
 title = "Přejděte na Serverový plán"
 upgradeButton = "Upgradovat nyní"
@@ -10000,7 +10000,7 @@ authWeb = "Heslo"
 create = "Vytvořit účet"
 createSubtitle = "Vytvořte self-hosted účet s heslem nebo SSO."
 createTitle = "Vytvořit účet"
-editorDesc = "Upravujte PDFs v editoru Stirling PDF. Toto má každý."
+editorDesc = "Upravujte PDFs v editoru Chronicle PDF. Toto má každý."
 email = "E-mailová adresa"
 emailError = "Zadejte platnou e-mailovou adresu"
 emailPlaceholder2 = "name@company.com"
@@ -10138,7 +10138,7 @@ downloads = "Ke stažení"
 entryLabel = "Souhrn podpisu"
 filesEvaluated_one = "Vyhodnocen {{count}} soubor"
 filesEvaluated_other = "Vyhodnoceno {{count}} souborů"
-footer = "Ověřeno pomocí Stirling PDF"
+footer = "Ověřeno pomocí Chronicle PDF"
 generatedAt = "Vygenerováno"
 noPdf = "PDF zpráva bude k dispozici po úspěšném ověření."
 page = "Stránka"

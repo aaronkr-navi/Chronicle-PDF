@@ -57,7 +57,7 @@ keepWorking = "Nastavi raditi"
 loading = "Učitavanje..."
 loginAgreementAccept = "Prihvati"
 loginAgreementDecline = "Odbij"
-loginAgreementProvider = "Ovu obavijest pruža vaš administrator, a ne Stirling PDF Inc."
+loginAgreementProvider = "Ovu obavijest pruža vaš administrator, a ne Chronicle PDF Inc."
 loginAgreementTitle = "Ugovor o prijavi"
 logOut = "Odjava"
 marginTooltip = "Udaljenost između broja stranice i ruba stranice."
@@ -633,9 +633,9 @@ description = "Konfigurirajte pohranu privremenih datoteka i ponašanje čišće
 label = "Upravljanje privremenim datotekama"
 
 [admin.settings.advanced.tempFileManagement.baseTmpDir]
-description = "Osnovni direktorij za privremene datoteke (ostavite prazno za zadano: java.io.tmpdir/stirling-pdf)"
+description = "Osnovni direktorij za privremene datoteke (ostavite prazno za zadano: java.io.tmpdir/Chronicle-PDF)"
 label = "Osnovni direktorij za privremene datoteke"
-placeholder = "Zadano: java.io.tmpdir/stirling-pdf"
+placeholder = "Zadano: java.io.tmpdir/Chronicle-PDF"
 
 [admin.settings.advanced.tempFileManagement.cleanupIntervalMinutes]
 description = "Koliko često pokretati čišćenje (u minutama)"
@@ -919,11 +919,11 @@ description = "Konfigurirajte opcionalne značajke i funkcionalnosti."
 title = "Značajke"
 
 [admin.settings.features.serverCertificate]
-description = "Konfigurirajte generiranje certifikata na poslužitelju za funkcionalnost \"Sign with Stirling-PDF\""
+description = "Konfigurirajte generiranje certifikata na poslužitelju za funkcionalnost \"Sign with Chronicle-PDF\""
 label = "Poslužiteljski certifikat"
 
 [admin.settings.features.serverCertificate.enabled]
-description = "Omogući poslužiteljski certifikat za opciju \"Sign with Stirling-PDF\""
+description = "Omogući poslužiteljski certifikat za opciju \"Sign with Chronicle-PDF\""
 label = "Omogući poslužiteljski certifikat"
 
 [admin.settings.features.serverCertificate.organizationName]
@@ -1071,7 +1071,7 @@ description = "URL ili naziv datoteke za pravila o kolačićima"
 label = "Pravila o kolačićima"
 
 [admin.settings.legal.disclaimer]
-message = "Prilagođavanjem ovih pravnih dokumenata preuzimate punu odgovornost za osiguranje usklađenosti sa svim primjenjivim zakonima i propisima, uključujući, ali ne ograničavajući se na GDPR i druge zahtjeve EU zaštite podataka. Mijenjajte ove postavke samo ako: (1) upravljate osobnom/privatnom instancom, (2) izvan ste nadležnosti EU-a i razumijete svoje lokalne pravne obveze, ili (3) ste pribavili odgovarajući pravni savjet i prihvaćate isključivu odgovornost za sve korisničke podatke i pravnu usklađenost. Stirling-PDF i njegovi razvojni programeri ne preuzimaju nikakvu odgovornost za vaše pravne obveze."
+message = "Prilagođavanjem ovih pravnih dokumenata preuzimate punu odgovornost za osiguranje usklađenosti sa svim primjenjivim zakonima i propisima, uključujući, ali ne ograničavajući se na GDPR i druge zahtjeve EU zaštite podataka. Mijenjajte ove postavke samo ako: (1) upravljate osobnom/privatnom instancom, (2) izvan ste nadležnosti EU-a i razumijete svoje lokalne pravne obveze, ili (3) ste pribavili odgovarajući pravni savjet i prihvaćate isključivu odgovornost za sve korisničke podatke i pravnu usklađenost. Chronicle-PDF i njegovi razvojni programeri ne preuzimaju nikakvu odgovornost za vaše pravne obveze."
 title = "Upozorenje o pravnoj odgovornosti"
 
 [admin.settings.legal.impressum]
@@ -1158,7 +1158,7 @@ description = "Korisničko ime za SMTP autentikaciju"
 label = "SMTP korisničko ime"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Stirling API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
 description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
@@ -1202,12 +1202,12 @@ label = "JWKS URL (optional)"
 placeholder = "Auto-discovered from issuer"
 
 [admin.settings.mcp.mode]
-description = "OAuth needs an external IdP. API key uses a Stirling per-user API key (X-API-KEY) - simplest for self-host."
+description = "OAuth needs an external IdP. API key uses a Chronicle per-user API key (X-API-KEY) - simplest for self-host."
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
 description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
-label = "Require an existing Stirling account"
+label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
 description = "This server's public /mcp URL. Tokens must list it in their audience (RFC 8707) or they are rejected."
@@ -1218,7 +1218,7 @@ description = "Require mcp.tools.read for read ops and mcp.tools.write for write
 label = "Enforce OAuth scopes"
 
 [admin.settings.mcp.usernameClaim]
-description = "JWT claim matched against a Stirling username (e.g. sub, email, preferred_username)."
+description = "JWT claim matched against a Chronicle username (e.g. sub, email, preferred_username)."
 label = "Username claim"
 
 [admin.settings.plan.noData]
@@ -1539,7 +1539,7 @@ description = "Kad je omogućeno, samo navedeni korisnički ID-jevi mogu koristi
 label = "Dopusti određene korisničke ID-jeve"
 
 [admin.settings.telegram.enabled]
-description = "Dopustite korisnicima interakciju sa Stirling PDF-om putem konfiguriranog Telegram bota."
+description = "Dopustite korisnicima interakciju sa Chronicle PDF-om putem konfiguriranog Telegram bota."
 label = "Omogući Telegram bot"
 
 [admin.settings.telegram.feedback]
@@ -1612,20 +1612,20 @@ settingsOverview = "Ovo je <strong>Panel postavki</strong>. Administratorske pos
 systemCustomization = "Imamo opsežne načine za prilagodbu sučelja: <strong>Postavke sustava</strong> omogućuju promjenu naziva aplikacije i jezika, <strong>Značajke</strong> omogućuju upravljanje certifikatima poslužitelja, a <strong>Krajnje točke</strong> omogućuju uključivanje ili isključivanje pojedinih alata za vaše korisnike."
 teamsAndUsers = "Ovdje upravljajte <strong>timovima</strong> i pojedinačnim korisnicima. Možete pozvati nove korisnike putem e-pošte, dijeljivih poveznica ili im sami stvoriti prilagođene račune."
 welcome = "Dobrodošli u <strong>Administratorski obilazak</strong>! Istražimo moćne korporativne značajke i postavke dostupne administratorima sustava."
-wrapUp = "To je administratorski obilazak! Vidjeli ste korporativne značajke koje čine Stirling PDF moćnim, prilagodljivim rješenjem za organizacije. Ovom obilasku možete pristupiti u bilo kojem trenutku iz izbornika <strong>Pomoć</strong>."
+wrapUp = "To je administratorski obilazak! Vidjeli ste korporativne značajke koje čine Chronicle PDF moćnim, prilagodljivim rješenjem za organizacije. Ovom obilasku možete pristupiti u bilo kojem trenutku iz izbornika <strong>Pomoć</strong>."
 
 [adminUserSettings]
 admin = "Administrator"
 title = "Postavka kontrole korisnika"
 
 [agents]
-stirling_name = "Stirling"
+stirling_name = "Chronicle"
 
 [analytics]
 learnMore = "Saznajte više"
-paragraph1 = "Stirling PDF ima uključene analitike koje nam pomažu da proizvod poboljšamo. Niste pratili nikakva osobna informacija ni sadržaj datoteka."
-paragraph2 = "Razmotrite omogućivanje analitičkih podataka kako biste stvorili Stirling-PDF veće i da bismo bolje razumeli naših korisnika."
-title = "Želite li da stvarate Stirling PDF bolji?"
+paragraph1 = "Chronicle PDF ima uključene analitike koje nam pomažu da proizvod poboljšamo. Niste pratili nikakva osobna informacija ni sadržaj datoteka."
+paragraph2 = "Razmotrite omogućivanje analitičkih podataka kako biste stvorili Chronicle-PDF veće i da bismo bolje razumeli naših korisnika."
+title = "Želite li da stvarate Chronicle PDF bolji?"
 
 [annotate]
 tags = "annotate,highlight,draw,markup,comment,notes,review,redline,feedback,markup tools,sticky notes,shapes,arrows,text box,freehand"
@@ -2558,7 +2558,7 @@ bullet1 = "Podržava PEM, PKCS12, JKS i formate poslužiteljskog certifikata"
 bullet2 = "Opcija za prikaz ili skrivanje potpisa na PDF-u"
 bullet3 = "Dodajte razlog, lokaciju i ime potpisnika"
 bullet4 = "Odaberite na kojoj će se stranici postaviti vidljivi potpisi"
-bullet5 = "Koristite poslužiteljski certifikat za jednostavnu opciju 'Sign with Stirling-PDF'"
+bullet5 = "Koristite poslužiteljski certifikat za jednostavnu opciju 'Sign with Chronicle-PDF'"
 text = "Za potpis PDF-a potreban je digitalni certifikat (kao PEM, PKCS12 ili JKS). Možete odabrati da potpis bude vidljiv na dokumentu ili nevidljiv samo radi sigurnosti."
 title = "Dodavanje potpisa"
 
@@ -2739,7 +2739,7 @@ copy = "Kopiraj poruku"
 
 [chat.fab]
 close = "Close chat"
-open = "Open Stirling AI assistant"
+open = "Open Chronicle AI assistant"
 
 [chat.header]
 agentMenu = "Opcije Stirling agenta"
@@ -3073,13 +3073,13 @@ upgradeButton = "Nadogradi račun"
 [config.apiKeys]
 copyKeyAriaLabel = "Kopiraj API ključ"
 description = "Vaš API ključ za pristup Stirlingovom paketu PDF alata. Kopirajte ga u svoj projekt ili osvježite za generiranje novog."
-docsDescription = "Saznajte više o integraciji sa Stirling PDF:"
+docsDescription = "Saznajte više o integraciji sa Chronicle PDF:"
 docsLink = "API dokumentacija"
 docsTitle = "API dokumentacija"
 generateError = "Nismo mogli generirati vaš API ključ."
 goToAccount = "Idi na račun"
 guestInfo = "Gostujući korisnici ne dobivaju API ključeve. Izradite račun kako biste dobili API ključ koji možete koristiti u svojim aplikacijama."
-intro = "Upotrijebite svoj API ključ za programatski pristup Stirling PDF mogućnostima obrade."
+intro = "Upotrijebite svoj API ključ za programatski pristup Chronicle PDF mogućnostima obrade."
 label = "API ključ"
 publicKeyAriaLabel = "Javni API ključ"
 refreshAriaLabel = "Osvježi API ključ"
@@ -3103,10 +3103,10 @@ title = "Osvježi API ključeve"
 warning = "⚠️ Upozorenje: Ova radnja generirat će nove API ključeve i učiniti vaše prethodne ključeve nevažećima."
 
 [config.mcp]
-description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Stirling PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
-guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Stirling PDF tools on your behalf."
+description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Chronicle PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
+guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Chronicle PDF tools on your behalf."
 navLabel = "MCP Server"
-tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Stirling PDF directly."
+tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Chronicle PDF directly."
 title = "MCP Server"
 viewApiKeys = "View API keys"
 
@@ -3232,7 +3232,7 @@ showPreferencesBtn = "Upravljajte preferencijama"
 title = "Kako koristimo kolačiće"
 
 [cookieBanner.popUp.description]
-1 = "Koristimo kolačiće i druge tehnologije kako bismo Stirling PDF učinili boljim za vas — pomažu nam poboljšati naše alate i nastaviti graditi značajke koje ćete voljeti."
+1 = "Koristimo kolačiće i druge tehnologije kako bismo Chronicle PDF učinili boljim za vas — pomažu nam poboljšati naše alate i nastaviti graditi značajke koje ćete voljeti."
 2 = "If you’d rather not, clicking 'No Thanks' will only enable the essential cookies needed to keep things running smoothly."
 
 [cookieBanner.preferencesModal]
@@ -3245,12 +3245,12 @@ subtitle = "Upotreba kolačića"
 title = "Centar preferencija privole"
 
 [cookieBanner.preferencesModal.analytics]
-description = "Ovi kolačići pomažu nam razumjeti kako se naši alati koriste, kako bismo se mogli usredotočiti na izgradnju značajki koje naša zajednica najviše cijeni. Budite bez brige — Stirling PDF ne može i nikada neće pratiti sadržaj dokumenata s kojima radite."
+description = "Ovi kolačići pomažu nam razumjeti kako se naši alati koriste, kako bismo se mogli usredotočiti na izgradnju značajki koje naša zajednica najviše cijeni. Budite bez brige — Chronicle PDF ne može i nikada neće pratiti sadržaj dokumenata s kojima radite."
 title = "Analitika"
 
 [cookieBanner.preferencesModal.description]
-1 = "Stirling PDF koristi kolačiće i slične tehnologije za poboljšanje vašeg iskustva i razumijevanje kako se naši alati koriste. To nam pomaže poboljšati performanse, razviti značajke do kojih vam je stalo i pružati stalnu podršku našim korisnicima."
-2 = "Stirling PDF ne može — i nikada neće — pratiti ili pristupati sadržaju dokumenata koje koristite."
+1 = "Chronicle PDF koristi kolačiće i slične tehnologije za poboljšanje vašeg iskustva i razumijevanje kako se naši alati koriste. To nam pomaže poboljšati performanse, razviti značajke do kojih vam je stalo i pružati stalnu podršku našim korisnicima."
+2 = "Chronicle PDF ne može — i nikada neće — pratiti ili pristupati sadržaju dokumenata koje koristite."
 3 = "Vaša privatnost i povjerenje u središtu su svega što radimo."
 
 [cookieBanner.preferencesModal.necessary]
@@ -3346,14 +3346,14 @@ message = "Nije uspjelo postaviti zadanu aplikaciju za PDF"
 title = "Pogreška"
 
 [defaultApp.prompt]
-message = "Postavite Stirling PDF kao zadanu aplikaciju za otvaranje PDF datoteka."
+message = "Postavite Chronicle PDF kao zadanu aplikaciju za otvaranje PDF datoteka."
 
 [defaultApp.settingsOpened]
-message = "Odaberite Stirling PDF u postavkama sustava"
+message = "Odaberite Chronicle PDF u postavkama sustava"
 title = "Otvorene postavke"
 
 [defaultApp.success]
-message = "Stirling PDF je sada vaš zadani PDF uređivač"
+message = "Chronicle PDF je sada vaš zadani PDF uređivač"
 title = "Zadana aplikacija postavljena"
 
 [desktopUpdate]
@@ -3369,7 +3369,7 @@ updateFailedMessage = "Nije uspjelo preuzimanje ili instalacija ažuriranja."
 
 [desktopUpdate.blocked]
 docsLink = "Pogledaj dokumentaciju za instalaciju"
-message = "Stirling-PDF nema dopuštenje za samostalno ažuriranje na ovom računalu."
+message = "Chronicle-PDF nema dopuštenje za samostalno ažuriranje na ovom računalu."
 title = "Potrebna su administratorska dopuštenja"
 
 [devAirgapped]
@@ -4203,7 +4203,7 @@ invisible = "Nevidljivo (samo metapodaci)"
 location = "Lokacija:"
 logo = "Logo:"
 logoHidden = "Bez logotipa"
-logoShown = "Prikazan Stirling PDF logotip"
+logoShown = "Prikazan Chronicle PDF logotip"
 participantCount_one = "{{count}} participant will sign in order"
 participantCount_other = "{{count}} participants will sign in order"
 participants = "Sudionici"
@@ -4257,7 +4257,7 @@ title = "Sekvencijalno potpisivanje"
 dismiss = "Odbaci baner"
 message = "Izradite besplatan račun kako biste spremili svoj rad, pristupili više značajki i podržali projekt."
 signUp = "Registrirajte se besplatno"
-title = "Koristite Stirling PDF kao gost!"
+title = "Koristite Chronicle PDF kao gost!"
 
 [home.addAttachments]
 desc = "Dodajte ili uklonite ugrađene datoteke (privitke) u/iz PDF-a"
@@ -4416,7 +4416,7 @@ tags = "spoji,pridruži,ujedini"
 title = "Spajanje"
 
 [home.mobile]
-brandAlt = "Stirling PDF logotip"
+brandAlt = "Chronicle PDF logotip"
 openFiles = "Otvori datoteke"
 swipeHint = "Povucite lijevo ili desno za promjenu prikaza"
 tools = "Alati"
@@ -4455,7 +4455,7 @@ tags = "organiziraj,preuredi,promijeni redoslijed"
 title = "Organiziranje"
 
 [home.pdfTextEditor]
-desc = "Pregledajte i uredite Stirling PDF JSON izvoze s grupnim uređivanjem teksta i ponovnim generiranjem PDF-a"
+desc = "Pregledajte i uredite Chronicle PDF JSON izvoze s grupnim uređivanjem teksta i ponovnim generiranjem PDF-a"
 tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
 title = "PDF uređivač teksta"
 
@@ -4641,7 +4641,7 @@ passwordRequired = "Lozinka je obvezna"
 signIn = "Prijavite se"
 validating = "Provjera poziva..."
 validationError = "Provjera poveznice za poziv nije uspjela"
-welcome = "Dobrodošli u Stirling PDF"
+welcome = "Dobrodošli u Chronicle PDF"
 welcomeSubtitle = "Dovršite postavljanje računa kako biste započeli"
 welcomeTitle = "Pozvani ste!"
 
@@ -4726,7 +4726,7 @@ subtitle = "S više od desetak alata za redaktiranje, potpisivanje, čitanje i o
 title = "Uredite PDF-ove kako biste prikazali/zaštitili željene informacije"
 
 [login.slides.overview]
-alt = "Pregled Stirling PDF-a"
+alt = "Pregled Chronicle PDF-a"
 subtitle = "Cloud paket s fokusom na privatnost za PDF-ove koji omogućuje pretvaranje, potpisivanje, redaktiranje i upravljanje dokumentima, uz 50+ drugih moćnih alata."
 title = "Sve za PDF na jednom mjestu."
 
@@ -4844,7 +4844,7 @@ message = "Autentikacija nije bila uspješna. Možete zatvoriti ovaj prozor i po
 title = "Autentikacija nije uspjela"
 
 [oauth.success]
-message = "Možete zatvoriti ovaj prozor i vratiti se u Stirling PDF."
+message = "Možete zatvoriti ovaj prozor i vratiti se u Chronicle PDF."
 title = "Autentikacija uspješna"
 
 [oauthConsent]
@@ -4857,17 +4857,17 @@ loadFailed = "This authorisation request is invalid or has expired. Close this t
 loading = "Loading authorisation request..."
 missingId = "Missing authorisation request. Start the connection from your app and try again."
 redirecting = "Returning you to the app..."
-requesting = "{{app}} wants to access your Stirling PDF account"
+requesting = "{{app}} wants to access your Chronicle PDF account"
 scopesIntro = "This will allow {{app}} to:"
 signedInAs = "Signed in as {{name}}"
 signInButton = "Sign in to continue"
-signInPrompt = "Sign in to your Stirling PDF account to continue connecting the app."
+signInPrompt = "Sign in to your Chronicle PDF account to continue connecting the app."
 title = "Authorise access"
 unknownApp = "A third-party application"
 
 [oauthConsent.access]
 actAsYou = "Act as you - everything {{app}} does runs under your account and counts towards your usage"
-tools = "Use your Stirling PDF tools on your behalf - convert, edit, sign, secure and process your documents"
+tools = "Use your Chronicle PDF tools on your behalf - convert, edit, sign, secure and process your documents"
 
 [oauthConsent.scope]
 email = "See your email address"
@@ -5008,7 +5008,7 @@ userTitle = "Pregled plana"
 [onboarding.saas.freeEditor]
 freeLine = "The editor is now <free>completely free</free>."
 premium = "We've added loads of new features, including <strong>Policies</strong> and <strong>Agent Chat</strong>."
-title = "Welcome to Stirling"
+title = "Welcome to Chronicle"
 
 [onboarding.saas.team]
 addButton = "Add"
@@ -5036,12 +5036,12 @@ seePlans = "Pogledaj planove →"
 upgrade = "Nadogradi odmah →"
 
 [onboarding.tourOverview]
-body = "Stirling PDF V2 dolazi s desecima alata i osvježenim izgledom. Uzmite kratki obilazak da vidite što se promijenilo i gdje pronaći potrebne značajke."
+body = "Chronicle PDF V2 dolazi s desecima alata i osvježenim izgledom. Uzmite kratki obilazak da vidite što se promijenilo i gdje pronaći potrebne značajke."
 title = "Pregled obilaska"
 
 [onboarding.welcomeSlide]
-body = "Stirling PDF je sada spreman za timove svih veličina. Ovo ažuriranje donosi novi izgled, moćne nove administratorske mogućnosti i našu najtraženiju značajku - <strong>Uredi tekst</strong>."
-title = "Dobrodošli u Stirling"
+body = "Chronicle PDF je sada spreman za timove svih veličina. Ovo ažuriranje donosi novi izgled, moćne nove administratorske mogućnosti i našu najtraženiju značajku - <strong>Uredi tekst</strong>."
+title = "Dobrodošli u Chronicle"
 
 [onboarding.whatsNew]
 activeFilesView = "Koristite Aktivne datoteke da vidite sve što je otvoreno i odaberete na čemu raditi."
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Stirling PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5893,7 +5893,7 @@ upToFiveUsers = "Do 5 korisnika"
 usageTrackingPrometheus = "Praćenje upotrebe i Prometheus"
 
 [plan.licenseWarning]
-body = "Imate {{total}} korisnika, ali besplatni sloj podržava samo {{limit}} po poslužitelju. Nadogradite kako bi Stirling PDF radio bez problema."
+body = "Imate {{total}} korisnika, ali besplatni sloj podržava samo {{limit}} po poslužitelju. Nadogradite kako bi Chronicle PDF radio bez problema."
 cta = "Pogledaj planove"
 overLimit = "više od {{limit}}"
 title = "Dosegnuto ograničenje besplatne self-hosted verzije"
@@ -6723,7 +6723,7 @@ time = "Vrijeme"
 user = "Korisnik"
 
 [portal.editorAdmin]
-subtitle = "Implementirajte Stirling PDF Editor, uparite samostalno hostane instance s vašom organizacijom i upravljajte aktivnim okruženjem — ciljevima, zdravljem, vjerodajnicama i offline aktivacijom na jednom mjestu."
+subtitle = "Implementirajte Chronicle PDF Editor, uparite samostalno hostane instance s vašom organizacijom i upravljajte aktivnim okruženjem — ciljevima, zdravljem, vjerodajnicama i offline aktivacijom na jednom mjestu."
 title = "Implementacija Editora"
 
 [portal.editorAdmin.health.columns]
@@ -6809,7 +6809,7 @@ title = "Nešto je pošlo po zlu na ovoj stranici"
 [portal.home.editor]
 activeUsers = "{{n}} aktivno"
 invite = "Pozovi članove tima"
-name = "Stirling PDF Editor"
+name = "Chronicle PDF Editor"
 open = "Otvori u pregledniku"
 updated = "ažurirano {{time}}"
 
@@ -6889,7 +6889,7 @@ usageMonth = "Korištenje ovog mjeseca"
 usageToday = "Korištenje danas"
 
 [portal.infrastructure.apiKeys.empty]
-description = "Izradite ključ s opsegom za početak pozivanja Stirling API."
+description = "Izradite ključ s opsegom za početak pozivanja Chronicle API."
 title = "Još nema API ključeva"
 
 [portal.infrastructure.audit]
@@ -7059,7 +7059,7 @@ label = "Držite vlastiti ključ (HYOK)"
 
 [portal.infrastructure.security.access.stirling]
 description = "Stirling upravlja ključevima za šifriranje. Najjednostavnije — bez operacija s ključevima s vaše strane."
-label = "Ključevi koje drži Stirling"
+label = "Ključevi koje drži Chronicle"
 
 [portal.infrastructure.security.accessPolicy]
 heading = "Pravilo pristupa dokumentima"
@@ -7110,7 +7110,7 @@ subheading = "Skrbništvo nad ključevima koji šifriraju dokumente u mirovanju 
 
 [portal.infrastructure.security.managedBanner]
 description = "Skrbništvo Bring-your-own-key (BYOK) i hold-your-own-key (HYOK) dostupno je na Enterprise planu. Nadogradite kako biste dostavili ključeve iz vlastitog KMS."
-title = "Ključevima na vašem planu upravlja Stirling"
+title = "Ključevima na vašem planu upravlja Chronicle"
 
 [portal.infrastructure.security.residency.apac]
 description = "ap-southeast-1"
@@ -8022,7 +8022,7 @@ summary = "Vlasnik je tima — upravlja resursima njegovih članova i dijeljenim
 3 = "Sve što može Member"
 
 [portal.welcome]
-ariaLabel = "Dobro došli u Stirling PDF"
+ariaLabel = "Dobro došli u Chronicle PDF"
 badge = "Open-source"
 installEditor = "Instaliraj Editor"
 inviteTeammates = "Pozovi članove tima"
@@ -8030,7 +8030,7 @@ openInBrowser = "Otvori u pregledniku"
 perks = "Zauvijek besplatno · Self-hostable"
 subtitle = "Najsigurniji PDF Editor na svijetu besplatan je za timove svih veličina. Uključuje 60+ PDF operacija i SSO."
 title = "Dobro došli u"
-titleAccent = "Stirling PDF"
+titleAccent = "Chronicle PDF"
 
 [printFile]
 title = "Ispis datoteke"
@@ -8721,8 +8721,8 @@ hideTools = "Sakrij nedostupne alate ▴"
 messageNoFallback = "Alati neće biti dostupni dok se vaš poslužitelj ne vrati na mrežu."
 messageWithFallback = "Neki alati zahtijevaju vezu s poslužiteljem."
 showTools = "Prikaži nedostupne alate ▾"
-title = "Vaš Stirling-PDF poslužitelj je nedostupan"
-toolNotAvailableLocally = "Vaš Stirling-PDF poslužitelj je izvan mreže i \"{{endpoint}}\" nije dostupan na lokalnom pozadinskom sustavu."
+title = "Vaš Chronicle-PDF poslužitelj je nedostupan"
+toolNotAvailableLocally = "Vaš Chronicle-PDF poslužitelj je izvan mreže i \"{{endpoint}}\" nije dostupan na lokalnom pozadinskom sustavu."
 
 [session]
 expired = "Vaš sesija je istekla. Molim vas da osvježite stranicu i pokušate ponovno."
@@ -8797,7 +8797,7 @@ autoUnzipFileLimitDescription = "Maksimalan broj datoteka za izdvajanje iz ZIP-a
 autoUnzipFileLimitTooltip = "Raspakiraj samo ako ZIP sadrži ovoliko ili manje datoteka. Postavite više za izdvajanje većih ZIP-ova."
 autoUnzipTooltip = "Automatski izdvoji ZIP datoteke vraćene iz API operacija. Isključite da biste zadržali ZIP datoteke netaknute. Ovo ne utječe na automatizirane tijekove rada."
 defaultPdfEditor = "Zadani PDF uređivač"
-defaultPdfEditorActive = "Stirling PDF je vaš zadani PDF uređivač"
+defaultPdfEditorActive = "Chronicle PDF je vaš zadani PDF uređivač"
 defaultPdfEditorChecking = "Provjera..."
 defaultPdfEditorInactive = "Druga je aplikacija postavljena kao zadana"
 defaultPdfEditorSet = "Već je zadano"
@@ -8858,7 +8858,7 @@ updateBehavior = "Način ažuriranja"
 updateBehaviorDescription = "Odaberite želite li upit prije instalacije ažuriranja, automatsku instalaciju ili potpuno preskočiti provjere ažuriranja."
 updateBehaviorError = "Nije moguće promijeniti način ažuriranja"
 updateBehaviorErrorLocked = "Ovu je postavku zaključao vaš administrator."
-updateBehaviorLockedDescription = "Vaš je administrator konfigurirao kako Stirling-PDF obrađuje ažuriranja na ovom računalu. Obratite im se za promjenu."
+updateBehaviorLockedDescription = "Vaš je administrator konfigurirao kako Chronicle-PDF obrađuje ažuriranja na ovom računalu. Obratite im se za promjenu."
 updateBehaviorSaved = "Način ažuriranja spremljen."
 versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 viewDetails = "Prikaži detalje"
@@ -9068,7 +9068,7 @@ emptyUsername = "Unesite korisničko ime"
 oauthFailed = "OAuth prijava nije uspjela. Pokušajte ponovno."
 
 [setup.saas]
-title = "Prijavite se u Stirling"
+title = "Prijavite se u Chronicle"
 
 [setup.selfhosted]
 changeServerLocked = "Vaša organizacija je ograničila ovu aplikaciju na određeni poslužitelj"
@@ -9085,7 +9085,7 @@ retry = "Pokušaj ponovno"
 title = "Nije moguće povezati se s poslužiteljem"
 
 [setup.server]
-subtitle = "Unesite URL svog self-hosted Stirling PDF poslužitelja"
+subtitle = "Unesite URL svog self-hosted Chronicle PDF poslužitelja"
 testing = "Testiranje veze..."
 title = "Povežite se s poslužiteljem"
 useLast = "Last used server: {{serverUrl}}"
@@ -9106,7 +9106,7 @@ step3 = "Ponovno pokrenite poslužitelj"
 title = "Prijava nije omogućena"
 
 [setup.server.url]
-description = "Unesite puni URL svog self-hosted Stirling PDF poslužitelja"
+description = "Unesite puni URL svog self-hosted Chronicle PDF poslužitelja"
 label = "URL poslužitelja"
 
 [sharedSign]
@@ -9342,7 +9342,7 @@ pleaseFillAllFields = "Ispunite sva polja"
 signUp = "Registrirajte se"
 signUpWith = "Sign up with"
 skip = "Skip"
-subtitle = "Pridružite se Stirling PDF-u kako biste započeli"
+subtitle = "Pridružite se Chronicle PDF-u kako biste započeli"
 title = "Stvorite račun"
 unexpectedError = "Neočekivana pogreška: {{message}}"
 
@@ -9569,7 +9569,7 @@ download = "Preuzmi"
 downloaded = "Preuzeto"
 downloadFailed = "Nije moguće preuzeti ovu datoteku."
 downloadsCount = "Preuzimanja: {{count}}"
-emailWarningBody = "Ovo izgleda kao adresa e-pošte. Ako ova osoba još nije korisnik Stirling PDF-a, neće moći pristupiti datoteci."
+emailWarningBody = "Ovo izgleda kao adresa e-pošte. Ako ova osoba još nije korisnik Chronicle PDF-a, neće moći pristupiti datoteci."
 emailWarningConfirm = "Ipak podijeli"
 emailWarningTitle = "Adresa e-pošte"
 errorTitle = "Dijeljenje nije uspjelo"
@@ -9600,7 +9600,7 @@ manageTitle = "Upravljanje dijeljenjem"
 noActivity = "Još nema aktivnosti."
 noLinks = "Još nema aktivnih poveznica za dijeljenje."
 noSharedUsers = "Još nitko nema pristup."
-openInApp = "Otvori u Stirling PDF"
+openInApp = "Otvori u Chronicle PDF"
 ownerLabel = "Vlasnik"
 ownerUnknown = "Nepoznato"
 removeLink = "Ukloni poveznicu"
@@ -9654,7 +9654,7 @@ updateButton = "Ažuriraj na poslužitelju"
 uploadButton = "Prenesi na poslužitelj"
 
 [survey]
-title = "Stirling-PDF Survey"
+title = "Chronicle-PDF Survey"
 
 [swagger]
 tags = "api,documentation,swagger,endpoints,development"
@@ -9782,7 +9782,7 @@ favorites = "Omiljene"
 heading = "Svi alati (prikaz cijelog zaslona)"
 noResults = "Pokušajte prilagoditi pretragu ili prebacite prikaz opisa kako biste našli što trebate."
 recommended = "Preporučeno"
-selfHostedOffline = "Zahtijeva vaš Stirling-PDF poslužitelj (trenutno izvan mreže):"
+selfHostedOffline = "Zahtijeva vaš Chronicle-PDF poslužitelj (trenutno izvan mreže):"
 showDetails = "Prikaži detalje"
 unavailable = "Onemogućio administrator poslužitelja:"
 unavailableDependency = "Nedostupno - potreban alat nedostaje na poslužitelju:"
@@ -9791,7 +9791,7 @@ unfavorite = "Ukloni iz omiljenih"
 [toolPanel.modePrompt]
 chooseFullscreen = "Koristi način cijelog zaslona"
 chooseSidebar = "Koristi način bočne trake"
-description = "Pregledajte oba izgleda i odlučite kako želite istraživati Stirling PDF alate."
+description = "Pregledajte oba izgleda i odlučite kako želite istraživati Chronicle PDF alate."
 dismiss = "Možda kasnije"
 fullscreenDescription = "Pregledajte svaki alat u katalogu koji prekriva radni prostor dok ne odaberete jedan."
 fullscreenTitle = "Način cijelog zaslona - (zastarjelo)"
@@ -9859,7 +9859,7 @@ loadingDetailedInfo = "Učitavanje detaljnih informacija..."
 migrationGuide = "Vodič za migraciju"
 migrationGuides = "Vodiči za migraciju"
 migrationGuidesDesc = "Pregledajte važne promjene prije ažuriranja."
-modalSubtitle = "Nova verzija Stirling PDF-a spremna je za instalaciju."
+modalSubtitle = "Nova verzija Chronicle PDF-a spremna je za instalaciju."
 modalTitle = "Dostupno ažuriranje"
 notes = "Bilješke"
 releaseNotes = "Napomene uz izdanje"
@@ -9883,7 +9883,7 @@ urgent = "Hitno"
 attentionBody = "Vaš se administrator treba prijaviti za više informacija. Odmah ih kontaktirajte."
 attentionBodyAdmin = "Pregledajte zahtjeve licence kako bi ovaj poslužitelj bio usklađen."
 attentionTitle = "Ovom poslužitelju treba pažnja administratora"
-message = "Iskoristite Stirling PDF uz neograničene korisnike i napredne značajke"
+message = "Iskoristite Chronicle PDF uz neograničene korisnike i napredne značajke"
 seeInfo = "Prikaži informacije"
 title = "Nadogradite na plan Server"
 upgradeButton = "Nadogradi odmah"
@@ -10000,7 +10000,7 @@ authWeb = "Lozinka"
 create = "Stvori račun"
 createSubtitle = "Stvorite self-hosted račun s lozinkom ili SSO."
 createTitle = "Stvori račun"
-editorDesc = "Uređujte PDF-ove u Stirling PDF Editoru. Svi to dobivaju."
+editorDesc = "Uređujte PDF-ove u Chronicle PDF Editoru. Svi to dobivaju."
 email = "Email adresa"
 emailError = "Unesite valjanu email adresu"
 emailPlaceholder2 = "ime@tvrtka.com"
@@ -10138,7 +10138,7 @@ downloads = "Preuzimanja"
 entryLabel = "Sažetak potpisa"
 filesEvaluated_one = "{{count}} datoteka je analizirana"
 filesEvaluated_other = "{{count}} datoteka je analizirano"
-footer = "Provjereno putem Stirling PDF"
+footer = "Provjereno putem Chronicle PDF"
 generatedAt = "Generirano"
 noPdf = "PDF izvješće bit će dostupno nakon uspješne provjere."
 page = "Stranica"

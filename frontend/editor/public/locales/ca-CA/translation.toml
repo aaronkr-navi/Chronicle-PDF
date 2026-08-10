@@ -57,7 +57,7 @@ keepWorking = "Continua treballant"
 loading = "Carregant..."
 loginAgreementAccept = "Accepta"
 loginAgreementDecline = "Rebutja"
-loginAgreementProvider = "Aquest avís és proporcionat pel vostre administrador, no per Stirling PDF Inc."
+loginAgreementProvider = "Aquest avís és proporcionat pel vostre administrador, no per Chronicle PDF Inc."
 loginAgreementTitle = "Acord d'inici de sessió"
 logOut = "Tanca la sessió"
 marginTooltip = "Distància entre el número de pàgina i la vora de la pàgina."
@@ -633,9 +633,9 @@ description = "Configureu l'emmagatzematge de fitxers temporals i el comportamen
 label = "Gestió de fitxers temporals"
 
 [admin.settings.advanced.tempFileManagement.baseTmpDir]
-description = "Directori base per als fitxers temporals (deixeu-ho buit per al valor per defecte: java.io.tmpdir/stirling-pdf)"
+description = "Directori base per als fitxers temporals (deixeu-ho buit per al valor per defecte: java.io.tmpdir/Chronicle-PDF)"
 label = "Directori temporal base"
-placeholder = "Per defecte: java.io.tmpdir/stirling-pdf"
+placeholder = "Per defecte: java.io.tmpdir/Chronicle-PDF"
 
 [admin.settings.advanced.tempFileManagement.cleanupIntervalMinutes]
 description = "Freqüència d'execució de la neteja (en minuts)"
@@ -919,11 +919,11 @@ description = "Configureu funcions i funcionalitats opcionals."
 title = "Funcions"
 
 [admin.settings.features.serverCertificate]
-description = "Configureu la generació de certificats al costat del servidor per a la funcionalitat \"Sign with Stirling-PDF\""
+description = "Configureu la generació de certificats al costat del servidor per a la funcionalitat \"Sign with Chronicle-PDF\""
 label = "Certificat del servidor"
 
 [admin.settings.features.serverCertificate.enabled]
-description = "Habilita el certificat del costat del servidor per a l'opció \"Sign with Stirling-PDF\""
+description = "Habilita el certificat del costat del servidor per a l'opció \"Sign with Chronicle-PDF\""
 label = "Habilita el certificat del servidor"
 
 [admin.settings.features.serverCertificate.organizationName]
@@ -1071,7 +1071,7 @@ description = "URL o nom de fitxer de la política de galetes"
 label = "Política de galetes"
 
 [admin.settings.legal.disclaimer]
-message = "En personalitzar aquests documents legals, assumiu la plena responsabilitat de garantir el compliment de totes les lleis i regulacions aplicables, incloent-hi, entre d'altres, el GDPR i altres requisits de protecció de dades de la UE. Només modifiqueu aquests paràmetres si: (1) esteu operant una instància personal/privada, (2) esteu fora de la jurisdicció de la UE i enteneu les vostres obligacions legals locals, o (3) heu obtingut l'assessorament legal adequat i accepteu la responsabilitat exclusiva de totes les dades dels usuaris i el compliment legal. Stirling-PDF i els seus desenvolupadors no assumeixen cap responsabilitat per les vostres obligacions legals."
+message = "En personalitzar aquests documents legals, assumiu la plena responsabilitat de garantir el compliment de totes les lleis i regulacions aplicables, incloent-hi, entre d'altres, el GDPR i altres requisits de protecció de dades de la UE. Només modifiqueu aquests paràmetres si: (1) esteu operant una instància personal/privada, (2) esteu fora de la jurisdicció de la UE i enteneu les vostres obligacions legals locals, o (3) heu obtingut l'assessorament legal adequat i accepteu la responsabilitat exclusiva de totes les dades dels usuaris i el compliment legal. Chronicle-PDF i els seus desenvolupadors no assumeixen cap responsabilitat per les vostres obligacions legals."
 title = "Avís de responsabilitat legal"
 
 [admin.settings.legal.impressum]
@@ -1158,7 +1158,7 @@ description = "Nom d'usuari per a l'autenticació SMTP"
 label = "Nom d'usuari SMTP"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Stirling API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
 description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
@@ -1202,12 +1202,12 @@ label = "JWKS URL (optional)"
 placeholder = "Auto-discovered from issuer"
 
 [admin.settings.mcp.mode]
-description = "OAuth needs an external IdP. API key uses a Stirling per-user API key (X-API-KEY) - simplest for self-host."
+description = "OAuth needs an external IdP. API key uses a Chronicle per-user API key (X-API-KEY) - simplest for self-host."
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
 description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
-label = "Require an existing Stirling account"
+label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
 description = "This server's public /mcp URL. Tokens must list it in their audience (RFC 8707) or they are rejected."
@@ -1218,7 +1218,7 @@ description = "Require mcp.tools.read for read ops and mcp.tools.write for write
 label = "Enforce OAuth scopes"
 
 [admin.settings.mcp.usernameClaim]
-description = "JWT claim matched against a Stirling username (e.g. sub, email, preferred_username)."
+description = "JWT claim matched against a Chronicle username (e.g. sub, email, preferred_username)."
 label = "Username claim"
 
 [admin.settings.plan.noData]
@@ -1539,7 +1539,7 @@ description = "Quan està habilitat, només els ID d'usuari llistats poden utili
 label = "Permet ID d'usuari específics"
 
 [admin.settings.telegram.enabled]
-description = "Permet als usuaris interactuar amb Stirling PDF a través del bot de Telegram configurat."
+description = "Permet als usuaris interactuar amb Chronicle PDF a través del bot de Telegram configurat."
 label = "Habilita el bot de Telegram"
 
 [admin.settings.telegram.feedback]
@@ -1612,20 +1612,20 @@ settingsOverview = "Aquest és el <strong>Panell de paràmetres</strong>. Els pa
 systemCustomization = "Tenim nombroses maneres de personalitzar la IU: els <strong>Paràmetres del sistema</strong> us permeten canviar el nom de l’aplicació i els idiomes, <strong>Funcions</strong> permet la gestió de certificats del servidor, i <strong>Endpoints</strong> us permet habilitar o deshabilitar eines específiques per als vostres usuaris."
 teamsAndUsers = "Gestioneu <strong>Equips</strong> i usuaris individuals aquí. Podeu convidar usuaris nous via correu, enllaços compartibles o crear comptes personalitzats vosaltres mateixos."
 welcome = "Benvinguts a la <strong>Visita d’administració</strong>! Explorem les potents funcionalitats i paràmetres d’empresa disponibles per als administradors del sistema."
-wrapUp = "Això és la visita d’administració! Heu vist les funcionalitats d’empresa que fan de Stirling PDF una solució potent i personalitzable per a organitzacions. Accediu a aquesta visita en qualsevol moment des del menú <strong>Ajuda</strong>."
+wrapUp = "Això és la visita d’administració! Heu vist les funcionalitats d’empresa que fan de Chronicle PDF una solució potent i personalitzable per a organitzacions. Accediu a aquesta visita en qualsevol moment des del menú <strong>Ajuda</strong>."
 
 [adminUserSettings]
 admin = "Administrador"
 title = "Opcions de Control d'Usuari"
 
 [agents]
-stirling_name = "Stirling"
+stirling_name = "Chronicle"
 
 [analytics]
 learnMore = "Més informació"
-paragraph1 = "Stirling PDF té analítiques opcionals per ajudar-nos a millorar el producte. No recopilem cap informació personal ni el contingut dels fitxers."
-paragraph2 = "Si us plau, considera habilitar les analítiques per ajudar Stirling PDF a créixer i permetre'ns entendre millor els nostres usuaris."
-title = "Vols ajudar a millorar Stirling PDF?"
+paragraph1 = "Chronicle PDF té analítiques opcionals per ajudar-nos a millorar el producte. No recopilem cap informació personal ni el contingut dels fitxers."
+paragraph2 = "Si us plau, considera habilitar les analítiques per ajudar Chronicle PDF a créixer i permetre'ns entendre millor els nostres usuaris."
+title = "Vols ajudar a millorar Chronicle PDF?"
 
 [annotate]
 tags = "annotate,highlight,draw,markup,comment,notes,review,redline,feedback,markup tools,sticky notes,shapes,arrows,text box,freehand"
@@ -2558,7 +2558,7 @@ bullet1 = "Admet formats PEM, PKCS12, JKS i certificats de servidor"
 bullet2 = "Opció per mostrar o amagar la signatura al PDF"
 bullet3 = "Afegeix motiu, ubicació i nom del signant"
 bullet4 = "Trieu en quina pàgina col·locar les signatures visibles"
-bullet5 = "Utilitza el certificat del servidor per a l'opció senzilla 'Sign with Stirling-PDF'"
+bullet5 = "Utilitza el certificat del servidor per a l'opció senzilla 'Sign with Chronicle-PDF'"
 text = "Per signar un PDF, necessiteu un certificat digital (com PEM, PKCS12 o JKS). Podeu triar fer visible la signatura al document o mantenir-la invisible només per a seguretat."
 title = "Afegir signatures"
 
@@ -2739,10 +2739,10 @@ copy = "Copia el missatge"
 
 [chat.fab]
 close = "Close chat"
-open = "Open Stirling AI assistant"
+open = "Open Chronicle AI assistant"
 
 [chat.header]
-agentMenu = "Opcions de l'agent Stirling"
+agentMenu = "Opcions de l'agent Chronicle"
 clearChat = "Neteja el xat"
 
 [chat.input]
@@ -3073,13 +3073,13 @@ upgradeButton = "Actualitza el compte"
 [config.apiKeys]
 copyKeyAriaLabel = "Copia la clau API"
 description = "La vostra clau API per accedir al conjunt d’eines PDF de Stirling. Copieu-la al vostre projecte o actualitzeu-la per generar-ne una de nova."
-docsDescription = "Més informació sobre la integració amb Stirling PDF:"
+docsDescription = "Més informació sobre la integració amb Chronicle PDF:"
 docsLink = "Documentació de l’API"
 docsTitle = "Documentació de l’API"
 generateError = "No hem pogut generar la vostra clau API."
 goToAccount = "Vés al compte"
 guestInfo = "Els usuaris convidats no reben claus API. Creeu un compte per obtenir una clau API que pugueu utilitzar a les vostres aplicacions."
-intro = "Utilitzeu la vostra clau API per accedir programàticament a les capacitats de processament de Stirling PDF."
+intro = "Utilitzeu la vostra clau API per accedir programàticament a les capacitats de processament de Chronicle PDF."
 label = "Clau API"
 publicKeyAriaLabel = "Clau API pública"
 refreshAriaLabel = "Actualitza la clau API"
@@ -3103,10 +3103,10 @@ title = "Actualitza les claus API"
 warning = "⚠️ Avís: Aquesta acció generarà claus API noves i invalidarà les anteriors."
 
 [config.mcp]
-description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Stirling PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
-guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Stirling PDF tools on your behalf."
+description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Chronicle PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
+guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Chronicle PDF tools on your behalf."
 navLabel = "MCP Server"
-tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Stirling PDF directly."
+tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Chronicle PDF directly."
 title = "MCP Server"
 viewApiKeys = "View API keys"
 
@@ -3232,7 +3232,7 @@ showPreferencesBtn = "Gestiona les preferències"
 title = "Com fem servir les galetes"
 
 [cookieBanner.popUp.description]
-1 = "Fem servir galetes i altres tecnologies per fer que Stirling PDF funcioni millor per a vosaltres — ajudant-nos a millorar les nostres eines i a continuar creant funcionalitats que us agradaran."
+1 = "Fem servir galetes i altres tecnologies per fer que Chronicle PDF funcioni millor per a vosaltres — ajudant-nos a millorar les nostres eines i a continuar creant funcionalitats que us agradaran."
 2 = "If you’d rather not, clicking 'No Thanks' will only enable the essential cookies needed to keep things running smoothly."
 
 [cookieBanner.preferencesModal]
@@ -3245,12 +3245,12 @@ subtitle = "Ús de galetes"
 title = "Centre de preferències de consentiment"
 
 [cookieBanner.preferencesModal.analytics]
-description = "Aquestes galetes ens ajuden a entendre com s'utilitzen les nostres eines, de manera que puguem centrar-nos a construir les funcionalitats que la nostra comunitat valora més. Tingueu la seguretat que Stirling PDF no pot i mai rastrejarà el contingut dels documents amb què treballeu."
+description = "Aquestes galetes ens ajuden a entendre com s'utilitzen les nostres eines, de manera que puguem centrar-nos a construir les funcionalitats que la nostra comunitat valora més. Tingueu la seguretat que Chronicle PDF no pot i mai rastrejarà el contingut dels documents amb què treballeu."
 title = "Analítica"
 
 [cookieBanner.preferencesModal.description]
-1 = "Stirling PDF utilitza galetes i tecnologies similars per millorar la vostra experiència i entendre com s'utilitzen les nostres eines. Això ens ajuda a millorar el rendiment, desenvolupar les funcionalitats que més us importen i oferir suport continu als nostres usuaris."
-2 = "Stirling PDF no pot —i mai— rastrejar ni accedir al contingut dels documents que utilitzeu."
+1 = "Chronicle PDF utilitza galetes i tecnologies similars per millorar la vostra experiència i entendre com s'utilitzen les nostres eines. Això ens ajuda a millorar el rendiment, desenvolupar les funcionalitats que més us importen i oferir suport continu als nostres usuaris."
+2 = "Chronicle PDF no pot —i mai— rastrejar ni accedir al contingut dels documents que utilitzeu."
 3 = "La vostra privadesa i confiança són al cor del que fem."
 
 [cookieBanner.preferencesModal.necessary]
@@ -3346,14 +3346,14 @@ message = "No s'ha pogut establir el gestor PDF per defecte"
 title = "Error"
 
 [defaultApp.prompt]
-message = "Fes que Stirling PDF sigui l'aplicació per defecte per obrir fitxers PDF."
+message = "Fes que Chronicle PDF sigui l'aplicació per defecte per obrir fitxers PDF."
 
 [defaultApp.settingsOpened]
-message = "Selecciona Stirling PDF a la configuració del sistema"
+message = "Selecciona Chronicle PDF a la configuració del sistema"
 title = "Configuració oberta"
 
 [defaultApp.success]
-message = "Stirling PDF ara és el teu editor PDF per defecte"
+message = "Chronicle PDF ara és el teu editor PDF per defecte"
 title = "Aplicació per defecte establerta"
 
 [desktopUpdate]
@@ -3369,7 +3369,7 @@ updateFailedMessage = "No s'ha pogut descarregar o instal·lar l'actualització.
 
 [desktopUpdate.blocked]
 docsLink = "Consulta la documentació d'instal·lació"
-message = "Stirling-PDF no té permís per actualitzar-se en aquesta màquina."
+message = "Chronicle-PDF no té permís per actualitzar-se en aquesta màquina."
 title = "Permisos d'administrador necessaris"
 
 [devAirgapped]
@@ -3939,7 +3939,7 @@ title = "Mou a la carpeta"
 [filesPage.origin]
 all = "Totes les fonts"
 cloud = "Núvol"
-cloudHint = "Emmagatzemat al servidor de Stirling"
+cloudHint = "Emmagatzemat al servidor de Chronicle"
 local = "Local"
 localHint = "Només emmagatzemat en aquest navegador"
 shared = "Compartit"
@@ -4203,7 +4203,7 @@ invisible = "Invisible (només metadades)"
 location = "Ubicació:"
 logo = "Logotip:"
 logoHidden = "Sense logotip"
-logoShown = "Es mostra el logotip de Stirling PDF"
+logoShown = "Es mostra el logotip de Chronicle PDF"
 participantCount_one = "{{count}} participant will sign in order"
 participantCount_other = "{{count}} participants will sign in order"
 participants = "Participants"
@@ -4257,7 +4257,7 @@ title = "Signatura seqüencial"
 dismiss = "Tanca el bàner"
 message = "Creeu un compte gratuït per desar la vostra feina, accedir a més funcions i donar suport al projecte."
 signUp = "Registreu-vos gratis"
-title = "Esteu utilitzant Stirling PDF com a convidat!"
+title = "Esteu utilitzant Chronicle PDF com a convidat!"
 
 [home.addAttachments]
 desc = "Afegeix o elimina fitxers incrustats (adjunts) a o d'un PDF"
@@ -4416,7 +4416,7 @@ tags = "combina,uneix,unifica"
 title = "Fusiona"
 
 [home.mobile]
-brandAlt = "Logotip de Stirling PDF"
+brandAlt = "Logotip de Chronicle PDF"
 openFiles = "Obre fitxers"
 swipeHint = "Llisca a l'esquerra o a la dreta per canviar de vista"
 tools = "Eines"
@@ -4455,7 +4455,7 @@ tags = "organitza,reorganitza,reordena"
 title = "Organitza"
 
 [home.pdfTextEditor]
-desc = "Revisa i edita exportacions JSON de Stirling PDF amb edició de text agrupada i regeneració del PDF"
+desc = "Revisa i edita exportacions JSON de Chronicle PDF amb edició de text agrupada i regeneració del PDF"
 tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
 title = "Editor de text PDF"
 
@@ -4641,7 +4641,7 @@ passwordRequired = "Cal contrasenya"
 signIn = "Inicieu sessió"
 validating = "S’està validant la invitació..."
 validationError = "No s’ha pogut validar l’enllaç d’invitació"
-welcome = "Us donem la benvinguda a Stirling PDF"
+welcome = "Us donem la benvinguda a Chronicle PDF"
 welcomeSubtitle = "Completeu la configuració del compte per començar"
 welcomeTitle = "Heu estat convidats!"
 
@@ -4726,7 +4726,7 @@ subtitle = "Amb més d'una dotzena d'eines per censurar, signar, llegir i manipu
 title = "Edita PDF per mostrar/protegir la informació que vulguis"
 
 [login.slides.overview]
-alt = "Visió general de Stirling PDF"
+alt = "Visió general de Chronicle PDF"
 subtitle = "Una suite al núvol centrada en la privadesa per a PDF que et permet convertir, signar, censurar i gestionar documents, amb més de 50 eines potents."
 title = "Tot el que necessites per als teus PDF en un sol lloc."
 
@@ -4844,7 +4844,7 @@ message = "L'autenticació no ha estat correcta. Pots tancar aquesta finestra i 
 title = "Ha fallat l'autenticació"
 
 [oauth.success]
-message = "Pots tancar aquesta finestra i tornar a Stirling PDF."
+message = "Pots tancar aquesta finestra i tornar a Chronicle PDF."
 title = "Autenticació correcta"
 
 [oauthConsent]
@@ -4857,17 +4857,17 @@ loadFailed = "This authorisation request is invalid or has expired. Close this t
 loading = "Loading authorisation request..."
 missingId = "Missing authorisation request. Start the connection from your app and try again."
 redirecting = "Returning you to the app..."
-requesting = "{{app}} wants to access your Stirling PDF account"
+requesting = "{{app}} wants to access your Chronicle PDF account"
 scopesIntro = "This will allow {{app}} to:"
 signedInAs = "Signed in as {{name}}"
 signInButton = "Sign in to continue"
-signInPrompt = "Sign in to your Stirling PDF account to continue connecting the app."
+signInPrompt = "Sign in to your Chronicle PDF account to continue connecting the app."
 title = "Authorise access"
 unknownApp = "A third-party application"
 
 [oauthConsent.access]
 actAsYou = "Act as you - everything {{app}} does runs under your account and counts towards your usage"
-tools = "Use your Stirling PDF tools on your behalf - convert, edit, sign, secure and process your documents"
+tools = "Use your Chronicle PDF tools on your behalf - convert, edit, sign, secure and process your documents"
 
 [oauthConsent.scope]
 email = "See your email address"
@@ -5008,7 +5008,7 @@ userTitle = "Resum del pla"
 [onboarding.saas.freeEditor]
 freeLine = "The editor is now <free>completely free</free>."
 premium = "We've added loads of new features, including <strong>Policies</strong> and <strong>Agent Chat</strong>."
-title = "Welcome to Stirling"
+title = "Welcome to Chronicle"
 
 [onboarding.saas.team]
 addButton = "Add"
@@ -5036,12 +5036,12 @@ seePlans = "Veure plans →"
 upgrade = "Actualitza ara →"
 
 [onboarding.tourOverview]
-body = "Stirling PDF V2 inclou desenes d'eines i un disseny renovat. Fes una visita ràpida per veure què ha canviat i on trobar les funcions que necessites."
+body = "Chronicle PDF V2 inclou desenes d'eines i un disseny renovat. Fes una visita ràpida per veure què ha canviat i on trobar les funcions que necessites."
 title = "Resum de la visita"
 
 [onboarding.welcomeSlide]
-body = "Stirling PDF ara està llest per a equips de totes les mides. Aquesta actualització inclou un disseny nou, potents capacitats d'administració i la funció més demanada: <strong>Editar text</strong>."
-title = "Benvingut a Stirling"
+body = "Chronicle PDF ara està llest per a equips de totes les mides. Aquesta actualització inclou un disseny nou, potents capacitats d'administració i la funció més demanada: <strong>Editar text</strong>."
+title = "Benvingut a Chronicle"
 
 [onboarding.whatsNew]
 activeFilesView = "Utilitza Fitxers actius per veure tot el que tens obert i triar amb què treballar."
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Stirling PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5893,7 +5893,7 @@ upToFiveUsers = "Fins a 5 usuaris"
 usageTrackingPrometheus = "Seguiment d'ús i Prometheus"
 
 [plan.licenseWarning]
-body = "Tens {{total}} usuaris, però el nivell gratuït només admet {{limit}} per servidor. Actualitza per mantenir Stirling PDF funcionant sense problemes."
+body = "Tens {{total}} usuaris, però el nivell gratuït només admet {{limit}} per servidor. Actualitza per mantenir Chronicle PDF funcionant sense problemes."
 cta = "Veure plans"
 overLimit = "més de {{limit}}"
 title = "S'ha assolit el límit gratuït d'autoallotjats"
@@ -6192,12 +6192,12 @@ comingSoon = "Properament"
 [portal.accountLink.card]
 billingNote = "El processament desatès es factura al moneder de la teva organització."
 eyebrow = "Enllaç del compte"
-linkButton = "Enllaça el teu compte de Stirling"
+linkButton = "Enllaça el teu compte de Chronicle"
 linked = "Enllaçat"
 linkedAs = "Enllaçat com a {{name}}."
 linkedGeneric = "Aquesta instància està enllaçada."
 notLinked = "No enllaçat"
-title = "Enllaça aquesta organització amb el seu compte de Stirling"
+title = "Enllaça aquesta organització amb el seu compte de Chronicle"
 unlink = "Desenllaça"
 
 [portal.accountLink.card.error]
@@ -6242,7 +6242,7 @@ never = "mai"
 
 [portal.accountLink.modal]
 linkSubtitle = "Inicia la sessió al compte al qual s'hauria de facturar aquest servidor."
-linkTitle = "Enllaça el teu compte de Stirling"
+linkTitle = "Enllaça el teu compte de Chronicle"
 reauthSubtitle = "La sessió ha caducat: torna a iniciar la sessió al teu compte de Stirling. La instància continua enllaçada."
 reauthTitle = "Torna a iniciar la sessió"
 simulateSignIn = "Simula l'inici de sessió (dev)"
@@ -6439,9 +6439,9 @@ viewAriaLabel = "Mostra la factura {{number}} a Stripe"
 viewLink = "Mostra ↗"
 
 [portal.billing.linkPrompt]
-cta = "Enllaça el compte de Stirling"
+cta = "Enllaça el compte de Chronicle"
 description = "L'edició manual de PDF — visualitzar, signar, combinar, dividir, afegir marca d'aigua, comprimir, convertir, OCR manual — sempre és gratuïta, estigui enllaçada o no. Enllaça per reclamar 500 PDF gratuïts de processament mesurat (automatització, AI i l'API); quan en necessitis més, activa el pla Processor i paga només pel que utilitzis."
-title = "Enllaça el teu compte de Stirling"
+title = "Enllaça el teu compte de Chronicle"
 
 [portal.billing.paymentMethod]
 billedMonthly = "Facturat mensualment"
@@ -6723,7 +6723,7 @@ time = "Hora"
 user = "Usuari"
 
 [portal.editorAdmin]
-subtitle = "Desplega l'Editor de Stirling PDF, vincula instàncies self-hosted a la teva organització i opera la flota en execució — objectius, salut, credencials i activació offline en un sol lloc."
+subtitle = "Desplega l'Editor de Chronicle PDF, vincula instàncies self-hosted a la teva organització i opera la flota en execució — objectius, salut, credencials i activació offline en un sol lloc."
 title = "Desplegament de l'Editor"
 
 [portal.editorAdmin.health.columns]
@@ -6809,7 +6809,7 @@ title = "Alguna cosa ha anat malament en aquesta pàgina"
 [portal.home.editor]
 activeUsers = "{{n}} actius"
 invite = "Convida companys d'equip"
-name = "Stirling PDF Editor"
+name = "Chronicle PDF Editor"
 open = "Obre al navegador"
 updated = "actualitzat {{time}}"
 
@@ -6889,7 +6889,7 @@ usageMonth = "Ús aquest mes"
 usageToday = "Ús avui"
 
 [portal.infrastructure.apiKeys.empty]
-description = "Crea una clau amb abast per començar a cridar la Stirling API."
+description = "Crea una clau amb abast per començar a cridar la Chronicle API."
 title = "Encara no hi ha claus API"
 
 [portal.infrastructure.audit]
@@ -7059,7 +7059,7 @@ label = "Conserva la teva pròpia clau (HYOK)"
 
 [portal.infrastructure.security.access.stirling]
 description = "Stirling gestiona les claus de xifratge. El més senzill — zero operacions de claus per part teva."
-label = "Claus conservades per Stirling"
+label = "Claus conservades per Chronicle"
 
 [portal.infrastructure.security.accessPolicy]
 heading = "Política d'accés a documents"
@@ -7854,7 +7854,7 @@ appEditor = "Editor"
 appProcessor = "Processador"
 brandSuffix = "Stirling Processor"
 docsCount = "{{docs}} docs"
-linkAccount = "Enllaça el compte de Stirling"
+linkAccount = "Enllaça el compte de Chronicle"
 planEditor = "Pla Editor"
 planEnterprise = "Pla Enterprise"
 planProcessor = "Pla Processor"
@@ -8022,7 +8022,7 @@ summary = "Posseeix un equip — en gestiona els recursos dels membres i les con
 3 = "Tot el que pot fer un membre"
 
 [portal.welcome]
-ariaLabel = "Benvingut a Stirling PDF"
+ariaLabel = "Benvingut a Chronicle PDF"
 badge = "Open-source"
 installEditor = "Instal·la l'editor"
 inviteTeammates = "Convida companys d'equip"
@@ -8030,7 +8030,7 @@ openInBrowser = "Obre al navegador"
 perks = "Gratuït per sempre · Autoallotjable"
 subtitle = "L'editor PDF més segur del món és gratuït per a equips de totes les mides. Inclou més de 60 operacions PDF i SSO."
 title = "Benvingut a"
-titleAccent = "Stirling PDF"
+titleAccent = "Chronicle PDF"
 
 [printFile]
 title = "Imprimir Fitxer"
@@ -8721,8 +8721,8 @@ hideTools = "Amaga les eines no disponibles ▴"
 messageNoFallback = "Les eines no estaran disponibles fins que el teu servidor torni en línia."
 messageWithFallback = "Algunes eines requereixen connexió al servidor."
 showTools = "Mostra les eines no disponibles ▾"
-title = "No es pot accedir al teu servidor de Stirling-PDF"
-toolNotAvailableLocally = "El teu servidor de Stirling-PDF és fora de línia i \"{{endpoint}}\" no està disponible al backend local."
+title = "No es pot accedir al teu servidor de Chronicle-PDF"
+toolNotAvailableLocally = "El teu servidor de Chronicle-PDF és fora de línia i \"{{endpoint}}\" no està disponible al backend local."
 
 [session]
 expired = "La teva sessió ha expirat. Si us plau, actualitza la pàgina i torna a intentar-ho."
@@ -8797,7 +8797,7 @@ autoUnzipFileLimitDescription = "Nombre màxim de fitxers a extreure del ZIP"
 autoUnzipFileLimitTooltip = "Només descomprimeix si el ZIP conté aquest nombre de fitxers o menys. Augmenta'l per extreure ZIPs més grans."
 autoUnzipTooltip = "Descomprimeix automàticament els fitxers ZIP retornats per operacions de l'API. Desactiva-ho per mantenir els fitxers ZIP intactes. Això no afecta els fluxos d'automatització."
 defaultPdfEditor = "Editor PDF per defecte"
-defaultPdfEditorActive = "Stirling PDF és el teu editor PDF per defecte"
+defaultPdfEditorActive = "Chronicle PDF és el teu editor PDF per defecte"
 defaultPdfEditorChecking = "Comprovant..."
 defaultPdfEditorInactive = "Una altra aplicació està establerta per defecte"
 defaultPdfEditorSet = "Ja és per defecte"
@@ -8858,7 +8858,7 @@ updateBehavior = "Comportament d'actualització"
 updateBehaviorDescription = "Tria si vols que es pregunti abans d'instal·lar actualitzacions, instal·lar-les automàticament o ometre completament les comprovacions d'actualitzacions."
 updateBehaviorError = "No s'ha pogut canviar el comportament d'actualització"
 updateBehaviorErrorLocked = "Aquesta configuració està bloquejada pel teu administrador."
-updateBehaviorLockedDescription = "El teu administrador ha configurat com Stirling-PDF gestiona les actualitzacions en aquesta màquina. Contacta-hi per canviar-ho."
+updateBehaviorLockedDescription = "El teu administrador ha configurat com Chronicle-PDF gestiona les actualitzacions en aquesta màquina. Contacta-hi per canviar-ho."
 updateBehaviorSaved = "S'ha desat el comportament d'actualització."
 versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 viewDetails = "Veure detalls"
@@ -9068,7 +9068,7 @@ emptyUsername = "Introdueix el teu nom d'usuari"
 oauthFailed = "Ha fallat l'inici de sessió OAuth. Torna-ho a provar."
 
 [setup.saas]
-title = "Inicia sessió a Stirling"
+title = "Inicia sessió a Chronicle"
 
 [setup.selfhosted]
 changeServerLocked = "La teva organització ha restringit aquesta aplicació a un servidor específic"
@@ -9106,7 +9106,7 @@ step3 = "Reinicieu el servidor"
 title = "Inici de sessió no habilitat"
 
 [setup.server.url]
-description = "Introdueix la URL completa del teu servidor autoallotjat de Stirling PDF"
+description = "Introdueix la URL completa del teu servidor autoallotjat de Chronicle PDF"
 label = "URL del servidor"
 
 [sharedSign]
@@ -9342,7 +9342,7 @@ pleaseFillAllFields = "Ompliu tots els camps"
 signUp = "Registra't"
 signUpWith = "Sign up with"
 skip = "Skip"
-subtitle = "Uniu-vos a Stirling PDF per començar"
+subtitle = "Uniu-vos a Chronicle PDF per començar"
 title = "Crea un compte"
 unexpectedError = "Error inesperat: {{message}}"
 
@@ -9569,7 +9569,7 @@ download = "Descarrega"
 downloaded = "Baixat"
 downloadFailed = "No es pot descarregar aquest fitxer."
 downloadsCount = "Descàrregues: {{count}}"
-emailWarningBody = "Això sembla una adreça de correu electrònic. Si aquesta persona no és usuària de Stirling PDF, no podrà accedir al fitxer."
+emailWarningBody = "Això sembla una adreça de correu electrònic. Si aquesta persona no és usuària de Chronicle PDF, no podrà accedir al fitxer."
 emailWarningConfirm = "Comparteix igualment"
 emailWarningTitle = "Adreça de correu electrònic"
 errorTitle = "No s'ha pogut compartir"
@@ -9600,7 +9600,7 @@ manageTitle = "Gestiona la compartició"
 noActivity = "Encara no hi ha activitat."
 noLinks = "Encara no hi ha enllaços de compartició actius."
 noSharedUsers = "Encara no hi ha usuaris amb accés."
-openInApp = "Obre a Stirling PDF"
+openInApp = "Obre a Chronicle PDF"
 ownerLabel = "Propietari"
 ownerUnknown = "Desconegut"
 removeLink = "Elimina l'enllaç"
@@ -9654,7 +9654,7 @@ updateButton = "Actualitza al servidor"
 uploadButton = "Puja al servidor"
 
 [survey]
-title = "Stirling-PDF Survey"
+title = "Chronicle-PDF Survey"
 
 [swagger]
 tags = "api,documentació,swagger,endpoints,desenvolupament"
@@ -9782,7 +9782,7 @@ favorites = "Preferits"
 heading = "Totes les eines (vista a pantalla completa)"
 noResults = "Prova d'ajustar la cerca o activa/desactiva les descripcions per trobar el que necessites."
 recommended = "Recomanat"
-selfHostedOffline = "Requereix el teu servidor de Stirling-PDF (actualment fora de línia):"
+selfHostedOffline = "Requereix el teu servidor de Chronicle-PDF (actualment fora de línia):"
 showDetails = "Mostra els detalls"
 unavailable = "Desactivat per l'administrador del servidor:"
 unavailableDependency = "No disponible: falta l'eina necessària al servidor:"
@@ -9791,7 +9791,7 @@ unfavorite = "Elimina dels preferits"
 [toolPanel.modePrompt]
 chooseFullscreen = "Utilitza el mode de pantalla completa"
 chooseSidebar = "Utilitza el mode de barra lateral"
-description = "Previsualitza ambdós dissenys i decideix com vols explorar les eines de Stirling PDF."
+description = "Previsualitza ambdós dissenys i decideix com vols explorar les eines de Chronicle PDF."
 dismiss = "Potser més tard"
 fullscreenDescription = "Navega per totes les eines en un catàleg que cobreix l'espai de treball fins que en triïs una."
 fullscreenTitle = "Mode de pantalla completa - (antic)"
@@ -9859,7 +9859,7 @@ loadingDetailedInfo = "Carregant informació detallada..."
 migrationGuide = "Guia de migració"
 migrationGuides = "Guies de migració"
 migrationGuidesDesc = "Revisa els canvis importants abans d'actualitzar."
-modalSubtitle = "Una nova versió de Stirling PDF està llesta per instal·lar-se."
+modalSubtitle = "Una nova versió de Chronicle PDF està llesta per instal·lar-se."
 modalTitle = "Actualització disponible"
 notes = "Notes"
 releaseNotes = "Notes de llançament"
@@ -9883,7 +9883,7 @@ urgent = "Urgent"
 attentionBody = "L'administrador ha d'iniciar sessió per veure més informació. Contacta-hi immediatament."
 attentionBodyAdmin = "Revisa els requisits de llicència per mantenir aquest servidor complint la normativa."
 attentionTitle = "Aquest servidor requereix atenció d'administrador"
-message = "Treu el màxim rendiment de Stirling PDF amb usuaris il·limitats i funcions avançades"
+message = "Treu el màxim rendiment de Chronicle PDF amb usuaris il·limitats i funcions avançades"
 seeInfo = "Veure informació"
 title = "Actualitza al pla Server"
 upgradeButton = "Actualitza ara"
@@ -10000,7 +10000,7 @@ authWeb = "Contrasenya"
 create = "Crea un compte"
 createSubtitle = "Crea un compte autoallotjat amb una contrasenya o SSO."
 createTitle = "Crea un compte"
-editorDesc = "Edita PDFs a l'editor Stirling PDF. Tothom ho té."
+editorDesc = "Edita PDFs a l'editor Chronicle PDF. Tothom ho té."
 email = "Adreça electrònica"
 emailError = "Introdueix una adreça electrònica vàlida"
 emailPlaceholder2 = "name@company.com"
@@ -10138,7 +10138,7 @@ downloads = "Descàrregues"
 entryLabel = "Resum de la signatura"
 filesEvaluated_one = "{{count}} fitxer avaluat"
 filesEvaluated_other = "{{count}} fitxers avaluats"
-footer = "Validat amb Stirling PDF"
+footer = "Validat amb Chronicle PDF"
 generatedAt = "Generat"
 noPdf = "L'informe PDF estarà disponible després d'una validació correcta."
 page = "Pàgina"

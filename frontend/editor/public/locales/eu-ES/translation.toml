@@ -57,7 +57,7 @@ keepWorking = "Lanean jarraitu"
 loading = "Kargatzen..."
 loginAgreementAccept = "Onartu"
 loginAgreementDecline = "Ukatu"
-loginAgreementProvider = "Ohar hau zure administratzaileak eman du, ez Stirling PDF Inc.-ek."
+loginAgreementProvider = "Ohar hau zure administratzaileak eman du, ez Chronicle PDF Inc.-ek."
 loginAgreementTitle = "Saio-hasierako hitzarmena"
 logOut = "Saioa itxi"
 marginTooltip = "Orri-zenbakiaren eta orrialdearen ertzen arteko distantzia."
@@ -633,9 +633,9 @@ description = "Konfiguratu aldi baterako fitxategien biltegiratzea eta garbiketa
 label = "Aldi baterako fitxategien kudeaketa"
 
 [admin.settings.advanced.tempFileManagement.baseTmpDir]
-description = "Aldi baterako fitxategietarako oinarrizko direktorioa (utzi hutsik lehenetsia erabiltzeko: java.io.tmpdir/stirling-pdf)"
+description = "Aldi baterako fitxategietarako oinarrizko direktorioa (utzi hutsik lehenetsia erabiltzeko: java.io.tmpdir/Chronicle-PDF)"
 label = "Oinarrizko aldi baterako direktorioa"
-placeholder = "Lehenetsia: java.io.tmpdir/stirling-pdf"
+placeholder = "Lehenetsia: java.io.tmpdir/Chronicle-PDF"
 
 [admin.settings.advanced.tempFileManagement.cleanupIntervalMinutes]
 description = "Zenbatero exekutatu garbiketa (minututan)"
@@ -919,11 +919,11 @@ description = "Konfiguratu aukerako eginbideak eta funtzionalitatea."
 title = "Eginbideak"
 
 [admin.settings.features.serverCertificate]
-description = "Konfiguratu zerbitzarian ziurtagiriak sortzea \"Stirling-PDFekin sinatu\" funtzionalitaterako"
+description = "Konfiguratu zerbitzarian ziurtagiriak sortzea \"Chronicle-PDFekin sinatu\" funtzionalitaterako"
 label = "Zerbitzari-ziurtagiria"
 
 [admin.settings.features.serverCertificate.enabled]
-description = "Gaitu zerbitzari-ziurtagiria \"Stirling-PDFekin sinatu\" aukerarako"
+description = "Gaitu zerbitzari-ziurtagiria \"Chronicle-PDFekin sinatu\" aukerarako"
 label = "Zerbitzari-ziurtagiria gaitu"
 
 [admin.settings.features.serverCertificate.organizationName]
@@ -1071,7 +1071,7 @@ description = "Cookieen politikara doan URLa edo fitxategi-izena"
 label = "Cookieen politika"
 
 [admin.settings.legal.disclaimer]
-message = "Dokumentu legal hauek pertsonalizatuta, erantzukizun osoa hartzen duzu indarrean dauden lege eta araudi guztiekin bat etortzea bermatzeko, GDPR eta beste EBko datu-babes eskakizunak barne baina ez soilik. Ezarpen hauek soilik aldatu: (1) instantzia pertsonal/pribatua erabiltzen baduzu, (2) EBko jurisdikziotik kanpo bazaude eta zure betebehar legalak ulertzen badituzu, edo (3) aholku legal egokia eskuratu baduzu eta erabiltzaileen datu eta lege-betetze guztien erantzukizun esklusiboa onartzen baduzu. Stirling-PDF eta bere garatzaileek ez dute zure betebehar legalen erantzukizunik hartzen."
+message = "Dokumentu legal hauek pertsonalizatuta, erantzukizun osoa hartzen duzu indarrean dauden lege eta araudi guztiekin bat etortzea bermatzeko, GDPR eta beste EBko datu-babes eskakizunak barne baina ez soilik. Ezarpen hauek soilik aldatu: (1) instantzia pertsonal/pribatua erabiltzen baduzu, (2) EBko jurisdikziotik kanpo bazaude eta zure betebehar legalak ulertzen badituzu, edo (3) aholku legal egokia eskuratu baduzu eta erabiltzaileen datu eta lege-betetze guztien erantzukizun esklusiboa onartzen baduzu. Chronicle-PDF eta bere garatzaileek ez dute zure betebehar legalen erantzukizunik hartzen."
 title = "Erantzukizun legalaren abisua"
 
 [admin.settings.legal.impressum]
@@ -1158,7 +1158,7 @@ description = "SMTP autentifikaziorako erabiltzaile-izena"
 label = "SMTP erabiltzaile-izena"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Stirling API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
 description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
@@ -1202,12 +1202,12 @@ label = "JWKS URL (optional)"
 placeholder = "Auto-discovered from issuer"
 
 [admin.settings.mcp.mode]
-description = "OAuth needs an external IdP. API key uses a Stirling per-user API key (X-API-KEY) - simplest for self-host."
+description = "OAuth needs an external IdP. API key uses a Chronicle per-user API key (X-API-KEY) - simplest for self-host."
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
 description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
-label = "Require an existing Stirling account"
+label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
 description = "This server's public /mcp URL. Tokens must list it in their audience (RFC 8707) or they are rejected."
@@ -1218,7 +1218,7 @@ description = "Require mcp.tools.read for read ops and mcp.tools.write for write
 label = "Enforce OAuth scopes"
 
 [admin.settings.mcp.usernameClaim]
-description = "JWT claim matched against a Stirling username (e.g. sub, email, preferred_username)."
+description = "JWT claim matched against a Chronicle username (e.g. sub, email, preferred_username)."
 label = "Username claim"
 
 [admin.settings.plan.noData]
@@ -1539,7 +1539,7 @@ description = "Gaituta dagoenean, zerrendatutako erabiltzaile IDek bakarrik erab
 label = "Baimendu erabiltzaile ID zehatzak"
 
 [admin.settings.telegram.enabled]
-description = "Baimendu erabiltzaileek Stirling PDFekin elkarreragitea konfiguratutako Telegram bot-aren bidez."
+description = "Baimendu erabiltzaileek Chronicle PDFekin elkarreragitea konfiguratutako Telegram bot-aren bidez."
 label = "Gaitu Telegram bot-a"
 
 [admin.settings.telegram.feedback]
@@ -1612,20 +1612,20 @@ settingsOverview = "Hau da <strong>Ezarpenen panela</strong>. Administrazio-ezar
 systemCustomization = "UI pertsonalizatzeko modu ugari ditugu: <strong>Sistemaren ezarpenek</strong> aplikazioaren izena eta hizkuntzak aldatzea uzten dute, <strong>Ezaugarriek</strong> zerbitzariaren ziurtagirien kudeaketa ahalbidetzen dute, eta <strong>Endpoints</strong> atalak erabiltzaileentzako tresna zehatzak gaitu edo desgaitu ditzake."
 teamsAndUsers = "Kudeatu hemen <strong>Taldeak</strong> eta erabiltzaile indibidualak. Erabiltzaile berriak e-postaz, partekatzeko esteken bidez gonbidatu edo zuk zeuk kontu pertsonalizatuak sor ditzakezu."
 welcome = "Ongi etorri <strong>Administrazio-birara</strong>! Azter ditzagun sistema-administratzaileentzako ezaugarri eta ezarpen boteretsuak."
-wrapUp = "Hori da administrazio-bira! Erakundeei egokitutako eta pertsonalizagarriak diren ezaugarriak ezagutu dituzu Stirling PDF irtenbide indartsu bihurtzen dutenak. Sar zaitez bira honetara edozein unetan <strong>Laguntza</strong> menutik."
+wrapUp = "Hori da administrazio-bira! Erakundeei egokitutako eta pertsonalizagarriak diren ezaugarriak ezagutu dituzu Chronicle PDF irtenbide indartsu bihurtzen dutenak. Sar zaitez bira honetara edozein unetan <strong>Laguntza</strong> menutik."
 
 [adminUserSettings]
 admin = "Admin"
 title = "Erabiltzailearen Ezarpenen Kontrolak"
 
 [agents]
-stirling_name = "Stirling"
+stirling_name = "Chronicle"
 
 [analytics]
 learnMore = "Argibide gehiago"
-paragraph1 = "Stirling PDF-k aukerazko analitikak ditu produktua hobetzen laguntzeko. Ez dugu informazio pertsonalik edo fitxategi-edukirik jarraitzen."
-paragraph2 = "Mesedez, kontuan hartu analitikak gaitzea Stirling-PDF hazten laguntzeko eta gure erabiltzaileak hobeto ulertzeko."
-title = "Stirling PDF hobetzea nahi duzu?"
+paragraph1 = "Chronicle PDF-k aukerazko analitikak ditu produktua hobetzen laguntzeko. Ez dugu informazio pertsonalik edo fitxategi-edukirik jarraitzen."
+paragraph2 = "Mesedez, kontuan hartu analitikak gaitzea Chronicle-PDF hazten laguntzeko eta gure erabiltzaileak hobeto ulertzeko."
+title = "Chronicle PDF hobetzea nahi duzu?"
 
 [annotate]
 tags = "annotate,highlight,draw,markup,comment,notes,review,redline,feedback,markup tools,sticky notes,shapes,arrows,text box,freehand"
@@ -2558,7 +2558,7 @@ bullet1 = "Onartzen ditu PEM, PKCS12, JKS eta zerbitzariaren ziurtagiri formatua
 bullet2 = "Aukera sinadura PDFan erakusteko edo ezkutatzeko"
 bullet3 = "Gehitu arrazoia, kokapena eta sinatzailearen izena"
 bullet4 = "Aukeratu zein orritan jarri sinadura ikusgarriak"
-bullet5 = "Erabili zerbitzariaren ziurtagiria 'Sinatu Stirling-PDF-rekin' aukera errazarentzat"
+bullet5 = "Erabili zerbitzariaren ziurtagiria 'Sinatu Chronicle-PDF-rekin' aukera errazarentzat"
 text = "PDF bat sinatzeko, ziurtagiri digital bat behar duzu (PEM, PKCS12 edo JKS modukoa). Sinadura dokumentuan ikusgai egitea edo segurtasunerako ikusezin mantentzea aukera dezakezu."
 title = "Sinadurak gehitzea"
 
@@ -2739,7 +2739,7 @@ copy = "Kopiatu mezua"
 
 [chat.fab]
 close = "Close chat"
-open = "Open Stirling AI assistant"
+open = "Open Chronicle AI assistant"
 
 [chat.header]
 agentMenu = "Stirling agentearen aukerak"
@@ -3073,13 +3073,13 @@ upgradeButton = "Bertsio-berritu kontua"
 [config.apiKeys]
 copyKeyAriaLabel = "API gakoa kopiatu"
 description = "Stirlingen PDF tresna-multzora sartzeko zure API gakoa. Kopiatu zure proiektuara edo berritu berri bat sortzeko."
-docsDescription = "Ikasi gehiago Stirling PDFrekin integrazioari buruz:"
+docsDescription = "Ikasi gehiago Chronicle PDFrekin integrazioari buruz:"
 docsLink = "API dokumentazioa"
 docsTitle = "API dokumentazioa"
 generateError = "Ezin izan dugu zure API gakoa sortu."
 goToAccount = "Joan kontura"
 guestInfo = "Gonbidatu erabiltzaileek ez dute API gakorik jasotzen. Sortu kontu bat zure aplikazioetan erabil dezakezun API gakoa lortzeko."
-intro = "Erabili zure API gakoa Stirling PDFren prozesatzeko gaitasunetara programatikoki sartzeko."
+intro = "Erabili zure API gakoa Chronicle PDFren prozesatzeko gaitasunetara programatikoki sartzeko."
 label = "API gakoa"
 publicKeyAriaLabel = "API gako publikoa"
 refreshAriaLabel = "API gakoa berritu"
@@ -3103,10 +3103,10 @@ title = "API gakoak berritu"
 warning = "⚠️ Abisua: Ekintza honek API gako berriak sortuko ditu eta aurreko gakoak baliogabe utziko ditu."
 
 [config.mcp]
-description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Stirling PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
-guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Stirling PDF tools on your behalf."
+description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Chronicle PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
+guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Chronicle PDF tools on your behalf."
 navLabel = "MCP Server"
-tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Stirling PDF directly."
+tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Chronicle PDF directly."
 title = "MCP Server"
 viewApiKeys = "View API keys"
 
@@ -3232,7 +3232,7 @@ showPreferencesBtn = "Kudeatu hobespenak"
 title = "Cookieak nola erabiltzen ditugu"
 
 [cookieBanner.popUp.description]
-1 = "Cookieak eta beste teknologiak erabiltzen ditugu Stirling PDF zuretzat hobeto funtziona dadin—gure tresnak hobetzen eta gustuko izango dituzun ezaugarriak eraikitzen jarraitzen laguntzen digute."
+1 = "Cookieak eta beste teknologiak erabiltzen ditugu Chronicle PDF zuretzat hobeto funtziona dadin—gure tresnak hobetzen eta gustuko izango dituzun ezaugarriak eraikitzen jarraitzen laguntzen digute."
 2 = "If you’d rather not, clicking 'No Thanks' will only enable the essential cookies needed to keep things running smoothly."
 
 [cookieBanner.preferencesModal]
@@ -3245,12 +3245,12 @@ subtitle = "Cookieen erabilera"
 title = "Baimen-hobespenen zentroa"
 
 [cookieBanner.preferencesModal.analytics]
-description = "Cookie hauek gure tresnak nola erabiltzen diren ulertzen laguntzen digute, gure komunitateak baloratzen dituen ezaugarriak eraikitzera bideratu ahal izateko. Ziur egon—Stirling PDFk ezin du eta ez du inoiz jarraituko lantzen dituzun dokumentuen edukia."
+description = "Cookie hauek gure tresnak nola erabiltzen diren ulertzen laguntzen digute, gure komunitateak baloratzen dituen ezaugarriak eraikitzera bideratu ahal izateko. Ziur egon—Chronicle PDFk ezin du eta ez du inoiz jarraituko lantzen dituzun dokumentuen edukia."
 title = "Analitika"
 
 [cookieBanner.preferencesModal.description]
-1 = "Stirling PDFk cookieak eta antzeko teknologiak erabiltzen ditu zure esperientzia hobetzeko eta gure tresnak nola erabiltzen diren ulertzeko. Honek errendimendua hobetzen eta axola zaizkizun ezaugarriak garatzen laguntzen digu, eta erabiltzaileei etengabeko laguntza ematen die."
-2 = "Stirling PDF ezin da—eta ez du inoiz egingo—zuri erabiltzen dituzun dokumentuen edukia jarraitu edo atzitu."
+1 = "Chronicle PDFk cookieak eta antzeko teknologiak erabiltzen ditu zure esperientzia hobetzeko eta gure tresnak nola erabiltzen diren ulertzeko. Honek errendimendua hobetzen eta axola zaizkizun ezaugarriak garatzen laguntzen digu, eta erabiltzaileei etengabeko laguntza ematen die."
+2 = "Chronicle PDF ezin da—eta ez du inoiz egingo—zuri erabiltzen dituzun dokumentuen edukia jarraitu edo atzitu."
 3 = "Zure pribatutasuna eta konfiantza gure lanaren muinean daude."
 
 [cookieBanner.preferencesModal.necessary]
@@ -3346,14 +3346,14 @@ message = "Ezin izan da PDF kudeatzaile lehenetsia ezarri"
 title = "Errorea"
 
 [defaultApp.prompt]
-message = "Egin Stirling PDF PDF fitxategiak irekitzeko zure aplikazio lehenetsia."
+message = "Egin Chronicle PDF PDF fitxategiak irekitzeko zure aplikazio lehenetsia."
 
 [defaultApp.settingsOpened]
-message = "Hautatu Stirling PDF sistemaren ezarpenetan, mesedez"
+message = "Hautatu Chronicle PDF sistemaren ezarpenetan, mesedez"
 title = "Ezarpenak ireki dira"
 
 [defaultApp.success]
-message = "Stirling PDF orain zure PDF editore lehenetsia da"
+message = "Chronicle PDF orain zure PDF editore lehenetsia da"
 title = "Aplikazio lehenetsia ezarrita"
 
 [desktopUpdate]
@@ -3369,7 +3369,7 @@ updateFailedMessage = "Ezin izan da eguneratzea deskargatu edo instalatu."
 
 [desktopUpdate.blocked]
 docsLink = "Ikusi instalazioaren dokumentazioa"
-message = "Stirling-PDFk ez du baimenik makina honetan bere burua eguneratzeko."
+message = "Chronicle-PDFk ez du baimenik makina honetan bere burua eguneratzeko."
 title = "Administratzaile-baimenak behar dira"
 
 [devAirgapped]
@@ -4203,7 +4203,7 @@ invisible = "Ikusezina (metadatuak soilik)"
 location = "Kokapena:"
 logo = "Logotipoa:"
 logoHidden = "Logotiporik ez"
-logoShown = "Stirling PDF logotipoa erakusten da"
+logoShown = "Chronicle PDF logotipoa erakusten da"
 participantCount_one = "{{count}} participant will sign in order"
 participantCount_other = "{{count}} participants will sign in order"
 participants = "Parte-hartzaileak"
@@ -4257,7 +4257,7 @@ title = "Sinadura sekuentziala"
 dismiss = "Baztertu pankarta"
 message = "Sortu doako kontu bat zure lana gordetzeko, ezaugarri gehiago eskuratzeko eta proiektua babesteko."
 signUp = "Izena eman doan"
-title = "Stirling PDF gonbidatu gisa erabiltzen ari zara!"
+title = "Chronicle PDF gonbidatu gisa erabiltzen ari zara!"
 
 [home.addAttachments]
 desc = "Gehitu edo kendu txertatutako fitxategiak (eranskinak) PDF batean"
@@ -4416,7 +4416,7 @@ tags = "batu,elkartu,bat egin"
 title = "Elkartu"
 
 [home.mobile]
-brandAlt = "Stirling PDF logotipoa"
+brandAlt = "Chronicle PDF logotipoa"
 openFiles = "Ireki fitxategiak"
 swipeHint = "Egin hatz-keinua ezkerrera edo eskuinera ikuspegiak aldatzeko"
 tools = "Tresnak"
@@ -4455,7 +4455,7 @@ tags = "antolatu,berrordenatu,ordena aldatu"
 title = "Antolatzailea"
 
 [home.pdfTextEditor]
-desc = "Berrikusi eta editatu Stirling PDF JSON esportazioak taldekatutako testu-edizioarekin eta PDF birsorkuntzarekin"
+desc = "Berrikusi eta editatu Chronicle PDF JSON esportazioak taldekatutako testu-edizioarekin eta PDF birsorkuntzarekin"
 tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
 title = "PDF testu-editorea"
 
@@ -4641,7 +4641,7 @@ passwordRequired = "Pasahitza beharrezkoa da"
 signIn = "Hasi saioa"
 validating = "Gonbidapena baliozkotzen..."
 validationError = "Ezin izan da gonbidapen-esteka baliozkotu"
-welcome = "Ongi etorri Stirling PDFra"
+welcome = "Ongi etorri Chronicle PDFra"
 welcomeSubtitle = "Amaitu zure kontuaren konfigurazioa hasteko"
 welcomeTitle = "Gonbidapena jaso duzu!"
 
@@ -4726,7 +4726,7 @@ subtitle = "Dozenaka tresnarekin PDFak zentsuratu, sinatu, irakurri eta manipula
 title = "Editatu PDFak nahi duzun informazioa bistaratu edo babesteko"
 
 [login.slides.overview]
-alt = "Stirling PDF ikuspegi orokorra"
+alt = "Chronicle PDF ikuspegi orokorra"
 subtitle = "Pribatutasuna lehenesten duen hodeiko suitea, PDFak bihurtu, sinatu, zentsuratu eta kudeatzeko, eta 50+ tresna indartsu gehiagorekin."
 title = "Zure PDF behar guztietarako gune bakarra."
 
@@ -4844,7 +4844,7 @@ message = "Autentifikazioa ez da ongi burutu. Leiho hau itxi eta saiatu berriro.
 title = "Autentifikazioak huts egin du"
 
 [oauth.success]
-message = "Leiho hau itxi eta Stirling PDF-era itzul zaitezke."
+message = "Leiho hau itxi eta Chronicle PDF-era itzul zaitezke."
 title = "Autentifikazioa ongi burutu da"
 
 [oauthConsent]
@@ -4857,17 +4857,17 @@ loadFailed = "This authorisation request is invalid or has expired. Close this t
 loading = "Loading authorisation request..."
 missingId = "Missing authorisation request. Start the connection from your app and try again."
 redirecting = "Returning you to the app..."
-requesting = "{{app}} wants to access your Stirling PDF account"
+requesting = "{{app}} wants to access your Chronicle PDF account"
 scopesIntro = "This will allow {{app}} to:"
 signedInAs = "Signed in as {{name}}"
 signInButton = "Sign in to continue"
-signInPrompt = "Sign in to your Stirling PDF account to continue connecting the app."
+signInPrompt = "Sign in to your Chronicle PDF account to continue connecting the app."
 title = "Authorise access"
 unknownApp = "A third-party application"
 
 [oauthConsent.access]
 actAsYou = "Act as you - everything {{app}} does runs under your account and counts towards your usage"
-tools = "Use your Stirling PDF tools on your behalf - convert, edit, sign, secure and process your documents"
+tools = "Use your Chronicle PDF tools on your behalf - convert, edit, sign, secure and process your documents"
 
 [oauthConsent.scope]
 email = "See your email address"
@@ -5008,7 +5008,7 @@ userTitle = "Planaren ikuspegi orokorra"
 [onboarding.saas.freeEditor]
 freeLine = "The editor is now <free>completely free</free>."
 premium = "We've added loads of new features, including <strong>Policies</strong> and <strong>Agent Chat</strong>."
-title = "Welcome to Stirling"
+title = "Welcome to Chronicle"
 
 [onboarding.saas.team]
 addButton = "Add"
@@ -5036,11 +5036,11 @@ seePlans = "Ikusi planak →"
 upgrade = "Eguneratu orain →"
 
 [onboarding.tourOverview]
-body = "Stirling PDF V2k dozenaka tresna eta diseinu berritua dakartza. Egin ibilbide azkar bat aldaketak eta behar dituzun funtzioak non dauden ikusteko."
+body = "Chronicle PDF V2k dozenaka tresna eta diseinu berritua dakartza. Egin ibilbide azkar bat aldaketak eta behar dituzun funtzioak non dauden ikusteko."
 title = "Ibilbidearen ikuspegi orokorra"
 
 [onboarding.welcomeSlide]
-body = "Stirling PDF orain tamaina guztietako taldeentzat prest dago. Eguneratze honek diseinu berria, admin gaitasun indartsu berriak, eta eskatuen izan den eginbidea dakar - <strong>Testua editatu</strong>."
+body = "Chronicle PDF orain tamaina guztietako taldeentzat prest dago. Eguneratze honek diseinu berria, admin gaitasun indartsu berriak, eta eskatuen izan den eginbidea dakar - <strong>Testua editatu</strong>."
 title = "Ongi etorri Stirlingera"
 
 [onboarding.whatsNew]
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Stirling PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5893,7 +5893,7 @@ upToFiveUsers = "Gehienez 5 erabiltzaile"
 usageTrackingPrometheus = "Erabilera-jarraipena eta Prometheus"
 
 [plan.licenseWarning]
-body = "{{total}} erabiltzaile dituzu baina maila doakoak {{limit}} soilik onartzen ditu zerbitzari bakoitzeko. Eguneratu Stirling PDF ondo ibil dadin."
+body = "{{total}} erabiltzaile dituzu baina maila doakoak {{limit}} soilik onartzen ditu zerbitzari bakoitzeko. Eguneratu Chronicle PDF ondo ibil dadin."
 cta = "Ikusi planak"
 overLimit = "{{limit}} baino gehiago"
 title = "Doako auto-ostatu muga gaindituta"
@@ -6723,7 +6723,7 @@ time = "Ordua"
 user = "Erabiltzailea"
 
 [portal.editorAdmin]
-subtitle = "Hedatu Stirling PDF Editor, parekatu norberak ostatatutako instantziak zure erakundearekin, eta kudeatu martxan dagoen flota — helburuak, osasuna, kredentzialak eta offline aktibazioa leku bakarrean."
+subtitle = "Hedatu Chronicle PDF Editor, parekatu norberak ostatatutako instantziak zure erakundearekin, eta kudeatu martxan dagoen flota — helburuak, osasuna, kredentzialak eta offline aktibazioa leku bakarrean."
 title = "Editorearen hedapena"
 
 [portal.editorAdmin.health.columns]
@@ -6809,7 +6809,7 @@ title = "Zerbait gaizki atera da orri honetan"
 [portal.home.editor]
 activeUsers = "{{n}} aktibo"
 invite = "Gonbidatu taldekideak"
-name = "Stirling PDF Editor"
+name = "Chronicle PDF Editor"
 open = "Ireki arakatzailean"
 updated = "eguneratua {{time}}"
 
@@ -6889,7 +6889,7 @@ usageMonth = "Hilabete honetako erabilera"
 usageToday = "Gaurko erabilera"
 
 [portal.infrastructure.apiKeys.empty]
-description = "Sortu esparru mugatuko gako bat Stirling API deitzen hasteko."
+description = "Sortu esparru mugatuko gako bat Chronicle API deitzen hasteko."
 title = "Oraindik ez dago API gakorik"
 
 [portal.infrastructure.audit]
@@ -8022,7 +8022,7 @@ summary = "Talde baten jabea da — kideen baliabideak eta partekatutako konfigu
 3 = "Member-ek egin dezakeen guztia"
 
 [portal.welcome]
-ariaLabel = "Ongi etorri Stirling PDF-ra"
+ariaLabel = "Ongi etorri Chronicle PDF-ra"
 badge = "Open-source"
 installEditor = "Instalatu editorea"
 inviteTeammates = "Gonbidatu taldekideak"
@@ -8030,7 +8030,7 @@ openInBrowser = "Ireki arakatzailean"
 perks = "Doan betiko · Self-hostable"
 subtitle = "Munduko PDF Editor seguruena doakoa da tamaina guztietako taldeentzat. 60+ PDF eragiketa eta SSO barne."
 title = "Ongi etorri"
-titleAccent = "Stirling PDF"
+titleAccent = "Chronicle PDF"
 
 [printFile]
 title = "Inprimatu fitxategia"
@@ -8721,8 +8721,8 @@ hideTools = "Ezkutatu erabilgarri ez dauden tresnak ▴"
 messageNoFallback = "Tresnak ez daude erabilgarri zure zerbitzaria linean egon arte."
 messageWithFallback = "Zenbait tresnek zerbitzariarekiko konexioa behar dute."
 showTools = "Ikusi erabilgarri ez dauden tresnak ▾"
-title = "Ezin da atzitu zure Stirling-PDF zerbitzaria"
-toolNotAvailableLocally = "Zure Stirling-PDF zerbitzaria lineaz kanpo dago eta \"{{endpoint}}\" ez dago erabilgarri tokiko backend-ean."
+title = "Ezin da atzitu zure Chronicle-PDF zerbitzaria"
+toolNotAvailableLocally = "Zure Chronicle-PDF zerbitzaria lineaz kanpo dago eta \"{{endpoint}}\" ez dago erabilgarri tokiko backend-ean."
 
 [session]
 expired = "Zure saioa iraungi da. Freskatu orria eta saiatu berriro."
@@ -8797,7 +8797,7 @@ autoUnzipFileLimitDescription = "Gehienez zenbat fitxategi atera ZIPetik"
 autoUnzipFileLimitTooltip = "Deskonprimitu soilik ZIPak hainbeste fitxategi edo gutxiago baditu. Ezarri handiagoa ZIP handiagoak erauzteko."
 autoUnzipTooltip = "Automatikoki deskonprimitu API eragiketek itzultzen dituzten ZIP fitxategiak. Desgaitu ZIP fitxategiak bere horretan mantentzeko. Honek ez du eraginik automatizazio-fluxuetan."
 defaultPdfEditor = "PDF editore lehenetsia"
-defaultPdfEditorActive = "Stirling PDF zure PDF editore lehenetsia da"
+defaultPdfEditorActive = "Chronicle PDF zure PDF editore lehenetsia da"
 defaultPdfEditorChecking = "Egiaztatzen..."
 defaultPdfEditorInactive = "Beste aplikazio bat dago lehenetsi gisa"
 defaultPdfEditorSet = "Dagoeneko lehenetsia"
@@ -8858,7 +8858,7 @@ updateBehavior = "Eguneratzeen portaera"
 updateBehaviorDescription = "Aukeratu eguneratzeak instalatu aurretik galdetzea, automatikoki instalatzea edo eguneratzeen egiaztapenak erabat saltatzea."
 updateBehaviorError = "Ezin izan da eguneratzeen portaera aldatu"
 updateBehaviorErrorLocked = "Ezarpen hau administratzaileak blokeatu du."
-updateBehaviorLockedDescription = "Zure administratzaileak konfiguratu du Stirling-PDF nola kudeatzen duen eguneratzeak makina honetan. Jarri harekin harremanetan aldatzeko."
+updateBehaviorLockedDescription = "Zure administratzaileak konfiguratu du Chronicle-PDF nola kudeatzen duen eguneratzeak makina honetan. Jarri harekin harremanetan aldatzeko."
 updateBehaviorSaved = "Eguneratzeen portaera gordeta."
 versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 viewDetails = "Xehetasunak ikusi"
@@ -9106,7 +9106,7 @@ step3 = "Berrabiarazi zerbitzaria"
 title = "Saio-hasiera ez dago gaituta"
 
 [setup.server.url]
-description = "Sartu zure auto-ostatuko Stirling PDF zerbitzariaren URLa osoa"
+description = "Sartu zure auto-ostatuko Chronicle PDF zerbitzariaren URLa osoa"
 label = "Zerbitzariaren URLa"
 
 [sharedSign]
@@ -9342,7 +9342,7 @@ pleaseFillAllFields = "Bete eremu guztiak, mesedez"
 signUp = "Eman izena"
 signUpWith = "Sign up with"
 skip = "Skip"
-subtitle = "Batu Stirling PDFra hasteko"
+subtitle = "Batu Chronicle PDFra hasteko"
 title = "Sortu kontu bat"
 unexpectedError = "Ustekabeko errorea: {{message}}"
 
@@ -9569,7 +9569,7 @@ download = "Deskargatu"
 downloaded = "Deskargatuta"
 downloadFailed = "Ezin da fitxategi hau deskargatu."
 downloadsCount = "Deskargak: {{count}}"
-emailWarningBody = "Honek helbide elektroniko baten itxura du. Pertsona hau Stirling PDF erabiltzailea ez bada, ezin izango du fitxategia atzitu."
+emailWarningBody = "Honek helbide elektroniko baten itxura du. Pertsona hau Chronicle PDF erabiltzailea ez bada, ezin izango du fitxategia atzitu."
 emailWarningConfirm = "Partekatu hala ere"
 emailWarningTitle = "Helbide elektronikoa"
 errorTitle = "Partekatzea huts egin du"
@@ -9600,7 +9600,7 @@ manageTitle = "Partekatzea kudeatu"
 noActivity = "Oraindik ez dago jarduerarik."
 noLinks = "Ez dago partekatzeko esteka aktiborik oraindik."
 noSharedUsers = "Oraindik ez du inork atzipenik."
-openInApp = "Ireki Stirling PDF"
+openInApp = "Ireki Chronicle PDF"
 ownerLabel = "Jabea"
 ownerUnknown = "Ezezaguna"
 removeLink = "Kendu esteka"
@@ -9654,7 +9654,7 @@ updateButton = "Eguneratu zerbitzarian"
 uploadButton = "Igo zerbitzarira"
 
 [survey]
-title = "Stirling-PDF Survey"
+title = "Chronicle-PDF Survey"
 
 [swagger]
 tags = "api,dokumentazioa,swagger,endpointak,garapena"
@@ -9782,7 +9782,7 @@ favorites = "Gogokoak"
 heading = "Tresna guztiak (pantaila osoko ikuspegia)"
 noResults = "Saiatu bilaketa moldatzen edo deskribapenak txandakatzen behar duzuna aurkitzeko."
 recommended = "Gomendatua"
-selfHostedOffline = "Zure Stirling-PDF zerbitzaria behar da (unean lineaz kanpo):"
+selfHostedOffline = "Zure Chronicle-PDF zerbitzaria behar da (unean lineaz kanpo):"
 showDetails = "Erakutsi xehetasunak"
 unavailable = "Zerbitzariaren administratzaileak desgaituta:"
 unavailableDependency = "Ez dago eskuragarri - beharrezko tresna falta da zerbitzarian:"
@@ -9791,7 +9791,7 @@ unfavorite = "Kendu gogokoetatik"
 [toolPanel.modePrompt]
 chooseFullscreen = "Erabili pantaila osoko modua"
 chooseSidebar = "Erabili alboko barra modua"
-description = "Aurrebista bi diseinuak eta erabaki nola arakatu nahi dituzun Stirling PDF tresnak."
+description = "Aurrebista bi diseinuak eta erabaki nola arakatu nahi dituzun Chronicle PDF tresnak."
 dismiss = "Agian geroago"
 fullscreenDescription = "Arakatu tresna guztiak katalogo batean, tresna bat aukeratu arte lan-eremua estaltzen duena."
 fullscreenTitle = "Pantaila osoko modua - (ondarea)"
@@ -9859,7 +9859,7 @@ loadingDetailedInfo = "Informazio zehatza kargatzen..."
 migrationGuide = "Migrazio-gida"
 migrationGuides = "Migrazio-gidak"
 migrationGuidesDesc = "Berrikusi aldaketa garrantzitsuak eguneratu aurretik."
-modalSubtitle = "Stirling PDFren bertsio berria instalatzeko prest dago."
+modalSubtitle = "Chronicle PDFren bertsio berria instalatzeko prest dago."
 modalTitle = "Eguneratzea eskuragarri"
 notes = "Oharrak"
 releaseNotes = "Argitalpen-oharrak"
@@ -9883,7 +9883,7 @@ urgent = "Premiazko"
 attentionBody = "Zure administratzaileak saioa hasi behar du informazio gehiago ikusteko. Jarri harekin harremanetan berehala."
 attentionBodyAdmin = "Berrikusi lizentzia-eskakizunak zerbitzari hau betean mantentzeko."
 attentionTitle = "Zerbitzari honek admin arreta behar du"
-message = "Atera etekinik handiena Stirling PDF-i erabiltzaile mugagabeekin eta funtzio aurreratuekin"
+message = "Atera etekinik handiena Chronicle PDF-i erabiltzaile mugagabeekin eta funtzio aurreratuekin"
 seeInfo = "Ikusi informazioa"
 title = "Eguneratu Zerbitzari Planera"
 upgradeButton = "Eguneratu orain"
@@ -10000,7 +10000,7 @@ authWeb = "Pasahitza"
 create = "Sortu kontua"
 createSubtitle = "Sortu self-hosted kontu bat pasahitzarekin edo SSOrekin."
 createTitle = "Sortu kontua"
-editorDesc = "Editatu PDFak Stirling PDF Editor-en. Denek jasotzen dute hau."
+editorDesc = "Editatu PDFak Chronicle PDF Editor-en. Denek jasotzen dute hau."
 email = "Email helbidea"
 emailError = "Sartu baliozko email helbide bat"
 emailPlaceholder2 = "name@company.com"
@@ -10138,7 +10138,7 @@ downloads = "Deskargak"
 entryLabel = "Sinaduraren laburpena"
 filesEvaluated_one = "{{count}} fitxategi ebaluatu da"
 filesEvaluated_other = "{{count}} fitxategi ebaluatu dira"
-footer = "Balidatua Stirling PDF bidez"
+footer = "Balidatua Chronicle PDF bidez"
 generatedAt = "Sortuta"
 noPdf = "PDF txostena erabilgarri egongo da balidazio arrakastatsu baten ostean."
 page = "Orria"

@@ -57,7 +57,7 @@ keepWorking = "Fortsæt med at arbejde"
 loading = "Laster..."
 loginAgreementAccept = "Accepter"
 loginAgreementDecline = "Afvis"
-loginAgreementProvider = "Denne meddelelse er leveret af din administrator, ikke af Stirling PDF Inc."
+loginAgreementProvider = "Denne meddelelse er leveret af din administrator, ikke af Chronicle PDF Inc."
 loginAgreementTitle = "Login-aftale"
 logOut = "Log ud"
 marginTooltip = "Afstand mellem sidetallet og sidens kant."
@@ -633,9 +633,9 @@ description = "Konfigurer lagring af midlertidige filer og oprydningsadfærd"
 label = "Håndtering af midlertidige filer"
 
 [admin.settings.advanced.tempFileManagement.baseTmpDir]
-description = "Basismappe til midlertidige filer (lad tom for standard: java.io.tmpdir/stirling-pdf)"
+description = "Basismappe til midlertidige filer (lad tom for standard: java.io.tmpdir/Chronicle-PDF)"
 label = "Basis-mappe for midlertidige filer"
-placeholder = "Standard: java.io.tmpdir/stirling-pdf"
+placeholder = "Standard: java.io.tmpdir/Chronicle-PDF"
 
 [admin.settings.advanced.tempFileManagement.cleanupIntervalMinutes]
 description = "Hvor ofte oprydning skal køres (i minutter)"
@@ -919,11 +919,11 @@ description = "Konfigurer valgfrie funktioner og funktionalitet."
 title = "Funktioner"
 
 [admin.settings.features.serverCertificate]
-description = "Konfigurer generering af serverside-certifikat til \"Sign with Stirling-PDF\"-funktionalitet"
+description = "Konfigurer generering af serverside-certifikat til \"Sign with Chronicle-PDF\"-funktionalitet"
 label = "Serversertifikat"
 
 [admin.settings.features.serverCertificate.enabled]
-description = "Aktivér serverside-certifikat til \"Sign with Stirling-PDF\"-indstillingen"
+description = "Aktivér serverside-certifikat til \"Sign with Chronicle-PDF\"-indstillingen"
 label = "Aktivér serversertifikat"
 
 [admin.settings.features.serverCertificate.organizationName]
@@ -1071,7 +1071,7 @@ description = "URL eller filnavn til cookiepolitik"
 label = "Cookiepolitik"
 
 [admin.settings.legal.disclaimer]
-message = "Ved at tilpasse disse juridiske dokumenter påtager du dig det fulde ansvar for at sikre overholdelse af alle gældende love og regler, herunder men ikke begrænset til GDPR og andre EU-krav til databeskyttelse. Ændr kun disse indstillinger hvis: (1) du driver en personlig/privat instance, (2) du er uden for EU's jurisdiktion og forstår dine lokale juridiske forpligtelser, eller (3) du har indhentet korrekt juridisk rådgivning og accepterer det fulde ansvar for alle brugerdata og juridisk compliance. Stirling-PDF og dets udviklere påtager sig intet ansvar for dine juridiske forpligtelser."
+message = "Ved at tilpasse disse juridiske dokumenter påtager du dig det fulde ansvar for at sikre overholdelse af alle gældende love og regler, herunder men ikke begrænset til GDPR og andre EU-krav til databeskyttelse. Ændr kun disse indstillinger hvis: (1) du driver en personlig/privat instance, (2) du er uden for EU's jurisdiktion og forstår dine lokale juridiske forpligtelser, eller (3) du har indhentet korrekt juridisk rådgivning og accepterer det fulde ansvar for alle brugerdata og juridisk compliance. Chronicle-PDF og dets udviklere påtager sig intet ansvar for dine juridiske forpligtelser."
 title = "Advarsel om juridisk ansvar"
 
 [admin.settings.legal.impressum]
@@ -1158,7 +1158,7 @@ description = "Brugernavn til SMTP-godkendelse"
 label = "SMTP-brugernavn"
 
 [admin.settings.mcp]
-apikeyNote = "Clients send a Stirling API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
+apikeyNote = "Clients send a Chronicle API key in the X-API-KEY header (or Authorization: Bearer <key>). The key maps to its owning Stirling user - only provisioned accounts get in, and actions are audited as that user. Manage keys under Account > API Keys."
 description = "Expose Stirling's PDF tools and AI agents to MCP clients over an OAuth-protected endpoint."
 title = "MCP Server"
 
@@ -1202,12 +1202,12 @@ label = "JWKS URL (optional)"
 placeholder = "Auto-discovered from issuer"
 
 [admin.settings.mcp.mode]
-description = "OAuth needs an external IdP. API key uses a Stirling per-user API key (X-API-KEY) - simplest for self-host."
+description = "OAuth needs an external IdP. API key uses a Chronicle per-user API key (X-API-KEY) - simplest for self-host."
 label = "Authentication mode"
 
 [admin.settings.mcp.requireAccount]
 description = "Only let tokens through if their subject maps to a provisioned, enabled Stirling user."
-label = "Require an existing Stirling account"
+label = "Require an existing Chronicle account"
 
 [admin.settings.mcp.resourceId]
 description = "This server's public /mcp URL. Tokens must list it in their audience (RFC 8707) or they are rejected."
@@ -1218,7 +1218,7 @@ description = "Require mcp.tools.read for read ops and mcp.tools.write for write
 label = "Enforce OAuth scopes"
 
 [admin.settings.mcp.usernameClaim]
-description = "JWT claim matched against a Stirling username (e.g. sub, email, preferred_username)."
+description = "JWT claim matched against a Chronicle username (e.g. sub, email, preferred_username)."
 label = "Username claim"
 
 [admin.settings.plan.noData]
@@ -1539,7 +1539,7 @@ description = "Når aktiveret, kan kun de angivne bruger-ID'er bruge botten."
 label = "Tillad specifikke bruger-ID'er"
 
 [admin.settings.telegram.enabled]
-description = "Tillad brugere at interagere med Stirling PDF via din konfigurerede Telegram-bot."
+description = "Tillad brugere at interagere med Chronicle PDF via din konfigurerede Telegram-bot."
 label = "Aktivér Telegram-bot"
 
 [admin.settings.telegram.feedback]
@@ -1612,20 +1612,20 @@ settingsOverview = "Dette er <strong>Indstillingspanelet</strong>. Admin-indstil
 systemCustomization = "Vi har omfattende måder at tilpasse UI'et: <strong>Systemindstillinger</strong> lader dig ændre appnavn og sprog, <strong>Funktioner</strong> tillader håndtering af servercertifikater, og <strong>Endpoints</strong> lader dig aktivere eller deaktivere specifikke værktøjer for dine brugere."
 teamsAndUsers = "Administrér <strong>Teams</strong> og individuelle brugere her. Du kan invitere nye brugere via e-mail, delbare links eller oprette brugerdefinerede konti til dem selv."
 welcome = "Velkommen til <strong>Administratorrundturen</strong>! Lad os udforske de avancerede enterprise-funktioner og indstillinger, der er tilgængelige for systemadministratorer."
-wrapUp = "Det var administratorrundturen! Du har set de enterprise-funktioner, der gør Stirling PDF til en kraftfuld, tilpasningsbar løsning for organisationer. Få adgang til denne rundtur når som helst fra <strong>Hjælp</strong>-menuen."
+wrapUp = "Det var administratorrundturen! Du har set de enterprise-funktioner, der gør Chronicle PDF til en kraftfuld, tilpasningsbar løsning for organisationer. Få adgang til denne rundtur når som helst fra <strong>Hjælp</strong>-menuen."
 
 [adminUserSettings]
 admin = "Administrer"
 title = "Brugerkontrolindstillinger"
 
 [agents]
-stirling_name = "Stirling"
+stirling_name = "Chronicle"
 
 [analytics]
 learnMore = "Lær mere"
-paragraph1 = "Stirling PDF har indsat analytics for at hjælpe os med at forbedre produktet. Vi følger ikke nogen personoplysninger eller filinhold."
-paragraph2 = "Bevægelsesmæssigt aktiver du analytics for at hjælpe Stirling-PDF med at vokse og til atstå os bedre at forstå vores brugere."
-title = "Vil du gøre Stirling PDF bedre?"
+paragraph1 = "Chronicle PDF har indsat analytics for at hjælpe os med at forbedre produktet. Vi følger ikke nogen personoplysninger eller filinhold."
+paragraph2 = "Bevægelsesmæssigt aktiver du analytics for at hjælpe Chronicle-PDF med at vokse og til atstå os bedre at forstå vores brugere."
+title = "Vil du gøre Chronicle PDF bedre?"
 
 [annotate]
 tags = "annotate,highlight,draw,markup,comment,notes,review,redline,feedback,markup tools,sticky notes,shapes,arrows,text box,freehand"
@@ -2558,7 +2558,7 @@ bullet1 = "Understøtter PEM, PKCS12, JKS og servercertifikatformater"
 bullet2 = "Mulighed for at vise eller skjule signatur på PDF'en"
 bullet3 = "Tilføj årsag, sted og underskrivers navn"
 bullet4 = "Vælg hvilken side synlige signaturer skal placeres på"
-bullet5 = "Brug servercertifikat for en enkel 'Sign with Stirling-PDF'-mulighed"
+bullet5 = "Brug servercertifikat for en enkel 'Sign with Chronicle-PDF'-mulighed"
 text = "For at signere en PDF skal du bruge et digitalt certifikat (som PEM, PKCS12 eller JKS). Du kan vælge at gøre signaturen synlig i dokumentet eller holde den usynlig kun af sikkerhedshensyn."
 title = "Tilføjelse af signaturer"
 
@@ -2739,7 +2739,7 @@ copy = "Kopiér besked"
 
 [chat.fab]
 close = "Close chat"
-open = "Open Stirling AI assistant"
+open = "Open Chronicle AI assistant"
 
 [chat.header]
 agentMenu = "Stirling-agentindstillinger"
@@ -3073,13 +3073,13 @@ upgradeButton = "Opgradér konto"
 [config.apiKeys]
 copyKeyAriaLabel = "Kopiér API-nøgle"
 description = "Din API-nøgle til adgang til Stirlings pakke af PDF-værktøjer. Kopiér den til dit projekt, eller opdatér for at generere en ny."
-docsDescription = "Lær mere om integration med Stirling PDF:"
+docsDescription = "Lær mere om integration med Chronicle PDF:"
 docsLink = "API-dokumentation"
 docsTitle = "API-dokumentation"
 generateError = "Vi kunne ikke generere din API-nøgle."
 goToAccount = "Gå til konto"
 guestInfo = "Gæstebrugere modtager ikke API-nøgler. Opret en konto for at få en API-nøgle, du kan bruge i dine applikationer."
-intro = "Brug din API-nøgle til programmatisk at få adgang til Stirling PDFs behandlingsfunktioner."
+intro = "Brug din API-nøgle til programmatisk at få adgang til Chronicle PDFs behandlingsfunktioner."
 label = "API-nøgle"
 publicKeyAriaLabel = "Offentlig API-nøgle"
 refreshAriaLabel = "Opdatér API-nøgle"
@@ -3103,10 +3103,10 @@ title = "Opdatér API-nøgler"
 warning = "⚠️ Advarsel: Denne handling genererer nye API-nøgler og gør dine tidligere nøgler ugyldige."
 
 [config.mcp]
-description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Stirling PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
-guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Stirling PDF tools on your behalf."
+description = "Model Context Protocol (MCP) lets AI assistants like Claude use your Chronicle PDF tools directly. Connect a client once and your assistant can convert, edit, secure and process documents on your behalf."
+guestInfo = "Guest users can't connect MCP clients. Create an account to use the MCP server and let your AI assistant run Chronicle PDF tools on your behalf."
 navLabel = "MCP Server"
-tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Stirling PDF directly."
+tip = "Every action your assistant runs is performed as your account and counts towards your usage, just like using Chronicle PDF directly."
 title = "MCP Server"
 viewApiKeys = "View API keys"
 
@@ -3232,7 +3232,7 @@ showPreferencesBtn = "Administrer præferencer"
 title = "Sådan bruger vi cookies"
 
 [cookieBanner.popUp.description]
-1 = "Vi bruger cookies og andre teknologier for at få Stirling PDF til at fungere bedre for dig—det hjælper os med at forbedre vores værktøjer og fortsat bygge funktioner, du vil elske."
+1 = "Vi bruger cookies og andre teknologier for at få Chronicle PDF til at fungere bedre for dig—det hjælper os med at forbedre vores værktøjer og fortsat bygge funktioner, du vil elske."
 2 = "If you’d rather not, clicking 'No Thanks' will only enable the essential cookies needed to keep things running smoothly."
 
 [cookieBanner.preferencesModal]
@@ -3245,12 +3245,12 @@ subtitle = "Brug af cookies"
 title = "Center for samtykkepræferencer"
 
 [cookieBanner.preferencesModal.analytics]
-description = "Disse cookies hjælper os med at forstå, hvordan vores værktøjer bruges, så vi kan fokusere på at bygge de funktioner, vores community værdsætter mest. Vær tryg—Stirling PDF kan ikke og vil aldrig spore indholdet af de dokumenter, du arbejder med."
+description = "Disse cookies hjælper os med at forstå, hvordan vores værktøjer bruges, så vi kan fokusere på at bygge de funktioner, vores community værdsætter mest. Vær tryg—Chronicle PDF kan ikke og vil aldrig spore indholdet af de dokumenter, du arbejder med."
 title = "Analyser"
 
 [cookieBanner.preferencesModal.description]
-1 = "Stirling PDF bruger cookies og lignende teknologier til at forbedre din oplevelse og forstå, hvordan vores værktøjer bruges. Det hjælper os med at forbedre ydeevnen, udvikle de funktioner, du går op i, og yde løbende support til vores brugere."
-2 = "Stirling PDF kan ikke—og vil aldrig—spore eller få adgang til indholdet af de dokumenter, du bruger."
+1 = "Chronicle PDF bruger cookies og lignende teknologier til at forbedre din oplevelse og forstå, hvordan vores værktøjer bruges. Det hjælper os med at forbedre ydeevnen, udvikle de funktioner, du går op i, og yde løbende support til vores brugere."
+2 = "Chronicle PDF kan ikke—og vil aldrig—spore eller få adgang til indholdet af de dokumenter, du bruger."
 3 = "Din privatlivsbeskyttelse og tillid er kernen i alt, hvad vi gør."
 
 [cookieBanner.preferencesModal.necessary]
@@ -3346,14 +3346,14 @@ message = "Kunne ikke angive standard PDF-håndterer"
 title = "Fejl"
 
 [defaultApp.prompt]
-message = "Gør Stirling PDF til din standardapp til at åbne PDF-filer."
+message = "Gør Chronicle PDF til din standardapp til at åbne PDF-filer."
 
 [defaultApp.settingsOpened]
-message = "Vælg Stirling PDF i dine systemindstillinger"
+message = "Vælg Chronicle PDF i dine systemindstillinger"
 title = "Indstillinger åbnet"
 
 [defaultApp.success]
-message = "Stirling PDF er nu din standard PDF-editor"
+message = "Chronicle PDF er nu din standard PDF-editor"
 title = "Standardapp valgt"
 
 [desktopUpdate]
@@ -3369,7 +3369,7 @@ updateFailedMessage = "Kunne ikke downloade eller installere opdateringen."
 
 [desktopUpdate.blocked]
 docsLink = "Se installationsdokumentation"
-message = "Stirling-PDF har ikke tilladelse til at opdatere sig selv på denne maskine."
+message = "Chronicle-PDF har ikke tilladelse til at opdatere sig selv på denne maskine."
 title = "Administratorrettigheder påkrævet"
 
 [devAirgapped]
@@ -4203,7 +4203,7 @@ invisible = "Usynlig (kun metadata)"
 location = "Placering:"
 logo = "Logo:"
 logoHidden = "Intet logo"
-logoShown = "Stirling PDF-logo vist"
+logoShown = "Chronicle PDF-logo vist"
 participantCount_one = "{{count}} participant will sign in order"
 participantCount_other = "{{count}} participants will sign in order"
 participants = "Deltagere"
@@ -4257,7 +4257,7 @@ title = "Sekventiel underskrift"
 dismiss = "Skjul banner"
 message = "Opret en gratis konto for at gemme dit arbejde, få adgang til flere funktioner og støtte projektet."
 signUp = "Tilmeld dig gratis"
-title = "Du bruger Stirling PDF som gæst!"
+title = "Du bruger Chronicle PDF som gæst!"
 
 [home.addAttachments]
 desc = "Tilføj eller fjern indlejrede filer (vedhæftninger) til/fra en PDF"
@@ -4416,7 +4416,7 @@ tags = "kombinér,sammenføj,forén"
 title = "Flet"
 
 [home.mobile]
-brandAlt = "Stirling PDF-logo"
+brandAlt = "Chronicle PDF-logo"
 openFiles = "Åbn filer"
 swipeHint = "Stryg til venstre eller højre for at skifte visning"
 tools = "Værktøjer"
@@ -4455,7 +4455,7 @@ tags = "organiser,omarranger,omordne"
 title = "Organisér"
 
 [home.pdfTextEditor]
-desc = "Gennemse og rediger Stirling PDF JSON-eksporter med grupperet tekstredigering og regenerering af PDF"
+desc = "Gennemse og rediger Chronicle PDF JSON-eksporter med grupperet tekstredigering og regenerering af PDF"
 tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
 title = "PDF-teksteditor"
 
@@ -4641,7 +4641,7 @@ passwordRequired = "Adgangskode er påkrævet"
 signIn = "Log ind"
 validating = "Validerer invitation..."
 validationError = "Kunne ikke validere invitationslink"
-welcome = "Velkommen til Stirling PDF"
+welcome = "Velkommen til Chronicle PDF"
 welcomeSubtitle = "Fuldfør opsætningen af din konto for at komme i gang"
 welcomeTitle = "Du er blevet inviteret!"
 
@@ -4726,7 +4726,7 @@ subtitle = "Med over et dusin værktøjer til at redigere, signere, læse og man
 title = "Rediger PDF'er for at vise/beskytte de oplysninger, du ønsker"
 
 [login.slides.overview]
-alt = "Stirling PDF oversigt"
+alt = "Chronicle PDF oversigt"
 subtitle = "En privacy-first cloud suite til PDF'er, der lader dig konvertere, signere, redigere og administrere dokumenter samt 50+ andre kraftfulde værktøjer."
 title = "Din alt-i-en-løsning til alle dine PDF-behov."
 
@@ -4844,7 +4844,7 @@ message = "Godkendelsen var ikke vellykket. Du kan lukke dette vindue og prøve 
 title = "Godkendelse mislykkedes"
 
 [oauth.success]
-message = "Du kan lukke dette vindue og vende tilbage til Stirling PDF."
+message = "Du kan lukke dette vindue og vende tilbage til Chronicle PDF."
 title = "Godkendelse lykkedes"
 
 [oauthConsent]
@@ -4857,17 +4857,17 @@ loadFailed = "This authorisation request is invalid or has expired. Close this t
 loading = "Loading authorisation request..."
 missingId = "Missing authorisation request. Start the connection from your app and try again."
 redirecting = "Returning you to the app..."
-requesting = "{{app}} wants to access your Stirling PDF account"
+requesting = "{{app}} wants to access your Chronicle PDF account"
 scopesIntro = "This will allow {{app}} to:"
 signedInAs = "Signed in as {{name}}"
 signInButton = "Sign in to continue"
-signInPrompt = "Sign in to your Stirling PDF account to continue connecting the app."
+signInPrompt = "Sign in to your Chronicle PDF account to continue connecting the app."
 title = "Authorise access"
 unknownApp = "A third-party application"
 
 [oauthConsent.access]
 actAsYou = "Act as you - everything {{app}} does runs under your account and counts towards your usage"
-tools = "Use your Stirling PDF tools on your behalf - convert, edit, sign, secure and process your documents"
+tools = "Use your Chronicle PDF tools on your behalf - convert, edit, sign, secure and process your documents"
 
 [oauthConsent.scope]
 email = "See your email address"
@@ -5008,7 +5008,7 @@ userTitle = "Plan-overblik"
 [onboarding.saas.freeEditor]
 freeLine = "The editor is now <free>completely free</free>."
 premium = "We've added loads of new features, including <strong>Policies</strong> and <strong>Agent Chat</strong>."
-title = "Welcome to Stirling"
+title = "Welcome to Chronicle"
 
 [onboarding.saas.team]
 addButton = "Add"
@@ -5036,12 +5036,12 @@ seePlans = "Se planer →"
 upgrade = "Opgrader nu →"
 
 [onboarding.tourOverview]
-body = "Stirling PDF V2 kommer med dusinvis af værktøjer og et fornyet layout. Tag en hurtig rundvisning for at se, hvad der er ændret, og hvor du finder de funktioner, du har brug for."
+body = "Chronicle PDF V2 kommer med dusinvis af værktøjer og et fornyet layout. Tag en hurtig rundvisning for at se, hvad der er ændret, og hvor du finder de funktioner, du har brug for."
 title = "Oversigt over rundvisning"
 
 [onboarding.welcomeSlide]
-body = "Stirling PDF er nu klar til teams i alle størrelser. Denne opdatering indeholder et nyt layout, stærke nye admin-funktioner og vores mest efterspurgte funktion – <strong>Rediger tekst</strong>."
-title = "Velkommen til Stirling"
+body = "Chronicle PDF er nu klar til teams i alle størrelser. Denne opdatering indeholder et nyt layout, stærke nye admin-funktioner og vores mest efterspurgte funktion – <strong>Rediger tekst</strong>."
+title = "Velkommen til Chronicle"
 
 [onboarding.whatsNew]
 activeFilesView = "Brug Aktive filer til at se alt, du har åbent, og vælge, hvad du vil arbejde på."
@@ -5406,7 +5406,7 @@ leader = "Team owner"
 member = "Member"
 
 [payg.signupRequired]
-body = "Stirling PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
+body = "Chronicle PDF gives every signed-up account 500 free operations, enough to keep most workflows humming without paying a cent. You're currently using Stirling as a guest, which doesn't include billable tools like AI, automations, or hosted processing."
 cancel = "Not now"
 cta = "Sign up free"
 subtext = "Creating an account is free and takes a few seconds. No credit card required."
@@ -5893,7 +5893,7 @@ upToFiveUsers = "Op til 5 brugere"
 usageTrackingPrometheus = "Brugssporing & Prometheus"
 
 [plan.licenseWarning]
-body = "Du har {{total}} brugere, men den gratis plan understøtter kun {{limit}} pr. server. Opgrader for at holde Stirling PDF kørende uden problemer."
+body = "Du har {{total}} brugere, men den gratis plan understøtter kun {{limit}} pr. server. Opgrader for at holde Chronicle PDF kørende uden problemer."
 cta = "Se planer"
 overLimit = "mere end {{limit}}"
 title = "Gratis selvhostet grænse nået"
@@ -6723,7 +6723,7 @@ time = "Tidspunkt"
 user = "Bruger"
 
 [portal.editorAdmin]
-subtitle = "Udrul Stirling PDF Editor, par selvhostede instanser med din organisation, og drift den kørende flåde — mål, tilstand, legitimationsoplysninger og offlineaktivering ét sted."
+subtitle = "Udrul Chronicle PDF Editor, par selvhostede instanser med din organisation, og drift den kørende flåde — mål, tilstand, legitimationsoplysninger og offlineaktivering ét sted."
 title = "Editor-udrulning"
 
 [portal.editorAdmin.health.columns]
@@ -6809,7 +6809,7 @@ title = "Noget gik galt på denne side"
 [portal.home.editor]
 activeUsers = "{{n}} aktive"
 invite = "Inviter teammedlemmer"
-name = "Stirling PDF Editor"
+name = "Chronicle PDF Editor"
 open = "Åbn i browser"
 updated = "opdateret {{time}}"
 
@@ -6889,7 +6889,7 @@ usageMonth = "Forbrug denne måned"
 usageToday = "Forbrug i dag"
 
 [portal.infrastructure.apiKeys.empty]
-description = "Opret en afgrænset nøgle for at begynde at kalde Stirling API."
+description = "Opret en afgrænset nøgle for at begynde at kalde Chronicle API."
 title = "Ingen API-nøgler endnu"
 
 [portal.infrastructure.audit]
@@ -8022,7 +8022,7 @@ summary = "Ejer et team — administrerer dets medlemmers ressourcer og delte ko
 3 = "Alt, hvad medlem kan gøre"
 
 [portal.welcome]
-ariaLabel = "Velkommen til Stirling PDF"
+ariaLabel = "Velkommen til Chronicle PDF"
 badge = "Open-source"
 installEditor = "Installer Editor"
 inviteTeammates = "Inviter teammedlemmer"
@@ -8030,7 +8030,7 @@ openInBrowser = "Åbn i browser"
 perks = "Gratis for evigt · Kan hostes selv"
 subtitle = "Verdens mest sikre PDF Editor er gratis for teams i alle størrelser. Inkluderer 60+ PDF-handlinger og SSO."
 title = "Velkommen til"
-titleAccent = "Stirling PDF"
+titleAccent = "Chronicle PDF"
 
 [printFile]
 title = "Udskriv Fil"
@@ -8721,8 +8721,8 @@ hideTools = "Skjul utilgængelige værktøjer ▴"
 messageNoFallback = "Værktøjer er utilgængelige, indtil din server kommer online igen."
 messageWithFallback = "Nogle værktøjer kræver en serverforbindelse."
 showTools = "Vis utilgængelige værktøjer ▾"
-title = "Din Stirling-PDF-server kan ikke nås"
-toolNotAvailableLocally = "Din Stirling-PDF-server er offline, og \"{{endpoint}}\" er ikke tilgængelig på den lokale backend."
+title = "Din Chronicle-PDF-server kan ikke nås"
+toolNotAvailableLocally = "Din Chronicle-PDF-server er offline, og \"{{endpoint}}\" er ikke tilgængelig på den lokale backend."
 
 [session]
 expired = "Din sesions tid har udløbet. Genlad siden og prøv igen."
@@ -8797,7 +8797,7 @@ autoUnzipFileLimitDescription = "Maksimalt antal filer der udtrækkes fra ZIP"
 autoUnzipFileLimitTooltip = "Pak kun ud, hvis ZIP'en indeholder dette antal filer eller færre. Sæt højere for at udpakke større ZIP'er."
 autoUnzipTooltip = "Udpak automatisk ZIP-filer returneret fra API-operationer. Deaktivér for at beholde ZIP-filer intakte. Dette påvirker ikke automatiseringsarbejdsgange."
 defaultPdfEditor = "Standard PDF-editor"
-defaultPdfEditorActive = "Stirling PDF er din standard PDF-editor"
+defaultPdfEditorActive = "Chronicle PDF er din standard PDF-editor"
 defaultPdfEditorChecking = "Tjekker..."
 defaultPdfEditorInactive = "En anden app er sat som standard"
 defaultPdfEditorSet = "Allerede standard"
@@ -8858,7 +8858,7 @@ updateBehavior = "Opdateringsadfærd"
 updateBehaviorDescription = "Vælg om du vil spørges før installation af opdateringer, installere dem automatisk eller helt springe søgning efter opdateringer over."
 updateBehaviorError = "Kunne ikke ændre opdateringsadfærd"
 updateBehaviorErrorLocked = "Denne indstilling er låst af din administrator."
-updateBehaviorLockedDescription = "Din administrator har konfigureret, hvordan Stirling-PDF håndterer opdateringer på denne maskine. Kontakt dem for at ændre dette."
+updateBehaviorLockedDescription = "Din administrator har konfigureret, hvordan Chronicle-PDF håndterer opdateringer på denne maskine. Kontakt dem for at ændre dette."
 updateBehaviorSaved = "Opdateringsadfærd gemt."
 versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 viewDetails = "Vis detaljer"
@@ -9068,7 +9068,7 @@ emptyUsername = "Indtast dit brugernavn"
 oauthFailed = "OAuth-login mislykkedes. Prøv igen."
 
 [setup.saas]
-title = "Log ind på Stirling"
+title = "Log ind på Chronicle"
 
 [setup.selfhosted]
 changeServerLocked = "Din organisation har begrænset denne app til en specifik server"
@@ -9106,7 +9106,7 @@ step3 = "Genstart serveren"
 title = "Login ikke aktiveret"
 
 [setup.server.url]
-description = "Indtast den fulde URL til din selvhostede Stirling PDF-server"
+description = "Indtast den fulde URL til din selvhostede Chronicle PDF-server"
 label = "Server-URL"
 
 [sharedSign]
@@ -9342,7 +9342,7 @@ pleaseFillAllFields = "Udfyld alle felter"
 signUp = "Tilmeld dig"
 signUpWith = "Sign up with"
 skip = "Skip"
-subtitle = "Tilmeld dig Stirling PDF for at komme i gang"
+subtitle = "Tilmeld dig Chronicle PDF for at komme i gang"
 title = "Opret en konto"
 unexpectedError = "Uventet fejl: {{message}}"
 
@@ -9569,7 +9569,7 @@ download = "Download"
 downloaded = "Hentet"
 downloadFailed = "Kan ikke downloade denne fil."
 downloadsCount = "Downloads: {{count}}"
-emailWarningBody = "Dette ligner en e-mailadresse. Hvis denne person ikke allerede er Stirling PDF-bruger, vil vedkommende ikke kunne få adgang til filen."
+emailWarningBody = "Dette ligner en e-mailadresse. Hvis denne person ikke allerede er Chronicle PDF-bruger, vil vedkommende ikke kunne få adgang til filen."
 emailWarningConfirm = "Del alligevel"
 emailWarningTitle = "E-mailadresse"
 errorTitle = "Deling mislykkedes"
@@ -9600,7 +9600,7 @@ manageTitle = "Administrer deling"
 noActivity = "Ingen aktivitet endnu."
 noLinks = "Ingen aktive delingslinks endnu."
 noSharedUsers = "Ingen brugere har adgang endnu."
-openInApp = "Åbn i Stirling PDF"
+openInApp = "Åbn i Chronicle PDF"
 ownerLabel = "Ejer"
 ownerUnknown = "Ukendt"
 removeLink = "Fjern link"
@@ -9654,7 +9654,7 @@ updateButton = "Opdater på server"
 uploadButton = "Upload til server"
 
 [survey]
-title = "Stirling-PDF Survey"
+title = "Chronicle-PDF Survey"
 
 [swagger]
 tags = "api,documentation,swagger,endpoints,development"
@@ -9782,7 +9782,7 @@ favorites = "Favoritter"
 heading = "Alle værktøjer (fuldskærmsvisning)"
 noResults = "Prøv at justere din søgning eller slå beskrivelser til for at finde det, du har brug for."
 recommended = "Anbefalet"
-selfHostedOffline = "Kræver din Stirling-PDF-server (i øjeblikket offline):"
+selfHostedOffline = "Kræver din Chronicle-PDF-server (i øjeblikket offline):"
 showDetails = "Vis detaljer"
 unavailable = "Deaktiveret af serveradministrator:"
 unavailableDependency = "Ikke tilgængelig – påkrævet værktøj mangler på serveren:"
@@ -9791,7 +9791,7 @@ unfavorite = "Fjern fra favoritter"
 [toolPanel.modePrompt]
 chooseFullscreen = "Brug fuldskærmstilstand"
 chooseSidebar = "Brug sidepanel-tilstand"
-description = "Forhåndsvis begge layouts og beslæt, hvordan du vil udforske Stirling PDF-værktøjer."
+description = "Forhåndsvis begge layouts og beslæt, hvordan du vil udforske Chronicle PDF-værktøjer."
 dismiss = "Måske senere"
 fullscreenDescription = "Gennemse alle værktøjer i et katalog, der dækker arbejdsområdet, indtil du vælger et."
 fullscreenTitle = "Fuldskærmstilstand - (forældet)"
@@ -9859,7 +9859,7 @@ loadingDetailedInfo = "Indlæser detaljerede oplysninger..."
 migrationGuide = "Migrationsvejledning"
 migrationGuides = "Migrationsvejledninger"
 migrationGuidesDesc = "Gennemgå vigtige ændringer før opdatering."
-modalSubtitle = "En ny version af Stirling PDF er klar til installation."
+modalSubtitle = "En ny version af Chronicle PDF er klar til installation."
 modalTitle = "Opdatering tilgængelig"
 notes = "Noter"
 releaseNotes = "Udgivelsesnoter"
@@ -9883,7 +9883,7 @@ urgent = "Hastende"
 attentionBody = "Din admin skal logge ind for at se flere oplysninger. Kontakt dem straks."
 attentionBodyAdmin = "Gennemgå licenskravene for at holde denne server i overensstemmelse."
 attentionTitle = "Denne server kræver admin-opmærksomhed"
-message = "Få mest ud af Stirling PDF med ubegrænsede brugere og avancerede funktioner"
+message = "Få mest ud af Chronicle PDF med ubegrænsede brugere og avancerede funktioner"
 seeInfo = "Se info"
 title = "Opgrader til Server-plan"
 upgradeButton = "Opgrader nu"
@@ -10000,7 +10000,7 @@ authWeb = "Adgangskode"
 create = "Opret konto"
 createSubtitle = "Opret en self-hosted konto med en adgangskode eller SSO."
 createTitle = "Opret konto"
-editorDesc = "Rediger PDFs i Stirling PDF Editor. Alle får dette."
+editorDesc = "Rediger PDFs i Chronicle PDF Editor. Alle får dette."
 email = "E-mailadresse"
 emailError = "Indtast en gyldig e-mailadresse"
 emailPlaceholder2 = "name@company.com"
@@ -10138,7 +10138,7 @@ downloads = "Downloads"
 entryLabel = "Signaturoversigt"
 filesEvaluated_one = "{{count}} fil evalueret"
 filesEvaluated_other = "{{count}} filer evalueret"
-footer = "Valideret via Stirling PDF"
+footer = "Valideret via Chronicle PDF"
 generatedAt = "Genereret"
 noPdf = "PDF-rapport vil være tilgængelig efter en vellykket validering."
 page = "Side"
