@@ -1,4 +1,4 @@
-package Chronicle.software.saas.payg.stripe;
+package stirling.software.saas.payg.stripe;
 
 import java.time.Instant;
 import java.time.LocalDateTime;

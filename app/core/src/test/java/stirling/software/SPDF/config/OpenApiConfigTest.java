@@ -1,4 +1,4 @@
-package Chronicle.software.SPDF.config;
+package stirling.software.SPDF.config;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -13,7 +13,7 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.media.ComposedSchema;
 import io.swagger.v3.oas.models.media.Schema;
 
-import Chronicle.software.common.model.ApplicationProperties;
+import stirling.software.common.model.ApplicationProperties;
 
 @DisplayName("OpenApiConfig")
 class OpenApiConfigTest {

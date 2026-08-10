@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.controller.api;
+package stirling.software.proprietary.controller.api;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -25,16 +25,16 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.common.configuration.RuntimePathConfig;
-import Chronicle.software.common.model.ApplicationProperties;
-import Chronicle.software.common.service.CustomPDFDocumentFactory;
-import Chronicle.software.common.util.ProcessExecutor;
-import Chronicle.software.common.util.TempFile;
-import Chronicle.software.common.util.TempFileManager;
-import Chronicle.software.common.util.WebResponseUtils;
-import Chronicle.software.proprietary.model.api.ai.create.AiDocument;
-import Chronicle.software.proprietary.service.AiDocumentHtmlRenderer;
-import Chronicle.software.proprietary.service.AiFeatureGate;
+import stirling.software.common.configuration.RuntimePathConfig;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.common.service.CustomPDFDocumentFactory;
+import stirling.software.common.util.ProcessExecutor;
+import stirling.software.common.util.TempFile;
+import stirling.software.common.util.TempFileManager;
+import stirling.software.common.util.WebResponseUtils;
+import stirling.software.proprietary.model.api.ai.create.AiDocument;
+import stirling.software.proprietary.service.AiDocumentHtmlRenderer;
+import stirling.software.proprietary.service.AiFeatureGate;
 
 import tools.jackson.core.JacksonException;
 import tools.jackson.databind.ObjectMapper;
@@ -42,7 +42,7 @@ import tools.jackson.databind.ObjectMapper;
 /**
  * Dispatchable tool that converts an AI-generated document model to a PDF via WeasyPrint.
  *
- * <p>Called by {@link Chronicle.software.proprietary.service.AiWorkflowService} when the engine
+ * <p>Called by {@link stirling.software.proprietary.service.AiWorkflowService} when the engine
  * emits a {@code CREATE_PDF_FROM_HTML_AGENT} plan step. The engine supplies the document as
  * structured fields; the HTML is built here from a fixed template.
  */

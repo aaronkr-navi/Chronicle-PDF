@@ -1,11 +1,11 @@
-package Chronicle.software.common.configuration;
+package stirling.software.common.configuration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.snakeyaml.engine.v2.api.LoadSettings;
 
-import Chronicle.software.common.util.YamlHelper;
+import stirling.software.common.util.YamlHelper;
 
 class ConfigInitializerTest {
 

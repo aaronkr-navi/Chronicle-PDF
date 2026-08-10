@@ -1,4 +1,4 @@
-package Chronicle.software.SPDF.controller.web;
+package stirling.software.SPDF.controller.web;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,7 +22,7 @@ import org.springframework.web.util.JavaScriptUtils;
 import jakarta.annotation.PostConstruct;
 import jakarta.servlet.http.HttpServletRequest;
 
-import Chronicle.software.common.configuration.InstallationPathConfig;
+import stirling.software.common.configuration.InstallationPathConfig;
 
 @Controller
 public class ReactRoutingController {

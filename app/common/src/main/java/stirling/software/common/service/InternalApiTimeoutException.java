@@ -1,4 +1,4 @@
-package Chronicle.software.common.service;
+package stirling.software.common.service;
 
 import java.time.Duration;
 

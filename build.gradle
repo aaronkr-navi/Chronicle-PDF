@@ -85,7 +85,7 @@ if (rootProject.ext.mavenUrl.isEmpty()) {
 jar {
     enabled = false
     manifest {
-        attributes "Implementation-Title": "Chronicle-PDF",
+        attributes "Implementation-Title": "chronicle-pdf",
             "Implementation-Version": project.version
     }
 }
@@ -96,11 +96,11 @@ bootJar {
 
 // Configure main class for the root project
 springBoot {
-    mainClass = 'Chronicle.software.SPDF.SPDFApplication'
+    mainClass = 'stirling.software.SPDF.SPDFApplication'
 }
 
 allprojects {
-    group = 'Chronicle.software'
+    group = 'stirling.software'
     version = '2.14.2'
 
     configurations.configureEach {
@@ -112,8 +112,8 @@ def appVersionStr = project.version.toString()
 def tauriConfigPath = layout.projectDirectory.file('frontend/editor/src-tauri/tauri.conf.json').asFile.path
 def sim1Path = layout.projectDirectory.file('frontend/editor/src/core/testing/serverExperienceSimulations.ts').asFile.path
 def sim2Path = layout.projectDirectory.file('frontend/editor/src/proprietary/testing/serverExperienceSimulations.ts').asFile.path
-def aurDesktopPkgbuildPath = layout.projectDirectory.file('.github/aur/Chronicle-PDF-desktop/PKGBUILD').asFile.path
-def aurServerPkgbuildPath = layout.projectDirectory.file('.github/aur/Chronicle-PDF-server-bin/PKGBUILD').asFile.path
+def aurDesktopPkgbuildPath = layout.projectDirectory.file('.github/aur/chronicle-pdf-desktop/PKGBUILD').asFile.path
+def aurServerPkgbuildPath = layout.projectDirectory.file('.github/aur/chronicle-pdf-server-bin/PKGBUILD').asFile.path
 
 tasks.register('syncAppVersion') {
     group = 'versioning'
@@ -189,7 +189,7 @@ subprojects {
         }
     }
 
-    if (project.name != "Chronicle-PDF") {
+    if (project.name != "chronicle-pdf") {
         bootJar {
             enabled = false
         }
@@ -434,7 +434,7 @@ subprojects {
         dependsOn(rootProject.tasks.writeVersion)
     }
 
-    if (name == 'Chronicle-PDF') {
+    if (name == 'chronicle-pdf') {
         apply plugin: 'org.springdoc.openapi-gradle-plugin'
 
         openApi {
@@ -561,9 +561,9 @@ licenseReport {
 
 // Configure the forked spring boot run task to properly delegate to the Chronicle-PDF module
 tasks.named('forkedSpringBootRun') {
-    dependsOn ':Chronicle-PDF:bootRun'
+    dependsOn ':chronicle-pdf:bootRun'
     doFirst {
-        println "Delegating forkedSpringBootRun to :Chronicle-PDF:bootRun"
+        println "Delegating forkedSpringBootRun to :chronicle-pdf:bootRun"
     }
 }
 
@@ -595,7 +595,7 @@ sonar {
 
 swaggerhubUpload {
     // dependsOn = generateOpenApiDocs  // Depends on your task generating Swagger docs
-    api = "Chronicle-PDF"  // The name of your API on SwaggerHub
+    api = "chronicle-pdf"  // The name of your API on SwaggerHub
     owner = "${System.getenv().getOrDefault('SWAGGERHUB_USER', 'Frooodle')}"  // Your SwaggerHub username (or organization name)
     version = project.version  // The version of your API
     inputFile = file("SwaggerDoc.json")  // The path to your Swagger docs
@@ -623,7 +623,7 @@ repositories {
 }
 
 dependencies {
-    implementation project(':Chronicle-PDF')
+    implementation project(':chronicle-pdf')
     implementation project(':common')
     if (rootProject.ext.isSecurityDisabled()) {
         implementation project(':proprietary')
@@ -651,21 +651,21 @@ tasks.register('printVersion') {
 
 tasks.named('bootRun') {
     group = 'application'
-    description = 'Delegates to :Chronicle-PDF:bootRun'
-    dependsOn ':Chronicle-PDF:bootRun'
+    description = 'Delegates to :chronicle-pdf:bootRun'
+    dependsOn ':chronicle-pdf:bootRun'
 
     doFirst {
-        println "Delegating to :Chronicle-PDF:bootRun"
+        println "Delegating to :chronicle-pdf:bootRun"
     }
 }
 
 tasks.named('build') {
     group = 'build'
-    description = 'Delegates to :Chronicle-PDF:bootJar'
-    dependsOn ':Chronicle-PDF:bootJar', 'buildRestartHelper', 'syncAppVersion'
+    description = 'Delegates to :chronicle-pdf:bootJar'
+    dependsOn ':chronicle-pdf:bootJar', 'buildRestartHelper', 'syncAppVersion'
 
     doFirst {
-        println "Delegating to :Chronicle-PDF:bootJar"
+        println "Delegating to :chronicle-pdf:bootJar"
     }
 }
 

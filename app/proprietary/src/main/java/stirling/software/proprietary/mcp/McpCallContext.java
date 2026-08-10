@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.mcp;
+package stirling.software.proprietary.mcp;
 
 import java.util.Set;
 

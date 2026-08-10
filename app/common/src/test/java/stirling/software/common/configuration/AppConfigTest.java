@@ -1,4 +1,4 @@
-package Chronicle.software.common.configuration;
+package stirling.software.common.configuration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.mock.env.MockEnvironment;
 import org.springframework.test.util.ReflectionTestUtils;
 
-import Chronicle.software.common.model.ApplicationProperties;
+import stirling.software.common.model.ApplicationProperties;
 
 class AppConfigTest {
 

@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.mcp;
+package stirling.software.proprietary.mcp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -16,16 +16,16 @@ import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import Chronicle.software.common.model.ApplicationProperties;
-import Chronicle.software.proprietary.mcp.catalog.McpToolCatalog;
-import Chronicle.software.proprietary.mcp.tools.DescribeOperationTool;
-import Chronicle.software.proprietary.mcp.tools.McpOperationExecutor;
-import Chronicle.software.proprietary.mcp.tools.ChronicleAiTool;
-import Chronicle.software.proprietary.mcp.tools.ChronicleConvertTool;
-import Chronicle.software.proprietary.mcp.tools.ChronicleMiscTool;
-import Chronicle.software.proprietary.mcp.tools.ChroniclePagesTool;
-import Chronicle.software.proprietary.mcp.tools.ChronicleSecurityTool;
-import Chronicle.software.proprietary.service.AiEngineClient;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.proprietary.mcp.catalog.McpToolCatalog;
+import stirling.software.proprietary.mcp.tools.DescribeOperationTool;
+import stirling.software.proprietary.mcp.tools.McpOperationExecutor;
+import stirling.software.proprietary.mcp.tools.ChronicleAiTool;
+import stirling.software.proprietary.mcp.tools.ChronicleConvertTool;
+import stirling.software.proprietary.mcp.tools.ChronicleMiscTool;
+import stirling.software.proprietary.mcp.tools.ChroniclePagesTool;
+import stirling.software.proprietary.mcp.tools.ChronicleSecurityTool;
+import stirling.software.proprietary.service.AiEngineClient;
 
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;

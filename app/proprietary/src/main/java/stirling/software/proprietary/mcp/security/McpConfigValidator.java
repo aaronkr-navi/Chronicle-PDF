@@ -1,10 +1,10 @@
-package Chronicle.software.proprietary.mcp.security;
+package stirling.software.proprietary.mcp.security;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import Chronicle.software.common.model.ApplicationProperties;
+import stirling.software.common.model.ApplicationProperties;
 
 /**
  * Startup sanity-checks for MCP config; {@link McpSecurityConfig} logs the findings at boot so a

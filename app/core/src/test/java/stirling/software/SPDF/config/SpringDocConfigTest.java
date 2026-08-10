@@ -1,4 +1,4 @@
-package Chronicle.software.SPDF.config;
+package stirling.software.SPDF.config;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

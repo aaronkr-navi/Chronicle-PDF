@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.security.service;
+package stirling.software.proprietary.security.service;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;

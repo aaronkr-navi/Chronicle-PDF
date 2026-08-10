@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.service;
+package stirling.software.proprietary.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -24,10 +24,10 @@ import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.util.ReflectionTestUtils;
 
-import Chronicle.software.common.configuration.InstallationPathConfig;
-import Chronicle.software.common.model.ApplicationProperties;
-import Chronicle.software.proprietary.security.configuration.ee.KeygenLicenseVerifier.License;
-import Chronicle.software.proprietary.security.configuration.ee.LicenseKeyChecker;
+import stirling.software.common.configuration.InstallationPathConfig;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.proprietary.security.configuration.ee.KeygenLicenseVerifier.License;
+import stirling.software.proprietary.security.configuration.ee.LicenseKeyChecker;
 
 /**
  * Tests for {@link ServerCertificateService}. Uses a {@link TempDir} for the keystore location
@@ -52,7 +52,7 @@ class ServerCertificateServiceTest {
         service = new ServerCertificateService(licenseKeyChecker, new ApplicationProperties());
         // default: feature enabled, validity 365, org Chronicle-PDF, no regenerate
         ReflectionTestUtils.setField(service, "enabled", true);
-        ReflectionTestUtils.setField(service, "organizationName", "Chronicle-PDF");
+        ReflectionTestUtils.setField(service, "organizationName", "chronicle-pdf");
         ReflectionTestUtils.setField(service, "validityDays", 365);
         ReflectionTestUtils.setField(service, "regenerateOnStartup", false);
     }
@@ -263,7 +263,7 @@ class ServerCertificateServiceTest {
                 service.initializeServerCertificate();
                 X509Certificate cert = service.getServerCertificate();
                 assertThat(cert).isNotNull();
-                assertThat(cert.getSubjectX500Principal().getName()).contains("Chronicle-PDF");
+                assertThat(cert.getSubjectX500Principal().getName()).contains("chronicle-pdf");
             }
         }
 
@@ -296,8 +296,8 @@ class ServerCertificateServiceTest {
                 service.initializeServerCertificate();
                 var info = service.getServerCertificateInfo();
                 assertThat(info.isExists()).isTrue();
-                assertThat(info.getSubject()).contains("Chronicle-PDF");
-                assertThat(info.getIssuer()).contains("Chronicle-PDF");
+                assertThat(info.getSubject()).contains("chronicle-pdf");
+                assertThat(info.getIssuer()).contains("chronicle-pdf");
                 assertThat(info.getValidFrom()).isNotNull();
                 assertThat(info.getValidTo()).isNotNull();
             }

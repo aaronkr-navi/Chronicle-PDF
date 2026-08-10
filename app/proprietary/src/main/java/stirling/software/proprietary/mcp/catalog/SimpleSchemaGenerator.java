@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.mcp.catalog;
+package stirling.software.proprietary.mcp.catalog;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;

@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.security.supabase;
+package stirling.software.proprietary.security.supabase;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

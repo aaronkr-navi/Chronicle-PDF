@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.controller.api;
+package stirling.software.proprietary.controller.api;
 
 import java.io.IOException;
 import java.util.regex.Pattern;
@@ -21,10 +21,10 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.proprietary.service.AiFeatureGate;
-import Chronicle.software.proprietary.service.AiToolResponseHeaders;
-import Chronicle.software.proprietary.service.PdfCommentAgentOrchestrator;
-import Chronicle.software.proprietary.service.PdfCommentAgentOrchestrator.AnnotatedPdf;
+import stirling.software.proprietary.service.AiFeatureGate;
+import stirling.software.proprietary.service.AiToolResponseHeaders;
+import stirling.software.proprietary.service.PdfCommentAgentOrchestrator;
+import stirling.software.proprietary.service.PdfCommentAgentOrchestrator.AnnotatedPdf;
 
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;

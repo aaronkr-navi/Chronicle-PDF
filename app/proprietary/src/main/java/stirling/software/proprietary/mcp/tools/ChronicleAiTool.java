@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.mcp.tools;
+package stirling.software.proprietary.mcp.tools;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.proprietary.mcp.McpCallContext;
-import Chronicle.software.proprietary.mcp.McpTool;
-import Chronicle.software.proprietary.mcp.catalog.McpToolCatalog;
-import Chronicle.software.proprietary.mcp.catalog.OperationCategory;
-import Chronicle.software.proprietary.mcp.catalog.OperationMeta;
-import Chronicle.software.proprietary.service.AiEngineClient;
+import stirling.software.proprietary.mcp.McpCallContext;
+import stirling.software.proprietary.mcp.McpTool;
+import stirling.software.proprietary.mcp.catalog.McpToolCatalog;
+import stirling.software.proprietary.mcp.catalog.OperationCategory;
+import stirling.software.proprietary.mcp.catalog.OperationMeta;
+import stirling.software.proprietary.service.AiEngineClient;
 
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;

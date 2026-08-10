@@ -1,4 +1,4 @@
-package Chronicle.software.common.configuration;
+package stirling.software.common.configuration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.io.TempDir;
 import org.mockito.MockedStatic;
 import org.snakeyaml.engine.v2.api.LoadSettings;
 
-import Chronicle.software.common.util.YamlHelper;
+import stirling.software.common.util.YamlHelper;
 
 class ConfigInitializerMoreTest {
 

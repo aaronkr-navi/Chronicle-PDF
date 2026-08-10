@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.security.service;
+package stirling.software.proprietary.security.service;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -13,8 +13,8 @@ import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.common.model.ApplicationProperties;
-import Chronicle.software.proprietary.security.model.api.Email;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.proprietary.security.model.api.Email;
 
 /**
  * Service class responsible for sending emails, including those with attachments. It uses

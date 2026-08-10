@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.cluster.s3;
+package stirling.software.proprietary.cluster.s3;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -21,11 +21,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.springframework.mock.web.MockMultipartFile;
 
-import Chronicle.software.common.cluster.FileStore;
-import Chronicle.software.common.model.ApplicationProperties;
-import Chronicle.software.proprietary.security.model.User;
-import Chronicle.software.proprietary.storage.provider.S3StorageProvider;
-import Chronicle.software.proprietary.storage.provider.StoredObject;
+import stirling.software.common.cluster.FileStore;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.proprietary.security.model.User;
+import stirling.software.proprietary.storage.provider.S3StorageProvider;
+import stirling.software.proprietary.storage.provider.StoredObject;
 
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.model.NoSuchBucketException;

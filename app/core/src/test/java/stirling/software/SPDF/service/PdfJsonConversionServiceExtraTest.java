@@ -1,4 +1,4 @@
-package Chronicle.software.SPDF.service;
+package stirling.software.SPDF.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -50,24 +50,24 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.quality.Strictness;
 import org.springframework.mock.web.MockMultipartFile;
 
-import Chronicle.software.SPDF.config.EndpointConfiguration;
-import Chronicle.software.SPDF.exception.CacheUnavailableException;
-import Chronicle.software.SPDF.model.json.PdfJsonDocument;
-import Chronicle.software.SPDF.model.json.PdfJsonDocumentMetadata;
-import Chronicle.software.SPDF.model.json.PdfJsonFont;
-import Chronicle.software.SPDF.model.json.PdfJsonImageElement;
-import Chronicle.software.SPDF.model.json.PdfJsonMetadata;
-import Chronicle.software.SPDF.model.json.PdfJsonPage;
-import Chronicle.software.SPDF.model.json.PdfJsonTextColor;
-import Chronicle.software.SPDF.model.json.PdfJsonTextElement;
-import Chronicle.software.SPDF.service.pdfjson.PdfJsonFontService;
-import Chronicle.software.SPDF.service.pdfjson.type3.Type3FontConversionService;
-import Chronicle.software.SPDF.service.pdfjson.type3.Type3GlyphExtractor;
-import Chronicle.software.common.model.ApplicationProperties;
-import Chronicle.software.common.service.CustomPDFDocumentFactory;
-import Chronicle.software.common.service.TaskManager;
-import Chronicle.software.common.util.JobContext;
-import Chronicle.software.common.util.TempFileManager;
+import stirling.software.SPDF.config.EndpointConfiguration;
+import stirling.software.SPDF.exception.CacheUnavailableException;
+import stirling.software.SPDF.model.json.PdfJsonDocument;
+import stirling.software.SPDF.model.json.PdfJsonDocumentMetadata;
+import stirling.software.SPDF.model.json.PdfJsonFont;
+import stirling.software.SPDF.model.json.PdfJsonImageElement;
+import stirling.software.SPDF.model.json.PdfJsonMetadata;
+import stirling.software.SPDF.model.json.PdfJsonPage;
+import stirling.software.SPDF.model.json.PdfJsonTextColor;
+import stirling.software.SPDF.model.json.PdfJsonTextElement;
+import stirling.software.SPDF.service.pdfjson.PdfJsonFontService;
+import stirling.software.SPDF.service.pdfjson.type3.Type3FontConversionService;
+import stirling.software.SPDF.service.pdfjson.type3.Type3GlyphExtractor;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.common.service.CustomPDFDocumentFactory;
+import stirling.software.common.service.TaskManager;
+import stirling.software.common.util.JobContext;
+import stirling.software.common.util.TempFileManager;
 
 import tools.jackson.databind.DeserializationFeature;
 import tools.jackson.databind.ObjectMapper;

@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.policy.controller;
+package stirling.software.proprietary.policy.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import io.swagger.v3.oas.annotations.Operation;
 
 import lombok.RequiredArgsConstructor;
 
-import Chronicle.software.common.annotations.api.AdminApi;
-import Chronicle.software.proprietary.policy.config.FolderAccessGuard;
+import stirling.software.common.annotations.api.AdminApi;
+import stirling.software.proprietary.policy.config.FolderAccessGuard;
 
 /**
  * Read-only admin view of the folder roots that are always permitted for folder automations,

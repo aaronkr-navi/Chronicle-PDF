@@ -1,4 +1,4 @@
-package Chronicle.software.saas.procurement.pricing;
+package stirling.software.saas.procurement.pricing;
 
 import java.util.ArrayList;
 import java.util.List;

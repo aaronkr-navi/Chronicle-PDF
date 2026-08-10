@@ -1,4 +1,4 @@
-package Chronicle.software.saas.payg.filter;
+package stirling.software.saas.payg.filter;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,9 +14,9 @@ import java.util.zip.ZipOutputStream;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
-import Chronicle.software.common.model.ApplicationProperties;
-import Chronicle.software.common.util.TempFileManager;
-import Chronicle.software.common.util.TempFileRegistry;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.common.util.TempFileManager;
+import stirling.software.common.util.TempFileRegistry;
 
 class PaygOutputExtractorTest {
 

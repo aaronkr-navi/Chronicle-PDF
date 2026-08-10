@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.policy.config;
+package stirling.software.proprietary.policy.config;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -9,11 +9,11 @@ import java.util.Optional;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
-import Chronicle.software.common.configuration.InstallationPathConfig;
-import Chronicle.software.common.configuration.RuntimePathConfig;
-import Chronicle.software.common.model.ApplicationProperties;
-import Chronicle.software.proprietary.policy.model.Policy;
-import Chronicle.software.proprietary.policy.source.SourceStore;
+import stirling.software.common.configuration.InstallationPathConfig;
+import stirling.software.common.configuration.RuntimePathConfig;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.proprietary.policy.model.Policy;
+import stirling.software.proprietary.policy.source.SourceStore;
 
 /**
  * Authority on which filesystem locations a policy may read/write. Checked at save time and again

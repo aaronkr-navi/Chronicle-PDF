@@ -1,4 +1,4 @@
-package Chronicle.software.SPDF.service;
+package stirling.software.SPDF.service;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -33,10 +33,10 @@ import jakarta.servlet.http.HttpServletRequest;
 
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.SPDF.model.api.security.HardwareCertificateInfo;
-import Chronicle.software.SPDF.model.api.security.HardwareSigningCapabilities;
-import Chronicle.software.SPDF.model.api.security.HardwareSigningCapabilities.Pkcs11LibraryInfo;
-import Chronicle.software.common.util.ExceptionUtils;
+import stirling.software.SPDF.model.api.security.HardwareCertificateInfo;
+import stirling.software.SPDF.model.api.security.HardwareSigningCapabilities;
+import stirling.software.SPDF.model.api.security.HardwareSigningCapabilities.Pkcs11LibraryInfo;
+import stirling.software.common.util.ExceptionUtils;
 
 /**
  * Bridges PDF signing to hardware-held keys: the Windows certificate store (via the JDK SunMSCAPI

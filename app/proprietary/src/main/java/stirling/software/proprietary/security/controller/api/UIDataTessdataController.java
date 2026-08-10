@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.security.controller.api;
+package stirling.software.proprietary.security.controller.api;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,7 +27,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.common.configuration.RuntimePathConfig;
+import stirling.software.common.configuration.RuntimePathConfig;
 
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;

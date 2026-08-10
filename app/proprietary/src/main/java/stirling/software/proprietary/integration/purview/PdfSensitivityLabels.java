@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.integration.purview;
+package stirling.software.proprietary.integration.purview;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

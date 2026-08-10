@@ -1,4 +1,4 @@
-package Chronicle.software.saas.payg.filter;
+package stirling.software.saas.payg.filter;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,8 +17,8 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.common.util.TempFile;
-import Chronicle.software.common.util.TempFileManager;
+import stirling.software.common.util.TempFile;
+import stirling.software.common.util.TempFileManager;
 
 /**
  * Extracts the PDF artefacts from a controller's response body for lineage OUTPUT recording. Two

@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.security.service;
+package stirling.software.proprietary.security.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -12,8 +12,8 @@ import java.util.regex.Pattern;
 
 import org.junit.jupiter.api.Test;
 
-import Chronicle.software.common.model.ApplicationProperties;
-import Chronicle.software.proprietary.security.util.Base32Codec;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.proprietary.security.util.Base32Codec;
 
 class TotpServiceTest {
 

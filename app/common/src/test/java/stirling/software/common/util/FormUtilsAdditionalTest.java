@@ -1,4 +1,4 @@
-package Chronicle.software.common.util;
+package stirling.software.common.util;
 
 import static org.junit.jupiter.api.Assertions.*;
 

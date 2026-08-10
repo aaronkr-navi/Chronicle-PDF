@@ -1,4 +1,4 @@
-package Chronicle.software.saas.payg.api;
+package stirling.software.saas.payg.api;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -22,16 +22,16 @@ import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import Chronicle.software.proprietary.model.Team;
-import Chronicle.software.proprietary.model.TeamMembership;
-import Chronicle.software.proprietary.security.database.repository.UserRepository;
-import Chronicle.software.proprietary.security.model.User;
-import Chronicle.software.proprietary.security.repository.TeamMembershipRepository;
-import Chronicle.software.saas.payg.api.PaygInvoicesController.InvoiceResponse;
-import Chronicle.software.saas.payg.policy.PaygTeamExtensions;
-import Chronicle.software.saas.payg.repository.PaygTeamExtensionsRepository;
-import Chronicle.software.saas.payg.stripe.StripeInvoiceDao;
-import Chronicle.software.saas.util.AuthenticationUtils;
+import stirling.software.proprietary.model.Team;
+import stirling.software.proprietary.model.TeamMembership;
+import stirling.software.proprietary.security.database.repository.UserRepository;
+import stirling.software.proprietary.security.model.User;
+import stirling.software.proprietary.security.repository.TeamMembershipRepository;
+import stirling.software.saas.payg.api.PaygInvoicesController.InvoiceResponse;
+import stirling.software.saas.payg.policy.PaygTeamExtensions;
+import stirling.software.saas.payg.repository.PaygTeamExtensionsRepository;
+import stirling.software.saas.payg.stripe.StripeInvoiceDao;
+import stirling.software.saas.util.AuthenticationUtils;
 
 /**
  * Pure-Mockito unit tests for {@link PaygInvoicesController}. Confirms team is resolved from the

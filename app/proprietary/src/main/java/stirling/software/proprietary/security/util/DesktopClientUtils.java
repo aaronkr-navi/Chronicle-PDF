@@ -1,11 +1,11 @@
-package Chronicle.software.proprietary.security.util;
+package stirling.software.proprietary.security.util;
 
 import jakarta.servlet.http.HttpServletRequest;
 
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.common.constants.JwtConstants;
-import Chronicle.software.common.model.ApplicationProperties;
+import stirling.software.common.constants.JwtConstants;
+import stirling.software.common.model.ApplicationProperties;
 
 /**
  * Utility class for detecting desktop clients and determining appropriate token expiry times.

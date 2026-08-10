@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.mcp.tools;
+package stirling.software.proprietary.mcp.tools;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -13,10 +13,10 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.ObjectProvider;
 
-import Chronicle.software.proprietary.mcp.McpCallContext;
-import Chronicle.software.proprietary.mcp.catalog.McpToolCatalog;
-import Chronicle.software.proprietary.mcp.catalog.OperationCategory;
-import Chronicle.software.proprietary.mcp.catalog.OperationMeta;
+import stirling.software.proprietary.mcp.McpCallContext;
+import stirling.software.proprietary.mcp.catalog.McpToolCatalog;
+import stirling.software.proprietary.mcp.catalog.OperationCategory;
+import stirling.software.proprietary.mcp.catalog.OperationMeta;
 
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;

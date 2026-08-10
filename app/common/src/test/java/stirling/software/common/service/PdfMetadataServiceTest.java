@@ -1,4 +1,4 @@
-package Chronicle.software.common.service;
+package stirling.software.common.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -19,11 +19,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import Chronicle.software.common.model.ApplicationProperties;
-import Chronicle.software.common.model.ApplicationProperties.Premium;
-import Chronicle.software.common.model.ApplicationProperties.Premium.ProFeatures;
-import Chronicle.software.common.model.ApplicationProperties.Premium.ProFeatures.CustomMetadata;
-import Chronicle.software.common.model.PdfMetadata;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.common.model.ApplicationProperties.Premium;
+import stirling.software.common.model.ApplicationProperties.Premium.ProFeatures;
+import stirling.software.common.model.ApplicationProperties.Premium.ProFeatures.CustomMetadata;
+import stirling.software.common.model.PdfMetadata;
 
 class PdfMetadataServiceTest {
 

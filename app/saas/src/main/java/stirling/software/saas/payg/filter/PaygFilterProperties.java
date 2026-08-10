@@ -1,4 +1,4 @@
-package Chronicle.software.saas.payg.filter;
+package stirling.software.saas.payg.filter;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Profile;

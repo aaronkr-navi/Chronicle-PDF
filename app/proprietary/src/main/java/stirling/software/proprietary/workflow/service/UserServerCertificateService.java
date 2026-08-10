@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.workflow.service;
+package stirling.software.proprietary.workflow.service;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -31,11 +31,11 @@ import org.springframework.web.server.ResponseStatusException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.proprietary.security.database.repository.UserRepository;
-import Chronicle.software.proprietary.security.model.User;
-import Chronicle.software.proprietary.workflow.model.CertificateType;
-import Chronicle.software.proprietary.workflow.model.UserServerCertificateEntity;
-import Chronicle.software.proprietary.workflow.repository.UserServerCertificateRepository;
+import stirling.software.proprietary.security.database.repository.UserRepository;
+import stirling.software.proprietary.security.model.User;
+import stirling.software.proprietary.workflow.model.CertificateType;
+import stirling.software.proprietary.workflow.model.UserServerCertificateEntity;
+import stirling.software.proprietary.workflow.repository.UserServerCertificateRepository;
 
 @Service
 @Slf4j

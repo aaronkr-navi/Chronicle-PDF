@@ -1,4 +1,4 @@
-package Chronicle.software.SPDF.model.api.security;
+package stirling.software.SPDF.model.api.security;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -10,7 +10,7 @@ import jakarta.validation.constraints.Min;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import Chronicle.software.common.model.api.PDFFile;
+import stirling.software.common.model.api.PDFFile;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

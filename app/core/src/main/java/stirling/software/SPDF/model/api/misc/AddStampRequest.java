@@ -1,4 +1,4 @@
-package Chronicle.software.SPDF.model.api.misc;
+package stirling.software.SPDF.model.api.misc;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import Chronicle.software.SPDF.model.api.PDFWithPageNums;
+import stirling.software.SPDF.model.api.PDFWithPageNums;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

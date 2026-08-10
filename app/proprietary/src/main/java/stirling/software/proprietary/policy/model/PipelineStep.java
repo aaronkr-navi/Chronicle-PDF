@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.policy.model;
+package stirling.software.proprietary.policy.model;
 
 import java.util.Map;
 

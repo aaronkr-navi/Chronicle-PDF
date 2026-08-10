@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.security.model.api;
+package stirling.software.proprietary.security.model.api;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import Chronicle.software.common.model.api.GeneralFile;
+import stirling.software.common.model.api.GeneralFile;
 
 @Data
 @NoArgsConstructor

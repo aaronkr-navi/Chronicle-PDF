@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.workflow.service;
+package stirling.software.proprietary.workflow.service;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -38,15 +38,15 @@ import org.springframework.web.server.ResponseStatusException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.common.service.CustomPDFDocumentFactory;
-import Chronicle.software.common.service.PdfSigningService;
-import Chronicle.software.common.service.ServerCertificateServiceInterface;
-import Chronicle.software.proprietary.workflow.dto.CertificateSubmission;
-import Chronicle.software.proprietary.workflow.dto.WetSignatureMetadata;
-import Chronicle.software.proprietary.workflow.model.ParticipantStatus;
-import Chronicle.software.proprietary.workflow.model.WorkflowParticipant;
-import Chronicle.software.proprietary.workflow.model.WorkflowSession;
-import Chronicle.software.proprietary.workflow.repository.WorkflowParticipantRepository;
+import stirling.software.common.service.CustomPDFDocumentFactory;
+import stirling.software.common.service.PdfSigningService;
+import stirling.software.common.service.ServerCertificateServiceInterface;
+import stirling.software.proprietary.workflow.dto.CertificateSubmission;
+import stirling.software.proprietary.workflow.dto.WetSignatureMetadata;
+import stirling.software.proprietary.workflow.model.ParticipantStatus;
+import stirling.software.proprietary.workflow.model.WorkflowParticipant;
+import stirling.software.proprietary.workflow.model.WorkflowSession;
+import stirling.software.proprietary.workflow.repository.WorkflowParticipantRepository;
 
 import tools.jackson.databind.ObjectMapper;
 

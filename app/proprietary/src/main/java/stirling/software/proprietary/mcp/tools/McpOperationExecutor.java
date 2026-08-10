@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.mcp.tools;
+package stirling.software.proprietary.mcp.tools;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,11 +19,11 @@ import org.springframework.web.client.RestClientResponseException;
 
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.common.model.ApplicationProperties;
-import Chronicle.software.common.service.FileStorage;
-import Chronicle.software.common.service.InternalApiClient;
-import Chronicle.software.common.service.InternalApiTimeoutException;
-import Chronicle.software.proprietary.mcp.catalog.OperationMeta;
+import stirling.software.common.model.ApplicationProperties;
+import stirling.software.common.service.FileStorage;
+import stirling.software.common.service.InternalApiClient;
+import stirling.software.common.service.InternalApiTimeoutException;
+import stirling.software.proprietary.mcp.catalog.OperationMeta;
 
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.JsonNode;

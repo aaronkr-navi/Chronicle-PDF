@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.mcp.tools;
+package stirling.software.proprietary.mcp.tools;
 
 import java.io.IOException;
 
@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.common.service.FileStorage;
-import Chronicle.software.proprietary.mcp.McpCallContext;
-import Chronicle.software.proprietary.mcp.McpTool;
+import stirling.software.common.service.FileStorage;
+import stirling.software.proprietary.mcp.McpCallContext;
+import stirling.software.proprietary.mcp.McpTool;
 
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;

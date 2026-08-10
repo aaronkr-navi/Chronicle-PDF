@@ -1,4 +1,4 @@
-package Chronicle.software.saas.payg.test;
+package stirling.software.saas.payg.test;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.MediaType;
@@ -12,8 +12,8 @@ import io.swagger.v3.oas.annotations.Hidden;
 
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.common.annotations.AutoJobPostMapping;
-import Chronicle.software.common.enumeration.ResourceWeight;
+import stirling.software.common.annotations.AutoJobPostMapping;
+import stirling.software.common.enumeration.ResourceWeight;
 
 /**
  * Cucumber-only force-5xx endpoint. Gated behind the {@code payg-cucumber} Spring profile so the

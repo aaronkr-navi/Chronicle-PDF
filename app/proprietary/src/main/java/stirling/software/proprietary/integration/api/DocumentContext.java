@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.integration.api;
+package stirling.software.proprietary.integration.api;
 
 import java.io.IOException;
 import java.security.MessageDigest;
@@ -17,9 +17,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.common.service.PdfMetadataService;
-import Chronicle.software.proprietary.integration.purview.PdfSensitivityLabels;
-import Chronicle.software.proprietary.integration.purview.SensitivityLabel;
+import stirling.software.common.service.PdfMetadataService;
+import stirling.software.proprietary.integration.purview.PdfSensitivityLabels;
+import stirling.software.proprietary.integration.purview.SensitivityLabel;
 
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;

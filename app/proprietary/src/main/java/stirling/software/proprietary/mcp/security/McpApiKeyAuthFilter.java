@@ -1,4 +1,4 @@
-package Chronicle.software.proprietary.mcp.security;
+package stirling.software.proprietary.mcp.security;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,8 +20,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import lombok.extern.slf4j.Slf4j;
 
-import Chronicle.software.proprietary.security.model.User;
-import Chronicle.software.proprietary.security.service.UserService;
+import stirling.software.proprietary.security.model.User;
+import stirling.software.proprietary.security.service.UserService;
 
 /**
  * API-key auth for the MCP endpoint: validates a Chronicle API key and binds the request to that
