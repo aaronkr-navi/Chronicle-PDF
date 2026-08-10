@@ -278,7 +278,7 @@ def check_for_differences(reference_file, file_list, branch, actor):
 
             if missing_keys_list or extra_keys_list:
                 report.append(
-                    "    See: https://github.com/Stirling-Tools/Chronicle-PDF/tree/main/scripts/translations#2-translation_mergerpy"
+                    "    See: https://github.com/aaronkr-navi/Chronicle-PDF/tree/main/scripts/translations#2-translation_mergerpy"
                 )
         else:
             report.append("2. **Test Status:** ✅ **_Passed_**")
@@ -308,7 +308,7 @@ def check_for_differences(reference_file, file_list, branch, actor):
         report.append("## ❌ Overall Check Status: **_Failed_**")
         report.append("")
         report.append(
-            f"@{actor} please check your translation if it conforms to the standard. Follow the format of [en-US/translation.toml](https://github.com/Stirling-Tools/Chronicle-PDF/blob/main/frontend/editor/public/locales/en-US/translation.toml)"
+            f"@{actor} please check your translation if it conforms to the standard. Follow the format of [en-US/translation.toml](https://github.com/aaronkr-navi/Chronicle-PDF/blob/main/frontend/editor/public/locales/en-US/translation.toml)"
         )
     else:
         report.append("## ✅ Overall Check Status: **_Success_**")
