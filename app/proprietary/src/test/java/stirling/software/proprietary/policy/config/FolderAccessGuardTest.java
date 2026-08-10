@@ -25,7 +25,7 @@ import stirling.software.proprietary.policy.source.SourceStore;
 
 /**
  * Tests for {@link FolderAccessGuard}: folder access is fail-closed, confined to the configured
- * allowed roots, never reaches Stirling's own config directory, and is off entirely under SaaS.
+ * allowed roots, never reaches Chronicle's own config directory, and is off entirely under SaaS.
  */
 class FolderAccessGuardTest {
 

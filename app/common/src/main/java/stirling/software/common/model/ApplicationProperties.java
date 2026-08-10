@@ -210,7 +210,7 @@ public class ApplicationProperties {
          * Absolute directories that policy folder input sources and output sinks may read from or
          * write to. Empty (the default) disables folder access except to implicitly defined
          * folders, such as server storage folders (if enabled) and the pipeline watched folders.
-         * Stirling's own config directory is always off-limits, and folder access is always
+         * Chronicle's own config directory is always off-limits, and folder access is always
          * disabled in SaaS mode regardless of this list.
          */
         private List<String> allowedFolderRoots = new java.util.ArrayList<>();
@@ -488,7 +488,7 @@ public class ApplicationProperties {
             /**
              * Authentication mode for the MCP endpoint. {@code oauth} (default) runs a full OAuth2
              * resource server (JWT, RFC 8707 audience, RFC 9728 metadata). {@code apikey} accepts a
-             * Stirling per-user API key via the {@code X-API-KEY} header (or {@code Authorization:
+             * Chronicle per-user API key via the {@code X-API-KEY} header (or {@code Authorization:
              * Bearer <key>}) and binds the request to that user - the low-friction self-host path,
              * no external IdP required.
              */
@@ -520,16 +520,16 @@ public class ApplicationProperties {
             private List<String> acceptedAudiences = new ArrayList<>();
 
             /**
-             * JWT claim whose value is matched against a provisioned Stirling username. Defaults to
+             * JWT claim whose value is matched against a provisioned Chronicle username. Defaults to
              * {@code sub}; set to {@code email} or {@code preferred_username} to match how your IdP
-             * maps users to Stirling accounts.
+             * maps users to Chronicle accounts.
              */
             private String usernameClaim = "sub";
 
             /**
              * When {@code true} (default), a validated token is accepted only if its {@link
-             * #usernameClaim} value resolves to an existing, enabled Stirling user account. Tokens
-             * whose subject has no Stirling account (or a disabled one) are rejected with HTTP 403.
+             * #usernameClaim} value resolves to an existing, enabled Chronicle user account. Tokens
+             * whose subject has no Chronicle account (or a disabled one) are rejected with HTTP 403.
              * Set to {@code false} only if you intentionally want any IdP-valid token to use MCP
              * without a local account.
              */
@@ -638,7 +638,7 @@ public class ApplicationProperties {
     }
 
     /**
-     * HTTP timeouts for loopback calls to internal Stirling API endpoints, used by the AI workflow
+     * HTTP timeouts for loopback calls to internal Chronicle API endpoints, used by the AI workflow
      * executor and the pipeline processor. A bounded read timeout prevents a hung tool (e.g. an
      * infinite loop in a PDF processing service) from stalling the entire chat workflow forever.
      * Tools that legitimately need longer than the read timeout should be invoked through the async

@@ -105,7 +105,7 @@ public class McpSecurityConfig {
     }
 
     /**
-     * API-key chain: a Stirling per-user API key is validated by {@link McpApiKeyAuthFilter};
+     * API-key chain: a Chronicle per-user API key is validated by {@link McpApiKeyAuthFilter};
      * otherwise 401.
      */
     private SecurityFilterChain apiKeyFilterChain(HttpSecurity http) throws Exception {

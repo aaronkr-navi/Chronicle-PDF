@@ -21,7 +21,7 @@ import stirling.software.proprietary.policy.source.SourceStore;
  *
  * <ol>
  *   <li>denied entirely under the {@code saas} profile;
- *   <li>Stirling's own config dir always rejected, even if an allowed root were misconfigured to
+ *   <li>Chronicle's own config dir always rejected, even if an allowed root were misconfigured to
  *       contain it;
  *   <li>Stirling-owned "implied" roots are always permitted (even with none configured): the local
  *       server file-storage directory when that storage provider is enabled, and the pipeline
