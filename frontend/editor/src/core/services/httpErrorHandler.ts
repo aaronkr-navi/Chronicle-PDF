@@ -130,7 +130,7 @@ export async function handleHttpError(error: any): Promise<boolean> {
       stashPostLoginRedirect(currentLocation);
       let hadStoredJwt = false;
       try {
-        hadStoredJwt = Boolean(localStorage.getItem("stirling_jwt"));
+        hadStoredJwt = Boolean(localStorage.getItem("chronicle_jwt"));
       } catch {
         // ignore storage access failures
       }

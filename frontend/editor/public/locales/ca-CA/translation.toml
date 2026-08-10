@@ -1619,7 +1619,7 @@ admin = "Administrador"
 title = "Opcions de Control d'Usuari"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Més informació"
@@ -6777,7 +6777,7 @@ subtitle = "Les instàncies s'autentiquen a l'organització amb aquesta credenci
 title = "Token de servei"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "S'ha emès un token nou. Actualitza el STIRLING_SERVICE_TOKEN de cada instància self-hosted dins de la finestra de gràcia de 24 h o quedaran offline."
+description = "S'ha emès un token nou. Actualitza el Chronicle_SERVICE_TOKEN de cada instància self-hosted dins de la finestra de gràcia de 24 h o quedaran offline."
 title = "Rota les instàncies en execució"
 
 [portal.editorAdmin.status]

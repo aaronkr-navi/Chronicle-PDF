@@ -1619,7 +1619,7 @@ admin = "管理員"
 title = "使用者控制設定"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "了解更多"
@@ -6777,7 +6777,7 @@ subtitle = "執行個體使用此憑證向組織驗證。請依排程輪換，�
 title = "服務 token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "已發行新 token。請在 24 小時寬限期內更新每個自託管執行個體的 STIRLING_SERVICE_TOKEN，否則它們會離線。"
+description = "已發行新 token。請在 24 小時寬限期內更新每個自託管執行個體的 Chronicle_SERVICE_TOKEN，否則它們會離線。"
 title = "輪換運行中的執行個體"
 
 [portal.editorAdmin.status]

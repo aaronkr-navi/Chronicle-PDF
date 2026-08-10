@@ -215,7 +215,7 @@ These files provide pre-configured setups for different scenarios. For example, 
 services:
   Chronicle-PDF:
     container_name: Chronicle-PDF-Security
-    image: docker.chronicle-pdf.com/stirlingtools/Chronicle-PDF:latest
+    image: docker.chronicle-pdf.com/aaronkr-navi/Chronicle-PDF:latest
     deploy:
       resources:
         limits:
@@ -289,20 +289,20 @@ Chronicle-PDF uses different Docker images for various configurations. The build
    For the latest version:
 
    ```bash
-   docker build --no-cache --pull --build-arg VERSION_TAG=alpha -t stirlingtools/Chronicle-PDF:latest -f ./Dockerfile .
+   docker build --no-cache --pull --build-arg VERSION_TAG=alpha -t aaronkr-navi/Chronicle-PDF:latest -f ./Dockerfile .
    ```
 
    For the ultra-lite version:
 
    ```bash
-   docker build --no-cache --pull --build-arg VERSION_TAG=alpha -t stirlingtools/Chronicle-PDF:latest-ultra-lite -f ./Dockerfile.ultra-lite .
+   docker build --no-cache --pull --build-arg VERSION_TAG=alpha -t aaronkr-navi/Chronicle-PDF:latest-ultra-lite -f ./Dockerfile.ultra-lite .
    ```
 
    For the fat version (with login and security features enabled):
 
    ```bash
    export DISABLE_ADDITIONAL_FEATURES=false
-   docker build --no-cache --pull --build-arg VERSION_TAG=alpha -t stirlingtools/Chronicle-PDF:latest-fat -f ./Dockerfile.fat .
+   docker build --no-cache --pull --build-arg VERSION_TAG=alpha -t aaronkr-navi/Chronicle-PDF:latest-fat -f ./Dockerfile.fat .
    ```
 
 Note: The `--no-cache` and `--pull` flags ensure that the build process uses the latest base images and doesn't use cached layers, which is useful for testing and ensuring reproducible builds. However, to improve build times these can often be removed depending on your use case

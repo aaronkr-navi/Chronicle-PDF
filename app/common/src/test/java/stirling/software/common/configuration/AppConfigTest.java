@@ -64,9 +64,9 @@ class AppConfigTest {
         }
 
         @Test
-        @DisplayName("StirlingPDFLabel embeds version")
+        @DisplayName("ChroniclePDFLabel embeds version")
         void stirlingLabel() {
-            assertThat(appConfig.stirlingPDFLabel()).startsWith("Stirling-PDF v");
+            assertThat(appConfig.ChroniclePDFLabel()).startsWith("Stirling-PDF v");
         }
     }
 

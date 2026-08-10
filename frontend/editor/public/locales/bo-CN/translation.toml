@@ -1616,7 +1616,7 @@ admin = "འཛིན་སྐྱོང་།"
 title = "སྤྱོད་མཁན་ཚོད་འཛིན་སྒྲིག་སྟངས།"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "ང་ཚོའི་དབྱེ་ཞིབ་སྐོར་ལ་མང་ཙམ་ཤེས་དགོས།"

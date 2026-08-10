@@ -7,7 +7,7 @@ and has no end-user-facing API surface) are intentionally absent. The handoff sp
 clients should be able to invoke it directly.
 
 The Java side pulls ``/api/v1/agents/capabilities`` once at boot and again every few minutes; the
-manifest is the authoritative source for the ``stirling_ai`` MCP tool's operation enum.
+manifest is the authoritative source for the ``chronicle_ai`` MCP tool's operation enum.
 """
 
 from __future__ import annotations
@@ -35,7 +35,7 @@ class AgentCapability:
 
     Attributes:
         id: stable capability identifier (used as the operation enum value in
-            ``stirling_ai``). Avoid renaming - clients persist these.
+            ``chronicle_ai``). Avoid renaming - clients persist these.
         description: one-line human-friendly summary shown inside MCP tool descriptions.
         input_model: Pydantic class whose JSON Schema becomes the capability's
             ``input_schema``. Auto-derived; do not hand-write schemas.

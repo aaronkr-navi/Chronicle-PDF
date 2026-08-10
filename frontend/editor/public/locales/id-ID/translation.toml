@@ -1619,7 +1619,7 @@ admin = "Administrator"
 title = "Pengaturan Kontrol Pengguna"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Pelajari lebih lanjut"
@@ -6777,7 +6777,7 @@ subtitle = "Instans mengautentikasi ke organisasi dengan kredensial ini. Rotasi 
 title = "Token layanan"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Token baru telah diterbitkan. Perbarui STIRLING_SERVICE_TOKEN setiap instans yang dihosting sendiri dalam jendela toleransi 24 jam atau instans akan offline."
+description = "Token baru telah diterbitkan. Perbarui Chronicle_SERVICE_TOKEN setiap instans yang dihosting sendiri dalam jendela toleransi 24 jam atau instans akan offline."
 title = "Rotasi instans yang berjalan"
 
 [portal.editorAdmin.status]

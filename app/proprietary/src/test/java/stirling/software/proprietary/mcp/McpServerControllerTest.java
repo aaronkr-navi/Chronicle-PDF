@@ -102,12 +102,12 @@ class McpServerControllerTest {
 
         Set<String> names =
                 Set.of(
-                        "stirling_describe_operation",
-                        "stirling_convert",
-                        "stirling_pages",
-                        "stirling_misc",
-                        "stirling_security",
-                        "stirling_ai");
+                        "chronicle_describe_operation",
+                        "chronicle_convert",
+                        "chronicle_pages",
+                        "chronicle_misc",
+                        "chronicle_security",
+                        "chronicle_ai");
         Set<String> seen = new java.util.HashSet<>();
         tools.forEach(t -> seen.add(t.get("name").asText()));
         assertEquals(names, seen);
@@ -172,7 +172,7 @@ class McpServerControllerTest {
         JsonNode body =
                 mapper.readTree(
                         "{\"jsonrpc\":\"2.0\",\"id\":4,\"method\":\"tools/call\","
-                                + "\"params\":{\"name\":\"stirling_does_not_exist\",\"arguments\":{}}}");
+                                + "\"params\":{\"name\":\"chronicle_does_not_exist\",\"arguments\":{}}}");
 
         ResponseEntity<?> response = controller.handle(body);
 
@@ -186,7 +186,7 @@ class McpServerControllerTest {
         JsonNode body =
                 mapper.readTree(
                         "{\"jsonrpc\":\"2.0\",\"id\":5,\"method\":\"tools/call\","
-                                + "\"params\":{\"name\":\"stirling_describe_operation\","
+                                + "\"params\":{\"name\":\"chronicle_describe_operation\","
                                 + "\"arguments\":{\"operation\":\"compress-pdf\"}}}");
 
         ResponseEntity<?> response = controller.handle(body);

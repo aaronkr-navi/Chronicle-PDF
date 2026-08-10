@@ -199,8 +199,8 @@ public class AppConfig {
         return applicationProperties.getSystem().isAnalyticsEnabled();
     }
 
-    @Bean(name = "StirlingPDFLabel")
-    public String stirlingPDFLabel() {
+    @Bean(name = "ChroniclePDFLabel")
+    public String ChroniclePDFLabel() {
         return "Chronicle-PDF" + " v" + appVersion();
     }
 

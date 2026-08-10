@@ -1619,7 +1619,7 @@ admin = "Administrator"
 title = "Postavka kontrole korisnika"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Saznajte više"
@@ -3072,7 +3072,7 @@ upgradeButton = "Nadogradi račun"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Kopiraj API ključ"
-description = "Vaš API ključ za pristup Stirlingovom paketu PDF alata. Kopirajte ga u svoj projekt ili osvježite za generiranje novog."
+description = "Vaš API ključ za pristup Chronicle paketu PDF alata. Kopirajte ga u svoj projekt ili osvježite za generiranje novog."
 docsDescription = "Saznajte više o integraciji sa Chronicle PDF:"
 docsLink = "API dokumentacija"
 docsTitle = "API dokumentacija"
@@ -6354,7 +6354,7 @@ close = "Zatvori asistenta"
 error = "Nije moguće dohvatiti asistenta."
 errorWithDetail = "Nije moguće dohvatiti asistenta: {{detail}}"
 inputAriaLabel = "Pitajte asistenta"
-inputPlaceholder = "Pitajte o Stirlingu…"
+inputPlaceholder = "Pitajte o Chronicle…"
 open = "Otvori asistenta"
 send = "Pošalji"
 title = "Asistent"
@@ -6777,7 +6777,7 @@ subtitle = "Instance se autentificiraju u organizaciju ovom vjerodajnicom. Rotir
 title = "Servisni token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Izdan je novi token. Ažurirajte STIRLING_SERVICE_TOKEN svake samostalno hostane instance unutar 24-satnog razdoblja odgode ili će se isključiti."
+description = "Izdan je novi token. Ažurirajte Chronicle_SERVICE_TOKEN svake samostalno hostane instance unutar 24-satnog razdoblja odgode ili će se isključiti."
 title = "Rotirajte pokrenute instance"
 
 [portal.editorAdmin.status]

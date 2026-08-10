@@ -118,7 +118,7 @@ test.describe("1. Authentication and Login", () => {
       // page after redirect.
       await page.context().clearCookies();
       await page.evaluate(() => {
-        localStorage.removeItem("stirling_jwt");
+        localStorage.removeItem("chronicle_jwt");
         localStorage.removeItem("stirling_refresh_token");
       });
       await page.context().addCookies([

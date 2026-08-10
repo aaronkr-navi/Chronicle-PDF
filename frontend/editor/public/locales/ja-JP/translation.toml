@@ -1619,7 +1619,7 @@ admin = "管理者"
 title = "ユーザー制御設定"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "詳しく見る"
@@ -6777,7 +6777,7 @@ subtitle = "インスタンスはこの認証情報で組織に認証します�
 title = "サービストークン"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "新しいトークンが発行されました。24 時間の猶予期間内に各セルフホスト型インスタンスの STIRLING_SERVICE_TOKEN を更新してください。更新しないとオフラインになります。"
+description = "新しいトークンが発行されました。24 時間の猶予期間内に各セルフホスト型インスタンスの Chronicle_SERVICE_TOKEN を更新してください。更新しないとオフラインになります。"
 title = "実行中のインスタンスをローテーション"
 
 [portal.editorAdmin.status]

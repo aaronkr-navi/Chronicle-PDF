@@ -211,7 +211,7 @@ export const POLICY_CONFIG: Record<string, PolicyConfigDef> = {
       "Classifies every uploaded document and writes the result to its metadata.",
     rules: ["Classify", "Tag metadata"],
     // Single backend step: classify the document via the AI engine and store the
-    // result in the document's StirlingPDFClassification metadata field.
+    // result in the document's ChroniclePDFClassification metadata field.
     defaultOperations: [{ operation: "classify", parameters: {} }],
     scopeLabel: "All PDFs on this device",
     fields: [],

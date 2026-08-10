@@ -1619,7 +1619,7 @@ admin = "Admin"
 title = "Nastavenia kontroly používateľov"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Viac informácií"
@@ -6777,7 +6777,7 @@ subtitle = "Inštancie sa autentifikujú do organizácie pomocou tohto prihlasov
 title = "Servisný token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Bol vydaný nový token. Aktualizujte STIRLING_SERVICE_TOKEN každej self-hosted inštancie počas 24-hodinového ochranného okna, inak prejdú offline."
+description = "Bol vydaný nový token. Aktualizujte Chronicle_SERVICE_TOKEN každej self-hosted inštancie počas 24-hodinového ochranného okna, inak prejdú offline."
 title = "Rotovať bežiace inštancie"
 
 [portal.editorAdmin.status]

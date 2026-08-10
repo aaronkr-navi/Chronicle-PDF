@@ -1619,7 +1619,7 @@ admin = "Administrateur"
 title = "Administration des paramètres des utilisateurs"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "En savoir plus"
@@ -6777,7 +6777,7 @@ subtitle = "Les instances s’authentifient auprès de l’organisation avec cet
 title = "Jeton de service"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Un nouveau jeton a été émis. Mettez à jour le STIRLING_SERVICE_TOKEN de chaque instance auto-hébergée dans la fenêtre de grâce de 24 h, sinon elles passeront hors ligne."
+description = "Un nouveau jeton a été émis. Mettez à jour le Chronicle_SERVICE_TOKEN de chaque instance auto-hébergée dans la fenêtre de grâce de 24 h, sinon elles passeront hors ligne."
 title = "Faire tourner les instances en cours d’exécution"
 
 [portal.editorAdmin.status]

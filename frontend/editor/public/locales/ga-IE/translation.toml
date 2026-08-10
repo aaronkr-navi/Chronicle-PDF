@@ -1619,7 +1619,7 @@ admin = "Riarachán"
 title = "Socruithe Rialaithe Úsáideora"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Tuilleadh eolais"
@@ -6777,7 +6777,7 @@ subtitle = "Fíordheimhníonn insteansanna leis an eagraíocht leis an dintiúr 
 title = "Token seirbhíse"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Eisíodh token nua. Nuashonraigh STIRLING_SERVICE_TOKEN gach insteans féin-óstáilte laistigh den fhuinneog ghrásta 24h nó rachaidh siad as líne."
+description = "Eisíodh token nua. Nuashonraigh Chronicle_SERVICE_TOKEN gach insteans féin-óstáilte laistigh den fhuinneog ghrásta 24h nó rachaidh siad as líne."
 title = "Rothlaigh insteansanna atá ag rith"
 
 [portal.editorAdmin.status]

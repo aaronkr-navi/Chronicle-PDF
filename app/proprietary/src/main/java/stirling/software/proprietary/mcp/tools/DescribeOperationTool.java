@@ -29,7 +29,7 @@ public class DescribeOperationTool implements McpTool {
 
     @Override
     public String name() {
-        return "stirling_describe_operation";
+        return "chronicle_describe_operation";
     }
 
     @Override
@@ -37,7 +37,7 @@ public class DescribeOperationTool implements McpTool {
         return "Return the full JSON Schema for one Stirling operation's parameters. Call this "
                 + "before invoking a category tool to learn the exact shape of `parameters`. "
                 + "Argument: { operation: <op-id> } where <op-id> appears in the enum of any "
-                + "category tool (stirling_convert, _pages, _misc, _security, _ai).";
+                + "category tool (chronicle_convert, _pages, _misc, _security, _ai).";
     }
 
     @Override

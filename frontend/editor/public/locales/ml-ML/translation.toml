@@ -1619,7 +1619,7 @@ admin = "അഡ്മിൻ"
 title = "ഉപയോക്തൃ നിയന്ത്രണ ക്രമീകരണങ്ങൾ"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "കൂടുതൽ അറിയുക"
@@ -6777,7 +6777,7 @@ subtitle = "ഈ credential ഉപയോഗിച്ച് instances org-ലേ�
 title = "Service token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "ഒരു പുതിയ token നൽകി. 24h grace window-ക്കുള്ളിൽ ഓരോ self-hosted instance-ന്റെയും STIRLING_SERVICE_TOKEN അപ്ഡേറ്റ് ചെയ്യുക, അല്ലെങ്കിൽ അവ offline ആവും."
+description = "ഒരു പുതിയ token നൽകി. 24h grace window-ക്കുള്ളിൽ ഓരോ self-hosted instance-ന്റെയും Chronicle_SERVICE_TOKEN അപ്ഡേറ്റ് ചെയ്യുക, അല്ലെങ്കിൽ അവ offline ആവും."
 title = "പ്രവർത്തിക്കുന്ന instances rotate ചെയ്യുക"
 
 [portal.editorAdmin.status]

@@ -23,14 +23,14 @@ public class StirlingSecurityTool extends AbstractCategoryTool {
 
     @Override
     public String name() {
-        return "stirling_security";
+        return "chronicle_security";
     }
 
     @Override
     public String description() {
         return "Security-related PDF operations: password add/remove, redact, sanitize, certify"
                 + " / sign with cert, validate signature, add watermark. Call"
-                + " stirling_describe_operation with the chosen op to get its parameters schema"
+                + " chronicle_describe_operation with the chosen op to get its parameters schema"
                 + " before invoking this tool.";
     }
 

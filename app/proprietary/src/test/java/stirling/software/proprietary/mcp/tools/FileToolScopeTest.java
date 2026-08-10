@@ -14,7 +14,7 @@ import stirling.software.proprietary.mcp.McpCallContext;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.node.ObjectNode;
 
-/** stirling_upload requires write scope; stirling_download requires read scope. */
+/** chronicle_upload requires write scope; chronicle_download requires read scope. */
 class FileToolScopeTest {
 
     private final ObjectMapper mapper = new ObjectMapper();

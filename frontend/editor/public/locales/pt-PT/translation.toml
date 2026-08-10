@@ -1619,7 +1619,7 @@ admin = "Administrador"
 title = "Definições de Controlo de Utilizador"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Saber mais"
@@ -6777,7 +6777,7 @@ subtitle = "As instâncias autenticam-se na organização com esta credencial. R
 title = "Token de serviço"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Foi emitido um novo token. Atualize o STIRLING_SERVICE_TOKEN de cada instância autoalojada dentro da janela de tolerância de 24 h ou ficarão offline."
+description = "Foi emitido um novo token. Atualize o Chronicle_SERVICE_TOKEN de cada instância autoalojada dentro da janela de tolerância de 24 h ou ficarão offline."
 title = "Rodar instâncias em execução"
 
 [portal.editorAdmin.status]

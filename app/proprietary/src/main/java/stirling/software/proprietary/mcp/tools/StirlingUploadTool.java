@@ -34,7 +34,7 @@ public class StirlingUploadTool implements McpTool {
 
     @Override
     public String name() {
-        return "stirling_upload";
+        return "chronicle_upload";
     }
 
     @Override
@@ -62,7 +62,7 @@ public class StirlingUploadTool implements McpTool {
     public ObjectNode call(JsonNode arguments, McpCallContext context) {
         if (!context.hasScope("mcp.tools.write")) {
             return McpResponses.error(
-                    mapper, "Insufficient scope: stirling_upload requires 'mcp.tools.write'.");
+                    mapper, "Insufficient scope: chronicle_upload requires 'mcp.tools.write'.");
         }
         String base64 = McpToolSupport.textArg(arguments, "file");
         if (base64 == null) {

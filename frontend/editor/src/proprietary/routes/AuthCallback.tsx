@@ -72,7 +72,7 @@ export default function AuthCallback() {
           return;
         }
 
-        localStorage.setItem("stirling_jwt", token);
+        localStorage.setItem("chronicle_jwt", token);
         window.dispatchEvent(new CustomEvent("jwt-available"));
 
         const { data, error } = await springAuth.getSession();
@@ -81,7 +81,7 @@ export default function AuthCallback() {
             `[AuthCallback] Failed to validate token (${elapsed()}):`,
             error,
           );
-          localStorage.removeItem("stirling_jwt");
+          localStorage.removeItem("chronicle_jwt");
           navigate("/login", {
             replace: true,
             state: {

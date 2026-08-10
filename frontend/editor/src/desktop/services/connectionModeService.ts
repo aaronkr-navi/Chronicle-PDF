@@ -182,7 +182,7 @@ export class ConnectionModeService {
     if (
       previousMode !== "saas" &&
       typeof window !== "undefined" &&
-      localStorage.getItem("stirling_jwt")
+      localStorage.getItem("chronicle_jwt")
     ) {
       window.dispatchEvent(new CustomEvent("jwt-available"));
     }
@@ -260,7 +260,7 @@ export class ConnectionModeService {
     if (
       previousMode !== "selfhosted" &&
       typeof window !== "undefined" &&
-      localStorage.getItem("stirling_jwt")
+      localStorage.getItem("chronicle_jwt")
     ) {
       window.dispatchEvent(new CustomEvent("jwt-available"));
     }

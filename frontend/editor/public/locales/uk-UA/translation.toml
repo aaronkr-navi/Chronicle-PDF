@@ -1619,7 +1619,7 @@ admin = "Адміністратор"
 title = "Налаштування контролю користувача"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Дізнатися більше"
@@ -6777,7 +6777,7 @@ subtitle = "Екземпляри автентифікуються в орган�
 title = "Сервісний токен"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Видано новий токен. Оновіть STIRLING_SERVICE_TOKEN кожного самостійно розміщеного екземпляра протягом 24-годинного пільгового вікна, інакше вони перейдуть офлайн."
+description = "Видано новий токен. Оновіть Chronicle_SERVICE_TOKEN кожного самостійно розміщеного екземпляра протягом 24-годинного пільгового вікна, інакше вони перейдуть офлайн."
 title = "Ротуйте активні екземпляри"
 
 [portal.editorAdmin.status]

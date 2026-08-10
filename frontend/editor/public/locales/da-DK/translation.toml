@@ -1619,7 +1619,7 @@ admin = "Administrer"
 title = "Brugerkontrolindstillinger"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Lær mere"
@@ -3072,7 +3072,7 @@ upgradeButton = "Opgradér konto"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Kopiér API-nøgle"
-description = "Din API-nøgle til adgang til Stirlings pakke af PDF-værktøjer. Kopiér den til dit projekt, eller opdatér for at generere en ny."
+description = "Din API-nøgle til adgang til Chronicles pakke af PDF-værktøjer. Kopiér den til dit projekt, eller opdatér for at generere en ny."
 docsDescription = "Lær mere om integration med Chronicle PDF:"
 docsLink = "API-dokumentation"
 docsTitle = "API-dokumentation"
@@ -6777,7 +6777,7 @@ subtitle = "Instanser godkendes mod organisationen med denne legitimationsoplysn
 title = "Servicetoken"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Et nyt token blev udstedt. Opdater hver selvhostet instans' STIRLING_SERVICE_TOKEN inden for 24-timers henstandsperioden, ellers går de offline."
+description = "Et nyt token blev udstedt. Opdater hver selvhostet instans' Chronicle_SERVICE_TOKEN inden for 24-timers henstandsperioden, ellers går de offline."
 title = "Rotér kørende instanser"
 
 [portal.editorAdmin.status]

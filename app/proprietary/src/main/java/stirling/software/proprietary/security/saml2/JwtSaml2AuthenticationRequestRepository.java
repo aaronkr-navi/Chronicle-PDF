@@ -22,7 +22,7 @@ public class JwtSaml2AuthenticationRequestRepository
     private final JwtServiceInterface jwtService;
     private final RelyingPartyRegistrationRepository relyingPartyRegistrationRepository;
 
-    private static final String SAML_REQUEST_TOKEN = "stirling_saml_request_token";
+    private static final String SAML_REQUEST_TOKEN = "chronicle_saml_request_token";
 
     public JwtSaml2AuthenticationRequestRepository(
             Map<String, String> tokenStore,

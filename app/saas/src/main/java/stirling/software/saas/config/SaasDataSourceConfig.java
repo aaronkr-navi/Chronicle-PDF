@@ -45,12 +45,12 @@ public class SaasDataSourceConfig {
     @Value("${spring.datasource.hikari.keepalive-time:300000}")
     private long keepaliveTime;
 
-    @Value("${spring.datasource.hikari.data-source-properties.ApplicationName:StirlingPDF-SaaS}")
+    @Value("${spring.datasource.hikari.data-source-properties.ApplicationName:ChroniclePDF-SaaS}")
     private String applicationName;
 
-    // search_path so native SQL hits stirling_pdf, not the postgres-default public.
+    // search_path so native SQL hits chronicle_pdf, not the postgres-default public.
     @Value(
-            "${spring.datasource.hikari.connection-init-sql:SET search_path TO stirling_pdf, auth, public}")
+            "${spring.datasource.hikari.connection-init-sql:SET search_path TO chronicle_pdf, auth, public}")
     private String connectionInitSql;
 
     @Bean

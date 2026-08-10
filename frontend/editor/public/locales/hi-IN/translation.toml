@@ -1619,7 +1619,7 @@ admin = "व्यवस्थापक"
 title = "उपयोगकर्ता नियंत्रण सेटिंग्स"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "और जानें"
@@ -6777,7 +6777,7 @@ subtitle = "इंस्टेंस इस क्रेडेंशियल �
 title = "Service token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "नया token जारी किया गया। 24h grace window के भीतर प्रत्येक self-hosted इंस्टेंस के STIRLING_SERVICE_TOKEN को अपडेट करें, नहीं तो वे ऑफ़लाइन हो जाएँगे।"
+description = "नया token जारी किया गया। 24h grace window के भीतर प्रत्येक self-hosted इंस्टेंस के Chronicle_SERVICE_TOKEN को अपडेट करें, नहीं तो वे ऑफ़लाइन हो जाएँगे।"
 title = "चल रहे इंस्टेंस रोटेट करें"
 
 [portal.editorAdmin.status]

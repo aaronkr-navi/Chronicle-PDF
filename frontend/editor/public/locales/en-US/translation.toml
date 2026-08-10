@@ -1794,7 +1794,7 @@ admin = "Admin"
 title = "User Control Settings"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Learn more about our analytics"
@@ -7247,7 +7247,7 @@ subtitle = "Instances authenticate to the org with this credential. Rotate it on
 title = "Service token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "A new token was issued. Update each self-hosted instance's STIRLING_SERVICE_TOKEN within the 24h grace window or they'll drop offline."
+description = "A new token was issued. Update each self-hosted instance's Chronicle_SERVICE_TOKEN within the 24h grace window or they'll drop offline."
 title = "Rotate running instances"
 
 [portal.editorAdmin.status]

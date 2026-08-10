@@ -1,6 +1,6 @@
 services:
   # ---------------------------------------------------------------------
-  # Postgres holding the stirling_pdf schema, built by Hibernate
+  # Postgres holding the chronicle_pdf schema, built by Hibernate
   # ddl-auto=create-drop when the backend starts (see below). Exposed on
   # host port 5433 so the cucumber harness can connect via psycopg from
   # features/steps/payg_*.
@@ -14,7 +14,7 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      # Bootstrap stirling_pdf schema + seed test team / api key.
+      # Bootstrap chronicle_pdf schema + seed test team / api key.
       # Runs once when the container is first created.
       - ./payg/saas-init.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
     healthcheck:

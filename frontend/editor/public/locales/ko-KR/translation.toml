@@ -1619,7 +1619,7 @@ admin = "관리자"
 title = "사용자 제어 설정"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "자세히 알아보기"
@@ -6777,7 +6777,7 @@ subtitle = "인스턴스는 이 자격 증명으로 조직에 인증합니다. �
 title = "서비스 토큰"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "새 토큰이 발급되었습니다. 24시간 유예 기간 내에 각 셀프 호스팅 인스턴스의 STIRLING_SERVICE_TOKEN을 업데이트하지 않으면 오프라인 상태가 됩니다."
+description = "새 토큰이 발급되었습니다. 24시간 유예 기간 내에 각 셀프 호스팅 인스턴스의 Chronicle_SERVICE_TOKEN을 업데이트하지 않으면 오프라인 상태가 됩니다."
 title = "실행 중인 인스턴스 교체"
 
 [portal.editorAdmin.status]

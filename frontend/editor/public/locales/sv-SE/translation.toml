@@ -1619,7 +1619,7 @@ admin = "Admin"
 title = "Användarhanteringsinställningar"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Läs mer"
@@ -3072,7 +3072,7 @@ upgradeButton = "Uppgradera konto"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Kopiera API-nyckel"
-description = "Din API-nyckel för att komma åt Stirlings svit av PDF-verktyg. Kopiera den till ditt projekt eller uppdatera för att generera en ny."
+description = "Din API-nyckel för att komma åt Chronicles svit av PDF-verktyg. Kopiera den till ditt projekt eller uppdatera för att generera en ny."
 docsDescription = "Läs mer om integration med Chronicle PDF:"
 docsLink = "API-dokumentation"
 docsTitle = "API-dokumentation"
@@ -6777,7 +6777,7 @@ subtitle = "Instanser autentiserar mot organisationen med den här autentisering
 title = "Servicetoken"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "En ny token har utfärdats. Uppdatera varje självhostad instans STIRLING_SERVICE_TOKEN inom respitperioden på 24 h, annars kopplas de från."
+description = "En ny token har utfärdats. Uppdatera varje självhostad instans Chronicle_SERVICE_TOKEN inom respitperioden på 24 h, annars kopplas de från."
 title = "Rotera körande instanser"
 
 [portal.editorAdmin.status]

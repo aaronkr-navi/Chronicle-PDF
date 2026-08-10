@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
  * Read-only accessor for the Stripe Sync Engine schema ({@code stripe.*}). Gives the PAYG layer the
  * team's real billing window and the per-document rate of the Price its subscription bills against
  * - both live in Stripe, mirrored into Postgres by the sync engine, and are NOT duplicated in
- * {@code stirling_pdf} (money lives in Stripe).
+ * {@code chronicle_pdf} (money lives in Stripe).
  *
  * <p>PAYG prices are plain {@code per_unit} metered prices, so {@code stripe.prices.unit_amount}
  * carries the rate directly. The free grant is deliberately NOT in Stripe - it's the one-time

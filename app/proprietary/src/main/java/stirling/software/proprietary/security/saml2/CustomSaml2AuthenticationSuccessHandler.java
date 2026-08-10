@@ -44,7 +44,7 @@ import stirling.software.proprietary.security.util.DesktopClientUtils;
 public class CustomSaml2AuthenticationSuccessHandler
         extends SavedRequestAwareAuthenticationSuccessHandler {
 
-    private static final String SPA_REDIRECT_COOKIE = "stirling_redirect_path";
+    private static final String SPA_REDIRECT_COOKIE = "chronicle_redirect_path";
     private static final String DEFAULT_CALLBACK_PATH = "/auth/callback";
 
     private LoginAttemptService loginAttemptService;

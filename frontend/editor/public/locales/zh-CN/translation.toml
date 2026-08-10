@@ -1619,7 +1619,7 @@ admin = "管理员"
 title = "用户控制设置"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "了解详情"
@@ -6777,7 +6777,7 @@ subtitle = "实例使用此凭据向组织进行身份验证。请按计划轮�
 title = "服务令牌"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "已签发新令牌。请在 24 小时宽限期内更新每个自托管实例的 STIRLING_SERVICE_TOKEN，否则它们将离线。"
+description = "已签发新令牌。请在 24 小时宽限期内更新每个自托管实例的 Chronicle_SERVICE_TOKEN，否则它们将离线。"
 title = "轮换运行中的实例"
 
 [portal.editorAdmin.status]

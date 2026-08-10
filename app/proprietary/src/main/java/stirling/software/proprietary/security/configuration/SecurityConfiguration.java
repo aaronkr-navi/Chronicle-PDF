@@ -333,7 +333,7 @@ public class SecurityConfiguration {
                                                     aiUserDataService))
                                     .clearAuthentication(true)
                                     .invalidateHttpSession(true)
-                                    .deleteCookies("JSESSIONID", "remember-me", "stirling_jwt"));
+                                    .deleteCookies("JSESSIONID", "remember-me", "chronicle_jwt"));
             http.rememberMe(
                     rememberMeConfigurer -> // Use the configurator directly
                     rememberMeConfigurer

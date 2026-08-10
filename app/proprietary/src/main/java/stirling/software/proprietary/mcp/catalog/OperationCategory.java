@@ -2,11 +2,11 @@ package stirling.software.proprietary.mcp.catalog;
 
 /** MCP tool categories; {@link #urlPrefix} maps a {@code /api/v1/} namespace to a category. */
 public enum OperationCategory {
-    CONVERT("/api/v1/convert/", "stirling_convert"),
-    PAGES("/api/v1/general/", "stirling_pages"),
-    MISC("/api/v1/misc/", "stirling_misc"),
-    SECURITY("/api/v1/security/", "stirling_security"),
-    AI(null, "stirling_ai");
+    CONVERT("/api/v1/convert/", "chronicle_convert"),
+    PAGES("/api/v1/general/", "chronicle_pages"),
+    MISC("/api/v1/misc/", "chronicle_misc"),
+    SECURITY("/api/v1/security/", "chronicle_security"),
+    AI(null, "chronicle_ai");
 
     private final String urlPrefix;
     private final String toolName;

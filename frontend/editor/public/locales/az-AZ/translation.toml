@@ -1619,7 +1619,7 @@ admin = "Admin"
 title = "İstifadəçi İdarəetmə Parametrləri"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Daha ətraflı öyrənin"
@@ -6777,7 +6777,7 @@ subtitle = "Instansiyalar bu giriş məlumatı ilə təşkilata autentifikasiya 
 title = "Servis tokeni"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Yeni token verildi. Hər bir öz hostinqinizdəki instansiyanın STIRLING_SERVICE_TOKEN dəyərini 24 saatlıq güzəşt pəncərəsində yeniləyin, yoxsa onlar offline olacaq."
+description = "Yeni token verildi. Hər bir öz hostinqinizdəki instansiyanın Chronicle_SERVICE_TOKEN dəyərini 24 saatlıq güzəşt pəncərəsində yeniləyin, yoxsa onlar offline olacaq."
 title = "İşləyən instansiyaları dövr et"
 
 [portal.editorAdmin.status]

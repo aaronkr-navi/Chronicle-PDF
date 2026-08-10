@@ -57,7 +57,7 @@ abstract class AbstractCategoryTool implements McpTool {
         List<OperationMeta> enabled = enabledOperations();
         StringBuilder opDesc = new StringBuilder();
         opDesc.append(
-                "Operation id from this category. Call stirling_describe_operation first to learn"
+                "Operation id from this category. Call chronicle_describe_operation first to learn"
                         + " the exact parameters schema. Available operations:\n");
         ArrayNode opEnum = op.putArray("enum");
         for (OperationMeta m : enabled) {
@@ -70,7 +70,7 @@ abstract class AbstractCategoryTool implements McpTool {
         params.put("type", "object");
         params.put(
                 "description",
-                "Per-operation parameters. Schema available via stirling_describe_operation.");
+                "Per-operation parameters. Schema available via chronicle_describe_operation.");
         params.put("additionalProperties", true);
 
         McpToolSupport.stringProperty(
@@ -87,7 +87,7 @@ abstract class AbstractCategoryTool implements McpTool {
         McpToolSupport.stringProperty(
                 props,
                 "fileId",
-                "Reference to a file already stored via stirling_upload. Recommended only for large"
+                "Reference to a file already stored via chronicle_upload. Recommended only for large"
                         + " files or multi-step workflows; most users should pass the file inline"
                         + " via 'file' instead.");
 

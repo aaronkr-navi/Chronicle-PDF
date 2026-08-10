@@ -93,7 +93,7 @@ export class AuthService {
 
     // Sync to localStorage for web layer (fallback)
     try {
-      localStorage.setItem("stirling_jwt", token);
+      localStorage.setItem("chronicle_jwt", token);
     } catch (error) {
       console.error(
         "[Desktop AuthService] Failed to save token to localStorage:",
@@ -143,7 +143,7 @@ export class AuthService {
     }
 
     // Fallback to localStorage
-    return localStorage.getItem("stirling_jwt");
+    return localStorage.getItem("chronicle_jwt");
   }
 
   /**
@@ -181,7 +181,7 @@ export class AuthService {
 
     // Best effort: clear web storage
     try {
-      localStorage.removeItem("stirling_jwt");
+      localStorage.removeItem("chronicle_jwt");
       localStorage.removeItem("stirling_refresh_token");
     } catch (error) {
       console.warn(
@@ -870,7 +870,7 @@ export class AuthService {
       // Check if token exists in storage (user just logged in via web flow)
       const tokenInStorage =
         typeof window !== "undefined"
-          ? localStorage.getItem("stirling_jwt")
+          ? localStorage.getItem("chronicle_jwt")
           : null;
       if (tokenInStorage) {
         console.log(

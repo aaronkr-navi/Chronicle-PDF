@@ -23,13 +23,13 @@ public class StirlingConvertTool extends AbstractCategoryTool {
 
     @Override
     public String name() {
-        return "stirling_convert";
+        return "chronicle_convert";
     }
 
     @Override
     public String description() {
         return "Convert files between PDF and other formats (PDF<->Word, PDF<->image, HTML->PDF,"
-                + " etc.). Inspect the `operation` enum, then call stirling_describe_operation"
+                + " etc.). Inspect the `operation` enum, then call chronicle_describe_operation"
                 + " with the chosen op to get its parameters JSON Schema before calling this"
                 + " tool.";
     }

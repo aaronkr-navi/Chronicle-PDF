@@ -1619,7 +1619,7 @@ admin = "Beheerder"
 title = "Gebruikersbeheer"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Meer informatie"
@@ -6777,7 +6777,7 @@ subtitle = "Instanties authenticeren zich bij de organisatie met deze referentie
 title = "Service token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Er is een nieuw token uitgegeven. Werk de STIRLING_SERVICE_TOKEN van elke zelfgehoste instantie binnen de respijtperiode van 24 uur bij, anders gaan ze offline."
+description = "Er is een nieuw token uitgegeven. Werk de Chronicle_SERVICE_TOKEN van elke zelfgehoste instantie binnen de respijtperiode van 24 uur bij, anders gaan ze offline."
 title = "Draaiende instanties roteren"
 
 [portal.editorAdmin.status]

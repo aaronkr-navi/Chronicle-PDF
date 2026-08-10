@@ -1619,7 +1619,7 @@ admin = "ادمین"
 title = "تنظیمات کنترل کاربران"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "بیشتر بدانید"
@@ -6777,7 +6777,7 @@ subtitle = "نمونه‌ها با این اعتبارنامه در سازمان
 title = "Service token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "یک token جدید صادر شد. STIRLING_SERVICE_TOKEN هر نمونه خودمیزبان را در بازه مهلت ۲۴ ساعته به‌روزرسانی کنید، وگرنه آفلاین می‌شوند."
+description = "یک token جدید صادر شد. Chronicle_SERVICE_TOKEN هر نمونه خودمیزبان را در بازه مهلت ۲۴ ساعته به‌روزرسانی کنید، وگرنه آفلاین می‌شوند."
 title = "چرخش نمونه‌های در حال اجرا"
 
 [portal.editorAdmin.status]

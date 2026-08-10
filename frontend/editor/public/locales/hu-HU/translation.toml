@@ -1619,7 +1619,7 @@ admin = "Rendszergazda"
 title = "Felhasználókezelés"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "További információ"
@@ -6777,7 +6777,7 @@ subtitle = "A példányok ezzel a hitelesítő adattal azonosítják magukat a s
 title = "Szolgáltatási token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Új token lett kiadva. Frissítse minden self-hosted példány STIRLING_SERVICE_TOKEN értékét a 24 órás türelmi időn belül, különben offline állapotba kerülnek."
+description = "Új token lett kiadva. Frissítse minden self-hosted példány Chronicle_SERVICE_TOKEN értékét a 24 órás türelmi időn belül, különben offline állapotba kerülnek."
 title = "Futó példányok rotálása"
 
 [portal.editorAdmin.status]

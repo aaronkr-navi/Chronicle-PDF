@@ -1619,7 +1619,7 @@ admin = "Správce"
 title = "Nastavení správy uživatelů"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Více informací"
@@ -3072,7 +3072,7 @@ upgradeButton = "Vylepšit účet"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Kopírovat API klíč"
-description = "Váš API klíč pro přístup k sadě PDF nástrojů Stirlingu. Zkopírujte si ho do projektu nebo obnovte pro vygenerování nového."
+description = "Váš API klíč pro přístup k sadě PDF nástrojů Chronicle. Zkopírujte si ho do projektu nebo obnovte pro vygenerování nového."
 docsDescription = "Zjistěte více o integraci se Chronicle PDF:"
 docsLink = "API dokumentace"
 docsTitle = "API dokumentace"
@@ -6777,7 +6777,7 @@ subtitle = "Instance se k organizaci ověřují pomocí tohoto přihlašovacího
 title = "Servisní token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Byl vydán nový token. Aktualizujte STIRLING_SERVICE_TOKEN každé self-hosted instance během 24h ochranného okna, jinak přejdou offline."
+description = "Byl vydán nový token. Aktualizujte Chronicle_SERVICE_TOKEN každé self-hosted instance během 24h ochranného okna, jinak přejdou offline."
 title = "Rotujte běžící instance"
 
 [portal.editorAdmin.status]

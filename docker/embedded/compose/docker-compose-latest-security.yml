@@ -1,7 +1,7 @@
 services:
   Chronicle-PDF:
     container_name: Chronicle-PDF-Security
-    image: docker.chronicle-pdf.com/stirlingtools/Chronicle-PDF:latest
+    image: docker.chronicle-pdf.com/aaronkr-navi/Chronicle-PDF:latest
     build:
       context: ../../..
       dockerfile: docker/embedded/Dockerfile

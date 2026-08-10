@@ -1619,7 +1619,7 @@ admin = "مسؤول"
 title = "إعدادات التحكم في المستخدم"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "اعرف المزيد"
@@ -6777,7 +6777,7 @@ subtitle = "تتحقق المثيلات من هويتها لدى المؤسسة 
 title = "رمز الخدمة المميز"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "تم إصدار رمز مميز جديد. حدّث STIRLING_SERVICE_TOKEN لكل مثيل مستضاف ذاتيًا ضمن فترة السماح البالغة 24 ساعة وإلا ستصبح غير متصلة."
+description = "تم إصدار رمز مميز جديد. حدّث Chronicle_SERVICE_TOKEN لكل مثيل مستضاف ذاتيًا ضمن فترة السماح البالغة 24 ساعة وإلا ستصبح غير متصلة."
 title = "تدوير المثيلات قيد التشغيل"
 
 [portal.editorAdmin.status]

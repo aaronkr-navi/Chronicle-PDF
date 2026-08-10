@@ -1619,7 +1619,7 @@ admin = "Admin"
 title = "Erabiltzailearen Ezarpenen Kontrolak"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Argibide gehiago"
@@ -3072,7 +3072,7 @@ upgradeButton = "Bertsio-berritu kontua"
 
 [config.apiKeys]
 copyKeyAriaLabel = "API gakoa kopiatu"
-description = "Stirlingen PDF tresna-multzora sartzeko zure API gakoa. Kopiatu zure proiektuara edo berritu berri bat sortzeko."
+description = "Chronicle PDF tresna-multzora sartzeko zure API gakoa. Kopiatu zure proiektuara edo berritu berri bat sortzeko."
 docsDescription = "Ikasi gehiago Chronicle PDFrekin integrazioari buruz:"
 docsLink = "API dokumentazioa"
 docsTitle = "API dokumentazioa"
@@ -5041,7 +5041,7 @@ title = "Ibilbidearen ikuspegi orokorra"
 
 [onboarding.welcomeSlide]
 body = "Chronicle PDF orain tamaina guztietako taldeentzat prest dago. Eguneratze honek diseinu berria, admin gaitasun indartsu berriak, eta eskatuen izan den eginbidea dakar - <strong>Testua editatu</strong>."
-title = "Ongi etorri Stirlingera"
+title = "Ongi etorri Chronicle"
 
 [onboarding.whatsNew]
 activeFilesView = "Erabili Fitxategi aktiboak irekitako guztia ikusteko eta zerrekin lan egin hautatzeko."
@@ -6777,7 +6777,7 @@ subtitle = "Instantziek kredentzial honekin autentifikatzen dira erakundean. Bir
 title = "Zerbitzu-tokena"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Token berri bat jaulki da. Eguneratu norberak ostatatutako instantzia bakoitzaren STIRLING_SERVICE_TOKEN 24 orduko grazia-epearen barruan; bestela offline geratuko dira."
+description = "Token berri bat jaulki da. Eguneratu norberak ostatatutako instantzia bakoitzaren Chronicle_SERVICE_TOKEN 24 orduko grazia-epearen barruan; bestela offline geratuko dira."
 title = "Biratu martxan dauden instantziak"
 
 [portal.editorAdmin.status]

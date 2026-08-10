@@ -45,9 +45,9 @@ class SaasDataSourceConfigTest {
         ReflectionTestUtils.setField(config, "idleTimeout", 600000L);
         ReflectionTestUtils.setField(config, "maxLifetime", 1800000L);
         ReflectionTestUtils.setField(config, "keepaliveTime", 300000L);
-        ReflectionTestUtils.setField(config, "applicationName", "StirlingPDF-SaaS");
+        ReflectionTestUtils.setField(config, "applicationName", "ChroniclePDF-SaaS");
         ReflectionTestUtils.setField(
-                config, "connectionInitSql", "SET search_path TO stirling_pdf, auth, public");
+                config, "connectionInitSql", "SET search_path TO chronicle_pdf, auth, public");
     }
 
     @Nested
@@ -113,7 +113,7 @@ class SaasDataSourceConfigTest {
             assertThat(hikari.getDriverClassName())
                     .isEqualTo(DatabaseDriver.POSTGRESQL.getDriverClassName());
             assertThat(hikari.getConnectionInitSql())
-                    .isEqualTo("SET search_path TO stirling_pdf, auth, public");
+                    .isEqualTo("SET search_path TO chronicle_pdf, auth, public");
         }
 
         @Test
@@ -125,7 +125,7 @@ class SaasDataSourceConfigTest {
 
             HikariConfig hikari = capture(config::saasDataSource);
 
-            assertThat(hikari.getJdbcUrl()).contains("?ApplicationName=StirlingPDF-SaaS");
+            assertThat(hikari.getJdbcUrl()).contains("?ApplicationName=ChroniclePDF-SaaS");
         }
 
         @Test
@@ -137,7 +137,7 @@ class SaasDataSourceConfigTest {
 
             HikariConfig hikari = capture(config::saasDataSource);
 
-            assertThat(hikari.getJdbcUrl()).contains("&ApplicationName=StirlingPDF-SaaS");
+            assertThat(hikari.getJdbcUrl()).contains("&ApplicationName=ChroniclePDF-SaaS");
         }
 
         @Test

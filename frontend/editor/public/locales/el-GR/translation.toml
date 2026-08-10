@@ -1619,7 +1619,7 @@ admin = "Διαχειριστής"
 title = "Ρυθμίσεις ελέγχου χρήστη"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Μάθετε περισσότερα"
@@ -6777,7 +6777,7 @@ subtitle = "Οι παρουσίες αυθεντικοποιούνται στο�
 title = "Service token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Εκδόθηκε ένα νέο token. Ενημερώστε το STIRLING_SERVICE_TOKEN κάθε self-hosted παρουσίας εντός του 24ωρου παραθύρου χάριτος, αλλιώς θα βγουν offline."
+description = "Εκδόθηκε ένα νέο token. Ενημερώστε το Chronicle_SERVICE_TOKEN κάθε self-hosted παρουσίας εντός του 24ωρου παραθύρου χάριτος, αλλιώς θα βγουν offline."
 title = "Περιστροφή ενεργών παρουσιών"
 
 [portal.editorAdmin.status]

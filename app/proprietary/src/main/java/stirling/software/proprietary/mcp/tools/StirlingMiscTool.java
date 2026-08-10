@@ -23,13 +23,13 @@ public class StirlingMiscTool extends AbstractCategoryTool {
 
     @Override
     public String name() {
-        return "stirling_misc";
+        return "chronicle_misc";
     }
 
     @Override
     public String description() {
         return "Miscellaneous PDF operations: compress, OCR, stamp / watermark, edit metadata,"
-                + " flatten, repair, and similar utilities. Call stirling_describe_operation with"
+                + " flatten, repair, and similar utilities. Call chronicle_describe_operation with"
                 + " the chosen op to get its parameters schema before invoking this tool.";
     }
 

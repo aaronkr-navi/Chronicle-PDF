@@ -28,24 +28,24 @@ class ClusterMetricsTest {
 
     @Test
     void registersAllRequiredMeters() {
-        assertNotNull(registry.find("stirling_cluster_sticky_miss_total").counter());
-        assertNotNull(registry.find("stirling_cluster_ratelimit_rejected_total").counter());
-        assertNotNull(registry.find("stirling_cluster_backplane_latency_seconds").timer());
-        assertNotNull(registry.find("stirling_cluster_job_wait_seconds").timer());
-        Gauge inflight = registry.find("stirling_cluster_jobs_inflight").tag("node", NODE).gauge();
+        assertNotNull(registry.find("chronicle_cluster_sticky_miss_total").counter());
+        assertNotNull(registry.find("chronicle_cluster_ratelimit_rejected_total").counter());
+        assertNotNull(registry.find("chronicle_cluster_backplane_latency_seconds").timer());
+        assertNotNull(registry.find("chronicle_cluster_job_wait_seconds").timer());
+        Gauge inflight = registry.find("chronicle_cluster_jobs_inflight").tag("node", NODE).gauge();
         assertNotNull(inflight, "jobs_inflight gauge with node tag must be registered eagerly");
     }
 
     @Test
     void registersKnownLaneGaugesEagerly() {
         for (String lane : new String[] {"FAST", "SLOW", "AI"}) {
-            Gauge g = registry.find("stirling_cluster_queue_depth").tag("lane", lane).gauge();
+            Gauge g = registry.find("chronicle_cluster_queue_depth").tag("lane", lane).gauge();
             assertNotNull(g, "lane gauge must be eagerly registered for " + lane);
             assertEquals(0.0, g.value(), "lane gauge default value must be 0 for " + lane);
         }
         assertEquals(
                 3,
-                registry.find("stirling_cluster_queue_depth").gauges().size(),
+                registry.find("chronicle_cluster_queue_depth").gauges().size(),
                 "exactly the three known lane gauges should be registered at boot");
     }
 
@@ -53,14 +53,14 @@ class ClusterMetricsTest {
     void recordStickyMissIncrementsCounter() {
         metrics.recordStickyMiss();
         metrics.recordStickyMiss();
-        assertEquals(2.0, registry.find("stirling_cluster_sticky_miss_total").counter().count());
+        assertEquals(2.0, registry.find("chronicle_cluster_sticky_miss_total").counter().count());
     }
 
     @Test
     void recordRateLimitRejectIncrementsCounter() {
         metrics.recordRateLimitReject();
         assertEquals(
-                1.0, registry.find("stirling_cluster_ratelimit_rejected_total").counter().count());
+                1.0, registry.find("chronicle_cluster_ratelimit_rejected_total").counter().count());
     }
 
     @Test
@@ -69,7 +69,7 @@ class ClusterMetricsTest {
         metrics.incrementInflight();
         metrics.incrementInflight();
         metrics.decrementInflight();
-        Gauge gauge = registry.find("stirling_cluster_jobs_inflight").tag("node", NODE).gauge();
+        Gauge gauge = registry.find("chronicle_cluster_jobs_inflight").tag("node", NODE).gauge();
         assertEquals(2.0, gauge.value(), "expected 2 inflight after 3 inc / 1 dec");
     }
 
@@ -78,8 +78,8 @@ class ClusterMetricsTest {
         metrics.setQueueDepth("FAST", 4);
         metrics.setQueueDepth("SLOW", 7);
 
-        Gauge fast = registry.find("stirling_cluster_queue_depth").tag("lane", "FAST").gauge();
-        Gauge slow = registry.find("stirling_cluster_queue_depth").tag("lane", "SLOW").gauge();
+        Gauge fast = registry.find("chronicle_cluster_queue_depth").tag("lane", "FAST").gauge();
+        Gauge slow = registry.find("chronicle_cluster_queue_depth").tag("lane", "SLOW").gauge();
         assertEquals(4.0, fast.value());
         assertEquals(7.0, slow.value());
     }
@@ -87,7 +87,7 @@ class ClusterMetricsTest {
     @Test
     void setQueueDepthForUnknownLane_lazyRegistersFallbackGauge() {
         metrics.setQueueDepth("custom-lane", 5);
-        Gauge g = registry.find("stirling_cluster_queue_depth").tag("lane", "custom-lane").gauge();
+        Gauge g = registry.find("chronicle_cluster_queue_depth").tag("lane", "custom-lane").gauge();
         assertNotNull(g);
         assertEquals(5.0, g.value());
     }
@@ -100,10 +100,10 @@ class ClusterMetricsTest {
 
         assertEquals(
                 1,
-                registry.find("stirling_cluster_queue_depth").tag("lane", "FAST").gauges().size());
+                registry.find("chronicle_cluster_queue_depth").tag("lane", "FAST").gauges().size());
         assertEquals(
                 9.0,
-                registry.find("stirling_cluster_queue_depth").tag("lane", "FAST").gauge().value());
+                registry.find("chronicle_cluster_queue_depth").tag("lane", "FAST").gauge().value());
     }
 
     @Test
@@ -111,12 +111,12 @@ class ClusterMetricsTest {
         metrics.backplaneLatency().record(java.time.Duration.ofMillis(7));
         metrics.backplaneLatency().record(java.time.Duration.ofMillis(11));
         assertEquals(
-                2L, registry.find("stirling_cluster_backplane_latency_seconds").timer().count());
+                2L, registry.find("chronicle_cluster_backplane_latency_seconds").timer().count());
     }
 
     @Test
     void jobWaitTimerAcceptsRecordings() {
         metrics.jobWaitSeconds().record(java.time.Duration.ofMillis(50));
-        assertEquals(1L, registry.find("stirling_cluster_job_wait_seconds").timer().count());
+        assertEquals(1L, registry.find("chronicle_cluster_job_wait_seconds").timer().count());
     }
 }

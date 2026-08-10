@@ -39,7 +39,7 @@ public class StirlingDownloadTool implements McpTool {
 
     @Override
     public String name() {
-        return "stirling_download";
+        return "chronicle_download";
     }
 
     @Override
@@ -65,7 +65,7 @@ public class StirlingDownloadTool implements McpTool {
     public ObjectNode call(JsonNode arguments, McpCallContext context) {
         if (!context.hasScope("mcp.tools.read")) {
             return McpResponses.error(
-                    mapper, "Insufficient scope: stirling_download requires 'mcp.tools.read'.");
+                    mapper, "Insufficient scope: chronicle_download requires 'mcp.tools.read'.");
         }
         String fileId = McpToolSupport.textArg(arguments, "fileId");
         if (fileId == null) {

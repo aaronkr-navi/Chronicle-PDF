@@ -1619,7 +1619,7 @@ admin = "Администратор"
 title = "Настройки за потребителски контрол"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Научете повече"
@@ -6777,7 +6777,7 @@ subtitle = "Инстанциите се удостоверяват към орг
 title = "Service token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Издаден е нов token. Актуализирайте STIRLING_SERVICE_TOKEN на всяка самостоятелно хоствана инстанция в рамките на 24-часовия гратисен прозорец, иначе ще преминат offline."
+description = "Издаден е нов token. Актуализирайте Chronicle_SERVICE_TOKEN на всяка самостоятелно хоствана инстанция в рамките на 24-часовия гратисен прозорец, иначе ще преминат offline."
 title = "Ротирайте работещите инстанции"
 
 [portal.editorAdmin.status]

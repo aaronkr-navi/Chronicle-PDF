@@ -2,7 +2,7 @@
 services:
   Chronicle-PDF:
     container_name: Chronicle-PDF-Fat-Disable-Endpoints
-    image: docker.chronicle-pdf.com/stirlingtools/Chronicle-PDF:fat
+    image: docker.chronicle-pdf.com/aaronkr-navi/Chronicle-PDF:fat
     build:
       context: ../../../
       dockerfile: docker/embedded/Dockerfile.fat

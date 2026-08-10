@@ -91,7 +91,7 @@ async function setUpApiKeys(
 
   await seedCookieConsent(page);
   await page.addInitScript((jwt) => {
-    localStorage.setItem("stirling_jwt", jwt);
+    localStorage.setItem("chronicle_jwt", jwt);
   }, token);
 
   // Revoke: flip the addressed key to revoked, 204 like the real endpoint.

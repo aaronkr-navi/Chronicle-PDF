@@ -1619,7 +1619,7 @@ admin = "Quản trị viên"
 title = "Cài đặt kiểm soát người dùng"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Tìm hiểu thêm"
@@ -6777,7 +6777,7 @@ subtitle = "Các phiên bản xác thực với tổ chức bằng thông tin x�
 title = "Service token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Một token mới đã được phát hành. Cập nhật STIRLING_SERVICE_TOKEN của từng phiên bản self-hosted trong thời gian ân hạn 24 giờ, nếu không chúng sẽ offline."
+description = "Một token mới đã được phát hành. Cập nhật Chronicle_SERVICE_TOKEN của từng phiên bản self-hosted trong thời gian ân hạn 24 giờ, nếu không chúng sẽ offline."
 title = "Xoay vòng các phiên bản đang chạy"
 
 [portal.editorAdmin.status]

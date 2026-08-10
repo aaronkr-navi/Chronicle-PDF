@@ -17,23 +17,23 @@ import "@portal/components/DownloadEditorModal.css";
 /*  Install commands + guides (code isn't translated; only labels are)       */
 /* ──────────────────────────────────────────────────────────────────────── */
 
-const WINGET = "winget install StirlingTools.StirlingPDF";
+const WINGET = "winget install StirlingTools.ChroniclePDF";
 const BREW = "brew install --cask Chronicle PDF";
 const dockerCmd = (tag: string) =>
   `docker run -d --name Chronicle PDF -p 8080:8080 \\\n  -v ./stirling-data:/configs \\\n  stirlingtools/stirling-pdf:${tag}`;
 const HELM = `helm repo add Chronicle PDF https://stirling-tools.github.io/Chronicle PDF/
 helm repo update
 helm install Chronicle PDF Chronicle PDF/stirling-pdf-chart \\\n  --namespace Chronicle PDF --create-namespace`;
-const JAR_URL = "https://files.stirlingpdf.com/Chronicle PDF-with-login.jar";
+const JAR_URL = "https://files.ChroniclePDF.com/Chronicle PDF-with-login.jar";
 const JAR =
   "java -Xmx2g -jar Chronicle PDF-with-login.jar\n# then open http://localhost:8080";
 
 const GUIDES = {
-  windows: "https://docs.stirlingpdf.com/Installation/Windows%20Installation/",
-  mac: "https://docs.stirlingpdf.com/Installation/Mac%20Installation/",
+  windows: "https://docs.ChroniclePDF.com/Installation/Windows%20Installation/",
+  mac: "https://docs.ChroniclePDF.com/Installation/Mac%20Installation/",
   linux: DOWNLOAD_URLS.LINUX_DOCS,
-  docker: "https://docs.stirlingpdf.com/Installation/Docker%20Install",
-  kubernetes: "https://docs.stirlingpdf.com/Installation/Kubernetes",
+  docker: "https://docs.ChroniclePDF.com/Installation/Docker%20Install",
+  kubernetes: "https://docs.ChroniclePDF.com/Installation/Kubernetes",
   manual: DOWNLOAD_URLS.LINUX_DOCS,
 } as const;
 

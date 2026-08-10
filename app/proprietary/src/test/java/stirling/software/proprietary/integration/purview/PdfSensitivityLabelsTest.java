@@ -229,14 +229,14 @@ class PdfSensitivityLabelsTest {
     void preservesUnrelatedXmpAndInfoMetadata() throws IOException {
         PDDocument document = newDocument();
         document.getDocumentInformation().setAuthor("Anthony");
-        document.getDocumentInformation().setCustomMetadataValue("StirlingPDFClassification", "{}");
+        document.getDocumentInformation().setCustomMetadataValue("ChroniclePDFClassification", "{}");
         PdfSensitivityLabels.apply(document, confidential());
 
         try (PDDocument reloaded = saveAndReload(document)) {
             assertThat(reloaded.getDocumentInformation().getAuthor()).isEqualTo("Anthony");
             assertThat(
                             reloaded.getDocumentInformation()
-                                    .getCustomMetadataValue("StirlingPDFClassification"))
+                                    .getCustomMetadataValue("ChroniclePDFClassification"))
                     .isEqualTo("{}");
             assertThat(PdfSensitivityLabels.read(reloaded)).isPresent();
         }

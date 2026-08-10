@@ -11,7 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Data access for {@link LinkedInstance}. Plain Spring Data JPA against {@code stirling_pdf} —
+ * Data access for {@link LinkedInstance}. Plain Spring Data JPA against {@code chronicle_pdf} —
  * native schema access, no RPC, consistent with the rest of the SaaS backend.
  */
 public interface LinkedInstanceRepository extends JpaRepository<LinkedInstance, Long> {

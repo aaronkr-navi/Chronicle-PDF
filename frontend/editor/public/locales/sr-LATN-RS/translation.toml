@@ -1619,7 +1619,7 @@ admin = "Administrator"
 title = "Podešavanja kontrole korisnika"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Saznaj više"
@@ -3072,7 +3072,7 @@ upgradeButton = "Nadogradi nalog"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Kopiraj API ključ"
-description = "Vaš API ključ za pristup Stirlingovom paketu PDF alata. Kopirajte ga u svoj projekat ili osvežite da generišete novi."
+description = "Vaš API ključ za pristup Chronicle paketu PDF alata. Kopirajte ga u svoj projekat ili osvežite da generišete novi."
 docsDescription = "Saznajte više o integraciji sa Chronicle PDF:"
 docsLink = "API dokumentacija"
 docsTitle = "API dokumentacija"
@@ -6777,7 +6777,7 @@ subtitle = "Instance se autentifikuju prema organizaciji ovim akreditivom. Rotir
 title = "Servisni token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Izdat je novi token. Ažurirajte STIRLING_SERVICE_TOKEN svake self-hosted instance u okviru 24h grejs perioda ili će preći offline."
+description = "Izdat je novi token. Ažurirajte Chronicle_SERVICE_TOKEN svake self-hosted instance u okviru 24h grejs perioda ili će preći offline."
 title = "Rotirajte aktivne instance"
 
 [portal.editorAdmin.status]

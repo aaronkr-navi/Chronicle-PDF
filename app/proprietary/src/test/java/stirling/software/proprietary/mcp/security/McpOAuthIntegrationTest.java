@@ -131,7 +131,7 @@ class McpOAuthIntegrationTest {
         HttpResponse<String> response =
                 postMcp(token, "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/list\"}");
         assertThat(response.statusCode()).isEqualTo(200);
-        assertThat(response.body()).contains("stirling_describe_operation");
+        assertThat(response.body()).contains("chronicle_describe_operation");
     }
 
     @Test

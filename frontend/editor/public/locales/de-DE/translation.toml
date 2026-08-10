@@ -1620,7 +1620,7 @@ admin = "Administrator"
 title = "Benutzerkontrolle"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Mehr erfahren"
@@ -3083,7 +3083,7 @@ upgradeButton = "Konto upgraden"
 
 [config.apiKeys]
 copyKeyAriaLabel = "API-Schlüssel kopieren"
-description = "Ihr API-Schlüssel für den Zugriff auf Stirlings PDF-Tools. Kopieren Sie ihn in Ihr Projekt oder aktualisieren Sie, um einen neuen zu generieren."
+description = "Ihr API-Schlüssel für den Zugriff auf Chronicles PDF-Tools. Kopieren Sie ihn in Ihr Projekt oder aktualisieren Sie, um einen neuen zu generieren."
 docsDescription = "Erfahren Sie mehr über die Integration mit Chronicle PDF:"
 docsLink = "API-Dokumentation"
 docsTitle = "API-Dokumentation"
@@ -6809,7 +6809,7 @@ subtitle = "Instanzen authentifizieren sich mit diesen Zugangsdaten bei der Orga
 title = "Service-Token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Ein neues Token wurde ausgegeben. Aktualisieren Sie STIRLING_SERVICE_TOKEN jeder selbst gehosteten Instanz innerhalb des 24-Stunden-Kulanzfensters, sonst gehen sie offline."
+description = "Ein neues Token wurde ausgegeben. Aktualisieren Sie Chronicle_SERVICE_TOKEN jeder selbst gehosteten Instanz innerhalb des 24-Stunden-Kulanzfensters, sonst gehen sie offline."
 title = "Laufende Instanzen rotieren"
 
 [portal.editorAdmin.status]

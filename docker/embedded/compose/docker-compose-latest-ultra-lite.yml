@@ -1,7 +1,7 @@
 services:
   Chronicle-PDF:
     container_name: Chronicle-PDF-Ultra-Lite
-    image: docker.chronicle-pdf.com/stirlingtools/Chronicle-PDF:ultra-lite
+    image: docker.chronicle-pdf.com/aaronkr-navi/Chronicle-PDF:ultra-lite
     build:
       context: ../../../
       dockerfile: docker/embedded/Dockerfile.ultra-lite

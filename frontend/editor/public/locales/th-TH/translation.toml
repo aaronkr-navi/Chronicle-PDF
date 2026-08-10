@@ -1619,7 +1619,7 @@ admin = "ผู้ดูแลระบบ"
 title = "การควบคุมผู้ใช้"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "เรียนรู้เพิ่มเติม"
@@ -6777,7 +6777,7 @@ subtitle = "อินสแตนซ์ยืนยันตัวตนกั�
 title = "Service token"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "ออก token ใหม่แล้ว อัปเดต STIRLING_SERVICE_TOKEN ของอินสแตนซ์ที่โฮสต์เองแต่ละรายการภายในช่วงผ่อนผัน 24 ชม. ไม่เช่นนั้นอินสแตนซ์จะออฟไลน์"
+description = "ออก token ใหม่แล้ว อัปเดต Chronicle_SERVICE_TOKEN ของอินสแตนซ์ที่โฮสต์เองแต่ละรายการภายในช่วงผ่อนผัน 24 ชม. ไม่เช่นนั้นอินสแตนซ์จะออฟไลน์"
 title = "หมุนเวียนอินสแตนซ์ที่กำลังทำงาน"
 
 [portal.editorAdmin.status]

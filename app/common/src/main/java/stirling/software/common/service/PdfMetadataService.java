@@ -19,20 +19,20 @@ import stirling.software.common.model.PdfMetadata;
 public class PdfMetadataService {
 
     /** ({@code {labels}}). Written by the classify-and-label tool. */
-    public static final String CLASSIFICATION_KEY = "StirlingPDFClassification";
+    public static final String CLASSIFICATION_KEY = "ChroniclePDFClassification";
 
     private final ApplicationProperties applicationProperties;
-    private final String stirlingPDFLabel;
+    private final String ChroniclePDFLabel;
     private final UserServiceInterface userService;
     private final boolean runningProOrHigher;
 
     public PdfMetadataService(
             ApplicationProperties applicationProperties,
-            @Qualifier("StirlingPDFLabel") String stirlingPDFLabel,
+            @Qualifier("ChroniclePDFLabel") String ChroniclePDFLabel,
             @Qualifier("runningProOrHigher") boolean runningProOrHigher,
             @Autowired(required = false) UserServiceInterface userService) {
         this.applicationProperties = applicationProperties;
-        this.stirlingPDFLabel = stirlingPDFLabel;
+        this.ChroniclePDFLabel = ChroniclePDFLabel;
         this.userService = userService;
         this.runningProOrHigher = runningProOrHigher;
     }
@@ -116,7 +116,7 @@ public class PdfMetadataService {
 
     private void setNewDocumentMetadata(PDDocument pdf, PdfMetadata pdfMetadata) {
 
-        String creator = stirlingPDFLabel;
+        String creator = ChroniclePDFLabel;
 
         if (applicationProperties
                         .getPremium()
@@ -131,7 +131,7 @@ public class PdfMetadataService {
                             .getProFeatures()
                             .getCustomMetadata()
                             .getCreator();
-            pdf.getDocumentInformation().setProducer(stirlingPDFLabel);
+            pdf.getDocumentInformation().setProducer(ChroniclePDFLabel);
         }
 
         pdf.getDocumentInformation().setCreator(creator);
@@ -147,7 +147,7 @@ public class PdfMetadataService {
     private void setCommonMetadata(PDDocument pdf, PdfMetadata pdfMetadata) {
         String title = pdfMetadata.getTitle();
         pdf.getDocumentInformation().setTitle(title);
-        pdf.getDocumentInformation().setProducer(stirlingPDFLabel);
+        pdf.getDocumentInformation().setProducer(ChroniclePDFLabel);
         pdf.getDocumentInformation().setSubject(pdfMetadata.getSubject());
         pdf.getDocumentInformation().setKeywords(pdfMetadata.getKeywords());
 

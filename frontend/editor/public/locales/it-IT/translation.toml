@@ -1619,7 +1619,7 @@ admin = "Amministratore"
 title = "Impostazioni di controllo utente"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Scopri di più"

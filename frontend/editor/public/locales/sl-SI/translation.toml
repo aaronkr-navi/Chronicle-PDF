@@ -1619,7 +1619,7 @@ admin = "Skrbnik"
 title = "Nastavitve uporabniškega nadzora"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Izvedite več"
@@ -3072,7 +3072,7 @@ upgradeButton = "Nadgradi račun"
 
 [config.apiKeys]
 copyKeyAriaLabel = "Kopiraj API ključ"
-description = "Vaš API ključ za dostop do Stirlingove zbirke PDF orodij. Kopirajte ga v svoj projekt ali osvežite za ustvarjanje novega."
+description = "Vaš API ključ za dostop do Chronicle zbirke PDF orodij. Kopirajte ga v svoj projekt ali osvežite za ustvarjanje novega."
 docsDescription = "Več o integraciji s Chronicle PDF:"
 docsLink = "API dokumentacija"
 docsTitle = "API dokumentacija"
@@ -6777,7 +6777,7 @@ subtitle = "Primerki se s to poverilnico overjajo pri organizaciji. Zavrti ga po
 title = "Servisni žeton"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "Izdan je bil nov žeton. Posodobite STIRLING_SERVICE_TOKEN vsakega samogostovanega primerka v 24-urnem prehodnem obdobju, sicer bodo prešli offline."
+description = "Izdan je bil nov žeton. Posodobite Chronicle_SERVICE_TOKEN vsakega samogostovanega primerka v 24-urnem prehodnem obdobju, sicer bodo prešli offline."
 title = "Zavrti delujoče primerke"
 
 [portal.editorAdmin.status]

@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 public final class TauriOAuthUtils {
 
     public static final String TAURI_STATE_PREFIX = "tauri:";
-    public static final String SPA_REDIRECT_COOKIE = "stirling_redirect_path";
+    public static final String SPA_REDIRECT_COOKIE = "chronicle_redirect_path";
     public static final String DEFAULT_CALLBACK_PATH = "/auth/callback";
     public static final String TAURI_CALLBACK_SUFFIX = "/tauri";
 

@@ -1619,7 +1619,7 @@ admin = "Administrator"
 title = "Setări Control Utilizator"
 
 [agents]
-stirling_name = "Chronicle"
+Chronicle_name = "Chronicle"
 
 [analytics]
 learnMore = "Aflați mai multe"
@@ -6777,7 +6777,7 @@ subtitle = "Instanțele se autentifică la organizație cu această credențial�
 title = "Token de serviciu"
 
 [portal.editorAdmin.serviceToken.rotatedBanner]
-description = "A fost emis un token nou. Actualizați STIRLING_SERVICE_TOKEN pentru fiecare instanță self-hosted în fereastra de grație de 24h sau vor trece offline."
+description = "A fost emis un token nou. Actualizați Chronicle_SERVICE_TOKEN pentru fiecare instanță self-hosted în fereastra de grație de 24h sau vor trece offline."
 title = "Rotiți instanțele care rulează"
 
 [portal.editorAdmin.status]
