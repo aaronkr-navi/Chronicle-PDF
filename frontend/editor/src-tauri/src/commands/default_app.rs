@@ -1,6 +1,6 @@
 use crate::utils::add_log;
 
-/// Check if Stirling PDF is the default PDF handler
+/// Check if Chronicle PDF is the default PDF handler
 #[tauri::command]
 pub fn is_default_pdf_handler() -> Result<bool, String> {
     add_log("🔍 Checking if app is default PDF handler".to_string());
@@ -21,7 +21,7 @@ pub fn is_default_pdf_handler() -> Result<bool, String> {
     }
 }
 
-/// Attempt to set/prompt for Stirling PDF as default PDF handler
+/// Attempt to set/prompt for Chronicle PDF as default PDF handler
 #[tauri::command]
 pub fn set_as_default_pdf_handler() -> Result<String, String> {
     add_log("⚙️ Attempting to set as default PDF handler".to_string());
@@ -89,9 +89,9 @@ fn check_default_windows() -> Result<bool, String> {
 
             add_log(format!("Windows PDF handler ProgID: {}", default_str));
 
-            // Check if it contains "Stirling" (case-insensitive)
+            // Check if it contains "Chronicle" (case-insensitive)
             // Note: This checks the ProgID registered by the installer
-            let is_default = default_str.to_lowercase().contains("stirling");
+            let is_default = default_str.to_lowercase().contains("chronicle");
             Ok(is_default)
         })();
 
@@ -160,7 +160,7 @@ fn check_default_macos() -> Result<bool, String> {
         add_log(format!("macOS PDF handler: {}", handler_str));
 
         // Check if it's our bundle identifier
-        let is_default = handler_str == "stirling.pdf.dev";
+        let is_default = handler_str == "chronicle.pdf.dev";
         Ok(is_default)
     }
 }
@@ -174,7 +174,7 @@ fn set_default_macos() -> Result<String, String> {
     // LSSetDefaultRoleHandlerForContentType is deprecated and has no public
     // replacement for document UTIs (unlike default browser/mail). It is still
     // the only one-click option. Prefer Finder Get Info → Change All when
-    // switching *away* from Stirling — Open With → Always Open With can trip a
+    // switching *away* from Chronicle — Open With → Always Open With can trip a
     // Gatekeeper false positive (LSRiskCategoryHasRedirectedBinding).
     #[link(name = "CoreServices", kind = "framework")]
     extern "C" {
@@ -189,7 +189,7 @@ fn set_default_macos() -> Result<String, String> {
 
     unsafe {
         let pdf_uti = CFString::new("com.adobe.pdf");
-        let our_bundle_id = CFString::new("stirling.pdf.dev");
+        let our_bundle_id = CFString::new("chronicle.pdf.dev");
 
         let status = LSSetDefaultRoleHandlerForContentType(
             pdf_uti.as_concrete_TypeRef(),
@@ -215,12 +215,12 @@ fn set_default_macos() -> Result<String, String> {
 /// Installed desktop entry names vary by packaging (template vs binary name).
 #[cfg(target_os = "linux")]
 const LINUX_DESKTOP_CANDIDATES: &[&str] =
-    &["Stirling-PDF.desktop", "stirling-pdf.desktop"];
+    &["Chronicle-PDF.desktop", "chronicle-pdf.desktop"];
 
 #[cfg(target_os = "linux")]
-fn is_stirling_desktop_handler(handler: &str) -> bool {
+fn is_chronicle_desktop_handler(handler: &str) -> bool {
     let name = handler.trim().to_lowercase();
-    name.contains("stirling") && name.ends_with(".desktop")
+    name.contains("chronicle") && name.ends_with(".desktop")
 }
 
 #[cfg(target_os = "linux")]
@@ -251,7 +251,7 @@ fn resolve_linux_desktop_file() -> String {
         }
     }
     // Matches tauri.conf.json desktopTemplate
-    "stirling-pdf.desktop".to_string()
+    "chronicle-pdf.desktop".to_string()
 }
 
 #[cfg(target_os = "linux")]
@@ -267,8 +267,8 @@ fn check_default_linux() -> Result<bool, String> {
     let handler = String::from_utf8_lossy(&output.stdout);
     add_log(format!("Linux PDF handler: {}", handler.trim()));
 
-    // Accept stirling-pdf.desktop and Stirling-PDF.desktop (and similar)
-    Ok(is_stirling_desktop_handler(&handler))
+    // Accept chronicle-pdf.desktop and Chronicle-PDF.desktop (and similar)
+    Ok(is_chronicle_desktop_handler(&handler))
 }
 
 #[cfg(target_os = "linux")]

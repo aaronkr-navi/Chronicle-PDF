@@ -1,8 +1,8 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Stirling-PDF
-Comment=Locally hosted web application that allows you to perform various operations on PDF files
+Name=Chronicle PDF
+Comment=Desktop PDF editor — view, edit, sign, merge, split, and convert PDFs without external services
 TryExec={{exec}}
 Exec={{exec}} %F
 Icon={{icon}}
@@ -10,7 +10,7 @@ Terminal=false
 MimeType=application/pdf;
 Categories=Office;Graphics;Utility;
 Actions=open-file;
-StartupWMClass=Stirling-PDF
+StartupWMClass=Chronicle-PDF
 
 [Desktop Action open-file]
 Name=Open PDF File

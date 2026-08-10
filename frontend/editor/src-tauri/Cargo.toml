@@ -1,8 +1,8 @@
 [package]
-name = "stirling-pdf"
+name = "chronicle-pdf"
 version = "0.1.0"
-description = "Stirling-PDF Desktop Application"
-authors = ["Stirling-PDF Contributors"]
+description = "Chronicle PDF Desktop Application"
+authors = ["Chronicle PDF Contributors"]
 license = ""
 repository = ""
 edition = "2021"

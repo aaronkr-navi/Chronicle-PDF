@@ -1,9 +1,9 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "Chronicle PDF",
-  "mainBinaryName": "Stirling-PDF",
+  "mainBinaryName": "Chronicle-PDF",
   "version": "2.14.2",
-  "identifier": "stirling.pdf.dev",
+  "identifier": "chronicle.pdf.dev",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:5173",
@@ -25,7 +25,7 @@
   },
   "bundle": {
     "active": true,
-    "createUpdaterArtifacts": true,
+    "createUpdaterArtifacts": false,
     "publisher": "Chronicle PDF Inc.",
     "targets": ["deb", "rpm", "appimage", "dmg", "app", "msi"],
     "icon": [
@@ -49,10 +49,10 @@
     ],
     "linux": {
       "deb": {
-        "desktopTemplate": "stirling-pdf.desktop"
+        "desktopTemplate": "chronicle-pdf.desktop"
       },
       "rpm": {
-        "desktopTemplate": "stirling-pdf.desktop",
+        "desktopTemplate": "chronicle-pdf.desktop",
         "compression": { "type": "zstd", "level": 3 }
       },
       "appimage": {
@@ -88,12 +88,12 @@
     },
     "deep-link": {
       "desktop": {
-        "schemes": ["stirlingpdf"]
+        "schemes": ["chroniclepdf"]
       }
     },
     "updater": {
       "endpoints": [
-        "https://github.com/Stirling-Tools/Stirling-PDF/releases/latest/download/latest.json"
+        "https://github.com/aaronkr-navi/Chronicle-PDF/releases/latest/download/latest.json"
       ],
       "dialog": false,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDZEREM2QTgwNjdGNzdCOUQKUldTZGUvZG5nR3JjYmZ4TlZ3YVpHTVIzd2hBT2c4c000RDNIN2tLZENEblE4ZXFhU3J5V0lQanEK",
