@@ -43,9 +43,9 @@ tasks:
     env:
       SERVER_PORT: '{{.PORT}}'
     cmds:
-      - cmd: '{{if .AIENGINE_URL}}AIENGINE_URL={{.AIENGINE_URL}} AIENGINE_ENABLED={{.AIENGINE_ENABLED}} AIENGINE_TIMEOUTSECONDS={{.AIENGINE_TIMEOUTSECONDS}} {{end}}{{if .SECURITY_ENABLELOGIN}}SECURITY_ENABLELOGIN={{.SECURITY_ENABLELOGIN}} {{end}}cmd /c ".\gradlew.bat :stirling-pdf:bootRun"'
+      - cmd: '{{if .AIENGINE_URL}}AIENGINE_URL={{.AIENGINE_URL}} AIENGINE_ENABLED={{.AIENGINE_ENABLED}} AIENGINE_TIMEOUTSECONDS={{.AIENGINE_TIMEOUTSECONDS}} {{end}}{{if .SECURITY_ENABLELOGIN}}SECURITY_ENABLELOGIN={{.SECURITY_ENABLELOGIN}} {{end}}cmd /c ".\gradlew.bat :chronicle-pdf:bootRun"'
         platforms: [windows]
-      - cmd: '{{if .AIENGINE_URL}}AIENGINE_URL={{.AIENGINE_URL}} AIENGINE_ENABLED={{.AIENGINE_ENABLED}} AIENGINE_TIMEOUTSECONDS={{.AIENGINE_TIMEOUTSECONDS}} {{end}}{{if .SECURITY_ENABLELOGIN}}SECURITY_ENABLELOGIN={{.SECURITY_ENABLELOGIN}} {{end}}./gradlew :stirling-pdf:bootRun'
+      - cmd: '{{if .AIENGINE_URL}}AIENGINE_URL={{.AIENGINE_URL}} AIENGINE_ENABLED={{.AIENGINE_ENABLED}} AIENGINE_TIMEOUTSECONDS={{.AIENGINE_TIMEOUTSECONDS}} {{end}}{{if .SECURITY_ENABLELOGIN}}SECURITY_ENABLELOGIN={{.SECURITY_ENABLELOGIN}} {{end}}./gradlew :chronicle-pdf:bootRun'
         platforms: [linux, darwin]
 
   dev:bundled:
@@ -77,9 +77,9 @@ tasks:
       AIENGINE_ENABLED: '{{.AIENGINE_ENABLED}}'
       AIENGINE_TIMEOUTSECONDS: '{{.AIENGINE_TIMEOUTSECONDS}}'
     cmds:
-      - cmd: cmd /c ".\gradlew.bat :stirling-pdf:bootRun {{if .PROFILES}}--args=\"--spring.profiles.include={{.PROFILES}}\"{{end}}"
+      - cmd: cmd /c ".\gradlew.bat :chronicle-pdf:bootRun {{if .PROFILES}}--args=\"--spring.profiles.include={{.PROFILES}}\"{{end}}"
         platforms: [windows]
-      - cmd: ./gradlew :stirling-pdf:bootRun {{if .PROFILES}}--args='--spring.profiles.include={{.PROFILES}}'{{end}}
+      - cmd: ./gradlew :chronicle-pdf:bootRun {{if .PROFILES}}--args='--spring.profiles.include={{.PROFILES}}'{{end}}
         platforms: [linux, darwin]
 
   build:
@@ -147,9 +147,9 @@ tasks:
   swagger:
     desc: "Generate OpenAPI docs"
     cmds:
-      - cmd: cmd /c ".\gradlew.bat :stirling-pdf:copySwaggerDoc"
+      - cmd: cmd /c ".\gradlew.bat :chronicle-pdf:copySwaggerDoc"
         platforms: [windows]
-      - cmd: ./gradlew :stirling-pdf:copySwaggerDoc
+      - cmd: ./gradlew :chronicle-pdf:copySwaggerDoc
         platforms: [linux, darwin]
     sources:
       - app/core/src/main/java/**/*.java

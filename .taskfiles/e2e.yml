@@ -61,7 +61,7 @@ tasks:
           set -e
           rm -rf "{{.BASE_DIR}}"
           mkdir -p "{{.BASE_DIR}}"
-          GRADLE_ARGS=":stirling-pdf:bootRun"
+          GRADLE_ARGS=":chronicle-pdf:bootRun"
           if [ -n "${COVERAGE:-}" ]; then
             # copyJacocoAgent is wired as a dependency of bootRun when
             # -PjacocoAgent=true, so we do not need to invoke it separately.
@@ -214,9 +214,9 @@ tasks:
       - docker compose -f testing/compose/docker-compose-keycloak-saml.yml down -v
 
   mcp:up:
-    desc: "Start the MCP keycloak test environment (Stirling as OAuth resource server)"
+    desc: "Start the MCP keycloak test environment (Chronicle PDF as OAuth resource server)"
     summary: |
-      Brings up Keycloak (OAuth authorization server) + Stirling configured as an
+      Brings up Keycloak (OAuth authorization server) + Chronicle PDF configured as an
       MCP resource server, then you can exercise /mcp with real Keycloak tokens.
       Set LICENSE_KEY=<KEY> to skip the interactive license prompt:
         task e2e:mcp:up LICENSE_KEY=abc123
@@ -241,7 +241,7 @@ tasks:
   mcp:apikey:
     desc: "Start the MCP test env in API-KEY manual mode (no OAuth/IdP): mints a key + prints client settings"
     summary: |
-      Brings Stirling up in apikey auth mode and prints copy-paste client settings with a freshly
+      Brings Chronicle PDF up in apikey auth mode and prints copy-paste client settings with a freshly
       minted X-API-KEY - ideal for clients whose OAuth layer can't reach localhost.
         task e2e:mcp:apikey LICENSE_KEY=<your-license-key>
       Add --nobuild if images are already built:

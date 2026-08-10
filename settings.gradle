@@ -23,7 +23,7 @@ plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
 }
 
-rootProject.name = 'Stirling PDF'
+rootProject.name = 'Chronicle PDF'
 
 // Flavors: core | proprietary (default) | saas.
 // Selectable via STIRLING_FLAVOR or by setting DISABLE_ADDITIONAL_FEATURES/ENABLE_SAAS directly.
@@ -86,9 +86,9 @@ if (enableSaas && disableAdditional) {
 gradle.ext.disableAdditional = disableAdditional
 gradle.ext.enableSaas = enableSaas
 
-include 'stirling-pdf', 'common', 'proprietary'
+include 'chronicle-pdf', 'common', 'proprietary'
 
-project(':stirling-pdf').projectDir = file('app/core')
+project(':chronicle-pdf').projectDir = file('app/core')
 project(':common'      ).projectDir = file('app/common')
 project(':proprietary' ).projectDir = file('app/proprietary')
 
