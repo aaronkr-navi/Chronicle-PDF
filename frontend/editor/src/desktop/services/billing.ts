@@ -54,6 +54,9 @@ async function requireToken(): Promise<string> {
 export async function createCheckoutSession(
   params: CheckoutParams,
 ): Promise<CheckoutSession> {
+  if (!supabase) {
+    throw new Error("Billing requires SaaS mode (Supabase not configured)");
+  }
   const token = await requireToken();
 
   const { data, error } = await supabase.functions.invoke<{
@@ -97,6 +100,9 @@ export async function createCheckoutSession(
 export async function createPortalSession(
   params: PortalParams,
 ): Promise<PortalSession> {
+  if (!supabase) {
+    throw new Error("Billing requires SaaS mode (Supabase not configured)");
+  }
   const token = await requireToken();
 
   const { data, error } = await supabase.functions.invoke<{

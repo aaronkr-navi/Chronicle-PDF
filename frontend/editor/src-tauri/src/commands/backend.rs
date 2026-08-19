@@ -206,7 +206,7 @@ fn run_chronicle_pdf_jar(app: &tauri::AppHandle, java_path: &PathBuf, jar_path: 
     let mut java_options = vec![
         "-Xmx2g",
         "-DBROWSER_OPEN=false",
-        "-DCHRONICLE_PDF_TAURI_MODE=true",
+        "-DSTIRLING_PDF_TAURI_MODE=true",
         &log_path_option,
         "-Dlogging.file.name=chronicle-pdf.log",
         "-Dserver.port=0",  // Let OS assign an available port

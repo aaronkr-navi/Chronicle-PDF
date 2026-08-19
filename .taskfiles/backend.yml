@@ -39,7 +39,7 @@ tasks:
       AIENGINE_URL: '{{.AIENGINE_URL | default ""}}'
       AIENGINE_ENABLED: '{{.AIENGINE_ENABLED | default "false"}}'
       AIENGINE_TIMEOUTSECONDS: '{{.AIENGINE_TIMEOUTSECONDS | default "120"}}'
-      SECURITY_ENABLELOGIN: '{{.SECURITY_ENABLELOGIN | default ""}}'
+      SECURITY_ENABLELOGIN: '{{.SECURITY_ENABLELOGIN | default "false"}}'
     env:
       SERVER_PORT: '{{.PORT}}'
     cmds:

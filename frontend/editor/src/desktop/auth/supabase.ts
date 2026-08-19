@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { STIRLING_SAAS_URL, SUPABASE_KEY } from "@app/constants/connection";
 
 /**
@@ -6,7 +6,10 @@ import { STIRLING_SAAS_URL, SUPABASE_KEY } from "@app/constants/connection";
  * Used to call Supabase edge functions for billing and other SaaS features
  *
  * Note: Desktop uses authService for authentication (JWT stored in Tauri secure store),
- * but this client is needed for calling Supabase edge functions like get-usage-billing
+ * but this client is needed for calling Supabase edge functions like get-usage-billing.
+ *
+ * When Supabase keys are not configured (local-only mode), this exports null
+ * and consumers must handle that gracefully.
  */
 
 if (!STIRLING_SAAS_URL) {
@@ -21,14 +24,14 @@ if (!SUPABASE_KEY) {
   );
 }
 
-export const supabase = createClient(
-  STIRLING_SAAS_URL || "",
-  SUPABASE_KEY || "",
-  {
-    auth: {
-      persistSession: false, // Desktop manages auth via authService + Tauri secure store
-      autoRefreshToken: false, // Desktop manually refreshes tokens via authService
-      detectSessionInUrl: false, // Desktop uses deep links, not URL hash fragments
-    },
-  },
-);
+export const supabase: SupabaseClient | null =
+  STIRLING_SAAS_URL && SUPABASE_KEY
+    ? createClient(STIRLING_SAAS_URL, SUPABASE_KEY, {
+        auth: {
+          persistSession: false, // Desktop manages auth via authService + Tauri secure store
+          autoRefreshToken: false, // Desktop manually refreshes tokens via authService
+          detectSessionInUrl: false, // Desktop uses deep links, not URL hash fragments
+        },
+      })
+    : null;
+
